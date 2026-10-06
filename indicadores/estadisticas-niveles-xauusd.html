@@ -1,0 +1,211 @@
+<title>Niveles sin mecha en XAUUSD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: una columna de lectura; hallazgos → tres gráficos de filas por temporalidad → tabla completa → límites */
+:root{
+  --bg:#f4f5f3; --panel:#fcfcfb; --fg:#15191e; --muted:#5a5f66; --line:#dcdfe0; --grid:#e7e9e9;
+  --s-flecha:#2a78d6; --s-control:#8a8984; --gold:#a8790f; --gold-soft:#f3ebd6;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121417; --panel:#1a1a19; --fg:#eceeef; --muted:#a3a7ad; --line:#2f3337; --grid:#26292c;
+    --s-flecha:#3987e5; --s-control:#8f8e88; --gold:#e0b54a; --gold-soft:#36301f; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121417; --panel:#1a1a19; --fg:#eceeef; --muted:#a3a7ad; --line:#2f3337; --grid:#26292c;
+  --s-flecha:#3987e5; --s-control:#8f8e88; --gold:#e0b54a; --gold-soft:#36301f; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55;padding-inline:16px;padding-block:24px 48px}
+.wrap{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4vw,2.4rem);margin:0;letter-spacing:-.01em;text-wrap:balance}
+h2{font-family:var(--display);font-weight:600;font-size:1.2rem;margin:0;text-wrap:balance}
+p{margin:0;max-width:68ch}
+.meta{font-family:var(--mono);font-size:.78rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 14px}
+.lead{color:var(--muted)}
+.findings{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
+.findings li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline}
+.findings b.n{font-family:var(--mono);font-size:1.05rem;color:var(--gold);min-width:4.2em;text-align:right;font-variant-numeric:tabular-nums}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.82rem;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:10px;height:10px;border-radius:50%;display:inline-block}
+svg{display:block;width:100%;height:auto;overflow:visible}
+.note{font-size:.82rem;color:var(--muted)}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;font-size:.82rem;min-width:760px;width:100%}
+th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
+td{font-family:var(--mono);font-variant-numeric:tabular-nums}
+td.sub{color:var(--muted)}
+.tip{position:fixed;pointer-events:none;background:var(--fg);color:var(--bg);font-size:.78rem;line-height:1.4;padding:7px 9px;border-radius:5px;max-width:260px;z-index:9;font-family:var(--body)}
+.verdict{border-left:3px solid var(--gold);padding-left:12px;display:flex;flex-direction:column;gap:8px}
+ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;max-width:70ch}
+</style>
+
+<div class="wrap">
+  <header style="display:flex;flex-direction:column;gap:10px">
+    <div class="meta"><span>XAUUSD · IC Markets (Raw Trading Ltd)</span><span>Generado 2026.10.06 22:20</span><span>Reacción medida en M1 · 30 min</span></div>
+    <h1>Niveles sin mecha en XAUUSD</h1>
+    <p class="lead">Resultados del script <b>EstadisticasNiveles</b> con tu historial de IC Markets. Solo flechas <b>verdes</b> (Apertura = Mínimo) y <b>rojas</b> (Apertura = Máximo). Se comparan con un grupo de control: aperturas que <b>sí</b> tienen mecha.</p>
+  </header>
+
+  <section class="card verdict" aria-labelledby="h-res">
+    <h2 id="h-res">Lo que dicen tus datos</h2>
+    <ul class="findings">
+      <li><b class="n">~99%</b><span>de los niveles verdes y rojos acaban siendo testeados, en todas las temporalidades. Los niveles normales también (~99%). Que el precio vuelva es lo esperable, no una señal.</span></li>
+      <li><b class="n">3 velas</b><span>es la mediana hasta el test en todas las temporalidades: 3 min en M1, 3 h en H1, 8 h en H4. Los niveles sin mecha tardan <b>más</b> que los normales: solo ~30% se testea en la vela siguiente, frente a ~50% del control. Es mecánico: el nivel está en el extremo de la vela, más lejos del cierre.</span></li>
+      <li><b class="n">~50%</b><span>de las veces el precio queda del lado del rebote 30 min después del test: lo mismo que el control y que una moneda al aire, de M1 a H1. El rebote es igual o algo menor que la penetración (relación 0.88–0.97).</span></li>
+      <li><b class="n">H4: 64%</b><span>respetado y rebote el doble que la penetración. Es la única señal de jerarquía, pero son solo <b>25 casos</b> (el rango probable va de 44% a 80%), así que todavía no se puede afirmar.</span></li>
+    </ul>
+  </section>
+
+  <section class="card" aria-labelledby="h-c1">
+    <h2 id="h-c1">¿Se respetan más que un nivel normal?</h2>
+    <p class="note">% de tests en que, 30 minutos después, el precio terminó del lado del rebote. La barra es el rango probable (intervalo de confianza 95%). 50% equivale a azar.</p>
+    <div class="legend"><span><i class="sw" style="background:var(--s-flecha)"></i>Flechas verde + roja</span><span><i class="sw" style="background:var(--s-control)"></i>Control (apertura con mecha)</span><span>Punteado: menos de 30 casos</span></div>
+    <svg id="c1" role="img" aria-label="Porcentaje respetado por temporalidad, flechas frente a control"></svg>
+  </section>
+
+  <section class="card" aria-labelledby="h-c2">
+    <h2 id="h-c2">¿Cuándo se testean?</h2>
+    <p class="note">% de niveles testeados ya en la vela siguiente. Los sin mecha resisten más el primer test porque quedan en el extremo de la vela.</p>
+    <div class="legend"><span><i class="sw" style="background:var(--s-flecha)"></i>Flechas verde + roja</span><span><i class="sw" style="background:var(--s-control)"></i>Control</span></div>
+    <svg id="c2" role="img" aria-label="Porcentaje testeado en la vela siguiente por temporalidad"></svg>
+  </section>
+
+  <section class="card" aria-labelledby="h-c3">
+    <h2 id="h-c3">¿Importa cuánto tiempo estuvo sin testear?</h2>
+    <p class="note">Tu observación se refiere a niveles que el precio deja atrás. Aquí se agrupan los tests de M1 a H1 según cuántas velas pasaron hasta el test. Si los niveles que quedan pendientes más tiempo reaccionaran mejor, los puntos azules se irían desplazando a la derecha conforme bajas.</p>
+    <div class="legend"><span><i class="sw" style="background:var(--s-flecha)"></i>Flechas verde + roja</span><span><i class="sw" style="background:var(--s-control)"></i>Control</span></div>
+    <svg id="c3" role="img" aria-label="Porcentaje respetado según velas hasta el test"></svg>
+  </section>
+
+  <section class="card" aria-labelledby="h-tab">
+    <h2 id="h-tab">Tabla completa</h2>
+    <div class="tablewrap"><table id="tab"></table></div>
+    <p class="note">p = probabilidad de ver una diferencia así entre flechas y control solo por azar. Por debajo de 0.05 se suele considerar una diferencia real. Ninguna temporalidad baja de 0.05.</p>
+  </section>
+
+  <section class="card" aria-labelledby="h-lim">
+    <h2 id="h-lim">Límites y siguiente paso</h2>
+    <ul class="plain">
+      <li>La reacción se mide con velas M1, y tu historial M1 empieza el 2025.05.09. Por eso H4 y D1 tienen muy pocos tests medidos (25 y 1), aunque se formaron 511 y 189 niveles.</li>
+      <li>«Respetado» usa una ventana fija de 30 minutos. Otra definición, por ejemplo si rebota X USD antes de atravesar el nivel, podría dar otro resultado.</li>
+      <li>El periodo incluye una fuerte tendencia del oro. Los resultados pueden cambiar en otros contextos de mercado.</li>
+      <li>Para resolver la duda de H4 y D1 se puede medir la reacción con velas H1 (historial desde 2018) en lugar de M1. Así habría cientos de casos en vez de 25.</li>
+    </ul>
+  </section>
+</div>
+
+<script>
+const DATA = {"tf": [{"tf": "M1", "f": {"formados": 5219, "testeados": 99.1, "pendientes": 46, "mediana": 3.0, "med_seg": 180.0, "una": 30.5, "mas20": 20.9, "nreac": 5170, "resp": 49.5, "ci": [48.1, 50.9], "ratio": 0.97}, "c": {"formados": 44570, "testeados": 99.4, "pendientes": 255, "mediana": 2.0, "med_seg": 120.0, "una": 49.1, "mas20": 13.4, "nreac": 44290, "resp": 49.6, "ci": [49.2, 50.1], "ratio": 0.99}, "p": 0.866}, {"tf": "M5", "f": {"formados": 2342, "testeados": 99.0, "pendientes": 24, "mediana": 3.0, "med_seg": 900.0, "una": 31.3, "mas20": 20.4, "nreac": 2318, "resp": 50.1, "ci": [48.1, 52.2], "ratio": 0.94}, "c": {"formados": 47602, "testeados": 99.4, "pendientes": 296, "mediana": 2.0, "med_seg": 600.0, "una": 49.6, "mas20": 13.4, "nreac": 47298, "resp": 50.1, "ci": [49.7, 50.6], "ratio": 0.96}, "p": 0.991}, {"tf": "M15", "f": {"formados": 2010, "testeados": 98.8, "pendientes": 25, "mediana": 3.0, "med_seg": 2700.0, "una": 31.5, "mas20": 18.8, "nreac": 1126, "resp": 47.4, "ci": [44.5, 50.3], "ratio": 0.88}, "c": {"formados": 47906, "testeados": 98.9, "pendientes": 507, "mediana": 1.0, "med_seg": 900.0, "una": 50.9, "mas20": 12.9, "nreac": 31919, "resp": 50.1, "ci": [49.6, 50.7], "ratio": 0.96}, "p": 0.073}, {"tf": "M30", "f": {"formados": 2101, "testeados": 98.3, "pendientes": 35, "mediana": 3.0, "med_seg": 5400.0, "una": 29.7, "mas20": 19.1, "nreac": 449, "resp": 49.4, "ci": [44.8, 54.1], "ratio": 0.88}, "c": {"formados": 47786, "testeados": 98.8, "pendientes": 587, "mediana": 1.0, "med_seg": 1800.0, "una": 51.4, "mas20": 12.4, "nreac": 16023, "resp": 49.9, "ci": [49.1, 50.7], "ratio": 0.95}, "p": 0.852}, {"tf": "H1", "f": {"formados": 1661, "testeados": 98.3, "pendientes": 28, "mediana": 3.0, "med_seg": 10800.0, "una": 30.7, "mas20": 18.1, "nreac": 171, "resp": 52.6, "ci": [45.2, 60.0], "ratio": 0.88}, "c": {"formados": 48241, "testeados": 98.9, "pendientes": 525, "mediana": 1.0, "med_seg": 3600.0, "una": 52.3, "mas20": 11.8, "nreac": 8035, "resp": 50.7, "ci": [49.6, 51.8], "ratio": 0.94}, "p": 0.62}, {"tf": "H4", "f": {"formados": 511, "testeados": 97.7, "pendientes": 12, "mediana": 2.0, "med_seg": 28800.0, "una": 36.3, "mas20": 13.0, "nreac": 25, "resp": 64.0, "ci": [44.5, 79.8], "ratio": 2.09}, "c": {"formados": 20758, "testeados": 98.1, "pendientes": 390, "mediana": 1.0, "med_seg": 14400.0, "una": 52.8, "mas20": 11.4, "nreac": 2087, "resp": 50.7, "ci": [48.6, 52.8], "ratio": 0.89}, "p": 0.186}, {"tf": "D1", "f": {"formados": 189, "testeados": 95.8, "pendientes": 8, "mediana": 2.0, "med_seg": 172800.0, "una": 43.6, "mas20": 12.7, "nreac": 1, "resp": 0.0, "ci": [0.0, 79.3], "ratio": 0.64}, "c": {"formados": 7289, "testeados": 96.7, "pendientes": 242, "mediana": 1.0, "med_seg": 86400.0, "una": 54.3, "mas20": 10.7, "nreac": 331, "resp": 53.5, "ci": [48.1, 58.8], "ratio": 0.89}, "p": 0.285}], "buck": [{"b": "1", "f": {"n": 2828, "resp": 48.5, "ci": [46.7, 50.4], "ratio": 0.92}, "c": {"n": 73506, "resp": 49.3, "ci": [48.9, 49.6], "ratio": 0.97}}, {"b": "2–5", "f": {"n": 2757, "resp": 48.8, "ci": [47.0, 50.7], "ratio": 0.99}, "c": {"n": 35551, "resp": 50.3, "ci": [49.8, 50.8], "ratio": 0.99}}, {"b": "6–20", "f": {"n": 1748, "resp": 51.2, "ci": [48.9, 53.5], "ratio": 0.97}, "c": {"n": 19031, "resp": 51.1, "ci": [50.4, 51.8], "ratio": 0.96}}, {"b": "21–100", "f": {"n": 1107, "resp": 50.8, "ci": [47.8, 53.7], "ratio": 0.9}, "c": {"n": 11351, "resp": 51.0, "ci": [50.0, 51.9], "ratio": 0.91}}, {"b": ">100", "f": {"n": 794, "resp": 49.4, "ci": [45.9, 52.8], "ratio": 0.9}, "c": {"n": 8126, "resp": 51.2, "ci": [50.1, 52.3], "ratio": 0.96}}]};
+(function(){
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const tip = document.createElement('div'); tip.className='tip'; tip.hidden = true; document.body.appendChild(tip);
+  const showTip = (e, html) => { tip.innerHTML = html; tip.hidden = false; const x = Math.min(e.clientX + 14, innerWidth - 270); tip.style.left = x + 'px'; tip.style.top = (e.clientY + 14) + 'px'; };
+  const hideTip = () => { tip.hidden = true; };
+  const fmtT = s => s < 3600 ? (s/60).toFixed(0)+' min' : s < 86400 ? (s/3600).toFixed(1).replace('.0','')+' h' : (s/86400).toFixed(1).replace('.0','')+' días';
+
+  // filas con punto + intervalo para dos series
+  function dotRows(id, rows, xmin, xmax, ref, ticks){
+    const svg = document.getElementById(id);
+    const W = 720, L = 70, R = 24, rowH = 46, T = 10, B = 30, H = T + rows.length*rowH + B;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    const x = v => L + (Math.max(xmin, Math.min(xmax, v)) - xmin) / (xmax - xmin) * (W - L - R);
+    let o = '';
+    ticks.forEach(t => {
+      o += `<line x1="${x(t)}" x2="${x(t)}" y1="${T}" y2="${H-B}" stroke="${css('--grid')}" stroke-width="1"/>`;
+      o += `<text x="${x(t)}" y="${H-B+18}" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="${css('--muted')}">${t}%</text>`;
+    });
+    o += `<line x1="${x(ref)}" x2="${x(ref)}" y1="${T}" y2="${H-B}" stroke="${css('--muted')}" stroke-width="1.5" stroke-dasharray="4 4"/>`;
+    rows.forEach((r, i) => {
+      const yc = T + i*rowH + rowH/2;
+      o += `<g class="row" data-i="${i}"><rect x="0" y="${yc-rowH/2}" width="${W}" height="${rowH}" fill="${css('--panel')}" fill-opacity="0"/>`;
+      o += `<text x="${L-12}" y="${yc+4}" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="13" fill="${css('--fg')}">${r.label}</text>`;
+      [['f', -7, '--s-flecha'], ['c', 7, '--s-control']].forEach(([k, dy, colr]) => {
+        const s = r[k]; if (s.v == null) return;
+        const yy = yc + dy, few = s.n < 30;
+        o += `<line x1="${x(s.lo)}" x2="${x(s.hi)}" y1="${yy}" y2="${yy}" stroke="${css(colr)}" stroke-width="2" stroke-linecap="round" ${few ? 'stroke-dasharray="3 4"' : ''}/>`;
+        o += `<circle cx="${x(s.v)}" cy="${yy}" r="5" fill="${css(colr)}" stroke="${css('--panel')}" stroke-width="2"/>`;
+      });
+      o += '</g>';
+    });
+    svg.innerHTML = o;
+    svg.querySelectorAll('.row').forEach(g => {
+      const r = rows[+g.dataset.i];
+      g.addEventListener('mousemove', e => showTip(e, r.tip));
+      g.addEventListener('mouseleave', hideTip);
+    });
+  }
+
+  // filas con dos barras horizontales
+  function barRows(id, rows, xmax){
+    const svg = document.getElementById(id);
+    const W = 720, L = 70, R = 60, rowH = 40, T = 6, B = 28, H = T + rows.length*rowH + B;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    const x = v => L + v / xmax * (W - L - R);
+    let o = '';
+    [0, 20, 40, 60].forEach(t => {
+      o += `<line x1="${x(t)}" x2="${x(t)}" y1="${T}" y2="${H-B}" stroke="${css('--grid')}"/>`;
+      o += `<text x="${x(t)}" y="${H-B+18}" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="${css('--muted')}">${t}%</text>`;
+    });
+    rows.forEach((r, i) => {
+      const y0 = T + i*rowH;
+      o += `<g class="row" data-i="${i}"><rect x="0" y="${y0}" width="${W}" height="${rowH}" fill="${css('--panel')}" fill-opacity="0"/>`;
+      o += `<text x="${L-12}" y="${y0+rowH/2+4}" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="13" fill="${css('--fg')}">${r.label}</text>`;
+      [['f', 6, '--s-flecha'], ['c', 20, '--s-control']].forEach(([k, dy, colr]) => {
+        const w = x(r[k]) - L;
+        o += `<rect x="${L}" y="${y0+dy}" width="${Math.max(1,w)}" height="12" rx="3" fill="${css(colr)}"/>`;
+        o += `<text x="${L+w+6}" y="${y0+dy+10}" font-family="IBM Plex Mono, monospace" font-size="11" fill="${css('--muted')}">${r[k].toFixed(1)}%</text>`;
+      });
+      o += `<line x1="${L}" x2="${L}" y1="${y0+3}" y2="${y0+rowH-3}" stroke="${css('--muted')}"/></g>`;
+    });
+    svg.innerHTML = o;
+    svg.querySelectorAll('.row').forEach(g => {
+      const r = rows[+g.dataset.i];
+      g.addEventListener('mousemove', e => showTip(e, r.tip));
+      g.addEventListener('mouseleave', hideTip);
+    });
+  }
+
+  function render(){
+    const tf = DATA.tf;
+    dotRows('c1', tf.map(r => ({
+      label: r.tf,
+      f: {v: r.f.resp, lo: r.f.ci[0], hi: r.f.ci[1], n: r.f.nreac},
+      c: {v: r.c.resp, lo: r.c.ci[0], hi: r.c.ci[1], n: r.c.nreac},
+      tip: `<b>${r.tf}</b><br>Flechas: ${r.f.resp}% respetado (${r.f.ci[0]}–${r.f.ci[1]}%) · ${r.f.nreac} tests${r.f.nreac < 30 ? ' · pocos casos' : ''}<br>Control: ${r.c.resp}% (${r.c.ci[0]}–${r.c.ci[1]}%) · ${r.c.nreac} tests<br>p = ${r.p}`
+    })), 0, 100, 50, [0, 25, 50, 75, 100]);
+    barRows('c2', tf.map(r => ({
+      label: r.tf, f: r.f.una, c: r.c.una,
+      tip: `<b>${r.tf}</b><br>Flechas: ${r.f.una}% en la vela siguiente · mediana ${r.f.mediana} velas (${fmtT(r.f.med_seg)})<br>Control: ${r.c.una}% · mediana ${r.c.mediana} velas (${fmtT(r.c.med_seg)})`
+    })), 60);
+    dotRows('c3', DATA.buck.map(b => ({
+      label: b.b + 'v',
+      f: {v: b.f.resp, lo: b.f.ci[0], hi: b.f.ci[1], n: b.f.n},
+      c: {v: b.c.resp, lo: b.c.ci[0], hi: b.c.ci[1], n: b.c.n},
+      tip: `<b>Test tras ${b.b} velas</b> (M1–H1)<br>Flechas: ${b.f.resp}% (${b.f.ci[0]}–${b.f.ci[1]}%) · ${b.f.n} tests · rebote/penetración ${b.f.ratio}<br>Control: ${b.c.resp}% · ${b.c.n} tests · ${b.c.ratio}`
+    })), 40, 60, 50, [40, 45, 50, 55, 60]);
+  }
+
+  // tabla
+  const th = ['TF','Niveles','Testeados','Pendientes','Mediana test','En 1 vela','Tests medidos','Respetado','Rango 95%','Rebote / penetr.','Control respetado','Control reb./pen.','p'];
+  let h = '<thead><tr>' + th.map(t => `<th>${t}</th>`).join('') + '</tr></thead><tbody>';
+  DATA.tf.forEach(r => {
+    h += `<tr><td>${r.tf}</td><td>${r.f.formados}</td><td>${r.f.testeados}%</td><td>${r.f.pendientes}</td><td>${r.f.mediana} v · ${fmtT(r.f.med_seg)}</td><td>${r.f.una}%</td><td>${r.f.nreac}</td><td>${r.f.resp}%</td><td class="sub">${r.f.ci[0]}–${r.f.ci[1]}%</td><td>${r.f.ratio}</td><td>${r.c.resp}%</td><td>${r.c.ratio}</td><td>${r.p}</td></tr>`;
+  });
+  document.getElementById('tab').innerHTML = h + '</tbody>';
+
+  render();
+  if (window.matchMedia) matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', render);
+  new MutationObserver(render).observe(document.documentElement, {attributes: true, attributeFilter: ['data-theme']});
+})();
+</script>
