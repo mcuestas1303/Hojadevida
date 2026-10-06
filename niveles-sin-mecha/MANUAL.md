@@ -14,7 +14,7 @@ niveles-sin-mecha/
 ├── REGLAMENTO.md                     ← reglas obligatorias de operativa (scalping e intradía)
 ├── MT5/
 │   ├── Indicators/
-│   │   └── OpenCloseExtremos.mq5     ← indicador: flechas, panel de % y líneas de niveles
+│   │   └── OpenCloseExtremos.mq5     ← indicador v1.30: flechas, panel de % y líneas de niveles
 │   └── Scripts/
 │       ├── EstadisticasNiveles.mq5   ← estadísticas, reacción medida en M1
 │       ├── EstadisticasNivelesH1.mq5 ← estadísticas, reacción medida en H1
@@ -55,7 +55,7 @@ Las carpetas `MT5/Indicators` y `MT5/Scripts` tienen el mismo nombre que las de 
 
 ---
 
-## 3. Indicador OpenCloseExtremos (v1.20)
+## 3. Indicador OpenCloseExtremos (v1.30)
 
 ### 3.1 Las flechas
 
@@ -77,6 +77,16 @@ Desde cada flecha **verde** o **roja** sale una línea punteada fina en el extre
 - Al pasar el ratón por encima se ve el tipo, el precio, la hora y si está testeado.
 
 Por defecto solo se dibujan los niveles de **apertura**. Los de cierre (naranja y azul) casi siempre quedan testeados en la vela siguiente, porque esta abre pegada al cierre anterior.
+
+#### Quitar líneas que ya no quieres ver
+
+- **Ocultar una línea a mano:** haz clic sobre ella para seleccionarla y pulsa **Supr**. También puedes borrarla desde la lista de objetos (**Ctrl+B**). El indicador lo registra en la vela siguiente y no la vuelve a dibujar, ni siquiera al reiniciar MetaTrader. Lo guarda en las variables globales del terminal (F3), con nombres que empiezan por `OCE_O_`. MetaTrader borra las variables que no se usan en 4 semanas, y el indicador las renueva cada vez que las consulta.
+- **Restaurar:** si hay líneas ocultas del símbolo, aparece abajo a la izquierda el botón **«Restaurar niveles ocultos (N)»**. Al pulsarlo vuelven todas.
+- **Cuidado:** si usas «Borrar todos los objetos» del gráfico, todas las líneas visibles quedan ocultas. Se recuperan con el botón.
+- **Filtrar por dirección:** solo verdes (niveles en mínimos) o solo rojas (niveles en máximos).
+- **Filtrar por sesión** en la que nació la vela, en hora del servidor: Asia 01–10 h, Londres 10–15 h, Londres+NY 15–19 h y NY tarde 19–24 h. Por ejemplo, ver solo los niveles nacidos en NY, que son los que más quedan abiertos (sección 5.2).
+- **Testeados temporales:** con «Ocultar testeados tras N velas» mayor que 0, las líneas testeadas desaparecen pasadas N velas del gráfico desde el test.
+- **Niveles de otra temporalidad:** con «Temporalidad de los niveles» puedes ver, por ejemplo, en un gráfico M1 solo los niveles de H1 o H4. Las flechas siguen siendo las de la temporalidad del gráfico. En ese caso, «Velas a revisar para niveles» cuenta velas de la temporalidad elegida.
 
 ### 3.3 Panel de porcentajes
 
@@ -103,6 +113,12 @@ Se puede desactivar.
 | Mantener niveles testeados | Sí | Si lo desactivas, solo quedan los pendientes |
 | Velas a revisar para niveles | 500 | Hasta cuántas velas atrás busca niveles |
 | Colores de niveles (3) | Verde, rojo y gris apagados | Pendiente en mínimo / pendiente en máximo / testeado |
+| Temporalidad de los niveles | La del gráfico | De qué temporalidad salen los niveles (por ejemplo H1 en un gráfico M1) |
+| Dirección de los niveles | Ambas | Ambas / solo verdes / solo rojas |
+| Niveles nacidos en Asia / Londres / Londres+NY / NY tarde | Sí (las 4) | Filtro por la sesión en que nació la vela |
+| Ocultar testeados tras N velas | 0 | 0 = nunca; N = las testeadas desaparecen pasadas N velas |
+| Permitir ocultar líneas a mano | Sí | Hace las líneas seleccionables y recuerda las que borras |
+| Botón para restaurar niveles ocultos | Sí | Muestra el botón «Restaurar niveles ocultos (N)» |
 
 **Notificaciones push al móvil:** en la app ve a *Ajustes → Mensajes* y copia tu **MetaQuotes ID**. En el PC ve a *Herramientas → Opciones → Notificaciones*, actívalas, pega el ID y pulsa «Prueba». Después activa «Notificación push» en el indicador.
 
@@ -384,6 +400,7 @@ Es un **modelo simplificado con números inventados**, no datos reales.
 | 2026-10-06 | Indicador v1.00: cuatro flechas y alertas |
 | 2026-10-06 | Indicador v1.10: panel de porcentajes |
 | 2026-10-06 | Indicador v1.20: líneas punteadas de niveles sin mecha |
+| 2026-10-07 | Indicador v1.30: ocultar líneas a mano (persistente) con botón de restaurar, filtros por dirección y sesión, testeados temporales y niveles de otra temporalidad |
 | 2026-10-06 | Script EstadisticasNiveles (M1) y primera página de resultados de XAUUSD |
 | 2026-10-06 | Script EstadisticasNivelesH1 |
 | 2026-10-06 | Resultados H1 de XAUUSD añadidos a la página y al manual |
