@@ -224,6 +224,37 @@ Sesiones en hora del servidor de IC Markets, que es siempre la hora de Nueva Yor
 6. Se forman más flechas en las horas de poca liquidez (01–02 h y 23 h: ~10–12% de las velas M1/M5) que en el solapamiento Londres+NY (16–18 h: ~5–6%), como predice la teoría de los ticks.
 7. La reacción tras el test no cambia por sesión: ronda el 49–52% en todas, igual que el control.
 
+### 5.3 ¿A qué hora se forman más y menos marubozus?
+
+% de velas que son flecha verde o roja (sin mecha en la apertura), por hora. Las marubozus completas no se pueden contar con los archivos de los scripts.
+
+**Conversión de horas.** El servidor de IC Markets es la hora de Nueva York + 7 y cambia con el horario de verano de EE. UU. El Salvador está en UTC-6 todo el año:
+- De mediados de marzo al primer domingo de noviembre: **El Salvador = servidor − 9 h**.
+- De noviembre a mediados de marzo: **El Salvador = servidor − 8 h**.
+
+**Franjas con menos marubozus:**
+
+| Sesión | Servidor | Nueva York | El Salvador (mar–nov) | El Salvador (nov–mar) | Qué tan claro es |
+|---|---|---|---|---|---|
+| Asia | 04:00–06:00 | 21:00–23:00 | **19:00–21:00** (noche anterior) | 20:00–22:00 | Claro |
+| Asia (secundaria) | 08:00–10:00 | 01:00–03:00 | 23:00–01:00 | 00:00–02:00 | Moderado |
+| Londres | 11:00–14:00 | 04:00–07:00 | **02:00–05:00** | 03:00–06:00 | Débil, Londres es plana |
+| Londres+NY | 16:00–19:00 | 09:00–12:00 | **07:00–10:00** | 08:00–11:00 | Muy claro |
+| ↳ Mínimo del día | 16:00–17:00 | 09:00–10:00 | **07:00–08:00** | 08:00–09:00 | M1 7%, H1 1,9% |
+| ↳ Excepción vela H1 | 17:00–18:00 | 10:00–11:00 | 08:00–09:00 | 09:00–10:00 | H1 sube a 5,2% |
+| NY tarde | 19:00–21:00 | 12:00–14:00 | **10:00–12:00** | 11:00–13:00 | Claro |
+
+**Franjas con más marubozus:**
+
+| Momento | Servidor | El Salvador (mar–nov) | El Salvador (nov–mar) |
+|---|---|---|---|
+| Reapertura tras el corte diario | 01:00–03:00 | 16:00–18:00 | 17:00–19:00 |
+| Antes del corte diario | 23:00–24:00 | 14:00–15:00 | 15:00–16:00 |
+
+**Por qué.** Con menos liquidez hay menos ticks en la vela, y es más probable que la apertura quede en un extremo. En la reapertura, el primer tick tras el corte diario puede llegar con hueco. La excepción de la vela H1 de las 17:00 h coincide con la apertura de la bolsa de Nueva York y con datos económicos de EE. UU.: es una interpretación, no comprobada con datos de noticias.
+
+**Límites.** Los datos de M1 cubren solo 7 semanas; M15 (desde 2024) y H1 (desde 2018) confirman el patrón. En las semanas de marzo y octubre-noviembre en que Londres y Nueva York cambian de horario en fechas distintas, las franjas de Londres se desplazan una hora.
+
 ---
 
 ## 6. Simulador de ticks y velas
@@ -276,3 +307,4 @@ Es un **modelo simplificado con números inventados**, no datos reales.
 | 2026-10-06 | Script EstadisticasNivelesH1 |
 | 2026-10-06 | Resultados H1 de XAUUSD añadidos a la página y al manual |
 | 2026-10-06 | Análisis por sesión añadido a la página y al manual |
+| 2026-10-06 | Franjas horarias con más y menos marubozus, con hora de El Salvador |
