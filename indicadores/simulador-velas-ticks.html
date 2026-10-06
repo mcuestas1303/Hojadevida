@@ -61,7 +61,30 @@ svg{display:block;width:100%;height:auto}
 .legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.78rem;color:var(--muted)}
 .legend i{display:inline-block;width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;margin-right:5px;vertical-align:middle}
 .dn{border-top:9px solid} .upa{border-bottom:9px solid}
-.counters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.counters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+@media (max-width:620px){.counters{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.grp{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:4px}
+button .dot{display:inline-block;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;margin-right:6px;vertical-align:middle}
+.explain{display:flex;flex-direction:column;gap:14px}
+.explain p{margin:0;max-width:75ch}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:860px){.cards{grid-template-columns:1fr}}
+.card{border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.card h3{font-family:var(--display);font-size:1.05rem;margin:0}
+.card .goal{font-size:.8rem;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.card ul,.mech ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.mech{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:860px){.mech{grid-template-columns:1fr}}
+.mech > div{border-left:3px solid var(--line);padding:2px 0 2px 12px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.mech h3{font-family:var(--display);font-size:1rem;margin:0}
+.tag{font-family:var(--mono);font-size:.68rem;padding:1px 7px;border-radius:10px;align-self:flex-start}
+.tag.doc{background:var(--up-soft);color:var(--up)}
+.tag.mine{background:var(--gold-soft);color:var(--gold)}
+.tag.no{background:var(--down-soft);color:var(--down)}
+.mech > div.k-doc{border-left-color:var(--up)} .mech > div.k-mine{border-left-color:var(--gold)} .mech > div.k-no{border-left-color:var(--down)}
+.src{font-size:.8rem;color:var(--muted)}
+.src a{color:var(--gold)}
+.src ul{margin:4px 0 0;padding-left:18px}
 .ctr{border:1px solid var(--line);border-radius:6px;padding:8px 10px}
 .ctr b{display:block;font-family:var(--mono);font-size:1.35rem;font-variant-numeric:tabular-nums}
 .ctr small{color:var(--muted);font-size:.74rem;line-height:1.25;display:block}
@@ -130,8 +153,9 @@ tr.new{animation:flash 1s ease-out}
         <div class="ctr"><b id="cTicks">0</b><small>Ticks (volumen de ticks de la vela)</small></div>
         <div class="ctr"><b id="cBid">0</b><small>Ticks que movieron el Bid, los que dibujan la vela</small></div>
         <div class="ctr"><b id="cTrades">0</b><small>Operaciones ejecutadas, que MetaTrader no te muestra</small></div>
+        <div class="ctr"><b id="cInv">0</b><small>Inventario del proveedor en lotes (negativo = vendió de más)</small></div>
       </div>
-      <div class="narr" id="narr" aria-live="polite"><strong>Empieza aquí:</strong> pulsa «Orden de compra» con 3 lotes. Verás que primero se agota la oferta del Ask y después el proveedor sube su Bid. Solo en ese momento se mueve la vela.</div>
+      <div class="narr" id="narr" aria-live="polite"><strong>Empieza aquí:</strong> prueba los escenarios de las 4 flechas o pulsa «Orden de compra» con 3 lotes. Verás que primero se agota la oferta del Ask y después el proveedor sube su Bid. Solo en ese momento se mueve la vela.</div>
     </section>
 
     <section class="panel" aria-labelledby="h-ctl">
@@ -146,9 +170,19 @@ tr.new{animation:flash 1s ease-out}
         <button class="primary" id="bNew"><b>Cerrar vela y abrir la siguiente</b><small>Llega el primer tick del nuevo minuto</small></button>
       </div>
       <h2 style="margin-top:6px">Escenarios guiados</h2>
+      <div class="grp">Las 4 flechas del indicador</div>
       <div class="btns">
-        <button id="s1"><b>Compras empujan la vela</b><small>Vela alcista con Apertura = Mínimo</small></button>
-        <button id="s2"><b>Apertura = Máximo</b><small>El primer precio del minuto fue el más alto</small></button>
+        <button id="sOH"><b><i class="dot" style="border-top:8px solid var(--ind-oh)"></i>Apertura = Máximo</b><small>Ventas desde el primer tick</small></button>
+        <button id="sCH"><b><i class="dot" style="border-top:8px solid var(--ind-ch)"></i>Cierre = Máximo</b><small>Las compras ganan al final del minuto</small></button>
+        <button id="sOL"><b><i class="dot" style="border-bottom:8px solid var(--ind-ol)"></i>Apertura = Mínimo</b><small>Compras desde el primer tick</small></button>
+        <button id="sCL"><b><i class="dot" style="border-bottom:8px solid var(--ind-cl)"></i>Cierre = Mínimo</b><small>Las ventas ganan al final del minuto</small></button>
+      </div>
+      <div class="grp">Marubozu y regreso</div>
+      <div class="btns">
+        <button id="sMB"><b>Un fondo compra con prisa</b><small>Marubozu, inventario y regreso al cuerpo</small></button>
+      </div>
+      <div class="grp">Mecánica de los ticks</div>
+      <div class="btns">
         <button id="s3"><b>Operación sin tick</b><small>Alguien compra y la vela no se mueve</small></button>
         <button id="s4"><b>Tick sin operación</b><small>La vela salta sin que nadie opere</small></button>
       </div>
@@ -162,6 +196,89 @@ tr.new{animation:flash 1s ease-out}
         <thead><tr><th>Hora</th><th>Bid</th><th>Ask</th><th>Qué cambió</th><th>Por qué</th><th>¿Mueve la vela?</th></tr></thead>
         <tbody id="log"></tbody>
       </table>
+    </div>
+  </section>
+
+  <section class="panel explain" aria-labelledby="h-who">
+    <h2 id="h-who">Quién persigue qué</h2>
+    <p>Detrás de cada vela hay participantes con objetivos distintos. Entender qué busca cada uno explica por qué la pizarra se mueve como se mueve.</p>
+    <div class="cards">
+      <div class="card">
+        <span class="goal">Proveedor de liquidez</span>
+        <h3>Ganar el spread sin quedarse con posición</h3>
+        <ul>
+          <li>Gana la diferencia entre Bid y Ask cuando le compran y le venden por igual.</li>
+          <li><b>Riesgo de inventario:</b> si el flujo va en un solo sentido, acumula una posición que no quiere. Para corregirla <b>sesga sus precios</b> en contra de esa posición.</li>
+          <li><b>Selección adversa:</b> pierde cuando opera contra alguien mejor informado, por eso amplía el spread cuando sospecha que el flujo trae información.</li>
+          <li>No le interesa la dirección del precio: quiere un flujo equilibrado.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="goal">Fondos e institucionales</span>
+        <h3>Ejecutar órdenes grandes al menor costo</h3>
+        <ul>
+          <li>Mueven tamaños que la pizarra no puede absorber de una vez. A esa orden grande, repartida en muchas pequeñas, se le llama <b>metaorden</b>.</li>
+          <li>Su costo principal es el <b>impacto de mercado</b>: cuanto más rápido compran, más se comen la pizarra y peor precio pagan.</li>
+          <li>Equilibran dos riesgos: ir despacio (y que el precio se les escape) o ir rápido (y pagar más impacto). Con prisa, aceptan impacto y aparecen velas de cuerpo grande.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="goal">Retail (tú)</span>
+        <h3>Sobrevivir a los costos y medir antes de arriesgar</h3>
+        <ul>
+          <li>Eres tomador de precio: pagas el spread en cada operación y no ves ni la profundidad ni las operaciones reales.</li>
+          <li>No compites en velocidad ni en información. Por lo general, lo razonable es controlar costos (evitar spreads amplios y horas de poca liquidez) y no entrar justo cuando el impacto temporal está en su punto máximo.</li>
+          <li>Ante todo, <b>comprobar con datos</b> si un patrón funciona antes de arriesgar dinero en él, y gestionar el riesgo de cada operación. Esto es orientación general, no una recomendación de inversión.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel explain" aria-labelledby="h-why">
+    <h2 id="h-why">¿Por qué el precio tiende a volver a una marubozu?</h2>
+    <p>Tu observación es que el precio tiende a regresar a la zona de una vela marubozu <b>que todavía no ha sido testeada</b>, es decir, cuyo rango el precio no ha vuelto a tocar. Estos son los mecanismos que pueden explicarlo. Cada uno lleva su etiqueta: <span class="tag doc">documentado</span> si está respaldado por investigación, <span class="tag mine">interpretación</span> si es una aplicación o hipótesis mía, y <span class="tag no">no aplica</span> si no explica tu caso. Pulsa «Un fondo compra con prisa» para verlo en el simulador.</p>
+    <div class="mech">
+      <div class="k-doc">
+        <span class="tag doc">documentado</span>
+        <h3>Parte del impacto es temporal</h3>
+        <p>Los estudios sobre metaórdenes encuentran que, cuando una orden grande termina de ejecutarse, el precio <b>se relaja desde su pico</b> y se estabiliza en un nivel intermedio: una parte del impacto era temporal y otra es permanente. En velas: la marubozu es el impacto en caliente y el regreso es la parte temporal que se deshace.</p>
+      </div>
+      <div class="k-doc">
+        <span class="tag doc">documentado</span> <span class="tag mine">aplicación</span>
+        <h3>El inventario del proveedor</h3>
+        <p>Los modelos de creadores de mercado describen que, cuando el flujo los deja con una posición no deseada, <b>sesgan sus precios</b> para deshacerse de ella. Aplicado a tu caso: tras una marubozu alcista el proveedor quedó vendido, así que baja sus precios para recomprar. Eso empuja el Bid, y con él la vela, de vuelta hacia el cuerpo.</p>
+      </div>
+      <div class="k-mine">
+        <span class="tag mine">interpretación</span>
+        <h3>Por qué importa que no esté testeada</h3>
+        <p>Si el regreso se debe al impacto temporal y al inventario del proveedor, ese «trabajo pendiente» se resuelve <b>la primera vez</b> que el precio vuelve: el proveedor recompra y la parte temporal se deshace. Después de ese primer test queda menos motivo para volver, lo que encajaría con que solo las marubozus no testeadas atraigan al precio. Muchos traders llaman a estas zonas «desequilibrio» o «hueco de valor justo». No encontré estudios que lo validen como regla, así que es una hipótesis para comprobar.</p>
+      </div>
+      <div class="k-doc">
+        <span class="tag doc">documentado</span>
+        <h3>Ojo: volver es lo normal</h3>
+        <p>Un camino aleatorio de una dimensión <b>vuelve con probabilidad 1</b> a cualquier nivel cercano tarde o temprano (teorema de Pólya). Además, «no testeada» es una condición que desaparece en cuanto el precio vuelve: si esperas lo suficiente, casi todas acaban testeadas. Por tanto, que el precio regrese no prueba nada por sí solo. Lo que importa es si regresa <b>más a menudo o más rápido</b> que a una vela normal no testeada del mismo tamaño.</p>
+      </div>
+      <div class="k-no">
+        <span class="tag no">no aplica</span>
+        <h3>El rebote entre Bid y Ask</h3>
+        <p>Existe un efecto conocido (Roll, 1984) por el que los precios de las operaciones alternan entre Bid y Ask y parecen revertir. Pero tu vela se dibuja <b>solo con el Bid</b>, así que este rebote no explica tu observación.</p>
+      </div>
+      <div class="k-mine">
+        <span class="tag mine">cómo comprobarlo</span>
+        <h3>Medirlo en tu propio gráfico</h3>
+        <p>Para cada marubozu del historial, mide cuántas velas tarda el precio en tocar su rango por primera vez (y cuántas no lo tocan en N velas). Haz lo mismo con velas normales del mismo rango y compara. Si las marubozus se testean claramente antes, y eso se mantiene en distintos meses, tu observación tiene base. Si no, era el efecto de «volver es lo normal».</p>
+      </div>
+    </div>
+    <div class="src">Fuentes:
+      <ul>
+        <li><a href="https://t4awstest.cc.ic.ac.uk/media/imperial-college/research-centres-and-groups/cfm-imperial-institute-of-quantitative-finance/events/Lillo-Imperial-Lecture3.pdf">Lillo, Market impact models and optimal execution (relajación del impacto tras una metaorden)</a></li>
+        <li><a href="https://arxiv.org/html/1412.0141">A fully consistent, minimal model for non-linear market impact (decaimiento del impacto)</a></li>
+        <li><a href="https://arxiv.org/html/2508.20225v2">Optimal Quoting under Adverse Selection and Price Reading (inventario, sesgo de precios, Ho-Stoll)</a></li>
+        <li><a href="https://arxiv.org/html/2508.16588v1">Robust Market Making (riesgo de inventario, Glosten-Milgrom)</a></li>
+        <li><a href="https://questdb.com/glossary/optimal-execution-strategies-almgren-chriss-model/">Modelo Almgren-Chriss de ejecución óptima (impacto temporal y permanente)</a></li>
+        <li><a href="https://arxiv.org/pdf/1010.2014">Recurrence and Pólya number of general one-dimensional random walks</a></li>
+        <li><a href="https://metricgate.com/docs/roll-effective-spread/">Roll (1984), rebote bid-ask</a></li>
+      </ul>
     </div>
   </section>
 
@@ -182,7 +299,7 @@ tr.new{animation:flash 1s ease-out}
   let bid = 2650.00, asks = [], bids = [];
   let minute = 1, sec = 0;
   let candle = null, history = [];
-  let nTicks = 0, nBidTicks = 0, nTrades = 0;
+  let nTicks = 0, nBidTicks = 0, nTrades = 0, inv = 0;
   let hitSide = null, hitIdx = -1;
   let busy = false;
 
@@ -229,7 +346,7 @@ tr.new{animation:flash 1s ease-out}
   }
 
   async function marketBuy(size){
-    nTrades++;
+    nTrades++; inv -= size;
     let rem = size, moved = false;
     narr(`<strong>Orden de compra de ${size} lote(s).</strong> Se ejecuta contra las ofertas de venta más baratas (Ask).`);
     while (rem > 0){
@@ -260,7 +377,7 @@ tr.new{animation:flash 1s ease-out}
   }
 
   async function marketSell(size){
-    nTrades++;
+    nTrades++; inv += size;
     let rem = size, moved = false;
     narr(`<strong>Orden de venta de ${size} lote(s).</strong> Se ejecuta contra las ofertas de compra más altas (Bid).`);
     while (rem > 0){
@@ -325,22 +442,53 @@ tr.new{animation:flash 1s ease-out}
   async function scenario(steps){
     for (const st of steps){ await st(); await sleep(DELAY); }
   }
+  const setAsks = arr => { arr.forEach((v,i) => { if (asks[i]) asks[i].s = v; }); render(); };
+  const setBids = arr => { arr.forEach((v,i) => { if (bids[i]) bids[i].s = v; }); render(); };
+  async function skew(delta, why){
+    repriceBids(r2(bids[0].p + delta));
+    repriceAsks(r2(bids[0].p + SPREAD));
+    tick(true, true, why);
+  }
   const S = {
-    s1: () => scenario([
+    sOH: () => scenario([
       async () => newCandle(),
-      async () => marketBuy(5),
-      async () => marketBuy(6),
-      async () => { bids[0].s = 6; render(); await marketSell(1); },
-      async () => marketBuy(6),
-      async () => narr(`<strong>Resultado:</strong> las compras se comieron una oferta tras otra y el Bid fue subiendo detrás. El precio nunca bajó del primer tick, así que la vela es alcista con <b>Apertura = Mínimo</b> (flecha verde).`)
+      async () => { setBids([2,2,2,4,4,4]); await marketSell(6); },
+      async () => { setAsks([2,4,4,4,4,4]); await marketBuy(2); },
+      async () => narr(`<strong>Apertura = Máximo (flecha roja).</strong> Desde el primer tick (${f2(candle.o)}) dominaron las ventas y el Bid bajó tres niveles. Una compra pequeña lo hizo rebotar, pero no llegó al precio de apertura. <b>El primer precio del minuto quedó como el más alto.</b>`)
     ]),
-    s2: () => scenario([
+    sCH: () => scenario([
       async () => newCandle(),
-      async () => marketSell(5),
-      async () => marketSell(5),
-      async () => { asks[0].s = 5; render(); await marketBuy(2); },
-      async () => marketSell(6),
-      async () => narr(`<strong>Resultado:</strong> el primer tick (${f2(candle.o)}) fue el precio más alto del minuto. Las ventas bajaron el Bid y la pequeña compra no llegó a superarlo: <b>Apertura = Máximo</b> (flecha roja). No es que «el primero que compró pagó lo más caro», sino que el primer precio ofrecido fue el más alto.`)
+      async () => { setBids([4,4,4,4,4,4]); await marketSell(4); },
+      async () => { setAsks([2,2,2,4,4,4]); await marketBuy(6); },
+      async () => narr(`<strong>Cierre = Máximo (flecha naranja).</strong> El minuto empezó con ventas y bajó por debajo de la apertura. Al final una compra se comió tres niveles del Ask y el proveedor subió su Bid. <b>Ese último tick fue el más alto del minuto</b> y ya no llegó ningún tick que lo bajara antes del cierre.`)
+    ]),
+    sOL: () => scenario([
+      async () => newCandle(),
+      async () => { setAsks([2,2,2,4,4,4]); await marketBuy(6); },
+      async () => { setBids([2,4,4,4,4,4]); await marketSell(2); },
+      async () => narr(`<strong>Apertura = Mínimo (flecha verde).</strong> Desde el primer tick dominaron las compras y el Bid subió tres niveles. Una venta lo hizo retroceder un poco, pero nunca por debajo de ${f2(candle.o)}. <b>El primer precio del minuto quedó como el más bajo.</b>`)
+    ]),
+    sCL: () => scenario([
+      async () => newCandle(),
+      async () => { setAsks([2,4,4,4,4,4]); await marketBuy(2); },
+      async () => { setBids([2,2,2,4,4,4]); await marketSell(6); },
+      async () => narr(`<strong>Cierre = Mínimo (flecha azul).</strong> Primero hubo una compra pequeña. Después, al final del minuto, una venta se comió tres niveles del Bid. El último tick que movió el Bid fue el más bajo, y el tick posterior solo cambió el Ask, así que <b>la vela cerró en su mínimo</b>.`)
+    ]),
+    sMB: () => scenario([
+      async () => { inv = 0; newCandle(); },
+      async () => narr(`<strong>Un fondo necesita comprar 24 lotes y tiene prisa</strong>, por ejemplo por una noticia o una orden de un cliente. En vez de repartir la compra durante horas, la ejecuta en un minuto y acepta pagar el impacto.`),
+      async () => { setAsks([3,3,3,3,3,3]); await marketBuy(6); },
+      async () => { setAsks([3,3,3,3,3,3]); await marketBuy(6); },
+      async () => { setAsks([3,3,3,3,3,3]); await marketBuy(6); },
+      async () => { setAsks([3,3,3,3,3,3]); await marketBuy(6); },
+      async () => narr(`<strong>Marubozu alcista.</strong> Abrió en su mínimo y cerró en su máximo (flechas verde y naranja). Fíjate en el inventario: <b>el proveedor vendió 24 lotes que no quería vender</b> y ahora está corto. Si el oro sigue subiendo, pierde.`),
+      async () => newCandle(),
+      async () => skew(-0.05, 'El proveedor sesga sus precios a la baja para reducir su posición corta'),
+      async () => narr(`<strong>Sesgo por inventario.</strong> Para equilibrar su posición, el proveedor baja un poco sus precios: así compra más barato a quien quiera vender y desanima a nuevos compradores. Este tick mueve la vela aunque nadie haya operado.`),
+      async () => { setBids([2,4,4,4,4,4]); await marketSell(2); },
+      async () => skew(-0.05, 'Sigue sesgando: todavía está corto'),
+      async () => { setBids([2,2,4,4,4,4]); await marketSell(4); },
+      async () => narr(`<strong>El precio volvió a entrar en el cuerpo de la marubozu.</strong> El fondo ya terminó de comprar, así que una parte del impacto era temporal y se está deshaciendo. Los que venden (por ejemplo, para recoger ganancias) encuentran un proveedor dispuesto a recomprar. <b>Es una tendencia, no una garantía:</b> si el fondo tenía información real, parte del movimiento es permanente y el precio puede no volver.`)
     ]),
     s3: () => scenario([
       async () => newCandle(),
@@ -431,6 +579,8 @@ tr.new{animation:flash 1s ease-out}
     $('cTicks').textContent = nTicks;
     $('cBid').textContent = nBidTicks;
     $('cTrades').textContent = nTrades;
+    const ci = $('cInv'); ci.textContent = (inv > 0 ? '+' : '') + inv;
+    ci.style.color = inv < 0 ? 'var(--down)' : inv > 0 ? 'var(--up)' : '';
     $('clock').textContent = candle ? `11:${String(minute).padStart(2,'0')}` : '';
   }
 
@@ -449,7 +599,7 @@ tr.new{animation:flash 1s ease-out}
   $('bNewsDn').onclick = () => run(() => news(-1));
   $('bAsk').onclick = () => run(askOnly);
   $('bNew').onclick = () => run(async () => newCandle());
-  ['s1','s2','s3','s4'].forEach(k => $(k).onclick = () => run(S[k]));
+  ['sOH','sCH','sOL','sCL','sMB','s3','s4'].forEach(k => $(k).onclick = () => run(S[k]));
   if (window.matchMedia) matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', render);
   new MutationObserver(render).observe(document.documentElement, {attributes:true, attributeFilter:['data-theme']});
 
