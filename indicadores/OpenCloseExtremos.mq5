@@ -7,7 +7,7 @@
 //|  ▲ verde/azul bajo la vela    : Apertura/Cierre = Mínimo         |
 //+------------------------------------------------------------------+
 #property copyright "OpenCloseExtremos"
-#property version   "1.00"
+#property version   "1.10"
 #property indicator_chart_window
 #property indicator_buffers 4
 #property indicator_plots   4
@@ -42,6 +42,8 @@ input bool   InpAlertaPopup      = false; // Alerta emergente al cerrar la vela
 input bool   InpAlertaPush       = false; // Notificación push al móvil
 input bool   InpAlertaSonido     = false; // Sonido
 input string InpArchivoSonido    = "alert.wav";
+input bool   InpMostrarEstadistica = true;  // Mostrar panel de porcentajes
+input int    InpBarrasEstadistica  = 1000;  // Velas cerradas a analizar (0 = todas)
 
 //--- buffers
 double BufOpenHigh[];
@@ -51,6 +53,8 @@ double BufCloseLow[];
 
 double   g_tol;
 datetime g_ultimaAlerta = 0;
+datetime g_ultimaEstadistica = 0;
+double   g_tablaTeorica[201];
 
 //+------------------------------------------------------------------+
 int OnInit()
@@ -79,6 +83,7 @@ int OnInit()
 
    IndicatorSetString(INDICATOR_SHORTNAME, "OpenCloseExtremos");
    IndicatorSetInteger(INDICATOR_DIGITS, _Digits);
+   PrepararTablaTeorica();
    return(INIT_SUCCEEDED);
   }
 
@@ -105,6 +110,84 @@ void Evaluar(const int i, const double &open[], const double &high[],
    if(InpMarcarCierre   && Igual(close[i], high[i])) BufCloseHigh[i] = high[i];
    if(InpMarcarApertura && Igual(open[i],  low[i]))  BufOpenLow[i]   = low[i];
    if(InpMarcarCierre   && Igual(close[i], low[i]))  BufCloseLow[i]  = low[i];
+  }
+
+//+------------------------------------------------------------------+
+//| Referencia teórica (teorema de Sparre Andersen): en un camino    |
+//| aleatorio simétrico de m pasos, la probabilidad de que ningún    |
+//| paso supere al punto inicial es C(2m,m)/4^m ~ 1/sqrt(pi*m).      |
+//| Con n ticks en la vela hay m = n-1 pasos.                         |
+//+------------------------------------------------------------------+
+void PrepararTablaTeorica()
+  {
+   g_tablaTeorica[0] = 1.0;
+   for(int k = 1; k <= 200; k++)
+      g_tablaTeorica[k] = g_tablaTeorica[k - 1] * (2.0 * k - 1.0) / (2.0 * k);
+  }
+
+double ProbTeorica(const long ticks)
+  {
+   long m = ticks - 1;
+   if(m <= 0)   return(1.0);
+   if(m <= 200) return(g_tablaTeorica[(int)m]);
+   return(1.0 / MathSqrt(M_PI * (double)m));
+  }
+
+//+------------------------------------------------------------------+
+//| Acumuladores del panel de estadística                            |
+//+------------------------------------------------------------------+
+int    st_n, st_oh, st_ch, st_ol, st_cl, st_alguna;
+double st_ticks, st_ticksMarc, st_ticksNo, st_teo;
+
+void EstadisticaReset()
+  {
+   st_n = st_oh = st_ch = st_ol = st_cl = st_alguna = 0;
+   st_ticks = st_ticksMarc = st_ticksNo = st_teo = 0.0;
+  }
+
+void EstadisticaSumar(const double o, const double h, const double l,
+                      const double c, const long tv)
+  {
+   if(Igual(h, l))   // vela sin rango: no cuenta
+      return;
+   bool oh = Igual(o, h), ch = Igual(c, h), ol = Igual(o, l), cl = Igual(c, l);
+   st_n++;
+   if(oh) st_oh++;
+   if(ch) st_ch++;
+   if(ol) st_ol++;
+   if(cl) st_cl++;
+   st_ticks += (double)tv;
+   st_teo   += ProbTeorica(tv);
+   if(oh || ch || ol || cl) { st_alguna++; st_ticksMarc += (double)tv; }
+   else                       st_ticksNo += (double)tv;
+  }
+
+string Pct(const int x)
+  {
+   return(StringFormat("%5.1f%%  (%d)", 100.0 * x / MathMax(st_n, 1), x));
+  }
+
+void EstadisticaMostrar()
+  {
+   int sinMarca = st_n - st_alguna;
+   string t = StringFormat("OpenCloseExtremos  |  %s  |  %d velas cerradas analizadas\n", _Symbol, st_n);
+   t += "Apertura = Máximo :  " + Pct(st_oh) + "\n";
+   t += "Cierre   = Máximo :  " + Pct(st_ch) + "\n";
+   t += "Apertura = Mínimo :  " + Pct(st_ol) + "\n";
+   t += "Cierre   = Mínimo :  " + Pct(st_cl) + "\n";
+   t += "Al menos un caso  :  " + Pct(st_alguna) + "\n";
+   t += StringFormat("Ticks promedio por vela: %.1f   (marcadas: %.1f  |  sin marca: %.1f)\n",
+                     st_ticks / MathMax(st_n, 1),
+                     st_ticksMarc / MathMax(st_alguna, 1),
+                     st_ticksNo / MathMax(sinMarca, 1));
+   t += StringFormat("Referencia modelo aleatorio, por caso: %.1f%%", 100.0 * st_teo / MathMax(st_n, 1));
+   Comment(t);
+  }
+
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+  {
+   Comment("");
   }
 
 //+------------------------------------------------------------------+
@@ -158,6 +241,18 @@ int OnCalculate(const int rates_total,
          if(InpAlertaSonido) PlaySound(InpArchivoSonido);
         }
       g_ultimaAlerta = time[c];
+     }
+
+   //--- panel de estadística (se recalcula una vez por vela nueva)
+   if(InpMostrarEstadistica && (prev_calculated == 0 || time[rates_total - 1] != g_ultimaEstadistica))
+     {
+      int hasta = rates_total - 2;   // última vela cerrada
+      int desde = (InpBarrasEstadistica > 0) ? MathMax(0, hasta - InpBarrasEstadistica + 1) : 0;
+      EstadisticaReset();
+      for(int k = desde; k <= hasta; k++)
+         EstadisticaSumar(open[k], high[k], low[k], close[k], tick_volume[k]);
+      EstadisticaMostrar();
+      g_ultimaEstadistica = time[rates_total - 1];
      }
 
    return(rates_total);

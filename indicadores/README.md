@@ -23,3 +23,8 @@ temporalidad (p. ej. XAUUSD M1 en IC Markets).
 - **Marcar Apertura / Cierre**: activar cada condición por separado.
 - **Marcar vela en formación**: por defecto sólo se marcan velas cerradas.
 - **Alertas**: emergente, push al móvil y/o sonido cuando cierra una vela que cumple.
+- **Mostrar panel de porcentajes** (activado por defecto): muestra en la esquina superior
+  izquierda qué % de las velas cerradas cumple cada caso, el promedio de ticks de las velas
+  marcadas frente a las no marcadas, y la referencia teórica de un movimiento aleatorio
+  (teorema de Sparre Andersen: C(2m,m)/4^m ≈ 1/√(π·m) con m = ticks − 1).
+- **Velas cerradas a analizar**: cuántas velas usa el panel (0 = todo el historial cargado).
