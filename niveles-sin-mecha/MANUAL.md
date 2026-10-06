@@ -204,6 +204,26 @@ Cada flecha se compara con el control de **su misma dirección**: la tendencia a
 5. El tiempo que el nivel estuvo pendiente no mejora la reacción.
 6. Para confirmar o descartar el indicio de las verdes en H4 y D1 hace falta probarlo en otro activo o con datos futuros.
 
+### 5.2 Por sesión (datos del script M1, temporalidades M1 a H1)
+
+Sesiones en hora del servidor de IC Markets, que es siempre la hora de Nueva York + 7 (GMT+2 en invierno, GMT+3 en verano): **Asia** 01–10 h, **Londres** 10–15 h, **Londres+NY** (solapamiento) 15–19 h y **NY tarde** 19–24 h.
+
+| Nace en | M5: se cierra en la misma sesión | H1: misma sesión | H1: siguiente sesión | Siguen sin testear (flechas / control) |
+|---|---|---|---|---|
+| Asia | 83,2% (control 87,2%) | 57,2% | 17,3% | 0,75% / 0,87% |
+| Londres | 75,8% (85,4%) | 35,2% | 34,9% | 0,96% / 0,91% |
+| Londres+NY | 71,3% (81,1%) | 22,2% | 21,4% | **2,11% / 1,29%** |
+| NY tarde | 69,0% (82,3%) | 23,3% | 50,1% | **1,61% / 0,71%** |
+
+**Conclusiones:**
+1. La mayoría se cierra en la **misma sesión** en que nace (M5: 69–83%). Las flechas siempre algo menos que las velas normales, porque nacen en el extremo.
+2. Si no se cierra en su sesión, casi siempre lo hace en la **siguiente**: Asia → Londres, Londres → Londres+NY, Londres+NY → NY tarde, NY tarde → Asia del día siguiente (85% en M15).
+3. Asia tiene la tasa de «misma sesión» más alta en parte porque es la sesión más larga (9 h). Midiendo a 60 minutos, que no depende de la duración, Asia y Londres se parecen (≈74% en M5) y NY tarde es la más lenta (63%), en parte porque su última hora termina en el corte diario del mercado.
+4. Una flecha que nace en la **última hora** de su sesión casi nunca se cierra en ella (M15: 30%, frente a 72% del resto).
+5. Hallazgo más interesante: las flechas que nacen **durante la sesión de Nueva York** quedan sin testear unas **2 veces más** que las velas normales de esa misma sesión (Londres+NY 2,1% frente a 1,3%; NY tarde 1,6% frente a 0,7%). En Asia y Londres no hay diferencia. Encaja con la idea de impacto permanente: en NY salen los datos económicos de EE. UU. y los movimientos con información nueva no se deshacen. Es una interpretación; los números absolutos son pequeños (41 y 48 niveles).
+6. Se forman más flechas en las horas de poca liquidez (01–02 h y 23 h: ~10–12% de las velas M1/M5) que en el solapamiento Londres+NY (16–18 h: ~5–6%), como predice la teoría de los ticks.
+7. La reacción tras el test no cambia por sesión: ronda el 49–52% en todas, igual que el control.
+
 ---
 
 ## 6. Simulador de ticks y velas
@@ -255,3 +275,4 @@ Es un **modelo simplificado con números inventados**, no datos reales.
 | 2026-10-06 | Script EstadisticasNiveles (M1) y primera página de resultados de XAUUSD |
 | 2026-10-06 | Script EstadisticasNivelesH1 |
 | 2026-10-06 | Resultados H1 de XAUUSD añadidos a la página y al manual |
+| 2026-10-06 | Análisis por sesión añadido a la página y al manual |
