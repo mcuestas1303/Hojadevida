@@ -1,0 +1,186 @@
+Estadísticas de niveles sin mecha · XAUUSD · Raw Trading Ltd
+Generado 2026.10.06 22:20 · tolerancia 0 puntos · reacción medida en M1 durante 30 min
+Historial M1 disponible: 2025.05.09 → 2026.10.06 (500000 velas)
+Testeado = una vela posterior vuelve a tocar el nivel. Respetado = el cierre M1 al final de la ventana queda del lado del rebote.
+Rebote = máximo recorrido a favor tras el test; penetración = cuánto atravesó el nivel (en precio y en ATR M1 de 60 min).
+
+=== M1 · 50000 velas · 2026.08.17 → 2026.10.06 ===
+  Apertura = Mínimo (flecha verde): 2494 niveles · testeados 99.6% · pendientes 9
+     Tiempo hasta el test: mediana 3 velas (3 min) · 25%–75%: 1–14 velas
+     De los testeados: en 1 vela 31.5% · ≤5 61.0% · ≤20 79.6% · ≤100 90.8%
+     Reacción 30 min tras el test (2483 casos): respetado 47.0% · rebote medio 6.31 · penetración media 6.97 · en ATR M1: rebote 3.46 / penetración 3.81
+  Apertura = Máximo (flecha roja): 2725 niveles · testeados 98.6% · pendientes 37
+     Tiempo hasta el test: mediana 3 velas (3 min) · 25%–75%: 1–15 velas
+     De los testeados: en 1 vela 29.6% · ≤5 60.7% · ≤20 78.7% · ≤100 91.7%
+     Reacción 30 min tras el test (2687 casos): respetado 51.8% · rebote medio 6.36 · penetración media 6.09 · en ATR M1: rebote 3.58 / penetración 3.53
+  Control: apertura con mecha (alcista): 22253 niveles · testeados 99.8% · pendientes 39
+     Tiempo hasta el test: mediana 2 velas (2 min) · 25%–75%: 1–6 velas
+     De los testeados: en 1 vela 49.4% · ≤5 73.8% · ≤20 86.4% · ≤100 93.8%
+     Reacción 30 min tras el test (22201 casos): respetado 48.5% · rebote medio 6.52 · penetración media 6.92 · en ATR M1: rebote 3.29 / penetración 3.49
+  Control: apertura con mecha (bajista): 22317 niveles · testeados 99.0% · pendientes 216
+     Tiempo hasta el test: mediana 2 velas (2 min) · 25%–75%: 1–6 velas
+     De los testeados: en 1 vela 48.8% · ≤5 73.2% · ≤20 86.7% · ≤100 94.6%
+     Reacción 30 min tras el test (22089 casos): respetado 50.7% · rebote medio 6.74 · penetración media 6.47 · en ATR M1: rebote 3.43 / penetración 3.34
+  Niveles pendientes más recientes (46 en total):
+   M1 verde (mínimo) · 4155.82 · formado 2026.10.06 19:59
+   M1 verde (mínimo) · 4165.91 · formado 2026.10.06 21:03
+   M1 verde (mínimo) · 4172.19 · formado 2026.10.06 21:55
+   M1 roja (máximo) · 4181.09 · formado 2026.10.06 22:03
+   M1 roja (máximo) · 4176.17 · formado 2026.10.06 22:18
+
+=== M5 · 50000 velas · 2026.01.23 → 2026.10.06 ===
+  Apertura = Mínimo (flecha verde): 1129 niveles · testeados 99.7% · pendientes 3
+     Tiempo hasta el test: mediana 3 velas (15 min) · 25%–75%: 1–14 velas
+     De los testeados: en 1 vela 29.5% · ≤5 59.5% · ≤20 78.6% · ≤100 90.9%
+     Reacción 30 min tras el test (1126 casos): respetado 50.6% · rebote medio 9.27 · penetración media 10.68 · en ATR M1: rebote 3.66 / penetración 3.98
+  Apertura = Máximo (flecha roja): 1213 niveles · testeados 98.3% · pendientes 21
+     Tiempo hasta el test: mediana 3 velas (15 min) · 25%–75%: 1–13 velas
+     De los testeados: en 1 vela 33.0% · ≤5 59.9% · ≤20 80.6% · ≤100 91.4%
+     Reacción 30 min tras el test (1192 casos): respetado 49.7% · rebote medio 8.98 · penetración media 8.85 · en ATR M1: rebote 3.79 / penetración 3.79
+  Control: apertura con mecha (alcista): 23697 niveles · testeados 99.8% · pendientes 52
+     Tiempo hasta el test: mediana 2 velas (10 min) · 25%–75%: 1–6 velas
+     De los testeados: en 1 vela 49.7% · ≤5 73.8% · ≤20 86.4% · ≤100 94.4%
+     Reacción 30 min tras el test (23644 casos): respetado 49.9% · rebote medio 8.85 · penetración media 9.79 · en ATR M1: rebote 3.45 / penetración 3.75
+  Control: apertura con mecha (bajista): 23905 niveles · testeados 99.0% · pendientes 244
+     Tiempo hasta el test: mediana 2 velas (10 min) · 25%–75%: 1–6 velas
+     De los testeados: en 1 vela 49.5% · ≤5 73.7% · ≤20 86.7% · ≤100 94.4%
+     Reacción 30 min tras el test (23654 casos): respetado 50.3% · rebote medio 8.87 · penetración media 8.59 · en ATR M1: rebote 3.51 / penetración 3.53
+  Niveles pendientes más recientes (24 en total):
+   M5 roja (máximo) · 4347.80 · formado 2026.09.23 04:25
+   M5 roja (máximo) · 4343.86 · formado 2026.09.23 08:10
+   M5 roja (máximo) · 4318.83 · formado 2026.09.23 15:15
+   M5 verde (mínimo) · 4122.89 · formado 2026.10.06 09:15
+   M5 verde (mínimo) · 4172.19 · formado 2026.10.06 21:55
+
+=== M15 · 50000 velas · 2024.08.26 → 2026.10.06 ===
+  Apertura = Mínimo (flecha verde): 1063 niveles · testeados 98.4% · pendientes 17
+     Tiempo hasta el test: mediana 3 velas (45 min) · 25%–75%: 1–13 velas
+     De los testeados: en 1 vela 32.0% · ≤5 60.9% · ≤20 80.4% · ≤100 91.4%
+     Reacción 30 min tras el test (632 casos): respetado 50.2% · rebote medio 7.74 · penetración media 8.78 · en ATR M1: rebote 3.93 / penetración 4.25
+  Apertura = Máximo (flecha roja): 947 niveles · testeados 99.2% · pendientes 8
+     Tiempo hasta el test: mediana 3 velas (45 min) · 25%–75%: 1–11 velas
+     De los testeados: en 1 vela 31.0% · ≤5 62.4% · ≤20 82.1% · ≤100 92.7%
+     Reacción 30 min tras el test (494 casos): respetado 43.9% · rebote medio 6.53 · penetración media 7.41 · en ATR M1: rebote 3.70 / penetración 4.47
+  Control: apertura con mecha (alcista): 24508 niveles · testeados 98.5% · pendientes 359
+     Tiempo hasta el test: mediana 1 velas (15 min) · 25%–75%: 1–6 velas
+     De los testeados: en 1 vela 50.2% · ≤5 73.8% · ≤20 86.6% · ≤100 94.3%
+     Reacción 30 min tras el test (16204 casos): respetado 52.0% · rebote medio 7.71 · penetración media 8.34 · en ATR M1: rebote 3.67 / penetración 3.87
+  Control: apertura con mecha (bajista): 23398 niveles · testeados 99.4% · pendientes 148
+     Tiempo hasta el test: mediana 1 velas (15 min) · 25%–75%: 1–5 velas
+     De los testeados: en 1 vela 51.6% · ≤5 75.3% · ≤20 87.7% · ≤100 95.1%
+     Reacción 30 min tras el test (15715 casos): respetado 48.3% · rebote medio 6.85 · penetración media 6.90 · en ATR M1: rebote 3.60 / penetración 3.74
+  Niveles pendientes más recientes (25 en total):
+   M15 roja (máximo) · 4992.22 · formado 2026.03.18 13:00
+   M15 roja (máximo) · 4860.28 · formado 2026.04.17 22:45
+   M15 roja (máximo) · 4349.64 · formado 2026.09.23 04:15
+   M15 roja (máximo) · 4318.83 · formado 2026.09.23 15:15
+   M15 verde (mínimo) · 4122.89 · formado 2026.10.06 09:15
+
+=== M30 · 50000 velas · 2022.07.14 → 2026.10.06 ===
+  Apertura = Mínimo (flecha verde): 1053 niveles · testeados 97.1% · pendientes 31
+     Tiempo hasta el test: mediana 3 velas (1.5 h) · 25%–75%: 1–13 velas
+     De los testeados: en 1 vela 29.9% · ≤5 61.6% · ≤20 81.0% · ≤100 92.5%
+     Reacción 30 min tras el test (256 casos): respetado 53.1% · rebote medio 8.25 · penetración media 9.62 · en ATR M1: rebote 4.13 / penetración 4.18
+  Apertura = Máximo (flecha roja): 1048 niveles · testeados 99.6% · pendientes 4
+     Tiempo hasta el test: mediana 3 velas (1.5 h) · 25%–75%: 1–13 velas
+     De los testeados: en 1 vela 29.4% · ≤5 61.9% · ≤20 80.7% · ≤100 92.4%
+     Reacción 30 min tras el test (193 casos): respetado 44.6% · rebote medio 6.76 · penetración media 7.43 · en ATR M1: rebote 3.75 / penetración 4.47
+  Control: apertura con mecha (alcista): 24355 niveles · testeados 98.0% · pendientes 485
+     Tiempo hasta el test: mediana 1 velas (30 min) · 25%–75%: 1–6 velas
+     De los testeados: en 1 vela 51.1% · ≤5 74.5% · ≤20 87.3% · ≤100 95.0%
+     Reacción 30 min tras el test (8099 casos): respetado 51.9% · rebote medio 8.26 · penetración media 8.93 · en ATR M1: rebote 3.83 / penetración 4.12
+  Control: apertura con mecha (bajista): 23431 niveles · testeados 99.6% · pendientes 102
+     Tiempo hasta el test: mediana 1 velas (30 min) · 25%–75%: 1–5 velas
+     De los testeados: en 1 vela 51.7% · ≤5 75.6% · ≤20 88.0% · ≤100 95.3%
+     Reacción 30 min tras el test (7924 casos): respetado 47.9% · rebote medio 6.99 · penetración media 7.15 · en ATR M1: rebote 3.69 / penetración 3.95
+  Niveles pendientes más recientes (35 en total):
+   M30 verde (mínimo) · 3417.38 · formado 2025.08.29 16:30
+   M30 roja (máximo) · 5495.64 · formado 2026.01.29 17:00
+   M30 roja (máximo) · 5228.12 · formado 2026.03.10 21:00
+   M30 roja (máximo) · 5170.79 · formado 2026.03.12 16:30
+   M30 roja (máximo) · 4992.22 · formado 2026.03.18 13:00
+
+=== H1 · 50000 velas · 2018.04.24 → 2026.10.06 ===
+  Apertura = Mínimo (flecha verde): 832 niveles · testeados 97.0% · pendientes 25
+     Tiempo hasta el test: mediana 3 velas (3.0 h) · 25%–75%: 1–13 velas
+     De los testeados: en 1 vela 28.5% · ≤5 59.0% · ≤20 80.7% · ≤100 93.7%
+     Reacción 30 min tras el test (104 casos): respetado 57.7% · rebote medio 8.37 · penetración media 9.77 · en ATR M1: rebote 4.51 / penetración 4.07
+  Apertura = Máximo (flecha roja): 829 niveles · testeados 99.6% · pendientes 3
+     Tiempo hasta el test: mediana 3 velas (3.0 h) · 25%–75%: 1–10 velas
+     De los testeados: en 1 vela 32.8% · ≤5 64.5% · ≤20 83.1% · ≤100 93.3%
+     Reacción 30 min tras el test (67 casos): respetado 44.8% · rebote medio 6.55 · penetración media 7.03 · en ATR M1: rebote 3.78 / penetración 4.60
+  Control: apertura con mecha (alcista): 24594 niveles · testeados 98.1% · pendientes 457
+     Tiempo hasta el test: mediana 1 velas (1.0 h) · 25%–75%: 1–5 velas
+     De los testeados: en 1 vela 52.0% · ≤5 75.6% · ≤20 88.3% · ≤100 95.3%
+     Reacción 30 min tras el test (4052 casos): respetado 52.3% · rebote medio 8.97 · penetración media 9.93 · en ATR M1: rebote 4.05 / penetración 4.30
+  Control: apertura con mecha (bajista): 23647 niveles · testeados 99.7% · pendientes 68
+     Tiempo hasta el test: mediana 1 velas (1.0 h) · 25%–75%: 1–5 velas
+     De los testeados: en 1 vela 52.5% · ≤5 76.0% · ≤20 88.1% · ≤100 95.2%
+     Reacción 30 min tras el test (3983 casos): respetado 49.1% · rebote medio 7.25 · penetración media 7.30 · en ATR M1: rebote 3.89 / penetración 4.19
+  Niveles pendientes más recientes (28 en total):
+   H1 verde (mínimo) · 2599.83 · formado 2024.12.30 19:00
+   H1 verde (mínimo) · 3335.00 · formado 2025.08.22 17:00
+   H1 roja (máximo) · 5495.64 · formado 2026.01.29 17:00
+   H1 roja (máximo) · 5228.12 · formado 2026.03.10 21:00
+   H1 roja (máximo) · 4992.22 · formado 2026.03.18 13:00
+
+=== H4 · 21327 velas · 1998.04.22 → 2026.10.06 ===
+  Apertura = Mínimo (flecha verde): 331 niveles · testeados 96.4% · pendientes 12
+     Tiempo hasta el test: mediana 2 velas (8.0 h) · 25%–75%: 1–8 velas
+     De los testeados: en 1 vela 33.2% · ≤5 69.6% · ≤20 88.1% · ≤100 95.0%
+     Reacción 30 min tras el test (13 casos): respetado 76.9% · rebote medio 9.92 · penetración media 4.45 · en ATR M1: rebote 5.47 / penetración 2.48  (pocos casos, poco fiable)
+  Apertura = Máximo (flecha roja): 180 niveles · testeados 100.0% · pendientes 0
+     Tiempo hasta el test: mediana 2 velas (8.0 h) · 25%–75%: 1–8 velas
+     De los testeados: en 1 vela 41.7% · ≤5 69.4% · ≤20 85.0% · ≤100 93.3%
+     Reacción 30 min tras el test (12 casos): respetado 50.0% · rebote medio 9.99 · penetración media 5.12 · en ATR M1: rebote 3.78 / penetración 2.56  (pocos casos, poco fiable)
+  Control: apertura con mecha (alcista): 10828 niveles · testeados 96.7% · pendientes 356
+     Tiempo hasta el test: mediana 1 velas (4.0 h) · 25%–75%: 1–5 velas
+     De los testeados: en 1 vela 52.2% · ≤5 76.0% · ≤20 88.8% · ≤100 95.7%
+     Reacción 30 min tras el test (1092 casos): respetado 52.1% · rebote medio 10.86 · penetración media 12.44 · en ATR M1: rebote 4.29 / penetración 4.58
+  Control: apertura con mecha (bajista): 9930 niveles · testeados 99.7% · pendientes 34
+     Tiempo hasta el test: mediana 1 velas (4.0 h) · 25%–75%: 1–5 velas
+     De los testeados: en 1 vela 53.4% · ≤5 76.0% · ≤20 88.4% · ≤100 95.6%
+     Reacción 30 min tras el test (995 casos): respetado 49.1% · rebote medio 7.70 · penetración media 8.49 · en ATR M1: rebote 4.06 / penetración 4.56
+  Niveles pendientes más recientes (12 en total):
+   H4 verde (mínimo) · 1134.35 · formado 2016.12.27 04:00
+   H4 verde (mínimo) · 1157.56 · formado 2017.01.04 04:00
+   H4 verde (mínimo) · 1383.14 · formado 2019.07.02 00:00
+   H4 verde (mínimo) · 1471.39 · formado 2020.03.20 04:00
+   H4 verde (mínimo) · 2374.56 · formado 2024.08.05 16:00
+
+=== D1 · 7515 velas · 1998.04.22 → 2026.10.05 ===
+  Apertura = Mínimo (flecha verde): 141 niveles · testeados 94.3% · pendientes 8
+     Tiempo hasta el test: mediana 2 velas (2.0 días) · 25%–75%: 1–7 velas
+     De los testeados: en 1 vela 40.6% · ≤5 71.4% · ≤20 87.2% · ≤100 96.2%
+     Reacción: sin datos M1 que cubran estos tests (aumenta «Velas M1»).
+  Apertura = Máximo (flecha roja): 48 niveles · testeados 100.0% · pendientes 0
+     Tiempo hasta el test: mediana 1 velas (1.0 días) · 25%–75%: 1–4 velas
+     De los testeados: en 1 vela 52.1% · ≤5 75.0% · ≤20 87.5% · ≤100 95.8%
+     Reacción 30 min tras el test (1 casos): respetado 0.0% · rebote medio 4.05 · penetración media 6.29 · en ATR M1: rebote 2.15 / penetración 3.33  (pocos casos, poco fiable)
+  Control: apertura con mecha (alcista): 3958 niveles · testeados 94.2% · pendientes 229
+     Tiempo hasta el test: mediana 1 velas (1.0 días) · 25%–75%: 1–5 velas
+     De los testeados: en 1 vela 53.8% · ≤5 77.4% · ≤20 90.1% · ≤100 96.8%
+     Reacción 30 min tras el test (181 casos): respetado 57.5% · rebote medio 15.64 · penetración media 16.73 · en ATR M1: rebote 4.43 / penetración 5.02
+  Control: apertura con mecha (bajista): 3331 niveles · testeados 99.6% · pendientes 13
+     Tiempo hasta el test: mediana 1 velas (1.0 días) · 25%–75%: 1–5 velas
+     De los testeados: en 1 vela 54.9% · ≤5 76.8% · ≤20 88.5% · ≤100 96.3%
+     Reacción 30 min tras el test (150 casos): respetado 48.7% · rebote medio 8.45 · penetración media 10.42 · en ATR M1: rebote 4.47 / penetración 5.89
+  Niveles pendientes más recientes (8 en total):
+   D1 verde (mínimo) · 507.35 · formado 2005.12.28 00:00
+   D1 verde (mínimo) · 516.54 · formado 2006.01.03 00:00
+   D1 verde (mínimo) · 679.55 · formado 2008.10.27 00:00
+   D1 verde (mínimo) · 755.10 · formado 2008.12.08 00:00
+   D1 verde (mínimo) · 1383.14 · formado 2019.07.02 00:00
+
+=== Jerarquía por temporalidad: niveles sin mecha (verde+roja) frente a control ===
+TF    | Niveles | Testeados | Mediana test | Respetado | Rebote/Penetr. | Reb. ATR M1 || Control: Respetado | Rebote/Penetr.
+M1    |    5219 |     99.1% |        3 min |     49.5% |           0.97 |        3.52 ||              49.6% | 0.99
+M5    |    2342 |     99.0% |       15 min |     50.1% |           0.94 |        3.73 ||              50.1% | 0.96
+M15   |    2010 |     98.8% |       45 min |     47.4% |           0.88 |        3.83 ||              50.1% | 0.96
+M30   |    2101 |     98.3% |        1.5 h |     49.4% |           0.88 |        3.96 ||              49.9% | 0.95
+H1    |    1661 |     98.3% |        3.0 h |     52.6% |           0.88 |        4.23 ||              50.7% | 0.94
+H4    |     511 |     97.7% |        8.0 h |     64.0% |           2.09 |        4.66 ||              50.7% | 0.89
+D1    |     189 |     95.8% |     2.0 días |      0.0% |           0.64 |        2.15 ||              53.5% | 0.89
+Cómo leerla: si los niveles sin mecha de una temporalidad tienen un «Respetado» y un «Rebote/Penetr.»
+claramente mayores que su control, y esa ventaja crece con la temporalidad, hay jerarquía.
+Si las cifras son parecidas al control, el regreso al nivel es el comportamiento normal del precio.
