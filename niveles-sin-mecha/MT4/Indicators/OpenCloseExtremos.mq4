@@ -7,7 +7,7 @@
 //|  ▲ verde/azul bajo la vela    : Apertura/Cierre = Mínimo         |
 //+------------------------------------------------------------------+
 #property copyright "OpenCloseExtremos"
-#property version   "1.30"
+#property version   "1.40"
 #property strict
 #property indicator_chart_window
 #property indicator_buffers 4
@@ -21,33 +21,63 @@
 #property indicator_width4  2
 
 //--- entradas
-enum ENUM_DIR_NIVELES
-  {
-   DIR_AMBAS  = 0,   // Ambas
-   DIR_VERDES = 1,   // Solo verdes (niveles en mínimos)
-   DIR_ROJAS  = 2    // Solo rojas (niveles en máximos)
-  };
-
+sinput string InpSepGen = "──────── General ────────"; // ────────
 input int    InpToleranciaPuntos = 0;     // Tolerancia en puntos (0 = exacto)
-input bool   InpMarcarApertura   = true;  // Marcar Apertura = Máx/Mín
-input bool   InpMarcarCierre     = true;  // Marcar Cierre = Máx/Mín
 input bool   InpVelaActual       = false; // Marcar también la vela en formación
 input double InpSeparacionATR    = 0.3;   // Separación de la flecha (x ATR14)
-input bool   InpAlertaPopup      = false; // Alerta emergente al cerrar la vela
+
+sinput string InpSepOH = "──────── Flecha roja · Apertura = Máximo ────────"; // ────────
+input bool   InpOHMostrar    = true;       // Mostrar flecha
+input color  InpOHColor      = clrRed;    // Color de la flecha
+input int    InpOHTamano     = 2;          // Tamaño de la flecha (1–5)
+input int    InpOHSimbolo    = 234;        // Símbolo (código Wingdings)
+input bool   InpOHAlerta     = true;       // Incluir en las alertas al cerrar la vela
+input bool   InpOHNivel      = true;       // Dibujar su línea de nivel
+input color  InpOHColorNivel = C'150,60,60'; // Color de su línea pendiente
+
+sinput string InpSepCH = "──────── Flecha naranja · Cierre = Máximo ────────"; // ────────
+input bool   InpCHMostrar    = true;       // Mostrar flecha
+input color  InpCHColor      = clrOrange; // Color de la flecha
+input int    InpCHTamano     = 2;          // Tamaño de la flecha (1–5)
+input int    InpCHSimbolo    = 234;        // Símbolo (código Wingdings)
+input bool   InpCHAlerta     = true;       // Incluir en las alertas al cerrar la vela
+input bool   InpCHNivel      = false;      // Dibujar su línea de nivel
+input color  InpCHColorNivel = C'150,100,40'; // Color de su línea pendiente
+
+sinput string InpSepOL = "──────── Flecha verde · Apertura = Mínimo ────────"; // ────────
+input bool   InpOLMostrar    = true;       // Mostrar flecha
+input color  InpOLColor      = clrLime;   // Color de la flecha
+input int    InpOLTamano     = 2;          // Tamaño de la flecha (1–5)
+input int    InpOLSimbolo    = 233;        // Símbolo (código Wingdings)
+input bool   InpOLAlerta     = true;       // Incluir en las alertas al cerrar la vela
+input bool   InpOLNivel      = true;       // Dibujar su línea de nivel
+input color  InpOLColorNivel = C'46,125,80'; // Color de su línea pendiente
+
+sinput string InpSepCL = "──────── Flecha azul · Cierre = Mínimo ────────"; // ────────
+input bool   InpCLMostrar    = true;       // Mostrar flecha
+input color  InpCLColor      = clrDodgerBlue; // Color de la flecha
+input int    InpCLTamano     = 2;          // Tamaño de la flecha (1–5)
+input int    InpCLSimbolo    = 233;        // Símbolo (código Wingdings)
+input bool   InpCLAlerta     = true;       // Incluir en las alertas al cerrar la vela
+input bool   InpCLNivel      = false;      // Dibujar su línea de nivel
+input color  InpCLColorNivel = C'40,90,150'; // Color de su línea pendiente
+
+sinput string InpSepAle = "──────── Canales de alerta ────────"; // ────────
+input bool   InpAlertaPopup      = false; // Alerta emergente
 input bool   InpAlertaPush       = false; // Notificación push al móvil
 input bool   InpAlertaSonido     = false; // Sonido
-input string InpArchivoSonido    = "alert.wav";
+input string InpArchivoSonido    = "alert.wav"; // Archivo de sonido
+
+sinput string InpSepPan = "──────── Panel de porcentajes ────────"; // ────────
 input bool   InpMostrarEstadistica = true;  // Mostrar panel de porcentajes
 input int    InpBarrasEstadistica  = 1000;  // Velas cerradas a analizar (0 = todas)
+
+sinput string InpSepNiv = "──────── Niveles (comunes a todas las flechas) ────────"; // ────────
 input bool   InpNiveles          = true;            // Dibujar niveles sin mecha (desequilibrios)
-input bool   InpNivelesCierre    = false;           // Incluir también niveles de cierre
 input bool   InpMostrarTesteados = true;            // Mantener los niveles ya testeados
-input int    InpVelasNiveles     = 500;             // Velas cerradas a revisar para niveles
-input color  InpColorNivelMin    = C'46,125,80';    // Color nivel en mínimo (pendiente)
-input color  InpColorNivelMax    = C'150,60,60';    // Color nivel en máximo (pendiente)
+input int    InpVelasNiveles     = 500;             // Velas a revisar para niveles
 input color  InpColorTesteado    = C'75,75,75';     // Color nivel ya testeado
 input ENUM_TIMEFRAMES  InpTFNiveles = PERIOD_CURRENT;  // Temporalidad de los niveles
-input ENUM_DIR_NIVELES InpDireccion = DIR_AMBAS;       // Dirección de los niveles
 input bool   InpSesAsia          = true;            // Niveles nacidos en Asia (01–10 h servidor)
 input bool   InpSesLondres       = true;            // Niveles nacidos en Londres (10–15 h)
 input bool   InpSesLondresNY     = true;            // Niveles nacidos en Londres+NY (15–19 h)
@@ -83,6 +113,13 @@ datetime g_ultimaVelaTF = 0;
 double   g_tablaTeorica[201];
 
 //+------------------------------------------------------------------+
+void EstiloFlecha(const int p, const int simbolo, const color col, const int tam)
+  {
+   SetIndexStyle(p, DRAW_ARROW, EMPTY, MathMax(1, MathMin(5, tam)), col);
+   SetIndexArrow(p, simbolo);
+  }
+
+//+------------------------------------------------------------------+
 int OnInit()
   {
    SetIndexBuffer(0, BufOpenHigh);
@@ -91,14 +128,11 @@ int OnInit()
    SetIndexBuffer(3, BufCloseLow);
 
    for(int p = 0; p < 4; p++)
-     {
-      SetIndexStyle(p, DRAW_ARROW);
       SetIndexEmptyValue(p, EMPTY_VALUE);
-     }
-   SetIndexArrow(0, 234); SetIndexLabel(0, "Apertura = Máximo");
-   SetIndexArrow(1, 234); SetIndexLabel(1, "Cierre = Máximo");
-   SetIndexArrow(2, 233); SetIndexLabel(2, "Apertura = Mínimo");
-   SetIndexArrow(3, 233); SetIndexLabel(3, "Cierre = Mínimo");
+   EstiloFlecha(0, InpOHSimbolo, InpOHColor, InpOHTamano); SetIndexLabel(0, "Apertura = Máximo");
+   EstiloFlecha(1, InpCHSimbolo, InpCHColor, InpCHTamano); SetIndexLabel(1, "Cierre = Máximo");
+   EstiloFlecha(2, InpOLSimbolo, InpOLColor, InpOLTamano); SetIndexLabel(2, "Apertura = Mínimo");
+   EstiloFlecha(3, InpCLSimbolo, InpCLColor, InpCLTamano); SetIndexLabel(3, "Cierre = Mínimo");
 
    // medio punto de margen para evitar errores de redondeo en doubles
    g_tol = (InpToleranciaPuntos + 0.5) * _Point;
@@ -295,11 +329,12 @@ void ActualizarBoton()
   }
 
 void CrearLineaNivel(const string nombre, const datetime t0, const datetime t1,
-                     const double p, const bool testeado, const bool abajo, const string texto)
+                     const double p, const bool testeado, const bool abajo, const string texto,
+                     const color col)
   {
    if(!ObjectCreate(0, nombre, OBJ_TREND, 0, t0, p, t1, p))
       return;
-   ObjectSetInteger(0, nombre, OBJPROP_COLOR, testeado ? InpColorTesteado : (abajo ? InpColorNivelMin : InpColorNivelMax));
+   ObjectSetInteger(0, nombre, OBJPROP_COLOR, testeado ? InpColorTesteado : col);
    ObjectSetInteger(0, nombre, OBJPROP_STYLE, STYLE_DOT);
    ObjectSetInteger(0, nombre, OBJPROP_WIDTH, 1);
    ObjectSetInteger(0, nombre, RAY_PROP, !testeado);
@@ -355,7 +390,8 @@ void RevisarPendientes(const datetime t, const double h, const double l)
   }
 
 void NivelDesde(const MqlRates &r[], const int n, const int i, const double p, const bool abajo,
-                const string tft, const string cod, const string texto, const datetime ahora)
+                const string tft, const string cod, const string texto, const datetime ahora,
+                const color col)
   {
    string nombre = NV_PREFIX + tft + "_" + cod + "_" + IntegerToString((long)r[i].time);
    if(InpPermitirOcultar && EstaOculto(nombre))
@@ -373,7 +409,7 @@ void NivelDesde(const MqlRates &r[], const int n, const int i, const double p, c
      }
    string tip = StringFormat("%s %s %s  %s", tft, texto, DoubleToString(p, _Digits),
                              TimeToString(r[i].time, TIME_DATE | TIME_MINUTES));
-   CrearLineaNivel(nombre, r[i].time, (jt >= 0) ? r[jt].time : r[n - 1].time, p, jt >= 0, abajo, tip);
+   CrearLineaNivel(nombre, r[i].time, (jt >= 0) ? r[jt].time : r[n - 1].time, p, jt >= 0, abajo, tip, col);
    AgregarDibujado(nombre);
    if(jt < 0)
       AgregarPendiente(nombre, p, abajo);
@@ -397,21 +433,18 @@ bool ConstruirNiveles(const datetime ahora)
    if(n < 2)
       return(false);
    string tft    = TFTexto(tf);
-   bool   verdes = (InpDireccion != DIR_ROJAS);
-   bool   rojas  = (InpDireccion != DIR_VERDES);
    for(int i = 0; i <= n - 2; i++)
      {
       if(Igual(r[i].high, r[i].low) || !SesionPermitida(r[i].time))
          continue;
       bool oh = Igual(r[i].open, r[i].high),  ol = Igual(r[i].open, r[i].low);
       bool ch = Igual(r[i].close, r[i].high), cl = Igual(r[i].close, r[i].low);
-      if(oh && rojas)  NivelDesde(r, n, i, r[i].high, false, tft, "AMax", "Apertura = Máximo", ahora);
-      if(ol && verdes) NivelDesde(r, n, i, r[i].low,  true,  tft, "AMin", "Apertura = Mínimo", ahora);
-      if(InpNivelesCierre)
-        {
-         if(ch && !oh && rojas)  NivelDesde(r, n, i, r[i].high, false, tft, "CMax", "Cierre = Máximo", ahora);
-         if(cl && !ol && verdes) NivelDesde(r, n, i, r[i].low,  true,  tft, "CMin", "Cierre = Mínimo", ahora);
-        }
+      bool nOH = oh && InpOHNivel, nOL = ol && InpOLNivel;
+      if(nOH) NivelDesde(r, n, i, r[i].high, false, tft, "AMax", "Apertura = Máximo", ahora, InpOHColorNivel);
+      if(nOL) NivelDesde(r, n, i, r[i].low,  true,  tft, "AMin", "Apertura = Mínimo", ahora, InpOLColorNivel);
+      // si apertura y cierre coinciden en el mismo extremo, el nivel solo se dibuja una vez
+      if(ch && !nOH && InpCHNivel) NivelDesde(r, n, i, r[i].high, false, tft, "CMax", "Cierre = Máximo", ahora, InpCHColorNivel);
+      if(cl && !nOL && InpCLNivel) NivelDesde(r, n, i, r[i].low,  true,  tft, "CMin", "Cierre = Mínimo", ahora, InpCLColorNivel);
      }
    ActualizarBoton();
    return(true);
@@ -470,10 +503,10 @@ int OnCalculate(const int rates_total,
       double sep = iATR(NULL, 0, 14, i) * InpSeparacionATR;
       if(sep <= 0) sep = 10 * _Point;
 
-      if(InpMarcarApertura && Igual(open[i],  high[i])) BufOpenHigh[i]  = high[i] + sep;
-      if(InpMarcarCierre   && Igual(close[i], high[i])) BufCloseHigh[i] = high[i] + sep * 2.2;
-      if(InpMarcarApertura && Igual(open[i],  low[i]))  BufOpenLow[i]   = low[i]  - sep;
-      if(InpMarcarCierre   && Igual(close[i], low[i]))  BufCloseLow[i]  = low[i]  - sep * 2.2;
+      if(InpOHMostrar && Igual(open[i],  high[i])) BufOpenHigh[i]  = high[i] + sep;
+      if(InpCHMostrar && Igual(close[i], high[i])) BufCloseHigh[i] = high[i] + sep * 2.2;
+      if(InpOLMostrar && Igual(open[i],  low[i]))  BufOpenLow[i]   = low[i]  - sep;
+      if(InpCLMostrar && Igual(close[i], low[i]))  BufCloseLow[i]  = low[i]  - sep * 2.2;
      }
 
    //--- alerta sobre la última vela cerrada (índice 1)
@@ -483,10 +516,10 @@ int OnCalculate(const int rates_total,
            (InpAlertaPopup || InpAlertaPush || InpAlertaSonido))
      {
       string tipo = "";
-      if(BufOpenHigh[1]  != EMPTY_VALUE) tipo += " Apertura=Máximo";
-      if(BufCloseHigh[1] != EMPTY_VALUE) tipo += " Cierre=Máximo";
-      if(BufOpenLow[1]   != EMPTY_VALUE) tipo += " Apertura=Mínimo";
-      if(BufCloseLow[1]  != EMPTY_VALUE) tipo += " Cierre=Mínimo";
+      if(InpOHAlerta && BufOpenHigh[1] != EMPTY_VALUE) tipo += " Apertura=Máximo";
+      if(InpCHAlerta && BufCloseHigh[1] != EMPTY_VALUE) tipo += " Cierre=Máximo";
+      if(InpOLAlerta && BufOpenLow[1] != EMPTY_VALUE) tipo += " Apertura=Mínimo";
+      if(InpCLAlerta && BufCloseLow[1] != EMPTY_VALUE) tipo += " Cierre=Mínimo";
 
       if(tipo != "")
         {

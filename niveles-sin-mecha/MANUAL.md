@@ -14,7 +14,7 @@ niveles-sin-mecha/
 ├── REGLAMENTO.md                     ← reglas obligatorias de operativa (scalping e intradía)
 ├── MT5/
 │   ├── Indicators/
-│   │   └── OpenCloseExtremos.mq5     ← indicador v1.30: flechas, panel de % y líneas de niveles
+│   │   └── OpenCloseExtremos.mq5     ← indicador v1.40: flechas, panel de % y líneas de niveles
 │   └── Scripts/
 │       ├── EstadisticasNiveles.mq5   ← estadísticas, reacción medida en M1
 │       ├── EstadisticasNivelesH1.mq5 ← estadísticas, reacción medida en H1
@@ -55,7 +55,7 @@ Las carpetas `MT5/Indicators` y `MT5/Scripts` tienen el mismo nombre que las de 
 
 ---
 
-## 3. Indicador OpenCloseExtremos (v1.30)
+## 3. Indicador OpenCloseExtremos (v1.40)
 
 ### 3.1 Las flechas
 
@@ -67,6 +67,12 @@ Las carpetas `MT5/Indicators` y `MT5/Scripts` tienen el mismo nombre que las de 
 | ▲ azul | debajo, más abajo | **Cierre = Mínimo**: cerró en el punto más bajo |
 
 Una vela puede tener dos flechas. Si tiene roja y azul, o verde y naranja, es una **marubozu completa**: sin mecha en ningún extremo.
+
+**Cada flecha se configura por separado.** En la ventana de parámetros hay un bloque propio para la roja, la naranja, la verde y la azul, cada uno con:
+- **Mostrar flecha** (sí/no).
+- **Color**, **tamaño** (1–5) y **símbolo** (código Wingdings: 233 = flecha arriba, 234 = flecha abajo, 159 = punto, 108 = círculo).
+- **Incluir en las alertas** al cerrar la vela. Los canales (emergente, push, sonido) se eligen en su propio bloque.
+- **Dibujar su línea de nivel** y el **color** de esa línea mientras está pendiente. Por defecto, sí en la roja y la verde y no en la naranja y la azul.
 
 ### 3.2 Las líneas de niveles (desequilibrios)
 
@@ -83,7 +89,7 @@ Por defecto solo se dibujan los niveles de **apertura**. Los de cierre (naranja 
 - **Ocultar una línea a mano:** haz clic sobre ella para seleccionarla y pulsa **Supr**. También puedes borrarla desde la lista de objetos (**Ctrl+B**). El indicador lo registra en la vela siguiente y no la vuelve a dibujar, ni siquiera al reiniciar MetaTrader. Lo guarda en las variables globales del terminal (F3), con nombres que empiezan por `OCE_O_`. MetaTrader borra las variables que no se usan en 4 semanas, y el indicador las renueva cada vez que las consulta.
 - **Restaurar:** si hay líneas ocultas del símbolo, aparece abajo a la izquierda el botón **«Restaurar niveles ocultos (N)»**. Al pulsarlo vuelven todas.
 - **Cuidado:** si usas «Borrar todos los objetos» del gráfico, todas las líneas visibles quedan ocultas. Se recuperan con el botón.
-- **Filtrar por dirección:** solo verdes (niveles en mínimos) o solo rojas (niveles en máximos).
+- **Elegir qué flechas dibujan línea:** cada flecha tiene su propio «Dibujar su línea de nivel». Por ejemplo, solo verdes: desactívalo en la roja.
 - **Filtrar por sesión** en la que nació la vela, en hora del servidor: Asia 01–10 h, Londres 10–15 h, Londres+NY 15–19 h y NY tarde 19–24 h. Por ejemplo, ver solo los niveles nacidos en NY, que son los que más quedan abiertos (sección 5.2).
 - **Testeados temporales:** con «Ocultar testeados tras N velas» mayor que 0, las líneas testeadas desaparecen pasadas N velas del gráfico desde el test.
 - **Niveles de otra temporalidad:** con «Temporalidad de los niveles» puedes ver, por ejemplo, en un gráfico M1 solo los niveles de H1 o H4. Las flechas siguen siendo las de la temporalidad del gráfico. En ese caso, «Velas a revisar para niveles» cuenta velas de la temporalidad elegida.
@@ -102,19 +108,17 @@ Se puede desactivar.
 | Parámetro | Por defecto | Para qué sirve |
 |---|---|---|
 | Tolerancia en puntos | 0 | 0 = coincidencia exacta. En XAUUSD 1 punto = 0.01. Súbela a 1–5 para incluir velas con una mecha casi nula |
-| Marcar Apertura / Cierre | Sí / Sí | Activar cada condición por separado |
 | Marcar vela en formación | No | Si lo activas, la flecha de la vela actual puede aparecer y desaparecer |
 | Separación de la flecha | 12 px (MT5) / 0.3 ATR (MT4) | Distancia de la flecha a la vela |
 | Alerta emergente / push / sonido | No | Aviso al cerrar una vela que cumple |
 | Mostrar panel de porcentajes | Sí | Muestra u oculta el panel |
 | Velas cerradas a analizar | 1000 | Velas que usa el panel (0 = todas) |
 | Dibujar niveles sin mecha | Sí | Muestra u oculta las líneas |
-| Incluir niveles de cierre | No | Añade líneas para las flechas naranja y azul |
 | Mantener niveles testeados | Sí | Si lo desactivas, solo quedan los pendientes |
 | Velas a revisar para niveles | 500 | Hasta cuántas velas atrás busca niveles |
-| Colores de niveles (3) | Verde, rojo y gris apagados | Pendiente en mínimo / pendiente en máximo / testeado |
+| **Por cada flecha** (roja, naranja, verde, azul) | | Mostrar, color, tamaño, símbolo, alerta, dibujar su línea y color de la línea pendiente |
+| Color nivel ya testeado | Gris | Color de todas las líneas testeadas |
 | Temporalidad de los niveles | La del gráfico | De qué temporalidad salen los niveles (por ejemplo H1 en un gráfico M1) |
-| Dirección de los niveles | Ambas | Ambas / solo verdes / solo rojas |
 | Niveles nacidos en Asia / Londres / Londres+NY / NY tarde | Sí (las 4) | Filtro por la sesión en que nació la vela |
 | Ocultar testeados tras N velas | 0 | 0 = nunca; N = las testeadas desaparecen pasadas N velas |
 | Permitir ocultar líneas a mano | Sí | Hace las líneas seleccionables y recuerda las que borras |
@@ -400,6 +404,7 @@ Es un **modelo simplificado con números inventados**, no datos reales.
 | 2026-10-06 | Indicador v1.00: cuatro flechas y alertas |
 | 2026-10-06 | Indicador v1.10: panel de porcentajes |
 | 2026-10-06 | Indicador v1.20: líneas punteadas de niveles sin mecha |
+| 2026-10-07 | Indicador v1.40: configuración separada para cada una de las 4 flechas (mostrar, color, tamaño, símbolo, alerta y línea de nivel) |
 | 2026-10-07 | Indicador v1.30: ocultar líneas a mano (persistente) con botón de restaurar, filtros por dirección y sesión, testeados temporales y niveles de otra temporalidad |
 | 2026-10-06 | Script EstadisticasNiveles (M1) y primera página de resultados de XAUUSD |
 | 2026-10-06 | Script EstadisticasNivelesH1 |
