@@ -199,6 +199,7 @@ tr.new{animation:flash 1s ease-out}
       <div class="grp">Marubozu y regreso</div>
       <div class="btns">
         <button id="sMB"><b>Un fondo compra con prisa</b><small>Marubozu, inventario y regreso al cuerpo</small></button>
+        <button id="sEX"><b>Tu ejemplo: dos desequilibrios</b><small>Uno se testea, el de abajo sigue pendiente</small></button>
       </div>
       <div class="grp">Mecánica de los ticks</div>
       <div class="btns">
@@ -282,7 +283,7 @@ tr.new{animation:flash 1s ease-out}
 
   <section class="panel explain" aria-labelledby="h-why">
     <h2 id="h-why">¿Por qué el precio tiende a volver a una marubozu?</h2>
-    <p>Tu observación es que el precio tiende a regresar a la zona de una vela marubozu <b>que todavía no ha sido testeada</b>, es decir, cuyo rango el precio no ha vuelto a tocar. Estos son los mecanismos que pueden explicarlo. Cada uno lleva su etiqueta: <span class="tag doc">documentado</span> si está respaldado por investigación, <span class="tag mine">interpretación</span> si es una aplicación o hipótesis mía, y <span class="tag no">no aplica</span> si no explica tu caso. Pulsa «Un fondo compra con prisa» para verlo en el simulador.</p>
+    <p>Tu observación es que el precio tiende a regresar al nivel sin mecha de una vela marubozu <b>que todavía no ha sido testeado</b>, es decir, que ninguna vela posterior ha vuelto a tocar. Lo interpretas como un desequilibrio que el precio vuelve a buscar para balancearse. Estos son los mecanismos que pueden explicarlo. Cada uno lleva su etiqueta: <span class="tag doc">documentado</span> si está respaldado por investigación, <span class="tag mine">interpretación</span> si es una aplicación o hipótesis mía, y <span class="tag no">no aplica</span> si no explica tu caso. Pulsa «Un fondo compra con prisa» para verlo en el simulador.</p>
     <div class="mech">
       <div class="k-doc">
         <span class="tag doc">documentado</span>
@@ -293,6 +294,11 @@ tr.new{animation:flash 1s ease-out}
         <span class="tag doc">documentado</span> <span class="tag mine">aplicación</span>
         <h3>El inventario del proveedor</h3>
         <p>Los modelos de creadores de mercado describen que, cuando el flujo los deja con una posición no deseada, <b>sesgan sus precios</b> para deshacerse de ella. Aplicado a tu caso: tras una marubozu alcista el proveedor quedó vendido, así que baja sus precios para recomprar. Eso empuja el Bid, y con él la vela, de vuelta hacia el cuerpo.</p>
+      </div>
+      <div class="k-doc">
+        <span class="tag doc">mecánica de la vela</span>
+        <h3>Por qué el desequilibrio queda en la apertura</h3>
+        <p>La vela siguiente abre con el primer tick después del cierre, y en un mercado continuo ese tick está pegado al cierre anterior. Por eso los niveles de <b>cierre</b> sin mecha (flechas naranja y azul) suelen quedar testeados casi de inmediato. En cambio, el nivel de <b>apertura</b> sin mecha (flechas verde y roja) queda atrás cuando el precio se aleja, y puede pasar mucho tiempo sin que otra vela lo toque. Eso coincide con tu ejemplo: los desequilibrios que marcas son aperturas.</p>
       </div>
       <div class="k-mine">
         <span class="tag mine">interpretación</span>
@@ -404,25 +410,31 @@ tr.new{animation:flash 1s ease-out}
   }
 
   // ---------- zonas marubozu (tu observación) ----------
+  const KIND = {
+    oh:{t:'Apertura = Máximo', c:'--ind-oh'}, ch:{t:'Cierre = Máximo', c:'--ind-ch'},
+    ol:{t:'Apertura = Mínimo', c:'--ind-ol'}, cl:{t:'Cierre = Mínimo', c:'--ind-cl'}
+  };
   function renderObs(flashIdx){
     const box = $('obs');
-    let h = '<span class="ttl">Tu observación: zonas de marubozu</span>';
+    let h = '<span class="ttl">Tu observación: niveles sin mecha (desequilibrios)</span>';
     if (!zones.length){
-      h += '<span>Todavía no hay ninguna. Cuando una vela cierre como marubozu completa (sin mecha en ningún extremo), su zona aparecerá aquí y en el gráfico como zona a observar.</span>';
+      h += '<span>Todavía no hay ninguno. Cuando cierre una vela con flecha, el nivel de su extremo sin mecha aparecerá aquí y como línea en el gráfico. Seguirá «no testeado» hasta que una vela posterior vuelva a tocarlo.</span>';
     } else {
-      zones.slice(-4).forEach((z, k) => {
-        const i = zones.length - Math.min(4, zones.length) + k;
-        const t = z.tested ? `testeada a las ${z.testClock}` : 'no testeada · zona a observar';
-        h += `<span class="z ${z.tested ? 'done' : 'open'}${i === flashIdx ? ' flash' : ''}">${z.lbl} · marubozu ${z.up ? 'alcista' : 'bajista'} ${f2(z.lo)}–${f2(z.hi)} · ${t}</span>`;
+      const N = 5, from = Math.max(0, zones.length - N);
+      zones.slice(from).forEach((z, k) => {
+        const i = from + k;
+        const t = z.tested ? `testeado a las ${z.testClock}` : 'no testeado · nivel a observar';
+        h += `<span class="z ${z.tested ? 'done' : 'open'}${i === flashIdx ? ' flash' : ''}"><span style="color:var(${KIND[z.k].c})">●</span> ${z.lbl} · ${KIND[z.k].t} ${f2(z.p)} · ${t}</span>`;
       });
     }
     box.innerHTML = h;
   }
+  // un nivel queda testeado cuando el Bid de una vela posterior vuelve a tocarlo
   function checkZones(){
     zones.forEach((z, i) => {
       if (z.tested) return;
-      const inside = z.up ? bid < z.hi - 0.001 : bid > z.lo + 0.001;
-      if (inside){
+      const touched = z.below ? bid <= z.p + 0.001 : bid >= z.p - 0.001;
+      if (touched){
         z.tested = true; z.testClock = clock(); z.testLbl = `11:${String(minute).padStart(2,'0')}`;
         renderObs(i);
       }
@@ -569,10 +581,14 @@ tr.new{animation:flash 1s ease-out}
     if (candle && nTicks > 1){
       const lbl = `11:${String(minute).padStart(2,'0')}`;
       const fl = flagsOf(candle);
-      const full = (fl.ol && fl.ch) || (fl.oh && fl.cl);
-      if (full && candle.h - candle.l >= 0.15 - 1e-9){
-        zones.push({lo: candle.l, hi: candle.h, up: !!(fl.ol && fl.ch), lbl, tested: false});
-      }
+      // un nivel por cada flecha: el extremo sin mecha. Mínimo → el precio queda por encima; Máximo → por debajo
+      ['oh','ch','ol','cl'].forEach(k => {
+        if (!fl[k]) return;
+        const below = k === 'ol' || k === 'cl';
+        const pz = below ? candle.l : candle.h;
+        if (zones.some(z => z.lbl === lbl && z.p === pz)) return;
+        zones.push({k, p: pz, below, lbl, tested: false});
+      });
       history.push({...candle, lbl});
       while (history.length > 9) history.shift();
       minute++;
@@ -635,7 +651,7 @@ tr.new{animation:flash 1s ease-out}
       async () => narr(`<strong>Cierre = Mínimo (flecha azul).</strong> Primero hubo una compra pequeña. Después, al final del minuto, una venta se comió tres niveles del Bid. El último tick que movió el Bid fue el más bajo, y el tick posterior solo cambió el Ask, así que <b>la vela cerró en su mínimo</b>.`)
     ]),
     sMB: () => scenario([
-      async () => { inv = 0; newCandle(); },
+      async () => { inv = 0; zones = []; newCandle(); },
       async () => {
         narr(`<strong>Un fondo necesita comprar 24 lotes y tiene prisa</strong>, por ejemplo por una noticia o una orden de un cliente. En vez de repartir la compra durante horas, la ejecuta en un minuto y acepta pagar el impacto.`);
         actors({
@@ -660,9 +676,9 @@ tr.new{animation:flash 1s ease-out}
       },
       async () => newCandle(),
       async () => {
-        narr(`<strong>Nace una zona a observar.</strong> Al cerrar, la marubozu deja su rango como zona <b>no testeada</b>: está en el recuadro de tu observación y sombreada en el gráfico. No sabemos cuándo volverá el precio. Solo sabemos dónde mirar.`);
+        narr(`<strong>Nacen dos niveles.</strong> La marubozu tiene dos extremos sin mecha: su apertura (mínimo) y su cierre (máximo). El de cierre quedó <b>testeado al instante</b>, porque la vela nueva abre justo ahí. El de apertura queda <b>no testeado</b>: es el desequilibrio que se queda atrás. No sabemos cuándo volverá el precio, solo dónde mirar.`);
         actors({
-          lp: `Sigue ${invTxt()}. Le interesa que alguien le venda en esa zona para recomprar.`,
+          lp: `Sigue ${invTxt()}. Le interesa que alguien le venda más abajo para recomprar.`,
           retail: 'Lo útil no es adivinar cuándo vuelve el precio, sino tener marcada la zona y esperar a que el precio llegue.',
           fondo: 'Ya no compra. Si tenía información, parte de la subida será permanente.'
         });
@@ -681,12 +697,64 @@ tr.new{animation:flash 1s ease-out}
       async () => skew(-0.05, 'Sigue sesgando: todavía está corto'),
       async () => { setBids([2,2,4,4,4,4]); await marketSell(4); },
       async () => {
-        narr(`<strong>El precio volvió a entrar en la zona de la marubozu</strong> y ahora figura como <b>testeada</b>. El fondo ya terminó de comprar, así que una parte del impacto era temporal y se está deshaciendo. El proveedor recompró a mejor precio. <b>Es una tendencia, no una garantía:</b> si el fondo tenía información real, parte del movimiento es permanente y el precio puede no volver.`);
+        narr(`<strong>El precio volvió a entrar en el cuerpo de la marubozu</strong>: el fondo terminó de comprar, una parte del impacto era temporal y el proveedor recompró a mejor precio. Pero <b>el nivel de apertura todavía no se ha tocado</b>: sigue como desequilibrio pendiente. Puede que el precio llegue ahí más adelante o que no llegue nunca, si el fondo tenía información real.`);
         actors({
           lp: `Recompró parte de lo que vendió y queda ${invTxt()}. Una vez reducido el inventario, deja de empujar el precio hacia abajo.`,
           fondo: 'Si su compra tenía información, defenderá o ampliará la posición. Si solo era una ejecución, ya no interviene.',
-          retail: 'La zona ya se testeó: el motivo por el que el precio tendía a volver (impacto temporal e inventario) ya se resolvió en gran parte. Una segunda visita tiene menos fundamento.',
+          retail: 'Tiene marcado el nivel de apertura de la marubozu. No sabe cuándo llegará el precio: lo trata como una zona a observar, no como una cita con hora.',
           broker: 'Cobró en todas las operaciones del recorrido, de subida y de bajada.'
+        });
+      }
+    ]),
+    sEX: () => scenario([
+      async () => { inv = 0; zones = []; newCandle(); },
+      async () => { setAsks([2,2,2,4,4,4]); await marketBuy(6); },
+      async () => { setBids([2,4,4,4,4,4]); await marketSell(2); },
+      async () => {
+        narr(`<strong>Vela A (tu rectángulo).</strong> Las compras dominaron desde el primer tick: <b>Apertura = Mínimo</b> (flecha verde). Su apertura quedará como nivel a observar cuando cierre.`);
+        actors({
+          lp: `Quedó ${invTxt()}: vendió más de lo que compró en este minuto.`,
+          fondo: 'Si es un fondo comprando, sigue con su metaorden en los próximos minutos.',
+          retail: 'Todavía no hay nada que hacer: la vela no ha cerrado.'
+        });
+      },
+      async () => newCandle(),
+      async () => { setBids([2,4,4,4,4,4]); await marketSell(2); },
+      async () => { setAsks([2,2,2,4,4,4]); await marketBuy(6); },
+      async () => { setBids([2,4,4,4,4,4]); await marketSell(2); },
+      async () => {
+        narr(`<strong>El mercado sigue subiendo.</strong> Esta vela retrocede un poco, pero no llega a la apertura de A: el nivel de A sigue <b>no testeado</b>.`);
+        actors({
+          fondo: 'Sigue comprando por tramos: cada tramo empuja el precio un poco más arriba.',
+          lp: `Sigue ${invTxt()} y cada vez más incómodo.`,
+          retail: 'El nivel de A queda cada vez más lejos. No sabe cuándo, ni si, el precio volverá.'
+        });
+      },
+      async () => newCandle(),
+      async () => { setAsks([2,2,2,4,4,4]); await marketBuy(6); },
+      async () => { setBids([2,4,4,4,4,4]); await marketSell(2); },
+      async () => narr(`<strong>Vela B (tu círculo).</strong> Otra vez compras desde el primer tick: <b>Apertura = Mínimo</b>. Ahora hay dos desequilibrios abiertos, uno encima del otro.`),
+      async () => newCandle(),
+      async () => { setBids([2,4,4,4,4,4]); await marketSell(2); },
+      async () => { setAsks([2,2,2,4,4,4]); await marketBuy(6); },
+      async () => { setBids([2,4,4,4,4,4]); await marketSell(2); },
+      async () => newCandle(),
+      async () => {
+        narr(`<strong>Las compras se agotan y el precio baja.</strong> El fondo terminó y el proveedor, vendido, baja sus precios para recomprar.`);
+        actors({
+          fondo: 'Terminó su compra. Ya no sostiene el precio.',
+          lp: `Está ${invTxt()}. Le conviene que el precio baje para recomprar más barato.`,
+          retail: 'Quien compró arriba ve cómo el precio regresa hacia los niveles abiertos.'
+        });
+      },
+      async () => { setBids([2,2,2,4,4,4]); await marketSell(6); },
+      async () => {
+        narr(`<strong>El nivel de B quedó testeado</strong>: el precio volvió a tocar su apertura (línea punteada). <b>El de A sigue sin testear</b> más abajo, igual que en tu gráfico: hay un desequilibrio pendiente, pero no sabemos cuándo se cerrará.`);
+        actors({
+          lp: `Recompró parte de su posición y queda ${invTxt()}. Si todavía está vendido, le seguiría interesando recomprar más abajo.`,
+          fondo: 'Si su compra tenía información, ese desequilibrio de abajo podría no cerrarse nunca.',
+          retail: 'Nivel de B: ya testeado, el motivo para volver se resolvió en buena parte. Nivel de A: pendiente, zona a observar sin hora.',
+          broker: 'Cobró en todo el recorrido, de subida y de bajada.'
         });
       }
     ]),
@@ -751,10 +819,10 @@ tr.new{animation:flash 1s ease-out}
       const x0 = i0 >= 0 ? xOf(i0) : padL;
       let x1 = W - padR;
       if (z.tested){ const i1 = all.findIndex(c => c.lbl === z.testLbl); if (i1 >= 0) x1 = xOf(i1); }
-      const yt = y(z.hi), yb = y(z.lo);
+      const yy = y(z.p).toFixed(1);
       out += z.tested
-        ? `<rect x="${x0.toFixed(1)}" y="${yt.toFixed(1)}" width="${Math.max(2, x1-x0).toFixed(1)}" height="${(yb-yt).toFixed(1)}" fill="none" stroke="${col('--muted')}" stroke-dasharray="3 3"/>`
-        : `<rect x="${x0.toFixed(1)}" y="${yt.toFixed(1)}" width="${Math.max(2, x1-x0).toFixed(1)}" height="${(yb-yt).toFixed(1)}" fill="${col('--gold')}" fill-opacity="0.16" stroke="${col('--gold')}" stroke-width="1"/>`;
+        ? `<line x1="${x0.toFixed(1)}" x2="${x1.toFixed(1)}" y1="${yy}" y2="${yy}" stroke="${col('--muted')}" stroke-width="1.2" stroke-dasharray="3 3"/>`
+        : `<line x1="${x0.toFixed(1)}" x2="${x1.toFixed(1)}" y1="${yy}" y2="${yy}" stroke="${col(KIND[z.k].c)}" stroke-width="2"/>`;
     });
     all.forEach((c, i) => {
       const x = xOf(i);
@@ -812,7 +880,7 @@ tr.new{animation:flash 1s ease-out}
   $('bNewsDn').onclick = () => run(() => news(-1));
   $('bAsk').onclick = () => run(askOnly);
   $('bNew').onclick = () => run(async () => newCandle());
-  ['sOH','sCH','sOL','sCL','sMB','s3','s4'].forEach(k => $(k).onclick = () => run(S[k]));
+  ['sOH','sCH','sOL','sCL','sMB','sEX','s3','s4'].forEach(k => $(k).onclick = () => run(S[k]));
   if (window.matchMedia) matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', render);
   new MutationObserver(render).observe(document.documentElement, {attributes:true, attributeFilter:['data-theme']});
 
