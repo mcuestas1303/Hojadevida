@@ -22,9 +22,10 @@ niveles-sin-mecha/
 │       └── OpenCloseExtremos.mq4     ← el mismo indicador para MetaTrader 4
 ├── paginas/
 │   ├── simulador-velas-ticks.html        ← simulador interactivo de ticks y velas
-│   └── estadisticas-niveles-xauusd.html  ← resultados con gráficos (XAUUSD, M1)
+│   └── estadisticas-niveles-xauusd.html  ← resultados con gráficos (XAUUSD, M1 y H1)
 └── resultados/
-    └── XAUUSD_M1_2026-10-06.txt      ← informe original del script M1
+    ├── XAUUSD_M1_2026-10-06.txt      ← informe original del script M1
+    └── XAUUSD_H1_2026-10-06.txt      ← informe original del script H1
 ```
 
 Las carpetas `MT5/Indicators` y `MT5/Scripts` tienen el mismo nombre que las de MetaTrader, para que sepas dónde copiar cada archivo.
@@ -181,7 +182,27 @@ Informe completo en `resultados/XAUUSD_M1_2026-10-06.txt`. Gráficos en la pági
 2. Los niveles sin mecha tardan **más** en testearse: ~30% en la vela siguiente, frente a ~50% de los normales. La mediana es 3 velas en todas las temporalidades.
 3. De M1 a H1 la reacción tras el test ronda el 50%, igual que el control. Ninguna diferencia supera lo que podría ser azar.
 4. El tiempo que el nivel estuvo pendiente no mejora la reacción.
-5. H4 muestra la única pista de jerarquía (64%), pero con solo 25 casos. **Pendiente:** confirmarlo con el script H1.
+5. H4 parecía mostrar jerarquía (64%), pero con solo 25 casos. El script H1 no lo confirma (ver 5.1).
+
+### 5.1 Script H1: XAUUSD, IC Markets (2026-10-06)
+
+Informe completo en `resultados/XAUUSD_H1_2026-10-06.txt`. Reacción medida en 4 velas H1, con historial H1 desde 1998.
+Cada flecha se compara con el control de **su misma dirección**: la tendencia alcista del oro hace que todo lo que queda por debajo del precio se respete algo más.
+
+| TF | Verde (casos) | Control alcista | p | Roja (casos) | Control bajista | p |
+|---|---|---|---|---|---|---|
+| H1 | 52,7% (807) | 52,8% | 0,94 | 47,1% (826) | 49,1% | 0,26 |
+| H4 | 57,7% (319) | 52,9% | 0,09 | 46,7% (180) | 48,5% | 0,63 |
+| D1 | 60,9% (133) | 55,3% | 0,21 | 39,6% (48) | 47,1% | 0,30 |
+| W1 | 41,7% (12) | 54,8% | 0,36 | 33,3% (6) | 48,9% | 0,45 |
+
+**Conclusiones:**
+1. El 64% de H4 no se confirma: H4 da 53,7% frente a 50,8% del control.
+2. Ninguna fila se separa de su control con claridad (todas con p > 0,05).
+3. Las verdes de H4 y D1 juntas dan 58,6% frente a 53,6% (452 casos, p 0,03). Es un **indicio débil**: el grupo se eligió después de ver los datos y el efecto viene sobre todo de antes de 2018 (2018–2026: H4 55,1% frente a 52,6%, p 0,56; D1 solo 14 casos).
+4. Las rojas no superan a su control en ninguna temporalidad.
+5. El tiempo que el nivel estuvo pendiente no mejora la reacción.
+6. Para confirmar o descartar el indicio de las verdes en H4 y D1 hace falta probarlo en otro activo o con datos futuros.
 
 ---
 
@@ -233,3 +254,4 @@ Es un **modelo simplificado con números inventados**, no datos reales.
 | 2026-10-06 | Indicador v1.20: líneas punteadas de niveles sin mecha |
 | 2026-10-06 | Script EstadisticasNiveles (M1) y primera página de resultados de XAUUSD |
 | 2026-10-06 | Script EstadisticasNivelesH1 |
+| 2026-10-06 | Resultados H1 de XAUUSD añadidos a la página y al manual |

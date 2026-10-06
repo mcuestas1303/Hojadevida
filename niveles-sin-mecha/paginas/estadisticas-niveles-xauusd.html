@@ -54,7 +54,7 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;m
   <header style="display:flex;flex-direction:column;gap:10px">
     <div class="meta"><span>XAUUSD · IC Markets (Raw Trading Ltd)</span><span>Generado 2026.10.06 22:20</span><span>Reacción medida en M1 · 30 min</span></div>
     <h1>Niveles sin mecha en XAUUSD</h1>
-    <p class="lead">Resultados del script <b>EstadisticasNiveles</b> con tu historial de IC Markets. Solo flechas <b>verdes</b> (Apertura = Mínimo) y <b>rojas</b> (Apertura = Máximo). Se comparan con un grupo de control: aperturas que <b>sí</b> tienen mecha.</p>
+    <p class="lead">Resultados de los scripts <b>EstadisticasNiveles</b> (reacción en M1) y <b>EstadisticasNivelesH1</b> (reacción en H1) con tu historial de IC Markets. Solo flechas <b>verdes</b> (Apertura = Mínimo) y <b>rojas</b> (Apertura = Máximo). Se comparan con un grupo de control: aperturas que <b>sí</b> tienen mecha.</p>
   </header>
 
   <section class="card verdict" aria-labelledby="h-res">
@@ -63,7 +63,8 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;m
       <li><b class="n">~99%</b><span>de los niveles verdes y rojos acaban siendo testeados, en todas las temporalidades. Los niveles normales también (~99%). Que el precio vuelva es lo esperable, no una señal.</span></li>
       <li><b class="n">3 velas</b><span>es la mediana hasta el test en todas las temporalidades: 3 min en M1, 3 h en H1, 8 h en H4. Los niveles sin mecha tardan <b>más</b> que los normales: solo ~30% se testea en la vela siguiente, frente a ~50% del control. Es mecánico: el nivel está en el extremo de la vela, más lejos del cierre.</span></li>
       <li><b class="n">~50%</b><span>de las veces el precio queda del lado del rebote 30 min después del test: lo mismo que el control y que una moneda al aire, de M1 a H1. El rebote es igual o algo menor que la penetración (relación 0.88–0.97).</span></li>
-      <li><b class="n">H4: 64%</b><span>respetado y rebote el doble que la penetración. Es la única señal de jerarquía, pero son solo <b>25 casos</b> (el rango probable va de 44% a 80%), así que todavía no se puede afirmar.</span></li>
+      <li><b class="n">H4: 54%</b><span>con el script H1 (499 tests) frente a 51% del control. El 64% que salió midiendo en M1 eran solo 25 casos y <b>no se confirma</b>.</span></li>
+      <li><b class="n">Verdes</b><span>de H4 y D1: 58.6% frente a 53.6% de su control (452 casos). Es el único indicio de jerarquía, pero débil: el grupo se eligió después de ver los datos y el efecto viene sobre todo de antes de 2018. Las rojas no superan a su control en ninguna temporalidad.</span></li>
     </ul>
   </section>
 
@@ -88,6 +89,14 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;m
     <svg id="c3" role="img" aria-label="Porcentaje respetado según velas hasta el test"></svg>
   </section>
 
+  <section class="card" aria-labelledby="h-c4">
+    <h2 id="h-c4">Script H1: ¿hay jerarquía en H4, D1 y W1?</h2>
+    <p class="note">Reacción medida en 4 velas H1 tras el test, con historial desde 1998. Cada flecha se compara con el control de su misma dirección (verde con aperturas alcistas, roja con bajistas), porque la subida del oro hace que todo lo que queda por debajo del precio se respete un poco más.</p>
+    <div class="legend"><span><i class="sw" style="background:var(--s-flecha)"></i>Flecha (verde o roja según la fila)</span><span><i class="sw" style="background:var(--s-control)"></i>Control de la misma dirección</span><span>Punteado: menos de 30 casos</span></div>
+    <svg id="c4" role="img" aria-label="Porcentaje respetado por temporalidad y dirección con el script H1"></svg>
+    <p class="note">Ninguna fila individual se separa de su control con claridad (todas con p mayor que 0.05). Sumando las verdes de H4 y D1 sale 58.6% frente a 53.6% (p 0.03), pero de 2018 a 2026 la ventaja casi desaparece: H4 55.1% frente a 52.6% (p 0.56) y D1 solo tiene 14 casos.</p>
+  </section>
+
   <section class="card" aria-labelledby="h-tab">
     <h2 id="h-tab">Tabla completa</h2>
     <div class="tablewrap"><table id="tab"></table></div>
@@ -97,15 +106,16 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;m
   <section class="card" aria-labelledby="h-lim">
     <h2 id="h-lim">Límites y siguiente paso</h2>
     <ul class="plain">
-      <li>La reacción se mide con velas M1, y tu historial M1 empieza el 2025.05.09. Por eso H4 y D1 tienen muy pocos tests medidos (25 y 1), aunque se formaron 511 y 189 niveles.</li>
-      <li>«Respetado» usa una ventana fija de 30 minutos. Otra definición, por ejemplo si rebota X USD antes de atravesar el nivel, podría dar otro resultado.</li>
+      <li>El script M1 solo tenía historial M1 desde el 2025.05.09, por eso H4 y D1 tenían 25 y 1 tests medidos. El script H1 lo resolvió con historial desde 1998.</li>
+      <li>«Respetado» usa una ventana fija (30 min en M1, 4 h en H1). Otra definición, por ejemplo si rebota X USD antes de atravesar el nivel, podría dar otro resultado.</li>
       <li>El periodo incluye una fuerte tendencia del oro. Los resultados pueden cambiar en otros contextos de mercado.</li>
-      <li>Para resolver la duda de H4 y D1 se puede medir la reacción con velas H1 (historial desde 2018) en lugar de M1. Así habría cientos de casos en vez de 25.</li>
+      <li>Para confirmar o descartar el indicio de las verdes de H4 y D1 haría falta otro activo o datos futuros: con estos datos ya no se puede comprobar sin el riesgo de buscar hasta encontrar algo.</li>
     </ul>
   </section>
 </div>
 
 <script>
+const H1 = {"dir": [{"tf": "H1", "dir": "abajo", "n": 807, "resp": 52.7, "ci": [49.2, 56.1], "cn": 24136, "cresp": 52.8, "cci": [52.2, 53.4], "p": 0.9354, "ratio": 1.14, "cratio": 1.13, "rebatr": 1.52, "penatr": 1.34, "crebatr": 1.48, "cpenatr": 1.29}, {"tf": "H1", "dir": "arriba", "n": 826, "resp": 47.1, "ci": [43.7, 50.5], "cn": 23577, "cresp": 49.1, "cci": [48.5, 49.7], "p": 0.2584, "ratio": 1.13, "cratio": 1.16, "rebatr": 1.5, "penatr": 1.32, "crebatr": 1.44, "cpenatr": 1.29}, {"tf": "H4", "dir": "abajo", "n": 319, "resp": 57.7, "ci": [52.2, 63.0], "cn": 10472, "cresp": 52.9, "cci": [52.0, 53.9], "p": 0.0928, "ratio": 1.08, "cratio": 1.17, "rebatr": 1.65, "penatr": 1.44, "crebatr": 1.62, "cpenatr": 1.32}, {"tf": "H4", "dir": "arriba", "n": 180, "resp": 46.7, "ci": [39.5, 53.9], "cn": 9896, "cresp": 48.5, "cci": [47.5, 49.5], "p": 0.6268, "ratio": 1.11, "cratio": 1.15, "rebatr": 1.78, "penatr": 1.54, "crebatr": 1.55, "cpenatr": 1.37}, {"tf": "D1", "dir": "abajo", "n": 133, "resp": 60.9, "ci": [52.4, 68.8], "cn": 3729, "cresp": 55.3, "cci": [53.7, 56.9], "p": 0.2054, "ratio": 1.04, "cratio": 1.22, "rebatr": 1.63, "penatr": 1.27, "crebatr": 1.58, "cpenatr": 1.22}, {"tf": "D1", "dir": "arriba", "n": 48, "resp": 39.6, "ci": [27.0, 53.7], "cn": 3318, "cresp": 47.1, "cci": [45.4, 48.8], "p": 0.2979, "ratio": 1.15, "cratio": 1.15, "rebatr": 1.59, "penatr": 1.65, "crebatr": 1.5, "cpenatr": 1.35}, {"tf": "W1", "dir": "abajo", "n": 12, "resp": 41.7, "ci": [19.3, 68.0], "cn": 717, "cresp": 54.8, "cci": [51.2, 58.4], "p": 0.3644, "ratio": 0.65, "cratio": 1.31, "rebatr": 1.24, "penatr": 1.4, "crebatr": 1.7, "cpenatr": 1.29}, {"tf": "W1", "dir": "arriba", "n": 6, "resp": 33.3, "ci": [9.7, 70.0], "cn": 634, "cresp": 48.9, "cci": [45.0, 52.8], "p": 0.4478, "ratio": 0.99, "cratio": 1.25, "rebatr": 1.8, "penatr": 1.42, "crebatr": 1.76, "cpenatr": 1.6}], "all": [{"tf": "H1", "n": 1633, "resp": 49.8, "ci": [47.4, 52.3], "cn": 47713, "cresp": 51.0, "cci": [50.5, 51.4], "p": 0.3705}, {"tf": "H4", "n": 499, "resp": 53.7, "ci": [49.3, 58.0], "cn": 20368, "cresp": 50.8, "cci": [50.1, 51.5], "p": 0.1941}, {"tf": "D1", "n": 181, "resp": 55.2, "ci": [48.0, 62.3], "cn": 7047, "cresp": 51.5, "cci": [50.3, 52.6], "p": 0.3168}, {"tf": "W1", "n": 18, "resp": 38.9, "ci": [20.3, 61.4], "cn": 1351, "cresp": 52.0, "cci": [49.4, 54.7], "p": 0.2675}], "era": [{"tf": "H4", "per": "<2018", "n": 183, "resp": 59.6, "ci": [52.3, 66.4], "cn": 3842, "cresp": 53.4, "p": 0.1044}, {"tf": "H4", "per": "2018-2026", "n": 136, "resp": 55.1, "ci": [46.8, 63.3], "cn": 6630, "cresp": 52.6, "p": 0.5574}, {"tf": "D1", "per": "<2018", "n": 119, "resp": 63.0, "ci": [54.1, 71.2], "cn": 2648, "cresp": 55.6, "p": 0.1082}, {"tf": "D1", "per": "2018-2026", "n": 14, "resp": 42.9, "ci": [21.4, 67.4], "cn": 1081, "cresp": 54.9, "p": 0.3702}], "buck": [{"b": "1", "n": 761, "resp": 50.5, "ci": [46.9, 54.0], "cn": 39513, "cresp": 50.3, "cci": [49.8, 50.8]}, {"b": "2–5", "n": 726, "resp": 50.1, "ci": [46.5, 53.8], "cn": 17579, "cresp": 50.7, "cci": [50.0, 51.4]}, {"b": "6–20", "n": 442, "resp": 50.9, "ci": [46.3, 55.5], "cn": 9352, "cresp": 52.4, "cci": [51.4, 53.4]}, {"b": ">20", "n": 384, "resp": 54.4, "ci": [49.4, 59.3], "cn": 8684, "cresp": 52.9, "cci": [51.9, 54.0]}], "h4d1": {"n": 452, "resp": 58.6, "ci": [54.0, 63.1], "cresp": 53.6, "p": 0.0331}};
 const DATA = {"tf": [{"tf": "M1", "f": {"formados": 5219, "testeados": 99.1, "pendientes": 46, "mediana": 3.0, "med_seg": 180.0, "una": 30.5, "mas20": 20.9, "nreac": 5170, "resp": 49.5, "ci": [48.1, 50.9], "ratio": 0.97}, "c": {"formados": 44570, "testeados": 99.4, "pendientes": 255, "mediana": 2.0, "med_seg": 120.0, "una": 49.1, "mas20": 13.4, "nreac": 44290, "resp": 49.6, "ci": [49.2, 50.1], "ratio": 0.99}, "p": 0.866}, {"tf": "M5", "f": {"formados": 2342, "testeados": 99.0, "pendientes": 24, "mediana": 3.0, "med_seg": 900.0, "una": 31.3, "mas20": 20.4, "nreac": 2318, "resp": 50.1, "ci": [48.1, 52.2], "ratio": 0.94}, "c": {"formados": 47602, "testeados": 99.4, "pendientes": 296, "mediana": 2.0, "med_seg": 600.0, "una": 49.6, "mas20": 13.4, "nreac": 47298, "resp": 50.1, "ci": [49.7, 50.6], "ratio": 0.96}, "p": 0.991}, {"tf": "M15", "f": {"formados": 2010, "testeados": 98.8, "pendientes": 25, "mediana": 3.0, "med_seg": 2700.0, "una": 31.5, "mas20": 18.8, "nreac": 1126, "resp": 47.4, "ci": [44.5, 50.3], "ratio": 0.88}, "c": {"formados": 47906, "testeados": 98.9, "pendientes": 507, "mediana": 1.0, "med_seg": 900.0, "una": 50.9, "mas20": 12.9, "nreac": 31919, "resp": 50.1, "ci": [49.6, 50.7], "ratio": 0.96}, "p": 0.073}, {"tf": "M30", "f": {"formados": 2101, "testeados": 98.3, "pendientes": 35, "mediana": 3.0, "med_seg": 5400.0, "una": 29.7, "mas20": 19.1, "nreac": 449, "resp": 49.4, "ci": [44.8, 54.1], "ratio": 0.88}, "c": {"formados": 47786, "testeados": 98.8, "pendientes": 587, "mediana": 1.0, "med_seg": 1800.0, "una": 51.4, "mas20": 12.4, "nreac": 16023, "resp": 49.9, "ci": [49.1, 50.7], "ratio": 0.95}, "p": 0.852}, {"tf": "H1", "f": {"formados": 1661, "testeados": 98.3, "pendientes": 28, "mediana": 3.0, "med_seg": 10800.0, "una": 30.7, "mas20": 18.1, "nreac": 171, "resp": 52.6, "ci": [45.2, 60.0], "ratio": 0.88}, "c": {"formados": 48241, "testeados": 98.9, "pendientes": 525, "mediana": 1.0, "med_seg": 3600.0, "una": 52.3, "mas20": 11.8, "nreac": 8035, "resp": 50.7, "ci": [49.6, 51.8], "ratio": 0.94}, "p": 0.62}, {"tf": "H4", "f": {"formados": 511, "testeados": 97.7, "pendientes": 12, "mediana": 2.0, "med_seg": 28800.0, "una": 36.3, "mas20": 13.0, "nreac": 25, "resp": 64.0, "ci": [44.5, 79.8], "ratio": 2.09}, "c": {"formados": 20758, "testeados": 98.1, "pendientes": 390, "mediana": 1.0, "med_seg": 14400.0, "una": 52.8, "mas20": 11.4, "nreac": 2087, "resp": 50.7, "ci": [48.6, 52.8], "ratio": 0.89}, "p": 0.186}, {"tf": "D1", "f": {"formados": 189, "testeados": 95.8, "pendientes": 8, "mediana": 2.0, "med_seg": 172800.0, "una": 43.6, "mas20": 12.7, "nreac": 1, "resp": 0.0, "ci": [0.0, 79.3], "ratio": 0.64}, "c": {"formados": 7289, "testeados": 96.7, "pendientes": 242, "mediana": 1.0, "med_seg": 86400.0, "una": 54.3, "mas20": 10.7, "nreac": 331, "resp": 53.5, "ci": [48.1, 58.8], "ratio": 0.89}, "p": 0.285}], "buck": [{"b": "1", "f": {"n": 2828, "resp": 48.5, "ci": [46.7, 50.4], "ratio": 0.92}, "c": {"n": 73506, "resp": 49.3, "ci": [48.9, 49.6], "ratio": 0.97}}, {"b": "2–5", "f": {"n": 2757, "resp": 48.8, "ci": [47.0, 50.7], "ratio": 0.99}, "c": {"n": 35551, "resp": 50.3, "ci": [49.8, 50.8], "ratio": 0.99}}, {"b": "6–20", "f": {"n": 1748, "resp": 51.2, "ci": [48.9, 53.5], "ratio": 0.97}, "c": {"n": 19031, "resp": 51.1, "ci": [50.4, 51.8], "ratio": 0.96}}, {"b": "21–100", "f": {"n": 1107, "resp": 50.8, "ci": [47.8, 53.7], "ratio": 0.9}, "c": {"n": 11351, "resp": 51.0, "ci": [50.0, 51.9], "ratio": 0.91}}, {"b": ">100", "f": {"n": 794, "resp": 49.4, "ci": [45.9, 52.8], "ratio": 0.9}, "c": {"n": 8126, "resp": 51.2, "ci": [50.1, 52.3], "ratio": 0.96}}]};
 (function(){
   const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
@@ -115,9 +125,9 @@ const DATA = {"tf": [{"tf": "M1", "f": {"formados": 5219, "testeados": 99.1, "pe
   const fmtT = s => s < 3600 ? (s/60).toFixed(0)+' min' : s < 86400 ? (s/3600).toFixed(1).replace('.0','')+' h' : (s/86400).toFixed(1).replace('.0','')+' días';
 
   // filas con punto + intervalo para dos series
-  function dotRows(id, rows, xmin, xmax, ref, ticks){
+  function dotRows(id, rows, xmin, xmax, ref, ticks, L = 70){
     const svg = document.getElementById(id);
-    const W = 720, L = 70, R = 24, rowH = 46, T = 10, B = 30, H = T + rows.length*rowH + B;
+    const W = 720, R = 24, rowH = 46, T = 10, B = 30, H = T + rows.length*rowH + B;
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
     const x = v => L + (Math.max(xmin, Math.min(xmax, v)) - xmin) / (xmax - xmin) * (W - L - R);
     let o = '';
@@ -205,6 +215,18 @@ const DATA = {"tf": [{"tf": "M1", "f": {"formados": 5219, "testeados": 99.1, "pe
   document.getElementById('tab').innerHTML = h + '</tbody>';
 
   render();
+  function renderH1(){
+    const nm = {abajo: 'verde', arriba: 'roja'};
+    dotRows('c4', H1.dir.map(r => ({
+      label: r.tf + ' ' + nm[r.dir],
+      f: {v: r.resp, lo: r.ci[0], hi: r.ci[1], n: r.n},
+      c: {v: r.cresp, lo: r.cci[0], hi: r.cci[1], n: r.cn},
+      tip: `<b>${r.tf} · flecha ${nm[r.dir]}</b><br>Flecha: ${r.resp}% (${r.ci[0]}–${r.ci[1]}%) · ${r.n} tests${r.n < 30 ? ' · pocos casos' : ''}<br>Control ${r.dir === 'abajo' ? 'alcista' : 'bajista'}: ${r.cresp}% (${r.cci[0]}–${r.cci[1]}%) · ${r.cn} tests<br>p = ${r.p}`
+    })), 0, 100, 50, [0, 25, 50, 75, 100], 100);
+  }
+  renderH1();
+  if (window.matchMedia) matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', renderH1);
+  new MutationObserver(renderH1).observe(document.documentElement, {attributes: true, attributeFilter: ['data-theme']});
   if (window.matchMedia) matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', render);
   new MutationObserver(render).observe(document.documentElement, {attributes: true, attributeFilter: ['data-theme']});
 })();
