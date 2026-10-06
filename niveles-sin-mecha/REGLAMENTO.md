@@ -1,6 +1,6 @@
 # Reglamento operativo · Scalping e intradía
 
-**Versión 1.0 · vigente desde el 2026-10-06**
+**Versión 1.1 · vigente desde el 2026-10-07**
 
 Este reglamento es **obligatorio** para todo el equipo. Las reglas se basan en las estadísticas de `MANUAL.md` (secciones 5 a 5.3) y en prácticas de gestión de riesgo. Ninguna regla se puede saltar por criterio personal: se cambia solo por el procedimiento de la sección 7.
 
@@ -43,7 +43,7 @@ Cada regla indica de dónde sale:
 
 Y su estado:
 - **Vigente:** se aplica tal cual.
-- **Provisional:** se aplica ya, pero su valor se ajustará cuando se mida el spread (sección 5).
+- **Provisional:** se aplica ya, pero su valor se ajustará con nuevas mediciones (sección 5).
 
 ### 3.1 Señales
 
@@ -61,9 +61,9 @@ Hora del servidor de IC Markets (Nueva York + 7). Para El Salvador: servidor −
 
 | ID | Regla | Servidor | El Salvador (mar–nov) | El Salvador (nov–mar) | Origen | Estado |
 |---|---|---|---|---|---|---|
-| R6 | **No se debe** hacer scalping en esta franja. | 23:00–03:00 | 14:00–18:00 | 15:00–19:00 | Datos (5.3): poca liquidez y corte diario | Provisional |
-| R7 | El scalping **solo se permite** en esta franja. | 16:00–21:00 | 07:00–12:00 | 08:00–13:00 | Datos (5.3): máxima liquidez | Provisional |
-| R8 | **No se debe** abrir una operación en los 5 minutos anteriores ni en los 15 posteriores a un dato económico de alto impacto de EE. UU., ni en los 5 minutos alrededor de la apertura de la bolsa de NY. | 16:25–16:35 (apertura) | 07:25–07:35 | 08:25–08:35 | Datos (5.3): la vela H1 de las 17:00 concentra movimientos direccionales | Vigente |
+| R6 | **No se debe** hacer scalping en esta franja. | 23:00–02:00 | 14:00–17:00 | 15:00–18:00 | Datos (5.5): a las 23 h el spread se duplica todos los días (percentil 90 de 40 puntos frente a 10–12 el resto del día); a la 01 h hay picos en el 8% de los días | Vigente |
+| R7 | El scalping **solo se permite** de 02:00 a 23:00, respetando R8. La franja **preferente** es 16:00–19:00, la de más ticks por hora. | 02:00–23:00 (preferente 16:00–19:00) | 17:00–14:00 (preferente 07:00–10:00) | 18:00–15:00 (preferente 08:00–11:00) | Datos (5.5): de 02 a 23 h el spread típico es el mismo (8–9 puntos); 16–17 h concentra ~47.000 ticks por hora, frente a ~20.000 de media | Vigente |
+| R8 | **No se debe** abrir una operación en los 5 minutos anteriores ni en los 15 posteriores a un dato económico de alto impacto de EE. UU. (la mayoría sale a las 15:30 servidor), ni en los 5 minutos alrededor de la apertura de la bolsa de NY. | 15:25–15:45 (datos) y 16:25–16:35 (apertura) | 06:25–06:45 y 07:25–07:35 | 07:25–07:45 y 08:25–08:35 | Datos (5.3 y 5.5): a las 15 y 16 h el spread se dispara en el 5–7% de los días (hasta 700 puntos) y la vela H1 de las 17:00 concentra movimientos direccionales | Vigente |
 | R9 | El intradía (M15–H1) **debe cerrar** todas sus posiciones antes del corte diario. | Antes de 23:45 | Antes de 14:45 | Antes de 15:45 | Riesgo: evitar el hueco de la reapertura | Vigente |
 
 ### 3.3 Riesgo
@@ -74,7 +74,8 @@ Hora del servidor de IC Markets (Nueva York + 7). Para El Salvador: servidor −
 | R11 | **Toda operación debe tener stop** colocado en la plataforma al entrar. El stop **nunca** se mueve en contra; solo puede acercarse para proteger ganancias. | Riesgo | Historial de órdenes del bróker | Vigente |
 | R12 | **Pérdida máxima diaria: 2%.** Al alcanzarla, el trader cierra todo y no opera más ese día. | Riesgo | Resultado diario por trader | Vigente |
 | R13 | **Pérdida máxima mensual: 6%.** Al alcanzarla, **todo el equipo** deja de operar en real hasta la revisión extraordinaria (sección 6). | Riesgo | Resultado mensual del fondo | Vigente |
-| R14 | **No se debe** entrar si el spread en ese momento supera el tope. Tope provisional: el doble de la mediana del spread de esa hora, una vez medida. Mientras no se mida, el trader anota el spread de cada entrada. | Datos pendientes (sección 5) | Campo «spread al entrar» | Provisional |
+| R14 | **No se debe** entrar si el spread en ese momento supera **18 puntos (0,18 USD)**. Es el doble del spread típico (8–9 puntos) y solo se supera en momentos anómalos: noticias, reapertura o antes del corte. | Datos (5.5) | Campo «spread al entrar» | Vigente |
+| R18 | **No se debe** abrir una operación en la que el costo total (spread + comisión de la cuenta) supere el **10% del riesgo**. Ejemplo: con un spread de 0,09 USD y una comisión de 0,07 USD por onza (7 USD por lote ida y vuelta, si es la que aplica a la cuenta), el costo es 0,16 USD, así que el stop debe estar como mínimo a **1,60 USD** (160 puntos) de la entrada. | Datos (5.5) y Riesgo | Entrada, stop, spread y comisión en el diario | Vigente |
 
 ### 3.4 Método
 
@@ -97,12 +98,19 @@ Hora del servidor de IC Markets (Nueva York + 7). Para El Salvador: servidor −
 
 ---
 
-## 5. Pendiente de medir: spread
+## 5. Spread medido
 
-Las reglas R6, R7 y R14 son provisionales hasta que el analista mida el spread por hora con el método de la sección 4.5 del manual («Cómo medir el spread»). Con esa medición:
-- Se confirman o ajustan las franjas de R6 y R7.
-- Se fija el tope de spread de R14 por hora.
-- Se publica la versión 1.1 de este reglamento.
+Medido el 2026-10-07 con el script `ResumenSpread` sobre los ticks del 2026-01-02 al 2026-10-05 (196 días). El detalle está en la sección 5.5 del manual y en `resultados/XAUUSD_spread_2026-01-02_2026-10-05.csv`.
+
+| Hora del servidor | Spread típico (ponderado por tiempo) | Percentil 90 | Días con percentil 90 > 20 puntos |
+|---|---|---|---|
+| 01 h | 9 puntos | 12 | 7,7% |
+| 02–14 h | 8–9 | 10–12 | 0–2,6% |
+| 15–16 h | 8–9 | 10 | 5–7% (datos de EE. UU.) |
+| 17–22 h | 8 | 10–11 | 0–1,5% |
+| 23 h | **18** | **40** | **100%** |
+
+No hay diferencias entre días de la semana ni cambios importantes entre meses. El analista repite la medición cada 3 meses o si el bróker cambia condiciones.
 
 ---
 
@@ -156,3 +164,4 @@ Las reglas R6, R7 y R14 son provisionales hasta que el analista mida el spread p
 | Versión | Fecha | Cambio |
 |---|---|---|
 | 1.0 | 2026-10-06 | Primera versión. R6, R7 y R14 provisionales hasta medir el spread. |
+| 1.1 | 2026-10-07 | Spread medido (196 días). R6 pasa a 23:00–02:00; R7 permite el scalping de 02:00 a 23:00 con franja preferente 16:00–19:00; R8 añade la ventana de las 15:30; R14 fija el tope en 18 puntos; nueva R18 (costo máximo 10% del riesgo). Todas vigentes. |

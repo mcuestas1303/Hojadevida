@@ -27,7 +27,8 @@ niveles-sin-mecha/
 │   └── estadisticas-niveles-xauusd.html  ← resultados con gráficos (XAUUSD, M1 y H1)
 └── resultados/
     ├── XAUUSD_M1_2026-10-06.txt      ← informe original del script M1
-    └── XAUUSD_H1_2026-10-06.txt      ← informe original del script H1
+    ├── XAUUSD_H1_2026-10-06.txt      ← informe original del script H1
+    └── XAUUSD_spread_2026-01-02_2026-10-05.csv ← resumen del spread por día y hora
 ```
 
 Las carpetas `MT5/Indicators` y `MT5/Scripts` tienen el mismo nombre que las de MetaTrader, para que sepas dónde copiar cada archivo.
@@ -309,6 +310,32 @@ El % que sigue sin testear después de N velas sigue la ley del camino aleatorio
 
 Las flechas siguen la misma curva que el azar, ~1,5 veces más arriba porque nacen en el extremo de la vela. Consecuencia: si un nivel lleva N velas pendiente, la probabilidad de que se testee en las N siguientes es siempre ~29%. **El tiempo no crea más presión por volver** (base de la regla R3 del reglamento).
 
+### 5.5 Spread por hora (XAUUSD, IC Markets, 196 días)
+
+Medido con el script `ResumenSpread` sobre los ticks del 2026-01-02 al 2026-10-05. Datos en `resultados/XAUUSD_spread_2026-01-02_2026-10-05.csv`. Valores en puntos (1 punto = 0,01 USD); «ponderado por tiempo» es el spread que encontraría una orden enviada en un momento cualquiera de esa hora. Cada cifra es la mediana de los 196 días.
+
+| Hora servidor | El Salvador (mar–nov / nov–mar) | Ticks por hora | Spread típico | Percentil 90 | Días con P90 > 20 | Máximo típico del día |
+|---|---|---|---|---|---|---|
+| 01 | 16 / 17 | 10.600 | 9 | 12 | 7,7% | 99 |
+| 02 | 17 / 18 | 11.000 | 9 | 12 | 2,6% | 86 |
+| 03–08 | 18–23 / 19–00 | 12.000–29.000 | 9 | 12 | 0–0,5% | 67–93 |
+| 09–14 | 00–05 / 01–06 | 15.000–22.000 | 8–8,5 | 10–11 | 0–1,5% | 72–83 |
+| 15 | 06 / 07 | 27.000 | 8,6 | 10 | **7,1%** | 112 (hasta 700) |
+| 16 | 07 / 08 | **46.400** | 8,6 | 10 | **5,1%** | 109 |
+| 17 | 08 / 09 | **49.100** | 8 | 10 | 1,5% | 115 |
+| 18 | 09 / 10 | 34.100 | 7,8 | 10 | 0,5% | 84 |
+| 19–22 | 10–13 / 11–14 | 19.000–24.000 | 8–8,2 | 11 | 0–1% | 61–75 |
+| **23** | 14 / 15 | 8.500 | **17,8** | **40** | **100%** | 82 |
+
+**Conclusiones:**
+1. El spread típico es **casi constante, 8–9 puntos (0,08–0,09 USD), de 02 a 22 h**. No hay diferencias entre días de la semana, y por meses solo febrero fue algo más alto (9,7).
+2. **La hora de las 23 es la única claramente cara:** el spread se duplica todos los días, por la cercanía del corte diario.
+3. **La 01 h (reapertura) y las 15–16 h (datos de EE. UU. a las 15:30 y apertura de la bolsa a las 16:30)** tienen picos ocasionales, con máximos de hasta 700 puntos (7 USD).
+4. **La liquidez sí cambia mucho:** 16–17 h tiene unos 47.000 ticks por hora, frente a ~10.000 en la reapertura y a las 23 h.
+5. Costo por operación: con 9 puntos de spread y, si aplica a la cuenta, 7 USD de comisión por lote ida y vuelta (0,07 USD por onza), cada entrada cuesta ~0,16 USD por onza. Con un stop de 1 USD, el costo ya es el 16% del riesgo.
+
+Estos datos fijaron las reglas R6, R7, R8, R14 y R18 de la versión 1.1 del reglamento.
+
 ---
 
 ## 6. Simulador de ticks y velas
@@ -364,3 +391,4 @@ Es un **modelo simplificado con números inventados**, no datos reales.
 | 2026-10-06 | Franjas horarias con más y menos marubozus, con hora de El Salvador |
 | 2026-10-06 | Reglamento operativo v1.0, sección 4.5 (cómo medir el spread) y 5.4 (niveles que no se testean) |
 | 2026-10-06 | Script ResumenSpread |
+| 2026-10-07 | Spread por hora medido (sección 5.5) y reglamento v1.1 |
