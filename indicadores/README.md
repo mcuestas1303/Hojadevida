@@ -28,3 +28,13 @@ temporalidad (p. ej. XAUUSD M1 en IC Markets).
   marcadas frente a las no marcadas, y la referencia teórica de un movimiento aleatorio
   (teorema de Sparre Andersen: C(2m,m)/4^m ≈ 1/√(π·m) con m = ticks − 1).
 - **Velas cerradas a analizar**: cuántas velas usa el panel (0 = todo el historial cargado).
+
+## Niveles sin mecha (desequilibrios) — v1.20
+Desde cada vela con **Apertura = Máximo** (flecha roja) o **Apertura = Mínimo** (flecha verde)
+se dibuja una línea punteada fina en el extremo sin mecha:
+- **Pendiente** (no testeado): verde apagado si está en un mínimo, rojo apagado si está en un máximo,
+  y se prolonga hacia la derecha.
+- **Testeado**: en cuanto una vela posterior toca el nivel, la línea se corta en esa vela y pasa a gris.
+
+Parámetros: activar/desactivar niveles, incluir también los de cierre (suelen testearse en la
+vela siguiente), mantener u ocultar los testeados, velas a revisar (500) y los tres colores.

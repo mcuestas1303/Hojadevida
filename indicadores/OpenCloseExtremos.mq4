@@ -7,7 +7,7 @@
 //|  ▲ verde/azul bajo la vela    : Apertura/Cierre = Mínimo         |
 //+------------------------------------------------------------------+
 #property copyright "OpenCloseExtremos"
-#property version   "1.10"
+#property version   "1.20"
 #property strict
 #property indicator_chart_window
 #property indicator_buffers 4
@@ -32,6 +32,13 @@ input bool   InpAlertaSonido     = false; // Sonido
 input string InpArchivoSonido    = "alert.wav";
 input bool   InpMostrarEstadistica = true;  // Mostrar panel de porcentajes
 input int    InpBarrasEstadistica  = 1000;  // Velas cerradas a analizar (0 = todas)
+input bool   InpNiveles          = true;            // Dibujar niveles sin mecha (desequilibrios)
+input bool   InpNivelesCierre    = false;           // Incluir también niveles de cierre
+input bool   InpMostrarTesteados = true;            // Mantener los niveles ya testeados
+input int    InpVelasNiveles     = 500;             // Velas cerradas a revisar para niveles
+input color  InpColorNivelMin    = C'46,125,80';    // Color nivel en mínimo (pendiente)
+input color  InpColorNivelMax    = C'150,60,60';    // Color nivel en máximo (pendiente)
+input color  InpColorTesteado    = C'75,75,75';     // Color nivel ya testeado
 
 //--- buffers
 double BufOpenHigh[];
@@ -42,6 +49,17 @@ double BufCloseLow[];
 double   g_tol;
 datetime g_ultimaAlerta = 0;
 datetime g_ultimaEstadistica = 0;
+datetime g_ultimosNiveles = 0;
+
+#define RAY_PROP OBJPROP_RAY
+#define NV_PREFIX "OCE_Nivel_"
+struct Nivel
+  {
+   string            nombre;
+   double            precio;
+   bool              abajo;     // true = nivel en un mínimo (el precio quedó por encima)
+  };
+Nivel g_pendientes[];
 double   g_tablaTeorica[201];
 
 //+------------------------------------------------------------------+
@@ -150,8 +168,106 @@ void EstadisticaMostrar()
   }
 
 //+------------------------------------------------------------------+
+//| Niveles sin mecha: línea punteada desde el extremo sin mecha de  |
+//| la vela hasta que una vela posterior lo vuelve a tocar.          |
+//+------------------------------------------------------------------+
+void CrearLineaNivel(const string nombre, const datetime t0, const datetime t1,
+                     const double p, const bool testeado, const bool abajo, const string texto)
+  {
+   if(!ObjectCreate(0, nombre, OBJ_TREND, 0, t0, p, t1, p))
+      return;
+   ObjectSetInteger(0, nombre, OBJPROP_COLOR, testeado ? InpColorTesteado : (abajo ? InpColorNivelMin : InpColorNivelMax));
+   ObjectSetInteger(0, nombre, OBJPROP_STYLE, STYLE_DOT);
+   ObjectSetInteger(0, nombre, OBJPROP_WIDTH, 1);
+   ObjectSetInteger(0, nombre, RAY_PROP, !testeado);
+   ObjectSetInteger(0, nombre, OBJPROP_BACK, true);
+   ObjectSetInteger(0, nombre, OBJPROP_SELECTABLE, false);
+   ObjectSetInteger(0, nombre, OBJPROP_HIDDEN, true);
+   ObjectSetString(0, nombre, OBJPROP_TOOLTIP, texto + (testeado ? " (testeado)" : " (no testeado)"));
+  }
+
+void AgregarPendiente(const string nombre, const double p, const bool abajo)
+  {
+   int n = ArraySize(g_pendientes);
+   ArrayResize(g_pendientes, n + 1);
+   g_pendientes[n].nombre = nombre;
+   g_pendientes[n].precio = p;
+   g_pendientes[n].abajo  = abajo;
+  }
+
+//--- revisa en cada tick si la vela actual toca algún nivel pendiente
+void RevisarPendientes(const datetime t, const double h, const double l)
+  {
+   for(int k = ArraySize(g_pendientes) - 1; k >= 0; k--)
+     {
+      bool toca = g_pendientes[k].abajo ? (l <= g_pendientes[k].precio + g_tol)
+                                        : (h >= g_pendientes[k].precio - g_tol);
+      if(!toca)
+         continue;
+      string n = g_pendientes[k].nombre;
+      if(!InpMostrarTesteados)
+         ObjectDelete(0, n);
+      else
+        {
+         ObjectMove(0, n, 1, t, g_pendientes[k].precio);
+         ObjectSetInteger(0, n, RAY_PROP, false);
+         ObjectSetInteger(0, n, OBJPROP_COLOR, InpColorTesteado);
+         ObjectSetString(0, n, OBJPROP_TOOLTIP, ObjectGetString(0, n, OBJPROP_TOOLTIP) + " → testeado");
+        }
+      int last = ArraySize(g_pendientes) - 1;
+      if(k != last)
+        {
+         g_pendientes[k].nombre = g_pendientes[last].nombre;
+         g_pendientes[k].precio = g_pendientes[last].precio;
+         g_pendientes[k].abajo  = g_pendientes[last].abajo;
+        }
+      ArrayResize(g_pendientes, last);
+     }
+  }
+
+void NivelDesde(const int i, const double p, const bool abajo, const string cod, const string texto,
+                const datetime &time[], const double &high[], const double &low[])
+  {
+   int jt = -1;
+   for(int j = i - 1; j >= 0; j--)                     // series: j menor = más reciente
+      if(abajo ? (low[j] <= p + g_tol) : (high[j] >= p - g_tol)) { jt = j; break; }
+   if(jt >= 0 && !InpMostrarTesteados)
+      return;
+   string nombre = NV_PREFIX + cod + "_" + IntegerToString((long)time[i]);
+   string tip = StringFormat("%s %s  %s", texto, DoubleToString(p, _Digits), TimeToString(time[i], TIME_DATE | TIME_MINUTES));
+   CrearLineaNivel(nombre, time[i], (jt >= 0) ? time[jt] : time[0], p, jt >= 0, abajo, tip);
+   if(jt < 0)
+      AgregarPendiente(nombre, p, abajo);
+  }
+
+void ConstruirNiveles(const int rates_total, const datetime &time[], const double &open[],
+                      const double &high[], const double &low[], const double &close[])
+  {
+   ObjectsDeleteAll(0, NV_PREFIX);
+   ArrayResize(g_pendientes, 0);
+   if(!InpNiveles)
+      return;
+   int desde = MathMin(InpVelasNiveles, rates_total - 1);
+   for(int i = desde; i >= 1; i--)                     // índice 1 = última vela cerrada
+     {
+      if(Igual(high[i], low[i]))
+         continue;
+      bool oh = Igual(open[i], high[i]),  ol = Igual(open[i], low[i]);
+      bool ch = Igual(close[i], high[i]), cl = Igual(close[i], low[i]);
+      if(oh) NivelDesde(i, high[i], false, "AMax", "Apertura = Máximo", time, high, low);
+      if(ol) NivelDesde(i, low[i],  true,  "AMin", "Apertura = Mínimo", time, high, low);
+      if(InpNivelesCierre)
+        {
+         if(ch && !oh) NivelDesde(i, high[i], false, "CMax", "Cierre = Máximo", time, high, low);
+         if(cl && !ol) NivelDesde(i, low[i],  true,  "CMin", "Cierre = Mínimo", time, high, low);
+        }
+     }
+  }
+
+//+------------------------------------------------------------------+
 void OnDeinit(const int reason)
   {
+   ObjectsDeleteAll(0, NV_PREFIX);
    Comment("");
   }
 
@@ -213,6 +329,15 @@ int OnCalculate(const int rates_total,
         }
       g_ultimaAlerta = time[1];
      }
+
+   //--- niveles sin mecha: se reconstruyen en cada vela nueva y se revisan en cada tick
+   if(prev_calculated == 0 || time[0] != g_ultimosNiveles)
+     {
+      ConstruirNiveles(rates_total, time, open, high, low, close);
+      g_ultimosNiveles = time[0];
+     }
+   else
+      RevisarPendientes(time[0], high[0], low[0]);
 
    //--- panel de estadística (se recalcula una vez por vela nueva)
    if(InpMostrarEstadistica && (prev_calculated == 0 || time[0] != g_ultimaEstadistica))
