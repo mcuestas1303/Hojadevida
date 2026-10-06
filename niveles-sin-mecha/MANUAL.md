@@ -17,7 +17,8 @@ niveles-sin-mecha/
 │   │   └── OpenCloseExtremos.mq5     ← indicador: flechas, panel de % y líneas de niveles
 │   └── Scripts/
 │       ├── EstadisticasNiveles.mq5   ← estadísticas, reacción medida en M1
-│       └── EstadisticasNivelesH1.mq5 ← estadísticas, reacción medida en H1
+│       ├── EstadisticasNivelesH1.mq5 ← estadísticas, reacción medida en H1
+│       └── ResumenSpread.mq5         ← resumen del spread por día y hora a partir de los ticks
 ├── MT4/
 │   └── Indicators/
 │       └── OpenCloseExtremos.mq4     ← el mismo indicador para MetaTrader 4
@@ -166,7 +167,17 @@ Funcionan con cualquier símbolo: EURUSD, índices, petróleo, cripto.
 
 El spread (Ask − Bid) es el costo que se paga en cada entrada. El reglamento necesita conocerlo por hora para cerrar las reglas R6, R7 y R14. No hace falta ningún script: MetaTrader lo exporta.
 
-**Método exacto: ticks.** Cada tick trae su Bid y su Ask, así que el spread se calcula tick a tick.
+**Método recomendado: script ResumenSpread (meses de ticks en un archivo pequeño).**
+Exportar ticks crudos genera archivos enormes (5 semanas de oro ≈ 117 MB comprimidos). El script `MT5/Scripts/ResumenSpread.mq5` lee los ticks dentro de MetaTrader y guarda solo un resumen por día y hora.
+1. Cópialo en **MQL5 → Scripts** y compílalo con **F7**.
+2. Arrástralo a un gráfico de **XAUUSD** y pon las fechas **Desde** y **Hasta** (por ejemplo, de 2026.01.01 a 2026.10.06).
+3. Espera: en la esquina del gráfico verás qué día está leyendo. La primera vez puede tardar, porque descarga los ticks del servidor.
+4. Al terminar, el aviso indica cuántos días leyó. El archivo queda en **MQL5 → Files → `OCE_Spread_XAUUSD.csv`** y pesa pocos cientos de KB.
+5. Adjúntalo en el chat.
+
+Para cada día y hora trae: número de ticks, spread medio, percentiles 50, 75, 90 y 99, máximo, y el spread **ponderado por tiempo** (el que encontraría una orden enviada en un momento cualquiera de esa hora). Todo en puntos (1 punto = 0,01 en XAUUSD).
+
+**Método manual: ticks crudos.** Cada tick trae su Bid y su Ask, así que el spread se calcula tick a tick. Sirve para revisar un día concreto.
 1. Ve a **Ver → Símbolos** (Ctrl+U) y selecciona **XAUUSD**.
 2. Abre la pestaña **Ticks**.
 3. Elige un rango de **2 a 4 semanas** completas (de lunes a viernes) y pulsa **Solicitar**.
@@ -352,3 +363,4 @@ Es un **modelo simplificado con números inventados**, no datos reales.
 | 2026-10-06 | Análisis por sesión añadido a la página y al manual |
 | 2026-10-06 | Franjas horarias con más y menos marubozus, con hora de El Salvador |
 | 2026-10-06 | Reglamento operativo v1.0, sección 4.5 (cómo medir el spread) y 5.4 (niveles que no se testean) |
+| 2026-10-06 | Script ResumenSpread |
