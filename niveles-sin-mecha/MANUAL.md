@@ -11,6 +11,7 @@ Probado con datos de **XAUUSD en IC Markets (MetaTrader 5)**. Funciona con cualq
 ```
 niveles-sin-mecha/
 ├── MANUAL.md                         ← este manual
+├── REGLAMENTO.md                     ← reglas obligatorias de operativa (scalping e intradía)
 ├── MT5/
 │   ├── Indicators/
 │   │   └── OpenCloseExtremos.mq5     ← indicador: flechas, panel de % y líneas de niveles
@@ -161,6 +162,32 @@ Funcionan con cualquier símbolo: EURUSD, índices, petróleo, cripto.
 - En divisas con 5 decimales casi nunca coinciden exactamente apertura y extremo. Usa una tolerancia de 1–3 puntos.
 - En activos con horario (índices, acciones), los huecos entre sesiones pueden testear o saltar niveles.
 
+### 4.5 Cómo medir el spread
+
+El spread (Ask − Bid) es el costo que se paga en cada entrada. El reglamento necesita conocerlo por hora para cerrar las reglas R6, R7 y R14. No hace falta ningún script: MetaTrader lo exporta.
+
+**Método exacto: ticks.** Cada tick trae su Bid y su Ask, así que el spread se calcula tick a tick.
+1. Ve a **Ver → Símbolos** (Ctrl+U) y selecciona **XAUUSD**.
+2. Abre la pestaña **Ticks**.
+3. Elige un rango de **2 a 4 semanas** completas (de lunes a viernes) y pulsa **Solicitar**.
+4. Pulsa **Exportar ticks** y guarda el CSV.
+5. Envíamelo. Calculo el spread por hora del servidor y por día de la semana (mediana, percentil 90 y máximo).
+
+La exportación de ticks puede no cubrir todo el historial disponible, y los archivos son grandes. Por eso conviene pedir pocas semanas cada vez.
+
+**Método rápido: velas.**
+1. En la misma ventana, pestaña **Barras**, elige **M1** y un rango de varios meses.
+2. Pulsa **Solicitar** y luego **Exportar barras**.
+
+El archivo trae una columna de spread por vela, en puntos (en XAUUSD, 1 punto = 0,01). MetaTrader guarda **un solo valor de spread por vela** y su documentación no aclara si es el mínimo o un promedio. Por eso sirve para ver el patrón por hora a lo largo de meses, pero los límites del reglamento se fijan con ticks.
+
+**Comprobación en vivo.** En la **Observación de Mercado**, haz clic derecho, elige **Columnas → Spread** y verás el spread actual de cada símbolo. Así anota el trader el «spread al entrar» en el diario.
+
+**Qué sale de la medición:**
+- Las franjas definitivas de R6 (sin scalping) y R7 (horario de scalping).
+- El tope de spread por hora de R14.
+- La versión 1.1 del reglamento.
+
 ---
 
 ## 5. Resultados hasta ahora: XAUUSD, IC Markets, script M1 (2026-10-06)
@@ -255,6 +282,22 @@ Sesiones en hora del servidor de IC Markets, que es siempre la hora de Nueva Yor
 
 **Límites.** Los datos de M1 cubren solo 7 semanas; M15 (desde 2024) y H1 (desde 2018) confirman el patrón. En las semanas de marzo y octubre-noviembre en que Londres y Nueva York cambian de horario en fechas distintas, las franjas de Londres se desplazan una hora.
 
+### 5.4 Niveles que no se testean
+
+Muy pocos niveles quedan sin testear (M1 0,9%, H1 1,7%, H4 2,3%, D1 4,2%, W1 14%), y casi todos son antiguos y están lejos del precio: en H1 a ~52% del precio actual y en D1 a ~88% (mínimos de 2005–2008). En H4, D1 y W1 todos los pendientes son verdes (mínimos que la subida del oro dejó atrás), y las velas normales muestran el mismo reparto: es la tendencia, no la flecha.
+
+El % que sigue sin testear después de N velas sigue la ley del camino aleatorio, 1/√(π·N):
+
+| Velas | Flechas sin testear | Control | Azar puro |
+|---|---|---|---|
+| 1 | 69,7% | 49,8% | 56,4% |
+| 5 | 39,7% | 26,1% | 25,2% |
+| 20 | 20,8% | 13,6% | 12,6% |
+| 100 | 9,2% | 6,1% | 5,6% |
+| 1000 | 2,9% | 2,0% | 1,8% |
+
+Las flechas siguen la misma curva que el azar, ~1,5 veces más arriba porque nacen en el extremo de la vela. Consecuencia: si un nivel lleva N velas pendiente, la probabilidad de que se testee en las N siguientes es siempre ~29%. **El tiempo no crea más presión por volver** (base de la regla R3 del reglamento).
+
 ---
 
 ## 6. Simulador de ticks y velas
@@ -308,3 +351,4 @@ Es un **modelo simplificado con números inventados**, no datos reales.
 | 2026-10-06 | Resultados H1 de XAUUSD añadidos a la página y al manual |
 | 2026-10-06 | Análisis por sesión añadido a la página y al manual |
 | 2026-10-06 | Franjas horarias con más y menos marubozus, con hora de El Salvador |
+| 2026-10-06 | Reglamento operativo v1.0, sección 4.5 (cómo medir el spread) y 5.4 (niveles que no se testean) |
