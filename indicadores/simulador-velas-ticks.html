@@ -82,6 +82,22 @@ button .dot{display:inline-block;width:0;height:0;border-left:5px solid transpar
 .tag.mine{background:var(--gold-soft);color:var(--gold)}
 .tag.no{background:var(--down-soft);color:var(--down)}
 .mech > div.k-doc{border-left-color:var(--up)} .mech > div.k-mine{border-left-color:var(--gold)} .mech > div.k-no{border-left-color:var(--down)}
+.obs{border:1px dashed var(--gold);border-radius:6px;padding:8px 12px;font-size:.86rem;display:flex;flex-direction:column;gap:4px}
+.obs .ttl{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);font-weight:600}
+.obs .z{font-family:var(--mono);font-size:.8rem}
+.obs .z.open{color:var(--fg)} .obs .z.done{color:var(--muted);text-decoration:line-through}
+.obs .z.flash{background:var(--gold-soft);border-radius:4px}
+.actors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media (max-width:760px){.actors{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:440px){.actors{grid-template-columns:1fr}}
+.actor{border:1px solid var(--line);border-radius:6px;padding:8px 10px;display:flex;flex-direction:column;gap:3px;min-width:0;font-size:.82rem;line-height:1.4}
+.actor .nm{font-weight:600;font-size:.8rem}
+.actor .gl{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.actor .tx{color:var(--muted)}
+.actor.on{border-color:var(--gold);background:var(--gold-soft)}
+.actor.on .tx{color:var(--fg)}
+.actorsTtl{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.actorsTtl small{color:var(--muted);font-size:.75rem}
 .src{font-size:.8rem;color:var(--muted)}
 .src a{color:var(--gold)}
 .src ul{margin:4px 0 0;padding-left:18px}
@@ -156,6 +172,9 @@ tr.new{animation:flash 1s ease-out}
         <div class="ctr"><b id="cInv">0</b><small>Inventario del proveedor en lotes (negativo = vendió de más)</small></div>
       </div>
       <div class="narr" id="narr" aria-live="polite"><strong>Empieza aquí:</strong> prueba los escenarios de las 4 flechas o pulsa «Orden de compra» con 3 lotes. Verás que primero se agota la oferta del Ask y después el proveedor sube su Bid. Solo en ese momento se mueve la vela.</div>
+      <div class="obs" id="obs" aria-live="polite"></div>
+      <div class="actorsTtl"><h2>Qué persigue cada participante en este paso</h2><small>Resaltados: los que intervienen</small></div>
+      <div class="actors" id="actors"></div>
     </section>
 
     <section class="panel" aria-labelledby="h-ctl">
@@ -201,7 +220,7 @@ tr.new{animation:flash 1s ease-out}
 
   <section class="panel explain" aria-labelledby="h-who">
     <h2 id="h-who">Quién persigue qué</h2>
-    <p>Detrás de cada vela hay participantes con objetivos distintos. Entender qué busca cada uno explica por qué la pizarra se mueve como se mueve.</p>
+    <p>Detrás de cada vela hay participantes con objetivos distintos. Este es el resumen; al pulsar cualquier botón del simulador, el panel «Qué persigue cada participante en este paso» muestra lo que busca cada uno en ese momento concreto.</p>
     <div class="cards">
       <div class="card">
         <span class="goal">Proveedor de liquidez</span>
@@ -229,6 +248,33 @@ tr.new{animation:flash 1s ease-out}
           <li>Eres tomador de precio: pagas el spread en cada operación y no ves ni la profundidad ni las operaciones reales.</li>
           <li>No compites en velocidad ni en información. Por lo general, lo razonable es controlar costos (evitar spreads amplios y horas de poca liquidez) y no entrar justo cuando el impacto temporal está en su punto máximo.</li>
           <li>Ante todo, <b>comprobar con datos</b> si un patrón funciona antes de arriesgar dinero en él, y gestionar el riesgo de cada operación. Esto es orientación general, no una recomendación de inversión.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="goal">Bróker (IC Markets)</span>
+        <h3>Cobrar por cada operación</h3>
+        <ul>
+          <li>Según IC Markets, toma los precios de proveedores de liquidez externos y los pasa sin mesa de negociación.</li>
+          <li>Sus ingresos en estas cuentas: una <b>comisión</b> (cuenta Raw, 7 USD por lote ida y vuelta) o un <b>margen</b> sumado al spread (cuenta Standard, 0.8 pips).</li>
+          <li>Por eso le interesa el volumen de operaciones, no la dirección del precio.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="goal">Arbitrajistas y alta frecuencia</span>
+        <h3>Igualar precios entre mercados</h3>
+        <ul>
+          <li>El oro cotiza en muchos sitios a la vez. Si un mercado se queda atrás, compran donde está barato y venden donde está caro.</li>
+          <li>Por eso el proveedor actualiza toda la pizarra en cuanto otro mercado se mueve: si no lo hace, ellos le operan la diferencia.</li>
+          <li>Son la razón de que una noticia se vea como un salto casi instantáneo en todos los brókers.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="goal">Coberturistas</span>
+        <h3>Reducir un riesgo de su negocio</h3>
+        <ul>
+          <li>Por ejemplo, una minera que asegura hoy el precio de su producción futura, o una empresa que necesita oro como materia prima.</li>
+          <li>No buscan ganar con el movimiento del minuto: operan por necesidad comercial y en plazos largos.</li>
+          <li>Su flujo es constante y poco sensible a la vela, por eso en el simulador casi nunca aparecen resaltados.</li>
         </ul>
       </div>
     </div>
@@ -278,6 +324,8 @@ tr.new{animation:flash 1s ease-out}
         <li><a href="https://questdb.com/glossary/optimal-execution-strategies-almgren-chriss-model/">Modelo Almgren-Chriss de ejecución óptima (impacto temporal y permanente)</a></li>
         <li><a href="https://arxiv.org/pdf/1010.2014">Recurrence and Pólya number of general one-dimensional random walks</a></li>
         <li><a href="https://metricgate.com/docs/roll-effective-spread/">Roll (1984), rebote bid-ask</a></li>
+        <li><a href="https://icmarkets.com/client-area/faq">IC Markets FAQ (precios de proveedores de liquidez, comisiones y margen)</a></li>
+        <li><a href="https://www.compareforexbrokers.com/reviews/ic-markets-review/raw-spread-vs-standard-account/">IC Markets Raw vs Standard</a></li>
       </ul>
     </div>
   </section>
@@ -302,6 +350,84 @@ tr.new{animation:flash 1s ease-out}
   let nTicks = 0, nBidTicks = 0, nTrades = 0, inv = 0;
   let hitSide = null, hitIdx = -1;
   let busy = false;
+  let zones = [];
+
+  // ---------- participantes ----------
+  const ACTORS = [
+    {k:'lp', nm:'Proveedor de liquidez', gl:'Ganar el spread sin quedarse con posición',
+     idle:'Sigue cotizando Bid y Ask. Gana si le compran y le venden por igual.'},
+    {k:'fondo', nm:'Fondo / institucional', gl:'Ejecutar grande al menor costo',
+     idle:'No interviene en este paso.'},
+    {k:'retail', nm:'Retail (tú)', gl:'Controlar costos y riesgo',
+     idle:'Observa. Cada entrada le cuesta el spread.'},
+    {k:'broker', nm:'Bróker (IC Markets)', gl:'Cobrar por cada operación',
+     idle:'Transmite los precios del proveedor. Cobra por operación, no por la dirección.'},
+    {k:'arb', nm:'Arbitrajistas / alta frecuencia', gl:'Igualar precios entre mercados',
+     idle:'Vigila que este precio no se separe del de otros mercados.'},
+    {k:'cob', nm:'Coberturistas', gl:'Reducir un riesgo de su negocio',
+     idle:'Operan por necesidad comercial (p. ej. una minera que asegura su precio), no por la vela del minuto.'}
+  ];
+  const BROKER_TX = 'Pasa la orden al proveedor. Según IC Markets, cobra la comisión (cuenta Raw) o el margen añadido al spread (cuenta Standard), así que gana por el volumen, no por la dirección.';
+  function actors(map){
+    $('actors').innerHTML = ACTORS.map(a => {
+      const on = map && map[a.k];
+      return `<div class="actor${on ? ' on' : ''}"><span class="nm">${a.nm}</span><span class="gl">${a.gl}</span><span class="tx">${on ? map[a.k] : a.idle}</span></div>`;
+    }).join('');
+  }
+  const invTxt = () => inv < 0 ? `vendido ${-inv} lotes` : inv > 0 ? `comprado ${inv} lotes` : 'sin posición';
+
+  function actorsBuy(size, moved){
+    actors({
+      lp: moved
+        ? `Le compraron ${size} lote(s) y queda ${invTxt()}. Al agotarse sus ofertas sube el precio: no quiere seguir vendiendo barato a alguien que quizá sabe algo (selección adversa).`
+        : `Le compraron ${size} lote(s) sin mover el precio porque tenía oferta de sobra. Queda ${invTxt()} y vigila si el flujo sigue en un solo sentido.`,
+      fondo: size >= 6
+        ? 'Si esta compra es suya, cada nivel que se come le sale más caro: es su costo de impacto. Solo le compensa ir así de rápido si tiene prisa.'
+        : `Una orden de ${size} lote(s) es pequeña. Un fondo partiría su compra grande en trozos así para no mover el precio (metaorden).`,
+      retail: 'Si compra aquí paga el Ask. Comprar mientras el precio sube deprisa es comprar donde el impacto temporal es mayor.',
+      broker: BROKER_TX,
+      arb: moved ? 'Si este Ask quedó por encima del de otros mercados, venden aquí y compran allá hasta igualarlos. Eso frena la subida si no hay compras en otros sitios.' : null
+    });
+  }
+  function actorsSell(size, moved){
+    actors({
+      lp: moved
+        ? `Le vendieron ${size} lote(s) y queda ${invTxt()}. Al agotarse sus compras baja el Bid: no quiere seguir comprando caro a alguien que quizá sabe algo.`
+        : `Le vendieron ${size} lote(s) sin mover el precio porque tenía demanda de sobra. Queda ${invTxt()}.`,
+      fondo: size >= 6
+        ? 'Si esta venta es suya, cada nivel que se come le sale más barato: es su costo de impacto al vender.'
+        : `Una orden de ${size} lote(s) es pequeña. Un fondo partiría así una venta grande para no hundir el precio.`,
+      retail: 'Si vende aquí recibe el Bid. Vender mientras el precio cae deprisa es vender donde el impacto temporal es mayor.',
+      broker: BROKER_TX,
+      arb: moved ? 'Si este Bid quedó por debajo del de otros mercados, compran aquí y venden allá hasta igualarlos.' : null
+    });
+  }
+
+  // ---------- zonas marubozu (tu observación) ----------
+  function renderObs(flashIdx){
+    const box = $('obs');
+    let h = '<span class="ttl">Tu observación: zonas de marubozu</span>';
+    if (!zones.length){
+      h += '<span>Todavía no hay ninguna. Cuando una vela cierre como marubozu completa (sin mecha en ningún extremo), su zona aparecerá aquí y en el gráfico como zona a observar.</span>';
+    } else {
+      zones.slice(-4).forEach((z, k) => {
+        const i = zones.length - Math.min(4, zones.length) + k;
+        const t = z.tested ? `testeada a las ${z.testClock}` : 'no testeada · zona a observar';
+        h += `<span class="z ${z.tested ? 'done' : 'open'}${i === flashIdx ? ' flash' : ''}">${z.lbl} · marubozu ${z.up ? 'alcista' : 'bajista'} ${f2(z.lo)}–${f2(z.hi)} · ${t}</span>`;
+      });
+    }
+    box.innerHTML = h;
+  }
+  function checkZones(){
+    zones.forEach((z, i) => {
+      if (z.tested) return;
+      const inside = z.up ? bid < z.hi - 0.001 : bid > z.lo + 0.001;
+      if (inside){
+        z.tested = true; z.testClock = clock(); z.testLbl = `11:${String(minute).padStart(2,'0')}`;
+        renderObs(i);
+      }
+    });
+  }
 
   function seedBook(){
     asks = []; bids = [];
@@ -334,6 +460,7 @@ tr.new{animation:flash 1s ease-out}
       bid = r2(bids[0].p);
       if (!candle) candle = {o:bid,h:bid,l:bid,c:bid};
       candle.h = Math.max(candle.h, bid); candle.l = Math.min(candle.l, bid); candle.c = bid;
+      checkZones();
     }
     const kind = bidChanged && askChanged ? ['ab','Bid y Ask'] : bidChanged ? ['b','Bid'] : ['a','Solo Ask'];
     const tr = document.createElement('tr');
@@ -368,12 +495,14 @@ tr.new{animation:flash 1s ease-out}
     hitSide = null; render();
     if (!moved){
       narr(`<strong>Hubo una operación, pero no hubo tick.</strong> La oferta a ${f2(ask())} tenía lotes de sobra y el precio no cambió. MetaTrader no registra nada y la vela queda igual.`);
+      actorsBuy(size, false);
       return;
     }
     await sleep(DELAY/2);
     repriceBids(r2(ask() - SPREAD));
     tick(true, false, `El proveedor sube su precio de compra para mantener el spread: Bid ${f2(bids[0].p)}`);
     narr(`<strong>Tick de Bid.</strong> Como el Ask subió, el proveedor también sube su Bid a ${f2(bids[0].p)}. <b>Ahora sí se mueve la vela.</b> La compra empujó la vela de forma indirecta, a través de la pizarra.`);
+    actorsBuy(size, true);
   }
 
   async function marketSell(size){
@@ -399,12 +528,14 @@ tr.new{animation:flash 1s ease-out}
     hitSide = null; render();
     if (!moved){
       narr(`<strong>Hubo una operación, pero no hubo tick.</strong> Había compradores de sobra a ${f2(bids[0].p)}. Ningún precio cambió y la vela queda igual.`);
+      actorsSell(size, false);
       return;
     }
     await sleep(DELAY/2);
     repriceAsks(r2(bids[0].p + SPREAD));
     tick(false, true, `El proveedor baja su precio de venta: Ask ${f2(ask())}`);
     narr(`<strong>Tick de Ask.</strong> El proveedor baja también su Ask a ${f2(ask())}. Este tick suma volumen de ticks, pero la vela no cambia.`);
+    actorsSell(size, true);
   }
 
   async function news(dir){
@@ -413,18 +544,36 @@ tr.new{animation:flash 1s ease-out}
     repriceAsks(r2(bids[0].p + SPREAD));
     tick(true, true, dir > 0 ? 'El proveedor sube todos sus precios (noticia u otro mercado). No hay operaciones aquí' : 'El proveedor baja todos sus precios (noticia u otro mercado). No hay operaciones aquí');
     narr(`<strong>Un solo tick, cero operaciones.</strong> El proveedor movió toda la pizarra ${dir > 0 ? 'arriba' : 'abajo'} ${f2(Math.abs(jump))} de golpe. La vela saltó y el volumen de ticks solo subió 1. <b>El tamaño del movimiento no se refleja en el volumen de ticks.</b>`);
+    actors({
+      lp: 'Si no actualiza y los demás sí, los arbitrajistas le operan la diferencia. Por eso mueve toda la pizarra de golpe, antes de que nadie le opere.',
+      arb: 'Este es su papel: si este mercado se queda atrás de los demás, operan la diferencia hasta igualar los precios. Por eso el salto es casi instantáneo.',
+      fondo: 'Una noticia puede cambiar su decisión. Si decide comprar o vender, su metaorden llegaría después del salto.',
+      retail: 'El salto ocurrió sin operaciones aquí: no había forma de entrar al precio anterior. Entrar justo después es pagar el spread en el momento de más incertidumbre.',
+      broker: 'Pasa a sus clientes el nuevo precio del proveedor.'
+    });
   }
 
   async function askOnly(){
     repriceAsks(r2(ask() + 0.02));
     tick(false, true, `El proveedor amplía el spread: Ask ${f2(ask())}. El Bid no cambia`);
     narr(`<strong>Tick que no mueve la vela.</strong> Solo cambió el Ask, así que el volumen de ticks sube pero la vela queda igual. Por eso el número de ticks puede ser mayor que el número de pasos que dio la vela.`);
+    actors({
+      lp: 'Amplía el spread: hay más incertidumbre o menos liquidez y cobra más por asumir el riesgo de cotizar.',
+      retail: 'Con el spread más amplio, entrar le cuesta más. Es un mal momento para operar.',
+      broker: 'En la cuenta Standard su margen va encima de este spread, así que el costo total para el cliente sube.'
+    });
   }
 
   function newCandle(){
     // si la vela actual sólo tiene su tick de apertura, se reutiliza ese minuto
     if (candle && nTicks > 1){
-      history.push({...candle, lbl: `11:${String(minute).padStart(2,'0')}`});
+      const lbl = `11:${String(minute).padStart(2,'0')}`;
+      const fl = flagsOf(candle);
+      const full = (fl.ol && fl.ch) || (fl.oh && fl.cl);
+      if (full && candle.h - candle.l >= 0.15 - 1e-9){
+        zones.push({lo: candle.l, hi: candle.h, up: !!(fl.ol && fl.ch), lbl, tested: false});
+      }
+      history.push({...candle, lbl});
       while (history.length > 9) history.shift();
       minute++;
     } else if (!candle) minute++;
@@ -436,6 +585,11 @@ tr.new{animation:flash 1s ease-out}
     // primer tick del nuevo minuto = apertura
     tick(true, true, 'Primer tick del nuevo minuto. Este precio es la Apertura');
     narr(`<strong>Nueva vela 11:${String(minute).padStart(2,'0')}.</strong> Su Apertura es el Bid del primer tick que llegó en este minuto: ${f2(candle.o)}.`);
+    renderObs();
+    actors({
+      lp: 'Para él no existe «la vela»: sigue cotizando igual. El minuto es una convención del gráfico.',
+      retail: 'La apertura es solo el primer tick del minuto, no un precio especial para el mercado. Lo que sí sirve es saber qué zonas quedaron sin testear.'
+    });
   }
 
   // ---------- escenarios ----------
@@ -448,6 +602,12 @@ tr.new{animation:flash 1s ease-out}
     repriceBids(r2(bids[0].p + delta));
     repriceAsks(r2(bids[0].p + SPREAD));
     tick(true, true, why);
+    actors({
+      lp: `Está ${invTxt()}. Baja sus precios para que otros le vendan y así recomprar más barato.`,
+      fondo: 'Ya terminó su compra. La parte temporal del impacto que causó empieza a deshacerse.',
+      retail: 'Quien compró después de la marubozu ve el precio volver: compró cerca del pico del impacto temporal.',
+      broker: 'Sigue cobrando por cada operación, sea de compra o de venta.'
+    });
   }
   const S = {
     sOH: () => scenario([
@@ -476,19 +636,59 @@ tr.new{animation:flash 1s ease-out}
     ]),
     sMB: () => scenario([
       async () => { inv = 0; newCandle(); },
-      async () => narr(`<strong>Un fondo necesita comprar 24 lotes y tiene prisa</strong>, por ejemplo por una noticia o una orden de un cliente. En vez de repartir la compra durante horas, la ejecuta en un minuto y acepta pagar el impacto.`),
+      async () => {
+        narr(`<strong>Un fondo necesita comprar 24 lotes y tiene prisa</strong>, por ejemplo por una noticia o una orden de un cliente. En vez de repartir la compra durante horas, la ejecuta en un minuto y acepta pagar el impacto.`);
+        actors({
+          fondo: 'Tiene prisa: prefiere pagar más impacto ahora que arriesgarse a que el precio se le escape mientras compra despacio.',
+          lp: 'Todavía no sabe que viene una orden grande. Cotiza normal.',
+          retail: 'No ve la orden que se aproxima: solo verá la vela cuando ya se esté formando.',
+          broker: BROKER_TX
+        });
+      },
       async () => { setAsks([3,3,3,3,3,3]); await marketBuy(6); },
       async () => { setAsks([3,3,3,3,3,3]); await marketBuy(6); },
       async () => { setAsks([3,3,3,3,3,3]); await marketBuy(6); },
       async () => { setAsks([3,3,3,3,3,3]); await marketBuy(6); },
-      async () => narr(`<strong>Marubozu alcista.</strong> Abrió en su mínimo y cerró en su máximo (flechas verde y naranja). Fíjate en el inventario: <b>el proveedor vendió 24 lotes que no quería vender</b> y ahora está corto. Si el oro sigue subiendo, pierde.`),
+      async () => {
+        narr(`<strong>Marubozu alcista.</strong> Abrió en su mínimo y cerró en su máximo (flechas verde y naranja). Fíjate en el inventario: <b>el proveedor vendió 24 lotes que no quería vender</b> y ahora está corto. Si el oro sigue subiendo, pierde.`);
+        actors({
+          fondo: 'Terminó su compra. Pagó cada nivel más caro que el anterior: ese fue el costo de su prisa.',
+          lp: `Quedó ${invTxt()}: una posición que no quería. Su siguiente objetivo es recomprar sin pagar caro.`,
+          retail: 'Ve una vela grande sin mechas. Es tentador comprar ya, pero estaría comprando en el pico del impacto temporal.',
+          arb: 'Si otros mercados no subieron igual, este precio quedó caro: venden aquí y frenan la subida.'
+        });
+      },
       async () => newCandle(),
+      async () => {
+        narr(`<strong>Nace una zona a observar.</strong> Al cerrar, la marubozu deja su rango como zona <b>no testeada</b>: está en el recuadro de tu observación y sombreada en el gráfico. No sabemos cuándo volverá el precio. Solo sabemos dónde mirar.`);
+        actors({
+          lp: `Sigue ${invTxt()}. Le interesa que alguien le venda en esa zona para recomprar.`,
+          retail: 'Lo útil no es adivinar cuándo vuelve el precio, sino tener marcada la zona y esperar a que el precio llegue.',
+          fondo: 'Ya no compra. Si tenía información, parte de la subida será permanente.'
+        });
+      },
+      async () => {
+        setAsks([2,4,4,4,4,4]); await marketBuy(2);
+        actors({
+          retail: 'Compró después de la marubozu persiguiendo el movimiento: pagó el Ask cerca del pico. Si el precio vuelve a la zona, va en pérdida.',
+          lp: `Le vendieron más y quedó ${invTxt()}. Su presión por recomprar aumenta.`,
+          broker: BROKER_TX
+        });
+      },
       async () => skew(-0.05, 'El proveedor sesga sus precios a la baja para reducir su posición corta'),
       async () => narr(`<strong>Sesgo por inventario.</strong> Para equilibrar su posición, el proveedor baja un poco sus precios: así compra más barato a quien quiera vender y desanima a nuevos compradores. Este tick mueve la vela aunque nadie haya operado.`),
       async () => { setBids([2,4,4,4,4,4]); await marketSell(2); },
       async () => skew(-0.05, 'Sigue sesgando: todavía está corto'),
       async () => { setBids([2,2,4,4,4,4]); await marketSell(4); },
-      async () => narr(`<strong>El precio volvió a entrar en el cuerpo de la marubozu.</strong> El fondo ya terminó de comprar, así que una parte del impacto era temporal y se está deshaciendo. Los que venden (por ejemplo, para recoger ganancias) encuentran un proveedor dispuesto a recomprar. <b>Es una tendencia, no una garantía:</b> si el fondo tenía información real, parte del movimiento es permanente y el precio puede no volver.`)
+      async () => {
+        narr(`<strong>El precio volvió a entrar en la zona de la marubozu</strong> y ahora figura como <b>testeada</b>. El fondo ya terminó de comprar, así que una parte del impacto era temporal y se está deshaciendo. El proveedor recompró a mejor precio. <b>Es una tendencia, no una garantía:</b> si el fondo tenía información real, parte del movimiento es permanente y el precio puede no volver.`);
+        actors({
+          lp: `Recompró parte de lo que vendió y queda ${invTxt()}. Una vez reducido el inventario, deja de empujar el precio hacia abajo.`,
+          fondo: 'Si su compra tenía información, defenderá o ampliará la posición. Si solo era una ejecución, ya no interviene.',
+          retail: 'La zona ya se testeó: el motivo por el que el precio tendía a volver (impacto temporal e inventario) ya se resolvió en gran parte. Una segunda visita tiene menos fundamento.',
+          broker: 'Cobró en todas las operaciones del recorrido, de subida y de bajada.'
+        });
+      }
     ]),
     s3: () => scenario([
       async () => newCandle(),
@@ -542,13 +742,26 @@ tr.new{animation:flash 1s ease-out}
       out += `<line x1="${padL}" x2="${W-padR}" y1="${yy}" y2="${yy}" stroke="${col('--line')}" stroke-width="1"/>`;
       out += `<text x="${W-padR+6}" y="${(+yy+4)}" font-family="IBM Plex Mono, monospace" font-size="11" fill="${col('--muted')}">${p.toFixed(2)}</text>`;
     }
+    const xOf = i => padL + (slots - all.length + i) * slotW + slotW/2;
     all.forEach((c, i) => {
-      const x = padL + (slots - all.length + i) * slotW + slotW/2;
+      if (c.cur) out += `<rect x="${(xOf(i)-slotW/2+2).toFixed(1)}" y="${padT-24}" width="${(slotW-4).toFixed(1)}" height="${H-padT-padB+44}" fill="${col('--gold-soft')}" rx="4"/>`;
+    });
+    zones.forEach(z => {
+      const i0 = all.findIndex(c => c.lbl === z.lbl);
+      const x0 = i0 >= 0 ? xOf(i0) : padL;
+      let x1 = W - padR;
+      if (z.tested){ const i1 = all.findIndex(c => c.lbl === z.testLbl); if (i1 >= 0) x1 = xOf(i1); }
+      const yt = y(z.hi), yb = y(z.lo);
+      out += z.tested
+        ? `<rect x="${x0.toFixed(1)}" y="${yt.toFixed(1)}" width="${Math.max(2, x1-x0).toFixed(1)}" height="${(yb-yt).toFixed(1)}" fill="none" stroke="${col('--muted')}" stroke-dasharray="3 3"/>`
+        : `<rect x="${x0.toFixed(1)}" y="${yt.toFixed(1)}" width="${Math.max(2, x1-x0).toFixed(1)}" height="${(yb-yt).toFixed(1)}" fill="${col('--gold')}" fill-opacity="0.16" stroke="${col('--gold')}" stroke-width="1"/>`;
+    });
+    all.forEach((c, i) => {
+      const x = xOf(i);
       const up = c.c >= c.o;
       const color = up ? col('--up') : col('--down');
       const bw = Math.min(26, slotW*0.55);
       const yt = y(Math.max(c.o,c.c)), yb = y(Math.min(c.o,c.c));
-      if (c.cur) out += `<rect x="${(x-slotW/2+2).toFixed(1)}" y="${padT-24}" width="${(slotW-4).toFixed(1)}" height="${H-padT-padB+44}" fill="${col('--gold-soft')}" rx="4"/>`;
       out += `<line x1="${x}" x2="${x}" y1="${y(c.h).toFixed(1)}" y2="${y(c.l).toFixed(1)}" stroke="${color}" stroke-width="1.6"/>`;
       out += `<rect x="${(x-bw/2).toFixed(1)}" y="${yt.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(1.5, yb-yt).toFixed(1)}" fill="${up ? col('--panel') : color}" stroke="${color}" stroke-width="1.6"/>`;
       const fl = flagsOf(c);
