@@ -7,7 +7,7 @@
 //| últimos años, con su vela, la apertura de ese día y promedios.   |
 //+------------------------------------------------------------------+
 #property copyright   "Marvin Cuestas"
-#property version     "1.21"
+#property version     "1.22"
 #property description "Zonas de la vela de apertura de Nueva York y de las noticias del calendario económico."
 #property indicator_chart_window
 #property indicator_buffers 0
@@ -34,6 +34,7 @@ input int             InpHoraApertura    = 9;             // Hora de apertura (h
 input int             InpMinutoApertura  = 30;            // Minuto de apertura
 input int             InpHoraFinZona     = 16;            // Fin de las zonas de días anteriores (hora de Nueva York)
 input ENUM_TIMEFRAMES InpTFVela          = PERIOD_M1;     // Vela que forma la zona (M1 = igual en todas las temporalidades)
+input bool            InpAperturaSoloNoticias = true;     // Marcar la apertura solo en días con noticia
 input int             InpDiasHistorial   = 30;            // Días hacia atrás (modo normal)
 input color           InpColorApertura   = C'45,60,85';   // Color de la zona de apertura
 input color           InpColorTexto      = clrWhite;      // Color de la etiqueta de apertura
@@ -323,15 +324,15 @@ bool DibujarApertura(datetime diaNy, bool ultima)
 void DibujarAperturas()
   {
    bool ultima = true; // la apertura más reciente siempre llega hasta la vela en curso
-   if(InpModoEstudio)
+   if(InpModoEstudio || InpAperturaSoloNoticias)
      {
-      // Solo los días en que salió la noticia estudiada.
-      datetime ahora = TimeTradeServer();
+      // Solo los días con noticia: la estudiada o, en modo normal, las de importancia para zona.
+      // La apertura de hoy se marca aunque la noticia salga más tarde.
       datetime diaAnterior = 0;
       for(int k = ArraySize(g_noticias) - 1; k >= 0; k--)
         {
          datetime dia = DiaNy(g_noticias[k].hora);
-         if(g_noticias[k].hora > ahora || dia == diaAnterior)
+         if(dia == diaAnterior || (!InpModoEstudio && g_noticias[k].importancia < (int)InpImportanciaAlta))
             continue;
          diaAnterior = dia;
          if(DibujarApertura(dia, ultima))
@@ -553,7 +554,7 @@ string NombreLinea(int k)
    return PREFIJO + "N_" + IntegerToString((long)g_noticias[k].hora);
   }
 
-void DibujarNoticias()
+bool CargarNoticiasDelPeriodo()
   {
    datetime ahora = TimeTradeServer();
    int diasAtras = InpModoEstudio ? InpEstudioAnios * 365 : InpDiasHistorial;
@@ -562,9 +563,15 @@ void DibujarNoticias()
       if(g_calendarioOk)
          PrintFormat("No se pudo leer el calendario económico (error %d). Revise que el terminal esté conectado.", GetLastError());
       g_calendarioOk = false;
-      return;
+      return false;
      }
    g_calendarioOk = true;
+   return true;
+  }
+
+void DibujarNoticias()
+  {
+   datetime ahora = TimeTradeServer();
 
    // La zona de la noticia más reciente siempre llega hasta la vela en curso.
    datetime velaActual = VelaEnCurso();
@@ -835,10 +842,14 @@ void ExportarCsv()
 void DibujarTodo()
   {
    CalcularDesfase();
-   if(InpMostrarNoticias || InpModoEstudio)
-      DibujarNoticias();
+   bool mostrarNoticias = InpMostrarNoticias || InpModoEstudio;
+   if(mostrarNoticias || (InpMostrarApertura && InpAperturaSoloNoticias))
+     {
+      if(CargarNoticiasDelPeriodo() && mostrarNoticias)
+         DibujarNoticias();
+     }
    if(InpMostrarApertura)
-      DibujarAperturas(); // en el modo estudio usa las noticias recién cargadas
+      DibujarAperturas(); // con "solo días con noticia" usa las noticias recién cargadas
    if(InpModoEstudio)
       ActualizarPanel();
    g_ultimoDibujo = TimeLocal();
