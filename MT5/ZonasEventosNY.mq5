@@ -7,7 +7,7 @@
 //| últimos años, con su vela, la apertura de ese día y promedios.   |
 //+------------------------------------------------------------------+
 #property copyright   "Marvin Cuestas"
-#property version     "1.22"
+#property version     "1.30"
 #property description "Zonas de la vela de apertura de Nueva York y de las noticias del calendario económico."
 #property indicator_chart_window
 #property indicator_buffers 0
@@ -50,7 +50,7 @@ input bool   InpMostrarNoticias = true;                                         
 input string InpMoneda          = "USD";                                         // Moneda (vacío = todas)
 input ENUM_CALENDAR_EVENT_IMPORTANCE InpImportanciaMinima = CALENDAR_IMPORTANCE_MODERATE; // Importancia mínima para la línea
 input ENUM_CALENDAR_EVENT_IMPORTANCE InpImportanciaAlta   = CALENDAR_IMPORTANCE_HIGH;     // Importancia mínima para zona y avisos
-input string InpFiltroNombre    = "";                                            // Solo noticias que contengan (separar con ;)
+input string InpFiltroNombre    = "";                                            // Otras noticias que contengan (separar con ;)
 input int    InpDiasFuturo      = 7;                                             // Días hacia adelante
 input bool   InpZonaNoticia     = true;                                          // Marcar la vela de la noticia
 input int    InpMinutosZonaNoticia = 1440;                                       // Extender la zona de la noticia (minutos)
@@ -60,6 +60,25 @@ input color  InpColorAlta       = C'233,30,99';                                 
 input color  InpColorMedia      = clrOrange;                                     // Color importancia media
 input color  InpColorBaja       = clrGold;                                       // Color importancia baja
 input color  InpColorZonaNoticia = C'55,58,70';                                  // Color de la zona de la noticia
+
+input group "Noticias a mostrar (true = activada)"
+input bool   InpUsarLista     = true;   // Usar esta lista (false = todas las de la importancia mínima)
+input bool   InpNotCPI        = true;   // CPI - IPC e IPC subyacente
+input bool   InpNotPPI        = true;   // PPI - Precios al productor
+input bool   InpNotNFP        = true;   // Nóminas no agrícolas, desempleo y salarios
+input bool   InpNotADP        = false;  // ADP - Empleo privado
+input bool   InpNotClaims     = false;  // Solicitudes de subsidio por desempleo (semanal)
+input bool   InpNotJOLTS      = true;   // JOLTS - Ofertas de empleo
+input bool   InpNotFedTasa    = true;   // Fed - Decisión de tipos de interés
+input bool   InpNotFOMCActas  = true;   // Fed - Actas del FOMC
+input bool   InpNotPowell     = true;   // Fed - Discursos y conferencia de Powell
+input bool   InpNotPIB        = true;   // PIB (GDP)
+input bool   InpNotPCE        = true;   // PCE - Inflación del gasto personal
+input bool   InpNotVentas     = true;   // Ventas minoristas
+input bool   InpNotISM        = true;   // ISM manufacturero y de servicios
+input bool   InpNotConfianza  = false;  // Confianza del consumidor (Michigan, Conference Board)
+input bool   InpNotDuraderos  = false;  // Pedidos de bienes duraderos
+input bool   InpListarNombres = false;  // Escribir en Expertos todos los nombres de noticias de la moneda
 
 input group "Estudio histórico de una noticia"
 input bool   InpModoEstudio     = false;           // Activar el estudio histórico
@@ -332,7 +351,7 @@ void DibujarAperturas()
       for(int k = ArraySize(g_noticias) - 1; k >= 0; k--)
         {
          datetime dia = DiaNy(g_noticias[k].hora);
-         if(dia == diaAnterior || (!InpModoEstudio && g_noticias[k].importancia < (int)InpImportanciaAlta))
+         if(dia == diaAnterior || (!EligePorNombre() && g_noticias[k].importancia < (int)InpImportanciaAlta))
             continue;
          diaAnterior = dia;
          if(DibujarApertura(dia, ultima))
@@ -358,17 +377,6 @@ void DibujarAperturas()
 //+------------------------------------------------------------------+
 //| Calendario económico                                             |
 //+------------------------------------------------------------------+
-string FiltroActivo()
-  {
-   return InpModoEstudio ? InpEstudioNoticia : InpFiltroNombre;
-  }
-
-ENUM_CALENDAR_EVENT_IMPORTANCE ImportanciaActiva()
-  {
-   // En el modo estudio la noticia se elige por nombre, sin importar su importancia.
-   return InpModoEstudio ? CALENDAR_IMPORTANCE_NONE : InpImportanciaMinima;
-  }
-
 bool PasaFiltro(const MqlCalendarEvent &ev, ENUM_CALENDAR_EVENT_IMPORTANCE minima, const string filtro)
   {
    if((int)ev.importance < (int)minima)
@@ -389,6 +397,67 @@ bool PasaFiltro(const MqlCalendarEvent &ev, ENUM_CALENDAR_EVENT_IMPORTANCE minim
          return true;
      }
    return false;
+  }
+
+// Texto que buscan las casillas de la lista en el nombre de la noticia (en minúsculas, como lo da MT5).
+string FiltroLista()
+  {
+   string filtro = "";
+   if(InpNotCPI)       filtro += "cpi;";
+   if(InpNotPPI)       filtro += "ppi;";
+   if(InpNotNFP)       filtro += "nonfarm payrolls;unemployment rate;average hourly earnings;";
+   if(InpNotADP)       filtro += "adp;";
+   if(InpNotClaims)    filtro += "jobless claims;";
+   if(InpNotJOLTS)     filtro += "jolts;";
+   if(InpNotFedTasa)   filtro += "interest rate decision;fomc statement;";
+   if(InpNotFOMCActas) filtro += "fomc minutes;";
+   if(InpNotPowell)    filtro += "powell;fed chair;fomc press conference;";
+   if(InpNotPIB)       filtro += "gdp;";
+   if(InpNotPCE)       filtro += "pce;";
+   if(InpNotVentas)    filtro += "retail sales;";
+   if(InpNotISM)       filtro += "ism manufacturing;ism non-manufacturing;ism services;";
+   if(InpNotConfianza) filtro += "michigan;consumer confidence;";
+   if(InpNotDuraderos) filtro += "durable goods;";
+   filtro += InpFiltroNombre;
+   return filtro == "" ? "#ninguna#" : filtro; // sin casillas activadas no se muestra ninguna
+  }
+
+string FiltroActivo()
+  {
+   if(InpModoEstudio)
+      return InpEstudioNoticia;
+   return InpUsarLista ? FiltroLista() : InpFiltroNombre;
+  }
+
+// Con la lista o en el modo estudio la noticia se elige por nombre, sin importar su importancia.
+bool EligePorNombre()
+  {
+   return InpModoEstudio || InpUsarLista;
+  }
+
+ENUM_CALENDAR_EVENT_IMPORTANCE ImportanciaActiva()
+  {
+   return EligePorNombre() ? CALENDAR_IMPORTANCE_NONE : InpImportanciaMinima;
+  }
+
+// Noticias que generan alertas: las de la lista o, sin lista, las de importancia para zona.
+bool SeAvisa(const MqlCalendarEvent &ev)
+  {
+   if(InpUsarLista)
+      return PasaFiltro(ev, CALENDAR_IMPORTANCE_NONE, FiltroLista());
+   return PasaFiltro(ev, InpImportanciaAlta, InpFiltroNombre);
+  }
+
+void ListarNombres()
+  {
+   MqlCalendarEvent eventos[];
+   int n = CalendarEventByCurrency(InpMoneda == "" ? "USD" : InpMoneda, eventos);
+   string filtro = FiltroActivo();
+   PrintFormat("Noticias de %s en el calendario de MT5 (%d). [X] = se muestra con los parámetros actuales:",
+               InpMoneda == "" ? "USD" : InpMoneda, n);
+   for(int i = 0; i < n; i++)
+      PrintFormat("%s %s (importancia %d)", PasaFiltro(eventos[i], ImportanciaActiva(), filtro) ? "[X]" : "[ ]",
+                  eventos[i].name, (int)eventos[i].importance);
   }
 
 // Los valores del calendario vienen multiplicados por 1 000 000; LONG_MIN significa "sin dato".
@@ -546,7 +615,9 @@ bool LlevaZona(int k, datetime ahora)
   {
    if(g_noticias[k].hora > ahora)
       return false;
-   return InpModoEstudio || (InpZonaNoticia && g_noticias[k].importancia >= (int)InpImportanciaAlta);
+   if(InpModoEstudio)
+      return true;
+   return InpZonaNoticia && (InpUsarLista || g_noticias[k].importancia >= (int)InpImportanciaAlta);
   }
 
 string NombreLinea(int k)
@@ -907,7 +978,7 @@ void AvisarPublicaciones(const MqlCalendarValue &cambios[])
       if(cambios[i].actual_value == LONG_MIN || ahora - cambios[i].time > 3600 || YaEsta(g_avisados, cambios[i].id))
          continue;
       MqlCalendarEvent ev;
-      if(!CalendarEventById(cambios[i].event_id, ev) || !PasaFiltro(ev, InpImportanciaAlta, InpFiltroNombre))
+      if(!CalendarEventById(cambios[i].event_id, ev) || !SeAvisa(ev))
          continue;
       Agregar(g_avisados, cambios[i].id);
       Avisar("Publicado: " + DescribirValor(cambios[i], ev));
@@ -927,7 +998,7 @@ void AvisarProximas()
       if(YaEsta(g_preavisados, proximas[i].id))
          continue;
       MqlCalendarEvent ev;
-      if(!CalendarEventById(proximas[i].event_id, ev) || !PasaFiltro(ev, InpImportanciaAlta, InpFiltroNombre))
+      if(!CalendarEventById(proximas[i].event_id, ev) || !SeAvisa(ev))
          continue;
       Agregar(g_preavisados, proximas[i].id);
       int minutos = (int)((proximas[i].time - ahora) / 60);
@@ -946,6 +1017,8 @@ int OnInit()
       MqlCalendarValue inicial[];
       LeerCambios(inicial); // la primera llamada solo guarda el punto de partida
      }
+   if(InpListarNombres)
+      ListarNombres();
    if(InpModoEstudio)
      {
       CrearPanel();

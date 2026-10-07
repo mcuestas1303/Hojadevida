@@ -8,6 +8,16 @@ Indicador `ZonasEventosNY.mq5` que marca en el gráfico:
   - las noticias que aún no salen se ven como línea punteada; las pasadas no llevan línea, solo la zona;
   - al pasar el ratón por la zona o la etiqueta se ve la hora de NY, la previsión, el dato anterior, el dato real y si salió por encima o por debajo de lo esperado.
 
+## Elegir qué noticias se muestran
+
+En los parámetros, grupo **Noticias a mostrar (true = activada)**, hay una casilla por cada noticia importante de EE. UU.: CPI, PPI, nóminas (NFP), ADP, solicitudes de desempleo, JOLTS, decisión de tipos de la Fed, actas del FOMC, Powell, PIB, PCE, ventas minoristas, ISM, confianza del consumidor y bienes duraderos. Las activadas se marcan con su zona, con la apertura de NY de ese día y con alertas, sin importar la importancia que les dé MT5.
+
+- **Otras noticias que contengan**: agrega cualquier otra escribiendo parte de su nombre, separadas con `;`.
+- **Usar esta lista = false**: vuelve al modo anterior (todas las noticias desde la importancia mínima).
+- **Escribir en Expertos todos los nombres**: imprime en la pestaña *Expertos* todas las noticias de la moneda con `[X]` en las que se van a mostrar; sirve para ver los nombres exactos y comprobar que cada casilla atrapa lo que esperas.
+
+MT5 no permite que la lista de parámetros se llene sola con el calendario, por eso es una lista fija; las noticias que no estén ahí se agregan por texto.
+
 ## Modo estudio: una noticia en los últimos años
 
 Para ver, por ejemplo, **todas las publicaciones del IPC (CPI) de los últimos 5 años**:
