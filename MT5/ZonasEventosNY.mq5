@@ -7,7 +7,7 @@
 //| últimos años, con su vela, la apertura de ese día y promedios.   |
 //+------------------------------------------------------------------+
 #property copyright   "Marvin Cuestas"
-#property version     "1.31"
+#property version     "1.32"
 #property description "Zonas de la vela de apertura de Nueva York y de las noticias del calendario económico."
 #property indicator_chart_window
 #property indicator_buffers 0
@@ -325,7 +325,7 @@ bool DibujarZonaVela(const string nombre, datetime inicio, datetime fin, color c
    return true;
   }
 
-// `noticias` = nombres de las noticias del día; vacío si se marcan las aperturas de todos los días.
+// `noticias` = nombres de las noticias del día; vacío en un día sin noticia ("Apertura NY").
 bool DibujarApertura(datetime diaNy, bool ultima, const string noticias)
   {
    datetime inicio = AperturaServidor(diaNy);
@@ -373,7 +373,7 @@ void DibujarAperturas()
       TimeToStruct(dia, t);
       if(t.day_of_week == 0 || t.day_of_week == 6)
          continue;
-      if(DibujarApertura(dia, ultima, ""))
+      if(DibujarApertura(dia, ultima, NoticiasDelDia(dia))) // vacío en días sin noticia
          ultima = false;
      }
   }
