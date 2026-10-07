@@ -7,7 +7,7 @@
 //| últimos años, con su vela, la apertura de ese día y promedios.   |
 //+------------------------------------------------------------------+
 #property copyright   "Marvin Cuestas"
-#property version     "1.30"
+#property version     "1.31"
 #property description "Zonas de la vela de apertura de Nueva York y de las noticias del calendario económico."
 #property indicator_chart_window
 #property indicator_buffers 0
@@ -325,7 +325,8 @@ bool DibujarZonaVela(const string nombre, datetime inicio, datetime fin, color c
    return true;
   }
 
-bool DibujarApertura(datetime diaNy, bool ultima)
+// `noticias` = nombres de las noticias del día; vacío si se marcan las aperturas de todos los días.
+bool DibujarApertura(datetime diaNy, bool ultima, const string noticias)
   {
    datetime inicio = AperturaServidor(diaNy);
    if(inicio > TimeTradeServer())
@@ -335,9 +336,12 @@ bool DibujarApertura(datetime diaNy, bool ultima)
    if(ultima || InpExtenderTodas || fin > velaActual)
       fin = velaActual;
    string fecha = TimeToString(diaNy, TIME_DATE);
-   return DibujarZonaVela(PREFIJO + "AP_" + fecha, inicio, fin, InpColorApertura,
-                          "Apertura NY " + EtiquetaFecha(diaNy, true), InpColorTexto,
-                          StringFormat("Apertura de Nueva York %s %02d:%02d (hora NY)", fecha, InpHoraApertura, InpMinutoApertura));
+   string etiqueta = noticias == "" ? "Apertura NY " + EtiquetaFecha(diaNy, true)
+                                    : noticias + " " + EtiquetaFecha(diaNy, false);
+   string tooltip = StringFormat("Apertura de Nueva York %s %02d:%02d (hora NY)", fecha, InpHoraApertura, InpMinutoApertura);
+   if(noticias != "")
+      tooltip += "\nNoticias del día: " + noticias;
+   return DibujarZonaVela(PREFIJO + "AP_" + fecha, inicio, fin, InpColorApertura, etiqueta, InpColorTexto, tooltip);
   }
 
 void DibujarAperturas()
@@ -351,10 +355,10 @@ void DibujarAperturas()
       for(int k = ArraySize(g_noticias) - 1; k >= 0; k--)
         {
          datetime dia = DiaNy(g_noticias[k].hora);
-         if(dia == diaAnterior || (!EligePorNombre() && g_noticias[k].importancia < (int)InpImportanciaAlta))
+         if(dia == diaAnterior || !MarcaApertura(k))
             continue;
          diaAnterior = dia;
-         if(DibujarApertura(dia, ultima))
+         if(DibujarApertura(dia, ultima, NoticiasDelDia(dia)))
             ultima = false;
         }
       return;
@@ -369,9 +373,29 @@ void DibujarAperturas()
       TimeToStruct(dia, t);
       if(t.day_of_week == 0 || t.day_of_week == 6)
          continue;
-      if(DibujarApertura(dia, ultima))
+      if(DibujarApertura(dia, ultima, ""))
          ultima = false;
      }
+  }
+
+bool MarcaApertura(int k)
+  {
+   return EligePorNombre() || g_noticias[k].importancia >= (int)InpImportanciaAlta;
+  }
+
+// Nombres de las noticias de ese día (en orden de hora y sin repetir), para la etiqueta de la apertura.
+string NoticiasDelDia(datetime diaNy)
+  {
+   string nombres = "";
+   for(int k = 0; k < ArraySize(g_noticias); k++)
+     {
+      if(DiaNy(g_noticias[k].hora) != diaNy || !MarcaApertura(k))
+         continue;
+      string nombre = g_noticias[k].principal;
+      if(StringFind(" / " + nombres + " / ", " / " + nombre + " / ") < 0)
+         nombres += (nombres == "" ? "" : " / ") + nombre;
+     }
+   return nombres;
   }
 
 //+------------------------------------------------------------------+
@@ -933,8 +957,8 @@ void DibujarTodo()
 bool LeerCalendario(MqlCalendarValue &valores[], datetime desde, datetime hasta)
   {
    if(InpMoneda == "")
-      return CalendarValueHistory(valores, desde, hasta);
-   return CalendarValueHistory(valores, desde, hasta, NULL, InpMoneda);
+      return CalendarValueHistory(valores, desde, hasta) > 0;
+   return CalendarValueHistory(valores, desde, hasta, NULL, InpMoneda) > 0;
   }
 
 int LeerCambios(MqlCalendarValue &cambios[])

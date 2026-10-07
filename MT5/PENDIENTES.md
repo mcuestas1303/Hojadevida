@@ -5,7 +5,7 @@
 - [ ] **TradingView**: pasar el indicador a Pine Script para verlo en la app móvil de TradingView. La vela de apertura de NY se replica bien; las noticias no tienen hora exacta desde código (habría que cargar fechas a mano o usar `request.economic`, que es menos preciso).
 
 ## Ajustes menores
-- [ ] Quitar las 2 advertencias del compilador ("expression not boolean" en `LeerCalendario`).
+- [x] Quitar las 2 advertencias del compilador ("expression not boolean" en `LeerCalendario`).
 - [ ] Reintentar cada 10 s (en vez de 60 s) cuando faltan velas M1 por cargar.
 - [ ] Buscar las noticias también por su código interno en inglés (`event_code`), por si el terminal muestra los nombres en otro idioma.
 
