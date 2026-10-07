@@ -28,11 +28,17 @@ input group "Apertura de Nueva York"
 input bool            InpMostrarApertura = true;          // Marcar la vela de apertura
 input int             InpHoraApertura    = 9;             // Hora de apertura (hora de Nueva York)
 input int             InpMinutoApertura  = 30;            // Minuto de apertura
-input int             InpHoraFinZona     = 16;            // Extender la zona hasta (hora de Nueva York)
+input int             InpHoraFinZona     = 16;            // Fin de las zonas de días anteriores (hora de Nueva York)
 input ENUM_TIMEFRAMES InpTFVela          = PERIOD_M15;    // Temporalidad de la vela (apertura y noticias)
 input int             InpDiasHistorial   = 30;            // Días hacia atrás
-input color           InpColorApertura   = C'35,70,120';  // Color de la zona de apertura
+input color           InpColorApertura   = clrDodgerBlue; // Color de la zona de apertura
 input color           InpColorTexto      = clrSilver;     // Color de las etiquetas
+
+input group "Recuadros"
+input bool            InpRellenoZona     = false;         // Rellenar el recuadro (en MT5 el relleno tapa el fondo)
+input int             InpGrosorBorde     = 1;             // Grosor del borde
+input ENUM_LINE_STYLE InpEstiloBorde     = STYLE_SOLID;   // Estilo del borde
+input bool            InpExtenderTodas   = false;         // Extender también las zonas anteriores hasta la vela en curso
 
 input group "Noticias (calendario económico de MT5)"
 input bool   InpMostrarNoticias = true;                                          // Marcar noticias
@@ -46,7 +52,7 @@ input int    InpMinutosZonaNoticia = 120;                                       
 input color  InpColorAlta       = clrRed;                                        // Color importancia alta
 input color  InpColorMedia      = clrOrange;                                     // Color importancia media
 input color  InpColorBaja       = clrGold;                                       // Color importancia baja
-input color  InpColorZonaNoticia = C'110,35,35';                                 // Color de la zona de la noticia
+input color  InpColorZonaNoticia = clrCrimson;                                  // Color de la zona de la noticia
 
 input group "Avisos"
 input int    InpSegundosRevision  = 10;    // Revisar el calendario cada (segundos)
@@ -149,6 +155,12 @@ datetime NyAUtc(datetime ny)
    return aprox - (VeranoEEUU(aprox) ? 3600 : 0);
   }
 
+// Hora de apertura de la vela en curso del gráfico.
+datetime VelaEnCurso()
+  {
+   return iTime(_Symbol, PERIOD_CURRENT, 0);
+  }
+
 ENUM_TIMEFRAMES TFVela()
   {
    return InpTFVela == PERIOD_CURRENT ? (ENUM_TIMEFRAMES)_Period : InpTFVela;
@@ -179,7 +191,9 @@ bool DibujarZonaVela(const string nombre, datetime inicio, datetime fin, color c
       ObjectMove(0, nombre, 1, fin, bajo);
      }
    ObjectSetInteger(0, nombre, OBJPROP_COLOR, clr);
-   ObjectSetInteger(0, nombre, OBJPROP_FILL, true);
+   ObjectSetInteger(0, nombre, OBJPROP_FILL, InpRellenoZona);
+   ObjectSetInteger(0, nombre, OBJPROP_WIDTH, InpGrosorBorde);
+   ObjectSetInteger(0, nombre, OBJPROP_STYLE, InpEstiloBorde);
    ObjectSetInteger(0, nombre, OBJPROP_BACK, true);
    ObjectSetInteger(0, nombre, OBJPROP_SELECTABLE, false);
    ObjectSetInteger(0, nombre, OBJPROP_HIDDEN, true);
@@ -203,6 +217,8 @@ bool DibujarZonaVela(const string nombre, datetime inicio, datetime fin, color c
 void DibujarAperturas()
   {
    datetime ahora = TimeTradeServer();
+   datetime velaActual = VelaEnCurso();
+   bool ultima = true; // la apertura más reciente siempre llega hasta la vela en curso
    datetime hoyNy = UtcANy(TimeGMT());
    hoyNy -= (datetime)((long)hoyNy % 86400);
    for(int i = 0; i <= InpDiasHistorial; i++)
@@ -216,9 +232,12 @@ void DibujarAperturas()
       if(inicio > ahora)
          continue;
       datetime fin = UtcAServidor(NyAUtc(dia + InpHoraFinZona * 3600));
+      if(ultima || InpExtenderTodas || fin > velaActual)
+         fin = velaActual;
       string fecha = TimeToString(dia, TIME_DATE);
-      DibujarZonaVela(PREFIJO + "AP_" + fecha, inicio, fin, InpColorApertura, "Apertura NY",
-                      StringFormat("Apertura de Nueva York %s %02d:%02d (hora NY)", fecha, InpHoraApertura, InpMinutoApertura));
+      if(DibujarZonaVela(PREFIJO + "AP_" + fecha, inicio, fin, InpColorApertura, "Apertura NY",
+                         StringFormat("Apertura de Nueva York %s %02d:%02d (hora NY)", fecha, InpHoraApertura, InpMinutoApertura)))
+         ultima = false;
      }
   }
 
@@ -349,6 +368,13 @@ void DibujarNoticias()
          importancias[k] = (int)ev.importance;
      }
 
+   // La zona de la noticia más reciente siempre llega hasta la vela en curso.
+   datetime velaActual = VelaEnCurso();
+   datetime ultimaZona = 0;
+   for(int k = 0; k < ArraySize(horas); k++)
+      if(importancias[k] >= (int)InpImportanciaAlta && horas[k] <= ahora && horas[k] > ultimaZona)
+         ultimaZona = horas[k];
+
    for(int k = 0; k < ArraySize(horas); k++)
      {
       color clr = importancias[k] >= (int)CALENDAR_IMPORTANCE_HIGH ? InpColorAlta :
@@ -365,8 +391,13 @@ void DibujarNoticias()
       ObjectSetString(0, nombre, OBJPROP_TOOLTIP, textos[k]);
 
       if(InpZonaNoticia && importancias[k] >= (int)InpImportanciaAlta && horas[k] <= ahora)
-         DibujarZonaVela(PREFIJO + "NZ_" + IntegerToString((long)horas[k]), horas[k],
-                         horas[k] + InpMinutosZonaNoticia * 60, InpColorZonaNoticia, "Noticia", textos[k]);
+        {
+         datetime fin = horas[k] + InpMinutosZonaNoticia * 60;
+         if(horas[k] == ultimaZona || InpExtenderTodas || fin > velaActual)
+            fin = velaActual;
+         DibujarZonaVela(PREFIJO + "NZ_" + IntegerToString((long)horas[k]), horas[k], fin,
+                         InpColorZonaNoticia, "Noticia", textos[k]);
+        }
      }
   }
 
