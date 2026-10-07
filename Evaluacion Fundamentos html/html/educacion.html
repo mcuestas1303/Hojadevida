@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<!-- Archivo generado por generador/motor.js. Edita generador/contenido.json y vuelve a ejecutar el motor. -->
+<html lang="es">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Educación</title>
   </head>
   <body>
@@ -93,88 +95,84 @@
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.39999962px;line-height:3.25;font-family:Daniel;-inkscape-font-specification:Daniel;stroke-width:0.26458332">MC</tspan></text>
         </g>
         </svg>
-        </header>
-      <nav>
-        <h1>Hoja de Vida</h1>
-        <h2>Marvin Cuestas</h2>
-        <a href="../html/index.html">Inicio</a>  &vert; <a href="../html/experiencia.html">Experiencia</a>
-      </nav>
-      <p> Me considero una persona comprometida y apasionada con lo que hace, <br>
-        proactivo, autodidacta y capaz de realizar cualquier tipo de actividades <br>
-        bajo presión. Busco dar lo mejor de mí en cada uno de los proyectos <br>
-        obteniendo como resultado el éxito en cada uno de ellos.
-      </p>
+      <h1>Hoja de Vida</h1>
+    </header>
+    <nav>
+      <h2>Marvin Cuestas</h2>
+      <a href="index.html">Inicio</a> &vert; <a href="experiencia.html">Experiencia</a>
+    </nav>
+    <main>
+      <p>Me considero una persona comprometida y apasionada con lo que hace, proactivo, autodidacta y capaz de realizar cualquier tipo de actividades bajo presión. Busco dar lo mejor de mí en cada uno de los proyectos obteniendo como resultado el éxito en cada uno de ellos.</p>
       <h3>Educación</h3>
       <table border="1" cellpadding="10" cellspacing="0">
-      <thead>
-        <tr>
-          <th>Año</th>
-          <th>Institución</th>
-          <th>Lugar</th>
-          <th>Titulo</th>
-          <th>¿Culminó?</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2016</td>
-          <td>UJMD</td>
-          <td>San Salvador</td>
-          <td>Finanzas Empresariales</td>
-          <td>Si</td>
-        </tr>
-        <tr>
-          <td>2018</td>
-          <td>CEMPROMYPE</td>
-          <td>Virtual</td>
-          <td>Ecosistemas de Emprendimiento</td>
-          <td>Si</td>
-        </tr>
-        <tr>
-          <td>2018</td>
-          <td>Doing Global</td>
-          <td>Virtual</td>
-          <td>Fomación de Emprendedores</td>
-          <td>Si</td>
+        <thead>
+          <tr>
+            <th>Año</th>
+            <th>Institución</th>
+            <th>Lugar</th>
+            <th>Título</th>
+            <th>¿Culminó?</th>
           </tr>
-      </tbody>
-    </table>
-    <form autocomplete="on">
-      <fieldset>
-        <h1>Agregar Estudios</h1>
-    <p><strong>Año:</strong>
-        <select class="" name="Año">
-            <option value="">2015</option>
-            <option value="">2016</option>
-            <option value="">2017</option>
-            <option value="">2018</option>
-          </select>
-    </p>
-        <p><strong>Institución:</strong>
-          <input type="text" placeholder="Ej. UJMD">
-        </p>
-        <p><strong>Lugar:</strong>
-          <input type="text" placeholder="Ej. San Salvador">
-        </p>
-          <p><strong>Genero:</strong><br>
-            <input type="radio" name="gender" value="Masculino" checked> Masculino<br>
-            <input type="radio" name="gender" value="Femenino"> Femenino<br>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2016</td>
+            <td>UJMD</td>
+            <td>San Salvador</td>
+            <td>Finanzas Empresariales</td>
+            <td>Sí</td>
+          </tr>
+          <tr>
+            <td>2018</td>
+            <td>CEMPROMYPE</td>
+            <td>Virtual</td>
+            <td>Ecosistemas de Emprendimiento</td>
+            <td>Sí</td>
+          </tr>
+          <tr>
+            <td>2018</td>
+            <td>Doing Global</td>
+            <td>Virtual</td>
+            <td>Formación de Emprendedores</td>
+            <td>Sí</td>
+          </tr>
+        </tbody>
+      </table>
+      <form autocomplete="on">
+        <fieldset>
+          <legend><strong>Agregar Estudios</strong></legend>
+          <p><label><strong>Año:</strong>
+            <select name="anio">
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+            </select></label>
           </p>
-          <p><strong>Recomendado por:</strong>
-            <select>
+          <p><label><strong>Institución:</strong> <input type="text" name="institucion" placeholder="Ej. UJMD"></label></p>
+          <p><label><strong>Lugar:</strong> <input type="text" name="lugar" placeholder="Ej. San Salvador"></label></p>
+          <p><strong>Género:</strong><br>
+            <label><input type="radio" name="genero" value="Masculino" checked> Masculino</label><br>
+            <label><input type="radio" name="genero" value="Femenino"> Femenino</label>
+          </p>
+          <p><label><strong>Recomendado por:</strong>
+            <select name="recomendado">
               <option>Google</option>
               <option>Amigo</option>
               <option>Redes Sociales</option>
-            </select>
+            </select></label>
           </p>
-          <p><strong>Comentarios:</strong>
-            <textarea name="comentarios" rows="3" cols="30"></textarea>
+          <p><label><strong>Comentarios:</strong>
+            <textarea name="comentarios" rows="3" cols="30"></textarea></label>
           </p>
-          <p><strong>Acepto Terminos y Condiciones:</strong>
-            <input type="checkbox" name="terms">
-          </p>
-          <input type="submit" name="Enviar" value="Registrar">
-      </fieldset>
-    </form>
+          <p><label><strong>Acepto Términos y Condiciones:</strong> <input type="checkbox" name="terminos" required></label></p>
+          <input type="submit" value="Registrar">
+        </fieldset>
+      </form>
+    </main>
+    <footer>
+      <h5>Contáctame</h5>
+      <a href="mailto:cuestas.0313@gmail.com" title="Envíame un correo"><img src="../img/gmail.png" width="3%" alt="Gmail"></a> &vert; <a href="https://www.facebook.com/marvin.cuestas.1?ref=bookmarks" title="Ver perfil"><img src="../img/fb.png" width="3%" alt="Facebook"></a>
+    </footer>
   </body>
 </html>

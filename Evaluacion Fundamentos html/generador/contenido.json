@@ -1,0 +1,62 @@
+{
+  "persona": {
+    "nombre": "Marvin Cuestas",
+    "foto": "../img/personal.jpg",
+    "perfil": "Me considero una persona comprometida y apasionada con lo que hace, proactivo, autodidacta y capaz de realizar cualquier tipo de actividades bajo presión. Busco dar lo mejor de mí en cada uno de los proyectos obteniendo como resultado el éxito en cada uno de ellos.",
+    "contacto": [
+      { "titulo": "Envíame un correo", "url": "mailto:cuestas.0313@gmail.com", "icono": "../img/gmail.png", "alt": "Gmail" },
+      { "titulo": "Ver perfil", "url": "https://www.facebook.com/marvin.cuestas.1?ref=bookmarks", "icono": "../img/fb.png", "alt": "Facebook" }
+    ]
+  },
+  "paginas": [
+    {
+      "archivo": "index.html",
+      "titulo": "Marvin Cuestas - Hoja de Vida",
+      "menu": "Inicio",
+      "secciones": [
+        { "tipo": "titulo", "texto": "Información Personal" },
+        { "tipo": "foto" },
+        { "tipo": "perfil" },
+        {
+          "tipo": "lista",
+          "items": [
+            "cuestas.0313@gmail.com",
+            "Teléfonos: 7742-5148, 2318-2251",
+            "DUI: 0459-1804-4",
+            "Fecha de Nacimiento: 13 de Marzo de 1992",
+            "Dirección: Lourdes colón, La Libertad"
+          ]
+        }
+      ]
+    },
+    {
+      "archivo": "educacion.html",
+      "titulo": "Educación",
+      "menu": "Educación",
+      "secciones": [
+        { "tipo": "perfil" },
+        { "tipo": "titulo", "texto": "Educación" },
+        {
+          "tipo": "tabla",
+          "columnas": ["Año", "Institución", "Lugar", "Título", "¿Culminó?"],
+          "filas": [
+            ["2016", "UJMD", "San Salvador", "Finanzas Empresariales", "Sí"],
+            ["2018", "CEMPROMYPE", "Virtual", "Ecosistemas de Emprendimiento", "Sí"],
+            ["2018", "Doing Global", "Virtual", "Formación de Emprendedores", "Sí"]
+          ]
+        },
+        { "tipo": "formulario-estudios", "anios": ["2015", "2016", "2017", "2018"] }
+      ]
+    },
+    {
+      "archivo": "experiencia.html",
+      "titulo": "Experiencia",
+      "menu": "Experiencia",
+      "secciones": [
+        { "tipo": "titulo", "texto": "Experiencia" },
+        { "tipo": "video", "subtitulo": "Habilidades", "src": "../video/alaverga.mp4", "poster": "../img/poster.jpg" },
+        { "tipo": "audio", "subtitulo": "Intereses", "src": "../audio/Sleep Away.mp3" }
+      ]
+    }
+  ]
+}
