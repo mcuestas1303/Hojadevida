@@ -7,7 +7,7 @@
 //| últimos años, con su vela, la apertura de ese día y promedios.   |
 //+------------------------------------------------------------------+
 #property copyright   "Marvin Cuestas"
-#property version     "1.10"
+#property version     "1.20"
 #property description "Zonas de la vela de apertura de Nueva York y de las noticias del calendario económico."
 #property indicator_chart_window
 #property indicator_buffers 0
@@ -33,13 +33,13 @@ input bool            InpMostrarApertura = true;          // Marcar la vela de a
 input int             InpHoraApertura    = 9;             // Hora de apertura (hora de Nueva York)
 input int             InpMinutoApertura  = 30;            // Minuto de apertura
 input int             InpHoraFinZona     = 16;            // Fin de las zonas de días anteriores (hora de Nueva York)
-input ENUM_TIMEFRAMES InpTFVela          = PERIOD_M15;    // Temporalidad de la vela (apertura y noticias)
+input ENUM_TIMEFRAMES InpTFVela          = PERIOD_M1;     // Vela que forma la zona (M1 = igual en todas las temporalidades)
 input int             InpDiasHistorial   = 30;            // Días hacia atrás (modo normal)
-input color           InpColorApertura   = clrDodgerBlue; // Color de la zona de apertura
-input color           InpColorTexto      = clrSilver;     // Color de las etiquetas
+input color           InpColorApertura   = C'45,60,85';   // Color de la zona de apertura
+input color           InpColorTexto      = clrWhite;      // Color de la etiqueta de apertura
 
 input group "Recuadros"
-input bool            InpRellenoZona     = false;         // Rellenar el recuadro (en MT5 el relleno tapa el fondo)
+input bool            InpRellenoZona     = true;          // Rellenar el recuadro (queda detrás de las velas)
 input int             InpGrosorBorde     = 1;             // Grosor del borde
 input ENUM_LINE_STYLE InpEstiloBorde     = STYLE_SOLID;   // Estilo del borde
 input bool            InpExtenderTodas   = false;         // Extender también las zonas anteriores hasta la vela en curso
@@ -52,11 +52,13 @@ input ENUM_CALENDAR_EVENT_IMPORTANCE InpImportanciaAlta   = CALENDAR_IMPORTANCE_
 input string InpFiltroNombre    = "";                                            // Solo noticias que contengan (separar con ;)
 input int    InpDiasFuturo      = 7;                                             // Días hacia adelante
 input bool   InpZonaNoticia     = true;                                          // Marcar la vela de la noticia
-input int    InpMinutosZonaNoticia = 120;                                        // Extender la zona de la noticia (minutos)
-input color  InpColorAlta       = clrRed;                                        // Color importancia alta
+input int    InpMinutosZonaNoticia = 1440;                                       // Extender la zona de la noticia (minutos)
+input bool   InpLineasPasadas   = false;                                         // Líneas verticales en noticias pasadas
+input bool   InpLineasFuturas   = true;                                          // Líneas punteadas en noticias próximas
+input color  InpColorAlta       = C'233,30,99';                                  // Color importancia alta (línea y etiqueta)
 input color  InpColorMedia      = clrOrange;                                     // Color importancia media
 input color  InpColorBaja       = clrGold;                                       // Color importancia baja
-input color  InpColorZonaNoticia = clrCrimson;                                   // Color de la zona de la noticia
+input color  InpColorZonaNoticia = C'55,58,70';                                  // Color de la zona de la noticia
 
 input group "Estudio histórico de una noticia"
 input bool   InpModoEstudio     = false;           // Activar el estudio histórico
@@ -76,6 +78,7 @@ struct Ocurrencia
    datetime          hora;        // hora del servidor
    int               importancia; // la mayor del grupo
    string            titulo;      // nombres unidos con " / "
+   string            principal;   // nombre de la noticia más importante del grupo (para la etiqueta)
    string            detalle;     // una línea por noticia: previsión, anterior y actual
    string            tooltip;
   };
@@ -89,7 +92,6 @@ ulong      g_avisados[];            // valores ya avisados al publicarse
 ulong      g_preavisados[];         // valores ya avisados antes de publicarse
 Ocurrencia g_noticias[];            // noticias cargadas, ordenadas por hora
 int        g_indice           = -1; // noticia mostrada en el panel del modo estudio
-string     g_lineaMarcada     = "";
 
 //+------------------------------------------------------------------+
 //| Fechas y horarios                                                |
@@ -195,6 +197,16 @@ string HoraNy(datetime servidor)
    return TimeToString(UtcANy(ServidorAUtc(servidor)), TIME_DATE | TIME_MINUTES);
   }
 
+// "SEP 26" (mes y año) o "07 OCT 26" con el día, a partir de una fecha de Nueva York.
+string EtiquetaFecha(datetime ny, bool conDia)
+  {
+   string meses[12] = {"ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"};
+   MqlDateTime t;
+   TimeToStruct(ny, t);
+   string texto = meses[t.mon - 1] + StringFormat(" %02d", t.year % 100);
+   return conDia ? StringFormat("%02d ", t.day) + texto : texto;
+  }
+
 // Hora de apertura de la vela en curso del gráfico.
 datetime VelaEnCurso()
   {
@@ -253,8 +265,9 @@ string DescribirVela(datetime inicio)
 //| Dibujo                                                           |
 //+------------------------------------------------------------------+
 // Dibuja (o actualiza) un rectángulo con el máximo y el mínimo de la vela que contiene `inicio`.
+// La etiqueta va en el extremo derecho, como en TradingView.
 bool DibujarZonaVela(const string nombre, datetime inicio, datetime fin, color clr,
-                     const string etiqueta, const string tooltip)
+                     const string etiqueta, color clrEtiqueta, const string tooltip)
   {
    MqlRates vela;
    if(!DatosVela(inicio, vela))
@@ -279,13 +292,14 @@ bool DibujarZonaVela(const string nombre, datetime inicio, datetime fin, color c
 
    string nombreTexto = nombre + "_T";
    if(ObjectFind(0, nombreTexto) < 0)
-      ObjectCreate(0, nombreTexto, OBJ_TEXT, 0, vela.time, vela.high);
+      ObjectCreate(0, nombreTexto, OBJ_TEXT, 0, fin, vela.high);
    else
-      ObjectMove(0, nombreTexto, 0, vela.time, vela.high);
+      ObjectMove(0, nombreTexto, 0, fin, vela.high);
    ObjectSetString(0, nombreTexto, OBJPROP_TEXT, etiqueta);
-   ObjectSetInteger(0, nombreTexto, OBJPROP_COLOR, InpColorTexto);
+   ObjectSetString(0, nombreTexto, OBJPROP_TOOLTIP, tooltip);
+   ObjectSetInteger(0, nombreTexto, OBJPROP_COLOR, clrEtiqueta);
    ObjectSetInteger(0, nombreTexto, OBJPROP_FONTSIZE, 8);
-   ObjectSetInteger(0, nombreTexto, OBJPROP_ANCHOR, ANCHOR_LEFT_LOWER);
+   ObjectSetInteger(0, nombreTexto, OBJPROP_ANCHOR, ANCHOR_RIGHT_LOWER);
    ObjectSetInteger(0, nombreTexto, OBJPROP_SELECTABLE, false);
    ObjectSetInteger(0, nombreTexto, OBJPROP_HIDDEN, true);
    return true;
@@ -301,7 +315,8 @@ bool DibujarApertura(datetime diaNy, bool ultima)
    if(ultima || InpExtenderTodas || fin > velaActual)
       fin = velaActual;
    string fecha = TimeToString(diaNy, TIME_DATE);
-   return DibujarZonaVela(PREFIJO + "AP_" + fecha, inicio, fin, InpColorApertura, "Apertura NY",
+   return DibujarZonaVela(PREFIJO + "AP_" + fecha, inicio, fin, InpColorApertura,
+                          "Apertura NY " + EtiquetaFecha(diaNy, true), InpColorTexto,
                           StringFormat("Apertura de Nueva York %s %02d:%02d (hora NY)", fecha, InpHoraApertura, InpMinutoApertura));
   }
 
@@ -437,6 +452,7 @@ void AgregarValor(Ocurrencia &lista[], const MqlCalendarValue &v, const MqlCalen
       lista[k].hora        = v.time;
       lista[k].importancia = 0;
       lista[k].titulo      = "";
+      lista[k].principal   = ev.name;
       lista[k].detalle     = "";
       lista[k].tooltip     = "";
      }
@@ -444,7 +460,10 @@ void AgregarValor(Ocurrencia &lista[], const MqlCalendarValue &v, const MqlCalen
    lista[k].detalle += (lista[k].detalle == "" ? "" : "\n") + ResumenValor(v, ev);
    lista[k].tooltip += (lista[k].tooltip == "" ? "" : "\n\n") + DescribirValor(v, ev);
    if((int)ev.importance > lista[k].importancia)
+     {
       lista[k].importancia = (int)ev.importance;
+      lista[k].principal   = ev.name;
+     }
   }
 
 void MoverOcurrencia(Ocurrencia &lista[], int de, int a)
@@ -452,6 +471,7 @@ void MoverOcurrencia(Ocurrencia &lista[], int de, int a)
    lista[a].hora        = lista[de].hora;
    lista[a].importancia = lista[de].importancia;
    lista[a].titulo      = lista[de].titulo;
+   lista[a].principal   = lista[de].principal;
    lista[a].detalle     = lista[de].detalle;
    lista[a].tooltip     = lista[de].tooltip;
   }
@@ -463,6 +483,7 @@ void OrdenarPorHora(Ocurrencia &lista[])
       datetime hora        = lista[i].hora;
       int      importancia = lista[i].importancia;
       string   titulo      = lista[i].titulo;
+      string   principal   = lista[i].principal;
       string   detalle     = lista[i].detalle;
       string   tooltip     = lista[i].tooltip;
       int j = i - 1;
@@ -474,6 +495,7 @@ void OrdenarPorHora(Ocurrencia &lista[])
       lista[j + 1].hora        = hora;
       lista[j + 1].importancia = importancia;
       lista[j + 1].titulo      = titulo;
+      lista[j + 1].principal   = principal;
       lista[j + 1].detalle     = detalle;
       lista[j + 1].tooltip     = tooltip;
      }
@@ -556,16 +578,22 @@ void DibujarNoticias()
       int importancia = g_noticias[k].importancia;
       color clr = importancia >= (int)CALENDAR_IMPORTANCE_HIGH ? InpColorAlta :
                   importancia == (int)CALENDAR_IMPORTANCE_MODERATE ? InpColorMedia : InpColorBaja;
+      bool pasada = g_noticias[k].hora <= ahora;
       string nombre = NombreLinea(k);
-      if(ObjectFind(0, nombre) < 0)
-         ObjectCreate(0, nombre, OBJ_VLINE, 0, g_noticias[k].hora, 0);
-      ObjectSetInteger(0, nombre, OBJPROP_COLOR, clr);
-      ObjectSetInteger(0, nombre, OBJPROP_STYLE, g_noticias[k].hora <= ahora ? STYLE_SOLID : STYLE_DOT); // punteada = aún no sale
-      ObjectSetInteger(0, nombre, OBJPROP_BACK, true);
-      ObjectSetInteger(0, nombre, OBJPROP_SELECTABLE, false);
-      ObjectSetInteger(0, nombre, OBJPROP_HIDDEN, true);
-      ObjectSetString(0, nombre, OBJPROP_TEXT, g_noticias[k].titulo);
-      ObjectSetString(0, nombre, OBJPROP_TOOLTIP, g_noticias[k].tooltip);
+      if(pasada ? InpLineasPasadas : InpLineasFuturas)
+        {
+         if(ObjectFind(0, nombre) < 0)
+            ObjectCreate(0, nombre, OBJ_VLINE, 0, g_noticias[k].hora, 0);
+         ObjectSetInteger(0, nombre, OBJPROP_COLOR, clr);
+         ObjectSetInteger(0, nombre, OBJPROP_STYLE, pasada ? STYLE_SOLID : STYLE_DOT); // punteada = aún no sale
+         ObjectSetInteger(0, nombre, OBJPROP_BACK, true);
+         ObjectSetInteger(0, nombre, OBJPROP_SELECTABLE, false);
+         ObjectSetInteger(0, nombre, OBJPROP_HIDDEN, true);
+         ObjectSetString(0, nombre, OBJPROP_TEXT, g_noticias[k].titulo);
+         ObjectSetString(0, nombre, OBJPROP_TOOLTIP, g_noticias[k].tooltip);
+        }
+      else
+         ObjectDelete(0, nombre); // la noticia ya salió: queda solo la zona
 
       if(LlevaZona(k, ahora))
         {
@@ -573,7 +601,9 @@ void DibujarNoticias()
          if(g_noticias[k].hora == ultimaZona || InpExtenderTodas || fin > velaActual)
             fin = velaActual;
          DibujarZonaVela(PREFIJO + "NZ_" + IntegerToString((long)g_noticias[k].hora), g_noticias[k].hora, fin,
-                         InpColorZonaNoticia, "Noticia", g_noticias[k].tooltip);
+                         InpColorZonaNoticia,
+                         g_noticias[k].principal + " " + EtiquetaFecha(UtcANy(ServidorAUtc(g_noticias[k].hora)), false),
+                         clr, g_noticias[k].tooltip);
         }
      }
   }
@@ -719,11 +749,17 @@ void ActualizarPanel()
    AgregarLinea(lineas, Promedios(pasadas));
    MostrarLineas(lineas);
 
-   // Resalta la línea de la noticia que se está viendo.
-   if(g_lineaMarcada != "")
-      ObjectSetInteger(0, g_lineaMarcada, OBJPROP_WIDTH, 1);
-   g_lineaMarcada = NombreLinea(k);
-   ObjectSetInteger(0, g_lineaMarcada, OBJPROP_WIDTH, 3);
+   // Marca con una línea punteada la noticia que se está viendo.
+   string marca = PREFIJO + "P_SEL";
+   if(ObjectFind(0, marca) < 0)
+      ObjectCreate(0, marca, OBJ_VLINE, 0, g_noticias[k].hora, 0);
+   else
+      ObjectMove(0, marca, 0, g_noticias[k].hora, 0);
+   ObjectSetInteger(0, marca, OBJPROP_COLOR, InpColorTexto);
+   ObjectSetInteger(0, marca, OBJPROP_STYLE, STYLE_DOT);
+   ObjectSetInteger(0, marca, OBJPROP_BACK, true);
+   ObjectSetInteger(0, marca, OBJPROP_SELECTABLE, false);
+   ObjectSetInteger(0, marca, OBJPROP_HIDDEN, true);
   }
 
 void IrA(int indice)
