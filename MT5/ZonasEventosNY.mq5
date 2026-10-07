@@ -7,7 +7,8 @@
 //| últimos años, con su vela, la apertura de ese día y promedios.   |
 //+------------------------------------------------------------------+
 #property copyright   "Marvin Cuestas"
-#property version     "1.32"
+#property version     "1.33"
+#define VERSION "1.33"
 #property description "Zonas de la vela de apertura de Nueva York y de las noticias del calendario económico."
 #property indicator_chart_window
 #property indicator_buffers 0
@@ -336,11 +337,10 @@ bool DibujarApertura(datetime diaNy, bool ultima, const string noticias)
    if(ultima || InpExtenderTodas || fin > velaActual)
       fin = velaActual;
    string fecha = TimeToString(diaNy, TIME_DATE);
-   string etiqueta = noticias == "" ? "Apertura NY " + EtiquetaFecha(diaNy, true)
+   string etiqueta = noticias == "" ? "Apertura NY (sin noticia) " + EtiquetaFecha(diaNy, true)
                                     : noticias + " " + EtiquetaFecha(diaNy, false);
    string tooltip = StringFormat("Apertura de Nueva York %s %02d:%02d (hora NY)", fecha, InpHoraApertura, InpMinutoApertura);
-   if(noticias != "")
-      tooltip += "\nNoticias del día: " + noticias;
+   tooltip += "\nNoticias del día: " + (noticias == "" ? "ninguna de las activadas" : noticias);
    return DibujarZonaVela(PREFIJO + "AP_" + fecha, inicio, fin, InpColorApertura, etiqueta, InpColorTexto, tooltip);
   }
 
@@ -1059,6 +1059,8 @@ int OnInit()
    datetime hoyNy = UtcANy(TimeGMT());
    hoyNy -= (datetime)((long)hoyNy % 86400);
    int desfase = (int)(UtcAServidor(TimeGMT()) - TimeGMT()) / 3600;
+   PrintFormat("ZonasEventosNY versión %s. Aperturas solo en días con noticia: %s. Lista de noticias: %s.",
+               VERSION, InpAperturaSoloNoticias ? "sí" : "NO (se marcan todos los días)", InpUsarLista ? "sí" : "no");
    PrintFormat("Servidor en UTC%s%d. Apertura de Nueva York de hoy en hora del servidor: %s",
                desfase >= 0 ? "+" : "", desfase, TimeToString(AperturaServidor(hoyNy), TIME_MINUTES));
    return INIT_SUCCEEDED;
