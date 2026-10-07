@@ -7,7 +7,7 @@
 //| últimos años, con su vela, la apertura de ese día y promedios.   |
 //+------------------------------------------------------------------+
 #property copyright   "Marvin Cuestas"
-#property version     "1.20"
+#property version     "1.21"
 #property description "Zonas de la vela de apertura de Nueva York y de las noticias del calendario económico."
 #property indicator_chart_window
 #property indicator_buffers 0
@@ -641,7 +641,7 @@ void CrearPanel()
    ObjectCreate(0, fondo, OBJ_RECTANGLE_LABEL, 0, 0, 0);
    ObjectSetInteger(0, fondo, OBJPROP_CORNER, CORNER_LEFT_LOWER);
    ObjectSetInteger(0, fondo, OBJPROP_XDISTANCE, 4);
-   ObjectSetInteger(0, fondo, OBJPROP_XSIZE, 640);
+   ObjectSetInteger(0, fondo, OBJPROP_XSIZE, 720);
    ObjectSetInteger(0, fondo, OBJPROP_BGCOLOR, InpColorPanel);
    ObjectSetInteger(0, fondo, OBJPROP_BORDER_TYPE, BORDER_FLAT);
    ObjectSetInteger(0, fondo, OBJPROP_COLOR, InpColorApertura);
@@ -713,12 +713,24 @@ string Promedios(int pasadas)
      }
    if(velasNoticia == 0 && velasApertura == 0)
       return "Promedios: sin historial de velas para esas fechas";
-   return StringFormat("Promedio (%d velas): noticia rango %s, %d%% alcistas · apertura rango %s, %d%% alcistas",
-                       velasNoticia,
+   return StringFormat("Promedio (%d de %d con velas): noticia rango %s, %d%% alcistas · apertura rango %s, %d%% alcistas",
+                       velasNoticia, pasadas,
                        Precio(velasNoticia > 0 ? rangoNoticia / velasNoticia : 0),
                        velasNoticia > 0 ? alcistasNoticia * 100 / velasNoticia : 0,
                        Precio(velasApertura > 0 ? rangoApertura / velasApertura : 0),
                        velasApertura > 0 ? alcistasApertura * 100 / velasApertura : 0);
+  }
+
+// Hasta dónde llega el historial de velas que usan las zonas (depende del bróker y de "Máx. barras").
+string HistorialDisponible()
+  {
+   ENUM_TIMEFRAMES tf = TFVela();
+   datetime primera = (datetime)SeriesInfoInteger(_Symbol, tf, SERIES_FIRSTDATE);
+   string nombreTf = StringSubstr(EnumToString(tf), 7);
+   if(primera == 0)
+      return "Historial " + nombreTf + ": cargando...";
+   return StringFormat("Historial %s disponible desde %s (Máx. barras: %d)", nombreTf,
+                       TimeToString(primera, TIME_DATE), TerminalInfoInteger(TERMINAL_MAXBARS));
   }
 
 void ActualizarPanel()
@@ -747,6 +759,7 @@ void ActualizarPanel()
    AgregarLinea(lineas, "Vela de la noticia (" + tf + "): " + DescribirVela(g_noticias[k].hora));
    AgregarLinea(lineas, "Vela de apertura NY (" + tf + "): " + DescribirVela(AperturaServidor(DiaNy(g_noticias[k].hora))));
    AgregarLinea(lineas, Promedios(pasadas));
+   AgregarLinea(lineas, HistorialDisponible());
    MostrarLineas(lineas);
 
    // Marca con una línea punteada la noticia que se está viendo.
