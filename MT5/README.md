@@ -9,6 +9,27 @@ Indicador `ZonasEventosNY.mq5` que marca en el gráfico:
   - al pasar el ratón por la línea se ve la hora de NY, la previsión, el dato anterior, el dato real y si salió por encima o por debajo de lo esperado;
   - en las noticias de importancia alta marca también la **vela de la noticia** (máximo y mínimo) como zona.
 
+## Modo estudio: una noticia en los últimos años
+
+Para ver, por ejemplo, **todas las publicaciones del IPC (CPI) de los últimos 5 años**:
+
+1. En los parámetros, grupo *Estudio histórico de una noticia*: activar **Activar el estudio histórico**, escribir la noticia en **Noticia a estudiar** (`CPI`) y los **Años hacia atrás** (`5`).
+2. El indicador carga solo esa noticia y marca en cada publicación:
+   - la línea de la noticia y el recuadro de **su vela**;
+   - el recuadro de la **vela de apertura de NY de ese mismo día**.
+3. Abajo a la izquierda aparece un panel con:
+   - botones **◄ Anterior** y **Siguiente ►**, que mueven el gráfico a cada publicación (la línea elegida se ve más gruesa);
+   - fecha y hora de NY, previsión, dato anterior y dato real de cada parte de la noticia (por ejemplo IPC m/m, a/a y subyacente);
+   - apertura, máximo, mínimo, cierre, rango y dirección de la vela de la noticia y de la vela de apertura;
+   - el **promedio** de rango y el porcentaje de velas alcistas de todas las publicaciones.
+4. **Exportar CSV** guarda una fila por publicación en `MQL5/Files` para abrirla en Excel.
+
+Para estudiar otra noticia basta con cambiar el texto: `Nonfarm` (nóminas), `FOMC` o `Interest Rate` (Fed), `GDP` (PIB), `Retail Sales`, `ISM`, `PPI`… Se pueden juntar varias con `;`, por ejemplo `CPI;PPI`. Los nombres son los del calendario de MetaQuotes, normalmente en inglés.
+
+**Historial necesario:** 5 años de velas de M15 son unas 120 000 barras. En **Herramientas → Opciones → Gráficos** hay que subir **Máx. barras en el gráfico** (o ponerlo en *Ilimitado*); si no alcanza, el panel dice "sin datos (falta historial)" y la pestaña Expertos muestra un aviso. La primera vez MT5 puede tardar en descargar el historial: los recuadros aparecen solos a medida que llega.
+
+Al usar los botones se desactiva el desplazamiento automático del gráfico; para volver a la vela actual, pulsa el botón de desplazamiento automático de la barra de herramientas o la tecla *Fin*.
+
 ## Actualización automática
 
 No hay que hacer nada cuando sale una noticia: cada 10 segundos el indicador pregunta al calendario de MT5 si hubo cambios (`CalendarValueLast`). Cuando se publica un dato:
