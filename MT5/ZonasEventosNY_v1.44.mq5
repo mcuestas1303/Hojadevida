@@ -1,5 +1,5 @@
 ﻿//+------------------------------------------------------------------+
-//|                                         ZonasEventosNY_v1.43.mq5 |
+//|                                         ZonasEventosNY_v1.44.mq5 |
 //| Marca la vela de apertura de Nueva York (NYSE / Nasdaq, 9:30 NY) |
 //| y las noticias del calendario económico de MT5, pasadas y nuevas.|
 //| Las noticias nuevas se detectan solas cada pocos segundos.       |
@@ -7,8 +7,8 @@
 //| últimos años, con su vela, la apertura de ese día y promedios.   |
 //+------------------------------------------------------------------+
 #property copyright   "Marvin Cuestas"
-#property version     "1.43"
-#define VERSION "1.43"
+#property version     "1.44"
+#define VERSION "1.44"
 #property description "Zonas de la vela de apertura de Nueva York y de las noticias del calendario económico."
 #property indicator_chart_window
 #property indicator_buffers 0
@@ -44,6 +44,8 @@ input bool   InpNotISM        = true;   // ISM manufacturero y de servicios
 input bool   InpNotConfianza  = false;  // Confianza del consumidor (Michigan, Conference Board)
 input bool   InpNotDuraderos  = false;  // Pedidos de bienes duraderos
 input string InpFiltroNombre  = "";     // Otras noticias que contengan (separar con ;)
+input ENUM_CALENDAR_EVENT_IMPORTANCE InpImportanciaLista = CALENDAR_IMPORTANCE_MODERATE; // Importancia mínima (deja fuera las secundarias, p. ej. Cleveland Fed CPI)
+input string InpExcluirNombre = "";     // Excluir noticias que contengan (separar con ;)
 
 input group "2. Años a proyectar"
 input bool   InpAnioActual    = true;   // Noticias del año en curso
@@ -455,17 +457,9 @@ bool EmpiezaPalabra(const string texto, const string parte)
    return false;
   }
 
-bool PasaFiltro(const MqlCalendarEvent &ev, ENUM_CALENDAR_EVENT_IMPORTANCE minima, const string filtro)
+// Alguna de las partes de `filtro` (separadas con ;) empieza una palabra de `texto`.
+bool CoincideAlguna(const string texto, const string filtro)
   {
-   if((int)ev.importance < (int)minima)
-      return false;
-   if(filtro == "")
-      return true;
-   // Se busca en el nombre (idioma del terminal) y en el código interno, que siempre está en inglés.
-   string codigo = ev.event_code;
-   StringReplace(codigo, "-", " ");
-   string nombre = ev.name + " | " + codigo;
-   StringToLower(nombre);
    string partes[];
    int n = StringSplit(filtro, ';', partes);
    for(int i = 0; i < n; i++)
@@ -474,10 +468,24 @@ bool PasaFiltro(const MqlCalendarEvent &ev, ENUM_CALENDAR_EVENT_IMPORTANCE minim
       StringTrimLeft(parte);
       StringTrimRight(parte);
       StringToLower(parte);
-      if(parte != "" && EmpiezaPalabra(nombre, parte))
+      if(parte != "" && EmpiezaPalabra(texto, parte))
          return true;
      }
    return false;
+  }
+
+bool PasaFiltro(const MqlCalendarEvent &ev, ENUM_CALENDAR_EVENT_IMPORTANCE minima, const string filtro)
+  {
+   if((int)ev.importance < (int)minima)
+      return false;
+   // Se busca en el nombre (idioma del terminal) y en el código interno, que siempre está en inglés.
+   string codigo = ev.event_code;
+   StringReplace(codigo, "-", " ");
+   string texto = ev.name + " | " + codigo;
+   StringToLower(texto);
+   if(InpExcluirNombre != "" && CoincideAlguna(texto, InpExcluirNombre))
+      return false;
+   return filtro == "" || CoincideAlguna(texto, filtro);
   }
 
 // Texto que buscan las casillas de la lista en el nombre de la noticia (en minúsculas, como lo da MT5).
@@ -510,7 +518,7 @@ string FiltroActivo()
    return !InpTodasNoticias ? FiltroLista() : InpFiltroNombre;
   }
 
-// Con la lista o en el modo estudio la noticia se elige por nombre, sin importar su importancia.
+// Con la lista o en el modo estudio la noticia se elige por nombre (y la importancia mínima de la lista).
 bool EligePorNombre()
   {
    return InpModoEstudio || !InpTodasNoticias;
@@ -518,14 +526,14 @@ bool EligePorNombre()
 
 ENUM_CALENDAR_EVENT_IMPORTANCE ImportanciaActiva()
   {
-   return EligePorNombre() ? CALENDAR_IMPORTANCE_NONE : InpImportanciaMinima;
+   return EligePorNombre() ? InpImportanciaLista : InpImportanciaMinima;
   }
 
 // Noticias que generan alertas: las de la lista o, sin lista, las de importancia para zona.
 bool SeAvisa(const MqlCalendarEvent &ev)
   {
    if(!InpTodasNoticias)
-      return PasaFiltro(ev, CALENDAR_IMPORTANCE_NONE, FiltroLista());
+      return PasaFiltro(ev, InpImportanciaLista, FiltroLista());
    return PasaFiltro(ev, InpImportanciaAlta, InpFiltroNombre);
   }
 

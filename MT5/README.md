@@ -1,6 +1,6 @@
 # Zonas de eventos NY (indicador para MetaTrader 5)
 
-Indicador `ZonasEventosNY_vX.YY.mq5` (la versión va en el nombre del archivo; la actual es `ZonasEventosNY_v1.43.mq5`) que marca en el gráfico:
+Indicador `ZonasEventosNY_vX.YY.mq5` (la versión va en el nombre del archivo; la actual es `ZonasEventosNY_v1.44.mq5`) que marca en el gráfico:
 
 - **La vela de apertura de Nueva York** (NYSE y Nasdaq abren a la misma hora, 9:30 hora de Nueva York). Dibuja una zona (rectángulo gris detrás de las velas) con el máximo y el mínimo de la **vela de 1 minuto** de la apertura y una etiqueta al final con **el nombre de la noticia de ese día**, por ejemplo `FOMC Meeting Minutes OCT 26` (si hay varias, separadas con `/`; si se marcan todos los días, los que no tienen noticia dicen `Apertura NY (sin noticia) 07 OCT 26`). Como la zona se calcula siempre con la vela M1, se ve igual aunque cambies la temporalidad del gráfico. Solo se marca la apertura de los **días con noticia** (las de importancia alta o, en el modo estudio, la noticia elegida); se puede cambiar con *Marcar la apertura solo en días con noticia*. La zona de la apertura más reciente se extiende hasta la vela en curso; las de días anteriores terminan al cierre (16:00 NY).
 - **Las noticias del calendario económico de MT5**, tanto las pasadas como las próximas:
@@ -13,6 +13,8 @@ Indicador `ZonasEventosNY_vX.YY.mq5` (la versión va en el nombre del archivo; l
 En los parámetros, grupo **Noticias a mostrar (true = activada)**, hay una casilla por cada noticia importante de EE. UU.: CPI, PPI, nóminas (NFP), ADP, solicitudes de desempleo, JOLTS, decisión de tipos de la Fed, actas del FOMC, Powell, PIB, PCE, ventas minoristas, ISM, confianza del consumidor y bienes duraderos. Las activadas se marcan con su zona, con la apertura de NY de ese día y con alertas, sin importar la importancia que les dé MT5.
 
 - **Otras noticias que contengan**: agrega cualquier otra escribiendo parte de su nombre, separadas con `;`.
+- **Importancia mínima** (media por defecto): deja fuera las noticias secundarias que comparten nombre con las principales, como *Cleveland Fed Median CPI* (importancia baja), que sale el mismo día que el CPI pero a otra hora. En *alta* quedan solo las principales.
+- **Excluir noticias que contengan**: para quitar a mano alguna que se cuele, por ejemplo `Cleveland;Median`.
 - **Ignorar la lista y mostrar TODAS**: en `false` (por defecto) solo se muestran las activadas; en `true` se muestran todas las noticias desde la importancia mínima.
 - En `presets/` hay configuraciones listas para cargar con el botón **Cargar** de la ventana de parámetros, por ejemplo `IPC_e_IPP.set` (solo CPI y PPI).
 - **Escribir en Expertos todos los nombres**: imprime en la pestaña *Expertos* todas las noticias de la moneda con `[X]` en las que se van a mostrar; sirve para ver los nombres exactos y comprobar que cada casilla atrapa lo que esperas.
@@ -52,9 +54,9 @@ También avisa unos minutos **antes** de cada noticia importante (5 minutos por 
 ## Instalación
 
 1. En MT5: **Archivo → Abrir carpeta de datos**, y entrar en `MQL5/Indicators`.
-2. Copiar ahí `ZonasEventosNY_v1.43.mq5`. Conviene borrar las versiones anteriores para no confundirlas.
+2. Copiar ahí `ZonasEventosNY_v1.44.mq5`. Conviene borrar las versiones anteriores para no confundirlas.
 3. Abrir el archivo en **MetaEditor** (F4 desde MT5) y compilar con **F7**.
-4. En MT5, en el Navegador → Indicadores, arrastrar **ZonasEventosNY_v1.43** al gráfico (US30, NAS100, SPX500, etc.). No pongas dos versiones en el mismo gráfico: usan las mismas zonas y se pisan entre sí. En la lista de indicadores (Ctrl+I) aparece como `ZonasEventosNY v1.43`.
+4. En MT5, en el Navegador → Indicadores, arrastrar **ZonasEventosNY_v1.44** al gráfico (US30, NAS100, SPX500, etc.). No pongas dos versiones en el mismo gráfico: usan las mismas zonas y se pisan entre sí. En la lista de indicadores (Ctrl+I) aparece como `ZonasEventosNY v1.44`.
 5. Revisar la pestaña **Expertos** de la caja de herramientas: el indicador escribe la hora del servidor en que cae la apertura de NY (por ejemplo `16:30`). Compruébalo con una vela real; si no coincide, ajusta el horario del bróker en los parámetros.
 
 Para recibir los avisos en el móvil: **Herramientas → Opciones → Notificaciones**, poner el MetaQuotes ID de la app MT5 del teléfono y activar el parámetro *Enviar también al móvil*.
