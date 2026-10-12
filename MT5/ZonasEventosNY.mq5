@@ -7,8 +7,8 @@
 //| últimos años, con su vela, la apertura de ese día y promedios.   |
 //+------------------------------------------------------------------+
 #property copyright   "Marvin Cuestas"
-#property version     "1.41"
-#define VERSION "1.41"
+#property version     "1.42"
+#define VERSION "1.42"
 #property description "Zonas de la vela de apertura de Nueva York y de las noticias del calendario económico."
 #property indicator_chart_window
 #property indicator_buffers 0
@@ -101,6 +101,7 @@ input bool   InpListarNombres   = false;                                        
 struct Ocurrencia
   {
    datetime          hora;        // hora del servidor
+   datetime          dia;         // medianoche de Nueva York de ese día (para agrupar por día)
    int               importancia; // la mayor del grupo
    string            titulo;      // nombres unidos con " / "
    string            principal;   // nombre de la noticia más importante del grupo (para la etiqueta)
@@ -117,6 +118,7 @@ ulong      g_avisados[];            // valores ya avisados al publicarse
 ulong      g_preavisados[];         // valores ya avisados antes de publicarse
 Ocurrencia g_noticias[];            // noticias cargadas, ordenadas por hora
 int        g_indice           = -1; // noticia mostrada en el panel del modo estudio
+int        g_anioDibujado     = 0;  // al cambiar de año se borran las zonas del año que deja de mostrarse
 
 //+------------------------------------------------------------------+
 //| Fechas y horarios                                                |
@@ -388,7 +390,7 @@ void DibujarAperturas()
       datetime diaAnterior = 0;
       for(int k = ArraySize(g_noticias) - 1; k >= 0; k--)
         {
-         datetime dia = DiaNy(g_noticias[k].hora);
+         datetime dia = g_noticias[k].dia;
          if(dia == diaAnterior || !MarcaApertura(k) || !AnioPermitido(AperturaServidor(dia)))
             continue;
          diaAnterior = dia;
@@ -423,7 +425,7 @@ string NoticiasDelDia(datetime diaNy)
    string nombres = "";
    for(int k = 0; k < ArraySize(g_noticias); k++)
      {
-      if(DiaNy(g_noticias[k].hora) != diaNy || !MarcaApertura(k))
+      if(g_noticias[k].dia != diaNy || !MarcaApertura(k))
          continue;
       string nombre = g_noticias[k].principal;
       if(StringFind(" / " + nombres + " / ", " / " + nombre + " / ") < 0)
@@ -435,13 +437,34 @@ string NoticiasDelDia(datetime diaNy)
 //+------------------------------------------------------------------+
 //| Calendario económico                                             |
 //+------------------------------------------------------------------+
+bool EsLetraODigito(ushort c)
+  {
+   return (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9');
+  }
+
+// `parte` aparece al inicio de una palabra de `texto` ("ppi" coincide con "PPI m/m" pero no con "Shipping").
+bool EmpiezaPalabra(const string texto, const string parte)
+  {
+   int pos = StringFind(texto, parte);
+   while(pos >= 0)
+     {
+      if(pos == 0 || !EsLetraODigito(StringGetCharacter(texto, pos - 1)))
+         return true;
+      pos = StringFind(texto, parte, pos + 1);
+     }
+   return false;
+  }
+
 bool PasaFiltro(const MqlCalendarEvent &ev, ENUM_CALENDAR_EVENT_IMPORTANCE minima, const string filtro)
   {
    if((int)ev.importance < (int)minima)
       return false;
    if(filtro == "")
       return true;
-   string nombre = ev.name;
+   // Se busca en el nombre (idioma del terminal) y en el código interno, que siempre está en inglés.
+   string codigo = ev.event_code;
+   StringReplace(codigo, "-", " ");
+   string nombre = ev.name + " | " + codigo;
    StringToLower(nombre);
    string partes[];
    int n = StringSplit(filtro, ';', partes);
@@ -451,7 +474,7 @@ bool PasaFiltro(const MqlCalendarEvent &ev, ENUM_CALENDAR_EVENT_IMPORTANCE minim
       StringTrimLeft(parte);
       StringTrimRight(parte);
       StringToLower(parte);
-      if(parte != "" && StringFind(nombre, parte) >= 0)
+      if(parte != "" && EmpiezaPalabra(nombre, parte))
          return true;
      }
    return false;
@@ -514,8 +537,8 @@ void ListarNombres()
    PrintFormat("Noticias de %s en el calendario de MT5 (%d). [X] = se muestra con los parámetros actuales:",
                InpMoneda == "" ? "USD" : InpMoneda, n);
    for(int i = 0; i < n; i++)
-      PrintFormat("%s %s (importancia %d)", PasaFiltro(eventos[i], ImportanciaActiva(), filtro) ? "[X]" : "[ ]",
-                  eventos[i].name, (int)eventos[i].importance);
+      PrintFormat("%s %s [%s] (importancia %d)", PasaFiltro(eventos[i], ImportanciaActiva(), filtro) ? "[X]" : "[ ]",
+                  eventos[i].name, eventos[i].event_code, (int)eventos[i].importance);
   }
 
 // Los valores del calendario vienen multiplicados por 1 000 000; LONG_MIN significa "sin dato".
@@ -578,6 +601,7 @@ void AgregarValor(Ocurrencia &lista[], const MqlCalendarValue &v, const MqlCalen
      {
       ArrayResize(lista, n + 1);
       lista[k].hora        = v.time;
+      lista[k].dia         = DiaNy(v.time);
       lista[k].importancia = 0;
       lista[k].titulo      = "";
       lista[k].principal   = ev.name;
@@ -597,6 +621,7 @@ void AgregarValor(Ocurrencia &lista[], const MqlCalendarValue &v, const MqlCalen
 void MoverOcurrencia(Ocurrencia &lista[], int de, int a)
   {
    lista[a].hora        = lista[de].hora;
+   lista[a].dia         = lista[de].dia;
    lista[a].importancia = lista[de].importancia;
    lista[a].titulo      = lista[de].titulo;
    lista[a].principal   = lista[de].principal;
@@ -609,6 +634,7 @@ void OrdenarPorHora(Ocurrencia &lista[])
    for(int i = 1; i < ArraySize(lista); i++)
      {
       datetime hora        = lista[i].hora;
+      datetime dia         = lista[i].dia;
       int      importancia = lista[i].importancia;
       string   titulo      = lista[i].titulo;
       string   principal   = lista[i].principal;
@@ -621,6 +647,7 @@ void OrdenarPorHora(Ocurrencia &lista[])
          j--;
         }
       lista[j + 1].hora        = hora;
+      lista[j + 1].dia         = dia;
       lista[j + 1].importancia = importancia;
       lista[j + 1].titulo      = titulo;
       lista[j + 1].principal   = principal;
@@ -839,7 +866,7 @@ string Promedios(int pasadas)
          if(vela.close > vela.open)
             alcistasNoticia++;
         }
-      if(DatosVela(AperturaServidor(DiaNy(g_noticias[k].hora)), vela))
+      if(DatosVela(AperturaServidor(g_noticias[k].dia), vela))
         {
          rangoApertura += vela.high - vela.low;
          velasApertura++;
@@ -893,7 +920,7 @@ void ActualizarPanel()
    for(int i = 0; i < n; i++)
       AgregarLinea(lineas, "  " + detalle[i]);
    AgregarLinea(lineas, "Vela de la noticia (" + tf + "): " + DescribirVela(g_noticias[k].hora));
-   AgregarLinea(lineas, "Vela de apertura NY (" + tf + "): " + DescribirVela(AperturaServidor(DiaNy(g_noticias[k].hora))));
+   AgregarLinea(lineas, "Vela de apertura NY (" + tf + "): " + DescribirVela(AperturaServidor(g_noticias[k].dia)));
    AgregarLinea(lineas, Promedios(pasadas));
    AgregarLinea(lineas, HistorialDisponible());
    MostrarLineas(lineas);
@@ -955,7 +982,7 @@ void ExportarCsv()
       StringReplace(datos, "\n", " | ");
       MqlRates noticia, apertura;
       bool hayNoticia  = DatosVela(g_noticias[k].hora, noticia);
-      bool hayApertura = DatosVela(AperturaServidor(DiaNy(g_noticias[k].hora)), apertura);
+      bool hayApertura = DatosVela(AperturaServidor(g_noticias[k].dia), apertura);
       FileWrite(archivo, HoraNy(g_noticias[k].hora), g_noticias[k].titulo, datos,
                 hayNoticia ? Precio(noticia.open) : "", hayNoticia ? Precio(noticia.high) : "",
                 hayNoticia ? Precio(noticia.low) : "", hayNoticia ? Precio(noticia.close) : "",
@@ -971,6 +998,14 @@ void ExportarCsv()
 void DibujarTodo()
   {
    CalcularDesfase();
+   int anio = Anio(UtcANy(TimeGMT()));
+   if(g_anioDibujado != 0 && anio != g_anioDibujado)
+     {
+      ObjectsDeleteAll(0, PREFIJO + "AP_");
+      ObjectsDeleteAll(0, PREFIJO + "NZ_");
+      ObjectsDeleteAll(0, PREFIJO + "N_");
+     }
+   g_anioDibujado = anio;
    bool mostrarNoticias = InpMostrarNoticias || InpModoEstudio;
    if(mostrarNoticias || (InpMostrarApertura && InpAperturaSoloNoticias))
      {

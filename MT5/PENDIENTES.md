@@ -7,7 +7,7 @@
 ## Ajustes menores
 - [x] Quitar las 2 advertencias del compilador ("expression not boolean" en `LeerCalendario`).
 - [ ] Reintentar cada 10 s (en vez de 60 s) cuando faltan velas M1 por cargar.
-- [ ] Buscar las noticias también por su código interno en inglés (`event_code`), por si el terminal muestra los nombres en otro idioma.
+- [x] Buscar las noticias también por su código interno en inglés (`event_code`), por si el terminal muestra los nombres en otro idioma.
 
 ## Opcionales (si se necesitan)
 - [ ] Transparencia real del relleno de las zonas (dibujo con CCanvas).
