@@ -7,8 +7,8 @@
 //| últimos años, con su vela, la apertura de ese día y promedios.   |
 //+------------------------------------------------------------------+
 #property copyright   "Marvin Cuestas"
-#property version     "1.33"
-#define VERSION "1.33"
+#property version     "1.40"
+#define VERSION "1.40"
 #property description "Zonas de la vela de apertura de Nueva York y de las noticias del calendario económico."
 #property indicator_chart_window
 #property indicator_buffers 0
@@ -25,45 +25,9 @@ enum ENUM_HORARIO_SERVIDOR
    HORARIO_SIN_DST     // No cambia de horario
   };
 
-input group "Horario del bróker"
-input ENUM_HORARIO_SERVIDOR InpHorarioServidor = HORARIO_DST_EEUU; // Cambio de horario del servidor
-input int    InpDesfaseInvierno = 99;            // Desfase del servidor en invierno, horas (99 = automático)
-
-input group "Apertura de Nueva York"
-input bool            InpMostrarApertura = true;          // Marcar la vela de apertura
-input int             InpHoraApertura    = 9;             // Hora de apertura (hora de Nueva York)
-input int             InpMinutoApertura  = 30;            // Minuto de apertura
-input int             InpHoraFinZona     = 16;            // Fin de las zonas de días anteriores (hora de Nueva York)
-input ENUM_TIMEFRAMES InpTFVela          = PERIOD_M1;     // Vela que forma la zona (M1 = igual en todas las temporalidades)
-input bool            InpAperturaSoloNoticias = true;     // Marcar la apertura solo en días con noticia
-input int             InpDiasHistorial   = 30;            // Días hacia atrás (modo normal)
-input color           InpColorApertura   = C'45,60,85';   // Color de la zona de apertura
-input color           InpColorTexto      = clrWhite;      // Color de la etiqueta de apertura
-
-input group "Recuadros"
-input bool            InpRellenoZona     = true;          // Rellenar el recuadro (queda detrás de las velas)
-input int             InpGrosorBorde     = 1;             // Grosor del borde
-input ENUM_LINE_STYLE InpEstiloBorde     = STYLE_SOLID;   // Estilo del borde
-input bool            InpExtenderTodas   = false;         // Extender también las zonas anteriores hasta la vela en curso
-
-input group "Noticias (calendario económico de MT5)"
-input bool   InpMostrarNoticias = true;                                          // Marcar noticias
-input string InpMoneda          = "USD";                                         // Moneda (vacío = todas)
-input ENUM_CALENDAR_EVENT_IMPORTANCE InpImportanciaMinima = CALENDAR_IMPORTANCE_MODERATE; // Importancia mínima para la línea
-input ENUM_CALENDAR_EVENT_IMPORTANCE InpImportanciaAlta   = CALENDAR_IMPORTANCE_HIGH;     // Importancia mínima para zona y avisos
-input string InpFiltroNombre    = "";                                            // Otras noticias que contengan (separar con ;)
-input int    InpDiasFuturo      = 7;                                             // Días hacia adelante
-input bool   InpZonaNoticia     = true;                                          // Marcar la vela de la noticia
-input int    InpMinutosZonaNoticia = 1440;                                       // Extender la zona de la noticia (minutos)
-input bool   InpLineasPasadas   = false;                                         // Líneas verticales en noticias pasadas
-input bool   InpLineasFuturas   = true;                                          // Líneas punteadas en noticias próximas
-input color  InpColorAlta       = C'233,30,99';                                  // Color importancia alta (línea y etiqueta)
-input color  InpColorMedia      = clrOrange;                                     // Color importancia media
-input color  InpColorBaja       = clrGold;                                       // Color importancia baja
-input color  InpColorZonaNoticia = C'55,58,70';                                  // Color de la zona de la noticia
-
-input group "Noticias a mostrar (true = activada)"
-input bool   InpUsarLista     = true;   // Usar esta lista (false = todas las de la importancia mínima)
+// Los parámetros están ordenados de lo que más se cambia (arriba) a lo que casi nunca se toca (abajo).
+input group "1. Noticias a mostrar (true = activada)"
+input bool   InpUsarLista     = true;   // Usar esta lista (false = todas desde la importancia mínima)
 input bool   InpNotCPI        = true;   // CPI - IPC e IPC subyacente
 input bool   InpNotPPI        = true;   // PPI - Precios al productor
 input bool   InpNotNFP        = true;   // Nóminas no agrícolas, desempleo y salarios
@@ -79,19 +43,59 @@ input bool   InpNotVentas     = true;   // Ventas minoristas
 input bool   InpNotISM        = true;   // ISM manufacturero y de servicios
 input bool   InpNotConfianza  = false;  // Confianza del consumidor (Michigan, Conference Board)
 input bool   InpNotDuraderos  = false;  // Pedidos de bienes duraderos
-input bool   InpListarNombres = false;  // Escribir en Expertos todos los nombres de noticias de la moneda
+input string InpFiltroNombre  = "";     // Otras noticias que contengan (separar con ;)
 
-input group "Estudio histórico de una noticia"
+input group "2. Años a proyectar"
+input bool   InpAnioActual    = true;   // Noticias del año en curso
+input bool   InpAnioAnterior  = true;   // Noticias del año pasado
+input bool   InpProyectar     = true;   // Proyectar las zonas hasta el último minuto
+
+input group "3. Zonas que se dibujan"
+input bool            InpZonaNoticia     = true;          // Zona de la vela de la noticia
+input bool            InpMostrarApertura = true;          // Zona de la vela de apertura de NY
+input bool            InpAperturaSoloNoticias = true;     // Apertura solo en días con noticia
+input ENUM_TIMEFRAMES InpTFVela          = PERIOD_M1;     // Vela que forma la zona (M1 = igual en todas las temporalidades)
+input bool            InpLineasFuturas   = true;          // Líneas punteadas en noticias próximas
+input bool            InpLineasPasadas   = false;         // Líneas verticales en noticias pasadas
+
+input group "4. Colores y estilo"
+input color           InpColorZonaNoticia = C'55,58,70';  // Zona de la noticia
+input color           InpColorApertura   = C'45,60,85';   // Zona de apertura
+input color           InpColorTexto      = clrWhite;      // Etiqueta de apertura
+input color           InpColorAlta       = C'233,30,99';  // Etiqueta y línea: importancia alta
+input color           InpColorMedia      = clrOrange;     // Etiqueta y línea: importancia media
+input color           InpColorBaja       = clrGold;       // Etiqueta y línea: importancia baja
+input bool            InpRellenoZona     = true;          // Rellenar la zona (queda detrás de las velas)
+input int             InpGrosorBorde     = 1;             // Grosor del borde
+input ENUM_LINE_STYLE InpEstiloBorde     = STYLE_SOLID;   // Estilo del borde
+
+input group "5. Avisos"
+input bool   InpAvisoPublicacion  = true;  // Avisar cuando se publica el dato
+input int    InpMinutosPreaviso   = 5;     // Avisar antes de la noticia (minutos, 0 = no)
+input bool   InpNotificacionMovil = false; // Enviar también al móvil (MetaQuotes ID)
+
+input group "6. Estudio histórico de una noticia"
 input bool   InpModoEstudio     = false;           // Activar el estudio histórico
 input string InpEstudioNoticia  = "CPI";           // Noticia a estudiar (parte del nombre, separar con ;)
 input int    InpEstudioAnios    = 5;               // Años hacia atrás
 input color  InpColorPanel      = C'25,25,30';     // Fondo del panel
 
-input group "Avisos"
-input int    InpSegundosRevision  = 10;    // Revisar el calendario cada (segundos)
-input bool   InpAvisoPublicacion  = true;  // Avisar cuando se publica el dato
-input int    InpMinutosPreaviso   = 5;     // Avisar antes de la noticia (minutos, 0 = no)
-input bool   InpNotificacionMovil = false; // Enviar también al móvil (MetaQuotes ID)
+input group "7. Horario del bróker y de Nueva York"
+input ENUM_HORARIO_SERVIDOR InpHorarioServidor = HORARIO_DST_EEUU; // Cambio de horario del servidor
+input int    InpDesfaseInvierno = 99;            // Desfase del servidor en invierno, horas (99 = automático)
+input int    InpHoraApertura    = 9;             // Hora de apertura (hora de Nueva York)
+input int    InpMinutoApertura  = 30;            // Minuto de apertura
+input int    InpHoraFinZona     = 16;            // Fin de la zona de apertura sin proyectar (hora de Nueva York)
+
+input group "8. Avanzado"
+input bool   InpMostrarNoticias = true;                                          // Leer y marcar noticias
+input string InpMoneda          = "USD";                                         // Moneda (vacío = todas)
+input ENUM_CALENDAR_EVENT_IMPORTANCE InpImportanciaMinima = CALENDAR_IMPORTANCE_MODERATE; // Sin lista: importancia mínima para la línea
+input ENUM_CALENDAR_EVENT_IMPORTANCE InpImportanciaAlta   = CALENDAR_IMPORTANCE_HIGH;     // Sin lista: importancia mínima para zona y avisos
+input int    InpMinutosZonaNoticia = 1440;                                       // Largo de la zona de noticia sin proyectar (minutos)
+input int    InpDiasFuturo      = 7;                                             // Días de noticias próximas
+input int    InpSegundosRevision = 10;                                           // Revisar el calendario cada (segundos)
+input bool   InpListarNombres   = false;                                         // Escribir en Expertos los nombres de noticias de la moneda
 
 // Noticias que salen a la misma hora, agrupadas (por ejemplo IPC m/m, a/a y subyacente).
 struct Ocurrencia
@@ -228,10 +232,40 @@ string EtiquetaFecha(datetime ny, bool conDia)
    return conDia ? StringFormat("%02d ", t.day) + texto : texto;
   }
 
-// Hora de apertura de la vela en curso del gráfico.
+// Hasta dónde llegan las zonas proyectadas: la vela del último minuto (igual en todas las temporalidades).
 datetime VelaEnCurso()
   {
-   return iTime(_Symbol, PERIOD_CURRENT, 0);
+   datetime ultimoMinuto = iTime(_Symbol, PERIOD_M1, 0);
+   return ultimoMinuto > 0 ? ultimoMinuto : iTime(_Symbol, PERIOD_CURRENT, 0);
+  }
+
+int AnioNy(datetime servidor)
+  {
+   return Anio(UtcANy(ServidorAUtc(servidor)));
+  }
+
+// Las noticias pasadas se muestran solo si su año está activado; las próximas, siempre.
+bool AnioPermitido(datetime servidor)
+  {
+   if(InpModoEstudio || servidor > TimeTradeServer())
+      return true;
+   int anioActual = Anio(UtcANy(TimeGMT()));
+   int anio = AnioNy(servidor);
+   return (anio == anioActual && InpAnioActual) || (anio == anioActual - 1 && InpAnioAnterior);
+  }
+
+// Primer momento (hora del servidor) desde el que se cargan noticias y aperturas.
+datetime InicioPeriodo()
+  {
+   datetime ahora = TimeTradeServer();
+   if(InpModoEstudio)
+      return ahora - InpEstudioAnios * 365 * 86400;
+   int anioActual = Anio(UtcANy(TimeGMT()));
+   if(InpAnioAnterior)
+      return UtcAServidor(NyAUtc(Fecha(anioActual - 1, 1, 1)));
+   if(InpAnioActual)
+      return UtcAServidor(NyAUtc(Fecha(anioActual, 1, 1)));
+   return UtcAServidor(NyAUtc(DiaNy(ahora))); // ningún año: solo hoy y las próximas
   }
 
 ENUM_TIMEFRAMES TFVela()
@@ -334,7 +368,7 @@ bool DibujarApertura(datetime diaNy, bool ultima, const string noticias)
       return false;
    datetime velaActual = VelaEnCurso();
    datetime fin = UtcAServidor(NyAUtc(diaNy + InpHoraFinZona * 3600));
-   if(ultima || InpExtenderTodas || fin > velaActual)
+   if(ultima || InpProyectar || fin > velaActual)
       fin = velaActual;
    string fecha = TimeToString(diaNy, TIME_DATE);
    string etiqueta = noticias == "" ? "Apertura NY (sin noticia) " + EtiquetaFecha(diaNy, true)
@@ -355,7 +389,7 @@ void DibujarAperturas()
       for(int k = ArraySize(g_noticias) - 1; k >= 0; k--)
         {
          datetime dia = DiaNy(g_noticias[k].hora);
-         if(dia == diaAnterior || !MarcaApertura(k))
+         if(dia == diaAnterior || !MarcaApertura(k) || !AnioPermitido(AperturaServidor(dia)))
             continue;
          diaAnterior = dia;
          if(DibujarApertura(dia, ultima, NoticiasDelDia(dia)))
@@ -366,12 +400,12 @@ void DibujarAperturas()
 
    datetime hoyNy = UtcANy(TimeGMT());
    hoyNy -= (datetime)((long)hoyNy % 86400);
-   for(int i = 0; i <= InpDiasHistorial; i++)
+   datetime primerDia = DiaNy(InicioPeriodo());
+   for(datetime dia = hoyNy; dia >= primerDia; dia -= 86400)
      {
-      datetime dia = hoyNy - i * 86400;
       MqlDateTime t;
       TimeToStruct(dia, t);
-      if(t.day_of_week == 0 || t.day_of_week == 6)
+      if(t.day_of_week == 0 || t.day_of_week == 6 || !AnioPermitido(AperturaServidor(dia)))
          continue;
       if(DibujarApertura(dia, ultima, NoticiasDelDia(dia))) // vacío en días sin noticia
          ultima = false;
@@ -616,7 +650,8 @@ bool CargarNoticias(Ocurrencia &lista[], datetime desde, datetime hasta)
          if(!CalendarValueHistoryByEvent(eventos[e].id, valores, desde, hasta))
             continue;
          for(int i = 0; i < ArraySize(valores); i++)
-            AgregarValor(lista, valores[i], eventos[e]);
+            if(AnioPermitido(valores[i].time))
+               AgregarValor(lista, valores[i], eventos[e]);
         }
      }
    else
@@ -627,7 +662,7 @@ bool CargarNoticias(Ocurrencia &lista[], datetime desde, datetime hasta)
       for(int i = 0; i < ArraySize(valores); i++)
         {
          MqlCalendarEvent ev;
-         if(CalendarEventById(valores[i].event_id, ev) && PasaFiltro(ev, minima, filtro))
+         if(AnioPermitido(valores[i].time) && CalendarEventById(valores[i].event_id, ev) && PasaFiltro(ev, minima, filtro))
             AgregarValor(lista, valores[i], ev);
         }
      }
@@ -652,8 +687,7 @@ string NombreLinea(int k)
 bool CargarNoticiasDelPeriodo()
   {
    datetime ahora = TimeTradeServer();
-   int diasAtras = InpModoEstudio ? InpEstudioAnios * 365 : InpDiasHistorial;
-   if(!CargarNoticias(g_noticias, ahora - diasAtras * 86400, ahora + InpDiasFuturo * 86400))
+   if(!CargarNoticias(g_noticias, InicioPeriodo(), ahora + InpDiasFuturo * 86400))
      {
       if(g_calendarioOk)
          PrintFormat("No se pudo leer el calendario económico (error %d). Revise que el terminal esté conectado.", GetLastError());
@@ -668,7 +702,7 @@ void DibujarNoticias()
   {
    datetime ahora = TimeTradeServer();
 
-   // La zona de la noticia más reciente siempre llega hasta la vela en curso.
+   // Proyectadas: todas llegan al último minuto. Sin proyectar, solo la más reciente.
    datetime velaActual = VelaEnCurso();
    datetime ultimaZona = 0;
    for(int k = 0; k < ArraySize(g_noticias); k++)
@@ -700,7 +734,7 @@ void DibujarNoticias()
       if(LlevaZona(k, ahora))
         {
          datetime fin = g_noticias[k].hora + InpMinutosZonaNoticia * 60;
-         if(g_noticias[k].hora == ultimaZona || InpExtenderTodas || fin > velaActual)
+         if(g_noticias[k].hora == ultimaZona || InpProyectar || fin > velaActual)
             fin = velaActual;
          DibujarZonaVela(PREFIJO + "NZ_" + IntegerToString((long)g_noticias[k].hora), g_noticias[k].hora, fin,
                          InpColorZonaNoticia,
@@ -1044,23 +1078,22 @@ int OnInit()
    if(InpListarNombres)
       ListarNombres();
    if(InpModoEstudio)
-     {
       CrearPanel();
-      // Varios años de velas pueden superar el límite de barras del terminal.
-      long necesarias = (long)InpEstudioAnios * 365 * 86400 / PeriodSeconds(TFVela());
-      if(TerminalInfoInteger(TERMINAL_MAXBARS) < necesarias)
-         PrintFormat("Aviso: para %d años en %s hacen falta unas %I64d barras y el terminal permite %d. "
-                     "Suba 'Máx. barras en el gráfico' en Herramientas > Opciones > Gráficos.",
-                     InpEstudioAnios, StringSubstr(EnumToString(TFVela()), 7), necesarias,
-                     TerminalInfoInteger(TERMINAL_MAXBARS));
-     }
+   // Uno o varios años de velas M1 pueden superar el límite de barras del terminal.
+   long necesarias = (long)(TimeTradeServer() - InicioPeriodo()) / PeriodSeconds(TFVela());
+   if(TerminalInfoInteger(TERMINAL_MAXBARS) < necesarias)
+      PrintFormat("Aviso: para cubrir desde %s en %s hacen falta unas %I64d barras y el terminal permite %d. "
+                  "Suba 'Máx. barras en el gráfico' en Herramientas > Opciones > Gráficos (o Ilimitado).",
+                  TimeToString(InicioPeriodo(), TIME_DATE), StringSubstr(EnumToString(TFVela()), 7), necesarias,
+                  TerminalInfoInteger(TERMINAL_MAXBARS));
    EventSetTimer(InpSegundosRevision > 0 ? InpSegundosRevision : 10);
 
    datetime hoyNy = UtcANy(TimeGMT());
    hoyNy -= (datetime)((long)hoyNy % 86400);
    int desfase = (int)(UtcAServidor(TimeGMT()) - TimeGMT()) / 3600;
-   PrintFormat("ZonasEventosNY versión %s. Aperturas solo en días con noticia: %s. Lista de noticias: %s.",
-               VERSION, InpAperturaSoloNoticias ? "sí" : "NO (se marcan todos los días)", InpUsarLista ? "sí" : "no");
+   PrintFormat("ZonasEventosNY versión %s. Año en curso: %s. Año pasado: %s. Proyectar: %s. Aperturas solo en días con noticia: %s.",
+               VERSION, InpAnioActual ? "sí" : "no", InpAnioAnterior ? "sí" : "no", InpProyectar ? "sí" : "no",
+               InpAperturaSoloNoticias ? "sí" : "NO (se marcan todos los días)");
    PrintFormat("Servidor en UTC%s%d. Apertura de Nueva York de hoy en hora del servidor: %s",
                desfase >= 0 ? "+" : "", desfase, TimeToString(AperturaServidor(hoyNy), TIME_MINUTES));
    return INIT_SUCCEEDED;

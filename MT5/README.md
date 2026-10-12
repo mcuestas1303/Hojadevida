@@ -58,23 +58,20 @@ También avisa unos minutos **antes** de cada noticia importante (5 minutos por 
 
 Para recibir los avisos en el móvil: **Herramientas → Opciones → Notificaciones**, poner el MetaQuotes ID de la app MT5 del teléfono y activar el parámetro *Enviar también al móvil*.
 
-## Parámetros principales
+## Parámetros (ordenados en grupos numerados)
 
-| Parámetro | Para qué sirve |
+| Grupo | Qué contiene |
 | --- | --- |
-| Cambio de horario del servidor | Cómo cambia de hora tu bróker. La mayoría usa GMT+2 en invierno y GMT+3 en verano siguiendo a EE. UU. (opción por defecto). |
-| Desfase del servidor en invierno | Déjalo en 99 para detectarlo solo; si la apertura sale corrida, pon el desfase en horas (por ejemplo `2`). |
-| Hora / minuto de apertura | 9:30 por defecto. Se puede cambiar, por ejemplo, a 8:30 para la hora de las noticias de empleo e IPC. |
-| Rellenar el recuadro | Activado: la zona es un rectángulo gris detrás de las velas. MT5 no permite transparencia real en sus objetos; si se desactiva, queda solo el borde. |
-| Extender también las zonas anteriores | Si se activa, todos los recuadros (también los de días y noticias anteriores) llegan hasta la vela en curso. |
-| Vela que forma la zona | M1 por defecto: la zona cubre la vela de 1 minuto y es la misma en todas las temporalidades. |
-| Líneas en noticias pasadas / próximas | Por defecto solo se ven las líneas punteadas de las noticias que aún no salen. |
-| Extender la zona de la noticia | Cuánto se extienden las zonas de noticias anteriores (1 día por defecto); la más reciente llega hasta la vela en curso. |
-| Moneda | `USD` por defecto. Vacío = todas las monedas. |
-| Importancia mínima para la línea | Qué noticias se dibujan (media y alta por defecto). |
-| Importancia mínima para zona y avisos | Qué noticias marcan la vela y generan alertas (alta por defecto). |
-| Solo noticias que contengan | Filtro por nombre separado por `;`, por ejemplo `CPI;Nonfarm;FOMC;GDP`. |
-| Días hacia atrás / adelante | Cuántas noticias y aperturas pasadas se marcan y cuántos días de noticias futuras se muestran. |
+| **1. Noticias a mostrar** | Una casilla por noticia (CPI, PPI, NFP, Fed, PIB, PCE, ISM…) y *Otras noticias que contengan* para agregar más por texto. |
+| **2. Años a proyectar** | *Noticias del año en curso* y *Noticias del año pasado*: se activan o desactivan por separado. *Proyectar las zonas hasta el último minuto*: todas las zonas de esos años se extienden hasta la vela del último minuto, así se ve dónde queda cada nivel respecto al precio actual. |
+| **3. Zonas que se dibujan** | Zona de la vela de la noticia, zona de la apertura de NY, apertura solo en días con noticia, vela que forma la zona (M1) y líneas de noticias próximas o pasadas. |
+| **4. Colores y estilo** | Colores de las zonas y etiquetas, relleno, grosor y estilo del borde. |
+| **5. Avisos** | Alerta al publicarse el dato, preaviso en minutos y envío al móvil. |
+| **6. Estudio histórico** | El modo estudio de una noticia en varios años. |
+| **7. Horario del bróker y de Nueva York** | Cambio de horario del servidor, desfase manual y hora de apertura (9:30). Normalmente no se tocan. |
+| **8. Avanzado** | Moneda, importancia mínima cuando no se usa la lista, largo de las zonas sin proyectar, días de noticias próximas y la opción de escribir en Expertos todos los nombres de noticias. |
+
+Con los dos años activados y proyección, las zonas cubren desde el 1 de enero del año pasado: son unas 700 000 velas de M1, así que *Máx. barras en el gráfico* debe estar en *Ilimitado*. Si no alcanza, la pestaña Expertos lo avisa al cargar.
 
 ## Notas
 
