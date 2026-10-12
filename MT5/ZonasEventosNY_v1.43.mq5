@@ -1,5 +1,5 @@
 ﻿//+------------------------------------------------------------------+
-//|                                               ZonasEventosNY.mq5 |
+//|                                         ZonasEventosNY_v1.43.mq5 |
 //| Marca la vela de apertura de Nueva York (NYSE / Nasdaq, 9:30 NY) |
 //| y las noticias del calendario económico de MT5, pasadas y nuevas.|
 //| Las noticias nuevas se detectan solas cada pocos segundos.       |
@@ -7,8 +7,8 @@
 //| últimos años, con su vela, la apertura de ese día y promedios.   |
 //+------------------------------------------------------------------+
 #property copyright   "Marvin Cuestas"
-#property version     "1.42"
-#define VERSION "1.42"
+#property version     "1.43"
+#define VERSION "1.43"
 #property description "Zonas de la vela de apertura de Nueva York y de las noticias del calendario económico."
 #property indicator_chart_window
 #property indicator_buffers 0
@@ -1104,6 +1104,7 @@ void AvisarProximas()
 //+------------------------------------------------------------------+
 int OnInit()
   {
+   IndicatorSetString(INDICATOR_SHORTNAME, "ZonasEventosNY v" + VERSION); // así aparece en Ctrl+I
    CalcularDesfase();
    if(InpMostrarNoticias)
      {
