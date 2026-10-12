@@ -7,8 +7,8 @@
 //| últimos años, con su vela, la apertura de ese día y promedios.   |
 //+------------------------------------------------------------------+
 #property copyright   "Marvin Cuestas"
-#property version     "1.40"
-#define VERSION "1.40"
+#property version     "1.41"
+#define VERSION "1.41"
 #property description "Zonas de la vela de apertura de Nueva York y de las noticias del calendario económico."
 #property indicator_chart_window
 #property indicator_buffers 0
@@ -27,7 +27,7 @@ enum ENUM_HORARIO_SERVIDOR
 
 // Los parámetros están ordenados de lo que más se cambia (arriba) a lo que casi nunca se toca (abajo).
 input group "1. Noticias a mostrar (true = activada)"
-input bool   InpUsarLista     = true;   // Usar esta lista (false = todas desde la importancia mínima)
+input bool   InpTodasNoticias = false;  // Ignorar la lista y mostrar TODAS (desde la importancia mínima)
 input bool   InpNotCPI        = true;   // CPI - IPC e IPC subyacente
 input bool   InpNotPPI        = true;   // PPI - Precios al productor
 input bool   InpNotNFP        = true;   // Nóminas no agrícolas, desempleo y salarios
@@ -484,13 +484,13 @@ string FiltroActivo()
   {
    if(InpModoEstudio)
       return InpEstudioNoticia;
-   return InpUsarLista ? FiltroLista() : InpFiltroNombre;
+   return !InpTodasNoticias ? FiltroLista() : InpFiltroNombre;
   }
 
 // Con la lista o en el modo estudio la noticia se elige por nombre, sin importar su importancia.
 bool EligePorNombre()
   {
-   return InpModoEstudio || InpUsarLista;
+   return InpModoEstudio || !InpTodasNoticias;
   }
 
 ENUM_CALENDAR_EVENT_IMPORTANCE ImportanciaActiva()
@@ -501,7 +501,7 @@ ENUM_CALENDAR_EVENT_IMPORTANCE ImportanciaActiva()
 // Noticias que generan alertas: las de la lista o, sin lista, las de importancia para zona.
 bool SeAvisa(const MqlCalendarEvent &ev)
   {
-   if(InpUsarLista)
+   if(!InpTodasNoticias)
       return PasaFiltro(ev, CALENDAR_IMPORTANCE_NONE, FiltroLista());
    return PasaFiltro(ev, InpImportanciaAlta, InpFiltroNombre);
   }
@@ -676,7 +676,7 @@ bool LlevaZona(int k, datetime ahora)
       return false;
    if(InpModoEstudio)
       return true;
-   return InpZonaNoticia && (InpUsarLista || g_noticias[k].importancia >= (int)InpImportanciaAlta);
+   return InpZonaNoticia && (!InpTodasNoticias || g_noticias[k].importancia >= (int)InpImportanciaAlta);
   }
 
 string NombreLinea(int k)
@@ -1094,6 +1094,8 @@ int OnInit()
    PrintFormat("ZonasEventosNY versión %s. Año en curso: %s. Año pasado: %s. Proyectar: %s. Aperturas solo en días con noticia: %s.",
                VERSION, InpAnioActual ? "sí" : "no", InpAnioAnterior ? "sí" : "no", InpProyectar ? "sí" : "no",
                InpAperturaSoloNoticias ? "sí" : "NO (se marcan todos los días)");
+   PrintFormat("Noticias: %s", InpTodasNoticias ? "TODAS desde la importancia mínima (la lista se ignora)"
+                                                : "solo las de la lista (" + FiltroLista() + ")");
    PrintFormat("Servidor en UTC%s%d. Apertura de Nueva York de hoy en hora del servidor: %s",
                desfase >= 0 ? "+" : "", desfase, TimeToString(AperturaServidor(hoyNy), TIME_MINUTES));
    return INIT_SUCCEEDED;
