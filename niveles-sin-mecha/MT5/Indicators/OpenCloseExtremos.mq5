@@ -7,7 +7,7 @@
 //|  ▲ verde/azul bajo la vela    : Apertura/Cierre = Mínimo         |
 //+------------------------------------------------------------------+
 #property copyright "OpenCloseExtremos"
-#property version   "1.40"
+#property version   "1.50"
 #property indicator_chart_window
 #property indicator_buffers 4
 #property indicator_plots   4
@@ -45,7 +45,7 @@ input int    InpOHTamano     = 2;          // Tamaño de la flecha (1–5)
 input int    InpOHSimbolo    = 234;        // Símbolo (código Wingdings)
 input bool   InpOHAlerta     = true;       // Incluir en las alertas al cerrar la vela
 input bool   InpOHNivel      = true;       // Dibujar su línea de nivel
-input color  InpOHColorNivel = C'150,60,60'; // Color de su línea pendiente
+input color  InpOHColorNivel = C'220,80,80'; // Color de su línea pendiente
 
 input group "Flecha naranja · Cierre = Máximo"
 input bool   InpCHMostrar    = true;       // Mostrar flecha
@@ -54,7 +54,7 @@ input int    InpCHTamano     = 2;          // Tamaño de la flecha (1–5)
 input int    InpCHSimbolo    = 234;        // Símbolo (código Wingdings)
 input bool   InpCHAlerta     = true;       // Incluir en las alertas al cerrar la vela
 input bool   InpCHNivel      = false;      // Dibujar su línea de nivel
-input color  InpCHColorNivel = C'150,100,40'; // Color de su línea pendiente
+input color  InpCHColorNivel = C'230,150,50'; // Color de su línea pendiente
 
 input group "Flecha verde · Apertura = Mínimo"
 input bool   InpOLMostrar    = true;       // Mostrar flecha
@@ -63,7 +63,7 @@ input int    InpOLTamano     = 2;          // Tamaño de la flecha (1–5)
 input int    InpOLSimbolo    = 233;        // Símbolo (código Wingdings)
 input bool   InpOLAlerta     = true;       // Incluir en las alertas al cerrar la vela
 input bool   InpOLNivel      = true;       // Dibujar su línea de nivel
-input color  InpOLColorNivel = C'46,125,80'; // Color de su línea pendiente
+input color  InpOLColorNivel = C'70,190,110'; // Color de su línea pendiente
 
 input group "Flecha azul · Cierre = Mínimo"
 input bool   InpCLMostrar    = true;       // Mostrar flecha
@@ -72,7 +72,7 @@ input int    InpCLTamano     = 2;          // Tamaño de la flecha (1–5)
 input int    InpCLSimbolo    = 233;        // Símbolo (código Wingdings)
 input bool   InpCLAlerta     = true;       // Incluir en las alertas al cerrar la vela
 input bool   InpCLNivel      = false;      // Dibujar su línea de nivel
-input color  InpCLColorNivel = C'40,90,150'; // Color de su línea pendiente
+input color  InpCLColorNivel = C'70,140,230'; // Color de su línea pendiente
 
 input group "Canales de alerta"
 input bool   InpAlertaPopup      = false; // Alerta emergente
@@ -88,7 +88,11 @@ input group "Niveles (comunes a todas las flechas)"
 input bool   InpNiveles          = true;            // Dibujar niveles sin mecha (desequilibrios)
 input bool   InpMostrarTesteados = true;            // Mantener los niveles ya testeados
 input int    InpVelasNiveles     = 500;             // Velas a revisar para niveles
-input color  InpColorTesteado    = C'75,75,75';     // Color nivel ya testeado
+input bool   InpProyectarTesteados = true;          // Proyectar también los testeados hasta el precio actual
+input color  InpColorTesteado    = C'130,130,130';  // Color nivel ya testeado
+input ENUM_LINE_STYLE InpEstiloNivel = STYLE_DOT;  // Estilo de las líneas de nivel
+input int    InpGrosorNivel      = 1;               // Grosor de las líneas de nivel (1–3)
+input bool   InpLineasDetras     = false;           // Dibujar las líneas detrás (pueden quedar tapadas por rectángulos)
 input ENUM_TIMEFRAMES  InpTFNiveles = PERIOD_CURRENT;  // Temporalidad de los niveles
 input bool   InpSesAsia          = true;            // Niveles nacidos en Asia (01–10 h servidor)
 input bool   InpSesLondres       = true;            // Niveles nacidos en Londres (10–15 h)
@@ -374,10 +378,10 @@ void CrearLineaNivel(const string nombre, const datetime t0, const datetime t1,
    if(!ObjectCreate(0, nombre, OBJ_TREND, 0, t0, p, t1, p))
       return;
    ObjectSetInteger(0, nombre, OBJPROP_COLOR, testeado ? InpColorTesteado : col);
-   ObjectSetInteger(0, nombre, OBJPROP_STYLE, STYLE_DOT);
-   ObjectSetInteger(0, nombre, OBJPROP_WIDTH, 1);
-   ObjectSetInteger(0, nombre, RAY_PROP, !testeado);
-   ObjectSetInteger(0, nombre, OBJPROP_BACK, true);
+   ObjectSetInteger(0, nombre, OBJPROP_STYLE, InpEstiloNivel);
+   ObjectSetInteger(0, nombre, OBJPROP_WIDTH, MathMax(1, MathMin(3, InpGrosorNivel)));
+   ObjectSetInteger(0, nombre, RAY_PROP, !testeado || InpProyectarTesteados);
+   ObjectSetInteger(0, nombre, OBJPROP_BACK, InpLineasDetras);
    ObjectSetInteger(0, nombre, OBJPROP_SELECTABLE, InpPermitirOcultar);
    ObjectSetInteger(0, nombre, OBJPROP_HIDDEN, false);
    ObjectSetString(0, nombre, OBJPROP_TOOLTIP, texto + (testeado ? " (testeado)" : " (no testeado)"));
@@ -411,8 +415,11 @@ void RevisarPendientes(const datetime t, const double h, const double l)
            }
          else
            {
-            ObjectMove(0, n, 1, t, g_pendientes[k].precio);
-            ObjectSetInteger(0, n, RAY_PROP, false);
+            if(!InpProyectarTesteados)          // si se proyectan, la línea sigue hasta el precio actual
+              {
+               ObjectMove(0, n, 1, t, g_pendientes[k].precio);
+               ObjectSetInteger(0, n, RAY_PROP, false);
+              }
             ObjectSetInteger(0, n, OBJPROP_COLOR, InpColorTesteado);
             ObjectSetString(0, n, OBJPROP_TOOLTIP, ObjectGetString(0, n, OBJPROP_TOOLTIP) + " → testeado");
            }
@@ -448,7 +455,7 @@ void NivelDesde(const MqlRates &r[], const int n, const int i, const double p, c
      }
    string tip = StringFormat("%s %s %s  %s", tft, texto, DoubleToString(p, _Digits),
                              TimeToString(r[i].time, TIME_DATE | TIME_MINUTES));
-   CrearLineaNivel(nombre, r[i].time, (jt >= 0) ? r[jt].time : r[n - 1].time, p, jt >= 0, abajo, tip, col);
+   CrearLineaNivel(nombre, r[i].time, (jt >= 0 && !InpProyectarTesteados) ? r[jt].time : r[n - 1].time, p, jt >= 0, abajo, tip, col);
    AgregarDibujado(nombre);
    if(jt < 0)
       AgregarPendiente(nombre, p, abajo);

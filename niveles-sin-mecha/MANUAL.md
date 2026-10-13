@@ -14,7 +14,7 @@ niveles-sin-mecha/
 ├── REGLAMENTO.md                     ← reglas obligatorias de operativa (scalping e intradía)
 ├── MT5/
 │   ├── Indicators/
-│   │   └── OpenCloseExtremos.mq5     ← indicador v1.40: flechas, panel de % y líneas de niveles
+│   │   └── OpenCloseExtremos.mq5     ← indicador v1.50: flechas, panel de % y líneas de niveles
 │   └── Scripts/
 │       ├── EstadisticasNiveles.mq5   ← estadísticas, reacción medida en M1
 │       ├── EstadisticasNivelesH1.mq5 ← estadísticas, reacción medida en H1
@@ -55,7 +55,7 @@ Las carpetas `MT5/Indicators` y `MT5/Scripts` tienen el mismo nombre que las de 
 
 ---
 
-## 3. Indicador OpenCloseExtremos (v1.40)
+## 3. Indicador OpenCloseExtremos (v1.50)
 
 ### 3.1 Las flechas
 
@@ -78,8 +78,9 @@ Una vela puede tener dos flechas. Si tiene roja y azul, o verde y naranja, es un
 
 Desde cada flecha **verde** o **roja** sale una línea punteada fina en el extremo sin mecha:
 
-- **Pendiente** (no testeado): verde apagado si está en un mínimo, rojo apagado si está en un máximo. Se prolonga hacia la derecha.
-- **Testeado**: cuando una vela posterior toca el nivel, la línea se corta en esa vela y pasa a gris.
+- **Pendiente** (no testeado): en el color de la línea de su flecha (verde en un mínimo, rojo en un máximo). Se prolonga hasta el precio actual.
+- **Testeado**: cuando una vela posterior toca el nivel, la línea pasa a gris y, por defecto, también sigue hasta el precio actual. Si desactivas «Proyectar también los testeados», se corta en la vela del test.
+- Las líneas se dibujan **delante** de los objetos del gráfico. Si tienes rectángulos o bandas de color, ya no las tapan. Si las prefieres detrás de las velas, activa «Dibujar las líneas detrás».
 - Al pasar el ratón por encima se ve el tipo, el precio, la hora y si está testeado.
 
 Por defecto solo se dibujan los niveles de **apertura**. Los de cierre (naranja y azul) casi siempre quedan testeados en la vela siguiente, porque esta abre pegada al cierre anterior.
@@ -117,7 +118,10 @@ Se puede desactivar.
 | Mantener niveles testeados | Sí | Si lo desactivas, solo quedan los pendientes |
 | Velas a revisar para niveles | 500 | Hasta cuántas velas atrás busca niveles |
 | **Por cada flecha** (roja, naranja, verde, azul) | | Mostrar, color, tamaño, símbolo, alerta, dibujar su línea y color de la línea pendiente |
-| Color nivel ya testeado | Gris | Color de todas las líneas testeadas |
+| Proyectar también los testeados hasta el precio actual | Sí | Si lo desactivas, la línea testeada se corta en la vela del test |
+| Color nivel ya testeado | Gris claro | Color de todas las líneas testeadas |
+| Estilo / grosor de las líneas de nivel | Punteada / 1 | Punteada, guiones o continua; grosor 1–3 |
+| Dibujar las líneas detrás | No | Si lo activas, los rectángulos del gráfico pueden taparlas |
 | Temporalidad de los niveles | La del gráfico | De qué temporalidad salen los niveles (por ejemplo H1 en un gráfico M1) |
 | Niveles nacidos en Asia / Londres / Londres+NY / NY tarde | Sí (las 4) | Filtro por la sesión en que nació la vela |
 | Ocultar testeados tras N velas | 0 | 0 = nunca; N = las testeadas desaparecen pasadas N velas |
@@ -404,8 +408,9 @@ Es un **modelo simplificado con números inventados**, no datos reales.
 | 2026-10-06 | Indicador v1.00: cuatro flechas y alertas |
 | 2026-10-06 | Indicador v1.10: panel de porcentajes |
 | 2026-10-06 | Indicador v1.20: líneas punteadas de niveles sin mecha |
-| 2026-10-07 | Indicador v1.40: configuración separada para cada una de las 4 flechas (mostrar, color, tamaño, símbolo, alerta y línea de nivel) |
 | 2026-10-07 | Indicador v1.30: ocultar líneas a mano (persistente) con botón de restaurar, filtros por dirección y sesión, testeados temporales y niveles de otra temporalidad |
+| 2026-10-07 | Indicador v1.40: configuración separada para cada una de las 4 flechas (mostrar, color, tamaño, símbolo, alerta y línea de nivel) |
+| 2026-10-13 | Indicador v1.50: todas las líneas (también las testeadas) se proyectan hasta el precio actual; las líneas se dibujan delante de los rectángulos; estilo y grosor configurables; colores más visibles sobre fondo negro |
 | 2026-10-06 | Script EstadisticasNiveles (M1) y primera página de resultados de XAUUSD |
 | 2026-10-06 | Script EstadisticasNivelesH1 |
 | 2026-10-06 | Resultados H1 de XAUUSD añadidos a la página y al manual |
