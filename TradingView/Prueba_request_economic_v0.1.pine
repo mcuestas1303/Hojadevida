@@ -1,0 +1,24 @@
+// Prueba: ¿request.economic marca el día de PUBLICACIÓN del dato o el del PERIODO?
+// Ponlo en un gráfico diario (por ejemplo SPY) y compara las etiquetas con las fechas oficiales del BLS.
+// Script no compilado: si da error, copia el mensaje exacto del editor de Pine.
+//@version=6
+indicator("Test fecha request.economic v0.1", overlay = true, max_labels_count = 500)
+
+string campo   = input.string("CPI", "Código de campo (US)", options = ["CPI", "IRYY", "CCPI", "PPI", "NFP", "INTR"])
+string prefijo = input.string("ECONOMICS", "Prefijo ticker", options = ["ECONOMICS", "ECONOMIC"])
+string tfDato  = input.timeframe("1D", "Marco para leer la fecha del dato")
+
+// gaps_on: solo hay valor en la vela donde ENTRA un dato nuevo (aunque repita la cifra anterior)
+float datoNuevo = request.economic("US", campo, barmerge.gaps_on, true)
+float ultimo    = request.economic("US", campo, barmerge.gaps_off, true)
+// Fecha propia del último punto de la serie económica
+int tDato = request.security(prefijo + ":US" + campo, tfDato, time, ignore_invalid_symbol = true)
+
+if not na(datoNuevo)
+    string txt = campo + " = " + str.tostring(datoNuevo)
+    txt += "\nVela (NY): " + str.format_time(time, "yyyy-MM-dd HH:mm", "America/New_York")
+    txt += "\nFecha dato (UTC): " + (na(tDato) ? "n/d" : str.format_time(tDato, "yyyy-MM-dd HH:mm", "UTC"))
+    label.new(bar_index, high, txt, yloc = yloc.abovebar, style = label.style_label_down, color = color.orange, textcolor = color.black, size = size.small)
+
+bgcolor(not na(datoNuevo) ? color.new(color.orange, 80) : na)
+plot(ultimo, "Último valor", display = display.data_window)
