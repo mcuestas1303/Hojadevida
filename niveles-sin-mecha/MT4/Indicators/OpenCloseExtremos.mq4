@@ -7,7 +7,7 @@
 //|  ▲ verde/azul bajo la vela    : Apertura/Cierre = Mínimo         |
 //+------------------------------------------------------------------+
 #property copyright "OpenCloseExtremos"
-#property version   "1.50"
+#property version   "1.51"
 #property strict
 #property indicator_chart_window
 #property indicator_buffers 4
@@ -19,6 +19,14 @@
 #property indicator_width2  2
 #property indicator_width3  2
 #property indicator_width4  2
+
+//--- hasta dónde llega la línea de un nivel ya testeado
+enum ENUM_PROYECCION
+  {
+   PROY_ACTUAL = 0,   // Hasta el precio actual
+   PROY_TEST   = 1,   // Hasta la vela que lo testeó
+   PROY_VELAS  = 2    // N velas después del test
+  };
 
 //--- entradas
 sinput string InpSepGen = "──────── General ────────"; // ────────
@@ -34,6 +42,8 @@ input int    InpOHSimbolo    = 234;        // Símbolo (código Wingdings)
 input bool   InpOHAlerta     = true;       // Incluir en las alertas al cerrar la vela
 input bool   InpOHNivel      = true;       // Dibujar su línea de nivel
 input color  InpOHColorNivel = C'220,80,80'; // Color de su línea pendiente
+input ENUM_PROYECCION InpOHProyeccion = PROY_ACTUAL; // Línea testeada: hasta dónde se proyecta
+input int    InpOHVelasTras = 20;         // Línea testeada: N velas después del test (si eliges esa opción)
 
 sinput string InpSepCH = "──────── Flecha naranja · Cierre = Máximo ────────"; // ────────
 input bool   InpCHMostrar    = true;       // Mostrar flecha
@@ -43,6 +53,8 @@ input int    InpCHSimbolo    = 234;        // Símbolo (código Wingdings)
 input bool   InpCHAlerta     = true;       // Incluir en las alertas al cerrar la vela
 input bool   InpCHNivel      = false;      // Dibujar su línea de nivel
 input color  InpCHColorNivel = C'230,150,50'; // Color de su línea pendiente
+input ENUM_PROYECCION InpCHProyeccion = PROY_ACTUAL; // Línea testeada: hasta dónde se proyecta
+input int    InpCHVelasTras = 20;         // Línea testeada: N velas después del test (si eliges esa opción)
 
 sinput string InpSepOL = "──────── Flecha verde · Apertura = Mínimo ────────"; // ────────
 input bool   InpOLMostrar    = true;       // Mostrar flecha
@@ -52,6 +64,8 @@ input int    InpOLSimbolo    = 233;        // Símbolo (código Wingdings)
 input bool   InpOLAlerta     = true;       // Incluir en las alertas al cerrar la vela
 input bool   InpOLNivel      = true;       // Dibujar su línea de nivel
 input color  InpOLColorNivel = C'70,190,110'; // Color de su línea pendiente
+input ENUM_PROYECCION InpOLProyeccion = PROY_ACTUAL; // Línea testeada: hasta dónde se proyecta
+input int    InpOLVelasTras = 20;         // Línea testeada: N velas después del test (si eliges esa opción)
 
 sinput string InpSepCL = "──────── Flecha azul · Cierre = Mínimo ────────"; // ────────
 input bool   InpCLMostrar    = true;       // Mostrar flecha
@@ -61,6 +75,8 @@ input int    InpCLSimbolo    = 233;        // Símbolo (código Wingdings)
 input bool   InpCLAlerta     = true;       // Incluir en las alertas al cerrar la vela
 input bool   InpCLNivel      = false;      // Dibujar su línea de nivel
 input color  InpCLColorNivel = C'70,140,230'; // Color de su línea pendiente
+input ENUM_PROYECCION InpCLProyeccion = PROY_ACTUAL; // Línea testeada: hasta dónde se proyecta
+input int    InpCLVelasTras = 20;         // Línea testeada: N velas después del test (si eliges esa opción)
 
 sinput string InpSepAle = "──────── Canales de alerta ────────"; // ────────
 input bool   InpAlertaPopup      = false; // Alerta emergente
@@ -76,7 +92,6 @@ sinput string InpSepNiv = "──────── Niveles (comunes a todas las
 input bool   InpNiveles          = true;            // Dibujar niveles sin mecha (desequilibrios)
 input bool   InpMostrarTesteados = true;            // Mantener los niveles ya testeados
 input int    InpVelasNiveles     = 500;             // Velas a revisar para niveles
-input bool   InpProyectarTesteados = true;          // Proyectar también los testeados hasta el precio actual
 input color  InpColorTesteado    = C'130,130,130';  // Color nivel ya testeado
 input ENUM_LINE_STYLE InpEstiloNivel = STYLE_DOT;  // Estilo de las líneas de nivel
 input int    InpGrosorNivel      = 1;               // Grosor de las líneas de nivel (1–3)
@@ -108,6 +123,7 @@ struct Nivel
    string            nombre;
    double            precio;
    bool              abajo;     // true = nivel en un mínimo (el precio quedó por encima)
+   int               proy;      // ENUM_PROYECCION de su flecha, para cuando se teste
   };
 Nivel g_pendientes[];
 string   g_dibujados[];            // líneas dibujadas en la última reconstrucción
@@ -334,27 +350,28 @@ void ActualizarBoton()
 
 void CrearLineaNivel(const string nombre, const datetime t0, const datetime t1,
                      const double p, const bool testeado, const bool abajo, const string texto,
-                     const color col)
+                     const color col, const bool rayo)
   {
    if(!ObjectCreate(0, nombre, OBJ_TREND, 0, t0, p, t1, p))
       return;
    ObjectSetInteger(0, nombre, OBJPROP_COLOR, testeado ? InpColorTesteado : col);
    ObjectSetInteger(0, nombre, OBJPROP_STYLE, InpEstiloNivel);
    ObjectSetInteger(0, nombre, OBJPROP_WIDTH, MathMax(1, MathMin(3, InpGrosorNivel)));
-   ObjectSetInteger(0, nombre, RAY_PROP, !testeado || InpProyectarTesteados);
+   ObjectSetInteger(0, nombre, RAY_PROP, rayo);
    ObjectSetInteger(0, nombre, OBJPROP_BACK, InpLineasDetras);
    ObjectSetInteger(0, nombre, OBJPROP_SELECTABLE, InpPermitirOcultar);
    ObjectSetInteger(0, nombre, OBJPROP_HIDDEN, false);
    ObjectSetString(0, nombre, OBJPROP_TOOLTIP, texto + (testeado ? " (testeado)" : " (no testeado)"));
   }
 
-void AgregarPendiente(const string nombre, const double p, const bool abajo)
+void AgregarPendiente(const string nombre, const double p, const bool abajo, const int proy)
   {
    int n = ArraySize(g_pendientes);
    ArrayResize(g_pendientes, n + 1);
    g_pendientes[n].nombre = nombre;
    g_pendientes[n].precio = p;
    g_pendientes[n].abajo  = abajo;
+   g_pendientes[n].proy   = proy;
   }
 
 //--- revisa en cada tick si la vela actual toca algún nivel pendiente
@@ -376,7 +393,9 @@ void RevisarPendientes(const datetime t, const double h, const double l)
            }
          else
            {
-            if(!InpProyectarTesteados)          // si se proyectan, la línea sigue hasta el precio actual
+            // «hasta el precio actual» deja el rayo; las otras dos se cortan en esta vela
+            // (con «N velas» la línea crece en cada vela nueva al reconstruir los niveles)
+            if(g_pendientes[k].proy != PROY_ACTUAL)
               {
                ObjectMove(0, n, 1, t, g_pendientes[k].precio);
                ObjectSetInteger(0, n, RAY_PROP, false);
@@ -391,6 +410,7 @@ void RevisarPendientes(const datetime t, const double h, const double l)
          g_pendientes[k].nombre = g_pendientes[last].nombre;
          g_pendientes[k].precio = g_pendientes[last].precio;
          g_pendientes[k].abajo  = g_pendientes[last].abajo;
+         g_pendientes[k].proy   = g_pendientes[last].proy;
         }
       ArrayResize(g_pendientes, last);
      }
@@ -398,7 +418,7 @@ void RevisarPendientes(const datetime t, const double h, const double l)
 
 void NivelDesde(const MqlRates &r[], const int n, const int i, const double p, const bool abajo,
                 const string tft, const string cod, const string texto, const datetime ahora,
-                const color col)
+                const color col, const ENUM_PROYECCION proy, const int velasTras)
   {
    string nombre = NV_PREFIX + tft + "_" + cod + "_" + IntegerToString((long)r[i].time);
    if(InpPermitirOcultar && EstaOculto(nombre))
@@ -416,10 +436,14 @@ void NivelDesde(const MqlRates &r[], const int n, const int i, const double p, c
      }
    string tip = StringFormat("%s %s %s  %s", tft, texto, DoubleToString(p, _Digits),
                              TimeToString(r[i].time, TIME_DATE | TIME_MINUTES));
-   CrearLineaNivel(nombre, r[i].time, (jt >= 0 && !InpProyectarTesteados) ? r[jt].time : r[n - 1].time, p, jt >= 0, abajo, tip, col);
+   int  fin  = n - 1;                    // pendiente: hasta la vela actual, con rayo
+   bool rayo = true;
+   if(jt >= 0 && proy == PROY_TEST)  { fin = jt; rayo = false; }
+   if(jt >= 0 && proy == PROY_VELAS) { fin = (int)MathMin(jt + MathMax(0, velasTras), n - 1); rayo = false; }
+   CrearLineaNivel(nombre, r[i].time, r[fin].time, p, jt >= 0, abajo, tip, col, rayo);
    AgregarDibujado(nombre);
    if(jt < 0)
-      AgregarPendiente(nombre, p, abajo);
+      AgregarPendiente(nombre, p, abajo, (int)proy);
   }
 
 //--- devuelve false si el historial de la temporalidad de niveles aún no está disponible
@@ -447,11 +471,11 @@ bool ConstruirNiveles(const datetime ahora)
       bool oh = Igual(r[i].open, r[i].high),  ol = Igual(r[i].open, r[i].low);
       bool ch = Igual(r[i].close, r[i].high), cl = Igual(r[i].close, r[i].low);
       bool nOH = oh && InpOHNivel, nOL = ol && InpOLNivel;
-      if(nOH) NivelDesde(r, n, i, r[i].high, false, tft, "AMax", "Apertura = Máximo", ahora, InpOHColorNivel);
-      if(nOL) NivelDesde(r, n, i, r[i].low,  true,  tft, "AMin", "Apertura = Mínimo", ahora, InpOLColorNivel);
+      if(nOH) NivelDesde(r, n, i, r[i].high, false, tft, "AMax", "Apertura = Máximo", ahora, InpOHColorNivel, InpOHProyeccion, InpOHVelasTras);
+      if(nOL) NivelDesde(r, n, i, r[i].low,  true,  tft, "AMin", "Apertura = Mínimo", ahora, InpOLColorNivel, InpOLProyeccion, InpOLVelasTras);
       // si apertura y cierre coinciden en el mismo extremo, el nivel solo se dibuja una vez
-      if(ch && !nOH && InpCHNivel) NivelDesde(r, n, i, r[i].high, false, tft, "CMax", "Cierre = Máximo", ahora, InpCHColorNivel);
-      if(cl && !nOL && InpCLNivel) NivelDesde(r, n, i, r[i].low,  true,  tft, "CMin", "Cierre = Mínimo", ahora, InpCLColorNivel);
+      if(ch && !nOH && InpCHNivel) NivelDesde(r, n, i, r[i].high, false, tft, "CMax", "Cierre = Máximo", ahora, InpCHColorNivel, InpCHProyeccion, InpCHVelasTras);
+      if(cl && !nOL && InpCLNivel) NivelDesde(r, n, i, r[i].low,  true,  tft, "CMin", "Cierre = Mínimo", ahora, InpCLColorNivel, InpCLProyeccion, InpCLVelasTras);
      }
    ActualizarBoton();
    return(true);
