@@ -1,5 +1,5 @@
 //+------------------------------------------------------------------+
-//|                                           OpenCloseExtremos.mq5  |
+//|                                      OpenCloseExtremos_v1.51.mq5  |
 //| Marca las velas cuya apertura o cierre coincide con el máximo    |
 //| o el mínimo de la vela (velas sin mecha en uno de sus extremos). |
 //|                                                                  |

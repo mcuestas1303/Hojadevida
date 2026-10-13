@@ -14,14 +14,14 @@ niveles-sin-mecha/
 ├── REGLAMENTO.md                     ← reglas obligatorias de operativa (scalping e intradía)
 ├── MT5/
 │   ├── Indicators/
-│   │   └── OpenCloseExtremos.mq5     ← indicador v1.51: flechas, panel de % y líneas de niveles
+│   │   └── OpenCloseExtremos_v1.51.mq5 ← indicador v1.51: flechas, panel de % y líneas de niveles
 │   └── Scripts/
 │       ├── EstadisticasNiveles.mq5   ← estadísticas, reacción medida en M1
 │       ├── EstadisticasNivelesH1.mq5 ← estadísticas, reacción medida en H1
 │       └── ResumenSpread.mq5         ← resumen del spread por día y hora a partir de los ticks
 ├── MT4/
 │   └── Indicators/
-│       └── OpenCloseExtremos.mq4     ← el mismo indicador para MetaTrader 4
+│       └── OpenCloseExtremos_v1.51.mq4 ← el mismo indicador para MetaTrader 4
 ├── paginas/
 │   ├── simulador-velas-ticks.html        ← simulador interactivo de ticks y velas
 │   └── estadisticas-niveles-xauusd.html  ← resultados con gráficos (XAUUSD, M1 y H1)
@@ -43,13 +43,18 @@ Las carpetas `MT5/Indicators` y `MT5/Scripts` tienen el mismo nombre que las de 
 
 1. En MetaTrader ve a **Archivo → Abrir carpeta de datos**.
 2. Copia los archivos:
-   - `OpenCloseExtremos.mq5` → **MQL5 → Indicators**
+   - `OpenCloseExtremos_v1.51.mq5` → **MQL5 → Indicators**
    - `EstadisticasNiveles.mq5` y `EstadisticasNivelesH1.mq5` → **MQL5 → Scripts**
 3. En el panel **Navegador** (Ctrl+N), haz clic derecho en «Indicadores» y en «Scripts» y elige **Actualizar**.
 4. Haz doble clic en cada archivo para abrirlo en MetaEditor y pulsa **F7** para compilar.
 5. Arrastra el indicador o el script desde el Navegador al gráfico.
 
-**MetaTrader 4:** copia `OpenCloseExtremos.mq4` en **MQL4 → Indicators** y sigue los mismos pasos. Los scripts de estadísticas solo existen para MT5.
+**Al cambiar de versión:** el archivo del indicador lleva la versión en el nombre (por ejemplo `OpenCloseExtremos_v1.51`), así que cada versión aparece como un indicador distinto en el Navegador.
+- Quita la versión anterior del gráfico (clic derecho → Lista de indicadores, o Ctrl+I) antes de poner la nueva. Si no, verás flechas y líneas duplicadas.
+- Puedes borrar el archivo antiguo de **MQL5 → Indicators** (el `.mq5` y su `.ex5`).
+- Las líneas que ocultaste a mano siguen ocultas, porque se guardan en variables globales con el prefijo `OCE_O_`, que no depende del nombre del archivo. Los parámetros que cambiaste en la versión anterior no se copian: hay que volver a ponerlos, o guardarlos con «Guardar» en la pestaña Parámetros y cargarlos con «Cargar» en la nueva.
+
+**MetaTrader 4:** copia `OpenCloseExtremos_v1.51.mq4` en **MQL4 → Indicators** y sigue los mismos pasos. Los scripts de estadísticas solo existen para MT5.
 
 **La app del móvil** no admite indicadores propios. Para recibir avisos en el móvil, deja el indicador corriendo en el PC o en un VPS con la notificación push activada (ver 3.4).
 
@@ -416,6 +421,7 @@ Es un **modelo simplificado con números inventados**, no datos reales.
 | 2026-10-07 | Indicador v1.40: configuración separada para cada una de las 4 flechas (mostrar, color, tamaño, símbolo, alerta y línea de nivel) |
 | 2026-10-13 | Indicador v1.50: todas las líneas (también las testeadas) se proyectan hasta el precio actual; las líneas se dibujan delante de los rectángulos; estilo y grosor configurables; colores más visibles sobre fondo negro |
 | 2026-10-13 | Indicador v1.51: cada flecha elige hasta dónde se proyecta su línea una vez testeada (precio actual, vela del test o N velas después) |
+| 2026-10-13 | El archivo del indicador lleva la versión en el nombre: `OpenCloseExtremos_v1.51` |
 | 2026-10-06 | Script EstadisticasNiveles (M1) y primera página de resultados de XAUUSD |
 | 2026-10-06 | Script EstadisticasNivelesH1 |
 | 2026-10-06 | Resultados H1 de XAUUSD añadidos a la página y al manual |
