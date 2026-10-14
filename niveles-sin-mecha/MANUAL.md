@@ -14,14 +14,14 @@ niveles-sin-mecha/
 ├── REGLAMENTO.md                     ← reglas obligatorias de operativa (scalping e intradía)
 ├── MT5/
 │   ├── Indicators/
-│   │   └── OpenCloseExtremos_v1.51.mq5 ← indicador v1.51: flechas, panel de % y líneas de niveles
+│   │   └── OpenCloseExtremos_v1.52.mq5 ← indicador v1.52: flechas, panel de % y líneas de niveles
 │   └── Scripts/
 │       ├── EstadisticasNiveles.mq5   ← estadísticas, reacción medida en M1
 │       ├── EstadisticasNivelesH1.mq5 ← estadísticas, reacción medida en H1
 │       └── ResumenSpread.mq5         ← resumen del spread por día y hora a partir de los ticks
 ├── MT4/
 │   └── Indicators/
-│       └── OpenCloseExtremos_v1.51.mq4 ← el mismo indicador para MetaTrader 4
+│       └── OpenCloseExtremos_v1.52.mq4 ← el mismo indicador para MetaTrader 4
 ├── paginas/
 │   ├── simulador-velas-ticks.html        ← simulador interactivo de ticks y velas
 │   └── estadisticas-niveles-xauusd.html  ← resultados con gráficos (XAUUSD, M1 y H1)
@@ -43,24 +43,25 @@ Las carpetas `MT5/Indicators` y `MT5/Scripts` tienen el mismo nombre que las de 
 
 1. En MetaTrader ve a **Archivo → Abrir carpeta de datos**.
 2. Copia los archivos:
-   - `OpenCloseExtremos_v1.51.mq5` → **MQL5 → Indicators**
+   - `OpenCloseExtremos_v1.52.mq5` → **MQL5 → Indicators**
    - `EstadisticasNiveles.mq5` y `EstadisticasNivelesH1.mq5` → **MQL5 → Scripts**
 3. En el panel **Navegador** (Ctrl+N), haz clic derecho en «Indicadores» y en «Scripts» y elige **Actualizar**.
 4. Haz doble clic en cada archivo para abrirlo en MetaEditor y pulsa **F7** para compilar.
 5. Arrastra el indicador o el script desde el Navegador al gráfico.
 
-**Al cambiar de versión:** el archivo del indicador lleva la versión en el nombre (por ejemplo `OpenCloseExtremos_v1.51`), así que cada versión aparece como un indicador distinto en el Navegador.
+**Al cambiar de versión:** el archivo del indicador lleva la versión en el nombre (por ejemplo `OpenCloseExtremos_v1.52`), así que cada versión aparece como un indicador distinto en el Navegador.
 - Quita la versión anterior del gráfico (clic derecho → Lista de indicadores, o Ctrl+I) antes de poner la nueva. Si no, verás flechas y líneas duplicadas.
 - Puedes borrar el archivo antiguo de **MQL5 → Indicators** (el `.mq5` y su `.ex5`).
-- Las líneas que ocultaste a mano siguen ocultas, porque se guardan en variables globales con el prefijo `OCE_O_`, que no depende del nombre del archivo. Los parámetros que cambiaste en la versión anterior no se copian: hay que volver a ponerlos, o guardarlos con «Guardar» en la pestaña Parámetros y cargarlos con «Cargar» en la nueva.
+- Desde la v1.52, si quedan dos copias del indicador en el gráfico, el panel muestra el aviso «ATENCIÓN: hay N copias…». Deja solo una.
+- La v1.52 empieza con la lista de líneas ocultas a mano vacía (prefijo nuevo `OCE_Oc_`): las versiones anteriores podían marcar como ocultas líneas que no habías borrado. Las variables antiguas `OCE_O_` se pueden borrar con F3 o dejar que MetaTrader las elimine en 4 semanas. Los parámetros que cambiaste en la versión anterior no se copian: hay que volver a ponerlos, o guardarlos con «Guardar» en la pestaña Parámetros y cargarlos con «Cargar» en la nueva.
 
-**MetaTrader 4:** copia `OpenCloseExtremos_v1.51.mq4` en **MQL4 → Indicators** y sigue los mismos pasos. Los scripts de estadísticas solo existen para MT5.
+**MetaTrader 4:** copia `OpenCloseExtremos_v1.52.mq4` en **MQL4 → Indicators** y sigue los mismos pasos. Los scripts de estadísticas solo existen para MT5.
 
 **La app del móvil** no admite indicadores propios. Para recibir avisos en el móvil, deja el indicador corriendo en el PC o en un VPS con la notificación push activada (ver 3.4).
 
 ---
 
-## 3. Indicador OpenCloseExtremos (v1.51)
+## 3. Indicador OpenCloseExtremos (v1.52)
 
 ### 3.1 Las flechas
 
@@ -84,18 +85,22 @@ Una vela puede tener dos flechas. Si tiene roja y azul, o verde y naranja, es un
 Desde cada flecha **verde** o **roja** sale una línea punteada fina en el extremo sin mecha:
 
 - **Pendiente** (no testeado): en el color de la línea de su flecha (verde en un mínimo, rojo en un máximo). Se prolonga hasta el precio actual.
-- **Testeado**: cuando una vela posterior toca el nivel, la línea pasa a gris. Hasta dónde sigue lo eliges **por cada flecha** con «Línea testeada: hasta dónde se proyecta»:
+- **Testeado**: cuando una vela posterior toca el nivel, la línea cambia al color «testeada» de su flecha (por defecto un tono claro del mismo color). Hasta dónde sigue lo eliges **por cada flecha** con «Línea testeada: hasta dónde se proyecta»:
   - **Hasta el precio actual** (por defecto): sigue hasta la vela vigente.
-  - **Hasta la vela que lo testeó**: se corta en el test.
+  - **Hasta la vela que lo testeó**: se corta en el test. En M1 muchas se testean en la vela siguiente (sección 5), así que la línea mide una sola vela y apenas se ve. Si quieres verlas, usa «N velas después del test».
   - **N velas después del test**: llega N velas más allá del test, con N en «Línea testeada: N velas después del test» (20 por defecto). Mientras no han pasado N velas, la línea llega hasta la vela actual y crece con cada vela nueva. Las velas se cuentan en la temporalidad de los niveles.
 - Las líneas se dibujan **delante** de los objetos del gráfico. Si tienes rectángulos o bandas de color, ya no las tapan. Si las prefieres detrás de las velas, activa «Dibujar las líneas detrás».
 - Al pasar el ratón por encima se ve el tipo, el precio, la hora y si está testeado.
+- **Contador en el panel:** la última línea del panel dice cuántas líneas hay dibujadas: «Líneas M1 (últimas 1000 velas): X pendientes | Y testeadas | Z ocultas a mano».
+  - Si X o Y son mayores que 0 y no ves las líneas, las está tapando otro objeto del gráfico (por ejemplo, los rectángulos de otro indicador). Abre la lista de objetos con **Ctrl+B**, entra en las propiedades de ese rectángulo y marca **«Dibujar como fondo»**.
+  - Si Z es mayor que 0, hay líneas ocultas a mano: el botón «Restaurar niveles ocultos» las devuelve.
+  - Solo se buscan niveles en las últimas «Velas a revisar para niveles» (1000 por defecto). Las flechas más antiguas no tienen línea.
 
 Por defecto solo se dibujan los niveles de **apertura**. Los de cierre (naranja y azul) casi siempre quedan testeados en la vela siguiente, porque esta abre pegada al cierre anterior.
 
 #### Quitar líneas que ya no quieres ver
 
-- **Ocultar una línea a mano:** haz clic sobre ella para seleccionarla y pulsa **Supr**. También puedes borrarla desde la lista de objetos (**Ctrl+B**). El indicador lo registra en la vela siguiente y no la vuelve a dibujar, ni siquiera al reiniciar MetaTrader. Lo guarda en las variables globales del terminal (F3), con nombres que empiezan por `OCE_O_`. MetaTrader borra las variables que no se usan en 4 semanas, y el indicador las renueva cada vez que las consulta.
+- **Ocultar una línea a mano:** haz clic sobre ella para seleccionarla y pulsa **Supr**. También puedes borrarla desde la lista de objetos (**Ctrl+B**). El indicador lo registra en la vela siguiente y no la vuelve a dibujar, ni siquiera al reiniciar MetaTrader. Lo guarda en las variables globales del terminal (F3), con nombres que empiezan por `OCE_Oc_`. MetaTrader borra las variables que no se usan en 4 semanas, y el indicador las renueva cada vez que las consulta.
 - **Restaurar:** si hay líneas ocultas del símbolo, aparece abajo a la izquierda el botón **«Restaurar niveles ocultos (N)»**. Al pulsarlo vuelven todas.
 - **Cuidado:** si usas «Borrar todos los objetos» del gráfico, todas las líneas visibles quedan ocultas. Se recuperan con el botón.
 - **Elegir qué flechas dibujan línea:** cada flecha tiene su propio «Dibujar su línea de nivel». Por ejemplo, solo verdes: desactívalo en la roja.
@@ -124,11 +129,11 @@ Se puede desactivar.
 | Velas cerradas a analizar | 1000 | Velas que usa el panel (0 = todas) |
 | Dibujar niveles sin mecha | Sí | Muestra u oculta las líneas |
 | Mantener niveles testeados | Sí | Si lo desactivas, solo quedan los pendientes |
-| Velas a revisar para niveles | 500 | Hasta cuántas velas atrás busca niveles |
+| Velas a revisar para niveles | 1000 | Hasta cuántas velas atrás busca niveles |
 | **Por cada flecha** (roja, naranja, verde, azul) | | Mostrar, color, tamaño, símbolo, alerta, dibujar su línea y color de la línea pendiente |
+| Color de su línea ya testeada (por flecha) | Tono claro del color de la flecha | Para distinguir testeadas de pendientes |
 | Línea testeada: hasta dónde se proyecta (por flecha) | Hasta el precio actual | Hasta el precio actual / hasta la vela que lo testeó / N velas después del test |
 | Línea testeada: N velas después del test (por flecha) | 20 | Solo se usa con la tercera opción |
-| Color nivel ya testeado | Gris claro | Color de todas las líneas testeadas |
 | Estilo / grosor de las líneas de nivel | Punteada / 1 | Punteada, guiones o continua; grosor 1–3 |
 | Dibujar las líneas detrás | No | Si lo activas, los rectángulos del gráfico pueden taparlas |
 | Temporalidad de los niveles | La del gráfico | De qué temporalidad salen los niveles (por ejemplo H1 en un gráfico M1) |
@@ -422,6 +427,7 @@ Es un **modelo simplificado con números inventados**, no datos reales.
 | 2026-10-13 | Indicador v1.50: todas las líneas (también las testeadas) se proyectan hasta el precio actual; las líneas se dibujan delante de los rectángulos; estilo y grosor configurables; colores más visibles sobre fondo negro |
 | 2026-10-13 | Indicador v1.51: cada flecha elige hasta dónde se proyecta su línea una vez testeada (precio actual, vela del test o N velas después) |
 | 2026-10-13 | El archivo del indicador lleva la versión en el nombre: `OpenCloseExtremos_v1.51` |
+| 2026-10-14 | Indicador v1.52: corrige líneas que desaparecían al cambiar ajustes (las líneas se actualizan en su sitio en vez de borrarse y recrearse en cada vela, y solo se da por ocultada a mano la que el usuario borra); lista de ocultos nueva; color de línea testeada por flecha; contador de líneas en el panel; aviso si hay dos copias en el gráfico; 1000 velas por defecto |
 | 2026-10-06 | Script EstadisticasNiveles (M1) y primera página de resultados de XAUUSD |
 | 2026-10-06 | Script EstadisticasNivelesH1 |
 | 2026-10-06 | Resultados H1 de XAUUSD añadidos a la página y al manual |

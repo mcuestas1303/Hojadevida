@@ -1,5 +1,5 @@
 //+------------------------------------------------------------------+
-//|                                      OpenCloseExtremos_v1.51.mq4  |
+//|                                      OpenCloseExtremos_v1.52.mq5  |
 //| Marca las velas cuya apertura o cierre coincide con el máximo    |
 //| o el mínimo de la vela (velas sin mecha en uno de sus extremos). |
 //|                                                                  |
@@ -7,17 +7,29 @@
 //|  ▲ verde/azul bajo la vela    : Apertura/Cierre = Mínimo         |
 //+------------------------------------------------------------------+
 #property copyright "OpenCloseExtremos"
-#property version   "1.51"
-#property strict
+#property version   "1.52"
 #property indicator_chart_window
 #property indicator_buffers 4
+#property indicator_plots   4
+
+#property indicator_label1  "Apertura = Máximo"
+#property indicator_type1   DRAW_ARROW
 #property indicator_color1  clrRed
-#property indicator_color2  clrOrange
-#property indicator_color3  clrLime
-#property indicator_color4  clrDodgerBlue
 #property indicator_width1  2
+
+#property indicator_label2  "Cierre = Máximo"
+#property indicator_type2   DRAW_ARROW
+#property indicator_color2  clrOrange
 #property indicator_width2  2
+
+#property indicator_label3  "Apertura = Mínimo"
+#property indicator_type3   DRAW_ARROW
+#property indicator_color3  clrLime
 #property indicator_width3  2
+
+#property indicator_label4  "Cierre = Mínimo"
+#property indicator_type4   DRAW_ARROW
+#property indicator_color4  clrDodgerBlue
 #property indicator_width4  2
 
 //--- hasta dónde llega la línea de un nivel ya testeado
@@ -29,12 +41,12 @@ enum ENUM_PROYECCION
   };
 
 //--- entradas
-sinput string InpSepGen = "──────── General ────────"; // ────────
+input group "General"
 input int    InpToleranciaPuntos = 0;     // Tolerancia en puntos (0 = exacto)
 input bool   InpVelaActual       = false; // Marcar también la vela en formación
-input double InpSeparacionATR    = 0.3;   // Separación de la flecha (x ATR14)
+input int    InpDesplazamientoPx = 12;    // Separación de la flecha (píxeles)
 
-sinput string InpSepOH = "──────── Flecha roja · Apertura = Máximo ────────"; // ────────
+input group "Flecha roja · Apertura = Máximo"
 input bool   InpOHMostrar    = true;       // Mostrar flecha
 input color  InpOHColor      = clrRed;    // Color de la flecha
 input int    InpOHTamano     = 2;          // Tamaño de la flecha (1–5)
@@ -42,10 +54,11 @@ input int    InpOHSimbolo    = 234;        // Símbolo (código Wingdings)
 input bool   InpOHAlerta     = true;       // Incluir en las alertas al cerrar la vela
 input bool   InpOHNivel      = true;       // Dibujar su línea de nivel
 input color  InpOHColorNivel = C'220,80,80'; // Color de su línea pendiente
+input color  InpOHColorTest  = C'240,150,150'; // Color de su línea ya testeada
 input ENUM_PROYECCION InpOHProyeccion = PROY_ACTUAL; // Línea testeada: hasta dónde se proyecta
 input int    InpOHVelasTras = 20;         // Línea testeada: N velas después del test (si eliges esa opción)
 
-sinput string InpSepCH = "──────── Flecha naranja · Cierre = Máximo ────────"; // ────────
+input group "Flecha naranja · Cierre = Máximo"
 input bool   InpCHMostrar    = true;       // Mostrar flecha
 input color  InpCHColor      = clrOrange; // Color de la flecha
 input int    InpCHTamano     = 2;          // Tamaño de la flecha (1–5)
@@ -53,10 +66,11 @@ input int    InpCHSimbolo    = 234;        // Símbolo (código Wingdings)
 input bool   InpCHAlerta     = true;       // Incluir en las alertas al cerrar la vela
 input bool   InpCHNivel      = false;      // Dibujar su línea de nivel
 input color  InpCHColorNivel = C'230,150,50'; // Color de su línea pendiente
+input color  InpCHColorTest  = C'240,190,120'; // Color de su línea ya testeada
 input ENUM_PROYECCION InpCHProyeccion = PROY_ACTUAL; // Línea testeada: hasta dónde se proyecta
 input int    InpCHVelasTras = 20;         // Línea testeada: N velas después del test (si eliges esa opción)
 
-sinput string InpSepOL = "──────── Flecha verde · Apertura = Mínimo ────────"; // ────────
+input group "Flecha verde · Apertura = Mínimo"
 input bool   InpOLMostrar    = true;       // Mostrar flecha
 input color  InpOLColor      = clrLime;   // Color de la flecha
 input int    InpOLTamano     = 2;          // Tamaño de la flecha (1–5)
@@ -64,10 +78,11 @@ input int    InpOLSimbolo    = 233;        // Símbolo (código Wingdings)
 input bool   InpOLAlerta     = true;       // Incluir en las alertas al cerrar la vela
 input bool   InpOLNivel      = true;       // Dibujar su línea de nivel
 input color  InpOLColorNivel = C'70,190,110'; // Color de su línea pendiente
+input color  InpOLColorTest  = C'140,220,160'; // Color de su línea ya testeada
 input ENUM_PROYECCION InpOLProyeccion = PROY_ACTUAL; // Línea testeada: hasta dónde se proyecta
 input int    InpOLVelasTras = 20;         // Línea testeada: N velas después del test (si eliges esa opción)
 
-sinput string InpSepCL = "──────── Flecha azul · Cierre = Mínimo ────────"; // ────────
+input group "Flecha azul · Cierre = Mínimo"
 input bool   InpCLMostrar    = true;       // Mostrar flecha
 input color  InpCLColor      = clrDodgerBlue; // Color de la flecha
 input int    InpCLTamano     = 2;          // Tamaño de la flecha (1–5)
@@ -75,24 +90,24 @@ input int    InpCLSimbolo    = 233;        // Símbolo (código Wingdings)
 input bool   InpCLAlerta     = true;       // Incluir en las alertas al cerrar la vela
 input bool   InpCLNivel      = false;      // Dibujar su línea de nivel
 input color  InpCLColorNivel = C'70,140,230'; // Color de su línea pendiente
+input color  InpCLColorTest  = C'140,180,240'; // Color de su línea ya testeada
 input ENUM_PROYECCION InpCLProyeccion = PROY_ACTUAL; // Línea testeada: hasta dónde se proyecta
 input int    InpCLVelasTras = 20;         // Línea testeada: N velas después del test (si eliges esa opción)
 
-sinput string InpSepAle = "──────── Canales de alerta ────────"; // ────────
+input group "Canales de alerta"
 input bool   InpAlertaPopup      = false; // Alerta emergente
 input bool   InpAlertaPush       = false; // Notificación push al móvil
 input bool   InpAlertaSonido     = false; // Sonido
 input string InpArchivoSonido    = "alert.wav"; // Archivo de sonido
 
-sinput string InpSepPan = "──────── Panel de porcentajes ────────"; // ────────
+input group "Panel de porcentajes"
 input bool   InpMostrarEstadistica = true;  // Mostrar panel de porcentajes
 input int    InpBarrasEstadistica  = 1000;  // Velas cerradas a analizar (0 = todas)
 
-sinput string InpSepNiv = "──────── Niveles (comunes a todas las flechas) ────────"; // ────────
+input group "Niveles (comunes a todas las flechas)"
 input bool   InpNiveles          = true;            // Dibujar niveles sin mecha (desequilibrios)
 input bool   InpMostrarTesteados = true;            // Mantener los niveles ya testeados
-input int    InpVelasNiveles     = 500;             // Velas a revisar para niveles
-input color  InpColorTesteado    = C'130,130,130';  // Color nivel ya testeado
+input int    InpVelasNiveles     = 1000;            // Velas a revisar para niveles
 input ENUM_LINE_STYLE InpEstiloNivel = STYLE_DOT;  // Estilo de las líneas de nivel
 input int    InpGrosorNivel      = 1;               // Grosor de las líneas de nivel (1–3)
 input bool   InpLineasDetras     = false;           // Dibujar las líneas detrás (pueden quedar tapadas por rectángulos)
@@ -116,49 +131,60 @@ datetime g_ultimaAlerta = 0;
 datetime g_ultimaEstadistica = 0;
 datetime g_ultimosNiveles = 0;
 
-#define RAY_PROP OBJPROP_RAY
-#define NV_PREFIX "OCE_Nivel_"
+#define RAY_PROP OBJPROP_RAY_RIGHT
+#define NV_PREFIX "OCE_Niv_"     // v1.52: prefijo nuevo, no lo toca una versión anterior
 struct Nivel
   {
    string            nombre;
    double            precio;
    bool              abajo;     // true = nivel en un mínimo (el precio quedó por encima)
    int               proy;      // ENUM_PROYECCION de su flecha, para cuando se teste
+   color             colTest;   // color de su línea una vez testeada
   };
 Nivel g_pendientes[];
 string   g_dibujados[];            // líneas dibujadas en la última reconstrucción
+string   g_nuevos[];               // líneas de la reconstrucción en curso
+int      g_nPend = 0, g_nTest = 0, g_velasRevisadas = 0;   // para el panel
 datetime g_ultimaVelaTF = 0;
-#define GV_PREFIX     "OCE_O_"
+#define GV_PREFIX     "OCE_Oc_"     // v1.52: lista de ocultos nueva (la anterior podía tener ocultos falsos)
 #define BTN_RESTAURAR "OCE_BtnRestaurar"
 double   g_tablaTeorica[201];
 
 //+------------------------------------------------------------------+
 void EstiloFlecha(const int p, const int simbolo, const color col, const int tam)
   {
-   SetIndexStyle(p, DRAW_ARROW, EMPTY, MathMax(1, MathMin(5, tam)), col);
-   SetIndexArrow(p, simbolo);
+   PlotIndexSetInteger(p, PLOT_ARROW, simbolo);
+   PlotIndexSetInteger(p, PLOT_LINE_COLOR, col);
+   PlotIndexSetInteger(p, PLOT_LINE_WIDTH, MathMax(1, MathMin(5, tam)));
   }
 
 //+------------------------------------------------------------------+
 int OnInit()
   {
-   SetIndexBuffer(0, BufOpenHigh);
-   SetIndexBuffer(1, BufCloseHigh);
-   SetIndexBuffer(2, BufOpenLow);
-   SetIndexBuffer(3, BufCloseLow);
+   SetIndexBuffer(0, BufOpenHigh,  INDICATOR_DATA);
+   SetIndexBuffer(1, BufCloseHigh, INDICATOR_DATA);
+   SetIndexBuffer(2, BufOpenLow,   INDICATOR_DATA);
+   SetIndexBuffer(3, BufCloseLow,  INDICATOR_DATA);
+
+   EstiloFlecha(0, InpOHSimbolo, InpOHColor, InpOHTamano);
+   EstiloFlecha(1, InpCHSimbolo, InpCHColor, InpCHTamano);
+   EstiloFlecha(2, InpOLSimbolo, InpOLColor, InpOLTamano);
+   EstiloFlecha(3, InpCLSimbolo, InpCLColor, InpCLTamano);
+
+   // desplazamiento vertical en píxeles (negativo = hacia arriba)
+   PlotIndexSetInteger(0, PLOT_ARROW_SHIFT, -InpDesplazamientoPx);
+   PlotIndexSetInteger(1, PLOT_ARROW_SHIFT, -InpDesplazamientoPx * 2 - 4);
+   PlotIndexSetInteger(2, PLOT_ARROW_SHIFT,  InpDesplazamientoPx);
+   PlotIndexSetInteger(3, PLOT_ARROW_SHIFT,  InpDesplazamientoPx * 2 + 4);
 
    for(int p = 0; p < 4; p++)
-      SetIndexEmptyValue(p, EMPTY_VALUE);
-   EstiloFlecha(0, InpOHSimbolo, InpOHColor, InpOHTamano); SetIndexLabel(0, "Apertura = Máximo");
-   EstiloFlecha(1, InpCHSimbolo, InpCHColor, InpCHTamano); SetIndexLabel(1, "Cierre = Máximo");
-   EstiloFlecha(2, InpOLSimbolo, InpOLColor, InpOLTamano); SetIndexLabel(2, "Apertura = Mínimo");
-   EstiloFlecha(3, InpCLSimbolo, InpCLColor, InpCLTamano); SetIndexLabel(3, "Cierre = Mínimo");
+      PlotIndexSetDouble(p, PLOT_EMPTY_VALUE, EMPTY_VALUE);
 
    // medio punto de margen para evitar errores de redondeo en doubles
    g_tol = (InpToleranciaPuntos + 0.5) * _Point;
 
-   IndicatorShortName("OpenCloseExtremos");
-   IndicatorDigits(_Digits);
+   IndicatorSetString(INDICATOR_SHORTNAME, "OpenCloseExtremos");
+   IndicatorSetInteger(INDICATOR_DIGITS, _Digits);
    PrepararTablaTeorica();
    return(INIT_SUCCEEDED);
   }
@@ -167,6 +193,25 @@ int OnInit()
 bool Igual(const double a, const double b)
   {
    return(MathAbs(a - b) <= g_tol);
+  }
+
+//+------------------------------------------------------------------+
+void Evaluar(const int i, const double &open[], const double &high[],
+             const double &low[], const double &close[])
+  {
+   BufOpenHigh[i]  = EMPTY_VALUE;
+   BufCloseHigh[i] = EMPTY_VALUE;
+   BufOpenLow[i]   = EMPTY_VALUE;
+   BufCloseLow[i]  = EMPTY_VALUE;
+
+   // ignorar velas sin rango (high == low)
+   if(Igual(high[i], low[i]))
+      return;
+
+   if(InpOHMostrar && Igual(open[i],  high[i])) BufOpenHigh[i]  = high[i];
+   if(InpCHMostrar && Igual(close[i], high[i])) BufCloseHigh[i] = high[i];
+   if(InpOLMostrar && Igual(open[i],  low[i]))  BufOpenLow[i]   = low[i];
+   if(InpCLMostrar && Igual(close[i], low[i]))  BufCloseLow[i]  = low[i];
   }
 
 //+------------------------------------------------------------------+
@@ -238,6 +283,12 @@ void EstadisticaMostrar()
                      st_ticksMarc / MathMax(st_alguna, 1),
                      st_ticksNo / MathMax(sinMarca, 1));
    t += StringFormat("Referencia modelo aleatorio, por caso: %.1f%%", 100.0 * st_teo / MathMax(st_n, 1));
+   if(InpNiveles)
+      t += StringFormat("\nLíneas %s (últimas %d velas): %d pendientes  |  %d testeadas  |  %d ocultas a mano",
+                        TFTexto(TFNiveles()), g_velasRevisadas, g_nPend, g_nTest, ContarOcultos());
+   string aviso = AvisoCopias();
+   if(aviso != "")
+      t += "\n" + aviso;
    Comment(t);
   }
 
@@ -283,11 +334,19 @@ int ContarOcultos()
    return(n);
   }
 
-void AgregarDibujado(const string nombre)
+bool EnLista(const string &lista[], const string nombre)
   {
-   int k = ArraySize(g_dibujados);
-   ArrayResize(g_dibujados, k + 1, 200);
-   g_dibujados[k] = nombre;
+   for(int k = ArraySize(lista) - 1; k >= 0; k--)
+      if(lista[k] == nombre)
+         return(true);
+   return(false);
+  }
+
+void AgregarA(string &lista[], const string nombre)
+  {
+   int k = ArraySize(lista);
+   ArrayResize(lista, k + 1, 200);
+   lista[k] = nombre;
   }
 
 void QuitarDibujado(const string nombre)
@@ -300,16 +359,6 @@ void QuitarDibujado(const string nombre)
          ArrayResize(g_dibujados, last);
          return;
         }
-  }
-
-//--- las líneas que dibujamos y ya no están en el gráfico las borró el usuario
-void RegistrarOcultosManuales()
-  {
-   if(InpPermitirOcultar)
-      for(int k = 0; k < ArraySize(g_dibujados); k++)
-         if(ObjectFind(0, g_dibujados[k]) < 0)
-            GlobalVariableSet(ClaveOculto(g_dibujados[k]), 1);
-   ArrayResize(g_dibujados, 0);
   }
 
 bool SesionPermitida(const datetime t)
@@ -348,13 +397,28 @@ void ActualizarBoton()
    ObjectSetInteger(0, BTN_RESTAURAR, OBJPROP_STATE, false);
   }
 
-void CrearLineaNivel(const string nombre, const datetime t0, const datetime t1,
-                     const double p, const bool testeado, const bool abajo, const string texto,
-                     const color col, const bool rayo)
+//--- crea la línea o, si ya existe, la actualiza en su sitio. Las líneas no se borran y se
+//    vuelven a crear en cada vela: así, si una que ya estaba dibujada falta, solo puede
+//    haberla borrado el usuario (y entonces se recuerda como oculta).
+bool DibujarLinea(const string nombre, const datetime t0, const datetime t1, const double p,
+                  const bool testeado, const string texto, const color col, const bool rayo)
   {
-   if(!ObjectCreate(0, nombre, OBJ_TREND, 0, t0, p, t1, p))
-      return;
-   ObjectSetInteger(0, nombre, OBJPROP_COLOR, testeado ? InpColorTesteado : col);
+   if(ObjectFind(0, nombre) < 0)
+     {
+      if(InpPermitirOcultar && EnLista(g_dibujados, nombre))
+        {
+         GlobalVariableSet(ClaveOculto(nombre), 1);
+         return(false);
+        }
+      if(!ObjectCreate(0, nombre, OBJ_TREND, 0, t0, p, t1, p))
+         return(false);
+     }
+   else
+     {
+      ObjectMove(0, nombre, 0, t0, p);
+      ObjectMove(0, nombre, 1, t1, p);
+     }
+   ObjectSetInteger(0, nombre, OBJPROP_COLOR, col);
    ObjectSetInteger(0, nombre, OBJPROP_STYLE, InpEstiloNivel);
    ObjectSetInteger(0, nombre, OBJPROP_WIDTH, MathMax(1, MathMin(3, InpGrosorNivel)));
    ObjectSetInteger(0, nombre, RAY_PROP, rayo);
@@ -362,16 +426,19 @@ void CrearLineaNivel(const string nombre, const datetime t0, const datetime t1,
    ObjectSetInteger(0, nombre, OBJPROP_SELECTABLE, InpPermitirOcultar);
    ObjectSetInteger(0, nombre, OBJPROP_HIDDEN, false);
    ObjectSetString(0, nombre, OBJPROP_TOOLTIP, texto + (testeado ? " (testeado)" : " (no testeado)"));
+   return(true);
   }
 
-void AgregarPendiente(const string nombre, const double p, const bool abajo, const int proy)
+void AgregarPendiente(const string nombre, const double p, const bool abajo, const int proy,
+                      const color colTest)
   {
    int n = ArraySize(g_pendientes);
    ArrayResize(g_pendientes, n + 1);
-   g_pendientes[n].nombre = nombre;
-   g_pendientes[n].precio = p;
-   g_pendientes[n].abajo  = abajo;
-   g_pendientes[n].proy   = proy;
+   g_pendientes[n].nombre  = nombre;
+   g_pendientes[n].precio  = p;
+   g_pendientes[n].abajo   = abajo;
+   g_pendientes[n].proy    = proy;
+   g_pendientes[n].colTest = colTest;
   }
 
 //--- revisa en cada tick si la vela actual toca algún nivel pendiente
@@ -400,17 +467,18 @@ void RevisarPendientes(const datetime t, const double h, const double l)
                ObjectMove(0, n, 1, t, g_pendientes[k].precio);
                ObjectSetInteger(0, n, RAY_PROP, false);
               }
-            ObjectSetInteger(0, n, OBJPROP_COLOR, InpColorTesteado);
+            ObjectSetInteger(0, n, OBJPROP_COLOR, g_pendientes[k].colTest);
             ObjectSetString(0, n, OBJPROP_TOOLTIP, ObjectGetString(0, n, OBJPROP_TOOLTIP) + " → testeado");
            }
         }
       int last = ArraySize(g_pendientes) - 1;
       if(k != last)
         {
-         g_pendientes[k].nombre = g_pendientes[last].nombre;
-         g_pendientes[k].precio = g_pendientes[last].precio;
-         g_pendientes[k].abajo  = g_pendientes[last].abajo;
-         g_pendientes[k].proy   = g_pendientes[last].proy;
+         g_pendientes[k].nombre  = g_pendientes[last].nombre;
+         g_pendientes[k].precio  = g_pendientes[last].precio;
+         g_pendientes[k].abajo   = g_pendientes[last].abajo;
+         g_pendientes[k].proy    = g_pendientes[last].proy;
+         g_pendientes[k].colTest = g_pendientes[last].colTest;
         }
       ArrayResize(g_pendientes, last);
      }
@@ -418,7 +486,7 @@ void RevisarPendientes(const datetime t, const double h, const double l)
 
 void NivelDesde(const MqlRates &r[], const int n, const int i, const double p, const bool abajo,
                 const string tft, const string cod, const string texto, const datetime ahora,
-                const color col, const ENUM_PROYECCION proy, const int velasTras)
+                const color col, const color colTest, const ENUM_PROYECCION proy, const int velasTras)
   {
    string nombre = NV_PREFIX + tft + "_" + cod + "_" + IntegerToString((long)r[i].time);
    if(InpPermitirOcultar && EstaOculto(nombre))
@@ -440,45 +508,83 @@ void NivelDesde(const MqlRates &r[], const int n, const int i, const double p, c
    bool rayo = true;
    if(jt >= 0 && proy == PROY_TEST)  { fin = jt; rayo = false; }
    if(jt >= 0 && proy == PROY_VELAS) { fin = (int)MathMin(jt + MathMax(0, velasTras), n - 1); rayo = false; }
-   CrearLineaNivel(nombre, r[i].time, r[fin].time, p, jt >= 0, abajo, tip, col, rayo);
-   AgregarDibujado(nombre);
-   if(jt < 0)
-      AgregarPendiente(nombre, p, abajo, (int)proy);
+   if(!DibujarLinea(nombre, r[i].time, r[fin].time, p, jt >= 0, tip, (jt >= 0) ? colTest : col, rayo))
+      return;
+   AgregarA(g_nuevos, nombre);
+   if(jt >= 0)
+      g_nTest++;
+   else
+     {
+      g_nPend++;
+      AgregarPendiente(nombre, p, abajo, (int)proy, colTest);
+     }
   }
 
 //--- devuelve false si el historial de la temporalidad de niveles aún no está disponible
 bool ConstruirNiveles(const datetime ahora)
   {
-   RegistrarOcultosManuales();
-   ObjectsDeleteAll(0, NV_PREFIX);
-   ArrayResize(g_pendientes, 0);
-   if(!InpNiveles)
+   ArrayResize(g_nuevos, 0);
+   if(InpNiveles)
      {
-      ActualizarBoton();
-      return(true);
+      ENUM_TIMEFRAMES tf = TFNiveles();
+      MqlRates r[];
+      ArraySetAsSeries(r, false);             // r[0] = la más antigua, r[n-1] = en formación
+      int n = CopyRates(_Symbol, tf, 0, MathMax(InpVelasNiveles, 10) + 1, r);
+      if(n < 2)
+         return(false);                       // se deja todo como está y se reintenta en el siguiente tick
+      ArrayResize(g_pendientes, 0);
+      g_nPend = 0;
+      g_nTest = 0;
+      g_velasRevisadas = n - 1;
+      string tft = TFTexto(tf);
+      for(int i = 0; i <= n - 2; i++)
+        {
+         if(Igual(r[i].high, r[i].low) || !SesionPermitida(r[i].time))
+            continue;
+         bool oh = Igual(r[i].open, r[i].high),  ol = Igual(r[i].open, r[i].low);
+         bool ch = Igual(r[i].close, r[i].high), cl = Igual(r[i].close, r[i].low);
+         bool nOH = oh && InpOHNivel, nOL = ol && InpOLNivel;
+         if(nOH) NivelDesde(r, n, i, r[i].high, false, tft, "AMax", "Apertura = Máximo", ahora, InpOHColorNivel, InpOHColorTest, InpOHProyeccion, InpOHVelasTras);
+         if(nOL) NivelDesde(r, n, i, r[i].low,  true,  tft, "AMin", "Apertura = Mínimo", ahora, InpOLColorNivel, InpOLColorTest, InpOLProyeccion, InpOLVelasTras);
+         // si apertura y cierre coinciden en el mismo extremo, el nivel solo se dibuja una vez
+         if(ch && !nOH && InpCHNivel) NivelDesde(r, n, i, r[i].high, false, tft, "CMax", "Cierre = Máximo", ahora, InpCHColorNivel, InpCHColorTest, InpCHProyeccion, InpCHVelasTras);
+         if(cl && !nOL && InpCLNivel) NivelDesde(r, n, i, r[i].low,  true,  tft, "CMin", "Cierre = Mínimo", ahora, InpCLColorNivel, InpCLColorTest, InpCLProyeccion, InpCLVelasTras);
+        }
      }
-   ENUM_TIMEFRAMES tf = TFNiveles();
-   MqlRates r[];
-   ArraySetAsSeries(r, false);                // r[0] = la más antigua, r[n-1] = en formación
-   int n = CopyRates(_Symbol, tf, 0, InpVelasNiveles + 1, r);
-   if(n < 2)
-      return(false);
-   string tft    = TFTexto(tf);
-   for(int i = 0; i <= n - 2; i++)
+   else
      {
-      if(Igual(r[i].high, r[i].low) || !SesionPermitida(r[i].time))
-         continue;
-      bool oh = Igual(r[i].open, r[i].high),  ol = Igual(r[i].open, r[i].low);
-      bool ch = Igual(r[i].close, r[i].high), cl = Igual(r[i].close, r[i].low);
-      bool nOH = oh && InpOHNivel, nOL = ol && InpOLNivel;
-      if(nOH) NivelDesde(r, n, i, r[i].high, false, tft, "AMax", "Apertura = Máximo", ahora, InpOHColorNivel, InpOHProyeccion, InpOHVelasTras);
-      if(nOL) NivelDesde(r, n, i, r[i].low,  true,  tft, "AMin", "Apertura = Mínimo", ahora, InpOLColorNivel, InpOLProyeccion, InpOLVelasTras);
-      // si apertura y cierre coinciden en el mismo extremo, el nivel solo se dibuja una vez
-      if(ch && !nOH && InpCHNivel) NivelDesde(r, n, i, r[i].high, false, tft, "CMax", "Cierre = Máximo", ahora, InpCHColorNivel, InpCHProyeccion, InpCHVelasTras);
-      if(cl && !nOL && InpCLNivel) NivelDesde(r, n, i, r[i].low,  true,  tft, "CMin", "Cierre = Mínimo", ahora, InpCLColorNivel, InpCLProyeccion, InpCLVelasTras);
+      ArrayResize(g_pendientes, 0);
+      g_nPend = 0;
+      g_nTest = 0;
      }
+   // borra solo las líneas propias que ya no corresponden (testeadas antiguas, filtros, etc.)
+   for(int k = 0; k < ArraySize(g_dibujados); k++)
+      if(!EnLista(g_nuevos, g_dibujados[k]))
+         ObjectDelete(0, g_dibujados[k]);
+   ArrayResize(g_dibujados, 0);
+   for(int k = 0; k < ArraySize(g_nuevos); k++)
+      AgregarA(g_dibujados, g_nuevos[k]);
    ActualizarBoton();
    return(true);
+  }
+
+//--- cuántas copias del indicador hay en la ventana principal del gráfico
+int CopiasEnGrafico()
+  {
+   int c = 0;
+   for(int i = ChartIndicatorsTotal(0, 0) - 1; i >= 0; i--)
+      if(StringFind(ChartIndicatorName(0, 0, i), "OpenCloseExtremos") == 0)
+         c++;
+   return(c);
+  }
+
+string AvisoCopias()
+  {
+   int c = CopiasEnGrafico();
+   if(c <= 1)
+      return("");
+   return(StringFormat("ATENCIÓN: hay %d copias de OpenCloseExtremos en este gráfico y sus líneas se pisan. "
+                       "Deja solo una (Ctrl+I → Eliminar).", c));
   }
 
 //+------------------------------------------------------------------+
@@ -487,7 +593,6 @@ void OnChartEvent(const int id, const long &lparam, const double &dparam, const 
    if(id == CHARTEVENT_OBJECT_CLICK && sparam == BTN_RESTAURAR)
      {
       GlobalVariablesDeleteAll(GV_PREFIX + _Symbol + "_");
-      ArrayResize(g_dibujados, 0);
       ObjectDelete(0, BTN_RESTAURAR);
       g_ultimosNiveles = 0;
       g_ultimaVelaTF   = 0;
@@ -498,7 +603,7 @@ void OnChartEvent(const int id, const long &lparam, const double &dparam, const 
 //+------------------------------------------------------------------+
 void OnDeinit(const int reason)
   {
-   ArrayResize(g_dibujados, 0);          // lo que borra el propio indicador no cuenta como ocultado
+   ArrayResize(g_dibujados, 0);
    ObjectsDeleteAll(0, NV_PREFIX);
    ObjectDelete(0, BTN_RESTAURAR);
    Comment("");
@@ -519,72 +624,72 @@ int OnCalculate(const int rates_total,
    if(rates_total < 2)
       return(0);
 
-   // en MQL4 los arrays son serie: índice 0 = vela en formación
-   int limite = (prev_calculated > 1) ? rates_total - prev_calculated + 1 : rates_total - 1;
+   // índice 0 = vela más antigua, rates_total-1 = vela en formación
+   int inicio = (prev_calculated > 1) ? prev_calculated - 2 : 0;
 
-   for(int i = limite; i >= 0; i--)
+   for(int i = inicio; i < rates_total; i++)
      {
-      BufOpenHigh[i] = BufCloseHigh[i] = BufOpenLow[i] = BufCloseLow[i] = EMPTY_VALUE;
-
-      if(i == 0 && !InpVelaActual)
+      if(i == rates_total - 1 && !InpVelaActual)
+        {
+         BufOpenHigh[i] = BufCloseHigh[i] = BufOpenLow[i] = BufCloseLow[i] = EMPTY_VALUE;
          continue;
-      if(Igual(high[i], low[i]))           // vela sin rango
-         continue;
-
-      double sep = iATR(NULL, 0, 14, i) * InpSeparacionATR;
-      if(sep <= 0) sep = 10 * _Point;
-
-      if(InpOHMostrar && Igual(open[i],  high[i])) BufOpenHigh[i]  = high[i] + sep;
-      if(InpCHMostrar && Igual(close[i], high[i])) BufCloseHigh[i] = high[i] + sep * 2.2;
-      if(InpOLMostrar && Igual(open[i],  low[i]))  BufOpenLow[i]   = low[i]  - sep;
-      if(InpCLMostrar && Igual(close[i], low[i]))  BufCloseLow[i]  = low[i]  - sep * 2.2;
+        }
+      Evaluar(i, open, high, low, close);
      }
 
-   //--- alerta sobre la última vela cerrada (índice 1)
+   //--- alerta sobre la última vela cerrada
+   int c = rates_total - 2;
    if(prev_calculated == 0)
-      g_ultimaAlerta = time[1];   // no alertar velas históricas al cargar
-   else if(time[1] != g_ultimaAlerta &&
+      g_ultimaAlerta = time[c];   // no alertar velas históricas al cargar
+   else if(time[c] != g_ultimaAlerta &&
            (InpAlertaPopup || InpAlertaPush || InpAlertaSonido))
      {
       string tipo = "";
-      if(InpOHAlerta && BufOpenHigh[1] != EMPTY_VALUE) tipo += " Apertura=Máximo";
-      if(InpCHAlerta && BufCloseHigh[1] != EMPTY_VALUE) tipo += " Cierre=Máximo";
-      if(InpOLAlerta && BufOpenLow[1] != EMPTY_VALUE) tipo += " Apertura=Mínimo";
-      if(InpCLAlerta && BufCloseLow[1] != EMPTY_VALUE) tipo += " Cierre=Mínimo";
+      if(InpOHAlerta && BufOpenHigh[c] != EMPTY_VALUE) tipo += " Apertura=Máximo";
+      if(InpCHAlerta && BufCloseHigh[c] != EMPTY_VALUE) tipo += " Cierre=Máximo";
+      if(InpOLAlerta && BufOpenLow[c] != EMPTY_VALUE) tipo += " Apertura=Mínimo";
+      if(InpCLAlerta && BufCloseLow[c] != EMPTY_VALUE) tipo += " Cierre=Mínimo";
 
       if(tipo != "")
         {
-         string msg = StringFormat("%s M%d vela %s:%s", _Symbol, _Period,
-                                   TimeToString(time[1], TIME_DATE | TIME_MINUTES), tipo);
+         string msg = StringFormat("%s %s vela %s:%s", _Symbol,
+                                   EnumToString((ENUM_TIMEFRAMES)_Period),
+                                   TimeToString(time[c], TIME_DATE | TIME_MINUTES), tipo);
          if(InpAlertaPopup)  Alert(msg);
          if(InpAlertaPush)   SendNotification(msg);
          if(InpAlertaSonido) PlaySound(InpArchivoSonido);
         }
-      g_ultimaAlerta = time[1];
+      g_ultimaAlerta = time[c];
      }
 
    //--- niveles sin mecha: se reconstruyen en cada vela nueva y se revisan en cada tick
    datetime velaTF = iTime(_Symbol, TFNiveles(), 0);
-   if(prev_calculated == 0 || time[0] != g_ultimosNiveles || velaTF != g_ultimaVelaTF)
+   if(prev_calculated == 0 || time[rates_total - 1] != g_ultimosNiveles || velaTF != g_ultimaVelaTF)
      {
-      if(ConstruirNiveles(time[0]))
+      if(ConstruirNiveles(time[rates_total - 1]))
         {
-         g_ultimosNiveles = time[0];
+         g_ultimosNiveles = time[rates_total - 1];
          g_ultimaVelaTF   = velaTF;
         }
      }
    else
-      RevisarPendientes(time[0], high[0], low[0]);
+      RevisarPendientes(time[rates_total - 1], high[rates_total - 1], low[rates_total - 1]);
 
    //--- panel de estadística (se recalcula una vez por vela nueva)
-   if(InpMostrarEstadistica && (prev_calculated == 0 || time[0] != g_ultimaEstadistica))
+   if(InpMostrarEstadistica && (prev_calculated == 0 || time[rates_total - 1] != g_ultimaEstadistica))
      {
-      int hasta = (InpBarrasEstadistica > 0) ? MathMin(InpBarrasEstadistica, rates_total - 1) : rates_total - 1;
+      int hasta = rates_total - 2;   // última vela cerrada
+      int desde = (InpBarrasEstadistica > 0) ? MathMax(0, hasta - InpBarrasEstadistica + 1) : 0;
       EstadisticaReset();
-      for(int k = 1; k <= hasta; k++)   // índice 1 = última vela cerrada
+      for(int k = desde; k <= hasta; k++)
          EstadisticaSumar(open[k], high[k], low[k], close[k], tick_volume[k]);
       EstadisticaMostrar();
-      g_ultimaEstadistica = time[0];
+      g_ultimaEstadistica = time[rates_total - 1];
+     }
+   else if(!InpMostrarEstadistica && time[rates_total - 1] != g_ultimaEstadistica)
+     {
+      Comment(AvisoCopias());           // sin panel, solo el aviso de copias duplicadas (si lo hay)
+      g_ultimaEstadistica = time[rates_total - 1];
      }
 
    return(rates_total);
