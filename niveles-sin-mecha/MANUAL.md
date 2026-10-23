@@ -12,6 +12,7 @@ Probado con datos de **XAUUSD en IC Markets (MetaTrader 5)**. Funciona con cualq
 niveles-sin-mecha/
 ├── MANUAL.md                         ← este manual
 ├── REGLAMENTO.md                     ← reglas obligatorias de operativa (scalping e intradía)
+├── PREGUNTAS_Y_RESPUESTAS.md         ← las preguntas sobre las marubozu y sus respuestas (también en PDF)
 ├── MT5/
 │   ├── Indicators/
 │   │   └── OpenCloseExtremos_v1.52.mq5 ← indicador v1.52: flechas, panel de % y líneas de niveles
