@@ -4,6 +4,21 @@
 > decidido**. Costos verificados con `get_cost` el 2026-11-07 (plan Plus). Saldo ese día: 915,23 créditos.
 > Los precios cambian: antes de cada generación se vuelve a cotizar.
 
+## El flujo en tres fases (decisión del dueño, 2026-11-07)
+
+> Textual: *«creamos prompt luego lo visualizo y ajustamos con el método sin costo y por último producimos con
+> higgsfield»*.
+
+1. **Crear el prompt** — el afinador escribe el prompt y la ficha `fichas/<personaje>.json`; el revisor de atención
+   dice para qué público está diseñado y qué capta la atención. **Gratis.**
+2. **Visualizar y ajustar sin costo** — se dibuja el boceto con `herramientas/boceto.js` y se le muestra al dueño en el
+   chat (o él lo ajusta en `index.html`). Se repite hasta que le convenza. **Gratis.**
+3. **Producir en Higgsfield** — solo con el diseño aprobado: cotizar, aprobar, generar. Primero la imagen oficial;
+   después, si hay video, prueba corta y luego el final (ver la escalera).
+
+Z Image (0,15) queda como paso **opcional** entre la fase 2 y la 3, si el dueño quiere ver una aproximación
+fotográfica antes de pagar la imagen oficial.
+
 ## Precios verificados
 
 | Uso | Modelo | Ajuste | Créditos |
@@ -30,7 +45,7 @@
 |---|---|---|---|
 | **0. Idea y prompt** | Quién es, rasgo icónico, público | Afinador + revisor de atención | **gratis** |
 | **1. Boceto** | Colores, peinado, ropa | Vista previa `index.html` | **gratis** |
-| **2. Exploración** | Silueta y dirección, 3 o 4 variantes que difieran en una sola cosa | Z Image | 0,15 c/u |
+| **2. Exploración (opcional)** | Una aproximación fotográfica si hay dudas | Z Image | 0,15 c/u |
 | **3. Imagen del personaje** | La versión «oficial» que será referencia | Nano Banana Pro (o Nano Banana 2) | 1,5–2 |
 | **4. Prueba de movimiento** | Que la escena y la acción funcionen | Seedance 2.0 Mini · 5 s · 480p | 2,5 |
 | **5. Video final** | El Short para publicar | Seedance 2.0 Mini 12 s 720p (12) · solo si hace falta más calidad, Seedance 2.0 | 12–54 |

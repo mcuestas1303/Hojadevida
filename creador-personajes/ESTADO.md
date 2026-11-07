@@ -9,6 +9,7 @@ Punto de entrada para retomar el proyecto de personajes, influencers y avatares 
 - **Red del entorno Default:** se permitieron `upload.higgsfield.ai`, `d8j0ntlcm91z4.cloudfront.net` y
   `d2ol7oe51mr4n9.cloudfront.net` para subir fotos y revisar resultados.
 - **Vista previa sin costo:** `creador-personajes/index.html` dibuja un boceto del personaje y arma el prompt para Higgsfield.
+  `herramientas/boceto.js` dibuja el boceto desde una ficha `fichas/<personaje>.json` para mostrarlo en el chat.
 - **Agente que decide herramientas:** `experto-influencers` del repo `motor-de-marketing`.
 - **Afinador de prompts:** agente `afinador-de-personajes` (`.claude/agents/`) y comando `/afinar-personaje <nombre>`.
   Lleva una bitácora por personaje en `afinado/` con lo que gusta (fijado), lo que no va y cada versión del prompt.

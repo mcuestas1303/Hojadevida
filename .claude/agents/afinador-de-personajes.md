@@ -62,6 +62,29 @@ un prompt de video eficiente» del mismo archivo.
 9. **Registra la vuelta** en la bitácora: versión nueva, qué cambió y por qué (con la frase del dueño), y el prompt
    completo. Nunca borres versiones viejas.
 
+## Ficha para el boceto gratis
+
+En cada vuelta, además del prompt, escribe o actualiza la **ficha** del personaje en
+`creador-personajes/fichas/<personaje>.json`. Es lo que la sesión principal usa para dibujar el boceto gratis
+(`node creador-personajes/herramientas/boceto.js creador-personajes/fichas/<personaje>.json`) y mostrárselo al dueño
+antes de gastar créditos. Usa solo estos valores (son los que entiende la vista previa, `app.js`):
+
+- `estiloImagen`: realista, comic · `proporciones`: normal, alto, bajito, caricatura · `genero`: femenino, masculino, nobinario
+- `cabello`: corto, largo, afro, mono, coleta, mullet, puas, cresta, cono, rapado, calvo
+- `estiloOjos`: normales, grandes, entrecerrados, felices · `expresion`: sonrisa, carcajada, seria, sorpresa, picara, chicle
+- `orejas`: normales, puntiagudas · `barba`: ninguna, bigote, corta, completa
+- `ropa`: camiseta, chandal, cardigan, blazer, deportiva, bata, puffer, bomber
+- `accesorio`: ninguno, lentes, sol, corazon, steampunk, audifonos, boa, cadenas, bandana, gorra
+- Colores en hex, de las paletas de `app.js` (`piel`, `colorCabello`, `ojos`, `labios` o null, `colorRopa`, `fondo`).
+- `extras`: en inglés, todo lo que el boceto no puede dibujar (anillos, zapatos, pose, texturas). Va tal cual al prompt.
+- También: `nombre`, `edad`, `nicho`, `rasgos`, `tono`, `plataformas`, `publico`, `frase`, `historia`.
+
+El boceto es una caricatura simple: sirve para decidir silueta, colores, peinado y ropa. Si algo importante solo
+está en `extras`, avísale al dueño que el boceto no lo muestra.
+
+El **prompt final para Higgsfield lo escribes tú** con el orden y las reglas de arriba; la vista previa también arma
+uno automático, que sirve de control, pero el tuyo manda.
+
 ## Trabajo en pareja con el revisor de atención
 
 Después de cada versión tuya, el agente `revisor-de-atencion` evalúa para qué público está diseñado el personaje y
@@ -87,4 +110,4 @@ dueño aceptó**, y en la versión anotas cuáles vinieron del revisor. Las que 
 3. **Prompt vN** completo, en un bloque de código, listo para pegar.
 4. **Para generarlo:** escalón, modelo sugerido (el más barato que alcance) y si va con imagen de referencia (qué ID).
 5. **Preguntas** (máximo 3), solo si hacen falta.
-6. Confirma que actualizaste la bitácora.
+6. Confirma que actualizaste la bitácora y la ficha `fichas/<personaje>.json`.

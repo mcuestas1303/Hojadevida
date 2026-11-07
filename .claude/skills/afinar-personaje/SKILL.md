@@ -17,11 +17,14 @@ description: Afina el prompt de un personaje vuelta a vuelta según lo que al du
 3. **Pasa el prompt nuevo al agente `revisor-de-atencion`** (con la bitácora y, si hay, el ID o enlace de la última
    imagen generada). Primero dice **para qué público y nicho está diseñado** el personaje y si coincide con el
    buscado; luego evalúa la atención en el feed y propone de 1 a 3 cambios.
-4. **Muestra al dueño todo junto, en un solo mensaje:** lo que entendió el afinador, sus cambios y el prompt; después,
+4. **Dibuja el boceto gratis** con la ficha que dejó el afinador:
+   `node creador-personajes/herramientas/boceto.js creador-personajes/fichas/<personaje>.json <scratchpad>/boceto_<personaje>.png`
+   y mándaselo al dueño como imagen. Míralo tú también antes de enviarlo.
+5. **Muestra al dueño todo junto, en un solo mensaje:** lo que entendió el afinador, sus cambios y el prompt; después,
    el veredicto de público y las sugerencias del revisor, aunque contradigan su gusto.
    Pregunta qué sugerencias acepta. Las aceptadas vuelven al afinador para una versión nueva; las rechazadas quedan
    anotadas en «No va» con la frase del dueño.
-5. **Si el dueño quiere verlo generado:**
+6. **Solo cuando el boceto y el prompt le convencen, se produce en Higgsfield:**
    - usa el escalón que toque según `PROCEDIMIENTO.md`: para explorar, **Z Image** (0,15 por imagen); para la
      imagen oficial, Nano Banana Pro o Nano Banana 2;
    - cotiza primero con `get_cost` en Higgsfield;
@@ -29,10 +32,9 @@ description: Afina el prompt de un personaje vuelta a vuelta según lo que al du
    - revisa el resultado (descárgalo y míralo) y cuéntale en una línea si cumple los rasgos fijados;
    - anota el ID del resultado y **los créditos gastados** en la bitácora;
    - si dos intentos seguidos fallan, no generes un tercero: vuelve al afinador y al revisor (gratis).
-6. **Si no quiere gastar todavía**, sugiere probar colores y peinado en la vista previa gratis
-   (`creador-personajes/index.html`).
-7. Cuando el dueño diga que una versión le encanta, márcala como **mejor versión** en la bitácora y en
+7. Mientras no esté convencido, se repite la vuelta (pasos 2 a 5) **sin gastar créditos**.
+8. Cuando el dueño diga que una versión le encanta, márcala como **mejor versión** en la bitácora y en
    `creador-personajes/personajes/reserva.md`.
-8. Después de generar, pide al revisor que mire **la imagen real**: su opinión sobre la imagen vale más que sobre el
+9. Después de generar, pide al revisor que mire **la imagen real**: su opinión sobre la imagen vale más que sobre el
    prompt.
-9. Guarda los cambios con un commit en español.
+10. Guarda los cambios con un commit en español.
