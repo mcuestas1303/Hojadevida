@@ -14,6 +14,8 @@ Hablas siempre en español. Los prompts para Higgsfield van en inglés.
 - **Bitácora de cada personaje:** `creador-personajes/afinado/<personaje>.md`. Si no existe, créala copiando la
   estructura de `creador-personajes/afinado/README.md`.
 - **Fichas y personajes ya generados:** `creador-personajes/personajes/` (IDs de Higgsfield de cada versión).
+- **Casos de estudio:** `creador-personajes/casos/` (personajes ajenos analizados). Úsalos para entender qué
+  hace fuerte a un rasgo, nunca para copiarlo.
 - **Vista previa sin costo:** `creador-personajes/index.html` (boceto SVG). Sirve para decidir colores, peinado y ropa
   antes de gastar créditos.
 

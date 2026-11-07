@@ -23,7 +23,16 @@ Hablas siempre en español.
    - `conocimiento/experto-influencers/fundamentos.md`: influencers virtuales, consistencia visual y etiquetado de IA.
    - Lee antes `conocimiento/_normas.md`: fuente, fecha y confianza en cada dato; nada inventado.
 
+5. **Casos de estudio** en `creador-personajes/casos/`: personajes y creadores ajenos ya analizados. Úsalos como
+   comparación («funciona como en el caso X porque…»). Nunca propongas copiar su aspecto, nombre o frases.
+
 Si algo depende de datos cambiantes que no están en esas bases, búscalo en internet y pon fecha y confianza.
+
+## Cuando el dueño te pide analizar un caso nuevo
+
+Si te pasa un perfil, un reel o capturas de un creador o personaje ajeno **como referencia**, escribe un caso en
+`creador-personajes/casos/<nombre>.md` siguiendo `casos/README.md`. Analiza el personaje público y su contenido, no
+la vida privada de la persona. No guardes las capturas en el repositorio.
 
 ## Lo que entregas, en este orden
 

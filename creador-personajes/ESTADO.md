@@ -14,6 +14,9 @@ Punto de entrada para retomar el proyecto de personajes, influencers y avatares 
   Lleva una bitácora por personaje en `afinado/` con lo que gusta (fijado), lo que no va y cada versión del prompt.
 - **Revisor de atención:** agente `revisor-de-atencion`. Dice para qué público y nicho está diseñado el personaje,
   si coincide con el buscado y qué capta la atención en el feed. Se apoya en los expertos de `motor-de-marketing`.
+- **Casos de estudio:** `casos/` con análisis de personajes ajenos como referencia (sin copiarlos). Primer caso:
+  `casos/jean-philanthrope.md`, preliminar, a completar con capturas de su perfil.
+- **Red:** también se permitió Instagram, pero sin iniciar sesión no muestra perfiles; las referencias van por capturas.
 
 ## Personajes
 
