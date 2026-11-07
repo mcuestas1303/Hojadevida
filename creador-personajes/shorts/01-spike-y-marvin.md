@@ -67,3 +67,13 @@ Si la suma pasa de 100: el video en Seedance 2.0 Mini, o de 8 s (pista de 8 s co
 - [ ] Descripción: «Personajes y música creados con IA. Marvin es el creador del canal.»
 - [ ] Ni la música ni los nombres de canciones o artistas existentes se mencionan en el título.
 - [ ] Vertical, de menos de 60 segundos.
+
+## Resultado (2026-11-07)
+
+- **Video final:** Seedance 2.0, 12 s, 720p, 9:16, **sin audio** (la música la agrega el creador).
+  - ID en Higgsfield: `0fb45b9a-6371-467c-b9cc-17ecfc6db0f5`
+  - https://d8j0ntlcm91z4.cloudfront.net/user_3LlcuIPP93iL5POcgff4YV7CVCd/hf_20261107_071742_0fb45b9a-6371-467c-b9cc-17ecfc6db0f5.mp4
+- **Spike usado:** versión 1, `77759b9d-b406-48c0-9c42-aa73ac0a123b` (ver `personajes/reserva.md`). Spike se rediseñó más exagerado que la ficha de arriba.
+- **Foto del creador:** subida a Higgsfield como `0a3d1514-e763-4306-ac39-1c838e8ab434`. No se guarda en este repo porque es público.
+- **Música:** se generó una pista de ElevenLabs Music v2 (`1b01ac3d-…`), pero el creador la descartó y pone la suya.
+- **Créditos gastados en total:** 70,77 de 100 (saldo de la cuenta: 939,23).
