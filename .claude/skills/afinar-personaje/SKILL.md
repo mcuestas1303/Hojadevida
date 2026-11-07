@@ -20,6 +20,9 @@ description: Afina el prompt de un personaje vuelta a vuelta según lo que al du
 4. **Dibuja el boceto gratis** con la ficha que dejó el afinador:
    `node creador-personajes/herramientas/boceto.js creador-personajes/fichas/<personaje>.json <scratchpad>/boceto_<personaje>.png`
    y mándaselo al dueño como imagen. Míralo tú también antes de enviarlo.
+   Para ver el personaje **realista y gratis**, el dueño pega el prompt en el cuaderno de Colab
+   `creador-personajes/colab/bocetos_flux_schnell.ipynb` (FLUX.1 schnell) y te devuelve las imágenes con su veredicto
+   y la semilla que le gustó; anótalas en la bitácora.
 5. **Muestra al dueño todo junto, en un solo mensaje:** lo que entendió el afinador, sus cambios y el prompt; después,
    el veredicto de público y las sugerencias del revisor, aunque contradigan su gusto.
    Pregunta qué sugerencias acepta. Las aceptadas vuelven al afinador para una versión nueva; las rechazadas quedan

@@ -82,6 +82,10 @@ antes de gastar créditos. Usa solo estos valores (son los que entiende la vista
 El boceto es una caricatura simple: sirve para decidir silueta, colores, peinado y ropa. Si algo importante solo
 está en `extras`, avísale al dueño que el boceto no lo muestra.
 
+Si el dueño trae imágenes del cuaderno de Colab (FLUX.1 schnell), anota en la versión **la semilla** que le gustó:
+repetir la semilla con un prompt cambiado aísla el efecto del cambio. FLUX schnell y los modelos de Higgsfield no dan
+exactamente el mismo resultado: lo que se lleva a Higgsfield es el **prompt** y las decisiones, no la semilla.
+
 El **prompt final para Higgsfield lo escribes tú** con el orden y las reglas de arriba; la vista previa también arma
 uno automático, que sirve de control, pero el tuyo manda.
 

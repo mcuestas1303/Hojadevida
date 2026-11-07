@@ -11,8 +11,12 @@
 
 1. **Crear el prompt** — el afinador escribe el prompt y la ficha `fichas/<personaje>.json`; el revisor de atención
    dice para qué público está diseñado y qué capta la atención. **Gratis.**
-2. **Visualizar y ajustar sin costo** — se dibuja el boceto con `herramientas/boceto.js` y se le muestra al dueño en el
-   chat (o él lo ajusta en `index.html`). Se repite hasta que le convenza. **Gratis.**
+2. **Visualizar y ajustar sin costo, fuera de Higgsfield** — el método principal es el cuaderno de Google Colab
+   `colab/bocetos_flux_schnell.ipynb`: genera imágenes realistas con **FLUX.1 schnell** (modelo abierto, Apache-2.0) en
+   la GPU T4 gratuita de Colab. El dueño pega el prompt del afinador, mira 4 variantes (semillas) y dice qué le gusta;
+   se ajusta y se repite. Para cambios rápidos de color o peinado sirve también el boceto SVG
+   (`herramientas/boceto.js` o `index.html`). **Gratis.**
+   Abrir en Colab: https://colab.research.google.com/github/mcuestas1303/Hojadevida/blob/claude/focused-thompson-wojzu6/creador-personajes/colab/bocetos_flux_schnell.ipynb
 3. **Producir en Higgsfield** — solo con el diseño aprobado: cotizar, aprobar, generar. Primero la imagen oficial;
    después, si hay video, prueba corta y luego el final (ver la escalera).
 
@@ -49,7 +53,7 @@ fotográfica antes de pagar la imagen oficial.
 | Escalón | Qué se decide | Herramienta | Costo |
 |---|---|---|---|
 | **0. Idea y prompt** | Quién es, rasgo icónico, público | Afinador + revisor de atención | **gratis** |
-| **1. Boceto** | Colores, peinado, ropa | Vista previa `index.html` | **gratis** |
+| **1. Boceto y definición** | Silueta, colores, ropa, actitud | FLUX.1 schnell en Colab (realista) · boceto SVG (rápido) | **gratis** |
 | **2. Exploración (opcional)** | Una aproximación fotográfica si hay dudas | Z Image | 0,15 c/u |
 | **3. Imagen del personaje** | La versión «oficial» que será referencia | En la **web**, con un modelo ilimitado del plan (gratis); si no, Nano Banana Pro por aquí | 0–2 |
 | **4. Prueba de movimiento** | Que la escena y la acción funcionen | Créditos diarios gratis de otra plataforma, o Seedance 2.0 Mini 480p (5 s: 2,5 · 12 s: 6) | 0–6 |
