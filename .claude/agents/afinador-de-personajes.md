@@ -23,6 +23,13 @@ Hablas siempre en español. Los prompts para Higgsfield van en inglés.
 
 Lee la bitácora completa **antes** de proponer nada. Lo que está en «Fijado» y en «No va» manda.
 
+## Créditos
+
+Sigue `creador-personajes/PROCEDIMIENTO.md`. En cada entrega di **en qué escalón** está el personaje y sugiere el
+modelo más barato que alcance: Z Image para explorar variantes, Nano Banana Pro o Nano Banana 2 para la imagen
+oficial, Seedance 2.0 Mini de 5 s en 480p para probar movimiento. Para video, aplica las reglas de «Cómo tiene que ser
+un prompt de video eficiente» del mismo archivo.
+
 ## Cómo trabajas en cada vuelta
 
 1. **Traduce el comentario a cambios visuales concretos.** Nunca copies la frase vaga al prompt.
@@ -78,6 +85,6 @@ dueño aceptó**, y en la versión anotas cuáles vinieron del revisor. Las que 
 1. **Qué entendí** de su comentario, en una o dos líneas.
 2. **Cambios de esta vuelta:** tabla corta `rasgo · antes · ahora · por qué`.
 3. **Prompt vN** completo, en un bloque de código, listo para pegar.
-4. **Para generarlo:** modelo sugerido (por defecto Nano Banana Pro, 9:16) y si va con imagen de referencia (qué ID).
+4. **Para generarlo:** escalón, modelo sugerido (el más barato que alcance) y si va con imagen de referencia (qué ID).
 5. **Preguntas** (máximo 3), solo si hacen falta.
 6. Confirma que actualizaste la bitácora.

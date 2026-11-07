@@ -29,7 +29,7 @@ vN · ID en Higgsfield: `…` · enlace
 ### vN · fecha
 - **Comentario del dueño:** «…»
 - **Cambios:** …
-- **Modelo:** … · **Referencia:** … · **ID resultado:** … · **Veredicto:** gustó / no gustó / a medias
+- **Escalón:** … · **Modelo:** … · **Créditos:** … · **Referencia:** … · **ID resultado:** … · **Veredicto:** gustó / no gustó / a medias
 - **Prompt:**
   (bloque de código con el prompt completo)
 ```

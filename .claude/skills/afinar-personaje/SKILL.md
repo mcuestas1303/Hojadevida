@@ -5,6 +5,9 @@ description: Afina el prompt de un personaje vuelta a vuelta según lo que al du
 
 # Afinar un personaje
 
+> Sigue siempre `creador-personajes/PROCEDIMIENTO.md`: la escalera de costos (gratis → Z Image → imagen oficial →
+> prueba de video corta → video final), cotizar antes de cada generación y el freno de pérdidas.
+
 1. **Identifica el personaje** del argumento o de la conversación. Si es nuevo, pide en una sola pregunta la idea
    base (quién es y qué rol cumple) y un rasgo que quiera sí o sí.
 2. **Delega en el agente `afinador-de-personajes`**. Pásale:
@@ -19,10 +22,13 @@ description: Afina el prompt de un personaje vuelta a vuelta según lo que al du
    Pregunta qué sugerencias acepta. Las aceptadas vuelven al afinador para una versión nueva; las rechazadas quedan
    anotadas en «No va» con la frase del dueño.
 5. **Si el dueño quiere verlo generado:**
-   - cotiza primero con `get_cost` en Higgsfield (Nano Banana Pro, 9:16, salvo que el agente sugiera otro);
+   - usa el escalón que toque según `PROCEDIMIENTO.md`: para explorar, **Z Image** (0,15 por imagen); para la
+     imagen oficial, Nano Banana Pro o Nano Banana 2;
+   - cotiza primero con `get_cost` en Higgsfield;
    - di el costo y genera **solo con su aprobación**, pasando como referencia el ID de la mejor versión si existe;
    - revisa el resultado (descárgalo y míralo) y cuéntale en una línea si cumple los rasgos fijados;
-   - anota el ID del resultado en la bitácora (o pídeselo al agente en la siguiente vuelta).
+   - anota el ID del resultado y **los créditos gastados** en la bitácora;
+   - si dos intentos seguidos fallan, no generes un tercero: vuelve al afinador y al revisor (gratis).
 6. **Si no quiere gastar todavía**, sugiere probar colores y peinado en la vista previa gratis
    (`creador-personajes/index.html`).
 7. Cuando el dueño diga que una versión le encanta, márcala como **mejor versión** en la bitácora y en

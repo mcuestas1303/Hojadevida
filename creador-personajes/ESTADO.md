@@ -18,6 +18,11 @@ Punto de entrada para retomar el proyecto de personajes, influencers y avatares 
   `casos/jean-philanthrope.md`, preliminar, a completar con capturas de su perfil.
 - **Red:** también se permitió Instagram, pero sin iniciar sesión no muestra perfiles; las referencias van por capturas.
 
+## Procedimiento de créditos
+
+- `PROCEDIMIENTO.md`: precios verificados y la escalera para gastar lo mínimo (gratis → Z Image 0,15 → imagen
+  oficial 1,5–2 → prueba de video 2,5 → video final 12–54). Saldo al 2026-11-07: 915,23 créditos.
+
 ## Personajes
 
 - `personajes/reserva.md`: **Spike** (en uso), **el científico** y **el afro verde** (en reserva), con IDs y prompts.
