@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Creador de Personajes</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Creador de Personajes</h1>
+    <p>Diseña avatares y personajes / influencers virtuales con IA: apariencia, personalidad, bio, ideas de contenido y prompts listos para copiar.</p>
+  </header>
+
+  <main class="layout">
+    <!-- Panel de edición -->
+    <section class="editor" aria-label="Editor del personaje">
+      <div class="acciones">
+        <button type="button" id="btnAleatorio">🎲 Aleatorio</button>
+        <button type="button" id="btnGuardar">💾 Guardar</button>
+        <button type="button" id="btnNuevo">✨ Nuevo</button>
+      </div>
+
+      <details open>
+        <summary>Identidad</summary>
+        <div class="campos">
+          <label>Nombre
+            <span class="fila">
+              <input type="text" id="nombre" maxlength="40">
+              <button type="button" id="btnNombre" title="Generar nombre">🎲</button>
+            </span>
+          </label>
+          <label>Usuario (@)
+            <input type="text" id="handle" maxlength="30">
+          </label>
+          <label>Edad
+            <input type="number" id="edad" min="1" max="999">
+          </label>
+          <label>Género
+            <select id="genero"></select>
+          </label>
+          <label>Ciudad / origen
+            <input type="text" id="ciudad" maxlength="40">
+          </label>
+          <label class="check">
+            <input type="checkbox" id="virtual"> Indicar en la bio que es un personaje virtual creado con IA
+          </label>
+        </div>
+      </details>
+
+      <details open>
+        <summary>Apariencia</summary>
+        <div class="campos">
+          <div class="grupo"><span class="etiqueta">Piel</span><div class="swatches" id="sw-piel"></div></div>
+          <label>Peinado <select id="cabello"></select></label>
+          <div class="grupo"><span class="etiqueta">Color de cabello</span><div class="swatches" id="sw-colorCabello"></div></div>
+          <label>Estilo de ojos <select id="estiloOjos"></select></label>
+          <div class="grupo"><span class="etiqueta">Color de ojos</span><div class="swatches" id="sw-ojos"></div></div>
+          <label>Expresión <select id="expresion"></select></label>
+          <label>Orejas <select id="orejas"></select></label>
+          <label>Barba <select id="barba"></select></label>
+          <div class="grupo"><span class="etiqueta">Labios</span><div class="swatches" id="sw-labios"></div></div>
+          <label class="check"><input type="checkbox" id="pecas"> Pecas</label>
+          <label class="check"><input type="checkbox" id="ojeras"> Ojeras</label>
+          <label>Ropa <select id="ropa"></select></label>
+          <div class="grupo"><span class="etiqueta">Color de ropa</span><div class="swatches" id="sw-colorRopa"></div></div>
+          <label>Accesorio <select id="accesorio"></select></label>
+          <div class="grupo"><span class="etiqueta">Fondo</span><div class="swatches" id="sw-fondo"></div></div>
+        </div>
+      </details>
+
+      <details open>
+        <summary>Personalidad y contenido</summary>
+        <div class="campos">
+          <label>Nicho / temática <select id="nicho"></select></label>
+          <div class="grupo"><span class="etiqueta">Rasgos (elige hasta 3)</span><div class="chips" id="rasgos"></div></div>
+          <label>Tono de voz <select id="tono"></select></label>
+          <div class="grupo"><span class="etiqueta">Plataformas</span><div class="chips" id="plataformas"></div></div>
+          <label>Público objetivo
+            <input type="text" id="publico" maxlength="80" placeholder="p. ej. jóvenes de 18 a 30 que aman la música">
+          </label>
+          <label>Frase característica
+            <input type="text" id="frase" maxlength="90">
+          </label>
+          <label>Historia / trasfondo
+            <textarea id="historia" rows="4" maxlength="800"></textarea>
+          </label>
+        </div>
+      </details>
+    </section>
+
+    <!-- Vista previa y resultados -->
+    <section class="salida" aria-label="Resultado">
+      <article class="tarjeta">
+        <div class="avatar" id="avatar" role="img" aria-label="Avatar del personaje"></div>
+        <div class="perfil">
+          <h2 id="pNombre"></h2>
+          <p class="handle" id="pHandle"></p>
+          <p class="bio" id="pBio"></p>
+          <p class="tags" id="pTags"></p>
+        </div>
+        <div class="acciones">
+          <button type="button" id="btnPng">⬇️ Avatar PNG</button>
+          <button type="button" id="btnSvg">⬇️ Avatar SVG</button>
+          <button type="button" id="btnJson">⬇️ Ficha JSON</button>
+          <label class="boton">⬆️ Importar JSON<input type="file" id="importar" accept="application/json" hidden></label>
+        </div>
+      </article>
+
+      <article class="bloque">
+        <header><h3>Bio</h3><button type="button" data-copiar="oBio">Copiar</button></header>
+        <pre id="oBio"></pre>
+      </article>
+      <article class="bloque">
+        <header><h3>Ideas de contenido</h3><button type="button" data-copiar="oIdeas">Copiar</button></header>
+        <pre id="oIdeas"></pre>
+      </article>
+      <article class="bloque">
+        <header><h3>Prompt para imagen IA <small>(en inglés)</small></h3><button type="button" data-copiar="oImagen">Copiar</button></header>
+        <pre id="oImagen"></pre>
+      </article>
+      <article class="bloque">
+        <header><h3>Prompt de personalidad <small>(chatbot)</small></h3><button type="button" data-copiar="oChat">Copiar</button></header>
+        <pre id="oChat"></pre>
+      </article>
+
+      <article class="bloque">
+        <header><h3>Mis personajes</h3></header>
+        <div class="galeria" id="galeria"></div>
+      </article>
+    </section>
+  </main>
+
+  <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
