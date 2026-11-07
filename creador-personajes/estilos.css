@@ -110,7 +110,9 @@ button:hover, .boton:hover { border-color: var(--acento); }
 
 .tarjeta { overflow: hidden; }
 .avatar { background: var(--bg); display: flex; justify-content: center; padding: 16px; }
-.avatar svg { width: 100%; max-width: 300px; height: auto; border-radius: 50%; }
+.avatar svg { width: 100%; max-width: 320px; height: auto; border-radius: 16px; }
+.nota { margin: 0; padding: 0 16px; font-size: .8rem; color: var(--suave); text-align: center; }
+.partida { margin-bottom: 12px; }
 .perfil { padding: 12px 16px; text-align: center; }
 .perfil h2 { margin: 0; font-size: 1.35rem; }
 .handle { margin: 0; color: var(--suave); }
@@ -135,7 +137,7 @@ button:hover, .boton:hover { border-color: var(--acento); }
 .galeria { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px; padding: 12px 16px 16px; }
 .galeria .vacia { color: var(--suave); grid-column: 1 / -1; margin: 0; }
 .mini { border: 1px solid var(--borde); border-radius: 12px; padding: 8px; text-align: center; font-size: .8rem; }
-.mini svg { width: 100%; height: auto; border-radius: 50%; cursor: pointer; }
+.mini svg { width: 100%; height: auto; border-radius: 10px; cursor: pointer; }
 .mini p { margin: 4px 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .mini button { padding: 2px 10px; font-size: .75rem; }
 
