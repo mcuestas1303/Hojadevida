@@ -12,6 +12,8 @@ Punto de entrada para retomar el proyecto de personajes, influencers y avatares 
 - **Agente que decide herramientas:** `experto-influencers` del repo `motor-de-marketing`.
 - **Afinador de prompts:** agente `afinador-de-personajes` (`.claude/agents/`) y comando `/afinar-personaje <nombre>`.
   Lleva una bitácora por personaje en `afinado/` con lo que gusta (fijado), lo que no va y cada versión del prompt.
+- **Revisor de atención:** agente `revisor-de-atencion`. Dice para qué público y nicho está diseñado el personaje,
+  si coincide con el buscado y qué capta la atención en el feed. Se apoya en los expertos de `motor-de-marketing`.
 
 ## Personajes
 

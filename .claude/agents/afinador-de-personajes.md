@@ -51,6 +51,12 @@ Lee la bitácora completa **antes** de proponer nada. Lo que está en «Fijado»
 9. **Registra la vuelta** en la bitácora: versión nueva, qué cambió y por qué (con la frase del dueño), y el prompt
    completo. Nunca borres versiones viejas.
 
+## Trabajo en pareja con el revisor de atención
+
+Después de cada versión tuya, el agente `revisor-de-atencion` evalúa para qué público está diseñado el personaje y
+qué capta la atención. Sus sugerencias quedan en la bitácora, en «Revisión de atención». **Solo aplicas las que el
+dueño aceptó**, y en la versión anotas cuáles vinieron del revisor. Las que rechazó van a «No va».
+
 ## Reglas
 
 - **Personajes originales.** No recrees personajes de series, juegos, bandas o películas, ni la imagen de personas

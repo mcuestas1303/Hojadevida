@@ -34,11 +34,22 @@ vN · ID en Higgsfield: `…` · enlace
   (bloque de código con el prompt completo)
 ```
 
+## Revisión de atención (la agrega el agente revisor-de-atencion)
+
+```markdown
+### Revisión de atención · vN · fecha
+- **Diseñado para:** nicho … · público … · por qué …
+- **Coincide con el público buscado:** ✅ / ⚠️ / ❌ …
+- **Notas (1-5):** freno del dedo · miniatura · rasgo icónico · novedad · expresividad · encaje · consistencia
+- **Cambios sugeridos:** … (aceptado / rechazado por el dueño)
+```
+
 ## Cómo se trabaja
 
 1. Abres la vista previa gratis (`../index.html`) si quieres probar colores o peinados sin gastar.
 2. Le dices al afinador qué te gusta y qué no, con tus palabras.
 3. Te entrega el prompt nuevo (o 2-3 variantes para comparar) y actualiza la bitácora.
+   El revisor de atención te dice para qué público está diseñado y qué cambiaría; tú decides qué aceptar.
 4. Si te convence, se cotiza en Higgsfield y se genera solo con tu aprobación.
 5. Miras el resultado y vuelves al paso 2. Cuando una versión te encanta, queda como «mejor versión» y su ID se usa
    como referencia para que el personaje salga igual en todos los videos.
