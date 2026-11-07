@@ -31,7 +31,8 @@ description: Afina el prompt de un personaje vuelta a vuelta según lo que al du
    (gratis con los modelos «Unlimited» del plan Plus): entrégale la Hoja para la web del afinador. Cuando avise que
    generó, anota el saldo (`balance`), lee el historial (`show_generations`), descarga y mira la imagen, confirma que
    el saldo no bajó y anota el ID en la bitácora.
-   Solo lo que la web no puede hacer gratis (por ejemplo, video sin ventana ilimitada) va por la conexión:
+   El video también se genera en la web. **Desde aquí no se genera nada**: la conexión es solo de lectura, salvo una
+   emergencia aprobada por el dueño en ese momento. Solo en ese caso:
    - usa el escalón que toque según `PROCEDIMIENTO.md`: para explorar, **Z Image** (0,15 por imagen); para la
      imagen oficial, Nano Banana Pro o Nano Banana 2;
    - cotiza primero con `get_cost` en Higgsfield;

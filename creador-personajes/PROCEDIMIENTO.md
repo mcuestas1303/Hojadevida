@@ -33,8 +33,18 @@ Lo ilimitado del plan Plus solo funciona en **higgsfield.ai**, y la web la manej
 |---|---|---|---|
 | Imagen oficial del personaje y variantes de imagen | **Web**, con un modelo marcado «Unlimited» | El dueño pega la hoja que prepara el afinador | 0 |
 | Video, si hay una ventana ilimitada activa en la web (p. ej. Kling 3.0 de 7 días) | **Web** | El dueño | 0 |
-| Video sin ventana ilimitada, o lo que la web no ofrece | Conexión de Claude (MCP) | Claude, con cotización y aprobación | créditos |
+| Video sin ventana ilimitada | **Web** (con créditos del plan) | El dueño, con la hoja que prepara el afinador | créditos |
 | Recoger, revisar y anotar lo generado en la web | Historial de Higgsfield, leído por Claude (`show_generations`) | Claude | 0 |
+
+**La conexión de Claude con Higgsfield es solo de lectura** (decisión del dueño, 2026-11-07, textual: *«dejar lo que
+hacemos aquí solo de lectura o emergencia»*):
+
+- **Permitido sin pedir:** ver saldo (`balance`), historial (`show_generations`), catálogo de modelos
+  (`models_explore`) y movimientos (`transactions`); subir una foto como referencia si el dueño lo pide.
+- **Generar desde aquí solo en una emergencia** (la web no funciona o hay un plazo urgente), con cotización y
+  aprobación explícita del dueño en ese momento.
+- Queda reforzado en `.claude/settings.json`: todas las herramientas de Higgsfield que generan o gastan créditos piden
+  confirmación antes de ejecutarse (también las cotizaciones `get_cost`, porque usan las mismas herramientas).
 
 **Hoja para la web** (la entrega el afinador en cada vuelta, lista para copiar):
 

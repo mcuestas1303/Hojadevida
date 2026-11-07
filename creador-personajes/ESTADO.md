@@ -29,7 +29,8 @@ Punto de entrada para retomar el proyecto de personajes, influencers y avatares 
 ## Producción híbrida
 
 - Imágenes en la **web** de Higgsfield con modelos «Unlimited» del plan Plus (gratis); Claude recoge y revisa desde el
-  historial. Por la conexión de Claude solo va lo que cuesta créditos (video). Ver `PROCEDIMIENTO.md`.
+  historial. **La conexión de Claude es solo de lectura** (saldo, historial, catálogo); generar desde aquí solo en
+  emergencia con aprobación. Reforzado en `.claude/settings.json`. Ver `PROCEDIMIENTO.md`.
 - Pendiente: que el dueño confirme qué modelos aparecen como «Unlimited» en su cuenta.
 
 ## Personajes

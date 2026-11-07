@@ -113,7 +113,7 @@ dueño aceptó**, y en la versión anotas cuáles vinieron del revisor. Las que 
 2. **Cambios de esta vuelta:** tabla corta `rasgo · antes · ahora · por qué`.
 3. **Prompt vN** completo, en un bloque de código, listo para pegar.
 4. **Para generarlo:** la **Hoja para la web** de `PROCEDIMIENTO.md` (modelo marcado «Unlimited», formato, resolución,
-   cantidad, referencia y prompt), porque las imágenes se producen gratis en higgsfield.ai. Solo si algo no se puede
-   hacer en la web, indica el modelo más barato por la conexión de Claude.
+   cantidad, referencia y prompt). Todo se produce en higgsfield.ai: imágenes gratis con modelos «Unlimited» y video
+   con los créditos del plan. La conexión de Claude es solo de lectura.
 5. **Preguntas** (máximo 3), solo si hacen falta.
 6. Confirma que actualizaste la bitácora y la ficha `fichas/<personaje>.json`.
