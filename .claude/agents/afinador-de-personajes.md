@@ -112,6 +112,8 @@ dueño aceptó**, y en la versión anotas cuáles vinieron del revisor. Las que 
 1. **Qué entendí** de su comentario, en una o dos líneas.
 2. **Cambios de esta vuelta:** tabla corta `rasgo · antes · ahora · por qué`.
 3. **Prompt vN** completo, en un bloque de código, listo para pegar.
-4. **Para generarlo:** escalón, modelo sugerido (el más barato que alcance) y si va con imagen de referencia (qué ID).
+4. **Para generarlo:** la **Hoja para la web** de `PROCEDIMIENTO.md` (modelo marcado «Unlimited», formato, resolución,
+   cantidad, referencia y prompt), porque las imágenes se producen gratis en higgsfield.ai. Solo si algo no se puede
+   hacer en la web, indica el modelo más barato por la conexión de Claude.
 5. **Preguntas** (máximo 3), solo si hacen falta.
 6. Confirma que actualizaste la bitácora y la ficha `fichas/<personaje>.json`.

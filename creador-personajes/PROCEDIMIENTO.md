@@ -23,6 +23,35 @@
 Z Image (0,15) queda como paso **opcional** entre la fase 2 y la 3, si el dueño quiere ver una aproximación
 fotográfica antes de pagar la imagen oficial.
 
+## Producción híbrida: web gratis + conexión de Claude (decisión del dueño, 2026-11-07)
+
+> Textual: *«Si podemos aplicar esas ventajas de la web hay que hacerlo entonces»*.
+
+Lo ilimitado del plan Plus solo funciona en **higgsfield.ai**, y la web la maneja el dueño. Por eso:
+
+| Qué | Dónde | Quién | Costo |
+|---|---|---|---|
+| Imagen oficial del personaje y variantes de imagen | **Web**, con un modelo marcado «Unlimited» | El dueño pega la hoja que prepara el afinador | 0 |
+| Video, si hay una ventana ilimitada activa en la web (p. ej. Kling 3.0 de 7 días) | **Web** | El dueño | 0 |
+| Video sin ventana ilimitada, o lo que la web no ofrece | Conexión de Claude (MCP) | Claude, con cotización y aprobación | créditos |
+| Recoger, revisar y anotar lo generado en la web | Historial de Higgsfield, leído por Claude (`show_generations`) | Claude | 0 |
+
+**Hoja para la web** (la entrega el afinador en cada vuelta, lista para copiar):
+
+```
+Modelo en la web: <uno marcado Unlimited; el preferido para este personaje>
+Formato: 9:16 · Resolución: <la máxima que permita el ilimitado> · Cantidad: <1 a 4>
+Imagen de referencia: <qué subir, si hace falta (ID o archivo)>
+Prompt:
+<prompt completo en inglés>
+```
+
+**Después de generar en la web:** el dueño avisa; Claude lee el historial, descarga y mira la imagen, comprueba con el
+saldo que no se descontaron créditos y anota el ID en la bitácora.
+
+**Pendiente:** confirmar en la cuenta qué modelos están marcados «Unlimited» y con qué resolución. Hasta entonces, la
+lista es la de las fuentes (confianza media).
+
 ## Precios verificados
 
 | Uso | Modelo | Ajuste | Créditos |

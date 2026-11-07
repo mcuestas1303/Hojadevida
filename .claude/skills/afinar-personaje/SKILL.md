@@ -27,7 +27,11 @@ description: Afina el prompt de un personaje vuelta a vuelta según lo que al du
    el veredicto de público y las sugerencias del revisor, aunque contradigan su gusto.
    Pregunta qué sugerencias acepta. Las aceptadas vuelven al afinador para una versión nueva; las rechazadas quedan
    anotadas en «No va» con la frase del dueño.
-6. **Solo cuando el boceto y el prompt le convencen, se produce en Higgsfield:**
+6. **Solo cuando el boceto y el prompt le convencen, se produce en Higgsfield.** Las imágenes van por la **web**
+   (gratis con los modelos «Unlimited» del plan Plus): entrégale la Hoja para la web del afinador. Cuando avise que
+   generó, anota el saldo (`balance`), lee el historial (`show_generations`), descarga y mira la imagen, confirma que
+   el saldo no bajó y anota el ID en la bitácora.
+   Solo lo que la web no puede hacer gratis (por ejemplo, video sin ventana ilimitada) va por la conexión:
    - usa el escalón que toque según `PROCEDIMIENTO.md`: para explorar, **Z Image** (0,15 por imagen); para la
      imagen oficial, Nano Banana Pro o Nano Banana 2;
    - cotiza primero con `get_cost` en Higgsfield;
