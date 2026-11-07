@@ -47,8 +47,9 @@ la seguridad ridícula del otro. Cierra con un remate físico: se van caminando 
 1. **Un solo rasgo icónico de silueta.** Spike ya lo tiene (la corona de púas naranja neón); al científico le pasa
    con el pelo en cono. No sumar más rasgos que compitan con ese.
 2. **Duplas que contrasten** en color, forma y actitud: uno excéntrico y seguro, otro que duda. Spike y el
-   científico son demasiado parecidos entre sí (los dos naranjas, altos y excéntricos); para una dupla conviene que
-   uno sea «el normal» (por ejemplo, Marvin) o que se diferencien en color y silueta.
+   científico se parecen mucho (los dos naranjas, altos y excéntricos). Como **familia** eso suma (ver
+   `universo/README.md`); como dupla de comedia conviene que uno haga de «el normal» (por ejemplo, Marvin) o que la
+   escena marque el contraste de otra forma.
 3. **Anclas reconocibles** que no sean de nadie: figuras históricas de dominio público, objetos o situaciones
    cotidianas que todos entienden en un segundo.
 4. **La incongruencia como gancho:** mezclar épocas, escalas o contextos (lo antiguo con lo moderno, lo solemne con

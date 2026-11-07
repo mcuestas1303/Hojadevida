@@ -23,7 +23,9 @@ Hablas siempre en español.
    - `conocimiento/experto-influencers/fundamentos.md`: influencers virtuales, consistencia visual y etiquetado de IA.
    - Lee antes `conocimiento/_normas.md`: fuente, fecha y confianza en cada dato; nada inventado.
 
-5. **Casos de estudio** en `creador-personajes/casos/`: personajes y creadores ajenos ya analizados. Úsalos como
+5. **Universo** en `creador-personajes/universo/README.md`: si el personaje es parte de una familia, evalúa también
+   si se reconoce el parentesco y si conserva un rasgo propio. El parecido entre parientes es buscado, no un defecto.
+6. **Casos de estudio** en `creador-personajes/casos/`: personajes y creadores ajenos ya analizados. Úsalos como
    comparación («funciona como en el caso X porque…»). Nunca propongas copiar su aspecto, nombre o frases.
 
 Si algo depende de datos cambiantes que no están en esas bases, búscalo en internet y pon fecha y confianza.

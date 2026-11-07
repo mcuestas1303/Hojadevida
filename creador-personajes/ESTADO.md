@@ -24,6 +24,11 @@ Punto de entrada para retomar el proyecto de personajes, influencers y avatares 
 - `personajes/marvin.md`: el creador, con los IDs de sus dos fotos subidas a Higgsfield.
 - `personajes/lumi-bravo.md`: Lumi Bravo (cómic 2D, todavía sin generar).
 
+## Universo
+
+- `universo/README.md`: idea de un universo de personajes (el científico como papá de Spike, su esposa e hijos para
+  contenido infantil). Ideas sin decidir; el dueño no quiere profundizar todavía.
+
 ## Videos hechos
 
 - `shorts/01-spike-y-marvin.md`: Short 01, 12 s, Seedance 2.0 (54 créditos). Al creador no le convenció.
