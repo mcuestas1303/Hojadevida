@@ -70,3 +70,12 @@ otros usos. Cuánto cuesta entrenarlo: ver en la web.
 - [ ] La descripción dice: «Personajes virtuales creados con IA. Marvin está basado en el creador del canal.»
 - [ ] Solo se usan fotos tuyas como referencia.
 - [ ] Créditos: entra en el tope de 100 del primer Short solo si sobra; si no, va en el segundo.
+
+## Fotos de referencia en Higgsfield
+
+Las fotos no se guardan en este repositorio (es público). Están subidas a Higgsfield y se usan por su ID:
+
+| Foto | ID en Higgsfield | Uso |
+|---|---|---|
+| Cumbre del Volcán de Agua (selfie, bandana azul, chaqueta negra) | `0a3d1514-e763-4306-ac39-1c838e8ab434` | Short 01 |
+| De noche, camisa blanca, sonriendo (medio cuerpo) | `54f1444f-3e42-4360-bc1e-ac267ef33dc8` | Próximo video |
