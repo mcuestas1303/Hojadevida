@@ -4,6 +4,8 @@
   y con la marca «Created in Glorify Dev», que menciona a `@jean_philanthrope`. Perfil del creador indicado por el
   dueño: `instagram.com/jean_philanthope_` (no se pudo abrir: Instagram pide iniciar sesión).
 - **Fecha del análisis:** 2026-11-07.
+- **Actualización 2026-11-07 (2):** capturas de la búsqueda `#jeanphilanthrope` en Instagram (pestañas «Cuentas» y
+  «Para ti»). Ver «Lo que mostró la búsqueda».
 - **Confianza general:** media. Se basa en un solo reel visto en capturas, sin audio, sin métricas completas y sin
   el perfil. Al reel se le ven 83 me gusta, 18 envíos y 9 guardados en las capturas.
 
@@ -57,6 +59,46 @@ la seguridad ridícula del otro. Cierra con un remate físico: se van caminando 
 5. **Fondo limpio** y caras seriamente actuadas: el humor está en el gesto, no en el texto.
 6. **Serie, no video suelto:** el mismo personaje con distintos «invitados» crea expectativa.
 
+## Lo que mostró la búsqueda `#jeanphilanthrope`
+
+**Hechos (de las capturas):**
+- El resumen de Instagram describe a «Jean Phil» como **un influencer virtual francés que explotó el 17 de
+  septiembre** y que **en ocho días superó los 228.000 seguidores** gracias a su aspecto. Es un resumen automático de
+  la plataforma, no una cifra verificada: confianza media.
+- Hay **muchas cuentas alrededor del personaje** (más de diez en la búsqueda): variantes con su nombre, una versión
+  **perro** («PRINCE»), una **gato** («ALFRED»), una **enana** marcada como «Perfil generado con IA» y otras. No se sabe
+  cuál es la original.
+- Vistas de cuatro publicaciones del hashtag:
+
+| Publicación (lo que se ve) | Vistas |
+|---|---|
+| Baile en grupo, de noche en una azotea, varios personajes de traje apuntando al cielo | 1,8 millones |
+| Baile en un escenario de teatro con público alrededor | 1 millón |
+| Fiesta en un patio con DJ: un personaje de sombrero enorme parado frente al público, que lo graba | 173 mil |
+| Estudio blanco con Napoleón y la laptop (el reel que analizamos) | 7.064 |
+
+**Lo que se deduce (hipótesis):**
+1. **Lo que más funciona es el personaje en el mundo real, rodeado de gente que reacciona**, no en el estudio vacío.
+   Las escenas con público, baile y fiesta tienen entre 25 y 250 veces más vistas que la del estudio. El público
+   que graba con el celular funciona como **prueba social**: «esto está pasando y la gente se sorprende».
+2. **El baile y el movimiento en grupo** pesan más que la conversación: se entiende sin sonido ni idioma.
+3. **El personaje se volvió una plantilla:** la gente lo copia en perros, gatos y versiones enanas. Eso pasa cuando la
+   silueta icónica es tan fuerte que sobrevive al cambio de cuerpo y de especie. Es la señal más clara de un rasgo
+   icónico bien hecho.
+4. **El reel del estudio blanco es de una cuenta derivada** (otra cuenta hecha con IA), no del personaje original: por
+   eso rinde mucho menos. Copiar un formato ajeno no trae el público del original.
+5. Las escenas de teatro y fiesta con público real hacen pensar que **detrás podría haber un actor real con
+   caracterización**, con versiones de IA hechas por otros. Sin verificar.
+
+## Lecciones nuevas para nuestro universo
+
+- **Un rasgo icónico que se pueda heredar o trasladar:** si la corona de púas naranja neón de Spike se reconoce
+  también en un hijo, una mascota o una versión mini, el universo se arma solo (ver `universo/README.md`).
+- **Sacar a los personajes del estudio:** escenas en lugares reales (calle, fiesta, escenario) con gente que
+  reacciona. Con IA se puede generar el entorno y la reacción del público.
+- **Movimiento antes que diálogo:** baile, poses y gestos grandes, que se entienden sin audio.
+- **Originalidad propia:** el crecimiento lo tuvo el personaje original, no las copias.
+
 ## Lo que no se copia
 
 - El aspecto del personaje: su peinado, su bigote, su traje y la combinación de esos rasgos.
@@ -67,7 +109,8 @@ Se toman solo los principios de arriba, aplicados a personajes propios.
 
 ## Pendiente de verificar
 
-- Perfil completo: biografía, cantidad de seguidores, cada cuánto publica, qué formatos repite.
+- Cuál es la cuenta original y su cantidad real de seguidores (la cifra de 228.000 viene del resumen de Instagram).
+- Perfil completo: biografía, cada cuánto publica, qué formatos repite.
 - Publicaciones con más vistas y qué tienen en común.
 - Comentarios: qué destaca el público y en qué idioma comenta (confirma o descarta la hipótesis del público
   francófono).
