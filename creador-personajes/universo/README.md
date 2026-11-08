@@ -66,3 +66,9 @@
 
 - Confirmar relaciones (¿el científico es el papá?) y ponerles nombre al científico y al afro verde.
 - Decidir si es un solo universo o varios (multiverso) y cómo se cruzan.
+
+## Estilos del universo de los juguetes (decisión del dueño, 2026-11-08)
+
+- **3D juguete de vinilo:** estilo principal de Tiky y Lumi (animación y videos).
+- **2D plano con contorno grueso:** reservado para **libros para colorear**.
+- Versiones aprobadas e IDs en `afinado/pollito.md` y `afinado/vaca.md`.

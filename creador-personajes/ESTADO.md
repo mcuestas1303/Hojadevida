@@ -44,6 +44,11 @@ Punto de entrada para retomar el proyecto de personajes, influencers y avatares 
 - `universo/README.md`: idea de un universo de personajes (el científico como papá de Spike, su esposa e hijos para
   contenido infantil). Ideas sin decidir; el dueño no quiere profundizar todavía.
 
+## Contenido infantil
+
+- **Tiky** (pollito) y **Lumi** (vaca, nombre provisional): versiones 3D (principal) y 2D (libros para colorear)
+  aprobadas el 2026-11-08. IDs en `personajes/reserva.md`.
+
 ## Videos hechos
 
 - `shorts/01-spike-y-marvin.md`: Short 01, 12 s, Seedance 2.0 (54 créditos). Al creador no le convenció.

@@ -164,3 +164,15 @@ Modern 3D cartoon render of two soft matte vinyl toy figures, children's animati
 - **Lectura de Claude:** el hocico y las pezuñas lila la distinguen; el crayón se ve claro en 2D y casi se pierde en
   3D (queda entre el pelo, como un adorno); la pose de pensar funciona en las cuatro.
 - **Veredicto del dueño:** pendiente.
+
+### Decisión del dueño · 2026-11-08
+> Textual: *«1 ambos los vamos a dejar guardados el 3 de lumi y el 6 se quedan el estilo 2D lo vamos a guardar para crear libros para colorear»*.
+
+- Se guardan **los dos estilos**: **3D** (juguete de vinilo) como estilo principal del personaje y **2D** reservado
+  para **libros para colorear** (interpretación: el 3D va para animación y videos).
+- **Versiones aprobadas de Lumi:** imagen 3 · 3D **con crayón** `aea1a3a4-5067-48ed-beb3-226b70e1ff8f` (principal) ·
+  imagen 6 · 2D **sin crayón** `8c0f3cd5-9744-439e-9a2e-3019018ce0f3` (libros para colorear).
+  - https://d8j0ntlcm91z4.cloudfront.net/user_3LlcuIPP93iL5POcgff4YV7CVCd/hf_20261108_234246_aea1a3a4-5067-48ed-beb3-226b70e1ff8f.png
+  - https://d8j0ntlcm91z4.cloudfront.net/user_3LlcuIPP93iL5POcgff4YV7CVCd/hf_20261108_234247_8c0f3cd5-9744-439e-9a2e-3019018ce0f3.png
+- Pendiente: el crayón está en el 3D y no en el 2D; confirmar si Lumi lleva crayón en los libros para colorear.
+- Nombre «Lumi» provisional (choca con Lumi Bravo).

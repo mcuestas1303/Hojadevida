@@ -159,3 +159,13 @@ Modern 2D flat cartoon illustration for children, clean vector shapes, smooth th
 - **Lectura de Claude:** el copete salió de 3 plumas, pero más cerca del rojo anaranjado que del naranja neón y con
   forma de cresta de gallo; el 2D se lee más limpio en pequeño.
 - **Veredicto del dueño:** pendiente.
+
+### Decisión del dueño · 2026-11-08
+> Textual: *«1 ambos los vamos a dejar guardados el 3 de lumi y el 6 se quedan el estilo 2D lo vamos a guardar para crear libros para colorear»*.
+
+- Se guardan **los dos estilos**: **3D** (juguete de vinilo) como estilo principal del personaje y **2D** reservado
+  para **libros para colorear** (interpretación: el 3D va para animación y videos).
+- **Versiones aprobadas de Tiky:** 3D `6cff1fa4-a734-402c-9384-7a76c5ee6bd3` (principal) · 2D `057e1899-d205-42f8-9fa9-e760f663407c` (libros para colorear).
+  - https://d8j0ntlcm91z4.cloudfront.net/user_3LlcuIPP93iL5POcgff4YV7CVCd/hf_20261108_234214_6cff1fa4-a734-402c-9384-7a76c5ee6bd3.png
+  - https://d8j0ntlcm91z4.cloudfront.net/user_3LlcuIPP93iL5POcgff4YV7CVCd/hf_20261108_234247_057e1899-d205-42f8-9fa9-e760f663407c.png
+- Pendiente: si el copete pasa a naranja neón visible (hoy salió rojo anaranjado tipo cresta).

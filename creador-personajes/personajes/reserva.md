@@ -19,6 +19,17 @@
 Realistic photo of an original, wildly exaggerated eccentric character named Spike, larger-than-life comedic caricature proportions: absurdly tall and stick-thin with extra-long arms, his signature hair is a giant crown of rigid punk liberty spikes, about a dozen spikes each as long as his forearm, entirely glowing NEON ORANGE, fluorescent safety-orange, ultra saturated, perfectly stiff and glossy. Bright green expressive eyes, thick bleached eyebrows, a wide cheeky full-toothed grin, chewing bubblegum. Oversized shiny purple velvet tracksuit with enormous padded shoulders, a fluffy neon-yellow feather boa, chunky rings on every finger, huge white platform sneakers, dramatic rock-star pose. Seamless white infinity studio, soft even light, full body, vertical 9:16.
 ```
 
+## Universo de los juguetes (contenido infantil)
+
+| Personaje | Estilo | ID en Higgsfield | Uso |
+|---|---|---|---|
+| Tiky (pollito) | 3D | `6cff1fa4-a734-402c-9384-7a76c5ee6bd3` | principal |
+| Tiky (pollito) | 2D | `057e1899-d205-42f8-9fa9-e760f663407c` | libros para colorear |
+| Lumi (vaca, nombre provisional) | 3D con crayón | `aea1a3a4-5067-48ed-beb3-226b70e1ff8f` | principal |
+| Lumi (vaca, nombre provisional) | 2D sin crayón | `8c0f3cd5-9744-439e-9a2e-3019018ce0f3` | libros para colorear |
+
+Detalle y prompts en `afinado/pollito.md` y `afinado/vaca.md`.
+
 ## En reserva (para más adelante)
 
 ### El científico (nombre por definir)
