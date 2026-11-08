@@ -1,4 +1,4 @@
-# Pollito (nombre provisional) · bitácora de afinado
+# Tiky (el pollito) · bitácora de afinado
 
 ## Idea del personaje
 Pollito para contenido infantil: curioso, ocurrente, con muchas ganas de aprender. Es un explorador por su actitud, no
@@ -12,30 +12,34 @@ parece a Spike: es una «proyección del papá». Va siempre adelante y la vaca 
 - Amarillo: «el color seria amarillo».
 - Curioso, ocurrente, con ganas de aprender, explorador sin traje de explorador: «no necesariamente que tenga vestimenta de explorador».
 - Hijo de Spike en el sentido de juguete o proyección: «es una proyección del papá».
+- Que conserve el copete, pero más disimulado (2026-11-08): «que tenga el copete pero mas discipulado». **Interpretación:** «discipulado» quiere decir «disimulado», es decir, más chico y menos llamativo.
 
-**Nombres propuestos** (sin decidir; no se comprobó que estén libres en registros de marca ni en redes):
-1. **Chispi**: de «chispa» (ocurrente), y suena a «Spi-ke». Es el nombre provisional de los prompts.
-2. **Lupi**: de «lupa» (curioso).
-3. **Tiki**: corto, con sonido de pollito, fácil de decir para un niño.
+**Nombre:** **Tiky**, elegido por el dueño el 2026-11-08 («tiky y lumi me gusta»). No se comprobó que esté libre en
+registros de marca ni en redes. Los otros que se propusieron fueron Chispi y Lupi.
 
 ## Fijado 🔒
-Nada todavía (v1 sin generar).
+Nada todavía: falta una imagen que le guste. Ya está decidido que **tiene copete** («que tenga el copete»), pero su
+redacción todavía está en prueba.
 
 ## En prueba 🧪
-- **Estilo común con la vaca:** figura de juguete de vinilo suave y mate en 3D, con formas simples y colores limpios (variante A). La variante B es una caricatura 2D plana.
+- **Estilo común con la vaca:** se prueban los dos, porque el dueño dijo «probemos los dos». A es una figura de juguete de vinilo suave y mate en 3D; B es una caricatura 2D plana con contorno.
 - **Silueta:** un huevo vertical, sin cuello, más ancho abajo, con alas y patas cortitas.
-- **Rasgo icónico (la seña de la familia Spike):** un copete de 5 púas de pluma, suaves y redondeadas, en el mismo naranja neón de Spike (`fluorescent safety-orange`), blando como las púas de goma de un juguete. Es tierno, nada punk.
-- **Segunda seña de la familia:** ojos verdes brillantes, como los de Spike.
+- **Rasgo icónico (la seña de la familia Spike):** desde la v2, un copete **chico y discreto** de 3 plumas cortas, gruesas y redondeadas en forma de llama, de no más de un cuarto de la altura de la cabeza. Mantiene el naranja neón de Spike (`fluorescent safety-orange`), pero sin «glowing» ni «ultra saturated».
+- **Ojos:** desde la v2, oscuros y normales (marrón oscuro con brillo). **Interpretación:** el dueño no contestó lo de los ojos verdes, así que se toma que con el copete basta como seña de familia.
+- **Cara:** desde la v2, sin ceja, con los ojos muy abiertos y el pico bien abierto en una sonrisa de asombro.
 - **Paleta:** amarillo girasol cálido, panza crema mantequilla, pico y patas coral durazno (no el naranja típico), mejillas rosadas.
 - **Actitud:** en puntas de pie, inclinado hacia adelante, con la cabeza ladeada y un ala levantada, como si acabara de tener una pregunta.
 
-**Para que sea original:** no se parece a los pollitos famosos de la animación infantil latina. Es un juguete de vinilo
-y no un pollito de granja. Lleva el copete de púas naranja neón y ojos verdes, y su pico y sus patas son coral en vez
-de naranja. La escena es un cuarto de juegos a escala de juguete, sin granja ni granero.
+**Para que sea original:** no se parece a los pollitos famosos de la animación infantil latina. Es un juguete y no un
+pollito de granja. El copete es de 3 llamas gruesas (no plumitas finas paradas) y no tiene ceja levantada, para
+alejarlo de los pájaros famosos con forma de huevo. El pico y las patas son coral en vez de naranja, y la escena es un
+cuarto de juegos a escala de juguete, sin granja ni granero.
 
 ## No va 🚫
 - Ropa de explorador como rasgo obligatorio (sombrero, chaleco, lupa colgada): 2026-11-08, «no necesariamente que tenga vestimenta de explorador».
 - Que se vea punk o adulto: pedido de la sesión principal (no es frase del dueño), 2026-11-08.
+- Copete grande y llamativo (5 púas de media cabeza de alto, «glowing», «ultra saturated»): 2026-11-08, «que tenga el copete pero mas discipulado».
+- Declarar en la descripción del canal que los personajes se hacen con IA (lo sugirió el revisor): 2026-11-08, «lo de IA no hay q decirlo porq el contenido se va a producir de forma revisada no sólo se va a generar». Ver `../universo/README.md`.
 
 ## Mejor versión hasta ahora
 Ninguna todavía.
@@ -116,3 +120,34 @@ hecho con IA.
 **A o B:** B (2D plano con contorno) se lee mejor en pequeño, sale más parecido de una generación a otra y no se
 confunde con el 3D genérico de IA. A va mejor con la idea del juguete. Hay que probar las dos con el boceto gratis.
 Mi apuesta para Shorts infantiles es B.
+
+**Qué decidió el dueño sobre esta revisión** (2026-11-08, «Si a los cambios del revisor […]»):
+- Cambio 1, 3 púas gruesas en forma de llama y sin ceja: **aceptado**, y además con el copete más discreto («mas discipulado»).
+- Cambio 2, pico bien abierto en sonrisa de asombro y ojos muy abiertos: **aceptado**.
+- Cambio 3, quitar el nombre y «character sheet» y pedir «single full-body pose»: **aceptado**.
+- Declarar la IA en la descripción del canal: **rechazado** (está en «No va»).
+- A o B: el dueño quiere **probar los dos**.
+
+### v2 · 2026-11-08
+- **Comentario del dueño:** «1 probemos los dos, 2 mayormente blanca, que tenga el copete pero mas discipulado, 4. Si a los cambios del revisor la bombilla en la cabeza de la vaca no, tiky y lumi me gusta lo de IA no hay q decirlo porq el contenido se va a producir de forma revisada no sólo se va a generar»
+- **Cambios:**
+  - Copete: de 5 púas de media cabeza, brillantes, a 3 llamas gruesas y redondeadas de un cuarto de cabeza, sin brillo extra («mas discipulado», leído como «disimulado»). Viene del dueño y del revisor (cambio 1).
+  - Ceja: se quita. Viene del revisor (cambio 1).
+  - Ojos: de verdes a marrón oscuro. Es una interpretación, porque el dueño no contestó.
+  - Pico: de un «ooh» chico a bien abierto en una sonrisa de asombro, con los ojos muy abiertos. Viene del revisor (cambio 2).
+  - Se quitan «named Chispi» y «character sheet», y se pide «single full-body pose». Viene del revisor (cambio 3).
+  - Se escribe la variante B completa.
+- **Escalón:** 1 (boceto, gratis) → 3 (imagen oficial en la web con un modelo ilimitado) · **Modelo:** web, uno marcado «Unlimited» (preferido: Nano Banana) · **Créditos:** 0 · **Referencia:** ninguna · **ID resultado:** pendiente · **Semilla Colab:** pendiente · **Veredicto:** pendiente
+- **Prompt v2 · A (juguete 3D):**
+
+```
+Modern 3D cartoon render of a soft matte vinyl toy figure, children's animation style, simple rounded shapes, clean bright colors. An original, adorable baby chick, small, curious and witty, shaped like a smooth upright egg: one egg-shaped body with no neck, wider at the bottom, tiny stubby wings and short stubby legs. His signature feature is a small, discreet tuft of three short, thick, rounded flame-shaped feathers on the very top of his head, each no taller than a quarter of his head, in neon orange, fluorescent safety-orange, soft like a rubber toy. Body in warm sunflower yellow with a pale butter-cream belly. Big wide-open round dark-brown eyes with a white sparkle, a small rounded coral-peach beak wide open in a big amazed smile, soft rosy cheeks. Small coral-peach feet with three round toes. Leaning forward on tiptoe, head tilted, one wing raised high as if he just thought of a question. Plain pastel sky-blue seamless background, soft even studio light, soft shadow under his feet, single full-body pose, centered, vertical 9:16.
+```
+
+- **Prompt v2 · B (2D plano).** Solo cambian el estilo de render y las palabras de material y luz:
+
+```
+Modern 2D flat cartoon illustration for children, clean vector shapes, smooth thick dark outlines, flat clean bright colors with simple soft shading. An original, adorable baby chick, small, curious and witty, shaped like a smooth upright egg: one egg-shaped body with no neck, wider at the bottom, tiny stubby wings and short stubby legs. His signature feature is a small, discreet tuft of three short, thick, rounded flame-shaped feathers on the very top of his head, each no taller than a quarter of his head, in neon orange, fluorescent safety-orange, soft and rounded. Body in warm sunflower yellow with a pale butter-cream belly. Big wide-open round dark-brown eyes with a white sparkle, a small rounded coral-peach beak wide open in a big amazed smile, soft rosy cheeks. Small coral-peach feet with three round toes. Leaning forward on tiptoe, head tilted, one wing raised high as if he just thought of a question. Plain pastel sky-blue background, simple flat shadow under his feet, single full-body pose, centered, vertical 9:16.
+```
+
+- **Prompt de los dos juntos, v2:** está en `vaca.md`, v2.
