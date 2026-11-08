@@ -156,3 +156,11 @@ Modern 3D cartoon render of two soft matte vinyl toy figures, children's animati
 ```
 
 - **Escena · B (2D):** el mismo prompt, cambiando solo la primera frase por `Modern 2D flat cartoon illustration for children, clean vector shapes, smooth thick dark outlines, flat clean bright colors with simple soft shading.`. Si gana la opción 2, se borra «and a short chunky lilac crayon tucked behind her ear» y se cambia «taking the crayon from behind her ear» por «tapping her chin with one hoof».
+
+### Resultado v2 · 2026-11-08 (generado por la conexión de Claude, a pedido del dueño)
+- **Modelo:** Nano Banana 2 (servido como `nano_banana_flash`), 9:16 · **Créditos:** 1,5 c/u
+- **3D con crayón:** `aea1a3a4-5067-48ed-beb3-226b70e1ff8f` · **2D con crayón:** `c8b96b69-20fd-465d-8a4e-0244a0f3a5df`
+- **3D sin crayón:** `4a5f5797-7463-400c-a7d0-17f9b52e9cfd` · **2D sin crayón:** `8c0f3cd5-9744-439e-9a2e-3019018ce0f3`
+- **Lectura de Claude:** el hocico y las pezuñas lila la distinguen; el crayón se ve claro en 2D y casi se pierde en
+  3D (queda entre el pelo, como un adorno); la pose de pensar funciona en las cuatro.
+- **Veredicto del dueño:** pendiente.

@@ -151,3 +151,11 @@ Modern 2D flat cartoon illustration for children, clean vector shapes, smooth th
 ```
 
 - **Prompt de los dos juntos, v2:** está en `vaca.md`, v2.
+
+### Resultado v2 · 2026-11-08 (generado por la conexión de Claude, a pedido del dueño)
+- **Modelo:** Nano Banana 2 (Higgsfield lo sirvió como `nano_banana_flash`), 9:16 · **Créditos:** 1,5 c/u
+- Nano Banana básico falló 6 veces sin cobrar; se cambió a Nano Banana 2.
+- **3D:** `6cff1fa4-a734-402c-9384-7a76c5ee6bd3` · **2D:** `057e1899-d205-42f8-9fa9-e760f663407c`
+- **Lectura de Claude:** el copete salió de 3 plumas, pero más cerca del rojo anaranjado que del naranja neón y con
+  forma de cresta de gallo; el 2D se lee más limpio en pequeño.
+- **Veredicto del dueño:** pendiente.
