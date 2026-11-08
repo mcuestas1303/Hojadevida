@@ -168,4 +168,5 @@ Modern 2D flat cartoon illustration for children, clean vector shapes, smooth th
 - **Versiones aprobadas de Tiky:** 3D `6cff1fa4-a734-402c-9384-7a76c5ee6bd3` (principal) · 2D `057e1899-d205-42f8-9fa9-e760f663407c` (libros para colorear).
   - https://d8j0ntlcm91z4.cloudfront.net/user_3LlcuIPP93iL5POcgff4YV7CVCd/hf_20261108_234214_6cff1fa4-a734-402c-9384-7a76c5ee6bd3.png
   - https://d8j0ntlcm91z4.cloudfront.net/user_3LlcuIPP93iL5POcgff4YV7CVCd/hf_20261108_234247_057e1899-d205-42f8-9fa9-e760f663407c.png
-- Pendiente: si el copete pasa a naranja neón visible (hoy salió rojo anaranjado tipo cresta).
+- **El copete se queda como salió** (dueño, 2026-11-08, textual: *«el copete de tiki que se quede asi»*): 3 plumas
+  rojo anaranjado, discretas. Fijado 🔒 desde v2.

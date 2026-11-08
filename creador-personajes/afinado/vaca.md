@@ -174,5 +174,7 @@ Modern 3D cartoon render of two soft matte vinyl toy figures, children's animati
   imagen 6 · 2D **sin crayón** `8c0f3cd5-9744-439e-9a2e-3019018ce0f3` (libros para colorear).
   - https://d8j0ntlcm91z4.cloudfront.net/user_3LlcuIPP93iL5POcgff4YV7CVCd/hf_20261108_234246_aea1a3a4-5067-48ed-beb3-226b70e1ff8f.png
   - https://d8j0ntlcm91z4.cloudfront.net/user_3LlcuIPP93iL5POcgff4YV7CVCd/hf_20261108_234247_8c0f3cd5-9744-439e-9a2e-3019018ce0f3.png
-- Pendiente: el crayón está en el 3D y no en el 2D; confirmar si Lumi lleva crayón en los libros para colorear.
+- **Lumi va sin crayón** (dueño, 2026-11-08, textual: *«lumi sin crayon»*). El crayón pasa a «No va».
+  La imagen 3 (3D) tiene crayón: para usarla como referencia 3D sin crayón, la opción es la imagen 5
+  (3D sin crayón, `4a5f5797-7463-400c-a7d0-17f9b52e9cfd`) o regenerar la 3 sin crayón. Pendiente de confirmar.
 - Nombre «Lumi» provisional (choca con Lumi Bravo).

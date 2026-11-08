@@ -25,7 +25,8 @@ Realistic photo of an original, wildly exaggerated eccentric character named Spi
 |---|---|---|---|
 | Tiky (pollito) | 3D | `6cff1fa4-a734-402c-9384-7a76c5ee6bd3` | principal |
 | Tiky (pollito) | 2D | `057e1899-d205-42f8-9fa9-e760f663407c` | libros para colorear |
-| Lumi (vaca, nombre provisional) | 3D con crayón | `aea1a3a4-5067-48ed-beb3-226b70e1ff8f` | principal |
+| Lumi (vaca, nombre provisional) | 3D (imagen 3; lleva crayón, que ya no va) | `aea1a3a4-5067-48ed-beb3-226b70e1ff8f` | principal, pendiente de confirmar |
+| Lumi (vaca, nombre provisional) | 3D sin crayón (imagen 5) | `4a5f5797-7463-400c-a7d0-17f9b52e9cfd` | alternativa principal |
 | Lumi (vaca, nombre provisional) | 2D sin crayón | `8c0f3cd5-9744-439e-9a2e-3019018ce0f3` | libros para colorear |
 
 Detalle y prompts en `afinado/pollito.md` y `afinado/vaca.md`.
