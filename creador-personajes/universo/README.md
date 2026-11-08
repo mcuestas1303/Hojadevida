@@ -18,6 +18,8 @@
 | Marvin | el creador | aparece como él mismo («el normal» de las duplas) |
 | Esposa de Spike | idea | sin crear |
 | Hijos de Spike | idea, para contenido infantil | sin crear |
+| Pollito (provisional: Chispi, Lupi o Tiki) | **idea sin decidir**; prompt v1, sin generar (`afinado/pollito.md`) | universo alterno: ¿juguete de Spike, su «proyección»? |
+| Vaca (provisional: Clarita, Muna o Luci) | **idea sin decidir**; prompt v1, sin generar (`afinado/vaca.md`) | universo alterno: ¿juguete de Spike? Sigue al pollito y le da buenas ideas |
 
 ## Reglas que ya aplican (para que el universo se sostenga)
 
@@ -33,6 +35,18 @@
 - En YouTube va marcado como **«hecho para niños»** (ley COPPA): sin anuncios personalizados y sin comentarios.
 - Probablemente convenga otra estética para los hijos (más suave, en cómic o 3D), sin perder el rasgo de familia.
 - El tono de Spike en ese contenido tendría que adaptarse al público infantil.
+
+## Universo alterno de los juguetes de Spike (idea sin decidir, 2026-11-08)
+
+> Textual del dueño: *«estos se me ocurren que sea como un universo alterno estos podrian haber sido algunos de los
+> juguetes de spike y por eso el pollito es asi porq es una proyección del papá»*.
+
+- Contenido infantil en caricatura moderna, con cuerpos ovalados de juguete. Los personajes son el pollito y la vaca.
+- **Suposición del afinador (por confirmar):** el pollito hereda la seña de familia (el naranja neón, en forma de
+  copete de plumas en púas suaves) y también los ojos verdes de Spike. La vaca no es pariente: comparte con Spike el
+  lila del hocico, en eco de su chándal morado. Cada uno mantiene su propio rasgo icónico: el copete en el pollito y la
+  mancha en forma de bombilla en la vaca.
+- No se decidió si este universo alterno se relaciona con los «hijos de Spike» de la tabla, ni cómo.
 
 ## Pendiente
 
