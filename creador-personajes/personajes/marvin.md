@@ -94,3 +94,11 @@ volcán), luz pareja de estudio, sin ceño fruncido. Nano Banana 2, 3:4, 1,5 cr�
 | B · sonrisa cerrada | `deb79874-05f4-48f1-af29-91871b4e58da` | **elegido (dueño, 2026-11-09: «2»)** · referencia oficial de rostro |
 
 El elegido pasa a ser la **referencia oficial de rostro** para «M» y cualquier personaje basado en Marvin.
+
+### Retrato oficial con más barba (2026-11-09)
+> Dueño, textual: *«lo único con el retrato 2 es la barba la necesito mas grande»*.
+
+| Retrato | ID en Higgsfield | Estado |
+|---|---|---|
+| B + barba 3-4 cm | `f79b894c-ca83-4691-9a33-afa5d301cb52` | pendiente de elegir |
+| B + barba 5-6 cm | `ebb716b5-2ed1-498c-9d44-38883c291455` | pendiente de elegir |

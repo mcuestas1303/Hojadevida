@@ -297,3 +297,12 @@ freno de pérdidas: no se insiste y se vuelve al prompt.
   casco ya lleva la franja con el mismo estampado. Look 2: se ve el tatuaje del antebrazo y un tatuaje chico en el
   cuello; los piercings son tan discretos que casi no se ven; el casco lleva las curvas de nivel.
 - **Veredicto del dueño:** pendiente.
+
+### Decisión del dueño · 2026-11-09 (vuelta 3)
+> Textual: *«Ambos se quedan lo único con el retrato 2 es la barba la necesito mas grande, el tatuaje del cuello retiralo te apruebo y lo que queda a continuación es que logres que independientemente de donde metamos esa imagen siempre, pero siempre se mantengan todos los rasgos de la cara y en el caso del retrato dos igual pero inlcuyendo los demas distintivos de ese personaje lo cual son los tatuajes, los tatuajes quedan en los pendientes despues vamos a trabajar eso al igual que las demas vestimentas»*
+
+- **Los dos looks quedan aprobados** (look 1 `dac065d4-…` y look 2 `3c745e78-…`).
+- **Barba más grande** en el retrato oficial (en curso).
+- **Tatuaje del cuello: fuera.** Queda solo el del antebrazo (`No va`: tatuaje en el cuello).
+- **Siguiente objetivo: consistencia total** de la cara (y, en el look 2, de sus distintivos) en cualquier escena.
+- **Pendientes:** diseño final de los tatuajes y de las demás vestimentas.
