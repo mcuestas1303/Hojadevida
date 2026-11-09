@@ -287,3 +287,13 @@ freno de pérdidas: no se insiste y se vuelve al prompt.
   leen mejor; en el 1 · A cuelgan. En el look 2 no se ven los tatuajes (el cuello y los antebrazos quedan tapados o
   limpios) ni los piercings: la seña del look 2 todavía no se lee. La banda pintada del casco no salió en ninguna.
 - **Veredicto del dueño:** pendiente.
+
+### Resultado v3 · ficha base con el retrato oficial · 2026-11-09
+- **Referencia de rostro:** retrato oficial B `deb79874-05f4-48f1-af29-91871b4e58da` (elegido por el dueño).
+- **Modelo:** Nano Banana 2 (servido como `nano_banana_flash`), 9:16 · **Créditos:** 1,5 c/u, 3 en total.
+- **Look 1 · bandana:** `dac065d4-33ee-4b14-b650-7bcec3c971f2`
+- **Look 2 · calvo:** `3c745e78-3f22-46c5-8ff8-2e376beca103`
+- **Lectura de Claude:** sin el ceño fruncido; la cara sale relajada. Look 1: las dos colas de la bandana ondean y el
+  casco ya lleva la franja con el mismo estampado. Look 2: se ve el tatuaje del antebrazo y un tatuaje chico en el
+  cuello; los piercings son tan discretos que casi no se ven; el casco lleva las curvas de nivel.
+- **Veredicto del dueño:** pendiente.

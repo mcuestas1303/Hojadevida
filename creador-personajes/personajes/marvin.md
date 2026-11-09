@@ -90,7 +90,7 @@ volcán), luz pareja de estudio, sin ceño fruncido. Nano Banana 2, 3:4, 1,5 cr�
 
 | Retrato | ID en Higgsfield | Estado |
 |---|---|---|
-| A · sonrisa amplia | `734e2712-747e-4bcf-96c4-7fc7aac31ec1` | pendiente de elegir |
-| B · sonrisa cerrada | `deb79874-05f4-48f1-af29-91871b4e58da` | pendiente de elegir |
+| A · sonrisa amplia | `734e2712-747e-4bcf-96c4-7fc7aac31ec1` | descartado |
+| B · sonrisa cerrada | `deb79874-05f4-48f1-af29-91871b4e58da` | **elegido (dueño, 2026-11-09: «2»)** · referencia oficial de rostro |
 
 El elegido pasa a ser la **referencia oficial de rostro** para «M» y cualquier personaje basado en Marvin.
