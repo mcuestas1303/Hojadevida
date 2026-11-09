@@ -1,4 +1,4 @@
-# Dónde quedamos (2026-11-07)
+# Dónde quedamos (actualizado 2026-11-09)
 
 Punto de entrada para retomar el proyecto de personajes, influencers y avatares con IA.
 
@@ -62,7 +62,30 @@ Punto de entrada para retomar el proyecto de personajes, influencers y avatares 
 - Los personajes son originales: Spike no copia rasgos de personajes existentes.
 - La música la pone el creador; los videos se generan sin audio.
 
+## Última sesión (2026-11-09)
+
+- **Tiky y Lumi** (contenido infantil): aprobados en 3D (principal) y 2D (libros para colorear). Lumi: la 3D con
+  crayón y la 2D sin crayón. Nombre «Lumi» provisional (choca con Lumi Bravo).
+- **«M»** (Marvin como héroe de acción, solo adultos): estilo cinematográfico realista, dos looks aprobados
+  (`dac065d4-…` con bandana, `3c745e78-…` calvo). Arsenal en su perfil, escena propia cuando convenga. Faceta de papá
+  pendiente. Detalle en `afinado/marvin-figura.md`.
+- **Rostro oficial de Marvin:** retrato B `deb79874-05f4-48f1-af29-91871b4e58da` (look con pelo).
+  Look calvo: barba de 5-6 cm recién arreglada; retrato por elegir entre `b5f6dc8c-…` (A) y `bc973d9b-…` (B).
+  Ver `personajes/marvin.md`.
+- **Generación:** el dueño pidió que Claude genere por la conexión (MCP) cuando se lo pide; se cotiza y se avisa el
+  costo. Modelo habitual: Nano Banana 2 (1,5 créditos por imagen; el básico falló). Saldo ≈ 888 créditos.
+
 ## Pendiente
+
+**Próximo paso con «M»:**
+1. El dueño elige el retrato del look calvo (A o B).
+2. Regenerar el look 2 de cuerpo entero con esa cara, tatuaje del antebrazo y **sin** tatuaje en el cuello (≈1,5).
+3. Crear tres **Elementos** de Higgsfield (personajes guardados): rostro de Marvin, «M» look 1 y «M» look 2, y
+   usarlos con `<<<id>>>` en los prompts para mantener la cara y los distintivos en cualquier escena.
+4. Prueba de consistencia en 2-3 escenas (≈4-5 créditos). Si no alcanza: Soul ID con 5-20 fotos reales.
+5. Más adelante: tatuajes definitivos, vestimentas y las facetas (deportes, emprendedor, arsenal, papá).
+
+**Otros:**
 
 1. Que el creador grabe su clip si quiere una réplica del trend con transferencia de movimiento.
 2. Corregir el fondo de la parte 2 del Short 02, si se regenera.
