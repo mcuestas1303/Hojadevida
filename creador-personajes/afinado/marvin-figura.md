@@ -88,19 +88,28 @@ seña, una paleta propia (negro, rojo y turquesa, sacada de su ropa) y un emblem
 placas de identificación, cicatrices, empaque tipo blíster ni marcas en el equipo.
 
 ## Fijado 🔒
-Nada fijado todavía. Rasgos que vienen fijados del personaje Marvin (`personajes/marvin.md`) y se respetan:
-- `dark messy windswept hair` · `short dark beard and mustache` · `warm brown eyes` · `wide slightly crooked friendly smile` · `blue patterned tube headband worn on the forehead` — rasgos reales del dueño (foto del volcán)
+- `Cinematic realistic full-body photo, real person, real fabrics and materials, film-grade lighting.` — desde v2, «2. B»
+- Rostro: `with the exact face of the man in reference image 1` · `warm brown eyes` · `warm tan skin` — rasgos reales del dueño (foto del volcán), en los dos looks
+- Del look 1, que viene del personaje Marvin (`personajes/marvin.md`): `dark messy windswept hair` · `short dark beard and mustache` · `wide slightly crooked friendly smile` · `blue patterned tube headband worn on the forehead`
 
 ## En prueba 🧪
-- **Estilo:** A, figura coleccionable de plástico fotografiada, con articulaciones visibles (recomendado), o B, foto
-  cinematográfica realista de él en acción.
-- **Rasgo icónico:** bandana con dos colas largas que ondean (su bandana real es tubular y no tiene colas).
-- **Kit:** traje negro mate con vivos rojos, puntos de anclaje turquesa y emblema de volcán.
-- **Nombre:** Marvin Reto / Marvin Ráfaga / Marvin Cumbre.
+- **Look (variante A/B de un solo eje, v2):**
+  - **Look 1 (propuesta):** su look real con la bandana de dos colas. Dueño: «3. ponelo como propuesta».
+  - **Look 2:** calvo, con barba, piercings y tatuajes propios. Dueño: «la otra seria sin calvo con barba y persing y
+    tatuajes». **Interpretación de la sesión principal y del afinador:** «sin calvo» se lee como «sí, calvo», y el look 2
+    va sin bandana: su rasgo icónico son los tatuajes. Por confirmar.
+- **Kit v2:** anclajes negros, emblema chico, bandana o curvas de nivel pintadas en el casco.
+- **Arsenal:** estuche y armas en negro y rojo con el volcán grabado; puntería como gag.
+- **Nombre:** Basalto / Pulso / Sereno / Brasa / Cuestas.
 
 ## No va 🚫
 - Nombres, logos, empaques, cicatrices o uniformes característicos de líneas de figuras existentes; marcas reales de
   motos, bicis, cascos o bebidas — 2026-11-09, pedido de la sesión principal (regla del proyecto: personaje original)
+- Estilo A, figura de plástico articulada (por ahora) — 2026-11-09, «2. B»
+- Nombres Marvin Reto, Marvin Ráfaga, Marvin Cumbre — 2026-11-09, «1. Seguimos buscando»
+- Cualquier elemento de un personaje de cine (en especial del citado «tipo jonh wick»): traje negro de tres piezas como
+  seña, perro, nombres, lugares, escenas, monedas o frases — 2026-11-09, regla del proyecto: se toma solo el espíritu
+- Violencia gráfica, víctimas, armas apuntando a personas, retar al espectador — 2026-11-09, reglas de seguridad aceptadas por el dueño
 
 ## Mejor versión hasta ahora
 Ninguna todavía.
@@ -194,3 +203,68 @@ expresividad 4 · encaje con el perfil 3 (no se ven el humor ni el gag del empre
 **Estilo:** A. Es honesto (nadie cree que el dueño hizo el wingsuit), se repite mejor, el plástico disimula los
 defectos de la IA y la incongruencia de juguete es el gancho. B queda solo para las metas que el dueño ya cumplió, o
 con una etiqueta visible.
+
+**Decisión del dueño sobre la revisión (2026-11-09):** aceptó los cambios 1, 2 y 3. En el estilo eligió **B** en lugar
+del A que recomendaba el revisor («2. B»), así que la etiqueta de IA visible pasa a ser obligatoria.
+
+### v2 · 2026-11-09
+- **Comentarios del dueño:** «quiero que sea alguien que le gusten las armas y las sepa usar mas que bien, tipo jonh
+  wick» · «1. Seguimos buscando, 2. B, 3. ponelo como propuesta, la otra seria sin calvo con barba y persing y
+  tatuajes, 4. si me parece, arsenal completo lo vamos a dejar como parte del perfil el personaje y lo usamos cuando
+  sea oportuno».
+- **Cambios:**
+  1. El estilo pasa a B, cinematográfico realista (fijado).
+  2. Look en variante A/B de un solo eje: look 1 (bandana con colas) y look 2 (calvo, barba, piercings y tatuajes).
+  3. Kit con un solo rasgo icónico: anclajes negros, emblema del tamaño de una moneda, banda pintada en el casco (del revisor).
+  4. Seguridad, etiqueta de IA y gag de incongruencia en cada escena (del revisor).
+  5. Arsenal como parte del perfil, con escena propia y opcional.
+  6. Los prompts dicen «Marvin» mientras no haya nombre.
+- **Vinieron del revisor de atención (aceptados):** gag de incongruencia y lugares reales; un solo rasgo icónico;
+  seguridad y etiqueta de IA.
+- **Escalón:** 0 (idea y prompt) · **Modelo sugerido:** uno marcado «Unlimited» en la web (Nano Banana) · **Créditos:** 0 · **Referencia:** `0a3d1514-e763-4306-ac39-1c838e8ab434` · **ID resultado:** — · **Veredicto:** pendiente
+
+**Prompt v2 · ficha base · look 1 (propuesta: su look real con la bandana)**
+
+```
+Cinematic realistic full-body photo, real person, real fabrics and materials, film-grade lighting. An original heroic action character named Marvin, with the exact face of the man in reference image 1, a man in his early thirties with an athletic, lean, slim-to-medium build. His signature is a blue patterned tube headband worn on the forehead, cobalt blue with turquoise swirls, tied at the back with two long tails, each as long as his forearm, fluttering behind his head. Dark messy windswept hair in upward tufts, short dark beard and mustache, warm brown eyes with a calm, steady gaze, a wide slightly crooked friendly smile, warm tan skin. Modular matte black softshell action suit with thin red piping on the chest and shoulders, sleeves pushed up to the elbows, small matte black snap-on mounting points on the shoulders, forearms and knees, a tiny turquoise volcano emblem on the chest the size of a coin, black fingerless gloves, chunky black-and-red trail boots. A matte black full-face helmet with a painted band of the same blue-and-turquoise pattern tucked under his left arm. At his feet, a neat row of interchangeable gear in black and red: a skateboard, a coiled red climbing rope, a folded wingsuit with its parachute container, pilot goggles. Relaxed confident stance, feet apart, right fist on his hip, chin up. Seamless pale grey studio background, soft even light, full body, vertical 9:16. All gear plain and unbranded.
+```
+
+**Prompt v2 · ficha base · look 2 (calvo, barba, piercings y tatuajes; solo cambia el look)**
+
+```
+Cinematic realistic full-body photo, real person, real fabrics and materials, film-grade lighting. An original heroic action character named Marvin, with the exact face of the man in reference image 1, a man in his early thirties with an athletic, lean, slim-to-medium build. His signature is his original fine-line black tattoos: a small volcano peak with three wavy wind lines on the right side of his neck, and topographic contour lines like a mountain map wrapping his left forearm from wrist to elbow. Smooth clean-shaven bald head with a subtle sheen, a thick, neatly trimmed dark beard and mustache, a small silver hoop in each earlobe and a thin silver bar through his left eyebrow, warm brown eyes with a calm, steady gaze, a wide slightly crooked friendly smile, warm tan skin. Modular matte black softshell action suit with thin red piping on the chest and shoulders, sleeves pushed up to the elbows, small matte black snap-on mounting points on the shoulders, forearms and knees, a tiny turquoise volcano emblem on the chest the size of a coin, black fingerless gloves, chunky black-and-red trail boots. A matte black full-face helmet with a painted band of thin topographic contour lines tucked under his left arm. At his feet, a neat row of interchangeable gear in black and red: a skateboard, a coiled red climbing rope, a folded wingsuit with its parachute container, pilot goggles. Relaxed confident stance, feet apart, right fist on his hip, chin up. Seamless pale grey studio background, soft even light, full body, vertical 9:16. All gear plain and unbranded.
+```
+
+Si el modelo insiste en ponerle pelo en el look 2, agregar al final: `without any hair on his head`.
+
+**Escenas de reto v2.** Están escritas con el look 1. Se generan solo cuando la ficha base esté aprobada, con su ID
+como imagen de referencia 1. Para pasarlas al look 2:
+- Cambiar la frase de la bandana por `smooth bald head, thick trimmed dark beard, small silver earrings, the fine-line volcano tattoo on his neck`.
+- En el casco, cambiar el estampado por `thin topographic contour lines`.
+
+Escena 1 · wingsuit sobre un volcán (gag: firma un contrato en pleno vuelo)
+
+```
+Cinematic realistic action photo of the character from reference image 1, Marvin: same face seen through the clear visor of his matte black full-face helmet, which has his blue-and-turquoise patterned band painted around it, wide slightly crooked smile. He flies a black wingsuit with red edges high above a symmetrical green volcano rising out of a sea of clouds at sunrise, a parachute container clearly visible on his back, an altimeter on his wrist. In one gloved hand he calmly holds a tablet and signs a business contract with a stylus, completely relaxed mid-flight. Wide shot from a second flyer's point of view, sharp focus, golden backlight, vertical 9:16. All gear plain and unbranded.
+```
+
+Escena 2 · enduro en un cafetal (gag: el café sigue impecable)
+
+```
+Cinematic realistic action photo of the character from reference image 1, Marvin: same face behind clear goggles, his blue-and-turquoise patterned band painted around his matte black full-face helmet. He rides a plain matte black and red enduro motorcycle through deep brown mud on a steep trail between rows of a coffee plantation on a volcano slope, wearing a chest protector, knee braces, elbow guards, gloves and tall boots, the rear wheel throwing a huge fan of mud. He and the bike are covered in mud, except for a small white paper cup of coffee in a holder on the handlebar, perfectly clean and still steaming. Low camera angle, frozen action, soft overcast light, vertical 9:16. All gear plain and unbranded.
+```
+
+Escena 3 · BMX en una reunión de directorio (gag: el emprendedor en plena hazaña)
+
+```
+Cinematic realistic action photo of the character from reference image 1, Marvin: same face, wide slightly crooked satisfied grin, his blue-and-turquoise patterned band painted around his matte black open-face helmet. He launches a plain matte black BMX bike off a small wooden ramp and flies over a long glass boardroom table in a modern office, wearing knee pads, elbow pads and gloves, while five executives in suits sit calmly around the table taking notes and one points at a rising growth chart on the wall screen. Wide shot, bright clean office daylight, frozen action, vertical 9:16. All gear plain and unbranded.
+```
+
+**Escena opcional · arsenal (solo para el canal adulto; ficción, sin víctimas)**
+
+```
+Cinematic realistic photo of the character from reference image 1, Marvin: same face, calm steady gaze, a faint crooked smile, blue patterned tube headband with two long tails. At an empty outdoor shooting range at dawn, he stands at the firing-line bench wearing black ear-protection earmuffs and clear safety glasses, lowering a matte black precision rifle with thin red accent lines, its muzzle pointed safely downrange. On the bench, an open matte black hard case with red piping and grey foam inserts holds the rest of his arsenal, perfectly organized: two compact pistols, a carbine, spare magazines and a scope, every piece matte black with thin red lines and a tiny engraved volcano. Beside the case lies a just-retrieved paper target whose holes are tightly grouped into a small smiley face. Medium-wide shot from behind his shoulder, cool morning light with a warm sunrise rim light, vertical 9:16. All gear plain and unbranded.
+```
+
+Nota: algunos modelos ilimitados pueden rechazar o alterar las imágenes con armas. Si pasa dos veces, se aplica el
+freno de pérdidas: no se insiste y se vuelve al prompt.

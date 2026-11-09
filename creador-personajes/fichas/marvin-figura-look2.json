@@ -1,0 +1,38 @@
+{
+  "nombre": "Marvin (nombre por elegir) · look 2",
+  "edad": 33,
+  "genero": "masculino",
+  "estiloImagen": "realista",
+  "proporciones": "normal",
+  "piel": "#d9a07a",
+  "cabello": "calvo",
+  "colorCabello": "#1d1a1a",
+  "estiloOjos": "normales",
+  "ojos": "#4a2c17",
+  "expresion": "sonrisa",
+  "orejas": "normales",
+  "barba": "completa",
+  "labios": null,
+  "pecas": false,
+  "ojeras": false,
+  "ropa": "deportiva",
+  "colorRopa": "#1b1b1f",
+  "accesorio": "ninguno",
+  "fondo": "#ffffff",
+  "extras": "smooth clean-shaven bald head with a subtle sheen, thick neatly trimmed dark beard and mustache, original fine-line black tattoos (a small volcano peak with three wavy wind lines on the right side of his neck, topographic contour lines wrapping his left forearm from wrist to elbow), a small silver hoop in each earlobe and a thin silver bar through his left eyebrow, calm steady gaze, modular matte black softshell action suit with thin red piping and sleeves pushed up to the elbows, small matte black snap-on mounting points on shoulders, forearms and knees, a tiny turquoise volcano emblem on the chest the size of a coin, black fingerless gloves, chunky black-and-red trail boots, matte black full-face helmet with a painted band of thin topographic contour lines under his left arm, gear in black and red at his feet (skateboard, coiled red climbing rope, folded wingsuit with its parachute container, pilot goggles), relaxed confident stance with fist on hip, seamless pale grey studio, all gear plain and unbranded",
+  "nicho": "viajes",
+  "rasgos": [
+    "audaz",
+    "alegre",
+    "perseverante"
+  ],
+  "tono": "inspirador",
+  "plataformas": [
+    "YouTube Shorts",
+    "TikTok",
+    "Instagram"
+  ],
+  "publico": "solo adultos, canal separado del contenido infantil; suposición por confirmar: adultos de 22 a 38 que siguen deportes de aventura, acción y retos",
+  "frase": "¿Cuál es el reto? Ya dije que sí.",
+  "historia": "Versión heroica del creador: domina todos los deportes extremos, acepta cualquier reto, arma una empresa entre salto y salto y es experto en armas, tranquilo y preciso (arsenal solo cuando la escena lo pide)."
+}

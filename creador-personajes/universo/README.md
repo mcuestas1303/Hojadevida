@@ -20,7 +20,7 @@
 | Hijos de Spike | idea, para contenido infantil | sin crear |
 | Tiky (el pollito) | **idea sin decidir**; prompt v2, sin generar (`afinado/pollito.md`) | universo alterno: ¿juguete de Spike, su «proyección»? |
 | Lumi (la vaca; nombre provisional, choca con Lumi Bravo) | **idea sin decidir**; prompt v2, sin generar (`afinado/vaca.md`) | universo alterno: ¿juguete de Spike? Sigue al pollito y le da buenas ideas |
-| Marvin figura de acción (nombre provisional: Marvin Reto) | **idea sin decidir**; prompt v1, sin generar (`afinado/marvin-figura.md`) | por definir: relación con Marvin como personaje y con Spike |
+| Marvin figura de acción (nombre por elegir) | **idea sin decidir**; prompt v2, sin generar (`afinado/marvin-figura.md`); **solo adultos** | por definir: relación con Marvin como personaje y con Spike |
 
 ## Marvin como figura de acción (idea sin decidir, 2026-11-09)
 
@@ -29,7 +29,12 @@
 
 - Versión heroica del dueño, con su cara (fotos suyas, con su consentimiento). Domina los deportes extremos y acepta
   cualquier reto.
-- Rasgo icónico en prueba: su bandana azul y turquesa, con dos colas que ondean.
+- Rasgo icónico en prueba: su bandana azul y turquesa, con dos colas que ondean (look 1), o tatuajes propios con
+  calvicie, barba y piercings (look 2).
+- Desde v2 (2026-11-09) es un héroe de acción realista, experto en armas (dueño: *«arsenal completo lo vamos a dejar
+  como parte del perfil el personaje y lo usamos cuando sea oportuno»*). **Es contenido solo para adultos, en un canal
+  separado del contenido infantil, y nunca se cruza con Tiky, Lumi ni los hijos de Spike.** Al ser realista, lleva la
+  etiqueta de IA.
 - **Por definir (no inventado):** si es el mismo Marvin de la serie o otro, si es un juguete dentro del universo (como
   el universo alterno de los juguetes de Spike) y qué relación tiene con Spike.
 
