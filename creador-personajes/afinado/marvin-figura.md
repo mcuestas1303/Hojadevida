@@ -11,12 +11,44 @@ es emprendedor (arma una empresa entre salto y salto). Energía: épica pero con
 > montaña, paracaidismo, crear empresas, manejar aviones tipo de acrobacias o jets, manejar carros de rally,
 > skateboard y bmx, los mayores retos de escalada, wingsuit flying hace cosas bizarras, cumplir cualqueir reto etc.»*
 
-### Nombre (por elegir; propuestas del afinador)
-1. **Marvin Reto** — dice lo que hace: acepta cualquier reto. Recomendado: corto, en español, fácil de decir en un Short.
-2. **Marvin Ráfaga** — velocidad y viento (wingsuit, jets, rally).
-3. **Marvin Cumbre** — enlaza con su origen real (la foto en el Volcán de Agua) y con el Marvin montañista de la serie.
+**Desde v2 (2026-11-09):** ya no es un juguete, sino un **héroe de acción en foto cinematográfica realista** (estilo B).
+Además de los deportes, es **experto en armas**, tranquilo y de una precisión letal, con un **arsenal completo** que
+forma parte de su perfil y aparece solo cuando la escena lo pide.
 
-Mientras no elija, los prompts usan «Marvin Reto».
+> Textual del dueño (2026-11-09): *«quiero que sea alguien que le gusten las armas y las sepa usar mas que bien, tipo
+> jonh wick»* · *«4. si me parece, arsenal completo lo vamos a dejar como parte del perfil el personaje y lo usamos
+> cuando sea oportuno»*.
+
+**Cómo se toma «tipo jonh wick»:** solo el espíritu (el héroe tranquilo, metódico y preciso). No se copia nada de ese
+personaje ni de la película: ni el traje negro de tres piezas como seña, ni el perro, ni los nombres, los lugares, las
+escenas, las monedas o las frases. Su seña con las armas es propia: equipo integrado al kit negro y rojo, guardado en un
+estuche ordenado, y la puntería como gag (agujeros agrupados en una carita feliz).
+
+### Público y publicación (desde v2)
+- **Solo para público adulto**, en un canal separado del contenido infantil del universo (Tiky, Lumi y los hijos de
+  Spike). Nunca se cruza con ese contenido.
+- **Etiqueta de IA obligatoria:** es realista y muestra a una persona real (el dueño) haciendo hazañas que no hizo. Es
+  el caso en que YouTube exige divulgar el contenido alterado o sintético, y TikTok y Meta piden lo mismo (fuente:
+  revisión de atención v1, `conocimiento/experto-influencers/estado-actual.md` §F, confianza alta). Se agrega un texto en
+  pantalla del tipo «hecho con IA». La excepción del contenido infantil sin etiqueta no aplica aquí.
+- **Las armas limitan el alcance:** según conocimiento general del afinador, sin verificar hoy (confianza media), las
+  plataformas restringen por edad, o quitan o limitan los anuncios, en el contenido con armas de fuego. Antes de publicar
+  una escena con arsenal, hay que confirmar la política vigente con el experto en influencers.
+- **Seguridad siempre** (sugerencia del revisor, aceptada por el dueño): protección completa en cada deporte, paracaídas
+  visible en los saltos, armas solo en un campo de tiro o en el estuche, con protección de oídos y ojos y apuntando al
+  blanco, sin personas en la línea de tiro. Nunca se reta al espectador a imitarlo. Nada de violencia gráfica ni contra
+  personas reales.
+
+### Nombre (por elegir)
+- v1, rechazados: Marvin Reto, Marvin Ráfaga, Marvin Cumbre — 2026-11-09, «1. Seguimos buscando».
+- v2, propuestas del afinador para un héroe de acción adulto:
+  1. **Marvin «Basalto»** — roca volcánica: duro, frío y tranquilo. Enlaza con el Volcán de Agua.
+  2. **Marvin «Pulso»** — pulso firme: sirve para la puntería y para los deportes.
+  3. **Marvin «Sereno»** — su rasgo de carácter: no se altera ni en caída libre.
+  4. **Marvin «Brasa»** — calma por fuera, fuego por dentro. También volcánico.
+  5. **Marvin «Cuestas»** — su apellido real, que además nombra las pendientes del enduro, la MTB y la escalada. Solo si el dueño quiere usar su apellido.
+
+Mientras no elija, los prompts usan solo «Marvin».
 
 ### El kit (diseño del afinador, v1)
 - **Traje base modular:** mono softshell negro mate con vivos rojos (de su chaqueta real), mangas desmontables y
@@ -33,6 +65,22 @@ Mientras no elija, los prompts usan «Marvin Reto».
   - Emprendedor (gag recurrente): un maletín o una tableta que saca en mitad del reto.
 - **Rasgo icónico (en prueba):** la bandana tubular azul y turquesa en la frente, con **dos colas largas** que siempre
   ondean detrás de la cabeza, también por debajo del casco. Se reconoce en la silueta y en cualquier deporte.
+
+### El kit · cambios de v2
+- **Un solo rasgo icónico** (sugerencia del revisor, aceptada): los puntos de anclaje pasan a **negro mate** y el
+  emblema del volcán se achica al tamaño de una moneda. El turquesa queda solo en la bandana y en el emblema.
+- **Accesorios de deporte** en negro y rojo, sin turquesa.
+- **Cascos:** en vez de dejar que las colas salgan por debajo del casco integral, el casco lleva **pintada una banda con
+  el mismo estampado** de la bandana (look 1) o con las curvas de nivel del tatuaje (look 2). Así se cumple la
+  seguridad y se mantiene la seña.
+- **Arsenal (parte del perfil, no va en todas las escenas):** un estuche rígido negro mate con vivos rojos y espuma gris,
+  con todo ordenado: dos pistolas compactas, una carabina, un rifle de precisión con mira, cargadores y protección de
+  oídos y ojos. Todas las armas son negro mate con finas líneas rojas, como el traje, y llevan el volcán pequeño grabado.
+  Todo liso, sin marcas. La ficha base no lleva armas, para que la referencia no las meta en las escenas de deporte;
+  el arsenal aparece en su escena propia.
+- **Gag de incongruencia en cada escena** (sugerencia del revisor, aceptada): el emprendedor tranquilo en plena hazaña
+  (firma un contrato en caída libre, el café impecable en la moto embarrada, una reunión de directorio). A veces, en
+  lugares reales (un volcán, un cafetal, una oficina).
 
 ### Originalidad
 Se diferencia de las líneas famosas de figuras de deportes extremos y militares con su cara real, su bandana como
