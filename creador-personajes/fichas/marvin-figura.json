@@ -1,0 +1,38 @@
+{
+  "nombre": "Marvin Reto",
+  "edad": 33,
+  "genero": "masculino",
+  "estiloImagen": "realista",
+  "proporciones": "normal",
+  "piel": "#d9a07a",
+  "cabello": "corto",
+  "colorCabello": "#1d1a1a",
+  "estiloOjos": "normales",
+  "ojos": "#4a2c17",
+  "expresion": "sonrisa",
+  "orejas": "normales",
+  "barba": "corta",
+  "labios": null,
+  "pecas": false,
+  "ojeras": false,
+  "ropa": "deportiva",
+  "colorRopa": "#1b1b1f",
+  "accesorio": "bandana",
+  "fondo": "#ffffff",
+  "extras": "12-inch collectible action figure with visible ball joints, dark messy windswept hair in upward tufts, the blue patterned headband tied with two long tails each as long as his forearm, modular matte black softshell action suit with thin red piping, round turquoise snap-on mounting points on shoulders, forearms, chest and knees, small round chest emblem with a stylized turquoise volcano peak, black fingerless gloves, chunky black-and-red trail boots, matte black full-face helmet with a turquoise stripe under his left arm, tiny accessories at his feet (skateboard, coiled red climbing rope, folded turquoise wingsuit wing panel, pilot goggles), heroic stance with fist on hip, round matte black display base, all gear plain and unbranded",
+  "nicho": "viajes",
+  "rasgos": [
+    "audaz",
+    "alegre",
+    "perseverante"
+  ],
+  "tono": "inspirador",
+  "plataformas": [
+    "YouTube Shorts",
+    "TikTok",
+    "Instagram"
+  ],
+  "publico": "suposición por confirmar: jóvenes y adultos de 16 a 35 que siguen deportes extremos, aventura y retos",
+  "frase": "¿Cuál es el reto? Ya dije que sí.",
+  "historia": "Versión de figura de acción del creador: domina todos los deportes extremos, acepta cualquier reto y arma una empresa entre salto y salto."
+}

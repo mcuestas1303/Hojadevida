@@ -20,6 +20,18 @@
 | Hijos de Spike | idea, para contenido infantil | sin crear |
 | Tiky (el pollito) | **idea sin decidir**; prompt v2, sin generar (`afinado/pollito.md`) | universo alterno: ¿juguete de Spike, su «proyección»? |
 | Lumi (la vaca; nombre provisional, choca con Lumi Bravo) | **idea sin decidir**; prompt v2, sin generar (`afinado/vaca.md`) | universo alterno: ¿juguete de Spike? Sigue al pollito y le da buenas ideas |
+| Marvin figura de acción (nombre provisional: Marvin Reto) | **idea sin decidir**; prompt v1, sin generar (`afinado/marvin-figura.md`) | por definir: relación con Marvin como personaje y con Spike |
+
+## Marvin como figura de acción (idea sin decidir, 2026-11-09)
+
+> Textual del dueño: *«Quiero crear otro personaje que seria yo como figura de acción algunas cosas las hago pero
+> otras las tengo como meta hacerlas pero el personaje si va a saber hacerlas […] cumplir cualqueir reto etc.»*
+
+- Versión heroica del dueño, con su cara (fotos suyas, con su consentimiento). Domina los deportes extremos y acepta
+  cualquier reto.
+- Rasgo icónico en prueba: su bandana azul y turquesa, con dos colas que ondean.
+- **Por definir (no inventado):** si es el mismo Marvin de la serie o otro, si es un juguete dentro del universo (como
+  el universo alterno de los juguetes de Spike) y qué relación tiene con Spike.
 
 ## Reglas que ya aplican (para que el universo se sostenga)
 
