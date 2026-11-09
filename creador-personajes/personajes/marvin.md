@@ -79,3 +79,18 @@ Las fotos no se guardan en este repositorio (es público). Están subidas a Higg
 |---|---|---|
 | Cumbre del Volcán de Agua (selfie, bandana azul, chaqueta negra) | `0a3d1514-e763-4306-ac39-1c838e8ab434` | Short 01 |
 | De noche, camisa blanca, sonriendo (medio cuerpo) | `54f1444f-3e42-4360-bc1e-ac267ef33dc8` | Próximo video |
+
+## Retrato de referencia limpio (2026-11-09)
+
+> Pedido del dueño, textual: *«en la primera imagen tengo el ceño funcido porque es una foto donde me estaba dando el
+> sol. Saca la mejor versión entre esas dos imágenes para mi cara»*.
+
+Retratos generados combinando las dos fotos (expresión relajada de la camisa blanca, rasgos confirmados con la del
+volcán), luz pareja de estudio, sin ceño fruncido. Nano Banana 2, 3:4, 1,5 créditos c/u.
+
+| Retrato | ID en Higgsfield | Estado |
+|---|---|---|
+| A · sonrisa amplia | `734e2712-747e-4bcf-96c4-7fc7aac31ec1` | pendiente de elegir |
+| B · sonrisa cerrada | `deb79874-05f4-48f1-af29-91871b4e58da` | pendiente de elegir |
+
+El elegido pasa a ser la **referencia oficial de rostro** para «M» y cualquier personaje basado en Marvin.
