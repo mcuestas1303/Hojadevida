@@ -268,3 +268,22 @@ Cinematic realistic photo of the character from reference image 1, Marvin: same 
 
 Nota: algunos modelos ilimitados pueden rechazar o alterar las imágenes con armas. Si pasa dos veces, se aplica el
 freno de pérdidas: no se insiste y se vuelve al prompt.
+
+### Decisión del dueño · 2026-11-09 (vuelta 2)
+> Textual: *«1. "M", 2. si el piersing discreto, 3. si en algun momento vamos a trabajar todas las fasetas del personaje para afinarlo hay q incluir que tambien es papá por cierto pero no lo vamos a lograr en una sola imagen por lo mismo lo vamos a ir afinando y en este caso trabajariamos la base, 4. si»*
+
+- **Nombre: «M».** (El nombre va fuera de los prompts para que no aparezca texto en la imagen.)
+- **Look 2:** calvo, sin bandana, con **piercings discretos** (pequeños aretes en los lóbulos y uno en la ceja).
+- **La ficha base va sin armas;** el arsenal tiene su escena propia cuando convenga.
+- **Faceta pendiente: también es papá.** Se trabajará en vueltas siguientes, faceta por faceta (deportes, emprendedor,
+  arsenal, papá). Esta vuelta es solo la base.
+
+### Resultado v2 · ficha base · 2026-11-09 (generado por la conexión de Claude, a pedido del dueño)
+- **Modelo:** Nano Banana 2 (servido como `nano_banana_flash`), 9:16, con la foto del volcán como referencia de rostro
+  (`0a3d1514-…`). **Créditos:** 1,5 c/u, 6 en total.
+- **Look 1 · A:** `a4a2bb14-88e2-4d50-93c9-dc58ac28cc55` · **Look 1 · B:** `fb4b5b8d-1a77-4d5b-a5aa-74551ec8fc62`
+- **Look 2 · A:** `60810c91-603e-45d4-841d-10014b644ce6` · **Look 2 · B:** `9471853f-0633-4eb5-8ade-7858e7bd91e6`
+- **Lectura de Claude:** la cara se parece en las cuatro. En el look 1 · B las dos colas de la bandana ondean y se
+  leen mejor; en el 1 · A cuelgan. En el look 2 no se ven los tatuajes (el cuello y los antebrazos quedan tapados o
+  limpios) ni los piercings: la seña del look 2 todavía no se lee. La banda pintada del casco no salió en ninguna.
+- **Veredicto del dueño:** pendiente.
