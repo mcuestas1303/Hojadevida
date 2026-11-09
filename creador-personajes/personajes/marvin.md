@@ -100,5 +100,16 @@ El elegido pasa a ser la **referencia oficial de rostro** para «M» y cualquier
 
 | Retrato | ID en Higgsfield | Estado |
 |---|---|---|
-| B + barba 3-4 cm | `f79b894c-ca83-4691-9a33-afa5d301cb52` | pendiente de elegir |
-| B + barba 5-6 cm | `ebb716b5-2ed1-498c-9d44-38883c291455` | pendiente de elegir |
+| B + barba 3-4 cm | `f79b894c-ca83-4691-9a33-afa5d301cb52` | descartado |
+| B + barba 5-6 cm | `ebb716b5-2ed1-498c-9d44-38883c291455` | largo elegido, solo para el look calvo |
+
+### Reglas de barba por look (dueño, 2026-11-09)
+> Textual: *«Barba de 5-6 cm pero mas limpia como si recien he ido al barbero y recorda que la barba de 5-6 es solo para la versión calva»*.
+
+- **Look 1 (con pelo y bandana):** la barba del retrato oficial B (`deb79874-…`), tal cual.
+- **Look 2 (calvo):** barba de 5-6 cm, **recién arreglada en la barbería** (bordes limpios, línea del cuello marcada).
+
+| Retrato del look 2 | ID en Higgsfield | Estado |
+|---|---|---|
+| A · de frente | `b5f6dc8c-c3f7-4eb9-9ed8-92ac091fd38d` | pendiente de elegir |
+| B · tres cuartos, barba más perfilada | `bc973d9b-0a8f-43e4-8efa-0d3a0b59c84a` | pendiente de elegir |
