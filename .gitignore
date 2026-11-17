@@ -1,0 +1,8 @@
+# Piezas regenerables del análisis de referencia (se rehacen con analizar_video.py)
+video-studio/proyectos/*/01_referencia/analisis/frames/
+video-studio/proyectos/*/01_referencia/analisis/cortes/
+video-studio/proyectos/*/01_referencia/analisis/audio.wav
+# Intentos descartados: pesan y no se reutilizan
+video-studio/proyectos/*/04_clips/borradores/*
+!video-studio/proyectos/*/04_clips/borradores/.gitkeep
+__pycache__/
