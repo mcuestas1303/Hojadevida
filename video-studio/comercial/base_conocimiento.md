@@ -427,3 +427,9 @@ Páginas oficiales que no pude descargar; el buscador de la sesión (restringido
 ### 12.3 Sin verificar
 
 Cláusula de VPN o ubicación falsa en los términos de YouTube, AdSense, Instagram y en los textos de TikTok distintos del EEE; cómo comprueba cada plataforma la ubicación; si un cierre de cuenta (no solo del programa) es consecuencia prevista; métodos de pago y comisiones para El Salvador; si la verificación con ID está disponible en El Salvador; tratado fiscal con EE. UU.; requisitos de Instagram, TikTok Shop y Series. Fuentes que harían falta: las de la sección 7 de `evaluacion_vpn.md`.
+
+### Añadido por la coordinación (2026-11-20)
+
+| Hecho | Cita (inglés) | URL y fecha de descarga |
+|---|---|---|
+| El Salvador está en la lista oficial de lugares donde se puede solicitar el Programa de socios de YouTube | "You can sign up for the YouTube Partner Program in the following areas" (la lista incluye "El Salvador") | https://support.google.com/youtube/answer/7101720?hl=en (2026-11-20) |

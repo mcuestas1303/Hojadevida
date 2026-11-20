@@ -215,3 +215,16 @@ Lo que se le propone a la pedagoga y a la psicóloga por este documento: **nada 
 | 13 | Legalidad general del uso de un VPN en El Salvador | No lo investigué; no es el criterio de esta evaluación (el criterio son los términos de cada plataforma) |
 
 **Las dos páginas que cambiarían la lectura si dijeran otra cosa:** la 7101720 de YouTube (si El Salvador no estuviera en la lista completa) y la lista de TikTok (si El Salvador ya figurara). Ninguna cambia la recomendación sobre el VPN.
+
+## Verificación de la coordinación (2026-11-20)
+
+El punto que el comercial dejó sin verificar quedó resuelto: se descargó la página oficial
+«YouTube Partner Program availability» y **El Salvador figura en la lista** de lugares donde
+se puede solicitar el Programa de socios, junto a Guatemala, Honduras, México y Brasil.
+
+- Cita: "You can sign up for the YouTube Partner Program in the following areas: … Egypt, El Salvador, Estonia …"
+- Fuente: https://support.google.com/youtube/answer/7101720?hl=en (descargada el 2026-11-20)
+
+Con esto, la vía principal de monetización (anuncios en YouTube) está disponible para un
+titular que reside en El Salvador, sin VPN y sin declarar otro país. Sigue sin verificar qué
+métodos de pago ofrece AdSense en El Salvador.

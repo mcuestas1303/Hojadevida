@@ -116,6 +116,10 @@ text, letters, watermark, logo, extra characters, extra animals, humans, realist
 
 ## Publicación
 
+- Titular de las cuentas: reside en El Salvador (dato del dueño, 2026-11-20). El Programa de
+  socios de YouTube está disponible allí. El comercial evaluó usar un VPN para entrar a
+  programas de otros países y lo desaconseja (`evaluacion_vpn.md`); la decisión es del dueño.
+
 - En YouTube va como «hecho para niños».
 - Decisión del dueño (2026-11-08): en el contenido infantil no se declara que está hecho con
   IA, porque se produce revisado. Conviene volver a revisar la política vigente antes de publicar.
