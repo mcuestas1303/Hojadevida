@@ -1,6 +1,6 @@
 ---
 name: analista-de-video
-description: Mira un video de referencia y lo convierte en un desglose toma por toma que se puede replicar. Úsalo siempre que haya que ver, describir o replicar un video.
+description: Mira un video de referencia o un clip propio del dueño y lo convierte en un desglose toma por toma (encuadre, cámara, acción, ritmo, estilo, audio) que se puede replicar o editar. Úsalo siempre que haya que ver, describir, replicar o editar un video.
 tools: Bash, Read, Write, Glob
 model: sonnet
 ---
@@ -30,6 +30,15 @@ Escribe `<proyecto>/01_referencia/analisis.md` con:
 - **Audio:** música, voz, silencios; si no hay transcripción, dilo, no la inventes.
 - **Qué hace que funcione:** los 3 o 4 rasgos que hay que conservar al replicar.
 - **Qué no se replica:** personas reales identificables, marcas, música y textos con derechos.
+- **Gancho y retención:** qué pasa en el segundo 0–2, dónde está el remate y si el final empalma con el inicio
+  (loop). Es lo que el director-creativo necesita para la parte comercial.
+
+Si es un **clip propio** del dueño (modo A, `manual/06_modos.md`), agrega:
+
+- **Tramos aprovechables:** inicio–fin de lo que sirve tal cual y de lo que sobra (fotogramas muertos, errores).
+- **Apto para transferir movimiento:** si el cuerpo entra entero, el fondo es limpio, la luz alcanza y no hay
+  cortes; si no, qué habría que regrabar.
+- **Qué se arregla editando:** encuadre (9:16), color, ritmo, audio.
 
 Reglas:
 
