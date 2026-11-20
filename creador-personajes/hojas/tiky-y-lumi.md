@@ -62,8 +62,16 @@ Inicio del prompt: `Clean black-and-white coloring book line art for children, t
 
 ## Registro
 
+Generadas el 2026-11-20 por MCP con **GPT Image 2, calidad baja, 1k, 16:9** (0,5 crédito cada una; 3 créditos las 6),
+pasando la referencia 3D aprobada de cada personaje.
+
 | Hoja | Tiky | Lumi |
 |---|---|---|
-| 1 · Vueltas | pendiente | pendiente |
-| 2 · Emociones básicas | pendiente | pendiente |
-| 3 · Emociones complejas | pendiente | pendiente |
+| 1 · Vueltas | `bea06b1e-72b1-4205-99f6-07cd19d9badb` | `55530fb7-d19d-42d6-bd5e-b992e610c2bf` |
+| 2 · Emociones básicas | `b65bb973-ba84-460d-bc7b-923c534de084` | `5b8166a7-76c5-4505-8099-6d2d5620df00` |
+| 3 · Emociones complejas | `618c44dd-0e2d-44de-b221-ff8037f2c4c4` | `09116259-e0ea-406a-a5fc-9806d4fe1a68` |
+
+- Prueba descartada: vueltas de Tiky con Nano Banana 2 Lite (`e455b7b2-b415-4178-afb6-fe868a7d06e7`, 1 crédito),
+  para comparar contra GPT Image 2 en calidad baja.
+- Revisión a ojo: Tiky sale igual en todos los paneles. En Lumi las manchas negras cambian algo de forma entre
+  paneles; el crayón lila, el hocico y los cuernos se mantienen. **Pendiente: el visto bueno del dueño.**

@@ -75,6 +75,17 @@ Punto de entrada para retomar el proyecto de personajes, influencers y avatares 
 - **Generación:** el dueño pidió que Claude genere por la conexión (MCP) cuando se lo pide; se cotiza y se avisa el
   costo. Modelo habitual: Nano Banana 2 (1,5 créditos por imagen; el básico falló). Saldo ≈ 888 créditos.
 
+## Sesión 2026-11-20
+
+- **Hojas de personaje de Tiky y Lumi** hechas (vueltas, emociones básicas y complejas): 6 hojas, GPT Image 2 en
+  calidad baja (0,5 crédito c/u, la opción más barata que mantuvo la calidad). IDs en `hojas/tiky-y-lumi.md`.
+  Falta el visto bueno del dueño.
+- **Carpeta ordenada de personajes:** el dueño pidió, textual: *«Todo que crees de los personajes comenzalo a guardar
+  en una carpeta ordenada en mi computadora»*. La computadora no está conectada a la sesión, así que se entrega como
+  `Personajes.zip`. Orden: una carpeta por personaje con `01 Diseño aprobado`, `02 Hojas de personaje`,
+  `03 Pruebas descartadas` y su bitácora, más `_Documentos` y `LEEME.md`. Lo nuevo se suma con el mismo orden.
+  Las fotos reales de Marvin no van en la carpeta ni en el repo.
+
 ## Pendiente
 
 **Próximo paso con «M»:**
