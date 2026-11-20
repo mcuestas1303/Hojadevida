@@ -27,21 +27,21 @@ Los planos 3, 6 y 9 no llevan voz (silencio o pausa) y por eso no tienen fila. L
 | 8 | Plano de 7 s. «Lumi dice hola» de 2 a 4 s con la pezuña en alto; «¿Y tú? Saluda con la mano» de 4 a 7 s con Lumi mirando a cámara | Lumi dice hola. ¿Y tú? Saluda con la mano. | Lumi says hello. And you? Wave hello. | A Lumi diz oi. E você? Acena com a mão. | Igual que el plano 5 con Lumi; mismas ventanas. «E você?» (pt-BR cotidiano) en lugar de «e tu», que en Brasil suena regional o arcaico |
 | 10 | Plano de 6 s. «Hola» sobre el saludo con la pezuña en alto, tras el «muu»; después silencio | Hola. | Hello. | Oi. | Igual que el plano 7 |
 | 11 | Plano de 8 s. La voz entra cuando termina el fundido de la música (~2 a 8 s) | Todo está en su lugar. Con la mano decimos hola. | Everything is in its place. We wave hello. | Tudo está no lugar. Com a mão dizemos oi. | En: «We wave hello» conserva la clave al final con 3 palabras. Pt-BR: «tudo está no lugar» es más natural que «no seu lugar». Es la frase que une el gesto con la palabra al cerrar |
-| 12 | Plano de 8 s. Línea al niño de ~0 a 4 s, pausa corta y línea al adulto de ~5 a 8 s, sobre silencio | Busca tu peluche. Salúdalo: hola. Saluden ustedes primero, y esperen. | Find your stuffed animal. Say hello. Grown-ups, wave first, and wait. | Pega sua pelúcia. Diz: oi! Adultos, acenem primeiro e esperem. | «Peluche»: en «stuffed animal» (4 sílabas; «teddy» implicaría un oso, «stuffy» es muy coloquial); pt-BR «pelúcia» (se evita «bichinho de pelúcia» por el diminutivo y por la longitud). La clave cierra la línea al niño en los tres idiomas. «Grown-ups» y «adultos» dicen a quién va la línea sin cambiar de voz |
-| 13 | Plano de 6 s. Voz sin música; «adiós» sobre el saludo con ala y pezuña; luego entra la música | Ahora, a jugar. Adiós. | Time to play. Bye-bye. | Agora, vamos brincar. Tchau! | La despedida usa otra palabra en cada idioma: «bye-bye» y «tchau», nunca «hello» ni «oi». En pt-BR «brincar» es jugar de niño; «jogar» sería un juego con reglas. «Bye-bye» es la forma que se le dice a un niño de 2 años; «goodbye» es más largo |
+| 12 | Plano de 8 s. Línea al niño de ~0 a 4 s, pausa corta y línea al adulto de ~5 a 8 s, sobre silencio | Busca tu peluche. Salúdalo: hola. Saluden ustedes primero, y esperen. | Find your stuffed animal. Wave hello. Grown-ups, wave first, and wait. | Pega sua pelúcia. Acena pra ela: oi. Acenem primeiro e esperem. | «Peluche»: en «stuffed animal» (4 sílabas; «teddy» implicaría un oso, «stuffy» es muy coloquial); pt-BR «pelúcia» (se evita «bichinho de pelúcia» por el diminutivo y por la longitud). La clave cierra la línea al niño en los tres idiomas. Psicóloga (2026-11-20): «Say hello» y «Diz: oi!» pedían hablar al niño; el es pide el gesto («Salúdalo») y deja «hola» como modelo. Ahora en «Wave hello» (igual que planos 5, 8 y 11) y pt-BR «Acena pra ela: oi» (verbo + objeto + clave, como el es; «ela» es la pelúcia). En pt-BR se quitó «Adultos»: el plural «acenem» ya marca que la línea va al adulto, como «saluden» en es, y así la línea total queda en las mismas sílabas que el es. En inglés el imperativo no marca plural, por eso se queda «Grown-ups» |
+| 13 | Plano de 6 s. Voz sin música; «adiós» sobre el saludo con ala y pezuña; luego entra la música | Ahora, a jugar. Adiós. | Time to play. Bye-bye. | Agora, vamos brincar. Tchau. | La despedida usa otra palabra en cada idioma: «bye-bye» y «tchau», nunca «hello» ni «oi». Psicóloga (2026-11-20): «Tchau» sin signo de exclamación, para que la locución quede en el mismo tono calmo que «Adiós.». En pt-BR «brincar» es jugar de niño; «jogar» sería un juego con reglas. «Bye-bye» es la forma que se le dice a un niño de 2 años; «goodbye» es más largo |
 
 ## Frases fijas de la serie
 
 | Frase | es | en | pt-BR |
 |---|---|---|---|
 | Saludo | Esta es la granja. Hola. | This is the farm. Hello. | Esta é a fazenda. Oi. |
-| Despedida | Ahora, a jugar. Adiós. | Time to play. Bye-bye. | Agora, vamos brincar. Tchau! |
+| Despedida | Ahora, a jugar. Adiós. | Time to play. Bye-bye. | Agora, vamos brincar. Tchau. |
 
 ## Línea para el adulto
 
 | es | en | pt-BR |
 |---|---|---|
-| Saluden ustedes primero, y esperen. | Grown-ups, wave first, and wait. | Adultos, acenem primeiro e esperem. |
+| Saluden ustedes primero, y esperen. | Grown-ups, wave first, and wait. | Acenem primeiro e esperem. |
 
 ## Lo que no se traduce igual
 

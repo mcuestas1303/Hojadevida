@@ -3,13 +3,13 @@
 - **Veredicto:** APROBADO
 - **Revisó:** psicologa-infantil
 - **Fecha:** 2026-11-20
-- **Vuelta:** 3 (sobre el guion que aplica los 4 cambios de la segunda vuelta)
+- **Vuelta:** 4 (idiomas: voz en es, en y pt-BR de `voz_idiomas.md`, con las decisiones de la pedagoga). El guion en es quedó aprobado en la vuelta 3 y no cambia. El veredicto cubre los tres idiomas.
 
 <!-- Veredicto: APROBADO o CAMBIOS. El prompt no pasa el validador sin APROBADO. -->
 
 ## Lista de comprobación
 
-| # | Criterio (guía 1 a 3, sección 8) | ¿Cumple? | Nota |
+| # | Criterio (guía 1 a 3, sección 9) | ¿Cumple? | Nota |
 |---|---|---|---|
 | 1 | Un solo objetivo y tramo de edad | Sí | Saludar con la mano, 18–24 meses, con adulto al lado. Solo se pide un gesto con modelo. No se pide hablar, señalar ni nombrar. «Adiós» se dice una vez y no se pide. |
 | 2 | El concepto se repite tres veces o más | Sí | «Hola» se dice en los planos 1, 2, 5, 7, 8, 10, 11 y 12. En los planos 1, 2, 5, 7, 8 y 10 la palabra cae sobre el ala o la pezuña en alto. |
