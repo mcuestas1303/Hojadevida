@@ -38,6 +38,8 @@ video-studio/
 ├── infantil/                guía de 1 a 3 años y plantillas del equipo creativo
 ├── generador.md             herramienta y precios
 ├── formatos.md              formatos de salida para YouTube y redes
+├── generacion.md            reglas de créditos, definición cerrada y cambios
+├── cambios/                 solicitudes de cambio revisadas por el equipo
 ├── datos/                   exportaciones del canal para el comercial
 ├── plantillas/
 │   ├── prompt_video.md      estructura fija del prompt
@@ -108,6 +110,13 @@ aparece en ella. El validador rechaza el prompt si:
 - se usa un `@id` que no tiene ficha, bloque de identidad o imagen de referencia;
 - una toma no dice quién sale, o usa a alguien que no está en el elenco;
 - alguien del elenco no aparece en ninguna toma.
+
+## Créditos, definición y cambios
+
+Tres reglas, detalladas en `generacion.md`: cada pieza se genera una sola vez; no se genera
+nada sin definición cerrada (personaje, lugar y pieza) y sin autorización con el costo a la
+vista; y todo cambio pasa primero por el equipo como una solicitud en `cambios/`, que dice
+qué toca de lo ya definido y cuánto costaría.
 
 ## Dónde quedan los prompts
 

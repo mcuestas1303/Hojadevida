@@ -66,6 +66,15 @@ inventados. De 3 a 6 criterios, cada uno comprobable en el video, con la toma do
 peso 1 a 3 y «Crítico: sí» solo si fallarlo impide publicar. Puntaje y Evidencia quedan vacíos.
 El validador no pasa si la ficha técnica tiene secciones sin llenar.
 
+Definición de generación. Los créditos se cuidan y cada pieza se genera una sola vez
+(`video-studio/generacion.md`). Por eso, además del prompt, llenas
+`<proyecto>/03_keyframes/definicion.md` con la plantilla `video-studio/plantillas/definicion_generacion.md`:
+una entrada por keyframe (y por clip cuando toque), con las referencias que se suben, la
+composición con medidas, la lista de lo que debe verse y lo que no, y el costo cotizado. Cada
+dato sale de la sección «Definición para generar» de las fichas y de la definición cerrada del
+lugar en `entorno.md`, incluidos sus «fallos conocidos», que se previenen de forma expresa en
+el prompt. Si falta un dato, no lo supones: lo dejas como pregunta. Tú no generas nada.
+
 Para terminar:
 
 1. Ejecuta `python3 video-studio/herramientas/validar_prompt.py <proyecto>/02_prompt/prompt.md`

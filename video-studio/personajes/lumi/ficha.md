@@ -48,3 +48,20 @@ Las hojas de personaje (vueltas y 16 emociones) las lleva la conversación de pe
 ## Prompts
 
 Los prompts de video donde sale están en `prompts/`, por tipo: `intro/`, `capitulos/`, `shorts/`, `otros/`. La lista completa está en `prompts/INDICE.md`.
+
+## Definición para generar
+
+Medidas tomadas del keyframe aprobado `series/granja/referencias/patio.png`.
+
+- **Altura:** es la más alta; Tiky le llega a los ojos con la punta del copete. Junto al granero, Lumi mide tres cuartos de la altura de la fachada.
+- **Crayón:** lila, corto y grueso, detrás de su oreja derecha (a la izquierda de quien mira), apoyado sobre la mancha negra de la cabeza. Se ve entero y siempre.
+- **Manchas:** dos y solo dos: una que cruza la panza y la espalda, otra sobre la cabeza entre los cuernos. Ninguna alrededor de los ojos.
+- **Brazos y patas:** antebrazos y parte baja de las patas en negro, como calcetines; pezuñas lila en los cuatro.
+- **Cuernos:** dos, crema, pequeños y redondeados. **Orejas:** caídas, lila por dentro.
+
+Lista de comprobación de cada imagen: cuerpo de huevo sin cuello · blanco crema con dos manchas negras · mancha negra sobre la cabeza · crayón lila detrás de la oreja derecha · dos cuernos crema · orejas con interior lila · ojos miel con un brillo blanco · cejas suaves · hocico lila con dos puntos · antebrazos y patas negros · cuatro pezuñas lila · sin cencerro, flor ni bombilla.
+
+Fallos conocidos del generador:
+
+- Omite el crayón si no se pide de forma expresa y se dice contra qué fondo se ve (2026-11-20).
+- Aclara los antebrazos: los deja blancos con solo la pezuña lila (2026-11-20).

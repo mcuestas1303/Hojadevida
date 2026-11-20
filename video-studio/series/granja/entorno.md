@@ -26,6 +26,22 @@ El lugar del saludo y la despedida.
 A toy farmyard at toy scale on a sunny playroom floor: a small red wooden toy barn with a white roof on the left, a low white wooden fence behind, a soft pastel green felt mat as grass, plain pastel sky-blue wall in the background.
 ```
 
+Definición cerrada del patio (tomada del keyframe aprobado; imagen de referencia del lugar:
+`referencias/patio.png`, que se sube siempre que se genere algo en el patio):
+
+- **Granero:** a la izquierda del cuadro, de madera roja con vetas verticales. **Techo a dos
+  aguas simple**, blanco, con alero. En la fachada, una puerta rectangular abierta y oscura,
+  y encima **una sola abertura cuadrada**. Sin letreros, sin veleta, sin animales dentro.
+- **Cerca:** baja, blanca, de postes redondeados y dos travesaños; pasa por detrás de los
+  personajes, de lado a lado.
+- **Suelo:** fieltro verde claro, liso, sin flores ni piedras; al fondo asoma el piso de madera.
+- **Pared:** azul cielo pastel, lisa, con zócalo blanco. **Sin ventanas, cuadros ni enchufes.**
+- **Luz:** de día, pareja, desde arriba a la izquierda; sombras suaves.
+- **Cámara:** a la altura de los ojos de Tiky, de frente al granero y la cerca.
+
+Fallos conocidos del generador: agrega una ventana a la derecha; cambia el techo del granero
+a uno quebrado (tipo mansarda) cuando el personaje sale solo (2026-11-20).
+
 ### huerto
 
 Colores, contar, grande y pequeño, sembrar y regar.

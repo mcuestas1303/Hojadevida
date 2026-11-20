@@ -174,6 +174,9 @@ def main():
             errores.append(f"@{pid}: su ficha no tiene el bloque de identidad escrito.")
         else:
             identidad[pid] = bloque
+        if "## Definición para generar" not in (carpeta / "ficha.md").read_text():
+            errores.append(f"@{pid}: su ficha no tiene la sección «Definición para generar» "
+                           "(proporciones, lista de comprobación, fallos conocidos).")
         refs = carpeta / "referencias"
         if not any(f.suffix.lower() in IMAGENES for f in refs.glob("*")) if refs.is_dir() else True:
             errores.append(f"@{pid}: no hay ninguna imagen en personajes/{pid}/referencias/.")

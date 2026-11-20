@@ -8,6 +8,17 @@ El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
 - Decisión del dueño (2026-11-20), para todo lo que se produzca aquí: nada de identidad de género ni
   ideología de género en el contenido, en ningún idioma ni formato. Tiky es él y Lumi es ella.
 
+## Créditos y cambios (regla del dueño, 2026-11-20)
+
+- **Nada de segundos intentos.** Cada imagen, clip o audio se genera una sola vez. Si sale mal, se informa
+  qué falló y cuánto costaría rehacerlo; no se regenera sin que el dueño lo autorice para esa pieza.
+- **No se genera sin definición cerrada**: ficha del personaje con «Definición para generar», lugar definido
+  en `entorno.md` con su imagen de referencia, y `03_keyframes/definicion.md` revisada por el equipo y
+  autorizada por el dueño con el costo a la vista. Lo que falte se pregunta, no se supone.
+- **Todo cambio que pida el dueño pasa primero por el equipo**: se abre una solicitud en `video-studio/cambios/`,
+  se revisa qué toca de lo ya definido y qué habría que rehacer, y se le presenta con el costo y las dudas
+  antes de aplicar o generar nada. Detalle en `video-studio/generacion.md`.
+
 ## Trabajo con videos
 
 - Para ver un video: `python3 video-studio/herramientas/analizar_video.py <video> <salida>` y luego
