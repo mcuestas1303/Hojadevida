@@ -28,11 +28,11 @@ Responsable: `pedagoga-montessori`
 | # | Objetivo | Cómo se comprueba en el video | Dónde | Peso | Crítico | Puntaje | Evidencia |
 |---|---|---|---|---|---|---|---|
 | P1 | Un solo objetivo: saludar con la mano | Lo único que se le pide al niño es saludar con la mano; no se pide nombrar, señalar, contar ni decir una palabra | Práctica, las dos preguntas | 3 | sí | | |
-| P2 | El saludo se repite tres veces o más | La palabra hola se oye al menos tres veces, cada una con el gesto de la mano a la vista | Saludo, presentación y práctica | 2 | no | | |
+| P2 | El saludo se repite tres veces o más | La palabra hola se oye varias veces y en al menos tres de ellas coincide con el ala o la pezuña en alto | Saludo, presentación y práctica | 2 | no | | |
 | P3 | Hola se usa solo al llegar o al responder un saludo, nunca al irse | Ninguna voz dice hola en la despedida; la despedida dice Ahora, a jugar. Adiós. y el cierre dice Con la mano decimos hola | Cierre y despedida | 3 | sí | | |
 | P4 | Si el niño no responde, nadie lo corrige | Tras cada pausa el personaje dice Hola con calma y sonríe, sin repetir la pregunta ni decir no o mal | Práctica, después de cada pausa | 3 | sí | | |
-| P5 | La frase es corta y la palabra clave va al final, sin música | Las frases tienen de 3 a 5 palabras y no hay música debajo; en las frases que nombran o responden, hola es lo último que se oye, y las dos preguntas terminan en saluda con la mano | Saludo, presentación, práctica y cierre | 2 | no | | |
-| P6 | Todo lo que se muestra es verdadero | Saludan con el ala y la pezuña de forma realista; no hay magia ni objetos que aparecen solos, y los sonidos de animal suenan antes de la voz | Presentación y práctica | 2 | no | | |
+| P5 | La frase es corta y la palabra clave va al final, sin música | Ninguna frase pasa de 5 palabras y no hay música debajo; en las frases que nombran o responden, hola es lo último que se oye, y las dos preguntas terminan en saluda con la mano | Saludo, presentación, práctica y cierre | 2 | no | | |
+| P6 | Todo lo que se muestra es verdadero | Saludan con el ala y la pezuña, sin manos humanas añadidas; no hay magia ni objetos que aparecen solos, y los sonidos de animal suenan antes de la voz | Presentación y práctica | 2 | no | | |
 | P7 | El episodio termina fuera de la pantalla con un objeto de casa | La voz pide buscar un peluche y saludarlo, y dice al adulto Saluden ustedes primero, y esperen | Invitación | 3 | sí | | |
 
 ## Método Montessori
@@ -57,7 +57,12 @@ Responsable: `psicologa-infantil`
 
 | # | Objetivo | Cómo se comprueba en el video | Dónde | Peso | Crítico | Puntaje | Evidencia |
 |---|---|---|---|---|---|---|---|
-| S1 | [objetivo] | [indicador observable] | [plano] | [1-3] | [sí/no] | | |
+| S1 | Lumi se ve como base segura cuando no responde al primer saludo de Tiky | En el plano 3 Lumi mira a Tiky con cara tranquila, cabeza un poco inclinada, sin ceño fruncido, sin cara seria y sin darle la espalda; al final del episodio los dos están juntos y nadie sale de cuadro dejando solo al otro | Plano 3, y planos 11 a 13 | 3 | sí | | |
+| S2 | Nada en las caras ni en los movimientos asusta | No hay dientes a la vista, ojos muy abiertos, caras que se acercan a cámara, giros bruscos, tropiezos ni caídas; la cámara no se acerca de golpe a nadie | Todo el episodio, en especial encuadre B y planos 1, 4 y 11 | 3 | sí | | |
+| S3 | Nada peligroso de imitar | Nadie corre, salta, trepa ni empuja; ni la pezuña de Lumi ni el ala de Tiky llegan a la boca, al pico o al mentón; solo se camina despacio y se saluda | Todo el episodio | 3 | sí | | |
+| S4 | El sonido no sobresalta | La música entra y sale con fundidos lentos, sin cortes secos; los pasos y los sonidos de animal tienen volumen parejo y ninguno suena más fuerte que la voz | Planos 1, 11 y 13, y los sonidos de animal | 2 | no | | |
+| S5 | Las esperas se ven vivas y no congeladas fuera de las pausas | En la invitación los dos parpadean y respiran suave mientras miran a cámara; ningún plano muestra una imagen congelada ni un último fotograma alargado más allá de la duración del guion | Planos 12 y 13 | 2 | no | | |
+| S6 | El final es tranquilo y sin gancho | El último fotograma muestra a los dos en calma en el patio, sin acercamiento de cámara, sin elementos nuevos y sin imagen ni sonido que anuncie otro video | Plano 13 | 2 | no | | |
 
 ## Aprendizaje interactivo
 

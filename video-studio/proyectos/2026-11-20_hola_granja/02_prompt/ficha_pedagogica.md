@@ -15,7 +15,7 @@
 3. **Recordar:** no aplica (menores de 30 meses).
 
 - **Control del error:** la respuesta social lo muestra. Tiky levanta el ala hacia un lado, sin mirar a Lumi, y Lumi espera quieta sin responder y sin decir nada. Tiky se gira hacia ella, repite, y Lumi le contesta. Si el niño no saluda, el personaje dice «hola» y sonríe, y nadie corrige.
-- **Qué hace Tiky / qué hace Lumi:** Tiky intenta: mueve el ala pequeña, rápido y sin mirar. Lumi muestra lo justo: un saludo lento, con la pezuña arriba y moviéndola dos veces. Tiky lo repite hacia ella y lo logra solo. Lumi no lo hace por él y no dice «muy bien», solo lo describe: «Saludaste a Lumi».
+- **Qué hace Tiky / qué hace Lumi:** Tiky intenta: hace un movimiento pequeño y corto con el ala, sin mirar a Lumi. Lumi muestra lo justo: un saludo lento, con la pezuña arriba y moviéndola dos veces. Tiky lo repite hacia ella y lo logra solo. Lumi no lo hace por él y no dice «muy bien», solo se describe: «Tiky saludó a Lumi».
 
 ## Repetición
 
