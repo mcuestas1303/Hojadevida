@@ -21,7 +21,7 @@ Una fila por cada plano del guion que lleva voz. No se dejan celdas vacías.
 
 ## Frases fijas de la serie
 
-| | es | en | pt-BR |
+| Frase | es | en | pt-BR |
 |---|---|---|---|
 | Saludo | [texto] | [text] | [texto] |
 | Despedida | [texto] | [text] | [texto] |

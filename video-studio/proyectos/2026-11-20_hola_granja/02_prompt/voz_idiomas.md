@@ -32,7 +32,7 @@ Los planos 3, 6 y 9 no llevan voz (silencio o pausa) y por eso no tienen fila. L
 
 ## Frases fijas de la serie
 
-| | es | en | pt-BR |
+| Frase | es | en | pt-BR |
 |---|---|---|---|
 | Saludo | Esta es la granja. Hola. | This is the farm. Hello. | Esta é a fazenda. Oi. |
 | Despedida | Ahora, a jugar. Adiós. | Time to play. Bye-bye. | Agora, vamos brincar. Tchau! |
