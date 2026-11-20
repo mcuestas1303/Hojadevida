@@ -64,4 +64,3 @@ Lista de comprobación de cada imagen: cuerpo de huevo sin cuello · blanco crem
 Fallos conocidos del generador:
 
 - Omite el crayón si no se pide de forma expresa y se dice contra qué fondo se ve (2026-11-20).
-- Aclara los antebrazos: los deja blancos con solo la pezuña lila (2026-11-20).

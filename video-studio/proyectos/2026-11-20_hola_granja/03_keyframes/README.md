@@ -13,5 +13,8 @@ como referencia. El keyframe C se hizo primero y sirvió de referencia del patio
 `descartes/keyframe_C_intento1.png`: primer intento, descartado (Tiky tan alto como Lumi, sin
 crayón, con una ventana).
 
-Pendiente de decisión del dueño: en A y B el techo del granero tiene otra forma que en los dos
-keyframes C, y B salió de cuerpo entero.
+Revisión a tamaño completo (2026-11-20): el granero es el mismo en los cuatro keyframes y Lumi
+tiene los antebrazos negros y el crayón en `keyframe_B_lumi.png`. Las reservas anotadas al
+generarlos venían de mirar una vista previa reducida. **Los cuatro keyframes son válidos; no se
+rehace ninguno.** La única diferencia con el prompt es que B salió de cuerpo entero y no en plano
+medio; se trata como solicitud de cambio en `video-studio/cambios/2026-11-20_encuadre_lumi.md`.

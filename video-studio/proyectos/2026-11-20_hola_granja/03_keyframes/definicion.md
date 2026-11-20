@@ -1,6 +1,6 @@
 # Definición de generación — Hola, granja (rehacer Keyframe A y Keyframe B)
 
-- **Estado:** PENDIENTE
+- **Estado:** NO SE GENERA
 - **Costo total cotizado:** 3 créditos (2 imágenes × 1,5)
 - **Autorizado por el dueño:** sí, 2026-11-20, para rehacer A y B una vez cada uno
 
@@ -11,6 +11,12 @@ Los keyframes C_los_dos y C_entrada ya son válidos y no se rehacen. A y B anter
 (IDs 0b4b497b-8dc2-4441-8fd0-d6e151ac6a22 y cef6a8ab-e934-4e05-a0d3-94ab263be1a9) quedan sustituidos.
 Medidas: fracciones del alto y del ancho del cuadro, medidas en keyframe_C_los_dos.png (16:9). Tolerancia ±3 %.
 -->
+
+> **2026-11-20 — No se genera.** El dueño autorizó rehacer A y B porque la coordinación informó
+> que el techo del granero era distinto. Al preparar esta definición se compararon los cuatro
+> keyframes a tamaño completo y el granero es el mismo en todos; el informe estaba equivocado.
+> Rehacerlos gastaría 3 créditos sin motivo. Esta definición queda como modelo de cómo se
+> define una pieza, no como orden de generación.
 
 ## Piezas
 
