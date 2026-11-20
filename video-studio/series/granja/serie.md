@@ -12,6 +12,7 @@ que comprueba el validador» no se renombran).
 - **Cámaras permitidas:** fija, paneo lento, acercamiento lento, alejamiento lento, seguimiento lento
 - **Términos prohibidos en prompts:** fast cut, quick cut, whip pan, crash zoom, shaky, handheld, flash, strobe, glitch, flicker, lens flare, explosion, scary, storm, text, subtitle, caption, logo
 - **Requiere revisión aprobada:** sí
+- **Requiere ficha técnica:** sí
 
 ## Quiénes salen
 
@@ -40,7 +41,8 @@ a la altura de los ojos de Tiky.
 | 2 | Presentación | 15–20 s | Tiky encuentra el objeto o la tarea. Lumi lo nombra: «Esto es…» |
 | 3 | Práctica | 25–40 s | Tiky lo intenta. Dos preguntas al niño, cada una con su pausa. El concepto se repite |
 | 4 | Cierre | 8–10 s | Se guarda todo en su lugar. Se dice una vez más la palabra del día |
-| 5 | Invitación | 6–8 s | A cámara, para el niño y el adulto: hacerlo en casa con algo real. Despedida, siempre igual |
+| 5 | Invitación | 6–8 s | A cámara, para el niño y el adulto: hacerlo en casa con algo real |
+| 6 | Despedida | 6 s | Siempre igual: los dos saludan a cámara. Sin gancho para seguir viendo |
 
 ## Voz y sonido
 

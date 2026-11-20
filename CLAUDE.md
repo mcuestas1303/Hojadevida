@@ -24,6 +24,9 @@ El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
   `pedagoga-montessori` (ficha pedagógica) → `guionista-interactivo` (guion) → `psicologa-infantil`
   (revisión) → `director-de-prompts` (prompt). Si la psicóloga pide cambios, vuelve al guionista.
 - Todos trabajan contra `video-studio/infantil/guia_1_a_3.md`.
+- Cada prompt de serie lleva su `ficha_tecnica.md`: los objetivos de cada disciplina (pedagogía, Montessori,
+  psicología infantil, aprendizaje interactivo, producción), escritos por su responsable antes de generar.
+  Es la rúbrica del video: una vez generado se puntúa cada criterio y se calcula con `puntuar_ficha.py`.
 - En la serie `granja` solo actúan `@tiky` y `@lumi` hasta que el dueño cargue los secundarios.
 - El contenido infantil nunca se cruza con «M» ni con personajes para adultos.
 - El resto de los personajes del dueño está en la rama `claude/focused-thompson-wojzu6` (`creador-personajes/`).

@@ -56,6 +56,7 @@ video-studio/
     ├── analizar_video.py
     ├── validar_prompt.py
     ├── archivar_prompt.py
+    ├── puntuar_ficha.py
     └── ensamblar.py
 ```
 
@@ -160,6 +161,31 @@ python3 video-studio/herramientas/nuevo_proyecto.py "Hola, granja" --serie granj
 En un prompt de serie el validador además exige: solo personajes del elenco permitido,
 objetivo de aprendizaje, ninguna toma por debajo de la duración mínima, cámara fija o lenta,
 ningún término prohibido en los prompts y la revisión de la psicóloga en APROBADO.
+
+## Ficha técnica y rúbrica
+
+Cada prompt de serie va acompañado de `ficha_tecnica.md`. Antes de generar, cada profesional
+escribe lo que su disciplina se propone lograr en ese video:
+
+| Sección | Responsable |
+|---|---|
+| Pedagogía | `pedagoga-montessori` |
+| Método Montessori | `pedagoga-montessori` |
+| Psicología infantil | `psicologa-infantil` |
+| Aprendizaje interactivo | `guionista-interactivo` |
+| Producción | `director-de-prompts` |
+
+Cada criterio dice qué debe lograrse, cómo se comprueba en el video, en qué plano mirar, su
+peso (1 a 3) y si es crítico. Con el video ya generado se puntúa cada uno (0 no se cumple,
+1 a medias, 2 se cumple) con su evidencia, y se calcula:
+
+```bash
+python3 video-studio/herramientas/puntuar_ficha.py video-studio/proyectos/<proyecto>/02_prompt/ficha_tecnica.md
+```
+
+El resultado da el cumplimiento por disciplina y total. «CUMPLE» pide 80 % o más y todos los
+críticos en 2; un crítico por debajo de 2 es «NO PUBLICAR» aunque el total sea alto. La ficha
+se archiva junto al prompt en la carpeta del personaje, como `<nombre>_ficha.md`.
 
 ## Requisitos
 

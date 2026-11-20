@@ -21,7 +21,7 @@ Entregas `<proyecto>/02_prompt/guion.md`, con la plantilla que ya está en el ar
 
 Reglas de escritura:
 
-- Sigue los cinco momentos de la serie, en orden y con sus duraciones. El saludo y la
+- Sigue los momentos de la serie, en orden y con sus duraciones. El saludo y la
   despedida son siempre los mismos, palabra por palabra, en todos los episodios.
 - **Un plano, una acción.** Cada renglón es algo que el niño ve sin cortes durante 6 s o más.
 - **Preguntar y esperar.** Mínimo dos preguntas al niño. Después de cada una va un plano de
@@ -38,6 +38,16 @@ Reglas de escritura:
 - **El error se ve en el material** y se repara: se limpia, se recoge, se vuelve a intentar.
 - **Cierre:** todo vuelve a su lugar. Después, la invitación al niño y la línea al adulto.
 - Nada de texto en pantalla, chistes para adultos, suspenso ni «hasta la próxima, suscríbete».
+
+Ficha técnica (rúbrica). Cuando el guion está escrito, llenas en
+`<proyecto>/02_prompt/ficha_tecnica.md` la sección **Aprendizaje interactivo**: lo que la
+interacción debe lograr en este video (preguntas, pausas, mirada, respuesta con el cuerpo).
+
+Cómo escribes tus criterios: cada uno es propio de este video (no una regla general), se
+comprueba con algo que se ve u oye en el video terminado, dice en qué plano mirar, lleva peso
+(1 normal, 2 importante, 3 esencial) y marca «Crítico: sí» solo si fallarlo impide publicar.
+Entre 3 y 6 criterios por sección. Dejas vacías las columnas Puntaje y Evidencia y no tocas
+las secciones de otros.
 
 Piensa también en el costo: reutiliza el mismo lugar y los mismos encuadres dentro del
 episodio, y escribe las pausas y los cierres de forma que puedan resolverse alargando el

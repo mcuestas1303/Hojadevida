@@ -5,6 +5,9 @@ Uso:
     python3 archivar_prompt.py <proyecto>/02_prompt/prompt.md
     python3 archivar_prompt.py --indice        (solo rehace los indices)
 
+Si junto al prompt hay una ficha_tecnica.md, la guarda a su lado como
+<nombre>_ficha.md. Tras evaluar el video se vuelve a archivar para actualizarla.
+
 El prompt va a personajes/<protagonista>/prompts/<tipo>/, donde el protagonista
 es el primer personaje del elenco. Cada personaje que sale en el video lo ve en
 su propio personajes/<id>/prompts/INDICE.md.
@@ -60,6 +63,8 @@ def rehacer_indices():
     """Un INDICE.md por personaje con todos los prompts donde aparece."""
     todos = []
     for ruta in sorted(PERSONAJES.glob("*/prompts/*/*.md")):
+        if ruta.name.endswith("_ficha.md"):
+            continue
         todos.append((ruta, leer(ruta)))
     for carpeta in sorted(p for p in PERSONAJES.iterdir() if p.is_dir() and not p.name.startswith("_")):
         pid = carpeta.name
@@ -71,12 +76,16 @@ def rehacer_indices():
             if not filas:
                 lineas += ["_Ninguno todavía._", ""]
                 continue
-            lineas += ["| # | Título | Serie | Duración | Con | Archivo |", "|---|---|---|---|---|---|"]
+            lineas += ["| # | Título | Serie | Duración | Con | Prompt | Ficha técnica |", "|---|---|---|---|---|---|---|"]
             for r, d in sorted(filas, key=lambda x: (x[1]["serie"], x[1]["numero"] or 0, x[0].name)):
                 otros = ", ".join(f"@{x}" for x in d["elenco"] if x != pid) or "—"
                 enlace = Path("..") / ".." / r.relative_to(PERSONAJES)
+                ficha = r.with_name(r.stem + "_ficha.md")
+                estado = "—"
+                if ficha.is_file():
+                    estado = f"[{campo(ficha.read_text(), 'Estado') or 'ver'}]({enlace.with_name(ficha.name).as_posix()})"
                 lineas.append(f"| {d['numero'] or '—'} | {d['titulo']} | {d['serie'] or '—'} | "
-                              f"{d['duracion'] or '—'} | {otros} | [{r.name}]({enlace.as_posix()}) |")
+                              f"{d['duracion'] or '—'} | {otros} | [{r.name}]({enlace.as_posix()}) | {estado} |")
             lineas.append("")
         (carpeta / "prompts").mkdir(exist_ok=True)
         (carpeta / "prompts" / "INDICE.md").write_text("\n".join(lineas))
@@ -113,6 +122,9 @@ def main():
         fuente = origen.parent.parent.name
     nota = f"<!-- Copia archivada. Se edita en {fuente}/02_prompt/prompt.md y se vuelve a archivar. -->\n"
     destino.write_text(nota + origen.read_text())
+    ficha = origen.with_name("ficha_tecnica.md")
+    if ficha.is_file():
+        destino.with_name(destino.stem + "_ficha.md").write_text(ficha.read_text())
     rehacer_indices()
     print(f"Archivado: {destino.relative_to(ESTUDIO)}")
     print("Aparece en el índice de: " + ", ".join(f"@{p}" for p in d["elenco"]))

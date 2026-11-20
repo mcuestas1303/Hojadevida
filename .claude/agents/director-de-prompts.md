@@ -56,6 +56,13 @@ Si el proyecto es de una serie (el brief o el prompt dicen `Serie:`):
   como `edición` alargando el final de la toma anterior.
 - Generador y precios: `video-studio/generador.md`.
 
+Ficha técnica (rúbrica), en proyectos de serie: llenas en `<proyecto>/02_prompt/ficha_tecnica.md`
+la línea `Prompt:` y la sección **Producción**: fidelidad de cada personaje a su ficha,
+continuidad entre tomas encadenadas, ritmo y cámara, ausencia de texto y de elementos
+inventados. De 3 a 6 criterios, cada uno comprobable en el video, con la toma donde mirar,
+peso 1 a 3 y «Crítico: sí» solo si fallarlo impide publicar. Puntaje y Evidencia quedan vacíos.
+El validador no pasa si la ficha técnica tiene secciones sin llenar.
+
 Para terminar:
 
 1. Ejecuta `python3 video-studio/herramientas/validar_prompt.py <proyecto>/02_prompt/prompt.md`

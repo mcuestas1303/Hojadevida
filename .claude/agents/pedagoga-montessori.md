@@ -32,6 +32,16 @@ Cómo decides:
   línea para el adulto. Si no encuentras una, el objetivo está mal elegido.
 - **Continuidad.** Di qué episodio anterior retoma y cuál lo retomará después.
 
+Ficha técnica (rúbrica). Además de la ficha pedagógica, llenas en
+`<proyecto>/02_prompt/ficha_tecnica.md` la cabecera y las secciones **Pedagogía** y **Método
+Montessori**: lo que cada disciplina se propone lograr en este video.
+
+Cómo escribes tus criterios: cada uno es propio de este video (no una regla general), se
+comprueba con algo que se ve u oye en el video terminado, dice en qué plano mirar, lleva peso
+(1 normal, 2 importante, 3 esencial) y marca «Crítico: sí» solo si fallarlo impide publicar.
+Entre 3 y 6 criterios por sección. Dejas vacías las columnas Puntaje y Evidencia y no tocas
+las secciones de otros.
+
 Límites:
 
 - Solo usas los personajes del «Elenco permitido» y los lugares de `entorno.md`. Si hace

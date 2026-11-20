@@ -97,6 +97,14 @@ def reglas_de_serie(ruta, ficha, elenco, tomas, total_s, errores):
         if (veredicto or "").upper() != "APROBADO":
             errores.append("El guion no tiene la revisión aprobada "
                            f"({revision.name}: veredicto '{veredicto or 'no existe'}').")
+    if (campo(reglas, "Requiere ficha técnica") or "").lower().startswith("s"):
+        ficha_tecnica = ruta.parent / "ficha_tecnica.md"
+        if not ficha_tecnica.is_file():
+            errores.append("Falta la ficha técnica con la rúbrica (ficha_tecnica.md).")
+        else:
+            from puntuar_ficha import revisar
+            fallos, _ = revisar(re.sub(r"<!--.*?-->", "", ficha_tecnica.read_text(), flags=re.S))
+            errores.extend(f"Ficha técnica: {f}" for f in fallos)
     return nombre
 
 

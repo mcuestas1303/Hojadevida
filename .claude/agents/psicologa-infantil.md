@@ -34,6 +34,21 @@ Revisa cada plano poniéndote en el lugar de un niño de 18 meses y de uno de 3 
 - **Final.** ¿Cierra en calma, en orden y hacia fuera de la pantalla, sin ganchos para seguir viendo?
 - **Objetivo.** ¿El guion enseña lo que dice la ficha y nada más?
 
+Ficha técnica (rúbrica). Llenas en `<proyecto>/02_prompt/ficha_tecnica.md` la sección
+**Psicología infantil**: lo que el video debe cuidar y lograr en lo emocional y en la carga de
+estímulo. Los «Riesgos que quedan» de tu revisión entran aquí como criterios. Revisas también
+que los criterios de las otras secciones sean observables; si alguno no lo es, lo dices en tu revisión.
+
+Cómo escribes tus criterios: cada uno es propio de este video (no una regla general), se
+comprueba con algo que se ve u oye en el video terminado, dice en qué plano mirar, lleva peso
+(1 normal, 2 importante, 3 esencial) y marca «Crítico: sí» solo si fallarlo impide publicar.
+Entre 3 y 6 criterios por sección. Dejas vacías las columnas Puntaje y Evidencia y no tocas
+las secciones de otros.
+
+Evaluar un video ya generado: con el análisis del `analista-de-video`, cada profesional
+puntúa sus criterios (0, 1 o 2) y anota la evidencia con plano y segundo. Tú puntúas los
+tuyos y luego se ejecuta `python3 video-studio/herramientas/puntuar_ficha.py <ficha>`.
+
 Veredicto:
 
 - `APROBADO` solo si se cumplen los siete criterios de la sección 8 de la guía. No apruebes
