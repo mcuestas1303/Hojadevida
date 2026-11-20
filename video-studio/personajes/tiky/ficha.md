@@ -52,7 +52,7 @@ Los prompts de video donde sale están en `prompts/`, por tipo: `intro/`, `capit
 
 Medidas tomadas del keyframe aprobado `series/granja/referencias/patio.png`.
 
-- **Altura:** junto a Lumi, Tiky mide dos tercios de la altura de ella: la punta de su copete llega a la altura de los ojos de Lumi y el borde superior de su cuerpo queda a la altura del hocico de Lumi. (La descripción original decía «la mitad»; ver «Pendiente» abajo.)
+- **Altura:** junto a Lumi, Tiky mide dos tercios de la altura de ella: la punta de su copete llega a la altura de los ojos de Lumi y el borde superior de su cuerpo queda a la altura del hocico de Lumi. Medida oficial, confirmada por el dueño el 2026-11-20.
 - **Ancho:** su cuerpo es tan ancho como tres cuartos del cuerpo de Lumi.
 - **Copete:** tres plumas, la del centro más alta; en total, un cuarto de la altura del cuerpo.
 - **Alas:** pegadas a los lados, llegan a la mitad del cuerpo; son alas, nunca manos.
@@ -64,5 +64,3 @@ Fallos conocidos del generador:
 
 - Lo dibuja casi tan alto como Lumi si no se le da la altura con un punto de referencia en el cuerpo de ella (2026-11-20).
 - Tiende a agrandar y esponjar el copete.
-
-Pendiente de decisión del dueño: la proporción con Lumi. Los keyframes aprobados lo muestran a dos tercios; la idea original era la mitad. Mientras no diga otra cosa, la medida válida es la de los keyframes ya generados.

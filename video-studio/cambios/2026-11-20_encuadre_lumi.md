@@ -2,7 +2,7 @@
 
 - **Fecha:** 2026-11-20
 - **Origen:** no es un pedido del dueño. El keyframe B salió de cuerpo entero y el prompt aprobado pide plano medio. Hay que decidir cuál de los dos manda.
-- **Estado:** PRESENTADA AL DUEÑO
+- **Estado:** APLICADA
 
 ## Qué toca de lo ya definido
 
@@ -28,4 +28,4 @@
 
 ## Decisión del dueño
 
-pendiente
+Aprobada la opción 1 (2026-11-20): se acepta el cuerpo entero. Aplicada el mismo día: se corrigió el encuadre de las tomas 3, 9, 10 y 11 en el prompt y se volvió a archivar. No se generó nada.
