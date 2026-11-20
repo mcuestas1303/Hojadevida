@@ -274,3 +274,20 @@ Sin cifras: no tengo dato de ingresos de ninguna. Para cada una, lo que habría 
 5. Ritmo de publicación que el equipo pueda sostener (5.3).
 6. Qué vías de ingreso fuera de los anuncios se persiguen primero (libros para colorear, hojas, música).
 7. Quién del equipo (con red abierta) lee las páginas oficiales de la sección 2 y marca cada fila como verificada.
+
+## Nota de la coordinación sobre la admisión al Programa de socios (2026-11-20)
+
+Segunda búsqueda sobre el punto que el comercial dejó como contradictorio. Varias guías de
+terceros coinciden en que un canal «hecho para niños» **sí puede cobrar anuncios** dentro del
+Programa de socios, solo que sin anuncios personalizados (anuncios contextuales), y que la
+condición de «no estar configurado como hecho para niños» corresponde a las funciones de
+apoyo de los fans (membresías, Super Thanks, Super Chat), no a los anuncios. Es lo más
+probable, pero sigue **sin verificar en la página oficial**: la red de esta sesión no deja
+abrir `support.google.com`. Antes de producir en volumen conviene que el dueño lo lea en la
+ayuda de YouTube o habilite ese sitio en el entorno.
+
+Fuentes (terceros, consultadas el 2026-11-20):
+[gyre.pro](https://gyre.pro/blog/how-to-monetize-a-youtube-kids-channel) ·
+[sirency.com](https://www.sirency.com/blog/youtube-made-for-kids-monetization) ·
+[makeinfluence.com](https://www.makeinfluence.com/en/academy/youtube-channel-memberships-and-super-thanks-fan-funding-separate-from-ad-revenue) ·
+[air.io](https://air.io/en/youtube-glossary/what-does-made-for-kids-mean-on-youtube)
