@@ -111,7 +111,7 @@ def reglas_de_serie(ruta, ficha, elenco, tomas, total_s, errores):
             for idioma in idiomas:
                 if f"| {idioma} " not in cabecera + " ":
                     errores.append(f"voz_idiomas.md no tiene la columna del idioma '{idioma}'.")
-            if re.search(r"\[[^\]\n]*\]", tabla) or re.search(r"\|\s*\|", tabla):
+            if re.search(r"\[[^\]\n]*\]", tabla) or re.search(r"\|[ \t]*\|", tabla):
                 errores.append("voz_idiomas.md tiene celdas vacías o sin llenar.")
 
     if (campo(reglas, "Requiere ficha técnica") or "").lower().startswith("s"):
