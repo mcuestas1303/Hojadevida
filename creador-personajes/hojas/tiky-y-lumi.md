@@ -74,4 +74,4 @@ pasando la referencia 3D aprobada de cada personaje.
 - Prueba descartada: vueltas de Tiky con Nano Banana 2 Lite (`e455b7b2-b415-4178-afb6-fe868a7d06e7`, 1 crédito),
   para comparar contra GPT Image 2 en calidad baja.
 - Revisión a ojo: Tiky sale igual en todos los paneles. En Lumi las manchas negras cambian algo de forma entre
-  paneles; el crayón lila, el hocico y los cuernos se mantienen. **Pendiente: el visto bueno del dueño.**
+  paneles; el crayón lila, el hocico y los cuernos se mantienen. **Aprobadas por el dueño (2026-11-20: «si me gustan»).**
