@@ -44,6 +44,18 @@ a la altura de los ojos de Tiky.
 | 5 | Invitación | 6–8 s | A cámara, para el niño y el adulto: hacerlo en casa con algo real |
 | 6 | Despedida | 6 s | Siempre igual: los dos saludan a cámara. Sin gancho para seguir viendo |
 
+## Frases fijas
+
+Fijadas en el capítulo 1 y aprobadas por la psicóloga (2026-11-20). Van palabra por palabra
+en todos los episodios, con los mismos gestos y el mismo encuadre de los dos. Están escritas
+para narradora en off; si los personajes pasan a hablar, se revisan de nuevo.
+
+- **Saludo (10 s):** «Esta es la granja. Hola.» Los dos entran, miran a cámara y saludan con
+  el ala y la pezuña al oírse «Hola»; quedan 2 s con el ala y la pezuña en alto. La música
+  suena solo mientras entran y baja en un fundido lento antes de la voz.
+- **Despedida (6 s):** «Ahora, a jugar. Adiós.» Los dos saludan a cámara al oírse «Adiós».
+  Sin música durante la voz; después entra y se funde despacio. «Hola» nunca se usa para despedirse.
+
 ## Voz y sonido
 
 - Por confirmar con el dueño: **narradora en off** (propuesta, por costo: no exige sincronizar

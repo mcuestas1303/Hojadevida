@@ -1,6 +1,6 @@
 # Ficha técnica y rúbrica — Hola, granja
 
-- **Prompt:** prompt.md
+- **Prompt:** 02_prompt/prompt.md
 - **Objetivo de aprendizaje:** levanta y mueve la mano para saludar cuando se le dice «saluda con la mano» o cuando Tiky o Lumi lo saludan a cámara.
 - **Tramo de edad:** 18–24 meses
 - **Estado:** SIN EVALUAR
@@ -81,7 +81,12 @@ Responsable: `director-de-prompts`
 
 | # | Objetivo | Cómo se comprueba en el video | Dónde | Peso | Crítico | Puntaje | Evidencia |
 |---|---|---|---|---|---|---|---|
-| D1 | [objetivo] | [indicador observable] | [toma] | [1-3] | [sí/no] | | |
+| D1 | Tiky y Lumi son fieles a su ficha en todas las tomas | Tiky es amarillo con panza crema, copete de 3 plumas rojo anaranjado, pico y patas coral; Lumi es crema con dos manchas negras, hocico y pezuñas lila y el crayón lila detrás de la oreja derecha, sin cambios entre tomas | Todas las tomas, en especial 1, 3 y 6 | 3 | sí | | |
+| D2 | Las tomas encadenadas se ven como un solo plano continuo | En las uniones 1 a 2, 6 a 7 a 8, 9 a 10 a 11, 12 a 13 y 14 a 15 no hay salto de luz, posición ni tamaño, y el ala o la pezuña está en la misma posición al final de una toma y al inicio de la siguiente | Uniones de las tomas 6 a 8 y 9 a 11, y de las tomas 1 a 2, 12 a 13 y 14 a 15 | 3 | sí | | |
+| D3 | Las pausas y las esperas son tomas vivas, no imagen congelada | En cada pausa se ven al menos dos parpadeos y la respiración del pecho; ningún fotograma queda idéntico durante toda la toma y el ala o la pezuña no se mueve | Tomas 7, 10, 13, 14 y 15 | 3 | sí | | |
+| D4 | Los saludos son lentos y de dos movimientos | El ala o la pezuña sube y baja dos veces despacio, sin aleteo de vuelo ni golpe de pezuña y sin sacudidas | Tomas 2, 6, 8, 9, 11 y 16 | 2 | no | | |
+| D5 | El patio no tiene texto ni elementos inventados | Solo se ven el establo rojo, la cerca blanca, el fieltro verde y la pared celeste; no hay letras, otros animales, personas ni objetos en las manos de nadie | Todas las tomas | 3 | sí | | |
+| D6 | La cámara es fija y el encuadre se repite | Ninguna toma tiene zoom, paneo ni sacudida; los encuadres A, B y C se ven iguales en todas las tomas donde se usan | Todas las tomas | 2 | no | | |
 
 ## Resultado
 

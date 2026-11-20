@@ -8,7 +8,9 @@ _Ninguno todavía._
 
 ## Capítulos
 
-_Ninguno todavía._
+| # | Título | Serie | Duración | Con | Prompt | Ficha técnica |
+|---|---|---|---|---|---|---|
+| 1 | Hola, granja | granja | 88 s | @lumi | [granja_cap01_hola_granja.md](../../tiky/prompts/capitulos/granja_cap01_hola_granja.md) | [SIN EVALUAR](../../tiky/prompts/capitulos/granja_cap01_hola_granja_ficha.md) |
 
 ## Shorts
 

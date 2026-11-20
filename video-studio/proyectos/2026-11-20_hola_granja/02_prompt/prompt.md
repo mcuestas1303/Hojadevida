@@ -50,7 +50,7 @@ A toy farmyard at toy scale on a sunny playroom floor: a small red wooden toy ba
 
 ## 6. Tomas
 
-Reutilización de keyframes (para ahorrar): el episodio tiene solo tres encuadres, A (Tiky solo), B (Lumi sola) y C (los dos). Se generan 4 imágenes en total: Keyframe A (tomas 6), Keyframe B (tomas 3 y 9), Keyframe C (tomas 4, 5, 14 y 16) y Keyframe C-entrada (tomas 1 y 12; es el encuadre C con los dos al fondo, para que entren caminando). Las tomas encadenadas (2, 7, 8, 10, 11, 13 y 15) parten del último fotograma de la toma anterior y no necesitan keyframe nuevo. Los keyframes se repiten hasta que los personajes salgan fieles a su ficha, antes de animar.
+Reutilización de keyframes (para ahorrar): el episodio tiene solo tres encuadres, A (Tiky solo), B (Lumi sola) y C (los dos). Se generan 4 imágenes en total: Keyframe A (toma 6), Keyframe B (tomas 3 y 9), Keyframe C (tomas 4, 5, 14 y 16) y Keyframe C-entrada (tomas 1 y 12; es el encuadre C con los dos al fondo, para que entren caminando). Las tomas encadenadas (2, 7, 8, 10, 11, 13 y 15) parten del último fotograma de la toma anterior y no necesitan keyframe nuevo. Los keyframes se repiten hasta que los personajes salgan fieles a su ficha, antes de animar.
 
 Planos continuos: las tomas 6, 7 y 8 forman el plano 5–7 (18 s) y las tomas 9, 10 y 11 el plano 8–10 (18 s), sin corte visible. Las pausas (tomas 7 y 10) son tomas vivas generadas, no imagen congelada.
 
@@ -537,7 +537,7 @@ Modern 3D cartoon render, soft matte vinyl toy figures, children's animation sty
 ## 7. Audio
 
 - **Voz:** narradora en off, cálida y lenta, en español; se genera o graba aparte y se monta en edición. Los textos exactos y su momento están en el campo Audio de cada toma. El generador no produce voz ni sonido (clips sin audio).
-- **Música:** una pieza suave y corta que suena en el saludo (tomas 1), el cierre (toma 12) y la despedida (toma 16), siempre con fundidos lentos y nunca debajo de la voz. Archivo pendiente en 05_audio/ y su licencia, por definir con el dueño (opción en el generador: ElevenLabs Music v2, 12 s, 0,77 créditos, fuera del presupuesto de video).
+- **Música:** una pieza suave y corta que suena en el saludo (toma 1), el cierre (toma 12) y la despedida (toma 16), siempre con fundidos lentos y nunca debajo de la voz. Archivo pendiente en 05_audio/ y su licencia, por definir con el dueño (opción en el generador: ElevenLabs Music v2, 12 s, 0,77 créditos, fuera del presupuesto de video).
 - **Efectos:** pasos sobre fieltro (tomas 1 y 12), pájaros lejanos (toma 1), «pío» suave de Tiky (tomas 4, 5 y 8) y «muu» suave de Lumi (tomas 3, 5 y 11), reales y siempre antes de la voz.
 
 ## 8. Montaje
