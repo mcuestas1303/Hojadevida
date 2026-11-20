@@ -3,6 +3,11 @@
 El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
 `video-studio/` es un estudio de prompts para generación de video; su guía es `video-studio/README.md`.
 
+## Línea editorial
+
+- Decisión del dueño (2026-11-20), para todo lo que se produzca aquí: nada de identidad de género ni
+  ideología de género en el contenido, en ningún idioma ni formato. Tiky es él y Lumi es ella.
+
 ## Trabajo con videos
 
 - Para ver un video: `python3 video-studio/herramientas/analizar_video.py <video> <salida>` y luego

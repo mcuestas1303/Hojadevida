@@ -7,6 +7,7 @@
 - **ID:** `@lumi`
 - **Nombre:** Lumi
 - **Rol / arquetipo:** la vaca tranquila que acompaña a Tiky y le da buenas ideas
+- **Género:** femenino (ella; en portugués, «a Lumi»). Confirmado por el dueño el 2026-11-20
 - **Edad aparente:** mayor que Tiky; figura de cuidado
 - **Personalidad en una línea:** tranquila, cariñosa y sabia; observa, espera y muestra cómo se hace
 - **Voz:** por definir

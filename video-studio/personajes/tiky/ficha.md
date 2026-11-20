@@ -6,6 +6,7 @@
 - **ID:** `@tiky`
 - **Nombre:** Tiky (el dueño también lo escribe «Tiki»)
 - **Rol / arquetipo:** el pollito curioso que va adelante y quiere probarlo todo
+- **Género:** masculino (él; en portugués, «o Tiky»). Confirmado por el dueño el 2026-11-20
 - **Edad aparente:** cría
 - **Personalidad en una línea:** curioso, ocurrente, con muchas ganas de aprender; se equivoca sin miedo y vuelve a intentar
 - **Voz:** por definir

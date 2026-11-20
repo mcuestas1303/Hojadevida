@@ -22,6 +22,14 @@ personajes secundarios de la granja todavía no tienen ficha: mientras no la ten
 al elenco, no tienen nombre ni acción, y como mucho se oyen fuera de cuadro o se ven quietos
 al fondo. Para sumar uno se crea su ficha en `personajes/` y se agrega a «Elenco permitido».
 
+## Línea editorial
+
+Decisión del dueño (2026-11-20), válida para todo el contenido del estudio:
+
+- Tiky es él y Lumi es ella. Su género es fijo en todos los idiomas y no es tema de ningún episodio.
+- El contenido no trata identidad de género ni ideología de género, en ningún idioma ni
+  formato: ni en guiones, ni en títulos, descripciones, etiquetas o miniaturas.
+
 ## La pareja
 
 | | Tiky | Lumi |

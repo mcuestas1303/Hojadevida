@@ -114,6 +114,13 @@ Lo que se toma del método y cómo se traduce a video:
 | Sonido | Sonidos reales (el animal, el agua). Volumen parejo, sin golpes ni sustos |
 | Música | Suave, solo en el saludo y el cierre, siempre la misma |
 
+## Línea editorial del dueño
+
+Decisión del dueño (2026-11-20), válida para todo lo que produce el estudio: el contenido no
+trata identidad de género ni ideología de género. Los personajes tienen el género que dice
+su ficha y no cambia. El equipo lo aplica como filtro al proponer temas, escribir, adaptar a
+otros idiomas y preparar la publicación.
+
 ## 8. Idiomas
 
 El contenido se produce en español, inglés y portugués de Brasil.
