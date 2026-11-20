@@ -23,9 +23,15 @@ El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
 - Un episodio se crea con `nuevo_proyecto.py <nombre> --serie granja` y pasa por el equipo en este orden:
   `pedagoga-montessori` (ficha pedagógica) → `guionista-interactivo` (guion) → `psicologa-infantil`
   (revisión) → `director-de-prompts` (prompt). Si la psicóloga pide cambios, vuelve al guionista.
+- El `comercial-inteligencia-digital` trabaja después de la ficha pedagógica: entrega `publicacion.md` y su
+  sección de la ficha técnica. Le habla al adulto que elige el video; no cambia el guion, y lo que proponga
+  para dentro del video lo deciden la pedagoga y la psicóloga. Toda cifra lleva fuente y fecha.
+- Idiomas: español (maestro), inglés y portugués de Brasil. El video es el mismo; cambian la voz
+  (`voz_idiomas.md`) y el paquete de publicación (uno por idioma). Se adapta, no se traduce literal.
+- Formatos en `video-studio/formatos.md`: capítulo e intro en 16:9 (1920x1080); short en 9:16 (1080x1920), 60 s o menos.
 - Todos trabajan contra `video-studio/infantil/guia_1_a_3.md`.
 - Cada prompt de serie lleva su `ficha_tecnica.md`: los objetivos de cada disciplina (pedagogía, Montessori,
-  psicología infantil, aprendizaje interactivo, producción), escritos por su responsable antes de generar.
+  psicología infantil, aprendizaje interactivo, producción, comercial e inteligencia digital), escritos por su responsable antes de generar.
   Es la rúbrica del video: una vez generado se puntúa cada criterio y se calcula con `puntuar_ficha.py`.
 - En la serie `granja` solo actúan `@tiky` y `@lumi` hasta que el dueño cargue los secundarios.
 - El contenido infantil nunca se cruza con «M» ni con personajes para adultos.

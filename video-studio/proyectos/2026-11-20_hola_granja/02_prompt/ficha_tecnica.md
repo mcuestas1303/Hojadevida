@@ -88,6 +88,33 @@ Responsable: `director-de-prompts`
 | D5 | El patio no tiene texto ni elementos inventados | Solo se ven el establo rojo, la cerca blanca, el fieltro verde y la pared celeste; no hay letras, otros animales, personas ni objetos en las manos de nadie | Todas las tomas | 3 | sí | | |
 | D6 | La cámara es fija y el encuadre se repite | Ninguna toma tiene zoom, paneo ni sacudida; los encuadres A, B y C se ven iguales en todas las tomas donde se usan | Todas las tomas | 2 | no | | |
 
+## Comercial e inteligencia digital
+
+Responsable: `comercial-inteligencia-digital`. Se comprueba en el video terminado y en su
+paquete de publicación, antes de publicar.
+
+| # | Objetivo | Cómo se comprueba en el video | Dónde | Peso | Crítico | Puntaje | Evidencia |
+|---|---|---|---|---|---|---|---|
+| C1 | Los primeros segundos muestran a los personajes y el lugar | En los primeros 3 s se ven Tiky, Lumi y el patio con el establo rojo y la cerca blanca, sin pantalla en negro ni logotipo | Toma 1, plano 1 | 2 | no | | |
+| C2 | Existe un fotograma que sirve de miniatura | El fotograma del final de la toma 2 muestra a los dos de cuerpo completo, de frente, con el ala y la pezuña en alto, sin texto; reducido a 320 px de ancho se distinguen los dos personajes y la mano en alto | Toma 2, plano 1, segundos 5 a 10 | 2 | no | | |
+| C3 | El máster cumple el formato de video largo | El archivo es 16:9 de 1920 × 1080 px, MP4 H.264 con audio AAC a 48 kHz estéreo, y dura 88 s, sin pasar de 90 s | Archivo en 06_final | 3 | sí | | |
+| C4 | El título lleva la búsqueda principal al inicio y no promete de más | El título recomendado empieza con Saludar con la mano, tiene 60 caracteres o menos y no dice que el niño hablará, aprenderá rápido ni reconocerá nombres | Paquete, título en publicacion.md | 3 | sí | | |
+| C5 | La descripción dice qué practica el niño, la edad y trae la línea para el adulto | Las dos primeras líneas dicen que el niño practica saludar con la mano y que es para 18 a 24 meses; incluye completa la línea para el adulto de la ficha pedagógica | Paquete, descripción en publicacion.md | 3 | sí | | |
+| C6 | Nada en el paquete pide suscribirse, comentar ni ver otro video | Ni el título, ni la descripción, ni las etiquetas, ni el video piden suscribirse, dar me gusta, comentar o ver el siguiente; el video está marcado como hecho para niños | Paquete completo y configuración de audiencia | 3 | sí | | |
+
+## Metas después de publicar
+
+Responsable: `comercial-inteligencia-digital`. No entran en el puntaje de arriba: se miden
+con los datos del canal a los 7 y 28 días.
+
+| Indicador | Meta | De dónde sale la meta | Dónde se lee | Resultado a 7 días | Resultado a 28 días |
+|---|---|---|---|---|---|
+| Impresiones | establecer línea base | Canal nuevo, sin historial ni exportaciones en video-studio/datos: sin dato | YouTube Studio, Analytics, pestaña Alcance | | |
+| Porcentaje de clics de las impresiones (miniatura y título) | establecer línea base | Canal nuevo, sin historial: sin dato | YouTube Studio, Analytics, pestaña Alcance | | |
+| Duración media de visualización y porcentaje del video visto (el video dura 88 s) | establecer línea base | Canal nuevo, sin historial: sin dato | YouTube Studio, Analytics, pestaña Interacción | | |
+| Retención del público en las dos pausas (segundos 37 a 42 y 55 a 60) frente al resto del video | establecer línea base | Canal nuevo, sin historial: sin dato; solo se podrá comparar la pausa con el promedio del propio video | YouTube Studio, Analytics, pestaña Interacción, gráfico de retención del público | | |
+| Fuentes de tráfico (búsqueda de YouTube, sugeridos, externas) | establecer línea base | Canal nuevo, sin historial: sin dato | YouTube Studio, Analytics, pestaña Alcance, fuentes de tráfico | | |
+
 ## Resultado
 
 _Sin evaluar. Se llena con `herramientas/puntuar_ficha.py` cuando exista el video._

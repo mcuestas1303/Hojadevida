@@ -61,6 +61,24 @@ Responsable: `director-de-prompts`
 |---|---|---|---|---|---|---|---|
 | D1 | [objetivo] | [indicador observable] | [toma] | [1-3] | [sí/no] | | |
 
+## Comercial e inteligencia digital
+
+Responsable: `comercial-inteligencia-digital`. Se comprueba en el video terminado y en su
+paquete de publicación, antes de publicar.
+
+| # | Objetivo | Cómo se comprueba en el video | Dónde | Peso | Crítico | Puntaje | Evidencia |
+|---|---|---|---|---|---|---|---|
+| C1 | [objetivo] | [indicador observable] | [toma o paquete] | [1-3] | [sí/no] | | |
+
+## Metas después de publicar
+
+Responsable: `comercial-inteligencia-digital`. No entran en el puntaje de arriba: se miden
+con los datos del canal a los 7 y 28 días.
+
+| Indicador | Meta | De dónde sale la meta | Dónde se lee | Resultado a 7 días | Resultado a 28 días |
+|---|---|---|---|---|---|
+| [indicador] | [meta o «establecer línea base»] | [fuente] | [informe] | | |
+
 ## Resultado
 
 _Sin evaluar. Se llena con `herramientas/puntuar_ficha.py` cuando exista el video._

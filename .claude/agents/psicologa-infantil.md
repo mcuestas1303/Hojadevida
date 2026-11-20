@@ -34,6 +34,11 @@ Revisa cada plano poniéndote en el lugar de un niño de 18 meses y de uno de 3 
 - **Final.** ¿Cierra en calma, en orden y hacia fuera de la pantalla, sin ganchos para seguir viendo?
 - **Objetivo.** ¿El guion enseña lo que dice la ficha y nada más?
 
+Idiomas. Si existe `<proyecto>/02_prompt/voz_idiomas.md`, revisas la voz de cada idioma con
+los mismos criterios que la maestra: palabras reales y apropiadas para la edad en ese país,
+nada que cambie de sentido o de tono al adaptarse, y que quepa en los mismos tiempos. El
+veredicto cubre todos los idiomas; si uno falla, es `CAMBIOS`.
+
 Ficha técnica (rúbrica). Llenas en `<proyecto>/02_prompt/ficha_tecnica.md` la sección
 **Psicología infantil**: lo que el video debe cuidar y lograr en lo emocional y en la carga de
 estímulo. Los «Riesgos que quedan» de tu revisión entran aquí como criterios. Revisas también
@@ -51,7 +56,7 @@ tuyos y luego se ejecuta `python3 video-studio/herramientas/puntuar_ficha.py <fi
 
 Veredicto:
 
-- `APROBADO` solo si se cumplen los siete criterios de la sección 8 de la guía. No apruebes
+- `APROBADO` solo si se cumplen los criterios de la sección 9 de la guía. No apruebes
   «con observaciones»: si algo debe cambiar, el veredicto es `CAMBIOS`.
 - `CAMBIOS`: lista plano por plano, con el número del plano, qué cambiar y la razón.
 - En «Riesgos que quedan» anota lo que el texto no permite juzgar y habrá que mirar en el

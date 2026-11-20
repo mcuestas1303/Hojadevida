@@ -11,6 +11,7 @@ que comprueba el validador» no se renombran).
 - **Duración mínima de toma:** 4 s
 - **Cámaras permitidas:** fija, paneo lento, acercamiento lento, alejamiento lento, seguimiento lento
 - **Términos prohibidos en prompts:** fast cut, quick cut, whip pan, crash zoom, shaky, handheld, flash, strobe, glitch, flicker, lens flare, explosion, scary, storm, text, subtitle, caption, logo
+- **Idiomas:** es, en, pt-BR
 - **Requiere revisión aprobada:** sí
 - **Requiere ficha técnica:** sí
 
@@ -55,6 +56,20 @@ para narradora en off; si los personajes pasan a hablar, se revisan de nuevo.
   suena solo mientras entran y baja en un fundido lento antes de la voz.
 - **Despedida (6 s):** «Ahora, a jugar. Adiós.» Los dos saludan a cámara al oírse «Adiós».
   Sin música durante la voz; después entra y se funde despacio. «Hola» nunca se usa para despedirse.
+
+## Idiomas
+
+Español (maestro), inglés y portugués de Brasil. El video es el mismo en los tres; cambia la
+pista de voz (`voz_idiomas.md` en cada proyecto) y el paquete de publicación, que el comercial
+prepara por mercado. Las frases fijas de la serie en inglés y portugués se fijan en el
+capítulo 1 y se copian aquí cuando la psicóloga las apruebe.
+
+## Formatos
+
+- **Capítulo e intro:** video largo, 16:9, de 60 a 90 s, con la estructura de arriba.
+- **Short:** 9:16, de 20 a 45 s. Es un solo momento de un capítulo ya aprobado: un saludo o
+  una pregunta con su pausa y su respuesta. Lleva su propia ficha pedagógica y pasa por la
+  psicóloga igual que un capítulo. Detalle técnico en `video-studio/formatos.md`.
 
 ## Voz y sonido
 

@@ -37,6 +37,8 @@ video-studio/
 ├── series/<serie>/          biblia, entorno y temario de cada serie
 ├── infantil/                guía de 1 a 3 años y plantillas del equipo creativo
 ├── generador.md             herramienta y precios
+├── formatos.md              formatos de salida para YouTube y redes
+├── datos/                   exportaciones del canal para el comercial
 ├── plantillas/
 │   ├── prompt_video.md      estructura fija del prompt
 │   ├── hoja_de_personaje.md prompt para crear la hoja de un personaje
@@ -90,7 +92,7 @@ video-studio/
 7. **Ensamblar**
 
    ```bash
-   python3 video-studio/herramientas/ensamblar.py video-studio/proyectos/<proyecto> --musica ruta/a/musica.mp3
+   python3 video-studio/herramientas/ensamblar.py video-studio/proyectos/<proyecto> --formato largo --musica ruta/a/musica.mp3
    ```
 
 ## Personajes
@@ -149,6 +151,7 @@ Para contenido de 1 a 3 años hay un equipo creativo que trabaja antes del promp
 | 2 | `guionista-interactivo` | Aprendizaje interactivo | `guion.md`: planos, voz exacta, preguntas y pausas |
 | 3 | `psicologa-infantil` | Psicología del desarrollo | `revision.md`: APROBADO o CAMBIOS |
 | 4 | `director-de-prompts` | — | `prompt.md` validado |
+| — | `comercial-inteligencia-digital` | Datos de YouTube y redes, inteligencia digital | `publicacion.md`: búsqueda, título, miniatura, shorts derivados, metas |
 
 Los cuatro leen `infantil/guia_1_a_3.md`. Cada serie tiene su carpeta en `series/`:
 `serie.md` (público, elenco permitido, estructura del episodio, estilo), `entorno.md`
@@ -162,6 +165,22 @@ En un prompt de serie el validador además exige: solo personajes del elenco per
 objetivo de aprendizaje, ninguna toma por debajo de la duración mínima, cámara fija o lenta,
 ningún término prohibido en los prompts y la revisión de la psicóloga en APROBADO.
 
+## Idiomas
+
+El contenido sale en español, inglés y portugués de Brasil. Como los videos no llevan texto
+en pantalla ni labios sincronizados, se genera un solo video y cambia la pista de voz: el
+guionista escribe `voz_idiomas.md` (adaptada, no traducida, y ajustada a los mismos tiempos),
+la psicóloga revisa los tres idiomas y el comercial prepara un paquete de publicación por mercado.
+
+## Formatos
+
+Capítulos e intro: 16:9, máster de 1920×1080. Shorts: 9:16, máster de 1080×1920, 60 s o
+menos para reutilizarlos en Reels, TikTok y Facebook. Detalle y fuentes en `formatos.md`.
+
+```bash
+python3 video-studio/herramientas/ensamblar.py video-studio/proyectos/<proyecto> --formato largo
+```
+
 ## Ficha técnica y rúbrica
 
 Cada prompt de serie va acompañado de `ficha_tecnica.md`. Antes de generar, cada profesional
@@ -174,6 +193,7 @@ escribe lo que su disciplina se propone lograr en ese video:
 | Psicología infantil | `psicologa-infantil` |
 | Aprendizaje interactivo | `guionista-interactivo` |
 | Producción | `director-de-prompts` |
+| Comercial e inteligencia digital | `comercial-inteligencia-digital` |
 
 Cada criterio dice qué debe lograrse, cómo se comprueba en el video, en qué plano mirar, su
 peso (1 a 3) y si es crítico. Con el video ya generado se puntúa cada uno (0 no se cumple,

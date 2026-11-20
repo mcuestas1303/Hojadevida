@@ -41,7 +41,7 @@ def main():
     shutil.copytree(ESTUDIO / "plantillas" / "proyecto", destino)
     if serie:
         guion = destino / "02_prompt"
-        for nombre in ("ficha_pedagogica", "guion", "revision", "ficha_tecnica"):
+        for nombre in ("ficha_pedagogica", "guion", "revision", "ficha_tecnica", "publicacion", "voz_idiomas"):
             shutil.copy2(ESTUDIO / "infantil" / f"plantilla_{nombre}.md", guion / f"{nombre}.md")
         prompt = guion / "prompt.md"
         prompt.write_text(prompt.read_text().replace(

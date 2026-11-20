@@ -114,7 +114,23 @@ Lo que se toma del método y cómo se traduce a video:
 | Sonido | Sonidos reales (el animal, el agua). Volumen parejo, sin golpes ni sustos |
 | Música | Suave, solo en el saludo y el cierre, siempre la misma |
 
-## 8. Qué hace falta para aprobar un guion
+## 8. Idiomas
+
+El contenido se produce en español, inglés y portugués de Brasil.
+
+- **Un solo video, tres voces.** Como no hay texto en pantalla ni labios sincronizados, el
+  mismo video sirve para los tres idiomas; solo cambia la pista de voz y lo que rodea al
+  video (título, descripción, miniatura). Por eso nunca se pide texto ni habla al generador.
+- **Se adapta, no se traduce.** En cada lengua valen las mismas reglas: frases de 3 a 5
+  palabras, palabras reales y de uso diario con niños pequeños, la palabra clave al final.
+  Se elige la palabra que un adulto de ese país le dice de verdad a un niño.
+- **La voz cabe en el mismo tiempo** y cae en el mismo momento del gesto. Si una lengua
+  necesita más sílabas, se acorta la frase; no se acelera la voz.
+- **La palabra clave se decide por idioma** y la confirma la pedagoga.
+- **Cada idioma se revisa.** La psicóloga aprueba las tres versiones, no solo la maestra.
+- Canciones, rimas y juegos de palabras no se traducen: se escriben de nuevo en cada lengua.
+
+## 9. Qué hace falta para aprobar un guion
 
 1. Tiene un solo objetivo y dice para qué tramo de edad es.
 2. El concepto se repite tres veces o más.
@@ -123,3 +139,4 @@ Lo que se toma del método y cómo se traduce a video:
 5. Todo lo que se enseña es verdadero.
 6. Termina con el espacio en orden y con una invitación a hacerlo fuera de la pantalla.
 7. Cumple las reglas de imagen y sonido.
+8. Si la serie tiene varios idiomas, la voz de cada uno cumple lo anterior y cabe en los mismos tiempos.

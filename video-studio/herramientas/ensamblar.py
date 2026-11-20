@@ -2,7 +2,10 @@
 """Une los clips aprobados en un solo video, sin costo.
 
 Uso:
-    python3 ensamblar.py <proyecto> [--ancho 1080 --alto 1920 --fps 30] [--musica archivo]
+    python3 ensamblar.py <proyecto> --formato largo|short [--musica archivo]
+
+largo = 1920x1080 (capitulos e intro), short = 1080x1920. Ver formatos.md.
+Los fotogramas por segundo son los del primer clip, salvo que se pase --fps.
 
 Toma los videos de <proyecto>/04_clips/seleccionados/ en orden alfabetico
 (nombralos toma_01.mp4, toma_02.mp4, ...) y escribe <proyecto>/06_final/final.mp4.
@@ -13,14 +16,14 @@ import sys
 from pathlib import Path
 
 VIDEOS = {".mp4", ".mov", ".webm", ".mkv"}
+FORMATOS = {"largo": (1920, 1080), "short": (1080, 1920)}
 
 
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("proyecto")
-    p.add_argument("--ancho", type=int, default=1080)
-    p.add_argument("--alto", type=int, default=1920)
-    p.add_argument("--fps", type=int, default=30)
+    p.add_argument("--formato", choices=FORMATOS, required=True)
+    p.add_argument("--fps", help="por defecto, los del primer clip")
     p.add_argument("--musica", help="pista que reemplaza el audio de los clips")
     a = p.parse_args()
 
@@ -28,7 +31,12 @@ def main():
     clips = sorted(f for f in (proyecto / "04_clips" / "seleccionados").glob("*") if f.suffix.lower() in VIDEOS)
     if not clips:
         sys.exit("No hay clips en 04_clips/seleccionados/.")
-    salida = proyecto / "06_final" / "final.mp4"
+    a.ancho, a.alto = FORMATOS[a.formato]
+    if not a.fps:
+        r = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries",
+                            "stream=r_frame_rate", "-of", "csv=p=0", str(clips[0])], capture_output=True, text=True)
+        a.fps = r.stdout.strip() or "30"
+    salida = proyecto / "06_final" / f"final_{a.formato}.mp4"
     salida.parent.mkdir(exist_ok=True)
 
     cmd = ["ffmpeg", "-hide_banner", "-loglevel", "error", "-y"]
@@ -42,8 +50,8 @@ def main():
     cmd += ["-filter_complex", ";".join(filtros), "-map", "[v]"]
     if a.musica:
         cmd[-4:-4] = ["-i", a.musica]
-        cmd += ["-map", f"{len(clips)}:a", "-shortest", "-c:a", "aac", "-b:a", "160k"]
-    cmd += ["-c:v", "libx264", "-crf", "18", "-preset", "medium", "-movflags", "+faststart", str(salida)]
+        cmd += ["-map", f"{len(clips)}:a", "-shortest", "-c:a", "aac", "-ar", "48000", "-ac", "2", "-b:a", "384k"]
+    cmd += ["-c:v", "libx264", "-crf", "17", "-preset", "slow", "-maxrate", "12M", "-bufsize", "24M", "-movflags", "+faststart", str(salida)]
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode != 0:
         sys.exit(f"ffmpeg falló:\n{r.stderr}")

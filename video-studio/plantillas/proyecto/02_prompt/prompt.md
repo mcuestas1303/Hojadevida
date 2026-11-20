@@ -13,7 +13,7 @@ herramientas/validar_prompt.py las lee. Los textos entre corchetes se reemplazan
 - **Serie:** [nombre de la serie en video-studio/series/, o "ninguna"]
 - **Objetivo de aprendizaje:** [solo en series infantiles: una sola cosa que el niño practica; si no, "no aplica"]
 - **Generador:** [herramienta y modelo]
-- **Aspecto:** [9:16 | 16:9 | 1:1]
+- **Aspecto:** [16:9 para capítulo e intro | 9:16 para short; ver formatos.md]
 - **Duración total:** [N] s
 - **Resolución de borrador:** [la más baja que ofrezca el generador]
 - **Resolución final:** [solo para las tomas aprobadas]
@@ -102,7 +102,7 @@ Método:
 - **Orden:** Toma 1 → Toma 2 → …
 - **Transiciones:** [corte directo salvo que se indique]
 - **Texto en pantalla:** [se pone en edición, nunca dentro del video generado]
-- **Formato de salida:** [resolución, fps]
+- **Formato de salida:** [1920x1080 para capítulo e intro | 1080x1920 para short; fps del generador]
 
 ## 9. Presupuesto
 

@@ -54,6 +54,9 @@ Si el proyecto es de una serie (el brief o el prompt dicen `Serie:`):
 - Copia el objetivo de aprendizaje de la ficha pedagógica a la ficha técnica.
 - Las pausas en las que el personaje espera mirando a cámara se resuelven, cuando se pueda,
   como `edición` alargando el final de la toma anterior.
+- El prompt es neutro de idioma: no pide texto, rótulos ni habla al generador. Así el mismo
+  video sirve para todos los idiomas de la serie; en el campo Audio pones la voz del idioma
+  maestro y remites a `voz_idiomas.md` para los demás.
 - Generador y precios: `video-studio/generador.md`.
 
 Ficha técnica (rúbrica), en proyectos de serie: llenas en `<proyecto>/02_prompt/ficha_tecnica.md`

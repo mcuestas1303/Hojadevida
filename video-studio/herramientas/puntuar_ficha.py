@@ -12,7 +12,8 @@ import re
 import sys
 from pathlib import Path
 
-SECCIONES = ["Pedagogía", "Método Montessori", "Psicología infantil", "Aprendizaje interactivo", "Producción"]
+SECCIONES = ["Pedagogía", "Método Montessori", "Psicología infantil", "Aprendizaje interactivo", "Producción",
+             "Comercial e inteligencia digital"]
 APROBADO = 80  # % minimo para dar el video por bueno
 
 
