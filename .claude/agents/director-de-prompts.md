@@ -61,5 +61,11 @@ Para terminar:
 1. Ejecuta `python3 video-studio/herramientas/validar_prompt.py <proyecto>/02_prompt/prompt.md`
    y corrige hasta que no queden errores. Los avisos se resuelven o se justifican.
 2. Llena la sección de presupuesto con lo que reporta el validador.
-3. Devuelve: elenco final, número de tomas, segundos que se generan frente a los que se
+3. Archiva el prompt en la carpeta del personaje:
+   `python3 video-studio/herramientas/archivar_prompt.py <proyecto>/02_prompt/prompt.md`.
+   Lo guarda en `personajes/<protagonista>/prompts/<intro|capitulos|shorts|otros>/` según el
+   `Tipo` de la ficha técnica y actualiza el índice de cada personaje que sale. Por eso el
+   `Tipo` y el `Número` van siempre llenos, y el primer personaje del elenco es el protagonista.
+   Si después corriges el prompt, lo vuelves a archivar; la copia archivada no se edita a mano.
+4. Devuelve: dónde quedó archivado, elenco final, número de tomas, segundos que se generan frente a los que se
    resuelven en edición, presupuesto, y cualquier decisión que hayas tomado sin que el brief la dijera.

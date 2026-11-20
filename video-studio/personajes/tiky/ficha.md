@@ -12,8 +12,10 @@
 
 ## Bloque de identidad
 
+Mismo texto que el de las hojas de personaje (`creador-personajes/hojas/tiky-y-lumi.md`), con el nombre delante.
+
 ```text
-Tiky, a small baby chick designed as a soft matte vinyl toy, shaped like a smooth upright egg with no neck, wider at the bottom, with tiny stubby wings and short stubby legs. Warm sunflower-yellow body with a pale butter-cream belly. On the very top of his head, a small tuft of three short, thick, rounded red-orange feathers. Big round dark-brown eyes with a white sparkle, a small rounded coral-peach beak, soft rosy cheeks, small coral-peach feet with three round toes.
+Tiky, an adorable baby chick shaped like a smooth upright egg with no neck, warm sunflower yellow body with a pale butter-cream belly, a small discreet tuft of three short rounded flame-shaped feathers in red-orange on top of his head, big round dark-brown eyes with a white sparkle, no eyebrows, a small rounded coral-peach beak, soft rosy cheeks, tiny stubby wings, short coral-peach feet with three round toes.
 ```
 
 ## Lo que nunca cambia
@@ -39,4 +41,8 @@ Tiky, a small baby chick designed as a soft matte vinyl toy, shaped like a smoot
 | `referencias/3d_principal.png` | Imagen 3D aprobada, cuerpo completo | Referencia de todos los keyframes |
 | ID de Higgsfield `6cff1fa4-a734-402c-9384-7a76c5ee6bd3` | La misma imagen en el historial | Para pasarla como referencia sin volver a subirla |
 
-Pendiente: hoja de personaje con vistas y expresiones (`plantillas/hoja_de_personaje.md`).
+Las hojas de personaje (vueltas y 16 emociones) las lleva la conversación de personajes: `creador-personajes/hojas/tiky-y-lumi.md`.
+
+## Prompts
+
+Los prompts de video donde sale están en `prompts/`, por tipo: `intro/`, `capitulos/`, `shorts/`, `otros/`. La lista completa está en `prompts/INDICE.md`.

@@ -27,7 +27,13 @@ video-studio/
 │   ├── REGISTRO.md          lista de quién existe
 │   └── <id>/
 │       ├── ficha.md         bloque de identidad, vestuario, voz, prohibidos
-│       └── referencias/     hoja de personaje, frente, cuerpo completo
+│       ├── referencias/     imágenes aprobadas del personaje
+│       └── prompts/         prompts de video terminados, por tipo
+│           ├── INDICE.md    lista de todo lo que tiene el personaje
+│           ├── intro/
+│           ├── capitulos/
+│           ├── shorts/
+│           └── otros/
 ├── series/<serie>/          biblia, entorno y temario de cada serie
 ├── infantil/                guía de 1 a 3 años y plantillas del equipo creativo
 ├── generador.md             herramienta y precios
@@ -49,6 +55,7 @@ video-studio/
     ├── nuevo_proyecto.py
     ├── analizar_video.py
     ├── validar_prompt.py
+    ├── archivar_prompt.py
     └── ensamblar.py
 ```
 
@@ -71,9 +78,15 @@ video-studio/
    python3 video-studio/herramientas/validar_prompt.py video-studio/proyectos/<proyecto>/02_prompt/prompt.md
    ```
 
-5. **Generar** en este orden: keyframes → clips en borrador → solo los aprobados en resolución final.
+5. **Archivar** el prompt en la carpeta del personaje
+
+   ```bash
+   python3 video-studio/herramientas/archivar_prompt.py video-studio/proyectos/<proyecto>
+   ```
+
+6. **Generar** en este orden: keyframes → clips en borrador → solo los aprobados en resolución final.
    Los aprobados van a `04_clips/seleccionados/` como `toma_01.mp4`, `toma_02.mp4`…
-6. **Ensamblar**
+7. **Ensamblar**
 
    ```bash
    python3 video-studio/herramientas/ensamblar.py video-studio/proyectos/<proyecto> --musica ruta/a/musica.mp3
@@ -92,6 +105,23 @@ aparece en ella. El validador rechaza el prompt si:
 - se usa un `@id` que no tiene ficha, bloque de identidad o imagen de referencia;
 - una toma no dice quién sale, o usa a alguien que no está en el elenco;
 - alguien del elenco no aparece en ninguna toma.
+
+## Dónde quedan los prompts
+
+Todos los prompts son `.md`. `proyectos/` es la mesa de trabajo (brief, guion, revisión,
+keyframes, clips); el prompt terminado se guarda en la carpeta del personaje, según el campo
+`Tipo` de su ficha técnica:
+
+| Tipo | Carpeta | Nombre del archivo |
+|---|---|---|
+| intro | `prompts/intro/` | `<serie>_intro_<título>.md` |
+| capítulo | `prompts/capitulos/` | `<serie>_cap01_<título>.md` |
+| short | `prompts/shorts/` | `<serie>_short01_<título>.md` |
+| otro | `prompts/otros/` | `<serie>_otro_<título>.md` |
+
+Un prompt se guarda una sola vez, en la carpeta del protagonista (el primer personaje del
+elenco). Los demás personajes del video lo encuentran en su `prompts/INDICE.md`, que enlaza
+al mismo archivo. Solo se archiva lo que pasa el validador.
 
 ## Cómo se mantiene bajo el costo
 

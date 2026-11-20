@@ -13,8 +13,10 @@
 
 ## Bloque de identidad
 
+Mismo texto que el de las hojas de personaje (`creador-personajes/hojas/tiky-y-lumi.md`), con el nombre delante.
+
 ```text
-Lumi, a gentle cow designed as a soft matte vinyl toy, shaped like a big smooth upright egg with no neck, standing on two short stubby legs, with short stubby arms, about twice as tall as Tiky. Mostly creamy-white body with two large irregular black patches with soft wavy edges: one wrapping around her back and belly, one on top of her head between two small cream horns. Lilac-purple muzzle, hooves and inner ears, black forearms and lower legs like little socks. Big round honey-brown eyes with a white sparkle, soft eyebrows. A short chunky lilac crayon tucked behind her right ear.
+Lumi, an adorable gentle cow shaped like a big smooth upright egg with no neck, about twice as tall as Tiky, mostly creamy white with two large irregular black patches with soft wavy edges (one across her back and belly, one on top of her head between her horns), black lower legs like little socks, small lilac purple hooves, small cream rounded horns, small floppy ears with lilac insides, big warm honey-brown eyes with a white sparkle, soft gentle eyebrows, a wide rounded soft lilac muzzle with two small dot nostrils, a short chunky lilac crayon tucked behind her right ear.
 ```
 
 ## Lo que nunca cambia
@@ -40,4 +42,8 @@ Lumi, a gentle cow designed as a soft matte vinyl toy, shaped like a big smooth 
 | `referencias/3d_principal.png` | Imagen 3D aprobada, cuerpo completo | Referencia de todos los keyframes |
 | ID de Higgsfield `aea1a3a4-5067-48ed-beb3-226b70e1ff8f` | La misma imagen en el historial | Para pasarla como referencia sin volver a subirla |
 
-Pendiente: hoja de personaje con vistas y expresiones (`plantillas/hoja_de_personaje.md`).
+Las hojas de personaje (vueltas y 16 emociones) las lleva la conversación de personajes: `creador-personajes/hojas/tiky-y-lumi.md`.
+
+## Prompts
+
+Los prompts de video donde sale están en `prompts/`, por tipo: `intro/`, `capitulos/`, `shorts/`, `otros/`. La lista completa está en `prompts/INDICE.md`.

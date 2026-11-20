@@ -17,6 +17,7 @@ PERSONAJES = ESTUDIO / "personajes"
 IMAGENES = {".png", ".jpg", ".jpeg", ".webp"}
 METODOS_PAGADOS = ("imagen", "texto")
 MAX_TOMA_S = 10
+TIPOS = ("intro", "capitulo", "short", "otro")
 
 
 def seccion(texto, numero):
@@ -116,6 +117,12 @@ def main():
     for n, nombre in [(1, "Ficha técnica"), (2, "Elenco"), (4, "Estilo global"), (6, "Tomas")]:
         if seccion(texto, n) is None:
             errores.append(f"Falta la sección {n} ({nombre}).")
+
+    tipo = (campo(seccion(texto, 1) or "", "Tipo") or "").lower().replace("í", "i")
+    if tipo not in TIPOS:
+        errores.append(f"Tipo '{tipo or 'sin indicar'}' no válido (usa: intro, capítulo, short u otro).")
+    elif tipo in ("capitulo", "short") and numero(campo(seccion(texto, 1) or "", "Número")) is None:
+        errores.append(f"Falta el número del {tipo}.")
 
     # --- Elenco -----------------------------------------------------------
     elenco_txt = seccion(texto, 2) or ""

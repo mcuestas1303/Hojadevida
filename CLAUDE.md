@@ -13,6 +13,9 @@ El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
 - Todo prompt define su elenco con personajes de `video-studio/personajes/`. Si el usuario no ha
   dicho quién sale, se le pregunta; no se inventan personajes ni se elige por él.
 - No se da por bueno un prompt hasta que `validar_prompt.py` termina sin errores.
+- Los prompts son archivos `.md`. Una vez validado, cada prompt se archiva con `archivar_prompt.py` en
+  `video-studio/personajes/<protagonista>/prompts/` dentro de `intro/`, `capitulos/`, `shorts/` u `otros/`.
+  Ahí es donde el usuario los busca; `proyectos/` es solo la mesa de trabajo.
 
 ## Contenido infantil (series)
 
