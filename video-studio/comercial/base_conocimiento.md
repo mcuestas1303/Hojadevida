@@ -374,3 +374,56 @@ Leí el texto completo de 11 páginas oficiales de `www.tiktok.com` y `newsroom.
 | TikTok | Si publicar en TikTok el mismo video que ya está en YouTube cuenta como contenido «reutilizado» (el texto habla de material «sin nada nuevo») | Creator Academy sobre originalidad |
 | Ingresos | Cuánto paga un anuncio contextual en contenido infantil, RPM o CPM, y el reparto del largo | Datos del propio canal (YouTube Studio, Analytics) cuando haya historial. Hasta entonces: sin dato |
 | Derechos | Si el arte, la voz o la música generados con IA tienen protección de derechos de autor para vender libros o música | Un abogado o la oficina de derechos de autor del país |
+
+## 12. Residencia del titular y disponibilidad por país
+
+Dato del dueño (2026-11-20): el titular de las cuentas reside en **El Salvador**. Análisis completo en `video-studio/series/granja/evaluacion_vpn.md`. Todas las páginas se descargaron el 2026-11-20. Citas en el idioma de la página.
+
+### 12.1 Filas verificadas (texto completo leído)
+
+| Hecho | Cita | URL y fecha |
+|---|---|---|
+| YouTube: para el YPP hay que vivir en un país con YPP | "Live in a country/region where the YouTube Partner Program is available." | https://support.google.com/youtube/answer/72851?hl=en (2026-11-20) |
+| YouTube: para ingresos por anuncios, lo mismo | "Live in a country/region where YPP is available" | https://support.google.com/youtube/answer/72857?hl=en (2026-11-20) |
+| YouTube: el YPP ampliado pide un canal basado en un país disponible | "Have a channel based in one of the available countries/regions." | https://support.google.com/youtube/answer/13429240?hl=en (2026-11-20) |
+| **El Salvador figura en la lista del YPP ampliado** (500 suscriptores; da apoyo de fans y Shopping, no reparto de anuncios) | "El Salvador" (en la lista «Where the expanded YouTube Partner Program is available») | https://support.google.com/youtube/answer/13429240?hl=en (2026-11-20) |
+| El reparto de anuncios exige además el umbral alto | "Creators in the YouTube Partner Program who also meet the below eligibility thresholds can get additional benefits like revenue sharing from ads and YouTube Premium:" | https://support.google.com/youtube/answer/13429240?hl=en (2026-11-20) |
+| El Salvador figura en la lista de membresías (que un canal «hecho para niños» no puede usar) | "El Salvador" (en «Channel memberships are currently available to eligible creators in the following locations») | https://support.google.com/youtube/answer/7636690?hl=en (2026-11-20) |
+| YouTube: la verificación con ID o video no está disponible para todos | "ID and video verification isn't available to all creators." | https://support.google.com/youtube/answer/9890437?hl=en (2026-11-20) |
+| YouTube: impuestos en el país de residencia | "you may be liable to pay taxes to your country of residence on any income earned from your monetized videos on YouTube" | https://support.google.com/youtube/answer/72857?hl=en (2026-11-20) |
+| YouTube: se espera que el creador no se presente de forma falsa | "We expect creators in the YouTube Partner Program to be who they say they are and not misrepresent themselves by manipulating their on-platform activity or engaging in deceptive practices." | https://support.google.com/youtube/answer/1311392?hl=en (2026-11-20) |
+| YouTube: sanción por eso | "Engaging in this type of behavior may result in removal from the YouTube Partner Program or termination of your channels." | https://support.google.com/youtube/answer/1311392?hl=en (2026-11-20) |
+| YouTube: ganancias retenidas o ajustadas | "We may withhold or adjust any of your earnings associated with violations of the YouTube channel monetization policies." | https://support.google.com/youtube/answer/1311392?hl=en (2026-11-20) |
+| YouTube: sin ingresos al ser expulsado | "If your channel is terminated or suspended from the YouTube Partner Program, you are no longer entitled to earn any revenue." | https://support.google.com/youtube/answer/1311392?hl=en (2026-11-20) |
+| YouTube: el reparto de Shorts es por país del espectador | "based on their share of total engaged views from monetizing creators’ Shorts in each country" | https://support.google.com/youtube/answer/12504220?hl=en (2026-11-20) |
+| YouTube: los anuncios contextuales usan la ubicación general del espectador | "The viewer’s general location (such as city or state)" | https://support.google.com/youtube/answer/9713557?hl=en (2026-11-20) |
+| TikTok (política de premios fuera de EE. UU., EEE, Suiza y Reino Unido): en Canadá y América Latina los premios los ofrece TikTok Inc. | "If you live in Canada or Latin America, TikTok Inc., a California corporation" | https://www.tiktok.com/legal/page/global/rewards-policy-row/en (2026-01-22) |
+| TikTok (esa política): para cobrar hay que dar datos para verificar identidad, edad y ubicación | "Provide us with any relevant information we request (including to verify your identity, age and location)" | https://www.tiktok.com/legal/page/global/rewards-policy-row/en (2026-01-22) |
+| TikTok (esa política): cuenta de pago a nombre legal | "registered in your legal name, such as a bank account or a PayPal account" | https://www.tiktok.com/legal/page/global/rewards-policy-row/en (2026-01-22) |
+| TikTok (esa política): información inexacta, consecuencias para el creador | "If you provide inaccurate information, we will not be responsible for any delays or issues with Reward Payments, and you will bear any resulting consequences" | https://www.tiktok.com/legal/page/global/rewards-policy-row/en (2026-01-22) |
+| TikTok (esa política): causa para no pagar o retirar | "We believe your Reward has been obtained dishonestly" | https://www.tiktok.com/legal/page/global/rewards-policy-row/en (2026-01-22) |
+| TikTok (esa política): el dinero mostrado no es del creador hasta cobrarlo | "Until you receive a Reward Payment in your Preferred Account, any amount displayed to you belongs to TikTok." | https://www.tiktok.com/legal/page/global/rewards-policy-row/en (2026-01-22) |
+| TikTok Creator Rewards (EE. UU.): veracidad de la solicitud | "You represent and warrant that all application information you submit is truthful, complete, and accurate." | https://www.tiktok.com/legal/page/global/creator-rewards-program-us/en (2026-07-20) |
+| TikTok Creator Rewards (EE. UU.): la elegibilidad se exige durante toda la participación | "At all times during participation in the Program, only those Creators meeting all the following requirements" | https://www.tiktok.com/legal/page/global/creator-rewards-program-us/en (2026-07-20) |
+| TikTok Creator Rewards (EE. UU.): incumplir los requisitos permite expulsar de inmediato | "failure to meet or maintain the eligibility requirements" | https://www.tiktok.com/legal/page/global/creator-rewards-program-us/en (2026-07-20) |
+| TikTok Creator Rewards (EE. UU.): quien sea expulsado por causa pierde lo no cobrado | "Creator terminated from the Program for cause is ineligible to re-apply for participation in the Program and forfeits any ability to redeem unpaid rewards." | https://www.tiktok.com/legal/page/global/creator-rewards-program-us/en (2026-07-20) |
+| TikTok Creator Rewards (EE. UU.): devolución de lo pagado por error | "Creator will refund to TikTok any amounts owed within thirty (30) days of receiving written notification thereof." | https://www.tiktok.com/legal/page/global/creator-rewards-program-us/en (2026-07-20) |
+| TikTok Creator Rewards (Brasil): suspensión de pagos sin aviso | "TikTok may at any time, without providing a warning or prior notice, temporarily suspend further payments to your Program account" | https://www.tiktok.com/legal/page/global/tiktok-creator-rewards-program-br/en (abril de 2025; descargada 2026-11-20) |
+| TikTok Creator Rewards (Brasil): residencia legal en el país del programa | "Creator is a legal resident of the country where the Program is made available" | https://www.tiktok.com/legal/page/global/tiktok-creator-rewards-program-br/en (abril de 2025; descargada 2026-11-20) |
+| TikTok Creator Rewards (EEE): sin VPN. Los textos de EE. UU. y Brasil no repiten la frase | "you reside in a country in which Creator Rewards Program is available and do not use a VPN or other similar tool;" | https://www.tiktok.com/legal/page/global/tiktok-creator-rewards-program-eea/en (abril de 2025; descargada 2026-11-20) |
+
+### 12.2 Visto en resumen de buscador (oficial): no verificado
+
+Páginas oficiales que no pude descargar; el buscador de la sesión (restringido a dominios oficiales) las resumió el 2026-11-20.
+
+| Hecho | URL |
+|---|---|
+| La página «YouTube Partner Program availability» lista a El Salvador (la página tiene unos 1.700 días según el buscador) y el comprobador de elegibilidad lo pone entre los países con el YPP ampliado «fully rolled out» | https://support.google.com/youtube/answer/7101720?hl=en y https://support.google.com/youtube/troubleshooter/13536952?hl=en |
+| AdSense: no se cambia el país de la dirección de pagos; el banco debe estar en el mismo país que esa dirección; el país fiscal es el de residencia declarada; el PIN de dirección se verifica en 4 meses | https://support.google.com/adsense/answer/2628816?hl=en, https://support.google.com/youtube/answer/6025222?hl=en, https://support.google.com/youtube/answer/10391362?hl=en, https://support.google.com/youtube/answer/14727844?hl=en |
+| TikTok Creator Rewards: países EE. UU., Reino Unido, Alemania, Japón, Corea del Sur, Francia, México y Brasil; El Salvador no figura; la búsqueda del 2026-11-20 no halló lista oficial que lo incluya | https://www.tiktok.com/creator-academy/article/eligibility y https://www.tiktok.com/discover/creator-rewards-program-country-list |
+| TikTok, términos de campañas de EE. UU.: descalifican el VPN que oculte la ubicación | https://www.tiktok.com/legal/page/global/campaign-terms-conditions-us/en |
+| Instagram: las listas de suscripciones, regalos y bonos que mostró el buscador son de 2023 o anteriores y no incluyen a El Salvador | https://creators.instagram.com/blog/bringing-subscriptions-to-more-creators-on-instagram |
+
+### 12.3 Sin verificar
+
+Cláusula de VPN o ubicación falsa en los términos de YouTube, AdSense, Instagram y en los textos de TikTok distintos del EEE; cómo comprueba cada plataforma la ubicación; si un cierre de cuenta (no solo del programa) es consecuencia prevista; métodos de pago y comisiones para El Salvador; si la verificación con ID está disponible en El Salvador; tratado fiscal con EE. UU.; requisitos de Instagram, TikTok Shop y Series. Fuentes que harían falta: las de la sección 7 de `evaluacion_vpn.md`.

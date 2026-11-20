@@ -241,3 +241,13 @@ El detalle de cada uno y la fuente que haría falta está en la tabla «Sin veri
 7. **Quién abre la página de detalles de Creator Rewards en la aplicación** (TikTok Studio) para confirmar los criterios de video de su país.
 8. **Qué se dice de quién hace y revisa la serie** en la biografía: solo lo que sea cierto.
 9. **Si TikTok Shop se persigue** cuando haya libros para colorear u hojas (decisión de la sección 6 de `estrategia_monetizacion.md`).
+
+## Titular en El Salvador (2026-11-20)
+
+El dueño informó que el titular de las cuentas reside en **El Salvador**. Respuesta a la decisión 1 de la sección 16 en cuanto al país (la edad sigue sin dato). Análisis completo y citas: `video-studio/series/granja/evaluacion_vpn.md`; filas verificadas en la sección 12 de `video-studio/comercial/base_conocimiento.md`.
+
+- **Efecto en TikTok:** El Salvador no figura en la lista de países de Creator Rewards que mostró el buscador (visto en resumen de buscador (oficial), página vieja; sin verificar con la lista vigente). Mientras no figure, el programa de premios no está disponible para ese titular, y la sección 2 (residencia legal en un país con programa) se lee como «no cumple hoy».
+- **VPN:** no se usa. No cambia la residencia legal, la cuenta de pago a nombre propio ni los datos fiscales, y declarar lo que no es cierto expone a expulsión, a perder lo no cobrado y a devolver lo pagado (verificado en los términos). Esto confirma el punto 2 de la sección 14.
+- **Plan:** TikTok queda como vitrina para el adulto, sin ingreso propio, hasta que el programa se abra en El Salvador (sin fecha: sin dato). La confirmación se hace en TikTok Studio con la cuenta del titular.
+- **YouTube no depende de esto:** El Salvador figura en la lista del Programa de socios ampliado (verificado, página 13429240) y, según un resumen de buscador, también en la del YPP completo. El ingreso por anuncios, si llega, sigue estando en YouTube.
+- **Si el dueño quiere TikTok pagado:** solo con una persona o empresa residente legal en un país con programa que sea la titular real, con asesoría legal y fiscal. Es decisión del dueño (`evaluacion_vpn.md`, sección 5c).
