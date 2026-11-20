@@ -1,9 +1,9 @@
 # Revisión del guion — Hola, granja
 
-- **Veredicto:** CAMBIOS
+- **Veredicto:** APROBADO
 - **Revisó:** psicologa-infantil
 - **Fecha:** 2026-11-20
-- **Vuelta:** 2 (sobre el guion reescrito tras los 9 cambios de la primera vuelta)
+- **Vuelta:** 3 (sobre el guion que aplica los 4 cambios de la segunda vuelta)
 
 <!-- Veredicto: APROBADO o CAMBIOS. El prompt no pasa el validador sin APROBADO. -->
 
@@ -12,62 +12,60 @@
 | # | Criterio (guía 1 a 3, sección 8) | ¿Cumple? | Nota |
 |---|---|---|---|
 | 1 | Un solo objetivo y tramo de edad | Sí | Saludar con la mano, 18–24 meses, con adulto al lado. Solo se pide un gesto con modelo. No se pide hablar, señalar ni nombrar. «Adiós» se dice una vez y no se pide. |
-| 2 | El concepto se repite tres veces o más | Sí | «Hola» se dice en los planos 1, 2, 5, 7, 8, 10, 11 y 12, siempre al llegar, al responder o al nombrar el gesto. El gesto se ve en 9 planos. |
-| 3 | Dos preguntas o más, cada una con su pausa | Sí | Planos 5 → 6 y 8 → 9. Pausas de 5 s como toma viva y dentro de un plano continuo de 18 s. Tras cada pausa, el personaje responde «hola» con calma. Nadie deja al niño en falta. |
-| 4 | Nada peligroso de imitar, nada que asuste | Sí | Solo se camina despacio y se saluda. Nadie trepa, corre, empuja ni se lleva nada a la boca. En el plano 3, Lumi queda descrita como atenta y disponible, no como alguien que rechaza el saludo. |
-| 5 | Todo lo que se enseña es verdadero | Sí | «Hola» ya no se usa para irse. «Adiós» va en la despedida. Los sonidos de animal suenan antes de la voz y no se confunden con «hola». |
-| 6 | Termina en orden y con invitación fuera de la pantalla | Sí | Los dos vuelven a su lugar, el patio queda despejado y la invitación lleva a un peluche real. La línea para el adulto se dice en voz. «Ahora, a jugar» manda al niño fuera de la pantalla. |
-| 7 | Reglas de imagen y sonido | No | Hay cuatro puntos sin resolver. La voz no está atada al gesto en los planos de nombrar y responder. Las notas permiten alargar planos que ya están en el tope de la serie y pasar los 90 s. La música «se apaga» de golpe en los planos 1 y 11. El plano 12 pide 8 s de inmovilidad total. |
+| 2 | El concepto se repite tres veces o más | Sí | «Hola» se dice en los planos 1, 2, 5, 7, 8, 10, 11 y 12. En los planos 1, 2, 5, 7, 8 y 10 la palabra cae sobre el ala o la pezuña en alto. |
+| 3 | Dos preguntas o más, cada una con su pausa | Sí | Planos 5 → 6 y 8 → 9. Las pausas duran 5 s, son una toma viva y van dentro de un plano continuo de 18 s. Después de cada pausa, el personaje dice «hola» con calma. Nadie deja al niño en falta. |
+| 4 | Nada peligroso de imitar, nada que asuste | Sí | Solo se camina despacio y se saluda. Nadie trepa, corre ni empuja, y nadie se lleva nada a la boca. En el plano 3 Lumi está atenta y disponible. No hay emociones que acompañar. |
+| 5 | Todo lo que se enseña es verdadero | Sí | «Hola» solo se usa al llegar, al responder o al nombrar el gesto. «Adiós» se usa para irse. Los sonidos de animal suenan antes de la voz. |
+| 6 | Termina en orden y con invitación fuera de la pantalla | Sí | Los dos vuelven a su lugar y el patio queda despejado. Se invita a saludar a un peluche real, y la línea para el adulto se dice en voz. «Ahora, a jugar» lleva al niño fuera de la pantalla, sin gancho. |
+| 7 | Reglas de imagen y sonido | Sí | Todos los planos vistos duran 6 s o más y ninguna toma baja de 4 s. El total es de 88 s y las notas ya no permiten pasar los 90 s. La cámara es fija y no hay texto en pantalla. La música entra y sale con fundidos lentos y solo suena en el saludo y en el cierre o la despedida, nunca debajo de la voz. La voz queda atada al gesto. El plano 12 es una espera viva. |
+
+## Comprobación de los cambios de la segunda vuelta
+
+1. **Voz atada al gesto (planos 2, 5, 7, 8 y 10): aplicado.** Los planos 5 y 8 tienen el reparto 0–2 / 2–4 / 4–7 s, con la mirada en silencio. En los planos 2, 7 y 10, «hola» cae con el ala o la pezuña en alto.
+2. **Notas de producción: aplicado.** Solo el plano 11 admite hasta 2 s más. Los planos 1, 12 y 13 no se alargan. El fundido del plano 13 cabe en sus 6 s.
+3. **Fundido de música (planos 1 y 11): aplicado.**
+4. **Espera viva en el plano 12: aplicado.** Los dos parpadean y respiran, sin gestos ni sonidos.
+
+La reescritura no introdujo problemas nuevos. Se corrigieron los dos puntos que estaban fuera del guion. La ficha pedagógica ya no dice «rápido» y usa «Tiky saludó a Lumi». En la ficha técnica, las filas P2, P5 y P6 ahora se pueden comprobar en el video y coinciden con el guion.
 
 ## Cambios pedidos
 
-**Cambio más importante: el 1.** El episodio enseña una sola cosa: que la palabra «hola» va con la mano en alto. Si en la edición la palabra cae fuera del gesto, se pierde justo lo que el episodio enseña.
-
-1. **Planos 2, 5, 7, 8 y 10. Escribir en qué momento del gesto cae la voz.**
-   - Los planos 1 y 13 ya lo dicen («con la voz "Hola" saludan»). Los planos 2, 5, 7, 8 y 10 no lo dicen. La voz se monta aparte en edición, así que si el guion no lo fija, «hola» puede caer cuando el ala o la pezuña ya bajó, o encima de la mirada de atención conjunta. Así el niño oye la palabra sin ver el gesto, o tiene que atender a dos cosas a la vez. La guía pide que el objeto esté en pantalla mientras se nombra, y aquí el objeto es el gesto.
-   - Plano 2: «Lumi dice hola» suena mientras la pezuña está en alto y se mueve. «Hola» coincide con el segundo movimiento. La pezuña baja después de la voz.
-   - Planos 5 y 8: la mirada al ala o a la pezuña, luego a cámara y otra vez al ala o la pezuña, va en silencio. «Tiky dice hola» o «Lumi dice hola» suena durante el saludo, con el ala o la pezuña en alto. «¿Y tú? Saluda con la mano» suena cuando el personaje ya mira a cámara y baja el ala o la pezuña. Reparto orientativo de los 7 s: 0–2 s mirada en silencio, 2–4 s saludo con la primera frase, 4–7 s mirada a cámara, ala o pezuña abajo y la pregunta.
-   - Planos 7 y 10: «Hola» suena sobre el saludo, con el ala o la pezuña en alto, no cuando ya bajó. Después baja y sonríe en silencio.
-
-2. **Notas de producción. Quitar el permiso de alargar los planos 1, 12 y 13.**
-   - El plano 1 ya dura 10 s (tope de la serie: 8–10). El 12 dura 8 s (tope: 6–8). El 13 es fijo de 6 s. El total es de 88 s con 2 s de margen. Si se alargan los cuatro planos que la nota permite, el episodio pasa los 90 s y se salen de la biblia. Además, el saludo y la despedida dejan de ser iguales en todos los episodios.
-   - Un fotograma congelado y alargado es justo lo que ya se descartó para las pausas, porque a esta edad parece un video trabado.
-   - Texto propuesto: «Solo el plano 11 admite hasta 2 s más en edición (la serie permite 8–10). Los planos 1, 12 y 13 no se alargan. El fundido de música del plano 13 ocurre dentro de sus 6 s.»
-
-3. **Planos 1 y 11. Música: cambiar «se apaga antes de la voz» por «baja en un fundido lento de unos 2 s y termina antes de la voz».**
-   - Es el mismo motivo por el que se cambió el final del plano 13. Un corte seco de música es un golpe de sonido, y en estos planos ocurre justo antes de la palabra clave. Con el fundido, la voz llega sobre silencio y sin sobresalto.
-
-4. **Plano 12. Cambiar «quietos… Nadie se mueve mientras se habla» por «miran a cámara en espera viva: parpadean y respiran suave, sin gestos ni sonidos».**
-   - Ocho segundos con los dos personajes totalmente inmóviles, mirando a cámara, se leen como imagen congelada. Una cara fija también puede inquietar. Hay que mantener lo que se buscaba, que es un solo foco y nadie que salude ni haga gestos encima de la voz para el adulto, con la misma espera viva que se usa en las pausas 6 y 9.
-
-### Fuera del guion (para coordinación, no cambia el veredicto)
-
-- `ficha_pedagogica.md`, «Qué hace Tiky / qué hace Lumi»: todavía dice que Tiky mueve el ala «pequeña, rápido y sin mirar». El guion ya dice «un movimiento pequeño y corto». La pedagoga debería alinearlo para que «rápido» no llegue al prompt.
+Ninguno.
 
 ## Riesgos que quedan
 
+- **Plano 1, tiempos:** hay 10 s para la entrada, el fundido de unos 2 s, «Esta es la granja», el saludo sobre «Hola» y 2 s de espera. Entra justo si el fundido ocurre mientras caminan. En la edición hay que comprobar que no se apure el saludo ni se recorte la espera de 2 s. Este saludo se reusará en toda la serie.
 - **Plano 3:** que la cara de Lumi, al no responder, salga seria, fría o con el ceño fruncido. Si se ve como rechazo, se regenera.
-- **Saludos con ala y pezuña:** que el generador los convierta en aleteo de vuelo o en golpes de pezuña. Tienen que verse lentos, con dos movimientos y sin sacudidas.
-- **Planos 5 y 8:** son 7 s con mirada de atención conjunta, saludo, mirada a cámara y bajada del ala o la pezuña. Si sale apurado o con giros bruscos de cabeza, se regenera.
+- **Saludos con ala y pezuña:** que el generador los convierta en aleteo de vuelo o en golpes de pezuña. Tienen que verse lentos, con dos movimientos y sin sacudidas. En los planos 5 y 8 el saludo tiene solo 2 s: no debe salir apurado.
+- **Planos 5 y 8:** que la mirada al ala o a la pezuña, a cámara y otra vez al ala o la pezuña salga con giros bruscos de cabeza.
 - **Pausas y plano 12:** que la espera parezca un video congelado o, al revés, que el personaje haga algo nuevo.
 - **Planos encadenados (5–7 y 8–10):** saltos de luz, posición o tamaño entre tomas, que el niño percibe como cortes bruscos.
-- **Boca:** que la pezuña de Lumi suba al mentón o a la boca (es su gesto propio y el generador puede añadirlo) o que Tiky se lleve el ala al pico. En este episodio eso no debe aparecer.
-- **Entrada y cierre (planos 1 y 11):** que al caminar tropiecen, choquen entre ellos o se caigan.
+- **Boca:** que la pezuña de Lumi suba al mentón o a la boca, o que Tiky se lleve el ala al pico. El generador puede añadir el gesto propio de Lumi aunque no se pida.
+- **Entrada y cierre (planos 1 y 11):** que al caminar tropiecen, choquen o se caigan.
 - **Plano 4:** que Tiky se gire de golpe hacia Lumi.
 - **Escenario:** animales de fondo, personas, manos humanas, objetos en las manos o el crayón de Lumi.
 - **Caras de cerca (encuadre B):** sonrisas con dientes u ojos muy abiertos.
 - **Sonido:** pasos sobre fieltro a volumen parejo, ningún sonido más fuerte que la voz y nada de música debajo de «hola».
 - **Final:** que termine con los dos en calma en el patio, sin acercamiento de cámara, sin elementos nuevos y sin nada que anuncie otro video.
 
-## Primera vuelta (resumen)
+## Vueltas anteriores (resumen)
 
-Veredicto CAMBIOS, 9 cambios. Todos quedaron aplicados en esta versión del guion.
+**Primera vuelta: CAMBIOS, 9 cambios.** Todos se aplicaron.
 
 1. Plano 13: despedida «Ahora, a jugar. Adiós.» en lugar de «Hasta pronto. Hola.», con fundido de música lento.
-2. Plano 11: «Con la mano decimos hola» y quitar «vacío».
-3. Plano 3: sin voz, movimiento pequeño y corto (no rápido), Lumi atenta y disponible, 6 s.
+2. Plano 11: «Con la mano decimos hola», y quitar «vacío».
+3. Plano 3: sin voz y con un movimiento pequeño y corto, no rápido. Lumi atenta y disponible. 6 s.
 4. Plano 4: «Tiky saludó a Lumi», 7 s y acciones en orden.
-5. y 6. Planos 5–7 y 8–10: un solo plano con tomas encadenadas, pausa de 5 s viva y no congelada, continuidad del ala y la pezuña.
-7. Plano 12: nueva línea para el niño y para el adulto, sin el gesto a medias de Tiky, «ala y pezuña libres».
-8. Plano 1: 10 s, gesto sobre «Hola» y 2 s de espera.
-9. Sonidos de animal antes de la voz; «hola» es lo último que se oye.
+5. y 6. Planos 5–7 y 8–10: un solo plano con tomas encadenadas, pausa viva de 5 s y continuidad del ala y la pezuña.
+7. Plano 12: nueva línea para el niño y para el adulto, sin el gesto a medias de Tiky, con el ala y la pezuña libres.
+8. Plano 1: 10 s, con el gesto sobre «Hola» y 2 s de espera.
+9. Sonidos de animal antes de la voz, con «hola» como lo último que se oye.
+
+**Segunda vuelta: CAMBIOS, 4 cambios.** Todos se aplicaron.
+
+1. Planos 2, 5, 7, 8 y 10: atar la voz al gesto. Era el cambio más importante.
+2. Notas de producción: no alargar los planos 1, 12 y 13, y no pasar los 90 s.
+3. Planos 1 y 11: fundido lento de la música en lugar de un corte.
+4. Plano 12: espera viva en lugar de inmovilidad total.
+
+Fuera del guion se corrigió la ficha pedagógica («rápido») y las filas P2, P5 y P6 de la ficha técnica.
