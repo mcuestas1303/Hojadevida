@@ -9,6 +9,29 @@
   - **Sin verificar:** no lo pude confirmar; no se da por cierto.
 - Los datos reales del canal: **sin dato**. El canal no existe y `video-studio/datos/` solo tiene su README.
 
+## Estado tras la revisión del equipo (2026-11-20)
+
+Resumen de la coordinación. El detalle está en los dictámenes del final. Las cifras y
+requisitos de las plataformas vienen de resúmenes de buscador y de terceros: **falta
+verificarlos en las páginas oficiales**, que la red de la sesión bloqueó.
+
+| Ajuste | Comercial | Pedagoga | Psicóloga | Queda |
+|---|---|---|---|---|
+| Compilado de 6 capítulos (unos 9 min, anuncios intermedios) | No por ahora | Sí, con condiciones | **Veto** | No se hace |
+| Alargar el capítulo | No | No | Veto | Se mantiene en 60 a 90 s |
+| Lista «un capítulo por día» | — | Sí | Sí, enlazando el capítulo suelto | Se hace |
+| Anuncios | Lentos y pequeños | — | Solo antes o después, nunca dentro | Con esa condición |
+| Shorts | Vitrina, sin contar con ingreso | Momento con la pausa entera | Uno por capítulo; nunca solo el saludo | Con esas condiciones |
+| Un canal con tres pistas de audio | Sí | Sí | Sí | Depende de que el canal tenga la función |
+| Frecuencia | Constante y sostenible | Semanal | Uno por semana como máximo | Un capítulo por semana |
+| Línea para padres | Sí, canal aparte | Sin Tiky ni Lumi | Con la recomendación de pantalla en cada video | La decide el dueño |
+| Ingreso fuera de anuncios (libros para colorear, hojas, música, licencias) | Vía principal | Sí, con condiciones | Sin apps ni música en bucle | La decide el dueño |
+| Patrocinios dentro del video | — | No | Veto | No se hace |
+
+Conclusión: el contenido no se cambia por dentro para monetizar. Lo que cambia es el modelo:
+los anuncios serán un ingreso lento con capítulos de 88 s, y el grueso tendría que venir de
+fuera de los anuncios. El dueño tiene la última palabra sobre los vetos del equipo.
+
 ## 1. Respuesta corta
 
 **Sí, hay que ajustar, pero poco y fuera del interior del video.** El capítulo cumple lo que la plataforma pide de calidad infantil; el problema es de *forma de negocio*: con capítulos de 88 s, con la marca «hecho para niños» y sin historial, la monetización por anuncios es **lenta, pequeña e incierta**, y hay un riesgo real de rechazo por «contenido inauténtico» (plantilla fija + generado con IA). Los 5 ajustes más importantes, todos pendientes de la pedagoga y la psicóloga (sección 5):
@@ -331,3 +354,40 @@ Fuentes (terceros, consultadas el 2026-11-20):
 11. **El tercer tiempo solo desde los 30 meses** y sin corregir (sección 4), aunque un público mayor sea más rentable.
 12. **El elenco** (solo Tiky y Lumi) y su género fijo.
 13. **La revisión de la pedagoga y de la psicóloga por capítulo y por idioma** (secciones 8 y 9), aunque retrase la publicación.
+
+## Dictamen de la psicóloga
+
+- **Fecha:** 2026-11-20
+- **Autora:** psicologa-infantil
+- **Alcance:** bienestar del niño de 1 a 3 años, carga de estímulo y hábitos de pantalla, contra `video-studio/infantil/guia_1_a_3.md`. No opino de cifras ni de políticas de la plataforma. Donde veto, el ajuste no se hace aunque la pedagoga lo haya aceptado.
+- **Punto de partida:** a esta edad el video solo sirve si un adulto lo ve con el niño y luego se apaga (sección 1). Todo lo que haga más fácil dejar al niño solo frente a la pantalla, o seguir mirando, va contra el producto, no solo contra la guía.
+
+| Ajuste | Decisión | Condiciones concretas | Razón |
+|---|---|---|---|
+| 5.1 Compilado de 6 capítulos (8 min 48 s) para 24–36 meses, con anuncios intermedios | **Vetar** | Ninguna variante del compilado se publica por ahora: ni con intermedios ni sin ellos. Se reabre solo si el dueño lo pide **sin anuncios intermedios** y con datos reales del canal de que se ve acompañado (retención por capítulo que muestre que el adulto pausa); entonces lo reviso de nuevo | **Sección 1:** episodios cortos «para verse acompañado y terminar», tope de una hora y sin ganchos. Nueve minutos caben en la hora, pero el problema no es el total: el compilado existe **para** que no se termine. Su única ganancia son los intermedios, y los intermedios hacen el daño: (1) meten en mitad del episodio un estímulo que no controlamos (anuncios rápidos, fuertes, con música y texto), contra la **sección 5** (ritmo y estímulo) y la **sección 7** (volumen parejo, sin golpes ni sustos, sin texto); (2) un niño menor de 3 años no distingue el anuncio del programa; (3) tras «Ahora, a jugar. Adiós» vuelve a sonar «Hola» a los pocos segundos: la despedida deja de ser verdad. A un niño que aprende a separarse (ansiedad de separación, **sección 2**), el ritual de despedida tiene que cumplirse (**sección 4**, verdad; **sección 5**, base segura). (4) Los 6 a 8 s de patio quieto no son una parada: el adulto que se fue no vuelve a pausar, y un video de 9 minutos que sigue solo es justo el formato que se usa como niñera. Así el niño ve sin adulto, que es lo que anula el aprendizaje (déficit de video, **sección 1**). Limitarlo a 24–36 meses no resuelve nada: siguen siendo menores de 3 años, y seis invitaciones seguidas sin hacer ninguna enseñan a ignorar la invitación (**sección 1, punto 2**) |
+| Variante del 5.1: lista «un capítulo por día» | **Aceptar con condiciones** | (1) En la descripción y en el canal se enlaza **cada capítulo suelto**, nunca «reproducir todo». (2) La descripción de la lista dice «un capítulo por día, con un adulto; hagan la invitación y apaguen». (3) La lista no se promociona como «X minutos de Tiky y Lumi» ni con su duración total. (4) No se crea una segunda lista que junte todo | Sección 1 (acompañado, terminar) y sección 3 (repetición espaciada). La lista avanza sola en la plataforma; por eso el uso que se promueve es el capítulo suelto |
+| Anuncios en sí (antes o después del capítulo de 88 s, contextuales, en «hecho para niños») | **Aceptar con condiciones** | (1) Nunca anuncios **dentro** del capítulo: si la plataforma no deja quitarlos, ese video no se monetiza. (2) Se bloquean en Studio o AdSense todas las categorías que se puedan bloquear y que no sean para la familia (comida, juguetes con pantalla, otros canales infantiles), si la plataforma lo permite. (3) Nada en el capítulo se diseña pensando en el anuncio: ni pausas, ni cortes, ni un comienzo más rápido para «retener» después del anuncio. (4) El saludo empieza igual de calmado haya o no anuncio antes. (5) En la descripción para el adulto: «Mírenlo juntos». No se escribe nada que pida esperar el anuncio | Sección 5 (ritmo y estímulo) y sección 7 (sonido parejo, sin sustos): el anuncio es la única parte del video que no cuidamos, y los menores de 3 años no lo distinguen del programa. Lo acepto antes o después porque ahí el adulto que acompaña (sección 1) puede saltarlo o esperar con el niño, y no rompe la estructura saludo → despedida del capítulo |
+| 5.4 Shorts infantiles en un feed de reproducción continua | **Aceptar con condiciones** (y vetar lo que sigue) | (1) Como máximo un short por capítulo, y nunca más shorts que capítulos. (2) El short termina **hacia fuera de la pantalla**: con la invitación del capítulo («Busca tu peluche…») o con la despedida fija, en calma y con el último fotograma quieto. No termina en el saludo ni en la pregunta. (3) **Vetado** el short que sea solo el saludo, o solo «hola» con el gesto: en bucle se convierte en un «hola, hola, hola» sin fin, que es estímulo de repetición y no enseña nada. Esto cambia lo que dice `serie.md` en «Formatos» («un saludo» como short): queda solo «una pregunta con su pausa y su respuesta, más la invitación». (4) La pausa de 3 a 5 s va entera, aunque en el feed se deslice. (5) Nada de texto, ganchos ni «ver el capítulo». (6) Se publican sueltos, no en ráfaga, y nunca como serie de shorts encadenados | Sección 1, punto 4 (sin ganchos): el feed vertical es por diseño un gancho que no controlamos: pasa solo al siguiente video, que puede ser de cualquiera, rápido y fantástico (sección 5, ritmo y estímulo). No lo puedo prohibir del todo porque el short sirve al adulto para encontrar la serie; sí puedo hacer que cada short, aunque se vea solo, termine diciendo al niño que se vaya a hacer algo con un objeto real (sección 1, punto 2) |
+| 5.3 Frecuencia (un capítulo por semana) | **Aceptar con condiciones** | (1) Un capítulo por semana como máximo, aunque haya material listo. (2) Nunca se suben varios capítulos o shorts el mismo día. (3) No se anuncia a los niños ni al adulto un día u hora fija de estreno («cada viernes, nuevo capítulo»): crea la expectativa de que siempre hay más pantalla. (4) Ningún capítulo ni idioma sale sin mi revisión aprobada; si no llego, se retrasa | Sección 9 (revisión de cada capítulo e idioma) y sección 1 (hábitos de pantalla): el niño no sabe del calendario, pero el adulto sí, y una cita fija con lo nuevo es un gancho. Un catálogo que crece despacio también se repite más, y la repetición es lo que enseña (sección 3) |
+| 5.6 Línea para padres (canal aparte) | **Aceptar con condiciones** | Las de la pedagoga, más: (1) Cada video dice la recomendación de la sección 1 sin suavizarla: nada de pantalla antes de los 18 meses salvo videollamadas, acompañado de 18 a 24, máximo una hora de 2 a 5 años. (2) **Vetado** presentar la serie como solución para entretener al niño («para que coma», «para el auto», «para que te deje trabajar», «para dormir»): es venderla como niñera. (3) Sin culpar ni avergonzar a los padres por usar pantalla. (4) Sin promesas ni lenguaje médico, y nada de diagnósticos («si no saluda a los 18 meses…»); cuando haya dudas del desarrollo, se remite a su pediatra. (5) Cada afirmación sobre el desarrollo la reviso antes de publicar | Sección 1 (puntos 1 y 3): al adulto se le habla para que acompañe y apague, no para que deje al niño frente a la pantalla. Sección 5 (sin vergüenza) vale también para el adulto, que es la base segura del niño |
+| 5.2 Alargar el capítulo | **Vetar** | Se mantienen 60 a 90 s | Sección 1 y sección 7. Coincido con la pedagoga |
+| Variación entre capítulos | **Aceptar con condiciones** | Las de la pedagoga. Además, lo que varía no puede ser el tono emocional: ni sustos, ni conflictos nuevos para que el capítulo «se vea distinto» | Sección 5 (nada que asuste; base segura) |
+| 5.5 Un canal con pistas de audio | **Aceptar con condiciones** | Cada pista se aprueba por separado (como esta vuelta); sin doblaje automático; si la voz se genera, no imita a una persona real y tiene la misma calidez en los tres idiomas | Sección 8 (cada idioma se revisa) y sección 7 (voz clara, cálida y lenta) |
+| 5.7 Autoría humana visible | **Aceptar** | Sin decir que el video «enseña a hablar» ni nada que la ficha no diga | Sección 9 |
+| 6. Libros para colorear y hojas para imprimir | **Aceptar con condiciones** | Las de la pedagoga, más: sin pegatinas ni piezas pequeñas en nada destinado a menores de 3 años (riesgo de asfixia); crayón grueso y no tóxico; cada hoja dice «con un adulto al lado» | Sección 5 (todo se imita, nada se lleva a la boca) |
+| 6. Música propia | **Aceptar con condiciones** | **Vetados** los videos de la canción en bucle o «versiones de una hora» para dormir o calmar. Se publica como audio para el adulto, con duración de canción | Sección 1 (tope de pantalla) y sección 5: un bucle largo es pantalla sin fin y uso como niñera |
+| 6. Licencias: juguetes | **Aceptar con condiciones** | Las de la pedagoga, más: sin piezas pequeñas, sin pantallas, luces ni sonidos | Sección 5 (todo se imita, ritmo y estímulo) |
+| 6. Licencias: apps con Tiky y Lumi | **Vetar** para 1 a 3 años | No se licencia ni se hace una app infantil con los personajes | Sección 1: una app es más pantalla, y en solitario; para menores de 18 meses no se recomienda ninguna pantalla. No hay forma de hacer que una app «termine y lleve fuera» como el capítulo |
+| 6. Patrocinios y marcas en el video | **Vetar** | — | Sección 5 (todo se imita, incluido pedir lo que se ve) y sección 4 (ambiente preparado) |
+| Marcar el canal como «no hecho para niños» | **Vetar** | — | Lo prohíbe la regla del estudio, y quitaría las protecciones (sin anuncios personalizados ni comentarios) pensadas para este público |
+
+### Lo que no se hace aunque pague
+
+1. Compilados de capítulos con anuncios intermedios, o cualquier video del niño de más de 90 s.
+2. Anuncios dentro del capítulo, o cualquier cambio del capítulo pensado para el anuncio.
+3. Shorts que sean solo el saludo o terminen en la pregunta; shorts en ráfaga.
+4. Bucles, «una hora de Tiky y Lumi», música en bucle para dormir o calmar.
+5. Presentar la serie a los padres como entretenimiento para dejar al niño solo.
+6. Anunciar estrenos fijos o publicar más de un capítulo por semana.
+7. Apps con los personajes para 1 a 3 años; productos con piezas pequeñas.
+8. Publicar un capítulo, un short o una pista de idioma sin revisión aprobada.

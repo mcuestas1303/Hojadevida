@@ -69,15 +69,25 @@ para narradora en off; si los personajes pasan a hablar, se revisan de nuevo.
 
 Español (maestro), inglés y portugués de Brasil. El video es el mismo en los tres; cambia la
 pista de voz (`voz_idiomas.md` en cada proyecto) y el paquete de publicación, que el comercial
-prepara por mercado. Las frases fijas de la serie en inglés y portugués se fijan en el
-capítulo 1 y se copian aquí cuando la psicóloga las apruebe.
+prepara por mercado. Las frases fijas en los tres idiomas están en «Frases fijas».
 
 ## Formatos
 
 - **Capítulo e intro:** video largo, 16:9, de 60 a 90 s, con la estructura de arriba.
-- **Short:** 9:16, de 20 a 45 s. Es un solo momento de un capítulo ya aprobado: un saludo o
-  una pregunta con su pausa y su respuesta. Lleva su propia ficha pedagógica y pasa por la
+- **Short:** 9:16, de 20 a 45 s. Es un solo momento de un capítulo ya aprobado: una pregunta
+  con su pausa entera y su respuesta, y termina con la invitación o con la despedida. Como
+  máximo uno por capítulo. No se hace un short que sea solo el saludo: en reproducción en
+  bucle se repetiría sin fin (veto de la psicóloga, 2026-11-20). Lleva su propia ficha pedagógica y pasa por la
   psicóloga igual que un capítulo. Detalle técnico en `video-studio/formatos.md`.
+
+Frases fijas por idioma, aprobadas por la psicóloga el 2026-11-20:
+
+| Frase | es | en | pt-BR |
+|---|---|---|---|
+| Saludo | Esta es la granja. Hola. | This is the farm. Hello. | Esta é a fazenda. Oi. |
+| Despedida | Ahora, a jugar. Adiós. | Time to play. Bye-bye. | Agora, vamos brincar. Tchau. |
+
+La palabra de saludo (hola, hello, oi) nunca se usa para despedirse, en ningún idioma.
 
 ## Voz y sonido
 

@@ -9,10 +9,10 @@
 - **Serie:** granja
 - **Objetivo de aprendizaje:** levanta y mueve la mano para saludar cuando se le dice «saluda con la mano» o cuando Tiky o Lumi lo saludan a cámara.
 - **Generador:** Higgsfield: keyframes con Nano Banana 2; clips con Seedance 2.0 Mini, imagen→video, sin audio
-- **Aspecto:** 16:9 (supuesto de la coordinación, por confirmar con el dueño; las imágenes aprobadas de los personajes son 9:16)
+- **Aspecto:** 16:9 (video largo de YouTube, según formatos.md; las imágenes de referencia de los personajes son 9:16, así que cada keyframe se pide en 16:9)
 - **Duración total:** 88 s
 - **Resolución de borrador:** 480p
-- **Resolución final:** 720p (solo las tomas aprobadas)
+- **Resolución final:** clips a 720p (solo las tomas aprobadas); máster de 1920x1080 al ensamblar
 - **Precio por segundo:** 0.5
 - **Intentos estimados por toma:** 2
 
@@ -546,7 +546,7 @@ Modern 3D cartoon render, soft matte vinyl toy figures, children's animation sty
 - **Orden:** Toma 1 → Toma 2 → Toma 3 → Toma 4 → Toma 5 → Toma 6 → Toma 7 → Toma 8 → Toma 9 → Toma 10 → Toma 11 → Toma 12 → Toma 13 → Toma 14 → Toma 15 → Toma 16
 - **Transiciones:** corte directo entre planos. Las uniones de tomas encadenadas (1→2, 6→7→8, 9→10→11, 12→13, 14→15) deben ser invisibles: se recorta el primer fotograma de la toma siguiente para no repetir el último de la anterior. No se congela ni se alarga ningún fotograma.
 - **Texto en pantalla:** ninguno.
-- **Formato de salida:** 1280x720 (720p), 24 fps, 16:9 (por confirmar con el dueño).
+- **Formato de salida:** 1920x1080, 16:9, MP4 H.264 con audio AAC a 48 kHz, a los fps del generador (`ensamblar.py --formato largo`).
 
 ## 9. Presupuesto
 
