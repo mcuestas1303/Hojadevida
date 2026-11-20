@@ -52,7 +52,7 @@ Capítulo 1 de Tiky e Lumi na fazenda. Dura 1 minuto e 28 segundos. Sem música 
 - **Etiquetas:** acenar com a mão, ensinar o bebê a acenar, como ensinar o bebê a dar tchau, vídeo infantil para 1 ano, vídeo para criança de 2 anos, oi com a mãozinha, Tiky e Lumi, fazenda infantil, primeiras palavras, assistir junto com os pais, aprendizagem infantil
 - **Lista de reproducción:** Tiky e Lumi na fazenda
 - **Categoría:** Educação (opinión mía: el capítulo tiene un objetivo de aprendizaje)
-- **Límites de la plataforma que aplican:** al marcarlo «feito para crianças», YouTube desactiva comentarios, notificaciones, pantallas finales, tarjetas y anuncios personalizados (fuente: `video-studio/formatos.md` y `series/granja/estrategia_monetizacion.md`, sección 3; 2026-11-20). Por eso ni el video ni la descripción piden suscribirse, comentar ni dar «curtir». La obligación legal de marcar el contenido infantil (COPPA) viene de EE. UU.; si YouTube aplica otra norma para espectadores de Brasil (por ejemplo, de protección de menores en línea): **sin verificar**. Pendiente: política de contenido sintético y de contenido inauténtico (ver estrategia).
+- **Límites de la plataforma que aplican (verificado en la ayuda oficial de YouTube, 2026-11-20):** al marcarlo «feito para crianças» ([audiencia](https://support.google.com/youtube/answer/9527654?hl=en), [funciones afectadas](https://support.google.com/youtube/answer/9632097?hl=en)), el video no tiene comentarios, campana de notificaciones, tarjetas ni pantallas finales, marca de agua, reproducción automática en inicio ni miniplayer, y el canal no tiene membresías ni Posts. Los anuncios son solo contextuales, sin anuncios personalizados ([anuncios](https://support.google.com/youtube/answer/9713557?hl=en)). Por eso ni el video ni la descripción piden suscribirse, comentar ni dar «curtir». La obligación legal de marcar el contenido infantil (COPPA) viene de EE. UU.; la ayuda dice que la edad de un «niño» puede cambiar según el país («the age of a kid may be different in other countries») y que se consulte a un abogado; qué norma de Brasil aplica: **sin verificar**. Contenido con IA ([ayuda](https://support.google.com/youtube/answer/14328491?hl=en)): la animación claramente irreal no se declara, y YouTube puede poner una etiqueta por su cuenta. Pendiente del dueño: si la música o la voz generadas con IA cambian la decisión de declarar (estrategia, 3.4).
 
 ## Miniatura
 
@@ -68,7 +68,7 @@ Los mismos tres shorts; mismo guion, keyframes verticales propios, sus fichas y 
 | Acenar com a Lumi | Planos 8 a 10 | 20 a 22 s (idem) | Acenar com a Lumi |
 | Tiky acena para a Lumi | Planos 2 a 4 | 20 s | Tiky acena para a Lumi |
 
-Sin gancho ni pedir suscripción. Con un solo canal y pistas de audio, el acceso a pistas múltiples es **sin verificar** (estrategia 5.5).
+Sin gancho ni pedir suscripción. Con un solo canal y pistas de audio, las pistas múltiples requieren acceso a funciones avanzadas (verificado; estrategia 5.5).
 
 ## Datos que no se consiguieron
 
@@ -76,7 +76,8 @@ Sin gancho ni pedir suscripción. Con un solo canal y pistas de audio, el acceso
 - **Volumen de búsqueda en Brasil:** sin dato; sin herramienta de palabras clave. Si «acenar» o «dar tchau» es lo que más se busca: sin verificar.
 - **Cifras de canales de referencia:** sin dato.
 - **Reglas de Meta y TikTok para contenido infantil en Brasil:** sin verificar.
-- **Línea para el adulto:** versión natural del comercial; **debe igualarse a la de la guionista** en `voz_idiomas.md` antes de publicar.
+- **Línea para el adulto:** la voz del video dice al adulto «Acenem primeiro e esperem.» (`voz_idiomas.md`, sección «Línea para el adulto»). La descripción lleva además la línea de la ficha pedagógica («Para o adulto: acenem juntos e digam oi devagar…»), que es la guía para después del video; son dos textos con dos funciones y no se mezclan.
+- **Música y voz generadas con IA:** la ayuda oficial de YouTube nombra la música generada con IA entre lo que se declara; cómo se hacen la música y la voz de este capítulo no consta en el proyecto. Lo decide el dueño (estrategia, 3.4 y 5.9).
 
 ## Propuestas para el equipo
 

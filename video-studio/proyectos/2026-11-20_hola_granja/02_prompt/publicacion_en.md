@@ -52,7 +52,7 @@ Episode 1 of Tiky and Lumi on the Farm. It runs 1 minute 28 seconds. There is no
 - **Etiquetas:** wave hello, teach baby to wave, how to teach a baby to wave, when do babies wave, toddler learning video, video for 18 month old, video for 2 year old, hello for toddlers, Tiky and Lumi, farm for toddlers, first words, watch together with a grown-up
 - **Lista de reproducción:** Tiky and Lumi on the Farm
 - **Categoría:** Education (opinión mía: el capítulo tiene un objetivo de aprendizaje)
-- **Límites de la plataforma que aplican:** al marcarlo «made for kids», YouTube desactiva comentarios, notificaciones, pantallas finales, tarjetas y anuncios personalizados (fuente: `video-studio/formatos.md` y la estrategia en `series/granja/estrategia_monetizacion.md`, sección 3; consultadas 2026-11-20). Por eso ni el video ni la descripción piden suscribirse, comentar ni dar «like». Nota para EE. UU.: la marca «made for kids» responde a la ley COPPA de ese país; la configuración la hace el dueño en YouTube Studio. Pendiente: política de contenido sintético y de contenido inauténtico sin verificar (ver estrategia).
+- **Límites de la plataforma que aplican (verificado en la ayuda oficial de YouTube, 2026-11-20):** al marcarlo «made for kids» ([audiencia](https://support.google.com/youtube/answer/9527654?hl=en), [funciones afectadas](https://support.google.com/youtube/answer/9632097?hl=en)), el video no tiene comentarios, campana de notificaciones, tarjetas ni pantallas finales, marca de agua, reproducción automática en inicio ni miniplayer, y el canal no tiene membresías ni Posts. Los anuncios son solo contextuales, sin anuncios personalizados ([anuncios](https://support.google.com/youtube/answer/9713557?hl=en)). Por eso ni el video ni la descripción piden suscribirse, comentar ni dar «like». Nota para EE. UU.: la marca «made for kids» responde a la ley COPPA de ese país; la configuración la hace el dueño en YouTube Studio. Contenido con IA ([ayuda](https://support.google.com/youtube/answer/14328491?hl=en)): la animación claramente irreal no se declara, y YouTube puede poner una etiqueta por su cuenta. La política de contenido inauténtico fue leída: ver estrategia, 3.4. Pendiente del dueño: si la música o la voz generadas con IA cambian la decisión de declarar.
 
 ## Miniatura
 
@@ -68,7 +68,7 @@ Los mismos tres shorts de la versión en español; mismo guion, mismos keyframes
 | Wave hello with Lumi | Planos 8 a 10 | 20 a 22 s (idem) | Wave Hello with Lumi |
 | Tiky waves to Lumi | Planos 2 a 4 | 20 s | Tiky Waves to Lumi |
 
-Sin gancho ni pedir suscripción. En una cuenta con un solo canal y pistas de audio, estos shorts también llevarían pista en inglés (acceso a pistas múltiples: sin verificar, ver estrategia 5.5).
+Sin gancho ni pedir suscripción. En una cuenta con un solo canal y pistas de audio, estos shorts también llevarían pista en inglés (las pistas múltiples requieren acceso a funciones avanzadas, verificado; ver estrategia 5.5).
 
 ## Datos que no se consiguieron
 
@@ -76,8 +76,8 @@ Sin gancho ni pedir suscripción. En una cuenta con un solo canal y pistas de au
 - **Volumen de búsqueda en EE. UU.:** sin dato; no se consultó ninguna herramienta de palabras clave.
 - **Cifras de los canales de referencia:** sin dato (no se abrieron las páginas de YouTube).
 - **Qué videos buscan los adultos en EE. UU. para «wave hello»:** no se pudo identificar un video concreto de YouTube que enseñe el saludo con pausa para niños de 18 a 24 meses; lo que aparece son canciones. Que no haya uno no está comprobado (no se miró YouTube directamente).
-- **Línea para el adulto:** es una versión natural del comercial; debe **igualarse a la de la guionista** en `voz_idiomas.md` antes de publicar.
-- **Política vigente de contenido con IA y de contenido inauténtico:** ver `series/granja/estrategia_monetizacion.md`; sin verificar el texto oficial.
+- **Línea para el adulto:** la voz del video dice al adulto «Grown-ups, wave first, and wait.» (`voz_idiomas.md`, sección «Línea para el adulto»). La descripción lleva además la línea de la ficha pedagógica («For grown-ups: Wave together and say hello slowly…»), que es la guía para después del video; son dos textos con dos funciones y no se mezclan.
+- **Música y voz generadas con IA:** la ayuda oficial de YouTube nombra la música generada con IA entre lo que se declara; cómo se hacen la música y la voz de este capítulo no consta en el proyecto. Lo decide el dueño (estrategia, 3.4 y 5.9).
 
 ## Propuestas para el equipo
 
