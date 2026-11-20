@@ -6,6 +6,7 @@ Uso:
 
 Falla (codigo 1) si el elenco no esta definido, si se usa un personaje que no
 existe en personajes/, o si falta algun dato que el generador necesita.
+Si el prompt pertenece a una serie, aplica ademas las reglas de series/<serie>/serie.md.
 """
 import re
 import sys
@@ -43,6 +44,59 @@ def bloque_identidad(pid):
         return None
     m = re.search(r"## Bloque de identidad.*?```text\n(.*?)```", ficha.read_text(), re.S)
     return " ".join(m.group(1).split()) if m else ""
+
+
+def lista(texto):
+    return [x.strip().lower() for x in (texto or "").split(",") if x.strip()]
+
+
+def reglas_de_serie(ruta, ficha, elenco, tomas, total_s, errores):
+    """Reglas propias de una serie (publico, elenco, ritmo, revision)."""
+    nombre = (campo(ficha, "Serie") or "").strip().strip('"').lower()
+    if nombre in ("", "ninguna"):
+        return None
+    biblia = ESTUDIO / "series" / nombre / "serie.md"
+    if not biblia.is_file():
+        errores.append(f"La serie '{nombre}' no existe (falta series/{nombre}/serie.md).")
+        return nombre
+    reglas = biblia.read_text()
+
+    permitidos = ids(campo(reglas, "Elenco permitido"))
+    for pid in elenco:
+        if permitidos and pid not in permitidos:
+            errores.append(f"@{pid} no puede salir en la serie '{nombre}' "
+                           f"(elenco permitido: {', '.join('@' + x for x in permitidos)}).")
+
+    objetivo = campo(ficha, "Objetivo de aprendizaje") or ""
+    if not objetivo or objetivo.lower().startswith("no aplica"):
+        errores.append("Falta el objetivo de aprendizaje en la ficha técnica.")
+
+    maximo = numero(campo(reglas, "Duración máxima del episodio"))
+    if maximo and total_s > maximo:
+        errores.append(f"El episodio dura {total_s:g} s y la serie admite {maximo:g} s como máximo.")
+    minimo = numero(campo(reglas, "Duración mínima de toma"))
+    camaras = lista(campo(reglas, "Cámaras permitidas"))
+    vetados = lista(campo(reglas, "Términos prohibidos en prompts"))
+    for titulo, t in tomas:
+        dur = numero(campo(t, "Duración"))
+        if minimo and dur is not None and dur < minimo:
+            errores.append(f"{titulo}: dura {dur:g} s; en esta serie ninguna toma baja de {minimo:g} s.")
+        cam = (campo(t, "Cámara") or "").lower()
+        if camaras and not any(cam.startswith(c) for c in camaras):
+            errores.append(f"{titulo}: cámara '{cam or 'sin indicar'}' no permitida "
+                           f"(usa: {', '.join(camaras)}).")
+        prompts = " ".join(re.findall(r"```text\n(.*?)```", t, re.S)).lower()
+        for palabra in vetados:
+            if re.search(rf"\b{re.escape(palabra)}\b", prompts):
+                errores.append(f"{titulo}: el prompt contiene '{palabra}', prohibido en esta serie.")
+
+    if (campo(reglas, "Requiere revisión aprobada") or "").lower().startswith("s"):
+        revision = ruta.parent / "revision.md"
+        veredicto = campo(revision.read_text(), "Veredicto") if revision.is_file() else None
+        if (veredicto or "").upper() != "APROBADO":
+            errores.append("El guion no tiene la revisión aprobada "
+                           f"({revision.name}: veredicto '{veredicto or 'no existe'}').")
+    return nombre
 
 
 def main():
@@ -92,9 +146,10 @@ def main():
     tomas = re.split(r"^### ", seccion(texto, 6) or "", flags=re.M)[1:]
     if not tomas:
         errores.append("No hay ninguna toma (### Toma N — nombre).")
-    usados, total_s, pagados_s = set(), 0.0, 0.0
+    usados, total_s, pagados_s, por_titulo = set(), 0.0, 0.0, []
     for t in tomas:
         titulo = t.splitlines()[0].strip()
+        por_titulo.append((titulo, t))
         dur = numero(campo(t, "Duración"))
         metodo = (campo(t, "Método") or "").lower()
         quien = campo(t, "Personajes")
@@ -137,10 +192,13 @@ def main():
     declarada = numero(campo(ficha, "Duración total"))
     if declarada is not None and tomas and abs(declarada - total_s) > 0.5:
         avisos.append(f"Las tomas suman {total_s:g} s y la ficha dice {declarada:g} s.")
+    serie = reglas_de_serie(ruta, ficha, elenco, por_titulo, total_s, errores)
     intentos = numero(campo(ficha, "Intentos estimados por toma")) or 2
     precio = numero(campo(ficha, "Precio por segundo"))
 
     print(f"Prompt: {ruta}")
+    if serie:
+        print(f"Serie: {serie}")
     print("Elenco: " + (", ".join("@" + p for p in elenco) if elenco else "ninguno"))
     print(f"Tomas: {len(tomas)} | {total_s:g} s en pantalla | {pagados_s:g} s generados (el resto es edición)")
     aprox = pagados_s * intentos

@@ -8,6 +8,8 @@ herramientas/validar_prompt.py las lee. Los textos entre corchetes se reemplazan
 ## 1. Ficha técnica
 
 - **Proyecto:** [carpeta del proyecto]
+- **Serie:** [nombre de la serie en video-studio/series/, o "ninguna"]
+- **Objetivo de aprendizaje:** [solo en series infantiles: una sola cosa que el niño practica; si no, "no aplica"]
 - **Generador:** [herramienta y modelo]
 - **Aspecto:** [9:16 | 16:9 | 1:1]
 - **Duración total:** [N] s

@@ -41,6 +41,21 @@ Cómo se escribe para gastar poco:
 - Al replicar una referencia se copia la estructura (ritmo, encuadres, movimiento), no las
   personas reales, marcas, música ni textos del original.
 
+Si el proyecto es de una serie (el brief o el prompt dicen `Serie:`):
+
+- Lee `video-studio/series/<serie>/serie.md` y `entorno.md`, y `<proyecto>/02_prompt/guion.md`.
+- No escribes el prompt hasta que `<proyecto>/02_prompt/revision.md` diga `APROBADO`. Si no
+  lo dice, detente y avisa.
+- El guion aprobado manda: no agregas, quitas ni reordenas planos, ni cambias la voz. Tu
+  trabajo es traducir cada plano a tomas. Un plano más largo que una generación se arma con
+  tomas encadenadas (el último fotograma de una es el keyframe de la siguiente), sin corte visible.
+- El estilo y el negativo globales se copian de `serie.md`; el escenario, del bloque del
+  lugar en `entorno.md`, pegado tal cual.
+- Copia el objetivo de aprendizaje de la ficha pedagógica a la ficha técnica.
+- Las pausas en las que el personaje espera mirando a cámara se resuelven, cuando se pueda,
+  como `edición` alargando el final de la toma anterior.
+- Generador y precios: `video-studio/generador.md`.
+
 Para terminar:
 
 1. Ejecuta `python3 video-studio/herramientas/validar_prompt.py <proyecto>/02_prompt/prompt.md`

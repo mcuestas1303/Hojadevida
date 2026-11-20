@@ -13,7 +13,7 @@
 
 ## Bloque de identidad
 
-Un solo párrafo en inglés, de 40 a 70 palabras, que describe SOLO lo que se ve y nunca cambia:
+Un solo párrafo en inglés, de 40 a 100 palabras, que describe SOLO lo que se ve y nunca cambia:
 edad aparente, complexión, piel, rostro, pelo, rasgo distintivo y vestuario base.
 Este párrafo se pega **tal cual** en cada prompt donde salga el personaje; no se parafrasea.
 

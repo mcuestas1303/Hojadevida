@@ -28,6 +28,9 @@ video-studio/
 │   └── <id>/
 │       ├── ficha.md         bloque de identidad, vestuario, voz, prohibidos
 │       └── referencias/     hoja de personaje, frente, cuerpo completo
+├── series/<serie>/          biblia, entorno y temario de cada serie
+├── infantil/                guía de 1 a 3 años y plantillas del equipo creativo
+├── generador.md             herramienta y precios
 ├── plantillas/
 │   ├── prompt_video.md      estructura fija del prompt
 │   ├── hoja_de_personaje.md prompt para crear la hoja de un personaje
@@ -104,6 +107,29 @@ aparece en ella. El validador rechaza el prompt si:
   exactamente lo mismo, no de describir mejor cada vez.
 - **Se anota cada intento en `costos.md`.** Si una toma lleva tres fallos, se cambia el prompt
   o se divide la toma; no se sigue intentando.
+
+## Series infantiles
+
+Para contenido de 1 a 3 años hay un equipo creativo que trabaja antes del prompt:
+
+| Orden | Agente | Formación | Entrega |
+|---|---|---|---|
+| 1 | `pedagoga-montessori` | Pedagogía de primera infancia y método Montessori | `ficha_pedagogica.md`: un objetivo, tramo de edad, material |
+| 2 | `guionista-interactivo` | Aprendizaje interactivo | `guion.md`: planos, voz exacta, preguntas y pausas |
+| 3 | `psicologa-infantil` | Psicología del desarrollo | `revision.md`: APROBADO o CAMBIOS |
+| 4 | `director-de-prompts` | — | `prompt.md` validado |
+
+Los cuatro leen `infantil/guia_1_a_3.md`. Cada serie tiene su carpeta en `series/`:
+`serie.md` (público, elenco permitido, estructura del episodio, estilo), `entorno.md`
+(lugares fijos con su bloque de escenario) y `temario.md`.
+
+```bash
+python3 video-studio/herramientas/nuevo_proyecto.py "Hola, granja" --serie granja
+```
+
+En un prompt de serie el validador además exige: solo personajes del elenco permitido,
+objetivo de aprendizaje, ninguna toma por debajo de la duración mínima, cámara fija o lenta,
+ningún término prohibido en los prompts y la revisión de la psicóloga en APROBADO.
 
 ## Requisitos
 

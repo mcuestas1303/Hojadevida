@@ -13,3 +13,14 @@ El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
 - Todo prompt define su elenco con personajes de `video-studio/personajes/`. Si el usuario no ha
   dicho quién sale, se le pregunta; no se inventan personajes ni se elige por él.
 - No se da por bueno un prompt hasta que `validar_prompt.py` termina sin errores.
+
+## Contenido infantil (series)
+
+- Las series viven en `video-studio/series/<serie>/`. La primera es `granja`: Tiky y Lumi, 1 a 3 años.
+- Un episodio se crea con `nuevo_proyecto.py <nombre> --serie granja` y pasa por el equipo en este orden:
+  `pedagoga-montessori` (ficha pedagógica) → `guionista-interactivo` (guion) → `psicologa-infantil`
+  (revisión) → `director-de-prompts` (prompt). Si la psicóloga pide cambios, vuelve al guionista.
+- Todos trabajan contra `video-studio/infantil/guia_1_a_3.md`.
+- En la serie `granja` solo actúan `@tiky` y `@lumi` hasta que el dueño cargue los secundarios.
+- El contenido infantil nunca se cruza con «M» ni con personajes para adultos.
+- El resto de los personajes del dueño está en la rama `claude/focused-thompson-wojzu6` (`creador-personajes/`).
