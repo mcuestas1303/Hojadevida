@@ -8,3 +8,6 @@ video-studio/proyectos/*/04_clips/borradores/*
 __pycache__/
 # Datos de las cuentas (exportaciones de estadísticas): no van al repo público
 video-studio/estadisticas/datos/
+# Entregas al publicador: videos y miniaturas no van al repo público (solo ficha.json)
+video-studio/proyectos/*/08_entrega/**/*.mp4
+video-studio/proyectos/*/08_entrega/**/*.mov
