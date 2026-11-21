@@ -34,8 +34,7 @@
 ## Cómo se comunican
 
 - Entre esta conversación y el Generador (las dos en la nube): mensajes directos entre sesiones.
-- Con Keter (en la PC del dueño): necesita que el dueño autorice a esta conversación a hablar con sus sesiones de la
-  PC. Mientras no esté autorizado, `REGLAS_CEREBRO.md` queda en el repositorio y se le pasa a Keter cuando se pueda.
+- Con Keter (en la PC del dueño): mensajes directos, autorizados por el dueño el 2026-11-21.
 
 ## Registro de mensajes
 
@@ -43,4 +42,5 @@
 |---|---|---|
 | 2026-11-20 | Keter → Equipo | Reglas de dos videos de Instagram; relevo del canal de nostalgia y prueba de 30 s |
 | 2026-11-21 | Equipo → Keter | Confirmación de las reglas aplicadas (no llegó: falta autorización del dueño) |
-| 2026-11-21 | Equipo → Generador | Presentación, reglas de coordinación, Tin & Tan aprobados, nombre del canal |
+| 2026-11-21 | Equipo → Generador | Presentación, reglas de coordinación, Tin & Tan aprobados, nombre del canal (entregado) |
+| 2026-11-21 | Equipo → Keter | Las 27 reglas de `REGLAS_CEREBRO.md` para guardar en el Cerebro (entregado) |
