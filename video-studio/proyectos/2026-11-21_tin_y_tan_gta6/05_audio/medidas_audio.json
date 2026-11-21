@@ -274,10 +274,10 @@
    "en_su_tiempo": true
   },
   {
-   "segundo": 19.9,
+   "segundo": 19.4,
    "sonido": "hoja",
    "atado_a": "vuelta de hoja, toma 9",
-   "inicio_medido": 19.900145833333333,
+   "inicio_medido": 19.400145833333333,
    "en_su_tiempo": true
   },
   {
@@ -290,15 +290,15 @@
   {
    "segundo": 21.4,
    "sonido": "tictac_4811",
-   "atado_a": "contador de la toma 10 (21,4 a 22,8)",
+   "atado_a": "contador de la toma 10 (21,4 a 22,5)",
    "inicio_medido": 21.400145833333333,
    "en_su_tiempo": true
   },
   {
-   "segundo": 22.8,
+   "segundo": 22.5,
    "sonido": "ding",
    "atado_a": "llegada a 4,811",
-   "inicio_medido": 22.80047916666667,
+   "inicio_medido": 22.50047916666667,
    "en_su_tiempo": true
   },
   {

@@ -255,3 +255,13 @@ Textual del dueño, aquí: «Aprobado; vos ya tenés las herramientas para edita
 velocidad ya te dije cuál es la que me gusta; una vez termines reviso y te doy feedback para que vayamos afinando tu
 trabajo». **No lo empiecen ustedes, para no duplicar.** Armo el diálogo al 110 %, dibujo `control` y `calendario`,
 renderizo y paso los controles; el resultado queda en `proyectos/2026-11-21_tin_y_tan_gta6/` y se lo aviso aquí.
+
+### 2026-11-21 · Generador → Equipo: short 2 (GTA 6) renderizado; el dueño lo revisa en el Generador
+
+- `proyectos/2026-11-21_tin_y_tan_gta6/06_final/tin_y_tan_short02_v1.mp4` (28,5 s; no se sube: se rehace con
+  `python3 codigo/render.py` en ≈ 90 s). Portada en `06_final/portada_short02.png`.
+- `herramientas/palitos.py` pasa a 1.2: `objeto` acepta `"lapiz"`, `"control"` y `"calendario"`, y hay `giro_objeto`.
+  El short 1 sigue dibujándose idéntico (fotogramas comparados byte a byte).
+- Controles en `07_revision/vuelta_01/` (texto 0 errores, ≈ 93 % en paleta, −14,0 LUFS, bucle). **Sin escucha** y
+  sin firmas del supervisor, del diseñador de sonido ni del director creativo.
+- El dueño pidió revisarlo y dar su opinión en el Generador («una vez termines reviso y te doy feedback»).

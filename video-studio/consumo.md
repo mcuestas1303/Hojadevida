@@ -22,7 +22,7 @@ desde entonces la estimación se puede dar en porcentaje.
 |---|---|---|---|---|---|---|
 | Hola, granja (cap. 1, 88 s, generador de video) | Capítulo infantil 16:9 | 7,5 | 44 en borrador + 88 en final = 132 | 885 k hasta la definición de clips | 0,8 % gastado; 15,7 % al terminar | sin dato |
 | Tin y Tan: casete y lápiz (unos 30 s, dibujado con código) | Short 9:16 | 4,8 | 0 previstos | 558 k hasta el video v1 y su ficha; +160 k del prompt v2 (dos pasadas del director de prompts) | 0,3 % | sin dato |
-| Tin y Tan: la espera de GTA 6 (26,5 s, dibujado con código) | Short 9:16 | 3,2 (voz) | 0 previstos | 57 k de investigación + 126 k del prompt | sin dato | sin dato |
+| Tin y Tan: la espera de GTA 6 (26,5 s, dibujado con código) | Short 9:16 | 3,2 (voz) | 0 previstos | 57 k de investigación + 126 k del prompt + 74 k de color + 359 k de montaje, render y dos vueltas de revisión | sin dato | sin dato |
 
 Lectura rápida:
 

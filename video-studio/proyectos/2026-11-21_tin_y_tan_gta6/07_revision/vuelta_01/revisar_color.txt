@@ -1,11 +1,11 @@
 Color · tin_y_tan_short02_v1.mp4 · 29 cuadro(s)
 Dominantes:
-  #EFE7D0   79.0 %
-  #565543    8.2 %
-  #FBF7EB    5.1 %
-  #DBA435    3.2 %
-  #9F9888    2.6 %
-  #F6EED7    2.0 %
+  #EFE7D0   79.1 %
+  #575544    8.3 %
+  #FBF7EB    5.0 %
+  #D9A335    3.0 %
+  #A09889    2.6 %
+  #F6EED7    2.1 %
 Saturación media ≈ 17 % · luminosidad media ≈ 89 %
 Cálidos ≈ 11 % · fríos ≈ 2 % del cuadro
 Dentro de la paleta declarada (9 colores): ≈ 93 %

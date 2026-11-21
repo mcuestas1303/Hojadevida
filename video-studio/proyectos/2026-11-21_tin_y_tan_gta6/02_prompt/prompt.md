@@ -66,13 +66,13 @@ text inside the drawing other than the table in section 12, brand names or logos
 - **papel_crema:** fondo plano `#F3E9D2` en todos los planos, sin degradado ni textura. Cuando hay personajes, una línea de suelo `#E6D8B8` de 4 px a **86 % del alto (y = 1651 px)**, de 9,3 % a 90,7 % del ancho. Los planos solo de objeto no llevan suelo.
 - **Lienzo y zonas (1080x1920):** zona segura de `formatos.md`: x de 100 a 980 px (9,3 % a 90,7 %), y de 250 a 1670 px (13 % a 87 %). Zona de texto fija: arriba a la izquierda, texto alineado a la izquierda en x = 10 % (108 px). Personajes: **pies a 86 %**, `alto` = 34 % (653 px), cabeza más alta a **52 %**; cuando hay uno solo en plano medio, `alto` = 44 % (845 px), cabeza a 42 %. Cifra principal al 7 % del alto (134 px) con su caja de y = 13,2 % a 20,2 %; **zona de gráficos de 27 % a 51 %** (460 px de alto, de x = 100 a 980 px), centro vertical en 39 %. Los personajes nunca pisan la zona de texto ni la de gráficos.
 - **Lados:** Tan en x = 30 % (324 px) con `espejo=True`; Tin en x = 70 % (756 px) sin espejo; cada uno gesticula hacia afuera. Solos, en x = 50 %.
-- **mando (gráfico propio, ancho W; es el objeto del gancho):** mando de videojuego **genérico**, sin logotipos ni la forma exacta de ningún mando comercial. Cuerpo: rectángulo redondeado de W × 0,40 W (radio 0,16 W). Dos empuñaduras: círculos de radio 0,16 W con centro en (menos 0,34 W, más 0,19 W) y (más 0,34 W, más 0,19 W) respecto al centro del cuerpo; el contorno exterior (cuerpo más empuñaduras) mide W × 0,55 W (a W = 864 px: 864 × 475 px). Relleno mostaza `#E8B33B`, contorno tinta `#2B2420` de 0,012 W (10 px a W = 864). Dos palancas: círculos tinta de radio 0,07 W con un círculo interior `#E6D8B8` de 0,035 W, en (menos 0,24 W, más 0,02 W) y (más 0,12 W, más 0,14 W). Cuatro botones: puntos tinta de radio 0,028 W en rombo, centrados en (más 0,26 W, menos 0,05 W) y separados 0,06 W en cada eje. Sin letras ni símbolos en los botones. Cuando «late» (golpe de pulso), el botón de abajo del rombo pasa de tinta a papel `#F3E9D2` durante 0,2 s (nunca a tomate: el mando es el acento mostaza del plano).
+- **mando (gráfico propio, ancho W; es el objeto del gancho):** mando de videojuego **genérico**, sin logotipos ni la forma exacta de ningún mando comercial. Cuerpo: rectángulo redondeado de W × 0,40 W (radio 0,16 W). Dos empuñaduras: círculos de radio 0,16 W con centro en (menos 0,34 W, más 0,19 W) y (más 0,34 W, más 0,19 W) respecto al centro del cuerpo; el contorno exterior (cuerpo más empuñaduras) mide W × 0,55 W (a W = 800 px: 800 × 440 px). Relleno mostaza `#E8B33B`, contorno tinta `#2B2420` de 0,012 W (10 px a W = 800). Dos palancas: círculos tinta de radio 0,07 W con un círculo interior `#E6D8B8` de 0,035 W, en (menos 0,24 W, más 0,02 W) y (más 0,12 W, más 0,14 W). Cuatro botones: puntos tinta de radio 0,028 W en rombo, centrados en (más 0,26 W, menos 0,05 W) y separados 0,06 W en cada eje. Sin letras ni símbolos en los botones. Cuando «late» (golpe de pulso), el botón de abajo del rombo pasa de tinta a papel `#F3E9D2` durante 0,2 s (nunca a tomate: el mando es el acento mostaza del plano).
 - **mando en la mano (`control`):** el mismo dibujo a 1,1 R × 0,6 R (R = radio de cabeza del personaje) con las dos palancas y los cuatro botones de punto; sustituye al lápiz en la mano que gesticula.
 - **calendario, hoja (gráfico propio, ancho W y alto H):** hoja con rectángulo redondeado (radio 0,03 W), relleno blanco `#FFF8EC` y contorno tinta de 0,012 W; **cabecera marrón** `#7A4B2A` de 0,22 H (en las hojas grande y de la zona de gráficos de las tomas 3, 4 y 9 la cabecera es **mostaza** `#E8B33B` con contorno tinta: es el acento de esas tomas; el calendario de la mano y la hoja de la toma 12, marrón) de alto en la parte de arriba; dos anillas de radio 0,02 W (relleno papel, contorno tinta) en x de menos 0,25 W y más 0,25 W sobre el borde superior; detrás, dos hojas más en `#E6D8B8` desplazadas 14 px hacia abajo (la pila). La fecha va en el cuerpo, alineada a la izquierda con 0,07 W de margen, centrada verticalmente en el cuerpo. **Pasar de hoja:** la hoja gira sobre su borde de arriba: la escala vertical baja de 1 a 0 en 0,15 s (muelle `sello`) y la hoja nueva sube de 0 a 1 en 0,15 s con muelle `pop`. Tamaños: hoja grande de la toma 3 (W = 864 px, H = 1000 px, centro en 50 %, 54 %; texto de fecha al 5,5 % del alto); hoja de zona de gráficos de las tomas 4 y 9 (W = 800 px, H = 385 px más los 28 px de la pila: de 27 % a 48,5 %; texto de fecha al 4,6 % del alto. Ajuste del render: con H = 460 px la pila tocaba el rodete de Tan y la gorra de Tin).
 - **calendario en la mano (`calendario`):** hoja de 0,9 R × 1,0 R con cabecera marrón `#7A4B2A` de 0,22 de alto, dos anillas y el número «17» en tinta (fila de la tabla de la sección 12); sustituye al lápiz en la mano que gesticula.
 - **tira de 13 años (gráfico propio):** 13 bloques rectangulares de 60 px de ancho y 200 px de alto, separados 8 px, de x = 100 a 980 px, centrados en y = 39 % (de 33,8 % a 44,2 %); relleno papel sombra `#E6D8B8` al empezar y marrón `#7A4B2A` al llenarse, contorno tinta de 8 px; el bloque 13 es el elemento mostaza `#E8B33B` de las tomas 5 y 6 (marrón en las tomas 7 y 8) y pasa a tomate `#C8553D` solo en la toma 12. Los años bisiestos son los bloques 3, 7 y 11 (años de sept. 2015 a sept. 2016, de 2019 a 2020 y de 2023 a 2024: el 29 de febrero de 2016, 2020 y 2024 cae en cada uno). Marca bisiesta: círculo **mostaza** `#E8B33B` con contorno tinta de 4 px, de radio 18 px (36 px de diámetro) centrado 40 px sobre el bloque. Sin letras.
 - **Muelles (masa 1, rigidez, amortiguación), declarados por elemento:** `pop` 220 y 20 (entrada de textos y gráficos, escala de 0,85 a 1); `slide` 120 y 16 (personajes y gráficos que se desplazan); `sello` 320 y 26 (empujes de cámara y vueltas de hoja). Contadores: ease-out cúbico sin muelle, para que el valor nunca pase de su final ni retroceda. Todo depende del número de fotograma (30 fps).
-- **mando a pantalla completa (tomas 1 y 13):** el mando de W = 864 px (80 % del ancho), centro en (50 %, 54 %) de x = 108 a 972 px y de 41,7 % a 66,3 % del alto, sin etiquetas. «Retumba»: se balancea ±5 grados con un periodo de 0,5 s, ángulo = 5 × seno(4 pi t) grados (el periodo es un pulso; 28,5 s son 57 periodos exactos, por eso el último fotograma es igual al primero). Estela plana: dos copias del mando en `#E6D8B8` detrás, a los ángulos de t menos 0,04 s y t menos 0,08 s. El botón de abajo late en cada pulso (pasa a papel durante 0,2 s; nunca a tomate).
+- **mando a pantalla completa (tomas 1 y 13):** el mando de W = 800 px (74 % del ancho; eran 864 px, pero con el balanceo y el empuje a 106 % salía de la zona segura), centro en (50 %, 54 %) de x = 140 a 940 px y de 42,5 % a 65,5 % del alto, sin etiquetas. «Retumba»: se balancea ±5 grados con un periodo de 0,5 s, ángulo = 5 × seno(4 pi t) grados (el periodo es un pulso; 28,5 s son 57 periodos exactos, por eso el último fotograma es igual al primero). Estela plana: dos copias del mando en `#E6D8B8` detrás, a los ángulos de t menos 0,04 s y t menos 0,08 s. El botón de abajo late en cada pulso (pasa a papel durante 0,2 s; nunca a tomate).
 - **Transición `borrón`:** corte seco con desenfoque de movimiento horizontal de 18 px en los 2 últimos fotogramas de la toma que sale y en los 2 primeros de la que entra. Cero destellos.
 
 ## 6. Tomas
@@ -179,7 +179,7 @@ Cada corte cae en el pulso anterior al inicio de la línea (o del tramo) que le 
 **Especificación de dibujo:**
 
 - Tira de 13 años de la sección 5, llenado de 9,2 a 10,4 (cada bloque con muelle `pop`).
-- Tan (reacción al dato «13 años»): pose `senala`, expresión `concentrado`, vista `frente`, x = 50 %, `espejo=True`, pies a 86 %, `alto` 34 %.
+- Tan (reacción al dato «13 años»): pose `senala`, expresión `curiosidad` (`concentrado` se leía como enojo: fallo conocido de su ficha), vista `frente`, x = 50 %, `espejo=True`, pies a 86 %, `alto` 34 %.
 - Texto «13 × 365» al 7 % de 9,2 a 10,9 (clave: 13). Con suelo.
 - **Color:** acento mostaza = el «13» del texto + el bloque 13 (mostaza al llenarse); los otros 12 bloques, marrón. Sin tomate.
 
@@ -258,9 +258,9 @@ Cada corte cae en el pulso anterior al inicio de la línea (o del tramo) que le 
 
 **Especificación de dibujo:**
 
-- Hoja de calendario de la sección 5 (W = 800 px, de 27 % a 48,5 % con la pila). De 17,5 a 18,6: 6 hojas **en blanco** (sin fecha) pasan de hoja, una cada 0,18 s (para que la zona de gráficos no quede vacía); «Sep 17, 2026» entra con `pop` en 18,6 y se queda hasta 19,9; vuelta de hoja de 19,9 a 20,2; «Nov 19, 2026» de 20,2 a 21,0.
+- Hoja de calendario de la sección 5 (W = 800 px, de 27 % a 48,5 % con la pila). De 17,5 a 18,6: 6 hojas **en blanco** (sin fecha) pasan de hoja, una cada 0,18 s (para que la zona de gráficos no quede vacía); «Sep 17, 2026» entra con `pop` en 18,6 y se queda hasta 19,4; vuelta de hoja de 19,4 a 19,7 (con «to November…», que por la envolvente empieza hacia 19,6); «Nov 19, 2026» de 19,7 a 21,0.
 - Tan (reacción al dato «63 días»): pose `piensa`, expresión `pensando`, vista `frente`, x = 50 %, `espejo=True`, pies a 86 %, `alto` 34 %, `objeto=False` (en `piensa` el objeto cruza la cara).
-- Contador de 0 a 63 con ease-out cúbico de 17,75 a 18,8, que se queda fijo. Texto «+63 days» al 7 % de 17,8 a 20,1 (clave: 63); después «GTA 6» al 7 % de 20,2 a 20,9 (clave: 6), que dice a qué lanzamiento corresponde la fecha.
+- Contador de 0 a 63 con ease-out cúbico de 17,75 a 18,8, que se queda fijo. Texto «+63 days» al 7 % de 17,8 a 19,3 (clave: 63); después «GTA 6» al 7 % de 19,4 a 20,9 (clave: 6; 1,5 s), que dice a qué lanzamiento corresponde la fecha.
 - **Color:** acento mostaza = la clave («63», luego «6») + la cabecera de la hoja; sin tomate.
 
 ### Toma 10 — Dato 7: 4.811 días
@@ -280,9 +280,9 @@ Cada corte cae en el pulso anterior al inicio de la línea (o del tramo) que le 
 
 - Tan: pose `celebra`, expresión `sorpresa`, vista `frente`, x = 30 %, `espejo=True`, `viento` alto con muelle.
 - Tin: pose `saluda`, expresión `eureka`, vista `frente`, x = 70 %, sin espejo, `objeto=False` (sin lápiz: el lápiz es mostaza y en este plano el único acento es el tomate de la cifra; Tin levanta la mano vacía).
-- Contador en la zona de texto (y = 15 %), tamaño 7 %, de 4.748 a 4.811 con ease-out cúbico de 21,4 a 22,8; al llegar pasa de tinta a tomate `#C8553D` con contorno tinta de 0,06 em (sin mostaza en el plano) y hace un `pop` de escala solo del texto (el valor no se pasa). Texto «4,811 days» (fila de la tabla).
+- Contador en la zona de texto (y = 15 %), tamaño 7 %, de 4.748 a 4.811 con ease-out cúbico de 21,4 a 22,5 (llega mientras la voz dice «eight hundred eleven», desde 22,23); al llegar pasa de tinta a tomate `#C8553D` con contorno tinta de 0,06 em (sin mostaza en el plano) y hace un `pop` de escala solo del texto (el valor no se pasa). Texto «4,811 days» (fila de la tabla).
 - **Color (revelación):** acento tomate = la cifra «4,811» al llegar; nada en mostaza como acento (Tan conserva su bufanda mostaza, que es identidad); Tin sin lápiz.
-- Sin gráfico en la zona de gráficos (el pico es la cifra).
+- Sin gráfico en la zona de gráficos (el pico es la cifra). El texto «4,811 days» **no sale en el corte de 23,5**: sigue toda la toma 11.
 
 ### Toma 11 — Tan se asombra
 
@@ -300,8 +300,8 @@ Cada corte cae en el pulso anterior al inicio de la línea (o del tramo) que le 
 **Especificación de dibujo:**
 
 - Tan: pose `encoge`, expresión `sorpresa`, vista `frente`, x = 50 %, pies a 86 %, `alto` 44 %, `espejo=True`, `objeto=False`.
-- **Color:** sin acento (ni texto ni gráficos); solo neutros y los colores propios de Tan.
-- Sin gráficos y sin texto (no hay dato nuevo: repite el de la toma 10, por eso no lleva reacción distinta). Con suelo.
+- **Color:** acento tomate = la cifra «4,811», que sigue de la toma 10 (único acento del plano; sin mostaza como acento); el resto, neutros y los colores propios de Tan.
+- Sin gráficos. Texto: «4,811 days» en tomate con trazo de tinta, el mismo de la toma 10, hasta 25,4 (es el pago del video y en la toma 10 solo se veía 0,6 s; no hay dato nuevo, por eso no lleva reacción distinta). La cabeza de Tan empieza en 42 % y no toca el texto. Con suelo.
 
 ### Toma 12 — Remate: un bebé de ese día ya es adolescente
 
@@ -501,7 +501,7 @@ Tipos de plano disponibles y dónde van: detalle o macro (tomas 5 a 8), héroe a
 ## 12. Texto en pantalla y sistema de diseño
 
 - **Tipografías:** Inter Display Medium, licencia SIL Open Font License 1.1 (archivo `/usr/share/fonts/opentype/inter/InterDisplay-Medium.otf`; en Windows, si no está, Segoe UI Semibold, que se anota en `licencias.md` antes de usarla). Siempre en minúsculas cuando es subtítulo, alineadas a la izquierda; las siglas «GTA» y las fechas («Sep», «Nov») conservan su mayúscula inicial porque son nombres propios. No se usa la tipografía de ningún logotipo del juego. Excepción obligatoria (regla del dueño, 2026-11-21): los nombres propios llevan mayúscula inicial («Tin & Tan», «Tin», «Tan»).
-- **Paleta:** papel `#F3E9D2` · papel_sombra `#E6D8B8` · tinta `#2B2420` · naranja `#E07A2E` · marrón `#7A4B2A` · verde azulado `#2F7F7A` · mostaza `#E8B33B` (**acento único** de todos los planos salvo la revelación: palabra clave y un elemento) · tomate `#C8553D` (**acento solo de la revelación**, tomas 10 y 12: cifra «4,811», «13» y bloque 13) · rubor `#E9967A` · blanco `#FFF8EC` (cuerpo de la hoja de calendario). Un color de acento por plano; mostaza y tomate nunca comparten plano. La palabra clave en mostaza o en tomate lleva un trazo de tinta de 0,06 em. Los colores propios de los personajes (cabeza, gorra, bufanda, mejillas) no cuentan como acento. Ninguna paleta rosa neón ni morada. Detalle y razones en la sección «Color con intención».
+- **Paleta:** papel `#F3E9D2` · papel_sombra `#E6D8B8` · tinta `#2B2420` · naranja `#E07A2E` · marrón `#7A4B2A` · verde azulado `#2F7F7A` · mostaza `#E8B33B` (**acento único** de todos los planos salvo la revelación: palabra clave y un elemento) · tomate `#C8553D` (**acento solo de la revelación**, tomas 10, 11 y 12: cifra «4,811», «13» y bloque 13) · rubor `#E9967A` · blanco `#FFF8EC` (cuerpo de la hoja de calendario). Un color de acento por plano; mostaza y tomate nunca comparten plano. La palabra clave en mostaza o en tomate lleva un trazo de tinta de 0,06 em. Los colores propios de los personajes (cabeza, gorra, bufanda, mejillas) no cuentan como acento. Ninguna paleta rosa neón ni morada. Detalle y razones en la sección «Color con intención».
 - **Referencias de movimiento:** `01_referencia/` está vacía (no hay video de referencia). Las referencias cargadas son `canales/nostalgia-tin-y-tan/DESIGN.md`, `herramientas/palitos.py`, las hojas de `personajes/tin/referencias/` y `personajes/tan/referencias/` y el prompt del short 1; el movimiento lo definen los muelles de la sección 5.
 - **Prohibido:**
   1. Mayúsculas centradas sobre degradado, tarjetas con degradado o cualquier fondo con degradado.
@@ -522,7 +522,7 @@ Tipos de plano disponibles y dónde van: detalle o macro (tomas 5 a 8), héroe a
   - **13 años; 13 × 365 = 4.745; 3 días bisiestos (2016, 2020, 2024); 4.748; 63 días (13 + 31 + 19); 4.811 días** (comprobado con `datetime`).
   - **Quien nació ese día tiene 13 años y es adolescente** (aritmética).
   - No decir ni mostrar: ventas, vistas de tráileres, clasificación por edades, motivos de los retrasos, número de retrasos, contenido del juego, plataformas distintas de las del brief, «most anticipated», «biggest», «record» ni ningún superlativo; tampoco «midnight launch» como hecho (el «at midnight?» de Tan es una pregunta, no una afirmación); tampoco quién es el estudio ni sus personajes; ni «GTA 6» con la tipografía del logo.
-- **Subtítulos:** de 1 a 3 palabras, con la palabra clave en mostaza (con trazo de tinta); en la revelación (tomas 10 y 12) la palabra clave va en tomate con trazo de tinta y no hay mostaza como acento. Los subtítulos de las demás tomas, en tinta salvo la clave. Las cifras del valle (filas 4 a 12) van al 7 % del alto.
+- **Subtítulos:** de 1 a 3 palabras, con la palabra clave en mostaza (con trazo de tinta); en la revelación (tomas 10, 11 y 12) la palabra clave va en tomate con trazo de tinta y no hay mostaza como acento. Los subtítulos de las demás tomas, en tinta salvo la clave. Las cifras del valle (filas 4 a 12) van al 7 % del alto.
 
 | Texto | Entra (s) | Sale (s) | Posición (% del cuadro) | Tamaño (% del alto) |
 |---|---|---|---|---|
@@ -537,11 +537,11 @@ Tipos de plano disponibles y dónde van: detalle o macro (tomas 5 a 8), héroe a
 | 4,745 days (contador de 0 a 4,745; clave: el número) | 11,2 | 13,4 | 10, 14 | 7 |
 | +3 leap days (clave: 3) | 13,7 | 14,9 | 10, 14 | 7 |
 | 4,748 days (contador de 4,745 a 4,748; clave: el número) | 15,1 | 17,4 | 10, 14 | 7 |
-| +63 days (contador de 0 a 63; clave: 63) | 17,8 | 20,1 | 10, 14 | 7 |
-| Sep 17, 2026 (en la hoja de la zona de gráficos; sin clave) | 18,6 | 19,9 | 18,1, 39,2 | 4,6 |
-| Nov 19, 2026 (en la hoja de la zona de gráficos; sin clave) | 20,2 | 21,0 | 18,1, 39,2 | 4,6 |
-| GTA 6 (clave: 6) | 20,2 | 20,9 | 10, 14 | 7 |
-| 4,811 days (contador de 4,748 a 4,811; en tinta mientras sube, al llegar el número en tomate con trazo de tinta) | 21,2 | 23,4 | 10, 15 | 7 |
+| +63 days (contador de 0 a 63; clave: 63) | 17,8 | 19,3 | 10, 14 | 7 |
+| Sep 17, 2026 (en la hoja de la zona de gráficos; sin clave) | 18,6 | 19,4 | 18,1, 39,2 | 4,6 |
+| Nov 19, 2026 (en la hoja de la zona de gráficos; sin clave) | 19,7 | 21,0 | 18,1, 39,2 | 4,6 |
+| GTA 6 (clave: 6) | 19,4 | 20,9 | 10, 14 | 7 |
+| 4,811 days (contador de 4,748 a 4,811; en tinta mientras sube, al llegar el número en tomate con trazo de tinta; se queda durante toda la toma 11) | 21,2 | 25,4 | 10, 15 | 7 |
 | age 13 (clave: 13, en tomate con trazo de tinta; «age» en tinta) | 25,7 | 27,4 | 10, 14 | 7 |
 | 17 (en el calendario de la mano de Tin; tinta) | 25,5 | 27,5 | sobre la mano de Tin | 3 |
 | GTA 5? (clave: 5; entra con pop y sigue sin corte en la fila 1 del bucle) | 27,6 | 28,5 | 10, 15 | 6 |
@@ -551,10 +551,10 @@ Tipos de plano disponibles y dónde van: detalle o macro (tomas 5 a 8), héroe a
 Propuesta del prompt (regla del dueño, 2026-11-21; `manual/13_color_con_intencion.md`, sección 6). La sección equivalente de `02_prompt/direccion.md` la escribe el director de fotografía y la valida el director creativo (equipo de producción); este bloque es la propuesta del prompt y, si difiere, manda la dirección.
 
 - **Neutros (2):** papel `#F3E9D2` (fondo de todos los planos; hoja de calendario en `#FFF8EC`, su cuerpo, y suelo `#E6D8B8`) y tinta `#2B2420` (líneas, contornos y todo texto que no sea clave). Contraste tinta/papel 12,6:1; tinta/blanco de la hoja 14,5:1; tinta/papel_sombra 10,8:1 (todos pasan 7:1).
-- **Acento (1):** mostaza `#E8B33B`, siempre con contorno de tinta, solo en la palabra clave y en **un** elemento por plano (el mando, la cabecera de la hoja, el bloque 13 o las marcas bisiestas, según la toma). **No va** en: texto que no sea clave, personajes (su bufanda y lápiz son identidad), suelo, tira de bloques (marrón), corchete (tinta) ni en los planos de la revelación. **Tomate `#C8553D` queda reservado a la revelación** (toma 10: «4,811»; toma 12: «age 13» y bloque 13) y en esos planos no hay mostaza como acento; nunca comparte plano con la mostaza. Marrón `#7A4B2A` solo como relleno (bloques, cabecera del calendario de la mano), nunca como texto.
+- **Acento (1):** mostaza `#E8B33B`, siempre con contorno de tinta, solo en la palabra clave y en **un** elemento por plano (el mando, la cabecera de la hoja, el bloque 13 o las marcas bisiestas, según la toma). **No va** en: texto que no sea clave, personajes (su bufanda y lápiz son identidad), suelo, tira de bloques (marrón), corchete (tinta) ni en los planos de la revelación. **Tomate `#C8553D` queda reservado a la revelación** (tomas 10 y 11: «4,811»; toma 12: «age 13» y bloque 13) y en esos planos no hay mostaza como acento; nunca comparte plano con la mostaza. Marrón `#7A4B2A` solo como relleno (bloques, cabecera del calendario de la mano), nunca como texto.
 - **Por qué esta paleta:** papel crema y tinta marrón remiten a impresos y fotos de los 70 y 80: nostalgia cálida y de saturación baja para el público de 30 a 50 años de EE. UU. que compró GTA 5 en 2013, y se lee bien con la vista de 45 o más. La mostaza lleva el ojo al dato en cada plano; el tomate, guardado para el final, hace que la cifra de la espera y el bebé de 13 años se sientan como un golpe de emoción (hipótesis, no significado fijo).
-- **Cómo ayuda al objetivo:** presencia y línea base del canal -> la misma paleta y el mismo acento que el short 1 hacen que el canal se reconozca antes de leer el nombre, y el cambio de mostaza a tomate marca el pico en 22,8 s (toma 10, de 21,0 a 23,5) -> se verá con retención del segundo 1 al 3, visto frente a deslizado, regreso de espectadores y búsquedas del canal.
-- **Riesgos de lectura:** (1) mostaza sobre papel da 1,6:1: solo se lee por el contorno de tinta (contorno contra papel 12,6:1; cifra de 7 % del alto, contorno de 0,06 em); (2) tomate sobre papel da 3,6:1 y tinta sobre tomate 3,5:1: la cifra «4,811» y el «13» se leen por su contorno de tinta y por ser texto grande, no por el relleno; se revisa en teléfono; (3) Tan conserva su bufanda mostaza en las tomas 10 y 12 (identidad, no acento): se vigila que no se lea como segundo acento; (4) rojo contra verde: la cabeza verde azulada de Tan y el tomate no llevan la información (la cifra va también por tamaño, posición y luminosidad del contorno); (5) pantalla chica: cifras al 7 % del alto.
+- **Cómo ayuda al objetivo:** presencia y línea base del canal -> la misma paleta y el mismo acento que el short 1 hacen que el canal se reconozca antes de leer el nombre, y el cambio de mostaza a tomate marca el pico en 22,5 s (toma 10; la cifra en tomate sigue hasta 25,4) -> se verá con retención del segundo 1 al 3, visto frente a deslizado, regreso de espectadores y búsquedas del canal.
+- **Riesgos de lectura:** (1) mostaza sobre papel da 1,6:1: solo se lee por el contorno de tinta (contorno contra papel 12,6:1; cifra de 7 % del alto, contorno de 0,06 em); (2) tomate sobre papel da 3,6:1 y tinta sobre tomate 3,5:1: la cifra «4,811» y el «13» se leen por su contorno de tinta y por ser texto grande, no por el relleno; se revisa en teléfono; (3) Tan conserva su bufanda mostaza en las tomas 10, 11 y 12 (identidad, no acento): se vigila que no se lea como segundo acento; (4) rojo contra verde: la cabeza verde azulada de Tan y el tomate no llevan la información (la cifra va también por tamaño, posición y luminosidad del contorno); (5) pantalla chica: cifras al 7 % del alto.
 - **Medido (2026-11-21, `revisar_color.py` sobre el video, 29 cuadros; falta la firma del supervisor):** ≈ 93 % del cuadro dentro de la paleta declarada (mínimo 85 %); saturación media ≈ 17 %, luminosidad media ≈ 89 %; entre segundos la luminosidad varía ±2 % y la saturación ±2 %. Contrastes, los de abajo. Detalle en `07_revision/vuelta_01/notas.md`.
 
 Tabla de acento por plano:
@@ -571,7 +571,7 @@ Tabla de acento por plano:
 | 8 | número «4,748» + marcas bisiestas | no |
 | 9 | «63» y luego «6» + cabecera de la hoja | no |
 | 10 | ninguno | cifra «4,811» |
-| 11 | ninguno (sin acento) | no |
+| 11 | ninguno | cifra «4,811» (sigue de la toma 10) |
 | 12 | ninguno | «13» de «age 13» + bloque 13 |
 | 13 | «5» de «GTA 5?» + mando | no |
 
@@ -584,7 +584,7 @@ Campo para `ficha.json`:
             "#F3E9D2",
             "#2B2420"
           ], "acento": "#E8B33B",
-          "por_que": "papel crema y tinta de impresos de los 70 y 80 (nostalgia cálida, saturación baja) para un público de 30 a 50 años de EE. UU.; la mostaza lleva el ojo al dato y el tomate se reserva a la revelación (tomas 10 y 12), nunca junto a la mostaza",
+          "por_que": "papel crema y tinta de impresos de los 70 y 80 (nostalgia cálida, saturación baja) para un público de 30 a 50 años de EE. UU.; la mostaza lleva el ojo al dato y el tomate se reserva a la revelación (tomas 10, 11 y 12), nunca junto a la mostaza",
           "objetivo": "presencia y línea base: misma paleta y acento en todo el canal para reconocerlo; mostaza a tomate marca el pico; métrica: retención del segundo 1 al 3 y regreso de espectadores",
           "medido": "2026-11-21, revisar_color.py: 93 % dentro de la paleta, saturación 17 %, luminosidad 89 %, variación entre segundos ±2 %; falta la firma del supervisor"}
 ```
@@ -611,10 +611,10 @@ Los golpes bajo la voz van a unos **−26 LUFS** (−12 dB respecto a la voz, qu
 | Tictac de contador (3 pasos) | 15,3–16,6 | contador de la toma 8 | código, propio |
 | Clic suave de borrón | 17,5 | corte de toma 8 a toma 9 | código, propio |
 | 6 tics de hoja en blanco | 17,56–18,46 | pila de hojas de la toma 9 | código, propio |
-| Papel que pasa de hoja (tic corto) | 19,9 | vuelta de hoja de la toma 9 | código, propio |
+| Papel que pasa de hoja (tic corto) | 19,4 | vuelta de hoja de la toma 9 | código, propio |
 | Clic suave | 21,0 | corte de toma 9 a toma 10 | código, propio |
-| Tictac de contador que sube de tono | 21,4–22,8 | contador de la toma 10 | código, propio |
-| Ding de campana al llegar a 4,811 | 22,8 | valor final de la toma 10 | código, propio |
+| Tictac de contador que sube de tono | 21,4–22,5 | contador de la toma 10 | código, propio |
+| Ding de campana al llegar a 4,811 | 22,5 | valor final de la toma 10 | código, propio |
 | Clic suave | 23,5 | corte de toma 10 a toma 11 | código, propio |
 | Clic suave de borrón | 25,5 | corte de toma 11 a toma 12 | código, propio |
 | Pop del bloque 13 (pasa a tomate) (3) | 26,0 / 26,5 / 27,0 | latidos de la toma 12 | código, propio |
@@ -639,6 +639,6 @@ Los golpes bajo la voz van a unos **−26 LUFS** (−12 dB respecto a la voz, qu
   Costo en créditos: 0.
 - **Quién renderiza y autorización:** el render lo hace el equipo de producción. La voz y el montaje los autorizó el dueño (2026-11-21); el render es de 0 créditos y está hecho con los tiempos reales de la voz. Antes de renderizar se crea `03_keyframes/definicion.md` con la entrada de «pieza por código» de `generacion.md` (datos con fuente, paleta con HEX, tipografía y licencia, texto exacto, 28,5 s a 30 fps, rejilla, prohibidos, motor y versión: palitos.py 1.2, Pillow, y costo 0) y se anotan la fuente y la licencia de cada recurso en `licencias.md`.
 - **Punto de control:** antes de generar la voz o renderizar se presenta la lista de tomas sobre la rejilla y se espera el visto bueno del dueño.
-- **Revisión:** prueba corta de 5 s (de 0,0 a 5,0: gancho, Tan, hoja de calendario y entrada de la toma 4), un fotograma por pulso, hoja de contacto y comprobación de medidas (zona segura, `alto` y x de cada personaje, pies a 86 %, mando de 864 px, el fotograma 0 con el mando ya retumbando y «GTA 5?» legible, hoja de calendario de 864 px o de 800 px sin tocar la zona de texto). Después del render completo, `herramientas/revisar_fotogramas.py` sobre el video y `analizar_video.py <video> <carpeta> --cada 0.5`; se anota en `07_revision/`. Se comprueba al oído que cada corte cae donde dice la sección 6 con la voz real, que la voz arranca en el fotograma 0 y que los golpes se oyen bajo la voz.
+- **Revisión:** prueba corta de 5 s (de 0,0 a 5,0: gancho, Tan, hoja de calendario y entrada de la toma 4), un fotograma por pulso, hoja de contacto y comprobación de medidas (zona segura, `alto` y x de cada personaje, pies a 86 %, mando de 800 px, el fotograma 0 con el mando ya retumbando y «GTA 5?» legible, hoja de calendario de 864 px o de 800 px sin tocar la zona de texto). Después del render completo, `herramientas/revisar_fotogramas.py` sobre el video y `analizar_video.py <video> <carpeta> --cada 0.5`; se anota en `07_revision/`. Se comprueba al oído que cada corte cae donde dice la sección 6 con la voz real, que la voz arranca en el fotograma 0 y que los golpes se oyen bajo la voz.
 - **Qué se marca:** imagen congelada, fotograma vacío (la mitad de abajo del cuadro no debe quedar vacía), texto cortado o tapado, texto que sigue sobre el plano siguiente, elemento fuera de cuadro, tirones, contador que retrocede, glifos cuadrados (en particular «×»), el fotograma 855 (el que sigue al último) distinto del 0, más de 3 destellos por segundo, el mando que se parezca a uno comercial o lleve símbolos, cualquier cosa que recuerde a Rockstar o Take-Two, y en el teléfono: que tira, hoja, mando y cifras se lean (medidas de la sección 5) y que cada dato lleve una reacción de Tan distinta. Nota para el validador: en las tomas con personajes (2, 4, 5, 6, 7, 8, 9, 10, 11 y 12), el bloque de identidad de la ficha no se pega en el prompt porque no hay generador de imágenes; el diseño oficial es el código de `palitos.py` y se comprueba con la lista de comprobación de cada ficha.
 - **Vueltas:** las correcciones por código son gratis (salvo servicios de pago, que van a `costos.md`); **las de generador no se repiten sin autorización del dueño** (`generacion.md`). Aquí solo hay generador en la voz: una generación por voz, sin segundos intentos.

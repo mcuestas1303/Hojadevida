@@ -34,12 +34,17 @@ está firmado por su responsable todavía**.
 | 2. Cifras | PASA en pantalla: 13, 365, 4,745, 3, 4,748, 63, 4,811 y 13, enteras y las mismas que la voz del guion y los subtítulos; **no recalculadas en esta vuelta** (la cuenta está en §3 del prompt) | falta el supervisor | prompt §3 |
 | 3. Voz y audio: sonoridad | **PASA con medida**: −14,0 LUFS, pico real −1,3 dBTP (archivo final) | quien montó | `comprobar_video.txt`, `medidas_audio.json` |
 | 3. Voz y audio: transcripción contra guion, clics, música que tape la voz | **NO COMPROBADO: nadie ha escuchado la voz ni la mezcla** | **falta el diseñador de sonido** | `notas.md`, «No se pudo comprobar» |
-| 4. Imagen: personajes contra ficha, nada tapado | PASA a la vista (lados, espejo, colores, objetos de mano de las fichas); el mando sale de la zona segura en las tomas 1 y 13 y el calendario 6 px en la 12 | falta el supervisor | `notas.md`, defectos 1 y 2 |
+| 4. Imagen: personajes contra ficha, nada tapado | PASA a la vista (lados, espejo, colores, objetos de mano de las fichas); Tan ya no sale con `concentrado` (se leía como enojo); el mando quedó dentro de la zona segura (x 109–971); el calendario sale 6 px en la toma 12 | falta el supervisor | `notas.md`, defecto 2 |
 | 4.5 Portada del Short | `06_final/portada_short02.png` (1080x1920; texto en x 114–850, y 484–686, dentro de la zona útil). En el video el «GTA 5?» va en y = 288, fuera de esa zona | falta el supervisor | `notas.md`, defecto 10 |
 | 5. Video: formato | PASA: 1080x1920, 30 fps, H.264, yuv420p, AAC, 28,5 s | quien montó | `comprobar_video.txt` |
 | 5. Video: `revisar_fotogramas.py` | PASA: «Sin marcas» (ni congelados, ni vacíos, ni destellos) | quien montó | `vuelta_01/fotogramas/revision.md` |
 | 5. Video: bucle | PASA con medida (el último fotograma empalma con el 0) | quien montó | `comprobar_video.txt` |
 | 5. Video: cortes contra la voz | Con medida: ningún corte llega tarde; cuatro pisan el final de la línea anterior (0,04 a 0,15 s) y el de 25,5 no tiene margen. **Falta comprobarlo al oído** | falta el editor y el diseñador de sonido | `notas.md`, defecto 3 |
-| 8. Color: `revisar_color.py` | PASA con medida: ≈ 93 % en paleta, saturación ≈ 17 %, variación ±2 %; mostaza único acento y tomate solo en las tomas 10 y 12 | quien montó; **falta la firma del supervisor** | `vuelta_01/revisar_color.txt` |
+| 8. Color: `revisar_color.py` | PASA con medida: ≈ 93 % en paleta, saturación ≈ 17 %, variación ±2 %; mostaza único acento y tomate solo en las tomas 10, 11 y 12 (la cifra «4,811» sigue en la 11) | quien montó; **falta la firma del supervisor** | `vuelta_01/revisar_color.txt` |
 | Rúbrica (`07_revision/`) | sin puntuar | — | — |
 | 6. Entrega | no corresponde todavía (faltan la escucha y las firmas) | — | — |
+
+**Segundo render de la vuelta 1 (2026-11-21, ajustes de la coordinación):** cifra «4,811» en tomate de 22,5 a 25,4
+(toda la toma 11), «GTA 6» de 19,4 a 20,9, Tan con `curiosidad` en la toma 5 y mando de 800 px. Se repitieron todos los
+controles de la tabla sobre el archivo nuevo, con el mismo resultado (texto 0 errores, fotogramas sin marcas, color
+≈ 93 % en paleta, −14,0 LUFS y −1,3 dBTP, bucle que empalma, prompt con 0 errores). Sigue sin escucha y sin firmas.

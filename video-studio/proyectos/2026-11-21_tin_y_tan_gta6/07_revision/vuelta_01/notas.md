@@ -4,6 +4,22 @@ Fecha: 2026-11-21. Pieza: `06_final/tin_y_tan_short02_v1.mp4` (no se sube al rep
 `python3 codigo/render.py`, unos 90 s). Todo lo de aquí se comprobó **con medidas y mirando las hojas de contacto**.
 **Nadie ha escuchado ni la voz ni la mezcla**: lo que depende del oído está en «No se pudo comprobar».
 
+## Ajustes pedidos por la coordinación tras ver las hojas (2026-11-21, mismo archivo de salida, vuelto a renderizar)
+
+1. **«4,811 days»:** el contador va de 21,4 a **22,5** (antes 22,8): llega mientras la voz dice «eight hundred eleven»
+   (segundo tramo desde 22,23). El texto, en tomate con trazo de tinta, **se queda toda la toma 11** y sale en 25,4
+   (antes 23,4): la cifra final en tomate se ve 2,9 s (antes 0,6 s). La toma 11 pasa a tener acento tomate (único).
+   El ding suena en 22,5.
+2. **«GTA 6»:** de 19,4 a 20,9 (1,5 s; antes 0,7 s). «+63 days» sale en 19,3 (antes 20,1). La vuelta de hoja se
+   adelanta a 19,4–19,7 (antes 19,9–20,2): «Sep 17, 2026» de 18,6 a 19,4 y «Nov 19, 2026» de 19,7 a 21,0. Por la
+   envolvente de la voz, «to November…» empieza hacia 19,6 (hay un valle en 19,58); **sin escucha no es seguro**.
+3. **Tan en la toma 5:** expresión `curiosidad` en vez de `concentrado` (se leía como enojo). Visto a tamaño
+   completo (fotograma 300): ya no se lee enojada. Era el único plano con `concentrado`.
+4. **Mando (tomas 1 y 13):** 800 px de ancho (antes 864), con el mismo empuje a 106 %. Medido en todos los fotogramas
+   de las dos tomas: x de 109 a 971 (zona segura 100–980). El bucle sigue empalmando. Portada rehecha.
+
+Las tablas de abajo ya tienen los valores de este render.
+
 ## Qué se hizo
 
 1. Diálogo al 110 % (`codigo/armar_dialogo.py` → `05_audio/dialogo_110.mp3`, `05_audio/linea_de_tiempo_voz.md`).
@@ -42,14 +58,14 @@ Silencio de voz en el empalme del bucle: 1,17 s (límite 2 s). Duración 28,5 s 
 | Rejilla y contadores | `render.py` (`comprobaciones`) | 12 cortes en múltiplos de 0,5 s; los 4 contadores solo suben y acaban en 4,745 / 4,748 / 63 / 4,811: **cumple** |
 | Glifos | `render.py` (`comprobar_glifos`) | `+ , 0-9 ? × A G N S T a d e g h l m n o p s v w y` están en Inter Display Medium; sin «≈» ni «→»: **cumple** |
 | Texto en zona segura | `render.py` (ancho y alto de cada fila, con su pop) | las 12 filas dentro de x 100–980, y ≥ 250; ninguna se tuvo que reducir: **cumple** |
-| Dibujo en zona segura | medida de la caja de todo lo que no es papel, 1 de cada 3 fotogramas | tomas 2 a 11: dentro. **Fuera:** tomas 1 y 13 (mando) y toma 12 (ver defectos 1 y 2) |
+| Dibujo en zona segura | medida de la caja de todo lo que no es papel | tomas 1 a 11 y 13: dentro (mando: x 109–971). **Fuera:** toma 12, 6 px (ver defecto 2) |
 | Cortes en el archivo | `comprobar_video.py` | 9 de 12 cortes se ven como salto grande en su fotograma; los de 11,0, 13,5 y 15,0 son cambios pequeños (ver defecto 4) |
 | Imagen congelada, vacíos, destellos | `herramientas/revisar_fotogramas.py` → `fotogramas/revision.md` | «Sin marcas» (tras añadir el rebote al pulso; antes marcaba 5,4–8,7, 18,8–19,8 y 23,7–25,3) |
 | Tramos sin cambio | `comprobar_video.py` | ninguno de 0,5 s o más; mitad de abajo nunca vacía |
-| Bucle | `render.py` y `comprobar_video.py` | el fotograma 855 se dibuja con la misma función que el 0 (idénticos); la toma 13 llevada a t = 28,5 difiere del fotograma 0 en media 0,017 de 255 (máximo 73 en píxeles sueltos de borde, por redondeo del ángulo); en el archivo, del fotograma 854 al 0 hay 2,9 de 255, igual que entre dos fotogramas vecinos de la toma 13 (2,3): **empalma** |
+| Bucle | `render.py` y `comprobar_video.py` | el fotograma 855 se dibuja con la misma función que el 0 (idénticos); la toma 13 llevada a t = 28,5 difiere del fotograma 0 en media 0,020 de 255 (máximo 76 en píxeles sueltos de borde, por redondeo del ángulo); en el archivo, del fotograma 854 al 0 hay 2,5 de 255, igual que entre dos fotogramas vecinos de la toma 13 (2,0): **empalma** |
 | Color | `herramientas/revisar_color.py` → `revisar_color.txt` | ≈ 93 % dentro de la paleta (mínimo 85 %); saturación ≈ 17 %, luminosidad ≈ 89 %; variación entre segundos ±2 %: **cumple** |
 | Contrastes | `revisar_color.py --contraste` | tinta/papel 12,6:1 (pasa 7:1); tomate/papel 3,6:1 (no pasa 4,5:1: por eso «4,811» y «13» llevan trazo de tinta de 0,06 em, como dice el prompt); mostaza/papel 1,6:1 (ídem) |
-| Acento por plano | hojas de contacto, plano por plano | mostaza: clave + un elemento en las tomas 1–9 y 13; tomate solo en la 10 («4,811» al llegar) y la 12 («13» y bloque 13); toma 11 sin acento: **cumple** (ver duda 7) |
+| Acento por plano | hojas de contacto, plano por plano | mostaza: clave + un elemento en las tomas 1–9 y 13; tomate solo en la 10 y la 11 («4,811», desde que llega) y la 12 («13» y bloque 13): **cumple** (ver duda 7) |
 | Texto | `herramientas/revisar_texto.py` sobre `subtitulos.srt`, `codigo/render.py` y `codigo/miniatura.py`, `--idioma en` → `revisar_texto.txt` | 44 textos, **PASA: 0 errores** |
 | Texto, lectura a mano en las hojas | `analisis/hoja_01..03.jpg` | «GTA 5?», «how many days?», «Sep 17, 2013», «Nov 19, 2026», «GTA 5», «13 × 365», «4,745 days», «+3 leap days», «4,748 days», «+63 days», «Sep 17, 2026», «GTA 6», «4,811 days», «age 13», «17»: igual que la tabla de §12; sin nombres propios en minúscula; cifras enteras |
 | Sonoridad | `codigo/audio.py` y `comprobar_video.py` (ebur128) | mezcla.wav −14,0 LUFS, pico real −1,3 dBTP; el AAC del archivo −14,0 LUFS y −1,3 dBTP: **cumple** (−14 ±1, techo −1) |
@@ -73,10 +89,8 @@ Silencio de voz en el empalme del bucle: 1,17 s (límite 2 s). Duración 28,5 s 
 
 ## Defectos y dudas (con el segundo)
 
-1. **0,0–1,0 y 27,5–28,5 (mando):** el mando sale de la zona segura. A escala 100 % ocupa x 108–972 y con el
-   balanceo llega a 95–983; con el empuje a 106 % que pide el prompt llega a x 74–1005 (hacia 0,3–1,0 s y
-   27,5–27,8 s). No es texto, pero la empuñadura derecha queda donde YouTube pone sus botones. Arreglo gratis si se
-   decide: mando de 800 px o empuje menor (cambia la medida del prompt, por eso no se tocó).
+1. **0,0–1,0 y 27,5–28,5 (mando): CORREGIDO.** Con 864 px salía de la zona segura (x 74–1005 con el empuje); ahora
+   mide 800 px y queda en x 109–971 en todos los fotogramas.
 2. **25,5–27,5 (toma 12):** la esquina del calendario de la mano de Tin llega a x ≈ 986 con el rebote (unos 6 px
    fuera de la zona segura). Con Tin en x = 70 % y el brazo arriba no cabe más adentro sin tapar la visera (se probó).
    Además, en la salida de cada texto (3 fotogramas, mientras se desvanece) el texto sube 2 % como pide §12 y su tope
@@ -91,11 +105,13 @@ Silencio de voz en el empalme del bucle: 1,17 s (límite 2 s). Duración 28,5 s 
    así que Tan aparece 0,4 s antes de decirlo. La alternativa (corte en 1,5) dejaba la toma 2 en 0,5 s.
 6. **Mando:** dos palancas en diagonal y cuatro botones en rombo, como pide §5. No lleva logotipos ni símbolos, pero
    esa disposición es la habitual de los mandos modernos: que lo mire el director creativo.
-7. **Tomas 10 y 12:** Tan conserva la bufanda mostaza y la risa de los dos lleva la lengua tomate de su expresión
+7. **Tomas 10, 11 y 12:** Tan conserva la bufanda mostaza y la risa de los dos lleva la lengua tomate de su expresión
    (identidad, no acento); en la toma 12 el calendario de la mano va con cabecera marrón. Es lo previsto en el prompt.
-8. **21,0–23,5 (toma 10):** la zona de gráficos queda vacía a propósito (el pico es la cifra); el «4,811» en tomate se
-   ve 0,6 s (de 22,8 a 23,4) y llega unos 0,1–0,3 s antes de que la voz termine de decirlo.
-9. **20,2–20,9:** «GTA 6» está 0,7 s en pantalla; es corto para leerlo con calma.
+8. **21,0–23,5 (toma 10):** la zona de gráficos queda vacía a propósito (el pico es la cifra). **CORREGIDO** lo corto
+   de la cifra: el «4,811» en tomate va de 22,5 a 25,4. Llega 0,27 s después de que empiece «eight hundred eleven
+   days.» (22,23) y antes de que la voz termine de decir la cifra: si eso se siente adelantado, se oye, no se mide.
+9. **19,4–20,9:** «GTA 6» ya dura 1,5 s (**CORREGIDO**). Duda nueva: entra en 19,4, cuando la hoja empieza a pasar,
+   unos 0,2 s antes de «to November…» según la envolvente; y «Sep 17, 2026» queda 0,8 s en la hoja (18,6–19,4).
 10. **Portada:** en el video el «GTA 5?» va en y = 15 % (288 px), por encima de la zona útil de portada de Shorts
     (y 380–1440). `06_final/portada_short02.png` lo baja y lo agranda (x 114–850, y 484–686). La alternativa
     (`portada_short02_alternativa.png`, fotograma de 23,0 s) **adelanta la respuesta** y su texto queda en y ≈ 290.
@@ -117,6 +133,7 @@ Silencio de voz en el empalme del bucle: 1,17 s (límite 2 s). Duración 28,5 s 
 - El botón del mando late a papel (no a tomate), como dicen §5 y §14.
 - Golpes del arranque y del cierre (sin voz encima) a pico de −6 dBFS en vez de llevar la pista de efectos a
   −18 LUFS: casi todo el video tiene voz.
+- Mando de 800 px (no 864) y Tan con `curiosidad` en la toma 5 (no `concentrado`); «4,811 days» sigue en la toma 11.
 - Los gráficos `hoja_calendario` y `tira_13` quedaron en `codigo/render.py`; `mando()` está en `palitos.py` porque lo
   usa también el objeto de mano `control`.
 

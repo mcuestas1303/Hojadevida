@@ -262,7 +262,7 @@ def eo_valor(t, t0, t1, a, b):
 C_4745 = (11.15, 12.9, 0, 4745)   # empieza 2 fotogramas antes que su texto: nunca se ve «0 days»
 C_4748 = (15.3, 16.6, 4745, 4748)
 C_63 = (17.75, 18.8, 0, 63)        # ídem: nunca se ve «+0 days»
-C_4811 = (21.4, 22.8, 4748, 4811)
+C_4811 = (21.4, 22.5, 4748, 4811)   # llega cuando la voz dice «eight hundred eleven» (desde 22,23)
 
 # (entra, sale, tamaño en % del alto, tope de las letras, segmentos o nombre de contador, pop de llegada)
 # Texto exacto de la tabla de la sección 12 del prompt.
@@ -274,9 +274,9 @@ TEXTOS = [
     (11.2, 13.4, 7, Y_132, "c4745", None),
     (13.7, 14.9, 7, Y_132, (T("+"), K("3"), T(" leap days")), None),
     (15.1, 17.4, 7, Y_132, "c4748", (C_4748[1], 0.10)),
-    (17.8, 20.1, 7, Y_132, "c63", None),
-    (20.2, 20.9, 7, Y_132, (T("GTA "), K("6")), None),
-    (21.2, 23.4, 7, Y_15, "c4811", (C_4811[1], 0.14)),
+    (17.8, 19.3, 7, Y_132, "c63", None),
+    (19.4, 20.9, 7, Y_132, (T("GTA "), K("6")), None),
+    (21.2, 25.4, 7, Y_15, "c4811", (C_4811[1], 0.14)),    # se queda toda la toma 11 (el pago del video)
     (25.7, 27.4, 7, Y_132, (T("age "), R("13")), None),
     (27.6, 28.5, 6, Y_15, (T("GTA "), K("5"), T("?")), None),
 ]
@@ -340,9 +340,9 @@ def capa_texto(base, f):
 
 # ---------------------------------------------------------------- gráficos propios del video
 def mando_grande(lz, t):
-    """El mando a pantalla completa (sección 5): W = 864 px, centro en (50 %, 54 %), balanceo de ±5 grados con periodo
+    """El mando a pantalla completa (sección 5): W = 800 px, centro en (50 %, 54 %), balanceo de ±5 grados con periodo
     de 0,5 s, estela plana de dos copias en papel sombra y botón de abajo que late 0,2 s en cada pulso (a papel)."""
-    cx, cy, ancho = 0.5 * W, 0.54 * H, 0.80 * W
+    cx, cy, ancho = 0.5 * W, 0.54 * H, 800.0      # 800 px: con el balanceo y el empuje a 106 % queda en x 100-980
 
     def ang(tt):
         return 5 * math.sin(4 * math.pi * tt)
@@ -500,7 +500,7 @@ def toma_5(lz, t):
     tl = t - 9.0
     suelo(lz)
     tira_13(lz, llenos=lambda i: muelle(t - (T5_LLENADO + 0.1 * i), POP), color_ultimo=MOSTAZA)
-    palitos.dibujar(lz, "tan", 0.5 * W, SUELO, ALTO_PJ * bote(t), pose="senala", expresion="concentrado", vista="frente",
+    palitos.dibujar(lz, "tan", 0.5 * W, SUELO, ALTO_PJ * bote(t), pose="senala", expresion="curiosidad", vista="frente",
                     viento=vaiven(tl, 0.25), espejo=True)
     return 1.0, CENTRO
 
@@ -536,7 +536,7 @@ def toma_8(lz, t):
 
 
 T9_BLANCAS = [17.56 + 0.18 * k for k in range(6)]     # 6 hojas en blanco, una cada 0,18 s (la última acaba en 18,64)
-T9_FECHA_1, T9_VUELTA = 18.6, 19.9
+T9_FECHA_1, T9_VUELTA = 18.6, 19.4      # la hoja pasa a «Nov 19, 2026» con «to November…» (hacia 19,6)
 
 
 def toma_9(lz, t):

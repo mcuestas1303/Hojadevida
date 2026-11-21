@@ -38,7 +38,7 @@ LUFS_MEZCLA = -14.0
 TECHO_MEZCLA_DBTP = -1.0
 
 # Contadores del render (inicio, fin): el tictac sigue el mismo ease-out cúbico
-C_4745, C_4748, C_63, C_4811 = (11.15, 12.9), (15.3, 16.6), (17.75, 18.8), (21.4, 22.8)
+C_4745, C_4748, C_63, C_4811 = (11.15, 12.9), (15.3, 16.6), (17.75, 18.8), (21.4, 22.5)
 
 # ---------------------------------------------------------------- golpes de la sección 13: (segundo, sonido, a qué va atado)
 EVENTOS = [(0.0, "thunk", "arranque, toma 1 (y empalme del bucle)"), (0.0, "zumbido", "vibración del mando, toma 1")]
@@ -53,8 +53,8 @@ EVENTOS += [(t, "pop", "marca bisiesta, toma 7") for t in (13.9, 14.2, 14.5)]
 T_4748 = C_4748[0] + (1 - (5 / 6) ** (1 / 3)) * (C_4748[1] - C_4748[0])
 EVENTOS += [(T_4748, "tictac_4748", "contador de la toma 8, 3 pasos (15,3 a 16,6); el primero en 15,38")]
 EVENTOS += [(17.56 + 0.18 * k, "hoja_corta", "hoja en blanco, toma 9") for k in range(6)]
-EVENTOS += [(19.9, "hoja", "vuelta de hoja, toma 9")]
-EVENTOS += [(C_4811[0], "tictac_4811", "contador de la toma 10 (21,4 a 22,8)")]
+EVENTOS += [(19.4, "hoja", "vuelta de hoja, toma 9")]
+EVENTOS += [(C_4811[0], "tictac_4811", "contador de la toma 10 (21,4 a 22,5)")]
 EVENTOS += [(C_4811[1], "ding", "llegada a 4,811")]
 EVENTOS += [(t, "pop_grave", "latido del bloque 13, toma 12") for t in (26.0, 26.5, 27.0)]
 EVENTOS += [(27.5, "whoosh", "retroceso de cámara, toma 13 (27,5 a 28,3)")]

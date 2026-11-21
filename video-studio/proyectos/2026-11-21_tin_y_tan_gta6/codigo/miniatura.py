@@ -25,7 +25,7 @@ UTIL = (60, 380, 960, 1440)
 
 def portada(salida):
     lz = palitos.Lienzo(W, H)
-    R.mando_grande(lz, 0.0)                      # centro en 54 %: de y = 800 a 1273
+    R.mando_grande(lz, 0.0)                      # centro en 54 %: de y = 817 a 1257
     img = lz.resultado()
     segs = (R.T("GTA "), R.K("5"), R.T("?"))     # mismas palabras que el fotograma 0; «GTA» es sigla, va en mayúsculas
     tam = 230
