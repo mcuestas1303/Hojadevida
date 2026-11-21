@@ -58,6 +58,7 @@ Medidas tomadas del keyframe aprobado `series/granja/referencias/patio.png`.
 - **Manchas:** dos y solo dos: una que cruza la panza y la espalda, otra sobre la cabeza entre los cuernos. Ninguna alrededor de los ojos.
 - **Brazos y patas:** antebrazos y parte baja de las patas en negro, como calcetines; pezuñas lila en los cuatro.
 - **Cuernos:** dos, crema, pequeños y redondeados. **Orejas:** caídas, lila por dentro.
+- **Con qué saluda:** siempre con la pezuña delantera derecha, que de frente a cámara queda a la izquierda del cuadro, del lado contrario a Tiky.
 
 Lista de comprobación de cada imagen: cuerpo de huevo sin cuello · blanco crema con dos manchas negras · mancha negra sobre la cabeza · crayón lila detrás de la oreja derecha · dos cuernos crema · orejas con interior lila · ojos miel con un brillo blanco · cejas suaves · hocico lila con dos puntos · antebrazos y patas negros · cuatro pezuñas lila · sin cencerro, flor ni bombilla.
 

@@ -57,6 +57,7 @@ Medidas tomadas del keyframe aprobado `series/granja/referencias/patio.png`.
 - **Copete:** tres plumas, la del centro más alta; en total, un cuarto de la altura del cuerpo.
 - **Alas:** pegadas a los lados, llegan a la mitad del cuerpo; son alas, nunca manos.
 - **Patas:** se ven siempre las dos, con tres dedos cada una.
+- **Con qué saluda:** siempre con el ala izquierda, que de frente a cámara queda a la derecha del cuadro, del lado contrario a Lumi.
 
 Lista de comprobación de cada imagen: cuerpo de huevo sin cuello · amarillo con panza crema · copete de 3 plumas rojo anaranjado · ojos marrón oscuro con un brillo blanco · sin cejas · pico coral pequeño · mejillas rosadas · dos alas · dos patas coral de tres dedos · sin ropa ni objetos.
 
