@@ -45,7 +45,7 @@ def campo(texto, etiqueta):
 def leer(ruta):
     texto = ruta.read_text()
     elenco = re.search(r"^## 2\..*?$(.*?)(?=^## \d+\.|\Z)", texto, re.M | re.S)
-    titulo = re.search(r"^# (?:Prompt de video — )?(.*)", texto, re.M)
+    titulo = re.search(r"^# (?:Prompt de video(?: para redes)? — )?(.*)", texto, re.M)
     numero = re.search(r"\d+", campo(texto, "Número"))
     serie = slug(campo(texto, "Serie"))
     return {

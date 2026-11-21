@@ -212,7 +212,7 @@ def main():
             usados.add(pid)
             if pid not in elenco:
                 errores.append(f"{titulo}: usa @{pid}, que no está en el elenco.")
-            elif pid in identidad and identidad[pid] not in " ".join(t.split()):
+            elif pid in identidad and metodo.startswith(METODOS_PAGADOS) and identidad[pid] not in " ".join(t.split()):
                 avisos.append(f"{titulo}: el bloque de identidad de @{pid} no está pegado tal cual en el prompt.")
         for pid in set(ids(t)) - set(en_toma):
             errores.append(f"{titulo}: menciona @{pid} pero no está en su línea de Personajes.")

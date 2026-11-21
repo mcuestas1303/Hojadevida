@@ -27,7 +27,7 @@
 | Tiempo a 2 vueltas por segundo | 1.170 ÷ 2 | ≈ 585 s, casi 10 min |
 
 Supuesto que hay que declarar en la descripción: 3,5 cm es un diámetro promedio del rollo, que crece mientras se rebobina.
-Falta la fuente escrita de la velocidad de 4,76 cm/s para citarla.
+Fuente de los 4,76 cm/s: Philips Technical Review, vol. 31, 1970 («The design of the Compact Cassette is based on a tape speed of 4.76 cm/s»), https://www.musicaememoria.com/docs/PTechReview-31-1970-077.pdf, visto en resumen de buscador el 2026-11-21; equivale a 1⅞ pulgadas por segundo.
 
 ## Por confirmar con el dueño
 
