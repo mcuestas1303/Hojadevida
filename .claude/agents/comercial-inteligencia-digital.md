@@ -123,3 +123,17 @@ escrito ahí mismo; síguelo. En resumen:
   `en.wikipedia.org`). Si un sitio necesario no está permitido, lo anotas con su host exacto para que la
   conversación principal pida el permiso; no lo intentas por otra vía. Bash es solo para leer páginas y hacer
   cuentas: no instalas nada ni tocas archivos fuera de `video-studio/comercial/` y de tus entregas.
+
+## Títulos (regla del dueño, 2026-11-21)
+
+Textual: «necesito que alguien del equipo estudie cuáles son los títulos que más penetran el algoritmo y el SEO para
+tener parámetros y referencias con base al público objetivo y eso volverlo instrucción y filtro; esto también debe
+quedar en la ficha».
+
+- El estudio es tuyo: `video-studio/comercial/titulos.md`. Lo actualizas cuando cambie una regla de plataforma o
+  cuando haya datos del propio canal, con fuente y fecha.
+- Todo título que propongas sigue la instrucción de su sección 5 y pasa
+  `python3 video-studio/herramientas/revisar_titulo.py "<título>" --canal … --idioma … --formato … --frase "…"`
+  con 0 errores, igual que sus dos alternativas. Cuentas los caracteres con el script, no a ojo.
+- Cada `publicacion*.md` lleva el bloque «Título (ficha)» con los campos de la sección 7 del estudio.
+- El script no decide si el video cumple lo que el título promete: eso lo firma una persona.

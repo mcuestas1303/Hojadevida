@@ -33,8 +33,8 @@ No encontré un video concreto de YouTube que enseñe el saludo con pausa para n
 
 ## Paquete
 
-- **Título recomendado:** Acenar com a mãozinha: Oi, fazenda com Tiky e Lumi (53 caracteres)
-- **Otras opciones:** Acenar e dizer oi (18 a 24 meses): Oi, fazenda (46 caracteres); Acenar com a mãozinha: Tiky e Lumi na fazenda (51 caracteres)
+- **Título recomendado:** Acenar com a mãozinha: Oi, fazenda com Tiky e Lumi (50 caracteres)
+- **Otras opciones:** Acenar e dizer oi (18 a 24 meses): Oi, fazenda (46 caracteres); Acenar com a mãozinha: Tiky e Lumi na fazenda (45 caracteres)
 - **Descripción:**
 
 ```text
@@ -83,3 +83,27 @@ Sin gancho ni pedir suscripción. Con un solo canal y pistas de audio, las pista
 ## Propuestas para el equipo
 
 Ninguna propuesta de cambio dentro del video. Nota para la pedagoga y la psicóloga: en Brasil el gesto de la mano se asocia sobre todo a «tchau», y el adulto lo busca así. El capítulo enseña a saludar al llegar con «oi»; la palabra clave en portugués la decide y la confirma la pedagoga (guía, sección 8). Si decide que en pt-BR conviene mostrar también el «tchau» como parte del objetivo, es un cambio de objetivo que le corresponde a ella, no al comercial.
+
+## Título (ficha)
+
+Filtro: `revisar_titulo.py` v1.0 (2026-11-21). Estudio y reglas: `video-studio/comercial/titulos.md`.
+
+| Campo | Valor |
+|---|---|
+| `titulo_elegido` | Acenar com a mãozinha: Oi, fazenda com Tiky e Lumi |
+| `caracteres` | 50 |
+| `idioma` | pt-BR |
+| `canal` | tiky-lumi |
+| `formato` | largo |
+| `publico` | El adulto que elige el video para un niño de 18 a 24 meses |
+| `frase_de_busqueda` | acenar com a mãozinha |
+| `fuente_de_la_frase` | `publicacion` de este idioma, sección de búsqueda; volumen: sin dato |
+| `formula` | F1 (acción + nombre del episodio + personajes) |
+| `alternativa_1` | Acenar e dizer oi (18 a 24 meses): Oi, fazenda (46 caracteres; frase «acenar e dizer oi»; filtro: PASA) |
+| `alternativa_2` | Acenar com a mãozinha: Tiky e Lumi na fazenda (45 caracteres; frase «acenar com a mãozinha»; filtro: PASA) |
+| `uso_de_las_alternativas` | Reserva. YouTube no ofrece prueba A/B de títulos en Shorts ni en videos «hechos para niños» (ayuda oficial, leída el 2026-11-21) |
+| `filtro` | **PASA** · errores: ninguno · avisos: ninguno |
+| `revision_humana` | **Pendiente**: que el video cumpla lo que el título promete, que no engañe y que pase la línea editorial. Firma el director creativo cuando exista el video |
+| `medicion` | CTR de impresiones, impresiones, tráfico de búsqueda y términos de búsqueda; a 7 y 28 días; meta: establecer línea base |
+
+Pendiente de la pedagoga: en YouTube Brasil dominan «dar tchau» y «oi e tchau» frente a «acenar» (primera página, sin volúmenes; `comercial/titulos.md`). El video enseña el saludo de llegada; cambiar la frase es decisión pedagógica.

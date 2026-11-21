@@ -90,3 +90,11 @@ Trabajo de una sola vez para toda la serie (no se repite en cada capítulo):
 | | **Total hasta el video renderizado y su ficha** | **558 k** |
 
 Faltan: revisión del equipo de producción, escucha del audio, ajustes y publicación.
+
+## Trabajo de estudio que no es de un video (2026-11-21)
+
+| Qué | Tokens de agentes | Créditos |
+|---|---|---|
+| Radar de tendencias, primera versión (comercial) | sin anotar al entregarse | 0 |
+| Estudio de títulos (comercial), 64 consultas | 223 k | 0 |
+| Color con intención en el prompt del short 2 (director de prompts) | 74 k | 0 |

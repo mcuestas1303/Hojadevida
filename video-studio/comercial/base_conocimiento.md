@@ -442,3 +442,7 @@ Regla del dueño (2026-11-21): el comercial debe enterarse de lo que va a entrar
 |---|---|
 | YouTube retiró su página «Tendencias» en julio de 2025 (la reemplazan gráficos por categoría). Visto en resumen de buscador | https://techcrunch.com/2025/07/10/youtube-is-getting-rid-of-its-trending-page-and-trending-now-list (2026-11-21) |
 | La pestaña «Inspiración» de YouTube Studio se retira desde agosto de 2026; la ayuda remite a Ask Studio, que un canal completo «hecho para niños» no tiene (§5). Visto en resumen de buscador | https://support.google.com/youtube/answer/15575509?hl=en (2026-11-21) |
+
+## 14. Títulos: remite a `titulos.md`
+
+Regla del dueño (2026-11-21): el título se estudia con datos de lo que penetra el algoritmo y la búsqueda, y de ahí salen una instrucción, un filtro y campos en la ficha. El estudio completo (qué dicen YouTube, TikTok e Instagram; qué dicen los estudios de terceros y dónde se contradicen; parámetros por canal; referencias; la instrucción; el filtro para `revisar_titulo.py`; los campos de la ficha) está en `video-studio/comercial/titulos.md`. Lo que esta base ya tiene y ese documento usa: límite de 100 caracteres y consejos de título de YouTube, la prueba A/B de títulos (no disponible en Shorts ni en videos «hechos para niños») y el relleno de palabras clave como baja calidad infantil (§6). Fecha del estudio: 2026-11-21.

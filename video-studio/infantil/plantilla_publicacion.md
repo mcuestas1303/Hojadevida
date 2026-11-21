@@ -50,3 +50,26 @@
 ## Propuestas para el equipo
 
 [cambios dentro del video que sugieren los datos; los deciden la pedagoga y la psicóloga]
+
+## Título (ficha)
+
+<!-- Obligatorio. Reglas y fuentes: video-studio/comercial/titulos.md. Los caracteres y el resultado salen de
+     revisar_titulo.py; no se cuentan a ojo. -->
+
+| Campo | Valor |
+|---|---|
+| `titulo_elegido` | [título] |
+| `caracteres` | [los que da el filtro] |
+| `idioma` | [es, en o pt-BR] |
+| `canal` | [tiky-lumi o tin-y-tan] |
+| `formato` | [largo o short] |
+| `publico` | [quién lo lee y elige] |
+| `frase_de_busqueda` | [frase] |
+| `fuente_de_la_frase` | [enlace y fecha; «volumen: sin dato» si no lo hay] |
+| `formula` | [F1, F2 o F3 del estudio] |
+| `alternativa_1` | [título, caracteres, frase y resultado del filtro] |
+| `alternativa_2` | [título, caracteres, frase y resultado del filtro] |
+| `uso_de_las_alternativas` | [reserva o prueba A/B, según lo permita la plataforma] |
+| `filtro` | [versión, fecha, PASA o NO PASA, errores y avisos] |
+| `revision_humana` | [el video cumple el título, no engaña, línea editorial; firma y fecha] |
+| `medicion` | [métricas, plazos de 7 y 28 días y meta] |

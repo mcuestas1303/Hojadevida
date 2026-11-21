@@ -87,3 +87,25 @@ Ninguna propuesta de cambio dentro del video. Dos notas para la pedagoga y la ps
 
 - El temario dice «saludar con la mano y reconocer a Tiky y a Lumi por su nombre», pero la ficha pedagógica dejó el reconocimiento por nombre fuera. El paquete solo promete el saludo con la mano; si el dueño quiere prometer más, que lo decida el equipo pedagógico.
 - Los dos shorts de pregunta duran 18 s en el capítulo y la serie pide de 20 a 45 s. Si la pedagoga prefiere no añadir nada, el único que cumple tal cual es «Tiky saluda a Lumi» (20 s).
+
+## Título (ficha)
+
+Filtro: `revisar_titulo.py` v1.0 (2026-11-21). Estudio y reglas: `video-studio/comercial/titulos.md`.
+
+| Campo | Valor |
+|---|---|
+| `titulo_elegido` | Saludar con la mano: Hola, granja con Tiky y Lumi |
+| `caracteres` | 49 |
+| `idioma` | es |
+| `canal` | tiky-lumi |
+| `formato` | largo |
+| `publico` | El adulto que elige el video para un niño de 18 a 24 meses |
+| `frase_de_busqueda` | saludar con la mano |
+| `fuente_de_la_frase` | `publicacion` de este idioma, sección de búsqueda; volumen: sin dato |
+| `formula` | F1 (acción + nombre del episodio + personajes) |
+| `alternativa_1` | Saluda con la mano (18 a 24 meses): Hola, granja (48 caracteres; frase «saluda con la mano»; filtro: PASA) |
+| `alternativa_2` | Saludar con la mano: Tiky y Lumi en la granja (45 caracteres; frase «saludar con la mano»; filtro: PASA) |
+| `uso_de_las_alternativas` | Reserva. YouTube no ofrece prueba A/B de títulos en Shorts ni en videos «hechos para niños» (ayuda oficial, leída el 2026-11-21) |
+| `filtro` | **PASA** · errores: ninguno · avisos: ninguno |
+| `revision_humana` | **Pendiente**: que el video cumpla lo que el título promete, que no engañe y que pase la línea editorial. Firma el director creativo cuando exista el video |
+| `medicion` | CTR de impresiones, impresiones, tráfico de búsqueda y términos de búsqueda; a 7 y 28 días; meta: establecer línea base |

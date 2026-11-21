@@ -1,6 +1,6 @@
 # Brief — Tin & Tan, short 2: la espera de GTA 6
 
-- **Título:** How many days did we wait for GTA 6?
+- **Título:** How Many Days Did We Wait for GTA 6?
 - **Pedido del dueño (2026-11-21, textual):** «prepara un prompt para tin y tan con temática de gta6 agrega variaciones al sheet si es necesario».
 - **Modo:** C desde cero, dibujado por código (método «edición», 0 créditos de imagen y video).
 - **Objetivo comercial:** el del canal: presencia y línea base (canal nuevo, sin historial). El dueño no fijó otro para esta pieza.

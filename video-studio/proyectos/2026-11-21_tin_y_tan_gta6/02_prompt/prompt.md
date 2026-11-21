@@ -1,4 +1,4 @@
-# Prompt de video para redes — How many days did we wait for GTA 6?
+# Prompt de video para redes — How Many Days Did We Wait for GTA 6?
 
 > **ESTADO (2026-11-21):** la voz **no está generada**; todos los tiempos de voz de este prompt son **estimados** (ritmo medido en el short 1, ver sección 7) y se reajustan a la rejilla de 0,5 s cuando exista la voz. El render está **pendiente de autorización del dueño** (la voz necesita cotización y su sí; el render es de 0 créditos). Nada se ha generado ni renderizado.
 > Hereda el formato y las lecciones del short 1 (`2026-11-21_tin_y_tan_casete_y_lapiz`): el objeto y la voz desde el fotograma 0, cifras al 7 % del alto, personajes y gráficos en el tercio de abajo, una reacción de Tan por dato, bucle con último fotograma igual al primero, rejilla de 0,5 s, golpes bajo la voz a unos −26 LUFS y música por código.
@@ -403,11 +403,11 @@ Los cortes de cada pieza en líneas se hacen por las pausas medidas, como en el 
 - **Texto en pantalla:** se dibuja en el mismo render, solo el de la tabla de la sección 12. El texto nunca contradice lo que se oye.
 - **Portada:** el fotograma 0 (o el de 0,5 s, que es el mismo plano): el mando con el «GTA 5?». Alternativa para probar en otra publicación: el fotograma de 21,0 s (el «4,811 days» en tomate con los dos celebrando).
 - **Formato de salida:** 1080x1920, 30 fps, H.264, yuv420p, AAC a 48 kHz. Archivo `06_final/tin_y_tan_short02_v1.mp4`.
-- **Título de la publicación (inglés):** How many days did we wait for GTA 6?
+- **Título de la publicación (inglés):** How Many Days Did We Wait for GTA 6?
 - **Descripción de la publicación (en inglés, obligatoria; sin llamado a la acción):**
 
 ```text
-How many days did we wait for GTA 6? Step by step:
+How Many Days Did We Wait for GTA 6? Step by step:
 
 GTA 5 came out on Sep 17, 2013 (original PlayStation 3 and Xbox 360 release). GTA 6 came out on Nov 19, 2026.
 Sep 17, 2013 to Sep 17, 2026 is 13 years: 13 x 365 = 4,745 days.
@@ -422,6 +422,30 @@ Not affiliated with Rockstar Games or Take-Two Interactive.
 
 - **Sin llamado a la acción** (ni en el video ni en la descripción): el objetivo es presencia y línea base, y un llamado al final cortaría el bucle.
 - **Fechas y fuentes:** Grand Theft Auto V, 17 de septiembre de 2013 (PlayStation 3 y Xbox 360) y Grand Theft Auto VI, 19 de noviembre de 2026 (PlayStation 5 y Xbox Series X/S): Wikipedia en inglés, páginas «Grand Theft Auto V» y «Grand Theft Auto VI», abiertas y leídas el 2026-11-21. La de GTA VI no se leyó en Rockstar Games (sitio sin acceso).
+
+### Título (ficha)
+
+Filtro: `revisar_titulo.py` v1.0 (2026-11-21). Estudio y reglas: `video-studio/comercial/titulos.md`.
+
+| Campo | Valor |
+|---|---|
+| `titulo_elegido` | How Many Days Did We Wait for GTA 6? |
+| `caracteres` | 36 |
+| `idioma` | en |
+| `canal` | tin-y-tan |
+| `formato` | short |
+| `publico` | EE. UU., adultos de 30 a 50 años que crecieron con la saga |
+| `frase_de_busqueda` | how many days did we wait for gta 6 |
+| `fuente_de_la_frase` | `comercial/titulos.md` §3a y §8; volumen: sin dato |
+| `formula` | F1 (la pregunta es el título) |
+| `alternativa_1` | GTA 5 to GTA 6: How Many Days Did We Wait? (42 caracteres; frase «how many days did we wait»; filtro: NO PASA: M4 la frase termina en el carácter 41; debe terminar antes del 40 · avisos: M4 la frase empieza en el carácter 17; mejor al inicio (1 a 4)) |
+| `alternativa_2` | How Long Did We Wait for GTA 6? We Counted (42 caracteres; frase «how long did we wait for gta 6»; filtro: PASA) |
+| `uso_de_las_alternativas` | Reserva. YouTube no ofrece prueba A/B de títulos en Shorts ni en videos «hechos para niños» (ayuda oficial, leída el 2026-11-21) |
+| `filtro` | **PASA** · errores: ninguno · avisos: ninguno |
+| `revision_humana` | **Pendiente**: que el video cumpla lo que el título promete, que no engañe y que pase la línea editorial. Firma el director creativo cuando exista el video |
+| `medicion` | Visto frente a deslizado, mostrado en el feed y tráfico de búsqueda; a 7 y 28 días; meta: establecer línea base |
+
+El título no lleva la cifra (4,811): es la respuesta del video, y otro canal ya publicó un título con ella (`comercial/titulos.md`, hallazgo 6).
 
 ## 9. Presupuesto
 

@@ -110,3 +110,9 @@
   va solo en el título y en un elemento (reel de andrea.eskailet). La decide el director de fotografía, la valida el
   director creativo y el supervisor la mide con `revisar_color.py`. Texto ≥ 4,5:1, ≥ 7:1 para 45+. Manual: cap. 13.
 - **Dónde se presenta cada cosa (2026-11-21):** en el Generador de prompts solo se ven prompts y fichas; todo lo terminado (videos, audios, imágenes) se le presenta al dueño en Equipo de producción audiovisual.
+
+- **Títulos con estudio y filtro (dueño, 2026-11-21):** textual: «necesito que alguien del equipo estudie cuáles son
+  los títulos que más penetran el algoritmo y el SEO para tener parámetros y referencias con base al público objetivo
+  y eso volverlo instrucción y filtro; esto también debe quedar en la ficha». Estudio: `comercial/titulos.md` (del
+  comercial). Filtro: `herramientas/revisar_titulo.py`, 0 errores. Ficha: bloque «Título (ficha)» en la publicación
+  y objeto `titulo_ficha` en `ficha.json`.

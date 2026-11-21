@@ -33,8 +33,8 @@ Referencias para estudiar, no para copiar: no se copian títulos, miniaturas, pe
 
 ## Paquete
 
-- **Título recomendado:** Wave Hello: Hello, Farm with Tiky and Lumi (44 caracteres)
-- **Otras opciones:** Wave Hello (Ages 18–24 Months): Hello, Farm (43 caracteres); Wave Hello: Tiky and Lumi on the Farm (38 caracteres)
+- **Título recomendado:** Wave Hello: Hello, Farm with Tiky and Lumi (42 caracteres)
+- **Otras opciones:** Wave Hello (Ages 18–24 Months): Hello, Farm (43 caracteres); Wave Hello: Tiky and Lumi on the Farm (37 caracteres)
 - **Descripción:**
 
 ```text
@@ -83,3 +83,27 @@ Sin gancho ni pedir suscripción. En una cuenta con un solo canal y pistas de au
 ## Propuestas para el equipo
 
 Ninguna propuesta de cambio dentro del video. Una nota para la pedagoga: en inglés los adultos de EE. UU. dicen «bye-bye» para el gesto de despedida y «hello» o «hi» para el de llegada; la palabra clave en inglés la decide y la confirma la pedagoga (guía, sección 8). Este paquete asume «hello»; si se elige «hi», se ajustan el título y las etiquetas.
+
+## Título (ficha)
+
+Filtro: `revisar_titulo.py` v1.0 (2026-11-21). Estudio y reglas: `video-studio/comercial/titulos.md`.
+
+| Campo | Valor |
+|---|---|
+| `titulo_elegido` | Wave Hello: Hello, Farm with Tiky and Lumi |
+| `caracteres` | 42 |
+| `idioma` | en |
+| `canal` | tiky-lumi |
+| `formato` | largo |
+| `publico` | El adulto que elige el video para un niño de 18 a 24 meses |
+| `frase_de_busqueda` | wave hello |
+| `fuente_de_la_frase` | `publicacion` de este idioma, sección de búsqueda; volumen: sin dato |
+| `formula` | F1 (acción + nombre del episodio + personajes) |
+| `alternativa_1` | Wave Hello (Ages 18–24 Months): Hello, Farm (43 caracteres; frase «wave hello»; filtro: PASA · avisos: M9 «hello» se repite 2 veces) |
+| `alternativa_2` | Wave Hello: Tiky and Lumi on the Farm (37 caracteres; frase «wave hello»; filtro: PASA) |
+| `uso_de_las_alternativas` | Reserva. YouTube no ofrece prueba A/B de títulos en Shorts ni en videos «hechos para niños» (ayuda oficial, leída el 2026-11-21) |
+| `filtro` | **PASA** · errores: ninguno · avisos: M9 «hello» se repite 2 veces |
+| `revision_humana` | **Pendiente**: que el video cumpla lo que el título promete, que no engañe y que pase la línea editorial. Firma el director creativo cuando exista el video |
+| `medicion` | CTR de impresiones, impresiones, tráfico de búsqueda y términos de búsqueda; a 7 y 28 días; meta: establecer línea base |
+
+Decisión del equipo: se mantiene el recomendado aunque repite «Hello» (aviso), porque lleva el nombre del episodio igual que en los otros dos idiomas. La alternativa 2 pasa sin avisos y queda de reserva.

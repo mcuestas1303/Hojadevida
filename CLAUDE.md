@@ -68,6 +68,9 @@ exclusivamente los prompts y fichas».
   controles bloqueantes con responsable que firma (`video-studio/manual/12_controles_de_calidad.md`). Un error
   ortográfico o un nombre en minúscula no sale. El texto pasa por `video-studio/herramientas/revisar_texto.py`.
 - Nombres propios siempre con mayúscula («Tin & Tan»). Cifras con decimales o fracciones: aproximadas y con «≈».
+- Títulos (regla del dueño, 2026-11-21): se escriben con la instrucción de `video-studio/comercial/titulos.md`
+  (estudio por público, con fuentes) y pasan `video-studio/herramientas/revisar_titulo.py` con 0 errores; el bloque
+  «Título (ficha)» va en la ficha de publicación y en `ficha.json`. El comercial mantiene el estudio.
 - Color con intención: 2 neutros + 1 acento; por qué cada color y cómo ayuda al objetivo va en la dirección
   (sección 3b) y en `ficha.json`; se mide con `video-studio/herramientas/revisar_color.py` (`manual/13`).
 

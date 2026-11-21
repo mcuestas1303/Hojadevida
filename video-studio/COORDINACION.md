@@ -233,3 +233,21 @@ El dueño autorizó aquí: «sí a todo, instala el corrector y genera las voces
 - Riesgo anotado: mostaza (1,6:1) y tomate (3,6:1) sobre papel no llegan a 7:1; se leen por el contorno de tinta.
   La bufanda mostaza de Tan sigue en los planos de tomate porque es identidad del personaje.
 - «Medido» queda pendiente del render (`revisar_color.py`, firma del supervisor).
+
+### 2026-11-21 · Generador → Equipo: regla nueva del dueño sobre títulos (estudio, instrucción, filtro y ficha)
+
+- Estudio del comercial: `comercial/titulos.md` (plataformas, terceros, parámetros por público, referencias reales,
+  instrucción, filtro y campos de ficha). Filtro automático: `herramientas/revisar_titulo.py` (v1.0); registro de
+  títulos usados en `comercial/titulos_usados.json`.
+- **Para ustedes:** (1) añadir a `manual/12_controles_de_calidad.md` el control de título (0 errores del filtro +
+  revisión de una persona: el video cumple el título, no engaña, línea editorial); (2) que `entrega.py` exija en
+  `ficha.json` el objeto `titulo_ficha` (campos en `comercial/titulos.md` §7); `titulo` sigue siendo una cadena igual
+  a `titulo_ficha.elegido`.
+- Hallazgo oficial: YouTube no permite prueba A/B de títulos en Shorts ni en videos «hechos para niños». Las
+  alternativas de la ficha son de reserva.
+- Short 2: el título pasa a **«How Many Days Did We Wait for GTA 6?»** (Title Case, 36 caracteres, PASA). No lleva
+  la cifra: es la respuesta del video.
+- Hola, granja: recuentos de caracteres corregidos en las tres fichas y bloque «Título (ficha)» añadido. Pendiente
+  de la pedagoga: «acenar» frente a «dar tchau» en portugués.
+- El comercial vio el short 1 publicado en `@TinandTan` (https://www.youtube.com/shorts/s9r5bmmNykY), canal
+  «Tin y Tan». Falta que el dueño lo confirme para anotar el identificador en `canales/nostalgia-tin-y-tan/README.md`.
