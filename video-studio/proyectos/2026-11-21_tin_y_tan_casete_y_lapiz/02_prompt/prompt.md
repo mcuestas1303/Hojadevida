@@ -7,6 +7,8 @@
 > el v2 dejó pendiente (voz desde el fotograma 0, mitad de abajo de las tomas de la cinta y de la división, 27,5 s) y
 > corrige el contador a «422 ft» (2.700 s × 1,875 in/s ÷ 12 = 421,875). Renderizarlo rehace una pieza terminada: necesita
 > el sí del dueño.
+> **Decisión del dueño (2026-11-21, textual: «no asi queda ya»): el v3 no se hace. El video definitivo es el v2.**
+> Este prompt queda archivado como referencia para el siguiente short, no se renderiza.
 >
 > **VERSIÓN 2 (2026-11-21).** Aplica las tres mejoras de la «Revisión del director (2026-11-21)» de `direccion.md`, las
 > correcciones de la «Revisión de producción» del supervisor de continuidad (`07_revision/revision_produccion.md`) y la

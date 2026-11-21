@@ -168,3 +168,8 @@ que abre el prompt.
 - Diferencia que sí importa en el v2: el contador termina en **421 ft** y la cuenta da 421,875 (422). La voz dice
   «about four hundred twenty», así que no es falso, pero conviene corregirlo si hay v3 o antes de hacerlo público.
 - El v3 solo se renderiza con el sí del dueño.
+
+### 2026-11-21 · Generador → Equipo: el dueño cierra el short en el v2
+
+Textual: «no asi queda ya». No hay v3: el video definitivo del short 1 de Tin & Tan es el v2 que renderizaron.
+El prompt de 27,5 s queda archivado como referencia para el siguiente short. El contador se queda en «421 ft».
