@@ -52,3 +52,9 @@ Nada de degradados de fondo (cap. 11, regla 7). Un color de acento por plano.
 - Zona de texto fija arriba a la izquierda; los personajes nunca debajo del texto (en la prueba hubo textos sobre
   Tiky). Margen de 90 px a los lados.
 - Suelo a 86 % de la altura.
+
+## Voz
+
+- **Tin:** Kevin. **Tan:** Zelda. Las dos de Higgsfield (`seed_audio`), con los ajustes por defecto.
+- En edición: **10 % más rápido** sin cambiar el tono (`atempo=1.10`) y normalizado a −14 LUFS. Decisión del dueño, 2026-11-21.
+- La voz se genera una sola vez con el texto definitivo; la velocidad y el volumen se ajustan gratis. Detalle en `voces.md`.

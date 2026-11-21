@@ -26,7 +26,19 @@ python3 video-studio/herramientas/estado.py
 | Toda cifra o requisito externo lleva fuente y fecha; si no se leyó, dice «sin verificar» | `comercial/base_conocimiento.md` |
 | Línea editorial del dueño | `infantil/guia_1_a_3.md`, `series/<serie>/serie.md` |
 | El contenido infantil nunca se cruza con personajes para adultos | `personajes/REGISTRO.md` |
+| El consumo de cada video se registra: créditos y uso de Claude | `consumo.md` |
 | Las imágenes se revisan a tamaño completo antes de informar un fallo | Lección 3, más abajo |
+
+## Quién decide qué
+
+El equipo decide lo técnico y lo informa con su razón; al dueño se le llevan las ideas, los ajustes a las ideas, lo
+psicológico y lo que solo él puede hacer. Gastar créditos, instalar, rehacer una pieza y publicar siguen necesitando
+su sí. Regla completa en `CLAUDE.md`.
+
+## Dónde se presenta cada cosa
+
+Los prompts y las fichas se ven en la conversación del Generador de prompts. Todo lo terminado (videos, audios,
+imágenes, revisiones) se le presenta al dueño en la conversación del Equipo de producción audiovisual.
 
 ## El equipo
 
@@ -56,6 +68,7 @@ Sin estas respuestas no se avanza, porque cada una costó retrabajo o créditos 
 | Idiomas | Define voz y paquetes de publicación | `serie.md` |
 | Voz: narrador o personajes; cómo se hace | Define costo y si hay que declarar IA | `serie.md` |
 | Plataformas y formatos | Define aspecto y duración | `formatos.md`, `serie.md` |
+| Canal de cada plataforma (nombre, identificador, si ya existe) | Un canal por público; define el paquete de publicación y la estrategia | `serie.md` |
 | País del titular de las cuentas | Define qué programas de pago existen | `serie.md` |
 | Generador, plan y saldo | Define precios y límites | `generador.md` |
 | Línea editorial | Filtro de todo el contenido | Guía y `serie.md` |
@@ -226,6 +239,7 @@ segundo; clip final a 720p, 1 por segundo. Antes de cada generación se cotiza d
 |---|---|
 | Este manual y el caso de ejemplo | `MANUAL.md`, `casos/` |
 | Reglas de créditos y cambios | `generacion.md` |
+| Consumo por video (créditos y uso de Claude) | `consumo.md` |
 | Formatos de salida | `formatos.md` |
 | Generador y precios | `generador.md` |
 | Personajes | `personajes/<id>/` (ficha, referencias, prompts) y `personajes/REGISTRO.md` |
@@ -279,5 +293,6 @@ Cada una costó tiempo o créditos y por eso es un paso del manual.
 12. **Las políticas de las plataformas se leen en la página oficial, descargada y fechada.**
     Los resúmenes de buscador dieron datos contradictorios.
 13. **El ritmo de redes no se traslada al contenido infantil.** Son plantillas separadas.
+15. **La voz se prueba con el texto real del video y se ajusta en edición.** La velocidad y el volumen se cambian gratis; solo se vuelve a generar si cambia la voz o el texto.
 14. **Lo que se genera con créditos y lo que se corrige con código son cosas distintas:** lo
     primero se hace una vez; lo segundo se puede repetir.

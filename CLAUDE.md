@@ -29,6 +29,35 @@ El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
 - Cada decisión, paso, costo y error se documenta: si cambia el proceso, se actualiza el manual; si
   avanza un proyecto, se actualiza su caso. Nada se deja solo en la conversación.
 - `python3 video-studio/herramientas/estado.py` dice en qué fase está cada personaje, serie y proyecto.
+- El consumo de cada video se anota en `video-studio/consumo.md` al terminar cada fase: créditos de Higgsfield y
+  tokens de cada agente. Sirve para estimar el costo del siguiente video.
+
+## Quién decide qué (regla del dueño, 2026-11-21)
+
+Textual: «Esto no lo puedo decidir yo, por eso te he estado dando elementos para que te capacites técnicamente; ya
+cuando entremos en calor, en lo que voy a acompañar al equipo creativo es con ideas y ajustes a ideas o los
+elementos psicológicos».
+
+- **Decide el equipo, sin preguntarle al dueño:** todo lo técnico y de producción: gancho, ritmo, formato de cada
+  pieza, objetivo de medición, público estimado, herramienta, orden de trabajo, quién produce. Cada decisión se
+  anota con su porqué en el brief del proyecto («Decisiones del equipo») y se le informa después.
+- **Se le lleva al dueño:** ideas y temas, ajustes a las ideas, lo psicológico y emocional del contenido, la línea
+  editorial, y lo que solo él puede hacer (crear cuentas y canales, exportar estadísticas, publicar).
+- **Sigue necesitando su sí:** gastar créditos o dinero, instalar herramientas, rehacer una pieza ya generada y
+  publicar. Eso no cambia.
+- Al informar se le presenta la decisión tomada y su razón, no una lista de opciones.
+
+## Qué se ve en cada conversación (regla del dueño, 2026-11-21)
+
+Textual: «siempre lo terminado preséntamelo en equipo de producción audiovisual; aquí quiero que veamos
+exclusivamente los prompts y fichas».
+
+- **Generador de prompts y carpetas:** solo prompts y fichas (de personaje, pedagógica, técnica, de publicación) y
+  sus definiciones. Aquí no se presentan videos, audios ni imágenes terminados.
+- **Equipo de producción audiovisual:** todo lo terminado se presenta allí: videos, audios, imágenes, revisiones.
+- Lo que el Generador produzca o reciba ya terminado se deja en el repositorio, se anota en
+  `video-studio/COORDINACION.md` con su ruta y se le avisa al equipo; al dueño, aquí, solo se le dice que ya está
+  y dónde verlo.
 
 ## Línea editorial
 

@@ -47,6 +47,7 @@ El canal **«Tiky & Lumi»** (@TikyAndLumi, https://www.youtube.com/channel/UCO6
 ## Recomendación de los expertos (sin confirmar por el dueño)
 
 - Empezar en **inglés**, para público de **EE. UU. mayor de 50 años**.
+  **Confirmado por el dueño el 2026-11-21:** inglés para Estados Unidos, formato vertical y música hecha con código. La franja de edad sigue sin confirmar.
 - Tope de gasto de unos **US$500 por 90 días**. **El dueño todavía no confirmó el presupuesto.**
 
 ## ⚠️ Por decidir con el dueño
@@ -57,7 +58,7 @@ El canal **«Tiky & Lumi»** (@TikyAndLumi, https://www.youtube.com/channel/UCO6
    **Falta crearlo** (lo hace el dueño) y anotar aquí su identificador y enlace.
 3. ~~Aprobación de Tin & Tan v1~~ → aprobada el 2026-11-21.
 4. **Presupuesto.** ¿Se confirma el tope de US$500 por 90 días?
-5. **Voz.** Prueba de voces pendiente (`voces.md`).
+5. ~~Voz~~ → 2026-11-21: **Kevin para Tin y Zelda para Tan** (Higgsfield), aceleradas un 10 % en edición (`voces.md`).
 
 ## Cómo trabaja el equipo en este canal
 

@@ -72,3 +72,11 @@
     se sube dos veces. Detalle: `video-studio/ENTREGA_YOUTUBE.md`.
 30. **Contenido no auténtico:** dos videos seguidos no repiten estructura, música ni estilo de miniatura; el video
     cumple lo que promete el título; nada de material ajeno sin licencia.
+
+## Agregado por el Generador de prompts (2026-11-21)
+
+- **Quién decide qué:** el equipo decide todo lo técnico y de producción y lo informa con su razón; al dueño se le llevan ideas, ajustes a las ideas y criterio psicológico. Gastar créditos, instalar, rehacer y publicar siguen necesitando su sí.
+- **Consumo:** cada video anota créditos y uso de Claude en `video-studio/consumo.md`.
+- **Voz del canal Tin & Tan:** Kevin (Tin) y Zelda (Tan), aceleradas un 10 % en edición.
+- **Lados:** izquierda y derecha se escriben respecto al cuadro, no respecto al personaje.
+- **Dónde se presenta cada cosa (2026-11-21):** en el Generador de prompts solo se ven prompts y fichas; todo lo terminado (videos, audios, imágenes) se le presenta al dueño en Equipo de producción audiovisual.
