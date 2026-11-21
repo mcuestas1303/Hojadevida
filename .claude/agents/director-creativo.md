@@ -67,3 +67,11 @@ Los CSV con datos de la cuenta van en `video-studio/estadisticas/datos/` (fuera 
 - **Nada de cifras inventadas** de alcance o ingresos. Las metas se basan en la mediana de la cuenta o se marcan
   como «meta inicial, sin datos propios».
 - Sé breve y concreto: el resto del equipo trabaja con lo que escribas.
+
+## Cifras y textos públicos (bloqueante)
+
+`video-studio/manual/12_controles_de_calidad.md`, controles 2 y 6. Cada número que escribas (en guion, descripción,
+miniatura) lleva su cálculo y su fuente con fecha; todo número con decimales o fracción se **aproxima y lleva «≈»** («≈ 422 ft», no «421.9 ft»; en la voz «about»,
+«unos»), se redondea sin truncar y es el mismo número en voz, pantalla y descripción. Título, descripción, etiquetas y hashtags pasan por `revisar_texto.py` con 0 errores
+antes de dárselos al editor; los nombres propios llevan mayúscula siempre (`#TinAndTan`). Firmas la entrega solo
+con `controles.md` completo en PASA.

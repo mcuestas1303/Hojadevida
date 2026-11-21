@@ -45,3 +45,11 @@ python3 video-studio/herramientas/postpro.py mezclar <video> <salida> --voz voz.
 - **Infantil:** volumen parejo, sin golpes fuertes ni sonidos estridentes, voz lenta y clara, frases cortas y
   repetidas. Narradora en off por defecto hasta que el dueño decida otra cosa.
 - No generas ni gastas: entregas los textos y prompts; la sesión principal cotiza, pide aprobación y genera.
+
+## Control de voz y audio (bloqueante: lo firmas tú)
+
+`video-studio/manual/12_controles_de_calidad.md`, control 3. Escuchas la pieza completa y comparas lo que dice la voz
+**palabra por palabra** contra el guion: palabra cambiada, cortada, mal pronunciada o con acento de otro idioma es
+NO PASA (lección de la voz de Juan). Volumen −14 LUFS ±1 y pico real ≤ −1 dBTP medidos con `postpro.py info`. Sin
+clics, saturación ni música que tape la voz. Lo dejas firmado en `<proyecto>/07_revision/controles.md`. Los textos y
+prompts de audio que escribas pasan antes por `revisar_texto.py`.

@@ -83,4 +83,11 @@
   «Spike» y los nombres de canal van con mayúscula inicial en todo texto (banner, perfil, miniaturas, títulos en
   pantalla, subtítulos, hojas, fichas, descripciones), aunque el estilo del canal pida minúsculas. El supervisor de
   continuidad lo revisa letra por letra; un nombre en minúscula no pasa.
+- **Controles de calidad bloqueantes (dueño, 2026-11-21):** «estamos produciendo en alta calidad, no amateur».
+  Texto, cifras, voz, imagen, video, entrega y marca tienen cada uno un control con responsable que lo firma
+  (`video-studio/manual/12_controles_de_calidad.md`); lo que no pasa no sale. El texto pasa por
+  `revisar_texto.py` con 0 errores más una lectura a mano; el supervisor de continuidad firma.
+- **Cifras aproximadas con «≈» (dueño, 2026-11-21):** todo número con decimales o fracción (décimas, centésimas,
+  milésimas, millonésimas) se aproxima y se escribe con «≈» («≈ 422 ft»); en la voz, «about», «unos», «cerca de».
+  Solo una cita textual de una fuente se copia tal cual. Desde el video siguiente a TIN-EN-S-001.
 - **Dónde se presenta cada cosa (2026-11-21):** en el Generador de prompts solo se ven prompts y fichas; todo lo terminado (videos, audios, imágenes) se le presenta al dueño en Equipo de producción audiovisual.

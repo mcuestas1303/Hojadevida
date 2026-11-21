@@ -106,6 +106,16 @@ def revisar(carpeta):
                     errores.append(f"la miniatura mide {im.size[0]}x{im.size[1]} (tiene que ser 1280x720)")
         except ImportError:
             avisos.append("sin Pillow no pude medir la miniatura")
+
+    # control de texto bloqueante (regla del dueño, 2026-11-21): ortografía, nombres, puntuación, cifras
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import revisar_texto as RT
+    textos = RT.leer(ficha_ruta)
+    if sub and (carpeta / sub).is_file():
+        textos += RT.leer(carpeta / sub)
+    e_txt, a_txt = RT.revisar_textos(textos, [f.get("idioma") or "en"])
+    errores += [f"texto: {x}" for x in e_txt]
+    avisos += [f"texto: {x}" for x in a_txt]
     return errores, avisos
 
 

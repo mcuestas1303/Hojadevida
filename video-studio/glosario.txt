@@ -1,0 +1,10 @@
+# Palabras correctas que el diccionario no conoce (revisar_texto.py). Una por línea, en minúscula.
+# Antes de agregar una, comprobar que está bien escrita; al lado, en un comentario de la línea anterior, su porqué.
+# nombres propios de marcas y fuentes citadas
+philips
+higgsfield
+# tipografía del estudio (SIL OFL)
+inter
+# herramientas citadas en descripciones
+ffmpeg
+numpy

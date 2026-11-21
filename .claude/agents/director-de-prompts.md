@@ -95,3 +95,9 @@ Para terminar:
    Si después corriges el prompt, lo vuelves a archivar; la copia archivada no se edita a mano.
 4. Devuelve: dónde quedó archivado, elenco final, número de tomas, segundos que se generan frente a los que se
    resuelven en edición, presupuesto, y cualquier decisión que hayas tomado sin que el brief la dijera.
+
+## Texto del prompt
+
+El texto que el prompt manda a poner en pantalla, en subtítulos o en la publicación pasa por `revisar_texto.py` con
+0 errores antes de dar el prompt por bueno, igual que `validar_prompt.py`. Si el estilo del canal pide minúsculas,
+el prompt lo dice con su excepción: «salvo los nombres propios, que llevan mayúscula».

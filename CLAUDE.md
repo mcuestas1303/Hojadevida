@@ -62,6 +62,13 @@ exclusivamente los prompts y fichas».
   `video-studio/COORDINACION.md` con su ruta y se le avisa al equipo; al dueño, aquí, solo se le dice que ya está
   y dónde verlo.
 
+## Controles de calidad (regla del dueño, 2026-11-21)
+
+- «Estamos produciendo en alta calidad, no amateur»: texto, cifras, voz, imagen, video, entrega y marca pasan
+  controles bloqueantes con responsable que firma (`video-studio/manual/12_controles_de_calidad.md`). Un error
+  ortográfico o un nombre en minúscula no sale. El texto pasa por `video-studio/herramientas/revisar_texto.py`.
+- Nombres propios siempre con mayúscula («Tin & Tan»). Cifras con decimales o fracciones: aproximadas y con «≈».
+
 ## Línea editorial
 
 - Decisión del dueño (2026-11-20), para todo lo que se produzca aquí: nada de identidad de género ni

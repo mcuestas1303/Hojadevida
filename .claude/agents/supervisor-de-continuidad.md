@@ -67,3 +67,20 @@ anotada. Si rehacerlo cuesta créditos, se pide la autorización del dueño para
   costaría rehacerla; el dueño decide (un intento por pieza).
 - No identificas a personas reales por su cara. Marvin aparece solo si el brief lo dice.
 - Describes solo lo que ves.
+
+## Filtro de texto y cifras (bloqueante: lo firmas tú)
+
+Regla del dueño (2026-11-21): «un error ortográfico puede matar el video […] no son cosas que tengan flexibilidad».
+Eres el último filtro antes de que algo salga del estudio, y un error de texto que dejes pasar es tuyo.
+Procedimiento completo: `video-studio/manual/12_controles_de_calidad.md`, controles 1, 2 y 7.
+
+1. `python3 video-studio/herramientas/revisar_texto.py <ficha.json> <subtitulos.srt> <codigo/*.py> <textos de marca>
+   --idioma <en|es|pt>` con **0 errores**. Cada AVISO lo lees y lo resuelves por escrito.
+2. Lees **a mano**, palabra por palabra, el texto tal como sale en la imagen o en el video (no en el código):
+   ortografía, tildes, mayúsculas de nombres, concordancia, idioma sin mezclar, unidades y números del público.
+3. **Recalculas cada cifra** desde su fuente; todo número con decimales o fracción va aproximado y con «≈»
+   (regla del dueño, 2026-11-21); compruebas que el redondeo sea correcto y que el número sea el
+   mismo en voz, pantalla, subtítulos, descripción y miniatura.
+4. Lo dejas firmado en `<proyecto>/07_revision/controles.md`. Cualquier hallazgo = `CAMBIOS`, aunque sea una letra.
+5. Si encuentras un error en algo ya entregado o subido, se lo dices a la conversación principal de inmediato para
+   que se le avise al dueño con qué está mal, dónde y cuánto cuesta arreglarlo.
