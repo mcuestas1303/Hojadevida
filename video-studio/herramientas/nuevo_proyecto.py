@@ -2,11 +2,13 @@
 """Crea la carpeta de un video nuevo a partir de la plantilla.
 
 Uso:
-    python3 nuevo_proyecto.py <nombre> [video_de_referencia] [--serie <serie>]
+    python3 nuevo_proyecto.py <nombre> [video_de_referencia] [--serie <serie> | --redes]
 
 Si se pasa un video de referencia, lo copia a 01_referencia/ y lo analiza.
 Con --serie, el proyecto nace como episodio de video-studio/series/<serie>/ y
 recibe la ficha pedagogica, el guion y la revision que llena el equipo creativo.
+Con --redes, usa la plantilla de prompt para redes (gancho, ritmo, texto y sonido);
+no se combina con una serie infantil.
 """
 import datetime
 import re
@@ -20,6 +22,9 @@ ESTUDIO = Path(__file__).resolve().parent.parent
 
 
 def main():
+    redes = "--redes" in sys.argv
+    if redes:
+        sys.argv.remove("--redes")
     serie = None
     if "--serie" in sys.argv:
         i = sys.argv.index("--serie")
@@ -39,6 +44,11 @@ def main():
     if destino.exists():
         sys.exit(f"Ya existe: {destino}")
     shutil.copytree(ESTUDIO / "plantillas" / "proyecto", destino)
+    if redes and serie:
+        shutil.rmtree(destino)
+        sys.exit("--redes no se combina con --serie: el ritmo de redes no es para series infantiles.")
+    if redes:
+        shutil.copy2(ESTUDIO / "plantillas" / "prompt_video_redes.md", destino / "02_prompt" / "prompt.md")
     if serie:
         guion = destino / "02_prompt"
         for nombre in ("ficha_pedagogica", "guion", "revision", "ficha_tecnica", "publicacion", "voz_idiomas"):

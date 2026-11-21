@@ -61,6 +61,7 @@ video-studio/
     ├── validar_prompt.py
     ├── archivar_prompt.py
     ├── puntuar_ficha.py
+    ├── revisar_fotogramas.py
     └── ensamblar.py
 ```
 
@@ -110,6 +111,28 @@ aparece en ella. El validador rechaza el prompt si:
 - se usa un `@id` que no tiene ficha, bloque de identidad o imagen de referencia;
 - una toma no dice quién sale, o usa a alguien que no está en el elenco;
 - alguien del elenco no aparece en ninguna toma.
+
+## Revisión de lo generado
+
+Antes de puntuar la rúbrica, cada clip pasa por una revisión automática que no gasta créditos:
+
+```bash
+python3 video-studio/herramientas/revisar_fotogramas.py <clip> video-studio/proyectos/<proyecto>/07_revision/<toma> --serie granja
+```
+
+Marca imagen congelada, fotogramas vacíos, más de 3 destellos por segundo y planos más cortos
+que el mínimo de la serie, y deja una hoja con los fotogramas marcados. Señala dónde mirar; no
+autoriza a regenerar.
+
+## Contenido para redes y adultos
+
+Para piezas que le hablan al adulto (reels, anuncios, personajes no infantiles) hay una
+plantilla aparte, `plantillas/prompt_video_redes.md`, con gancho, mapa de ritmo, texto en
+pantalla y sonido. No se usa en series infantiles.
+
+```bash
+python3 video-studio/herramientas/nuevo_proyecto.py "nombre" --redes
+```
 
 ## Créditos, definición y cambios
 
