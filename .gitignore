@@ -11,3 +11,9 @@ video-studio/estadisticas/datos/
 # Entregas al publicador: videos y miniaturas no van al repo público (solo ficha.json)
 video-studio/proyectos/*/08_entrega/**/*.mp4
 video-studio/proyectos/*/08_entrega/**/*.mov
+# Videos terminados y pistas que se regeneran con el código del proyecto: no van al repo público
+video-studio/proyectos/*/06_final/*.mp4
+video-studio/proyectos/*/06_final/*.mov
+video-studio/proyectos/*/05_audio/efectos.wav
+video-studio/proyectos/*/05_audio/musica.wav
+video-studio/proyectos/*/05_audio/mezcla*.wav

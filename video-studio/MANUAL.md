@@ -294,5 +294,6 @@ Cada una costó tiempo o créditos y por eso es un paso del manual.
     Los resúmenes de buscador dieron datos contradictorios.
 13. **El ritmo de redes no se traslada al contenido infantil.** Son plantillas separadas.
 15. **La voz se prueba con el texto real del video y se ajusta en edición.** La velocidad y el volumen se cambian gratis; solo se vuelve a generar si cambia la voz o el texto.
+16. **Los videos terminados no se suben al repositorio, que es público.** Se entregan por Drive; en el repositorio queda el código que los vuelve a renderizar.
 14. **Lo que se genera con créditos y lo que se corrige con código son cosas distintas:** lo
     primero se hace una vez; lo segundo se puede repetir.

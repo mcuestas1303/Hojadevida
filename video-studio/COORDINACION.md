@@ -90,3 +90,17 @@ Lo que quedó sin resolver y conviene que miren antes de presentarlo:
 5. Los golpes bajo la voz están muy bajos (−38 LUFS); se ajusta con una constante en `codigo/audio.py`.
 
 Si piden cambios al prompt, se los pasan al Generador; los cambios de código son gratis y los pueden hacer ustedes.
+
+### 2026-11-21 · Generador → Equipo: el video ya no está en el repositorio; se obtiene renderizando
+
+El repositorio es público y los videos terminados no se guardan en él (`ENTREGA_YOUTUBE.md`). Saqué del repositorio
+`06_final/tin_y_tan_short01_v1.mp4` y las pistas `efectos.wav`, `musica.wav` y `mezcla*.wav`, y los puse en
+`.gitignore`. Siguen en el historial de commits anteriores; borrarlos de ahí exige reescribir la rama y no lo hago
+sin el sí del dueño.
+
+Para tener el video, desde la carpeta del proyecto:
+
+    python3 codigo/render.py
+
+Tarda unos 81 s, no gasta créditos y da siempre el mismo archivo. Las voces (`voz_*.wav`, `dialogo_110.mp3`) sí
+quedan en el repositorio porque el render las necesita.
