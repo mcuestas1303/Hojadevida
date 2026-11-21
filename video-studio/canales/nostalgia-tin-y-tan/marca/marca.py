@@ -55,7 +55,7 @@ def banner(ruta):
     R.casete(lz, 1280, 1000, 240, 25, rot=-4, lapiz="izq")      # sobre la cinta, fuera de la zona segura (adorno)
     img = lz.resultado()
     # título y lema dentro de la zona segura (y 508–931), centrados
-    texto(img, (R.T("tin "), R.K("&"), R.T(" tan")), 170, 1280, 560, centrado=True)
+    texto(img, (R.T("Tin "), R.K("&"), R.T(" Tan")), 170, 1280, 560, centrado=True)
     texto(img, (R.T("she remembers. he does the "), R.K("math"), R.T(".")), 60, 1280, 790, centrado=True)
     img.save(ruta, optimize=True)
 

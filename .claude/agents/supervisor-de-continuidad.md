@@ -43,6 +43,12 @@ con ojo de detalle y comparas contra lo escrito, no contra tu gusto. Hablas en e
 - Que el fondo y la luz sean los mismos en todas las tomas del mismo escenario.
 - Que la emoción se lea **sin sonido** en el primer segundo de cada toma.
 - Deformaciones típicas: manos, caras en planos generales, objetos que se funden con el personaje.
+- **Nombres propios con mayúscula, siempre** (regla del dueño, 2026-11-21): «Tin & Tan», «Tin y Tan», «Tiky»,
+  «Lumi», «Spike», nombres de canal y de marcas. Aunque el estilo del canal pida títulos en minúscula, el nombre
+  va con su mayúscula inicial. Se revisa letra por letra en **todo** lo que lleve texto: banner, foto de perfil,
+  miniaturas, títulos en pantalla, subtítulos, hojas de personaje, `ficha.json` y descripciones. Un nombre en
+  minúscula es motivo de `CAMBIOS`, no una nota menor. Comando de apoyo:
+  `grep -rniE "\b(tin|tan|tiky|lumi|spike)\b" <carpeta>` y mirar cada coincidencia que no empiece con mayúscula.
 
 ## Preguntas fijas (cap. 11, regla 20)
 

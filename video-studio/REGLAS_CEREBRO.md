@@ -79,4 +79,8 @@
 - **Consumo:** cada video anota créditos y uso de Claude en `video-studio/consumo.md`.
 - **Voz del canal Tin & Tan:** Kevin (Tin) y Zelda (Tan), aceleradas un 10 % en edición.
 - **Lados:** izquierda y derecha se escriben respecto al cuadro, no respecto al personaje.
+- **Nombres propios con mayúscula, siempre (dueño, 2026-11-21):** «Tin & Tan» / «Tin y Tan», «Tiky», «Lumi»,
+  «Spike» y los nombres de canal van con mayúscula inicial en todo texto (banner, perfil, miniaturas, títulos en
+  pantalla, subtítulos, hojas, fichas, descripciones), aunque el estilo del canal pida minúsculas. El supervisor de
+  continuidad lo revisa letra por letra; un nombre en minúscula no pasa.
 - **Dónde se presenta cada cosa (2026-11-21):** en el Generador de prompts solo se ven prompts y fichas; todo lo terminado (videos, audios, imágenes) se le presenta al dueño en Equipo de producción audiovisual.

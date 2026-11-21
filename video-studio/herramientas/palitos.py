@@ -421,7 +421,7 @@ def suelo_linea(lz, y, x0, x1):
 
 def hoja_vueltas(pid, ruta):
     lz = Lienzo(1920, 1080)
-    titulo(lz, f"{PERSONAJES[pid]['nombre'].lower()} · vueltas", 90, 60)
+    titulo(lz, f"{PERSONAJES[pid]['nombre']} · vueltas", 90, 60)
     suelo_linea(lz, 900, 120, 1800)
     for i, (vista, mira) in enumerate((("frente", 1), ("perfil", 1), ("perfil", -1), ("espalda", 1))):
         x = 330 + i * 420
@@ -432,7 +432,7 @@ def hoja_vueltas(pid, ruta):
 
 def hoja_expresiones(pid, ruta):
     lz = Lienzo(1920, 1080)
-    titulo(lz, f"{PERSONAJES[pid]['nombre'].lower()} · expresiones", 90, 60)
+    titulo(lz, f"{PERSONAJES[pid]['nombre']} · expresiones", 90, 60)
     for i, exp in enumerate(EXPRESIONES):
         col, fila = i % 4, i // 4
         x, y = 300 + col * 440, 370 + fila * 420
@@ -443,7 +443,7 @@ def hoja_expresiones(pid, ruta):
 
 def hoja_poses(pid, ruta):
     lz = Lienzo(1920, 1080)
-    titulo(lz, f"{PERSONAJES[pid]['nombre'].lower()} · poses", 90, 60)
+    titulo(lz, f"{PERSONAJES[pid]['nombre']} · poses", 90, 60)
     poses = ["parado", "saluda", "senala", "piensa", "pregunta", "explica", "encoge", "celebra", "camina"]
     expr = {"saluda": "feliz", "senala": "concentrado", "piensa": "pensando", "pregunta": "curiosidad",
             "explica": "feliz", "encoge": "pensando", "celebra": "eureka", "camina": "feliz", "parado": "feliz"}
@@ -460,7 +460,7 @@ def hoja_principal(ruta):
     suelo_linea(lz, 930, 300, 1620)
     dibujar(lz, "tan", 720, 930, 720, pose="pregunta", expresion="curiosidad", viento=0.4, espejo=True)
     dibujar(lz, "tin", 1200, 930, 720, pose="explica", expresion="feliz")
-    titulo(lz, "tin & tan", 90, 60, tam=72)
+    titulo(lz, "Tin & Tan", 90, 60, tam=72)
     lz.d.text((92 * SS, 150 * SS), "she remembers. he does the math.", font=fuente(34 * SS), fill=color("marron"))
     lz.guardar(ruta)
 
