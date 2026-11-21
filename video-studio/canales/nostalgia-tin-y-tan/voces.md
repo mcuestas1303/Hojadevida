@@ -1,4 +1,4 @@
-# Prueba de voces · canal Tiky & Lumi
+# Prueba de voces · canal de nostalgia (Tin & Tan)
 
 > **Pendiente, sin empezar.** Decide el dueño. Instalar o pagar cualquier cosa necesita su sí.
 
@@ -23,5 +23,5 @@ Fuera por ahora: **ElevenLabs**, porque pide crear una cuenta y su opción grati
 1. El mismo texto de unos 60 s (por ejemplo, el guion de la prueba de 30 s más 4 líneas) con cada voz.
 2. Archivos con letras (A, B, C, D) sin decir cuál es cuál; también se mezcla el orden.
 3. Mismo volumen para todas (`postpro.py normalizar`, −14 LUFS) para que no gane la que suena más fuerte.
-4. El dueño escucha, elige una para Lumi y una para Tiky, y recién entonces se revela qué voz era cada letra.
+4. El dueño escucha, elige una para Tan y una para Tin, y recién entonces se revela qué voz era cada letra.
 5. La elegida se anota en la línea **Voz:** de la ficha de cada personaje y en `../README.md`.

@@ -5,8 +5,8 @@ listo para generar, con el elenco definido y el costo calculado antes de gastar.
 
 ## Canales
 
-`canales/<canal>/` guarda las decisiones, pruebas y pendientes de cada canal. Hoy: `canales/tiky-and-lumi/`
-(YouTube @TikyAndLumi, formato nostalgia; con decisiones abiertas sobre público y diseño).
+`canales/<canal>/` guarda las decisiones, pruebas y pendientes de cada canal. Hoy: `canales/nostalgia-tin-y-tan/`
+(formato nostalgia con Tin & Tan, dibujados con `herramientas/palitos.py`).
 
 ## Equipo de producción
 

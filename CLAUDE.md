@@ -12,7 +12,8 @@ El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
   `supervisor-de-continuidad`, `analista-de-video`. Su formación está en `video-studio/manual/`.
 - El **objetivo comercial** (monetizar, presencia, recordación, comunidad, conversión, viralidad…) lo fija el dueño
   en el brief de cada proyecto. Si falta, se pregunta.
-- Solo actúan los personajes de `video-studio/personajes/REGISTRO.md` (Tiky, Lumi, Spike). Sus carpetas terminadas
+- Solo actúan los personajes de `video-studio/personajes/REGISTRO.md` (Tiky, Lumi, Spike, Tin, Tan). Tin & Tan son
+  los muñecos de palitos del canal de nostalgia y se dibujan con `video-studio/herramientas/palitos.py`. Sus carpetas terminadas
   están en Google Drive, `Personajes/`.
 - Antes de generar: cotizar con `estimate_video_cost` / `estimate_image_cost` / `estimate_audio_cost`, decir el número
   y esperar aprobación. Lo editable se hace gratis con `video-studio/herramientas/postpro.py`.

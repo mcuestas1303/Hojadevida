@@ -50,12 +50,12 @@ bocetos con FLUX.1 schnell en Colab (`creador-personajes/colab/`); todo lo que h
 
 ## Ruta local: gráficos dibujados con código
 
-Probada el 2026-11-20 en la PC del dueño (`canales/tiky-and-lumi/pruebas/2026-11-20_prueba_30s.md`): Python con
+Probada el 2026-11-20 en la PC del dueño (`canales/nostalgia-tin-y-tan/pruebas/2026-11-20_prueba_30s.md`): Python con
 Pillow y numpy dibuja cada fotograma y ffmpeg arma el MP4. **Costo en créditos: 0.** Render a unas 2 veces la
 duración del video. Sirve para dibujos simples, contadores, diagramas y textos animados; no para personajes en 3D.
 Lecciones: dibujar al doble y reducir (suavizado), tipografía con todos los símbolos, contadores que solo suben, zonas
-libres para texto. HyperFrames o Remotion (cap. 11) son la versión más completa de esta ruta, si el dueño aprueba
-instalarlos.
+libres para texto. Los personajes de palitos (Tin & Tan) ya tienen su motor: `herramientas/palitos.py`. HyperFrames o Remotion (cap. 11)
+son la versión más completa de esta ruta, si el dueño aprueba instalarlos.
 
 ## Disciplina de gasto (la cumple todo el equipo)
 

@@ -13,7 +13,7 @@ Nada se genera sin cotización y aprobación del dueño.
 **Si el video viene con prompt y carpeta de la conversación «Generador de prompts y carpetas para videos»**
 (pedido del dueño, 2026-11-20: el equipo trabaja según los prompts generados), se parte de ese prompt: se copia a
 `02_prompt/`, el equipo completa `direccion.md` desde él y solo propone cambios donde choque con el manual o con una
-decisión del dueño. Los canales con reglas propias están en `video-studio/canales/` (hoy: `tiky-and-lumi/`).
+decisión del dueño. Los canales con reglas propias están en `video-studio/canales/` (hoy: `nostalgia-tin-y-tan/`).
 
 1. Identifica **personaje(s)** en `video-studio/personajes/REGISTRO.md`. Si piden a alguien no cargado, dilo y ofrece
    los disponibles. No mezcles públicos (infantil vs. adultos).

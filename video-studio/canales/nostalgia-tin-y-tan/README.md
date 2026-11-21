@@ -1,4 +1,4 @@
-# Canal «Tiky & Lumi»
+# Canal de nostalgia · Tin & Tan
 
 > Relevo recibido el 2026-11-20 desde la conversación «Keter: habilidades y crecimiento». Pedido del dueño, textual:
 > *«esto debe quedar archivado en equipo de producción audiovisual y recordá que equipo de producción audiovisual
@@ -7,11 +7,22 @@
 > Desde ahora **la producción del canal es de este equipo**, a partir de los prompts que entrega la conversación
 > «Generador de prompts y carpetas para videos». La prueba de 30 s la hizo la conversación de Keter por error.
 
+## Personajes: Tin & Tan (decisión del dueño, 2026-11-21)
+
+> Textual: *«Si creo que nos confundimos crea los nuevos personajes seria tin & tan es para los videos que parecen
+> palitos»*.
+
+- Los muñecos de palitos de este canal son **Tin** (`@tin`, el que hace la cuenta) y **Tan** (`@tan`, la que
+  recuerda). Fichas en `video-studio/personajes/tin/` y `tan/`; diseño en código en `herramientas/palitos.py`;
+  bitácora en `creador-personajes/afinado/tin-y-tan.md`. **Versión 1, por aprobar.**
+- **Tiky y Lumi siguen siendo de la serie infantil** (`series/granja/`) y no aparecen en este canal.
+- Estilo visual del canal: `DESIGN.md`.
+
 ## Datos del canal
 
 | Campo | Valor |
 |---|---|
-| Nombre | Tiky & Lumi |
+| Nombre | Tiky & Lumi (así se creó; **por decidir si se renombra a «Tin & Tan»**) |
 | Identificador | @TikyAndLumi |
 | Enlace | https://www.youtube.com/channel/UCO6HZWJfilFtsrI4GBEm2gw |
 | Tipo de cuenta | cuenta de marca del dueño |
@@ -23,7 +34,7 @@
 
 ## Formato decidido
 
-- **Nostalgia** con dos personajes propios, Tiky y Lumi.
+- **Nostalgia** con dos personajes propios, Tin y Tan.
 - Mecánica: una **pregunta nostálgica** con una **respuesta calculada de verdad**, contada con **dibujos simples
   propios**.
 - **No clonar** el canal de muñecos «Doodle Digest». Repetir la misma pregunta cambiando el objeto choca con la regla
@@ -34,19 +45,15 @@
 - Empezar en **inglés**, para público de **EE. UU. mayor de 50 años**.
 - Tope de gasto de unos **US$500 por 90 días**. **El dueño todavía no confirmó el presupuesto.**
 
-## ⚠️ Por decidir con el dueño antes de producir
+## ⚠️ Por decidir con el dueño
 
-Lo que dice este relevo choca con decisiones anteriores del estudio. El equipo **no** elige por el dueño:
-
-1. **Público.** En el estudio, Tiky y Lumi son los personajes de la serie infantil `granja` (1–3 años, «hecho para
-   niños», `series/granja/serie.md`). Este canal apunta a adultos mayores de 50 con nostalgia. ¿Son los mismos
-   personajes en otro canal y otro registro, o el canal de nostalgia lleva personajes distintos?
-2. **Diseño.** Los diseños aprobados son un pollito y una vaca de juguete de vinilo 3D (`personajes/tiky/`,
-   `personajes/lumi/`; carpetas en Drive `Personajes/Universo juguetes`). La prueba usó figuras provisorias de palitos
-   (Tiky con cabeza naranja y gorra; Lumi verde azulado con rodete y bufanda) porque los diseños no estaban en la PC.
-   ¿El canal usa los diseños aprobados, una versión 2D simple de ellos, o un diseño nuevo?
-3. **Nombre.** Si el canal de nostalgia lleva personajes distintos, compartir el nombre «Tiky & Lumi» con la serie
-   infantil mezcla públicos en las recomendaciones de YouTube (cap. 10, «públicos separados»).
+1. ~~Público y diseño de los personajes~~ → resuelto el 2026-11-21: Tin & Tan para este canal; Tiky y Lumi siguen en
+   la serie infantil.
+2. **Nombre del canal.** El canal de YouTube se creó como «Tiky & Lumi» (@TikyAndLumi). Con los personajes nuevos,
+   ¿se renombra a «Tin & Tan»? Lo cambia el dueño en YouTube Studio (Personalización → Información básica); el
+   identificador nuevo depende de que esté libre. Conviene hacerlo **antes** de publicar el primer video, para no
+   mezclar el nombre con el de la serie infantil.
+3. **Aprobación de Tin & Tan v1** (`creador-personajes/afinado/tin-y-tan.md`).
 4. **Presupuesto.** ¿Se confirma el tope de US$500 por 90 días?
 5. **Voz.** Prueba de voces pendiente (`voces.md`).
 

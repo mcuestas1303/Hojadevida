@@ -9,6 +9,8 @@ Ningún prompt puede usar un personaje que no esté aquí.
 | `@tiky` | Tiky | Pollito curioso | Infantil (1–3 años) | `tiky/ficha.md` | `Personajes/Universo juguetes/Tiky (pollito)` |
 | `@lumi` | Lumi | Vaca de las buenas ideas | Infantil (1–3 años) | `lumi/ficha.md` | `Personajes/Universo juguetes/Lumi (vaca)` |
 | `@spike` | Spike | Tecladista excéntrico, humor absurdo | Jóvenes y adultos | `spike/ficha.md` | `Personajes/Spike` |
+| `@tan` | Tan | Muñeca de palitos que recuerda y pregunta (v1, por aprobar) | Adultos, canal de nostalgia | `tan/ficha.md` | `Personajes/Tin & Tan (palitos)` |
+| `@tin` | Tin | Muñeco de palitos que hace la cuenta (v1, por aprobar) | Adultos, canal de nostalgia | `tin/ficha.md` | `Personajes/Tin & Tan (palitos)` |
 
 Cada carpeta de Drive tiene `01 Diseño aprobado` (referencia principal), `02 Hojas de personaje` (vueltas y
 emociones, cuando existen), `03 Pruebas descartadas` (no se usa nunca) y `bitacora.md`.
@@ -22,5 +24,7 @@ emociones, cuando existen), `03 Pruebas descartadas` (no se usa nunca) y `bitaco
 | El científico, el afro verde | en reserva | nombre y aprobación del dueño |
 | Lumi Bravo | sin generar | diseño |
 
-**Separación de públicos:** el contenido infantil (`@tiky`, `@lumi`) nunca se cruza con `@spike`, «M» ni humor para
-adultos, y se publica en un canal propio.
+**Tin y Tan no se generan con IA:** se dibujan con código (`herramientas/palitos.py`), que es su diseño oficial.
+
+**Separación de públicos:** el contenido infantil (`@tiky`, `@lumi`) nunca se cruza con `@spike`, `@tin`, `@tan`, «M»
+ni humor para adultos, y se publica en un canal propio.
