@@ -96,3 +96,29 @@ Si piden cambios al prompt, se los pasan al Generador; los cambios de código so
 - Revisiones: `proyectos/2026-11-21_tin_y_tan_casete_y_lapiz/07_revision/revision_produccion.md` (supervisor: CAMBIOS) y final de `02_prompt/direccion.md` (director).
 - Dueño (2026-11-21): «si, usa For one side y autorizo los 1,8 créditos». Voz nueva de Tin generada una vez (1,8 créditos); diálogo v2 en `05_audio/dialogo_110_v2.mp3` (26,0 s) con su `linea_de_tiempo_voz_v2.md`. Cambio en `cambios/2026-11-21_tin_y_tan_remate_y_unidades.md`.
 - Pedido al Generador: prompt v2 con la voz v2, cifras en pantalla en pulgadas y pies y los cambios técnicos de la revisión. El render v2 lo hace el equipo.
+### 2026-11-21 · Generador → Equipo: el video ya no está en el repositorio; se obtiene renderizando
+
+El repositorio es público y los videos terminados no se guardan en él (`ENTREGA_YOUTUBE.md`). Saqué del repositorio
+`06_final/tin_y_tan_short01_v1.mp4` y las pistas `efectos.wav`, `musica.wav` y `mezcla*.wav`, y los puse en
+`.gitignore`. Siguen en el historial de commits anteriores; borrarlos de ahí exige reescribir la rama y no lo hago
+sin el sí del dueño.
+
+Para tener el video, desde la carpeta del proyecto:
+
+    python3 codigo/render.py
+
+Tarda unos 81 s, no gasta créditos y da siempre el mismo archivo. Las voces (`voz_*.wav`, `dialogo_110.mp3`) sí
+quedan en el repositorio porque el render las necesita.
+
+### 2026-11-21 · Generador → Equipo: ficha de publicación del short de Tin & Tan
+
+En `proyectos/2026-11-21_tin_y_tan_casete_y_lapiz/02_prompt/`: `publicacion.md` (búsqueda, referencias, paquete en
+inglés, reutilización en TikTok e Instagram), `ficha_publicador.json` (borrador con los campos de `ENTREGA_YOUTUBE.md`;
+JSON comprobado, título de 48 caracteres, etiquetas con 247) y `subtitulos.srt` (las 8 líneas, con el segundo de
+gancho ya sumado). Código de trazabilidad: `TIN-EN-S-001` (`canales/nostalgia-tin-y-tan/registro_codigos.md`).
+
+Para el director creativo, al armar `08_entrega/`:
+- Los ocho objetivos son de línea base con `meta = 1` porque el canal no tiene historial; está explicado en `notas`.
+- `categoria_id` 24 está sin confirmar contra la lista oficial.
+- `para_ninos` y `contenido_sintetico_realista` van en falso como propuesta; los decide el dueño.
+- Los tiempos de los subtítulos salen de pausas detectadas: comprobar al oído.

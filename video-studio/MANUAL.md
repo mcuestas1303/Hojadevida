@@ -2,8 +2,8 @@
 
 Este es el procedimiento completo del estudio. Sirve para repetir con cualquier personaje nuevo
 lo que se hizo con Tiky y Lumi. Cada fase dice qué se hace, quién lo hace, qué archivo queda,
-con qué comando, cuándo se da por lista y cuánto cuesta. El caso real, con fechas, costos y
-errores, está en `casos/tiky_y_lumi.md`.
+con qué comando, cuándo se da por lista y cuánto cuesta. Hay dos casos reales, con fechas, costos y errores:
+`casos/tiky_y_lumi.md` (serie infantil con generador de video) y `casos/tin_y_tan.md` (canal de adultos dibujado con código).
 
 Regla del dueño (2026-11-21): **todo lo que se trabaje queda documentado como plantilla.** Si
 el proceso cambia, se cambia primero este manual; si aparece un paso nuevo, se agrega aquí con
@@ -294,5 +294,6 @@ Cada una costó tiempo o créditos y por eso es un paso del manual.
     Los resúmenes de buscador dieron datos contradictorios.
 13. **El ritmo de redes no se traslada al contenido infantil.** Son plantillas separadas.
 15. **La voz se prueba con el texto real del video y se ajusta en edición.** La velocidad y el volumen se cambian gratis; solo se vuelve a generar si cambia la voz o el texto.
+16. **Los videos terminados no se suben al repositorio, que es público.** Se entregan por Drive; en el repositorio queda el código que los vuelve a renderizar.
 14. **Lo que se genera con créditos y lo que se corrige con código son cosas distintas:** lo
     primero se hace una vez; lo segundo se puede repetir.

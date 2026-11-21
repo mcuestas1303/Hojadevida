@@ -1,0 +1,78 @@
+{
+  "codigo": "TIN-EN-S-001",
+  "canal": "en",
+  "titulo": "Rewind a Cassette With a Pencil: How Many Turns?",
+  "descripcion": "Remember rewinding a cassette with a pencil? Tin and Tan work out how many turns it really takes.\nA nostalgia check for anyone who grew up with cassettes in the 1970s, 80s and 90s.\n\nThe math, step by step:\n- A C90 tape plays 45 minutes per side, which is 2,700 seconds.\n- Tape speed: 4.76 cm/s (1 7/8 inches per second), the standard speed of the compact cassette.\n- 2,700 s x 4.76 cm/s = 12,852 cm, about 128.5 m of tape.\n- One pencil turn winds about 11 cm (pi x 3.5 cm).\n- 12,852 cm divided by 11 cm is about 1,170 turns.\n- At 2 turns per second: about 585 seconds, almost 10 minutes. For one song.\n\nThis is an estimate. It assumes an average spool diameter of 3.5 cm, which grows as the tape winds. Tape speed: 4.76 cm/s. Real tapes and real hands vary.\n\nSource for the tape speed: Philips Technical Review, vol. 31, 1970: \"The design of the Compact Cassette is based on a tape speed of 4.76 cm/s.\"\nhttps://www.musicaememoria.com/docs/PTechReview-31-1970-077.pdf\n\nVoices are AI-generated. The drawings, music and sound effects are original, made with code.\n\n#cassette #nostalgia #retro",
+  "etiquetas": [
+    "cassette",
+    "cassette tape",
+    "rewind a cassette with a pencil",
+    "rewinding cassettes",
+    "pencil and cassette",
+    "cassette nostalgia",
+    "70s nostalgia",
+    "80s nostalgia",
+    "90s nostalgia",
+    "nostalgia",
+    "retro",
+    "retro tech",
+    "Gen X",
+    "baby boomers",
+    "remember when",
+    "cassette math",
+    "stick figure animation",
+    "Tin and Tan"
+  ],
+  "idioma": "en",
+  "categoria_id": "24",
+  "contenido_sintetico_realista": false,
+  "para_ninos": false,
+  "objetivos": [
+    {
+      "metrica": "linea_base_vistas",
+      "meta": 1,
+      "plazo_dias": 7
+    },
+    {
+      "metrica": "linea_base_vistas",
+      "meta": 1,
+      "plazo_dias": 28
+    },
+    {
+      "metrica": "linea_base_viewed_vs_swiped_pct",
+      "meta": 1,
+      "plazo_dias": 7
+    },
+    {
+      "metrica": "linea_base_porcentaje_visto_medio",
+      "meta": 1,
+      "plazo_dias": 7
+    },
+    {
+      "metrica": "linea_base_porcentaje_visto_medio",
+      "meta": 1,
+      "plazo_dias": 28
+    },
+    {
+      "metrica": "linea_base_duracion_media_vista_s",
+      "meta": 1,
+      "plazo_dias": 28
+    },
+    {
+      "metrica": "linea_base_fuentes_de_trafico",
+      "meta": 1,
+      "plazo_dias": 28
+    },
+    {
+      "metrica": "linea_base_publico_eeuu_45_mas_pct",
+      "meta": 1,
+      "plazo_dias": 28
+    }
+  ],
+  "archivos": {
+    "video": "video.mp4",
+    "miniatura": "miniatura.png",
+    "subtitulos": "subtitulos.srt"
+  },
+  "notas": "BORRADOR del equipo; falta el video final y la miniatura. PROPUESTAS que decide el dueño: para_ninos=false (público adulto de EE. UU., 45 a 70 años; riesgo: YouTube puede cambiar el ajuste por su cuenta si ve personajes animados que atraen a niños, y entonces se pierden comentarios y anuncios personalizados) y contenido_sintetico_realista=false (dibujo de palitos hecho con código, claramente irreal; la voz es sintética pero no imita a una persona real; si una voz sintética genérica debe declararse, está sin verificar). Objetivos: el canal no tiene historial, son de línea base; meta 1 significa una lectura registrada, no una meta de audiencia (explicación en publicacion.md). Fuentes: velocidad de 4,76 cm/s en Philips Technical Review vol. 31, 1970, https://www.musicaememoria.com/docs/PTechReview-31-1970-077.pdf, vista solo en resumen de buscador el 2026-11-21 (abrir el PDF antes de publicar); 45 min por lado de un C90 y 4,76 cm/s (1 7/8 pulgadas por segundo) vistos en resúmenes de buscador el 2026-11-21. El diámetro de 3,5 cm es un supuesto declarado en la descripción y el resultado es una estimación. Música y efectos: propios, hechos con código (Python y numpy), sin material de terceros; la música aún no entra al video hasta que el dueño lo decida. Voz: generada con Higgsfield (Kevin para Tin y Zelda para Tan, 3 créditos); sus términos de uso comercial se vieron solo en resumen de buscador el 2026-11-21, sin leer el texto completo. Imagen: dibujo hecho con código (palitos.py), no es IA generativa. Categoría 24 (Entertainment) de memoria, confirmar con videoCategories.list antes de publicar. Sin fecha_sugerida: no hay dato de mejor hora. Riesgos: que YouTube marque el video como para niños; comentarios que discuten que el lápiz solo servía para cintas enredadas; política de contenido inauténtico si los videos siguientes repiten la estructura; miniatura 1280x720 armada con el fotograma 9:16 de la toma 5 (hacia 6,0 s) centrado sobre papel crema, sin texto añadido. Todo se sube en privado hasta el visto bueno del dueño."
+}
