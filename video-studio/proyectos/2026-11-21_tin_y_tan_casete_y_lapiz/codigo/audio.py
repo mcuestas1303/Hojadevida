@@ -32,6 +32,9 @@ LUFS_GOLPES = -18.0           # pista de efectos completa
 LUFS_MUSICA = -24.0
 DB_BAJO_VOZ = -24.0           # golpes que suenan debajo de la voz, respecto a la voz
 LUFS_VOZ_NOMINAL = -14.0
+TECHO_GOLPES = 10 ** (-3.0 / 20)   # ningún golpe pasa de −3 dBFS: se redondea con tanh en vez de recortar
+TECHO_MEZCLA_DBTP = -1.0
+MAX_EMPUJE = 2.0                   # lo más que se empuja un golpe contra el techo (6 dB): más ensucia el sonido
 
 # ---------------------------------------------------------------- golpes de la sección 13: (segundo, sonido, a qué va atado)
 CORTES_BORRON = [1.0, 3.5, 5.0, 9.5, 12.0, 17.0, 18.5, 23.5, 28.0]   # «clic suave de borrón» en la tabla de sonido
@@ -104,8 +107,8 @@ def cola(x, ms=5.0):
 def s_thunk(rng):
     """Golpe seco y grave de 80 ms (más 40 ms de cola): el casete que cae."""
     x, t = barrido(95, 48, 0.12)
-    y = x * np.exp(-t / 0.028)
-    y[: int(0.006 * SR)] += 0.5 * ruido(rng, 0.006, 200, 2500) * np.linspace(1, 0, int(0.006 * SR))
+    y = x * np.exp(-t / 0.045)
+    y[: int(0.006 * SR)] += 0.3 * ruido(rng, 0.006, 200, 2500) * np.linspace(1, 0, int(0.006 * SR))
     return cola(ataque(y, 0.5), 20)
 
 
@@ -114,7 +117,7 @@ def s_whoosh(rng, dur=0.32):
     t = tiempo(dur)
     env = np.sin(np.pi * np.minimum(1, t / dur)) ** 2
     env[: int(0.004 * SR)] = np.maximum(env[: int(0.004 * SR)], np.linspace(0, 0.25, int(0.004 * SR)))
-    return x * env * 0.8
+    return x * env * 1.3
 
 
 def s_clic(rng, f=1700.0):
@@ -377,11 +380,17 @@ def construir(verboso=True):
     # 1) los golpes que suenan bajo la voz quedan 24 dB por debajo de ella (−14 − 24 = −38 LUFS medidos con R128)
     bajo = llevar_a(bajo, LUFS_VOZ_NOMINAL + DB_BAJO_VOZ)
     # 2) los del gancho y el cierre (sin voz) se suben hasta que la pista completa de efectos mida −18 LUFS
+    #    sin pasar del techo de −3 dBFS (limitador suave con tanh). Si el techo no deja llegar, se dice lo que midió.
+    def techo(x):
+        return TECHO_GOLPES * np.tanh(x / TECHO_GOLPES)
     g = 1.0
-    for _ in range(6):
-        actual, _ = medir_pista(fuera * g + bajo)
-        g *= 10 ** ((LUFS_GOLPES - actual) / 20)
-    efectos = fuera * g + bajo
+    for _ in range(8):
+        actual, _ = medir_pista(techo(fuera * g) + bajo)
+        if abs(LUFS_GOLPES - actual) < 0.05:
+            break
+        g = min(g * 10 ** ((LUFS_GOLPES - actual) / 20), MAX_EMPUJE / max(1e-9, float(np.max(np.abs(fuera)))))
+    fuera_g = techo(fuera * g)
+    efectos = fuera_g + bajo
     musica = llevar_a(pista_musica(), LUFS_MUSICA)
     sin_musica = voz + efectos
     mezcla = sin_musica + musica
@@ -393,7 +402,7 @@ def construir(verboso=True):
         "voz (dialogo_110.mp3 retrasada 1,0 s, sin tocar)": [lufs_voz, pico_voz],
         "efectos.wav": list(medir(AUDIO / "efectos.wav")),
         "efectos bajo la voz (1,0 a 27,9 s)": list(medir_pista(bajo)),
-        "efectos fuera de la voz (gancho y cierre)": list(medir_pista(fuera * g)),
+        "efectos fuera de la voz (gancho y cierre)": list(medir_pista(fuera_g)),
         "musica.wav": list(medir(AUDIO / "musica.wav")),
         "mezcla_sin_musica.wav": list(medir(AUDIO / "mezcla_sin_musica.wav")),
         "mezcla.wav": list(medir(AUDIO / "mezcla.wav")),
@@ -436,7 +445,7 @@ def main():
     filas, mal = verificar()
     (AUDIO / "medidas_audio.json").write_text(json.dumps(
         {"niveles_lufs_y_pico_dbtp": niveles,
-         "golpes": [{"segundo": t, "sonido": n, "atado_a": q, "inicio_medido": i, "en_su_tiempo": ok}
+         "golpes": [{"segundo": t, "sonido": n, "atado_a": q, "inicio_medido": i, "en_su_tiempo": bool(ok)}
                     for t, n, q, i, ok in filas]}, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     if "--verificar" in sys.argv:
         for t, n, q, i, ok in filas:
