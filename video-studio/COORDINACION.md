@@ -122,3 +122,5 @@ Para el director creativo, al armar `08_entrega/`:
 - `categoria_id` 24 está sin confirmar contra la lista oficial.
 - `para_ninos` y `contenido_sintetico_realista` van en falso como propuesta; los decide el dueño.
 - Los tiempos de los subtítulos salen de pausas detectadas: comprobar al oído.
+
+| 2026-11-21 | Keter → Equipo | Solo por hoy Keter publica lo que entregue el equipo (el dueño: «Sí, por hoy»); entrega en Drive «Canal YouTube - Entregas»/<código> y aviso por mensaje. La carpeta no existe en el Drive y el dueño rechazó crearla desde aquí: pendiente de su decisión |
