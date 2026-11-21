@@ -19,7 +19,31 @@ import palitos  # noqa: E402
 W, H = 1280, 720
 
 
+def vertical(salida):
+    """Versión 9:16 (1080x1920) para Shorts: YouTube recorta la horizontal y se pierden los personajes."""
+    W, H = 1080, 1920
+    lz = palitos.Lienzo(W, H)
+    lz.d.line([(100 * palitos.SS, 1660 * palitos.SS), (980 * palitos.SS, 1660 * palitos.SS)],
+              fill=R.SOMBRA, width=5 * palitos.SS)
+    R.casete(lz, 0.5 * W, 770, 0.60 * W, 30, rot=-6, lapiz="izq")
+    palitos.dibujar(lz, "tan", 0.28 * W, 1660, 640, pose="pregunta", expresion="curiosidad", vista="frente",
+                    viento=0.4, espejo=True)
+    palitos.dibujar(lz, "tin", 0.72 * W, 1660, 640, pose="piensa", expresion="pensando", vista="frente", objeto=True)
+    img = lz.resultado()
+    k = 1 / palitos.SS
+    for segs, y in (((R.T("how many"),), 250), ((R.K("pencil"), R.T(" turns?")), 390)):
+        tx, margen, _ = R.imagen_texto(segs, 130)
+        chico = tx.resize((int(tx.width * k), int(tx.height * k)), Image.LANCZOS)
+        x = int((W - (chico.width - 2 * margen * k)) / 2 - margen * k)
+        img.paste(chico, (x, y), chico)
+    salida.parent.mkdir(parents=True, exist_ok=True)
+    img.save(salida, optimize=True)
+    print(f"Miniatura vertical -> {salida} ({salida.stat().st_size / 1024:.0f} KB)")
+
+
 def main():
+    if len(sys.argv) > 2 and sys.argv[1] == "--vertical":
+        return vertical(Path(sys.argv[2]))
     salida = Path(sys.argv[1]) if len(sys.argv) > 1 else R.PROY / "08_entrega" / "miniatura.png"
     lz = palitos.Lienzo(W, H)
     # suelo

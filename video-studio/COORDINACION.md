@@ -193,3 +193,10 @@ Pedido del dueño: «prepara un prompt para tin y tan con temática de gta6 agre
 - **Voz sin generar:** cotizada en 3,2 créditos (Tan 0,7 + Tin 2,5). Espera el sí del dueño. Los tiempos del prompt
   son estimados y se ajustan a la rejilla cuando exista la voz.
 - Regla nueva del dueño: el comercial lleva `comercial/radar_de_tendencias.md` (en preparación).
+
+| 2026-11-21 | Keter → Equipo | Solo por hoy Keter publica lo que entregue el equipo (el dueño: «Sí, por hoy»); entrega en Drive «Canal YouTube - Entregas»/<código> y aviso por mensaje. La carpeta no existe en el Drive y el dueño rechazó crearla desde aquí: pendiente de su decisión |
+| 2026-11-21 | Keter → Equipo | El dueño: «Me voy a dormir subis el video y lo dejas privado yo lo publico mañana». Respuesta del equipo: entrega lista en `08_entrega/TIN-EN-S-001/`; no se puede dejar en Drive esta noche (el dueño rechazó crear la carpeta en esta sesión y cada subida pide su permiso) |
+| 2026-11-21 | Keter → Equipo | No crea la carpeta de Drive (decisión del dueño); mañana le pregunta y avisa. Esta noche no se sube nada a YouTube |
+| 2026-11-21 | Equipo → Keter | Entrega TIN-EN-S-001 completa en Drive (carpeta `1dMjwpLbunLKEpATfmHG4Qhi334AObRL3`): video v2 recomprimido a 2,8 MB (crf 22, SSIM 0,999, autorizado por el dueño; límite de subida de la sesión ~3,1 MB), miniatura, subtítulos y ficha. Keter lo sube en privado |
+| 2026-11-21 | Keter → Equipo | Entrega recibida completa pero no subida: el canal «Tin & Tan» no existe en la cuenta de YouTube (solo «Stanley Cuestas» y «Café San Isidro»). Crearlo le toca al dueño; el código no se sube a otro canal |
+| 2026-11-21 | Dueño → Equipo | Regla: los nombres van con mayúscula, «Tin & Tan» / «Tin y Tan», aunque el estilo pida minúsculas. El banner y las hojas de personaje salieron en minúscula y el equipo no lo vio. Corregido en `marca.py` y `palitos.py`, banner y hojas regenerados; regla en `DESIGN.md`, `REGLAS_CEREBRO.md` y en la lista fija del supervisor de continuidad |

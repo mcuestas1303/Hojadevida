@@ -23,6 +23,9 @@ Nada de degradados de fondo (cap. 11, regla 7). Un color de acento por plano.
 
 - Títulos y cifras: **Inter Display Medium** (en Windows, si no está instalada: Segoe UI Semibold).
 - Siempre en **minúsculas**, alineadas a la **izquierda**; nunca mayúsculas centradas.
+- **Excepción obligatoria: los nombres propios llevan mayúscula inicial** (regla del dueño, 2026-11-21): «Tin & Tan»,
+  «Tin y Tan», «Tin», «Tan». El banner salió como «tin & tan» y el dueño lo rechazó; desde entonces el supervisor de
+  continuidad revisa cada nombre letra por letra antes de entregar.
 - La tipografía tiene que tener todos los símbolos que se usan (en la prueba, «≈» y «→» salieron como cuadrados):
   antes de renderizar, comprobar los glifos o escribir «about» y una flecha dibujada.
 - Subtítulos: 1 a 3 palabras, la palabra clave en mostaza.
