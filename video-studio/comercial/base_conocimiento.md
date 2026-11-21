@@ -433,3 +433,12 @@ Cláusula de VPN o ubicación falsa en los términos de YouTube, AdSense, Instag
 | Hecho | Cita (inglés) | URL y fecha de descarga |
 |---|---|---|
 | El Salvador está en la lista oficial de lugares donde se puede solicitar el Programa de socios de YouTube | "You can sign up for the YouTube Partner Program in the following areas" (la lista incluye "El Salvador") | https://support.google.com/youtube/answer/7101720?hl=en (2026-11-20) |
+
+## 13. Tendencias y temporadas: remite al radar
+
+Regla del dueño (2026-11-21): el comercial debe enterarse de lo que va a entrar en tendencia o ya lo es (caso GTA 6, que el equipo no vio venir). El método semanal de 20 minutos, el filtro de oportunidad, la regla de anticipación, el calendario de 6 meses, las tendencias de la semana, la bitácora y la lista de lo que no se pudo abrir están en `video-studio/comercial/radar_de_tendencias.md`. Aquí solo quedan dos hechos de plataforma que cambian el método:
+
+| Hecho | URL y fecha |
+|---|---|
+| YouTube retiró su página «Tendencias» en julio de 2025 (la reemplazan gráficos por categoría). Visto en resumen de buscador | https://techcrunch.com/2025/07/10/youtube-is-getting-rid-of-its-trending-page-and-trending-now-list (2026-11-21) |
+| La pestaña «Inspiración» de YouTube Studio se retira desde agosto de 2026; la ayuda remite a Ask Studio, que un canal completo «hecho para niños» no tiene (§5). Visto en resumen de buscador | https://support.google.com/youtube/answer/15575509?hl=en (2026-11-21) |
