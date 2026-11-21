@@ -60,6 +60,7 @@ Responsable: `director-de-prompts`
 | # | Objetivo | Cómo se comprueba en el video | Dónde | Peso | Crítico | Puntaje | Evidencia |
 |---|---|---|---|---|---|---|---|
 | D1 | [objetivo] | [indicador observable] | [toma] | [1-3] | [sí/no] | | |
+| D2 | Color con intención: 2 neutros + 1 acento suaves, sin acentos estridentes; por qué y cómo ayuda al objetivo pedagógico (manual cap. 13, sección 3b de la dirección; lo escribe el director de fotografía) | `revisar_color.py`: ≈ 85 % o más en paleta, sin saltos de luminosidad, fondo que no compite | todas | 2 | sí | | |
 
 ## Comercial e inteligencia digital
 

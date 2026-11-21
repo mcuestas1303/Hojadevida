@@ -75,3 +75,9 @@ miniatura) lleva su cálculo y su fuente con fecha; todo número con decimales o
 «unos»), se redondea sin truncar y es el mismo número en voz, pantalla y descripción. Título, descripción, etiquetas y hashtags pasan por `revisar_texto.py` con 0 errores
 antes de dárselos al editor; los nombres propios llevan mayúscula siempre (`#TinAndTan`). Firmas la entrega solo
 con `controles.md` completo en PASA.
+
+## Color y objetivo
+
+Validas la sección 3b «Color con intención» de la dirección: que el acento esté donde trabaja el objetivo (la
+palabra clave, el llamado a la acción o el objeto del gancho) y que la métrica con la que se verá sea la del KPI.
+Copias la decisión al campo `color` de `ficha.json` (`entrega.py` lo exige). Manual: `manual/13_color_con_intencion.md`.

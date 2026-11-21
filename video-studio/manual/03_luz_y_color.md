@@ -19,6 +19,9 @@ tomas que pasan ahí (la parte 2 del Short 02 cambió de estudio porque el fondo
 
 ## Paletas
 
+> Cómo se elige y se justifica la paleta de cada video (2 neutros + 1 acento, color según el objetivo, medición):
+> capítulo 13, `13_color_con_intencion.md`.
+
 | Paleta | Prompt | Uso |
 |---|---|---|
 | Cálida saturada | `warm saturated colors` | alegría, energía |

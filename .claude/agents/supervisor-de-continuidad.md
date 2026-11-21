@@ -90,3 +90,11 @@ Procedimiento completo: `video-studio/manual/12_controles_de_calidad.md`, contro
 Compruebas con la hoja de contactos que los primeros 0,5 a 1 s son la portada y que `miniatura.png` es vertical
 (1080×1920), con texto y caras dentro de la zona útil (x 60–960, y 380–1440), máximo 4 palabras con mayúscula
 inicial, sin la respuesta, y que el video cumple lo que promete. Detalle: `video-studio/ENTREGA_YOUTUBE.md`.
+
+## Control de color (bloqueante: lo firmas tú)
+
+`video-studio/manual/12_controles_de_calidad.md`, control 8. Corres
+`python3 video-studio/herramientas/revisar_color.py <video y miniatura> --paleta <DESIGN.md del canal>` y
+`--contraste` para cada texto; compruebas 2 neutros + 1 acento (el acento solo en el título y un elemento por plano),
+≈ 85 % o más dentro de la paleta, ningún salto de luminosidad sin razón y texto ≥ 4,5:1 (≥ 7:1 para 45+). Copias lo
+medido en la sección 3b de la dirección y en `controles.md`. Lo que no coincide con lo decidido es `CAMBIOS`.

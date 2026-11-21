@@ -33,6 +33,7 @@ PLANTILLA = {
     "objetivos": [{"metrica": "vistas", "meta": 0, "plazo_dias": 28}],
     "fecha_sugerida": "",
     "archivos": {"video": "video.mp4", "miniatura": "miniatura.png", "subtitulos": "subtitulos.srt"},
+    "color": {"neutros": [], "acento": "", "por_que": "", "objetivo": "", "medido": ""},
     "notas": "",
 }
 
@@ -130,6 +131,17 @@ def revisar(carpeta):
         if short:
             avisos.append("Short: la portada va también en los primeros 0,5 a 1 s del video (regla 29); el "
                           "supervisor la revisa con la hoja de contactos")
+
+    # decisión de color (regla del dueño, 2026-11-21; manual/13_color_con_intencion.md)
+    color = f.get("color")
+    if not isinstance(color, dict):
+        errores.append("falta «color»: neutros, acento, por_que, objetivo y medido (manual/13_color_con_intencion.md)")
+    else:
+        for c in ("neutros", "acento", "por_que", "objetivo", "medido"):
+            if not color.get(c):
+                errores.append(f"«color» no dice «{c}»")
+        if color.get("neutros") and len(color["neutros"]) != 2:
+            errores.append("«color.neutros» lleva 2 colores (regla 2 neutros + 1 acento)")
 
     # control de texto bloqueante (regla del dueño, 2026-11-21): ortografía, nombres, puntuación, cifras
     sys.path.insert(0, str(Path(__file__).resolve().parent))

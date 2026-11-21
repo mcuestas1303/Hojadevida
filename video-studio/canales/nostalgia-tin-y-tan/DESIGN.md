@@ -19,6 +19,17 @@ medidas viven en `video-studio/herramientas/palitos.py`; si se cambian allí, se
 
 Nada de degradados de fondo (cap. 11, regla 7). Un color de acento por plano.
 
+**Por qué esta paleta** (manual, cap. 13; regla 2 neutros + 1 acento):
+- **Neutros:** papel `#F3E9D2` (fondo) y tinta `#2B2420` (líneas y texto), con contraste 12,6:1. Papel crema y tinta
+  marrón remiten a impresos y fotos de los 70 y 80; cálidos y de saturación baja (≈ 17 % medido) para la nostalgia de
+  un público de 45 o más, y se leen bien con su vista.
+- **Acento de cada pieza:** mostaza `#E8B33B`, solo en la palabra clave o la cifra y en un objeto (el lápiz). Sobre
+  papel da 1,6:1, así que **siempre lleva contorno de tinta**. Tomate `#C8553D` (3,6:1) solo como alerta o cifra
+  final, con contorno, y nunca en el mismo plano que la mostaza.
+- **Identidad, no acento:** naranja (Tin), verde azulado (Tan), marrón y rubor son los personajes.
+- **Objetivo:** retención (el acento lleva el ojo a la cifra en el primer segundo) y recordación (la misma paleta en
+  todo el canal).
+
 ## Tipografía
 
 - Títulos y cifras: **Inter Display Medium** (en Windows, si no está instalada: Segoe UI Semibold).

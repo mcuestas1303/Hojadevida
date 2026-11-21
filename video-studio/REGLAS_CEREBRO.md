@@ -105,4 +105,8 @@
 - **Cifras aproximadas con «≈» (dueño, 2026-11-21):** todo número con decimales o fracción (décimas, centésimas,
   milésimas, millonésimas) se aproxima y se escribe con «≈» («≈ 422 ft»); en la voz, «about», «unos», «cerca de».
   Solo una cita textual de una fuente se copia tal cual. Desde el video siguiente a TIN-EN-S-001.
+- **Color con intención (dueño, 2026-11-21):** cada video lleva en su dirección (sección 3b) y en `ficha.json`
+  (`color`) por qué se eligió cada color y cómo ayuda al objetivo. La paleta lleva 2 neutros y 1 acento, y el acento
+  va solo en el título y en un elemento (reel de andrea.eskailet). La decide el director de fotografía, la valida el
+  director creativo y el supervisor la mide con `revisar_color.py`. Texto ≥ 4,5:1, ≥ 7:1 para 45+. Manual: cap. 13.
 - **Dónde se presenta cada cosa (2026-11-21):** en el Generador de prompts solo se ven prompts y fichas; todo lo terminado (videos, audios, imágenes) se le presenta al dueño en Equipo de producción audiovisual.

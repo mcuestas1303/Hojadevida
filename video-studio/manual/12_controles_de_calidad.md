@@ -87,6 +87,16 @@ marca de agua, título, descripción, etiquetas, hashtags, descripción del cana
 2. `controles.md` del proyecto con los controles 1 a 5 en PASA.
 3. Solo entonces se le pide al dueño el visto bueno para subir (`ENTREGA_YOUTUBE.md`).
 
+## 8. Color: lo decide el director de fotografía, lo firma el supervisor
+
+1. La sección «Color con intención» de la dirección está completa: 2 neutros y 1 acento, por qué, cómo ayuda al
+   objetivo y riesgos de lectura (`manual/13_color_con_intencion.md`).
+2. `revisar_color.py` sobre el video y la miniatura terminados: ≈ 85 % o más dentro de la paleta, sin saltos de
+   luminosidad sin razón, fondo que no compite con el personaje.
+3. Contraste de cada texto ≥ 4,5:1 (≥ 7:1 para público de 45 o más), medido con `--contraste`; un acento claro
+   lleva contorno oscuro.
+4. El acento está solo en el título y en un elemento por plano. Lo medido se copia a la sección y a `ficha.json`.
+
 ## 7. Marca del canal: la firma el supervisor
 
 Nombre, colores, tipografía, lema y lados iguales en banner, perfil, marca de agua, miniaturas, hojas y videos

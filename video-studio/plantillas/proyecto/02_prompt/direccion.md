@@ -45,6 +45,18 @@
 - **Se resuelve en edición:**
 - **Tomas encadenadas (último fotograma → keyframe):**
 
+## 3b. Color con intención — director-de-fotografia (valida director-creativo)
+
+> `video-studio/manual/13_color_con_intencion.md`. Regla: 2 neutros + 1 acento; el acento va solo en el título y en
+> un elemento.
+
+- **Neutros (2):** (hex · para qué: fondo, texto/líneas)
+- **Acento (1):** (hex · dónde va · dónde no va)
+- **Por qué esta paleta:** (emoción que busca, para este público)
+- **Cómo ayuda al objetivo:** (objetivo comercial del brief → qué hace el color → con qué métrica se verá)
+- **Riesgos de lectura:** (público mayor, daltonismo, pantalla chica; contraste de texto ≥ 4,5:1, ≥ 7:1 para 45+)
+- **Medido (lo llena el supervisor):** (salida de `revisar_color.py`: % en paleta, contraste, saltos entre planos)
+
 ## 4. Actuación — director-de-animacion
 
 | Toma | Personaje | Pose inicial (keyframe) | Anticipación → acción → pose final | Secundaria | Mirada | Panel de la hoja |
@@ -81,7 +93,7 @@
 - **Cortes y transiciones:**
 - **Loop:**
 - **Subtítulos y texto en pantalla:**
-- **Color:**
+- **Color:** (igualar tomas según la sección 3b; `postpro.py color` o LUT; nada fuera de la paleta decidida)
 - **Salidas por plataforma:**
 
 ## 7. Ruta de producción y presupuesto — jefe-de-produccion

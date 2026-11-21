@@ -63,3 +63,9 @@ Armas la portada dentro del video (primeros 0,5 a 1 s, sin corte brusco hacia lo
 como `miniatura.png` de 1080×1920, con las reglas de `video-studio/ENTREGA_YOUTUBE.md` («Portada de los Shorts»):
 zona útil x 60–960, y 380–1440; máximo 4 palabras con mayúscula inicial; objeto en el centro y caras mirándolo.
 Con la tipografía del canal, no otra.
+
+## Color
+
+Aplicas e igualas el color que decidió el director de fotografía (sección 3b de la dirección), con `postpro.py color`
+o un LUT, gratis. No entra ningún color fuera de la paleta decidida; el acento va solo donde dice la sección.
+Un texto en acento claro lleva contorno oscuro. Manual: `video-studio/manual/13_color_con_intencion.md`.
