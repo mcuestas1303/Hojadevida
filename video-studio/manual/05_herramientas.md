@@ -48,6 +48,15 @@ bocetos con FLUX.1 schnell en Colab (`creador-personajes/colab/`); todo lo que h
 | Cámara lenta, zoom, repetición, títulos | `postpro.py` (gratis) | — |
 | Voz de un personaje fija | `create_voice` una vez y reutilizar el ID | — |
 
+## Ruta local: gráficos dibujados con código
+
+Probada el 2026-11-20 en la PC del dueño (`canales/tiky-and-lumi/pruebas/2026-11-20_prueba_30s.md`): Python con
+Pillow y numpy dibuja cada fotograma y ffmpeg arma el MP4. **Costo en créditos: 0.** Render a unas 2 veces la
+duración del video. Sirve para dibujos simples, contadores, diagramas y textos animados; no para personajes en 3D.
+Lecciones: dibujar al doble y reducir (suavizado), tipografía con todos los símbolos, contadores que solo suben, zonas
+libres para texto. HyperFrames o Remotion (cap. 11) son la versión más completa de esta ruta, si el dueño aprueba
+instalarlos.
+
 ## Disciplina de gasto (la cumple todo el equipo)
 
 1. **Cotizar antes** con `estimate_video_cost`, `estimate_image_cost` o `estimate_audio_cost` y decir el número.

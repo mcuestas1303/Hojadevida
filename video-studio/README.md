@@ -3,6 +3,11 @@
 Carpeta de trabajo para pasar de una idea, o de un video de referencia, a un prompt de video
 listo para generar, con el elenco definido y el costo calculado antes de gastar.
 
+## Canales
+
+`canales/<canal>/` guarda las decisiones, pruebas y pendientes de cada canal. Hoy: `canales/tiky-and-lumi/`
+(YouTube @TikyAndLumi, formato nostalgia; con decisiones abiertas sobre público y diseño).
+
 ## Equipo de producción
 
 El estudio tiene un equipo completo de producción de audio y video, entrenado con el manual de `manual/`
