@@ -1,5 +1,13 @@
 # Prompt de video para redes — How many pencil turns to rewind a cassette?
 
+> **ESTADO (2026-11-21): esta especificación es la del siguiente render (v3), no la del video v2 que ya existe.**
+> El equipo de producción renderizó un v2 antes de recibir este prompt, con `codigo/render_v2.py` y `codigo/audio_v2.py`:
+> dura 30,0 s, la voz entra en el segundo 1,0 y el contador de cinta termina en «421 ft». Lo producido está descrito en
+> `07_revision/v2_vuelta_01/notas.md`; esa nota y el código son la especificación del v2. Este prompt resuelve justo lo que
+> el v2 dejó pendiente (voz desde el fotograma 0, mitad de abajo de las tomas de la cinta y de la división, 27,5 s) y
+> corrige el contador a «422 ft» (2.700 s × 1,875 in/s ÷ 12 = 421,875). Renderizarlo rehace una pieza terminada: necesita
+> el sí del dueño.
+>
 > **VERSIÓN 2 (2026-11-21).** Aplica las tres mejoras de la «Revisión del director (2026-11-21)» de `direccion.md`, las
 > correcciones de la «Revisión de producción» del supervisor de continuidad (`07_revision/revision_produccion.md`) y la
 > solicitud de cambio **aprobada por el dueño**, `video-studio/cambios/2026-11-21_tin_y_tan_remate_y_unidades.md` («si, usa

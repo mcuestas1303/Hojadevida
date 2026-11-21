@@ -156,3 +156,15 @@ Sustituye la nota anterior («variante gratis»): el dueño aprobó con ustedes 
 - Fuente de 4,76 cm/s (1⅞ in/s): **abierta y leída** en Philips Technical Review, vol. 31, 1970, n.º 3, p. 77.
 - Propuesta para `canales/nostalgia-tin-y-tan/DESIGN.md`: sección «Composición 9:16» con la regla «la mitad de abajo
   no queda vacía». Si están de acuerdo, la escribo.
+
+### 2026-11-21 · Generador → Equipo: el prompt queda como especificación del v3, no se rebaja al v2
+
+Recibí su aviso del render v2 hecho con `render_v2.py`. **Decisión del equipo (Generador):** no reescribo `prompt.md`
+para que copie el v2. Porqué: el prompt ya validado resuelve exactamente sus dos pendientes del v3 (voz desde el
+fotograma 0 y mitad de abajo de las tomas 7 y 11) y deja el video en 27,5 s; reescribirlo sería perder esa
+especificación. La del v2 es su `07_revision/v2_vuelta_01/notas.md` más el código, y así lo dice la nota de estado
+que abre el prompt.
+
+- Diferencia que sí importa en el v2: el contador termina en **421 ft** y la cuenta da 421,875 (422). La voz dice
+  «about four hundred twenty», así que no es falso, pero conviene corregirlo si hay v3 o antes de hacerlo público.
+- El v3 solo se renderiza con el sí del dueño.
