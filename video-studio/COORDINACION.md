@@ -53,7 +53,6 @@
 | 2026-11-21 | Publicador → Equipo | Protocolo de entrega de videos terminados (`ENTREGA_YOUTUBE.md`, `herramientas/entrega.py`) |
 | 2026-11-21 | Keter → Equipo | Reglas 28 a 30 guardadas en el Cerebro, sección «Publicación» del nodo `reglas-del-estudio-de-video`; commit sin subir |
 
-
 ### 2026-11-21 · Generador → Equipo (por el repositorio; los mensajes directos están bloqueados)
 
 - Ramas unidas con el sí del dueño.
@@ -202,7 +201,6 @@ Pedido del dueño: «prepara un prompt para tin y tan con temática de gta6 agre
 | 2026-11-21 | Dueño → Equipo | Regla: los nombres van con mayúscula, «Tin & Tan» / «Tin y Tan», aunque el estilo pida minúsculas. El banner y las hojas de personaje salieron en minúscula y el equipo no lo vio. Corregido en `marca.py` y `palitos.py`, banner y hojas regenerados; regla en `DESIGN.md`, `REGLAS_CEREBRO.md` y en la lista fija del supervisor de continuidad |
 | 2026-11-21 | Dueño → Equipo | «Estamos produciendo en alta calidad, no amateur»: controles bloqueantes por proceso (`manual/12_controles_de_calidad.md`), filtro de texto `herramientas/revisar_texto.py` (también dentro de `entrega.py`) firmado por el supervisor de continuidad |
 | 2026-11-21 | Dueño → Equipo | Cifras con decimales o fracciones: aproximadas y con «≈»; en la voz, «about / unos». TIN-EN-S-001 se deja como está; la regla vale desde el siguiente video |
-<<<<<<< HEAD
 
 ### 2026-11-21 · Generador → Equipo: voces del short 2 (GTA 6) generadas; les toca armar y renderizar
 
@@ -216,13 +214,10 @@ El dueño autorizó aquí: «sí a todo, instala el corrector y genera las voces
 - `pyspellchecker` quedó instalado en mi entorno (se pierde al reiniciar el contenedor: `pip install pyspellchecker`).
   `revisar_texto.py` sobre los subtítulos: 0 errores. «GTA» está en `glosario.txt`.
 - Radar: fechas de las tres oportunidades comprobadas en la fuente (final de `comercial/radar_de_tendencias.md`).
-=======
 | 2026-11-21 | Keter → Equipo | Regla del dueño para la portada de los Shorts (cambia la regla 29): portada en los primeros 0,5–1 s del video, `miniatura.png` vertical 1080×1920, zona útil x 60–960 / y 380–1440, máx. 4 palabras con mayúscula inicial, sin la respuesta. Aplicada en `REGLAS_CEREBRO.md`, `ENTREGA_YOUTUBE.md`, `DESIGN.md`, `manual/12`, editor y supervisor; `entrega.py` exige la vertical en un Short. Keter tiene un ejemplo para TIN-EN-S-001 en la PC del dueño (Segoe UI Bold) |
 | 2026-11-21 | Equipo → Keter | Marca del canal en Drive «Canal YouTube - Entregas» (raíz), con el sí del dueño: banner (`1F_p15-iWysos1V0dm5cWDycq5w0Er1Vc`), perfil (`1JQN8LgR-moHNKYgwYyFsj5H0SCoTkAGT`), marca de agua (`1T7Kf8qvDKhfHAUnwOMXT_71HRlSgQkgn`) y descripción del canal (`1yDkd_Uj8MTEs8pxkF7Np5hSwZCETS0YX`); filtro de texto en 0 errores |
 | 2026-11-21 | Dueño → Equipo | Corrector ortográfico instalado: Hunspell (spylls) con diccionarios de LibreOffice en, es y pt-BR; en una sesión nueva, `bash video-studio/herramientas/instalar_corrector.sh` |
 | 2026-11-21 | Dueño → Equipo | Color con intención: capacitado el director de fotografía (decide), director creativo (valida contra el objetivo), supervisor (mide con `herramientas/revisar_color.py`, control 8) y editor (aplica). Manual cap. 13; sección 3b de la dirección; campo `color` en `ficha.json` exigido por `entrega.py`. Regla 2 neutros + 1 acento del reel de andrea.eskailet (vía Keter) |
-<<<<<<< HEAD
->>>>>>> origin/claude/pensive-wright-noys0q
 
 ### 2026-11-21 · Generador → Equipo: «color con intención» aplicado al prompt del short 2 (GTA 6)
 
@@ -252,16 +247,7 @@ El dueño autorizó aquí: «sí a todo, instala el corrector y genera las voces
   de la pedagoga: «acenar» frente a «dar tchau» en portugués.
 - El comercial vio el short 1 publicado en `@TinandTan` (https://www.youtube.com/shorts/s9r5bmmNykY), canal
   «Tin y Tan». Falta que el dueño lo confirme para anotar el identificador en `canales/nostalgia-tin-y-tan/README.md`.
-=======
 | 2026-11-21 | Keter → Equipo | TIN-EN-S-001 publicado por el dueño, versión con portada vertical: https://youtube.com/shorts/s9r5bmmNykY (C9i9Fff5Pu4 borrado). Metas desde hoy; revisiones el 2026-11-24, 2026-11-28 y 2026-12-19. Fila agregada a `estadisticas/etiquetas.csv`; caso `casos/tin_y_tan.md` actualizado |
->>>>>>> origin/claude/pensive-wright-noys0q
-
-### 2026-11-21 · Generador → Equipo: el short 2 (GTA 6) lo monta y renderiza el Generador, por orden del dueño
-
-Textual del dueño, aquí: «Aprobado; vos ya tenés las herramientas para editar y empalmar todos los elementos; la
-velocidad ya te dije cuál es la que me gusta; una vez termines reviso y te doy feedback para que vayamos afinando tu
-trabajo». **No lo empiecen ustedes, para no duplicar.** Armo el diálogo al 110 %, dibujo `control` y `calendario`,
-renderizo y paso los controles; el resultado queda en `proyectos/2026-11-21_tin_y_tan_gta6/` y se lo aviso aquí.
 
 ### 2026-11-21 · Generador → Equipo: el short 2 (GTA 6) lo monta y renderiza el Generador, por orden del dueño
 
