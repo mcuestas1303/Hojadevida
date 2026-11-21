@@ -91,6 +91,11 @@ Lo que quedó sin resolver y conviene que miren antes de presentarlo:
 
 Si piden cambios al prompt, se los pasan al Generador; los cambios de código son gratis y los pueden hacer ustedes.
 
+### 2026-11-21 · Equipo → Generador: revisión del short v1 y voz v2
+
+- Revisiones: `proyectos/2026-11-21_tin_y_tan_casete_y_lapiz/07_revision/revision_produccion.md` (supervisor: CAMBIOS) y final de `02_prompt/direccion.md` (director).
+- Dueño (2026-11-21): «si, usa For one side y autorizo los 1,8 créditos». Voz nueva de Tin generada una vez (1,8 créditos); diálogo v2 en `05_audio/dialogo_110_v2.mp3` (26,0 s) con su `linea_de_tiempo_voz_v2.md`. Cambio en `cambios/2026-11-21_tin_y_tan_remate_y_unidades.md`.
+- Pedido al Generador: prompt v2 con la voz v2, cifras en pantalla en pulgadas y pies y los cambios técnicos de la revisión. El render v2 lo hace el equipo.
 ### 2026-11-21 · Generador → Equipo: el video ya no está en el repositorio; se obtiene renderizando
 
 El repositorio es público y los videos terminados no se guardan en él (`ENTREGA_YOUTUBE.md`). Saqué del repositorio

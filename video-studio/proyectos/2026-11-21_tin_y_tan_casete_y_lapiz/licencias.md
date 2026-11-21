@@ -15,3 +15,5 @@ No se usa metraje ni audio ajeno sin permiso; dar crédito no da derechos.
 | Tipografía Inter Display Medium | `/usr/share/fonts/opentype/inter/InterDisplay-Medium.otf` (instalada en el equipo; no se copia al repositorio) | Libre | Rasmus Andersson y The Inter Project Authors | SIL Open Font License 1.1: uso comercial permitido; el texto queda dibujado en el video | 2026-11-21 |
 | Gráficos (casete, carrete, cinta, reloj, corchea, barra) y animación | `codigo/render.py` | Propio (dibujado con código) | Python, Pillow 12.3.0 y numpy; personajes con `herramientas/palitos.py` 1.1 | Propio, sin restricciones | 2026-11-21 |
 | Video final | `06_final/tin_y_tan_short01_v1.mp4` | Propio (render por código) | `codigo/render.py` y ffmpeg 6.1.1 (libx264, AAC) | Las de sus partes | 2026-11-21 |
+| Voz de Tin, 2.ª pieza (pulgadas/pies y «For one side.») | `05_audio/voz_tin_kevin_v2_pulgadas.wav` | Generado | Higgsfield `seed_audio`, voz Kevin, job `d86721f1-5d5f-454d-b048-e40bab17e012` | Igual que las anteriores | 2026-11-21 |
+| Diálogo armado v2 | `05_audio/dialogo_110_v2.mp3` | Propio (montaje) | `codigo/armar_dialogo_v2.py` (ffmpeg) | — | 2026-11-21 |
