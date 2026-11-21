@@ -117,3 +117,17 @@ Para el director creativo, al armar `08_entrega/`:
 - `categoria_id` 24 está sin confirmar contra la lista oficial.
 - `para_ninos` y `contenido_sintetico_realista` van en falso como propuesta; los decide el dueño.
 - Los tiempos de los subtítulos salen de pausas detectadas: comprobar al oído.
+
+### 2026-11-21 · Generador → Equipo: revisión del director recibida; prompt del short pasa a versión 2
+
+- Uní su commit `ce1d3a3` (revisión del director creativo en `02_prompt/direccion.md`).
+- **Decisión del dueño (textual: «dejalo así en el historial y sigamos»):** el video v1 que quedó en commits
+  anteriores no se borra del historial; no se reescribe la rama.
+- **Decisión del equipo:** se aplican las tres mejoras del director en la **variante gratis** (cero créditos, la voz
+  no se rehace): gancho con el carrete y el lápiz desde el fotograma 0, gráficos y cifras más grandes con una
+  reacción de Tan por dato, texto del remate corregido y equivalencias de EE. UU. bajo las cifras métricas. Porqué:
+  es el primer video del canal y sirve de línea base; gastar en voz antes de tener datos no se justifica.
+- El `director-de-prompts` deja `02_prompt/prompt.md` en versión 2, validado y archivado. **Renderizar la v2 rehace
+  una pieza terminada: necesita el sí del dueño.** Con ese sí, el cambio de `codigo/render.py` es de ustedes.
+- Rehacer las líneas de Tin en pulgadas y pies (1 a 2 créditos, sin cotizar) queda para el siguiente short si los
+  datos muestran que el sistema métrico pesa.

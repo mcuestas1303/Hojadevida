@@ -56,7 +56,7 @@ The math, step by step:
 - 2,700 s x 4.76 cm/s = 12,852 cm, about 128.5 m of tape.
 - One pencil turn winds about 11 cm (pi x 3.5 cm).
 - 12,852 cm divided by 11 cm is about 1,170 turns.
-- At 2 turns per second: about 585 seconds, almost 10 minutes. For one song.
+- At 2 turns per second: about 585 seconds, almost 10 minutes. All that to replay song one.
 
 This is an estimate. It assumes an average spool diameter of 3.5 cm, which grows as the tape winds. Tape speed: 4.76 cm/s. Real tapes and real hands vary.
 
@@ -135,7 +135,7 @@ Lectura posterior (propuesta): cuando haya 5 videos del mismo grupo, se fijan me
 - Uso de YouTube Shorts por adultos de 50 a 70 años: sin dato (Pew da «alguna vez usa YouTube»).
 - Páginas que no se pudieron abrir (`wtop.com`, `www.aarp.org`, `higgsfield.ai`, `www.pewresearch.org`, el dominio no resuelve): habría que permitirlos en la red de la sesión para citarlas verificadas. Todo lo anterior de esos sitios es de resumen de buscador.
 - Términos de uso comercial de Higgsfield para audio: un resumen dice que no reclama propiedad de las salidas y no restringe su uso comercial, incluida la monetización en YouTube, y que la responsabilidad por infracciones es del usuario; no se leyó el texto completo (sección 4.4 sin recuperar) y hay fuentes de terceros que lo describen distinto. https://higgsfield.ai/creator-hub/help-center/account/who-owns-my-generations-and-can-i-use-them-commercially. Resumen de buscador, 2026-11-21.
-- La cita exacta de Philips («The design of the Compact Cassette is based on a tape speed of 4.76 cm/s») la trae el brief; la búsqueda de hoy confirmó 4,76 cm/s (1⅞ pulgadas por segundo) y 45 min por lado en un C90 en fuentes secundarias y en un resultado que apunta a ese PDF, pero **no abrí el PDF** ni leí la cita palabra por palabra. Otras fuentes citan 4,75 cm/s: es redondeo. Abrir el documento antes de publicar.
+- Fuente de la velocidad, **abierta y leída el 2026-11-21**: P. van der Lely y G. Missriegler, «Audio tape cassettes», Philips Technical Review, vol. 31, 1970, n.º 3, p. 77 (https://www.musicaememoria.com/docs/PTechReview-31-1970-077.pdf). Cita textual: «The design of the Compact Cassette is based on a tape speed of 4.76 cm/s»; y en la misma página, «a tape speed of only 4.76 cm/s (1⅞ inch/s)». Los 45 min por lado de un C90 los da Wikipedia en inglés, «Cassette tape» (visto el 2026-11-21: «C90 (45 minutes per side)»); la misma página dice que un C90 comercial trae unos 135 m de cinta, algo más que los 128,5 m de 45 min exactos: por eso el video dice «about». Otras fuentes citan 4,75 cm/s: es redondeo.
 - Mejor día y hora para publicar: sin dato (por eso no incluyo `fecha_sugerida`).
 - Comparable de Short de 30 s de nostalgia con cálculo: sin dato.
 - Números de categoría de YouTube: de memoria, sin verificar (ver Paquete).
