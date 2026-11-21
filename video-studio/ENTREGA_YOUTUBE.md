@@ -48,6 +48,12 @@ trazabilidad** del video como nombre.
 - `objetivos`: medibles y con plazo; salen del KPI de `02_prompt/direccion.md` §1 y §8.
 - `fecha_sugerida`: opcional, ISO con zona horaria.
 
+## Límite de subida desde la nube
+
+La conexión con Drive de las sesiones en la nube acepta como máximo unos **3,1 MB por archivo**. Si el video pesa más,
+se recomprime con H.264 a CRF 22 (`-preset slow`, audio copiado), que en un short de 30 s dibujado con código deja ~2,8 MB
+con similitud 0,999 frente al original. Se le avisa al dueño antes de subir la versión recomprimida.
+
 ## Controles del publicador
 
 Rechaza la entrega si falta un campo, si el título pasa de 100 caracteres, si falta un archivo o si el código ya se
