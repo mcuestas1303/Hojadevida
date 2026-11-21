@@ -54,10 +54,26 @@ Este canal no usa `series/`: no es infantil y no pasa por la pedagoga ni la psic
 
 | Concepto | Créditos | Uso de Claude |
 |---|---|---|
-| Voz de Tin y de Tan | 3 | — |
-| Prompt | 0 | 131 mil tokens |
-| Dibujo, audio, render y revisión | 0 | 274 mil tokens |
-| **Total** | **3** | **405 mil tokens** |
+| Voz de Tin y de Tan (prueba reutilizada como final) | 3 | — |
+| Corrección del remate «For one side» y unidades imperiales (autorizada por el dueño) | 1,8 | — |
+| **Video en inglés TIN-EN-S-001** | **4,8** | ≈ 405 mil tokens hasta el render v1, sin contar la revisión y la entrega |
+| Voz de Tin en español con Juan (descartada: sonaba a italiano o portugués) | 2,2 | — |
+| Prueba de Tan en español con Zelda (MiniMax) | 0,15 | — |
+| **Total del proyecto** | **7,15** | |
+
+## Fase 8 — Revisión, entrega y publicación (2026-11-21)
+
+- El equipo de producción revisó el v1 y corrigió el remate («For one song» era falso: 1.170 vueltas son un lado
+  entero) y las unidades (pulgadas y pies para EE. UU.). Render v2 gratis.
+- Entrega por Drive al publicador; el video se recomprimió a ≈ 2,8 MB (límite de subida de la sesión ≈ 3,1 MB).
+- La miniatura horizontal se recortaba en Shorts: se hizo una vertical, y el Canal automatizado armó una versión del
+  video que abre con portada (regla nueva de portada de Shorts).
+- **Publicado por el dueño el 2026-11-21:** https://youtube.com/shorts/s9r5bmmNykY (la subida privada anterior,
+  C9i9Fff5Pu4, se borró). Las metas corren desde ese día: visto frente a deslizado ≥ 60 % a 3 días (2026-11-24),
+  duración media ≥ 20 s y ≥ 80 % de vistas desde el feed de Shorts a 7 días (2026-11-28), ≥ 50 % de público de 45 o
+  más a 28 días (2026-12-19).
+- Hallazgos después de entregar, que se dejaron así por decisión del dueño: «421 ft» debía ser «≈ 422 ft», y las
+  cifras con fracción no llevan «≈»; el tomate funciona como segundo acento. Detalle en `07_revision/controles.md`.
 
 ## Qué enseña este caso (ya está en el manual)
 
@@ -68,10 +84,15 @@ Este canal no usa `series/`: no es infantil y no pasa por la pedagoga ni la psic
 5. Las correcciones de código no cuentan como segundo intento.
 6. El gancho no entrega la respuesta: abre la pregunta.
 7. Los videos terminados se entregan por Drive; el repositorio guarda el código que los rehace.
+8. Los nombres propios llevan mayúscula aunque el estilo pida minúsculas (el banner salió «tin & tan»).
+9. Las cifras con decimales o fracciones se aproximan y llevan «≈»; se redondea, no se trunca.
+10. Un Short lleva su portada dentro del video y una miniatura vertical; la horizontal se recorta.
+11. Cada video escribe por qué eligió cada color y cómo ayuda al objetivo (2 neutros + 1 acento).
+12. Los controles de calidad bloquean: texto, cifras, voz, imagen, video, color, entrega y marca (`manual/12`).
 
 ## Pendiente
 
-- Revisión y presentación al dueño: equipo de producción. Nadie ha escuchado todavía el audio montado.
-- Ficha de publicación en el formato del publicador de YouTube.
-- Crear el canal «Tin & Tan».
-- Confirmar el presupuesto del canal.
+- Revisión de resultados del director creativo cuando el dueño exporte las estadísticas: primera el 2026-11-24
+  (visto frente a deslizado, 3 días), luego el 2026-11-28 y el 2026-12-19.
+- Versión en español: espera el veredicto del dueño sobre la prueba de Zelda con MiniMax.
+- Temas y calendario del canal: los define el dueño con el Generador de prompts.
