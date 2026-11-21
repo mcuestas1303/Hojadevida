@@ -17,7 +17,7 @@
   bitácora en `creador-personajes/afinado/tin-y-tan.md`. **Versión 1 aprobada el 2026-11-21** («si me gustan»).
 - **Tiky y Lumi siguen siendo de la serie infantil** (`series/granja/`) y no aparecen en este canal.
 - Estilo visual del canal: `DESIGN.md`.
-- Copia en Google Drive: `Personajes/Tin & Tan (palitos)/` (bitácora y `02 Hojas de personaje (v1, por aprobar)`).
+- Copia en Google Drive: `Personajes/Tin & Tan (palitos)/` (`01 Diseño aprobado`, `02 Hojas de personaje` y la bitácora).
 
 ## Datos del canal
 
