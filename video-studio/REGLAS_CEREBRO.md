@@ -48,8 +48,8 @@
 19. **Tiky y Lumi**: serie infantil `granja` (1–3 años), 3D de juguete de vinilo.
 20. **Tin & Tan**: personajes nuevos de los videos de palitos del canal de nostalgia; Tan recuerda y pregunta, Tin
     hace la cuenta. Dibujados con código (`herramientas/palitos.py`). Aprobados el 2026-11-21 («si me gustan»).
-21. **El canal de nostalgia se llama «Tin & Tan»** (2026-11-21). Se creó como «Tiky & Lumi»: el cambio en YouTube lo
-    hace el dueño.
+21. **Tin & Tan tienen su propio canal nuevo, «Tin & Tan»** (lo crea el dueño). El canal «Tiky & Lumi» (@TikyAndLumi)
+    **no se renombra**: queda para la serie infantil de Tiky y Lumi (2026-11-21).
 22. Formato del canal de nostalgia: pregunta nostálgica con respuesta calculada de verdad; nada de clonar «Doodle
     Digest» (regla de contenido no auténtico de YouTube).
 

@@ -116,6 +116,9 @@ text, letters, watermark, logo, extra characters, extra animals, humans, realist
 
 ## Publicación
 
+- Canal de YouTube: **«Tiky & Lumi»** (@TikyAndLumi, https://www.youtube.com/channel/UCO6HZWJfilFtsrI4GBEm2gw),
+  creado el 2026-11-20; decisión del dueño (2026-11-21): este canal es para Tiky y Lumi. Sin videos todavía.
+
 - Titular de las cuentas: reside en El Salvador (dato del dueño, 2026-11-20). El Programa de
   socios de YouTube está disponible allí. El comercial evaluó usar un VPN para entrar a
   programas de otros países y lo desaconseja (`evaluacion_vpn.md`); la decisión es del dueño.

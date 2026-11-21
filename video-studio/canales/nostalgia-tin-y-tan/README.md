@@ -21,15 +21,18 @@
 
 ## Datos del canal
 
+> Decisión del dueño (2026-11-21), textual: *«No estamos complicando solo abre otro canal con Tin&Tan igual despues
+> vamos a usar tiky y lumi»*.
+
 | Campo | Valor |
 |---|---|
-| Nombre | **Tin & Tan** (decisión del dueño, 2026-11-21: «Cambia el nombre del canal»). Se creó como «Tiky & Lumi»; el cambio en YouTube está pendiente (ver abajo) |
-| Identificador | @TikyAndLumi |
-| Enlace | https://www.youtube.com/channel/UCO6HZWJfilFtsrI4GBEm2gw |
-| Tipo de cuenta | cuenta de marca del dueño |
-| Creado | 2026-11-20 |
-| Estado | sin foto, sin descripción, sin videos |
+| Nombre | **Tin & Tan** (canal nuevo, aparte) |
+| Identificador | por definir al crearlo (`@TinAndTan` o la variante libre) |
+| Estado | **por crear**: lo crea el dueño (el equipo no tiene conexión con YouTube) |
 | TikTok | lo abre el dueño con su mismo correo; perfil sin armar |
+
+El canal **«Tiky & Lumi»** (@TikyAndLumi, https://www.youtube.com/channel/UCO6HZWJfilFtsrI4GBEm2gw, creado el
+2026-11-20) **no se renombra**: queda para la serie infantil de Tiky y Lumi (`series/granja/`).
 
 **Nada se publica sin la aprobación del dueño.**
 
@@ -50,10 +53,8 @@
 
 1. ~~Público y diseño de los personajes~~ → resuelto el 2026-11-21: Tin & Tan para este canal; Tiky y Lumi siguen en
    la serie infantil.
-2. ~~Nombre del canal~~ → decidido el 2026-11-21: **Tin & Tan**. **Falta aplicarlo en YouTube**: el equipo no tiene
-   conexión con YouTube, así que lo cambia el dueño en YouTube Studio → Personalización → Información básica:
-   «Nombre» = `Tin & Tan` e «Identificador» = `@TinAndTan` (o la variante libre que ofrezca YouTube, p. ej.
-   `@TinAndTanTalks`). Al terminar, se anota aquí el identificador final. Antes de publicar el primer video.
+2. ~~Nombre del canal~~ → 2026-11-21: **canal nuevo «Tin & Tan»**; el de «Tiky & Lumi» queda para la serie infantil.
+   **Falta crearlo** (lo hace el dueño) y anotar aquí su identificador y enlace.
 3. ~~Aprobación de Tin & Tan v1~~ → aprobada el 2026-11-21.
 4. **Presupuesto.** ¿Se confirma el tope de US$500 por 90 días?
 5. **Voz.** Prueba de voces pendiente (`voces.md`).
