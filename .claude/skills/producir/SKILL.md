@@ -54,7 +54,9 @@ edición. **Espera su aprobación** antes del paso 2.
 4. **Audio** (voz, efectos, música si el dueño no la trae).
 5. Anota **cada** generación en `costos.md` (modelo, ajuste, créditos, veredicto).
 
-Freno de pérdidas: dos fallos seguidos en una toma → no hay tercer intento; vuelve a fotografía/animación/prompts.
+**Un intento por pieza** (regla del dueño, `video-studio/generacion.md`): nada se genera sin `03_keyframes/definicion.md`
+cerrada y autorizada; si una pieza sale mal no se repite: se informa qué falló y cuánto cuesta rehacerla. Los cambios que
+pide el dueño se abren en `video-studio/cambios/`. Procedimiento completo por fases: `video-studio/MANUAL.md`.
 
 Herramientas que hay que instalar (HyperFrames, Remotion, Earshot, transcripción con tiempos): **solo con el sí del
 dueño**. Mientras tanto, la versión simple con `postpro.py` o CapCut.
@@ -64,8 +66,8 @@ dueño**. Mientras tanto, la versión simple con `postpro.py` o CapCut.
 1. `editor-de-video` arma el montaje y las salidas por plataforma (`postpro.py`, `ensamblar.py`).
 2. `disenador-de-sonido` mezcla a −14 LUFS.
 3. `supervisor-de-continuidad` revisa el final con hoja de contactos a 2 fotogramas por segundo, `postpro.py
-   destellos` y las preguntas fijas del cap. 11 → `APROBADO` o `CAMBIOS`. Solo se rehacen los tramos marcados,
-   máximo 2 vueltas.
+   destellos` y las preguntas fijas del cap. 11 → `APROBADO` o `CAMBIOS`. Solo se rehacen los tramos marcados; si cuesta
+   créditos, con autorización del dueño.
 4. Archiva el prompt (`archivar_prompt.py`), agrega la fila del video a `video-studio/estadisticas/etiquetas.csv`
    y entrega: video final, costo total y qué se mide en la revisión de resultados.
 5. Los videos no se suben al repo (es público): quedan en el historial de Higgsfield y en la carpeta del dueño.

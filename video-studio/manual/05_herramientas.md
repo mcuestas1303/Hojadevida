@@ -68,9 +68,11 @@ son la versión más completa de esta ruta, si el dueño aprueba instalarlos.
 6. **Lo editable no se genera** (texto, zooms, transiciones, cámara lenta, repeticiones, color).
 7. **Reusar:** mismos IDs de referencia, mismo bloque de identidad, último fotograma como siguiente keyframe,
    escenarios y voces ya creados.
-8. **Freno de pérdidas:** dos intentos fallidos en una toma → no hay tercero; se revisa el prompt o se parte la toma.
+8. **Un intento por pieza** (regla del dueño, 2026-11-20, `generacion.md`): cada imagen, clip o audio se genera una
+   sola vez. Si sale mal, se informa qué falló y cuánto costaría rehacerlo; solo el dueño autoriza otra generación.
+   **No se genera sin definición cerrada** (`03_keyframes/definicion.md` revisada y autorizada con el costo).
 9. **Clips sin audio** salvo que el audio del modelo sea el objetivo; la música la pone el dueño o se genera aparte.
-10. **Registrar cada intento** en `costos.md` del proyecto (modelo, ajuste, créditos, veredicto).
+10. **Registrar cada generación**, también las fallidas, en `costos.md` del proyecto (modelo, ajuste, créditos, veredicto).
 11. **Medir el retorno:** el costo de cada video se cruza con sus resultados (cap. 10). Lo que no rinde no se repite.
 
 ## Presupuesto tipo

@@ -18,6 +18,9 @@ IMAGENES = {".png", ".jpg", ".jpeg", ".webp"}
 METODOS_PAGADOS = ("imagen", "texto")
 MAX_TOMA_S = 10
 TIPOS = ("intro", "capitulo", "short", "otro")
+# Formatos de salida (video-studio/formatos.md)
+ASPECTO = {"capitulo": "16:9", "intro": "16:9", "short": "9:16"}
+SHORT_MAX_S, SHORT_REDES_S = 180, 60
 
 
 def seccion(texto, numero):
@@ -97,6 +100,20 @@ def reglas_de_serie(ruta, ficha, elenco, tomas, total_s, errores):
         if (veredicto or "").upper() != "APROBADO":
             errores.append("El guion no tiene la revisión aprobada "
                            f"({revision.name}: veredicto '{veredicto or 'no existe'}').")
+    idiomas = [x.strip() for x in (campo(reglas, "Idiomas") or "").split(",") if x.strip()]
+    if len(idiomas) > 1:
+        voz = ruta.parent / "voz_idiomas.md"
+        if not voz.is_file():
+            errores.append(f"Falta voz_idiomas.md con la voz en: {', '.join(idiomas)}.")
+        else:
+            tabla = re.sub(r"<!--.*?-->", "", voz.read_text(), flags=re.S)
+            cabecera = next((l for l in tabla.splitlines() if l.startswith("| Plano")), "")
+            for idioma in idiomas:
+                if f"| {idioma} " not in cabecera + " ":
+                    errores.append(f"voz_idiomas.md no tiene la columna del idioma '{idioma}'.")
+            if re.search(r"\[[^\]\n]*\]", tabla) or re.search(r"\|[ \t]*\|", tabla):
+                errores.append("voz_idiomas.md tiene celdas vacías o sin llenar.")
+
     if (campo(reglas, "Requiere ficha técnica") or "").lower().startswith("s"):
         ficha_tecnica = ruta.parent / "ficha_tecnica.md"
         if not ficha_tecnica.is_file():
@@ -132,6 +149,10 @@ def main():
     elif tipo in ("capitulo", "short") and numero(campo(seccion(texto, 1) or "", "Número")) is None:
         errores.append(f"Falta el número del {tipo}.")
 
+    aspecto = (campo(seccion(texto, 1) or "", "Aspecto") or "").split(" ")[0]
+    if tipo in ASPECTO and aspecto != ASPECTO[tipo]:
+        errores.append(f"Un {tipo} va en {ASPECTO[tipo]} (formatos.md); el prompt dice '{aspecto or 'nada'}'.")
+
     # --- Elenco -----------------------------------------------------------
     elenco_txt = seccion(texto, 2) or ""
     sin_personajes = bool(re.search(r"Elenco:\s*ninguno", elenco_txt, re.I))
@@ -153,6 +174,9 @@ def main():
             errores.append(f"@{pid}: su ficha no tiene el bloque de identidad escrito.")
         else:
             identidad[pid] = bloque
+        if "## Definición para generar" not in (carpeta / "ficha.md").read_text():
+            errores.append(f"@{pid}: su ficha no tiene la sección «Definición para generar» "
+                           "(proporciones, lista de comprobación, fallos conocidos).")
         refs = carpeta / "referencias"
         if not any(f.suffix.lower() in IMAGENES for f in refs.glob("*")) if refs.is_dir() else True:
             errores.append(f"@{pid}: no hay ninguna imagen en personajes/{pid}/referencias/.")
@@ -207,8 +231,12 @@ def main():
     declarada = numero(campo(ficha, "Duración total"))
     if declarada is not None and tomas and abs(declarada - total_s) > 0.5:
         avisos.append(f"Las tomas suman {total_s:g} s y la ficha dice {declarada:g} s.")
+    if tipo == "short" and total_s > SHORT_MAX_S:
+        errores.append(f"Un short no puede pasar de {SHORT_MAX_S} s; este dura {total_s:g} s.")
+    elif tipo == "short" and total_s > SHORT_REDES_S:
+        avisos.append(f"El short dura {total_s:g} s: con más de {SHORT_REDES_S} s no se reutiliza igual en todas las redes.")
     serie = reglas_de_serie(ruta, ficha, elenco, por_titulo, total_s, errores)
-    intentos = numero(campo(ficha, "Intentos estimados por toma")) or 2
+    intentos = numero(campo(ficha, "Intentos estimados por toma")) or 1
     precio = numero(campo(ficha, "Precio por segundo"))
 
     print(f"Prompt: {ruta}")

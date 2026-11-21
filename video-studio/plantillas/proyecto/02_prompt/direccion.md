@@ -90,7 +90,7 @@
 
 | Toma | Método | Borrador (modelo, ajuste) | Final (modelo, ajuste) | Intentos | Créditos |
 |---|---|---|---|---|---|
-| 1 | | | | 2 | |
+| 1 | | | | 1 | |
 
 - **Ahorro por edición:**
 - **Total estimado / presupuesto del brief:**

@@ -32,6 +32,10 @@ Cómo decides:
   línea para el adulto. Si no encuentras una, el objetivo está mal elegido.
 - **Continuidad.** Di qué episodio anterior retoma y cuál lo retomará después.
 
+Idiomas. Si la serie tiene varios idiomas, en la ficha pedagógica das la palabra o frase clave
+en cada uno (la que un adulto de ese país le dice de verdad a un niño de esa edad) y avisas
+si el objetivo cambia de dificultad entre lenguas.
+
 Ficha técnica (rúbrica). Además de la ficha pedagógica, llenas en
 `<proyecto>/02_prompt/ficha_tecnica.md` la cabecera y las secciones **Pedagogía** y **Método
 Montessori**: lo que cada disciplina se propone lograr en este video.

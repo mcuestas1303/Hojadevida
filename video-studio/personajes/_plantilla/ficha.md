@@ -42,3 +42,16 @@ PENDIENTE
 | `cuerpo_completo.png` | Cuerpo entero, vestuario base | Referencia de vestuario y proporción |
 
 La hoja de personaje se genera una sola vez con `plantillas/hoja_de_personaje.md`.
+
+## Definición para generar
+
+Sin esta sección completa no se genera nada con el personaje (`video-studio/generacion.md`).
+
+- **Altura y proporciones:** (medidas contra un punto de referencia: otro personaje, un objeto del lugar)
+- **Cada rasgo con su posición exacta:** (de qué lado, de qué tamaño, contra qué fondo se ve)
+
+Lista de comprobación de cada imagen: (rasgos que deben verse siempre, separados por «·»)
+
+Fallos conocidos del generador:
+
+- (lo que salió mal en generaciones anteriores y cómo se previene)

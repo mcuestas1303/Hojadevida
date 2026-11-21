@@ -4,7 +4,7 @@
 - **Objetivo de aprendizaje:** levanta y mueve la mano para saludar cuando se le dice «saluda con la mano» o cuando Tiky o Lumi lo saludan a cámara.
 - **Tramo de edad:** 18–24 meses (sirve también a niños de 24 a 30 meses que aún no saludan solos). La imitación de acciones y seguir una orden simple con gesto ya están a los 12–18 meses (guía, sección 2). Se fija 18–24 porque la guía pide evitar la pantalla antes de los 18 meses y porque a esa edad el niño ya entiende «mano» (señala partes del cuerpo). Siempre visto con un adulto al lado.
 - **Área:** lenguaje y vínculo (social)
-- **Palabra o frase clave:** «hola». Frase: «Saluda con la mano». La palabra va al final de la frase y sin música debajo.
+- **Palabra o frase clave:** es «hola» (frase «Saluda con la mano») · en «hello» (frase «Wave hello») · pt-BR «oi» (frase «Acena com a mão»). La palabra va al final de la frase del niño o de la respuesta y sin música debajo. Detalle por idioma en la sección «Idiomas».
 - **Material:** ninguno aparte de los dos personajes. La cualidad aislada es el gesto: patio despejado, sin otros animales, sin objetos en las manos de nadie. No se usa el crayón de Lumi. Los personajes saludan con el ala (Tiky) y la pezuña (Lumi), y a la cámara se le pide «la mano».
 - **Lugar:** patio
 
@@ -21,6 +21,19 @@
 
 - Dentro del episodio: «hola» aparece cuatro veces, siempre en llegada o respuesta a un saludo: (1) saludo de entrada, siempre igual; (2) Lumi saluda y se nombra; (3) pregunta 1, con Tiky; (4) pregunta 2, con Lumi. Además, el cierre la repite en una frase verdadera: «Con la mano decimos hola». La despedida fija es «Ahora, a jugar. Adiós.»: usa el mismo gesto de la mano, pero la palabra es «adiós» y no cuenta como repetición del concepto.
 - Entre episodios: es el primero, no retoma ninguno. Lo retoma el saludo de entrada, que es fijo en todos los episodios (estructura de la serie), y el episodio 2, «Grande y pequeño», que vuelve a usar los nombres de Tiky y Lumi como material (Lumi es grande, Tiky es pequeño). El gesto de la mano vuelve en cada despedida, con la frase fija «Ahora, a jugar. Adiós.».
+
+## Idiomas
+
+Confirmadas por la pedagoga (2026-11-20; guía, sección 8). El objetivo, el gesto y la estructura son los mismos en los tres idiomas.
+
+| Idioma | Palabra clave | Frase al niño | Despedida (no es clave) | Por qué esta palabra |
+|---|---|---|---|---|
+| es | hola | Saluda con la mano | adiós | La que un adulto le dice al niño al llegar alguien |
+| en | hello | Wave hello | bye-bye | Es la que acompaña al gesto en el habla con niños de EE. UU.; dos sílabas, clara, no se confunde con «bye». «Hi» queda como variante que el adulto puede usar en casa |
+| pt-BR | oi | Acena com a mão | tchau | «Oi» es lo que dice un adulto brasileño; «olá» suena formal. Los nombres llevan artículo: «o Tiky», «a Lumi» |
+
+- **Dificultad entre lenguas:** el objetivo no cambia. En inglés y portugués de Brasil el adulto conoce el gesto sobre todo como despedida («bye-bye», «dar tchau»), y muchos niños de 18 a 24 meses ya lo hacen al irse alguien. Eso vuelve más fácil la parte motora; lo que el capítulo enseña es la asociación con la llegada y con «hello» / «oi». Se mantiene el mismo gesto, el mismo capítulo y la misma despedida corta (plano 13), sin pedirla ni evaluarla.
+- **Cuidado con la palabra de despedida:** «hello» y «oi» nunca despiden; «bye-bye» y «tchau» suenan una sola vez, en el plano 13.
 
 ## Fuera de la pantalla
 

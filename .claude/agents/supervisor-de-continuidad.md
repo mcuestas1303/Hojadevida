@@ -51,13 +51,13 @@ cerca de la mitad? ¿picos y respiros? ¿final que empalma con el inicio? ¿cada
 ¿más de 3 destellos por segundo? ¿todo con licencia?
 
 **Fotogramas muertos:** marcas vacíos, congelados, elementos fuera de cuadro, texto cortado o tapado, tirones,
-demasiado tiempo sin cambio y lo genérico, con su segundo. Se rehace **solo ese tramo**, con máximo 2 vueltas, y cada
-vuelta queda anotada.
+demasiado tiempo sin cambio y lo genérico, con su segundo. Se rehace **solo ese tramo** y cada vuelta queda
+anotada. Si rehacerlo cuesta créditos, se pide la autorización del dueño para esa pieza (`video-studio/generacion.md`).
 
 ## Reglas
 
 - Si algo se puede arreglar en edición, lo dices antes de pedir regenerar (cuesta cero).
-- Si una toma ya falló dos veces, no pides un tercer intento: la devuelves a prompts con lo que falló (freno de
-  pérdidas).
+- Una pieza generada que falla **no se regenera sola**: informas qué falló, qué cambiar en la definición y cuánto
+  costaría rehacerla; el dueño decide (un intento por pieza).
 - No identificas a personas reales por su cara. Marvin aparece solo si el brief lo dice.
 - Describes solo lo que ves.

@@ -18,6 +18,33 @@ El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
 - Antes de generar: cotizar con `estimate_video_cost` / `estimate_image_cost` / `estimate_audio_cost`, decir el número
   y esperar aprobación. Lo editable se hace gratis con `video-studio/herramientas/postpro.py`.
 - Las estadísticas de las cuentas van en `video-studio/estadisticas/datos/` y no se suben (el repo es público).
+- **Coordinación (regla del dueño, 2026-11-21):** el equipo trabaja según los prompts del «Generador de prompts y
+  carpetas para videos» y se comunica con esa conversación constantemente; toda regla nueva va a
+  `video-studio/REGLAS_CEREBRO.md` para el Cerebro. Detalle: `video-studio/COORDINACION.md`.
+
+## Todo queda como plantilla (regla del dueño, 2026-11-21)
+
+- El procedimiento completo para montar un personaje está en `video-studio/MANUAL.md`; el caso real, en
+  `video-studio/casos/`. Un personaje nuevo se monta siguiendo ese manual, fase por fase.
+- Cada decisión, paso, costo y error se documenta: si cambia el proceso, se actualiza el manual; si
+  avanza un proyecto, se actualiza su caso. Nada se deja solo en la conversación.
+- `python3 video-studio/herramientas/estado.py` dice en qué fase está cada personaje, serie y proyecto.
+
+## Línea editorial
+
+- Decisión del dueño (2026-11-20), para todo lo que se produzca aquí: nada de identidad de género ni
+  ideología de género en el contenido, en ningún idioma ni formato. Tiky es él y Lumi es ella.
+
+## Créditos y cambios (regla del dueño, 2026-11-20)
+
+- **Nada de segundos intentos.** Cada imagen, clip o audio se genera una sola vez. Si sale mal, se informa
+  qué falló y cuánto costaría rehacerlo; no se regenera sin que el dueño lo autorice para esa pieza.
+- **No se genera sin definición cerrada**: ficha del personaje con «Definición para generar», lugar definido
+  en `entorno.md` con su imagen de referencia, y `03_keyframes/definicion.md` revisada por el equipo y
+  autorizada por el dueño con el costo a la vista. Lo que falte se pregunta, no se supone.
+- **Todo cambio que pida el dueño pasa primero por el equipo**: se abre una solicitud en `video-studio/cambios/`,
+  se revisa qué toca de lo ya definido y qué habría que rehacer, y se le presenta con el costo y las dudas
+  antes de aplicar o generar nada. Detalle en `video-studio/generacion.md`.
 
 ## Trabajo con videos
 
@@ -29,6 +56,10 @@ El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
 - Todo prompt define su elenco con personajes de `video-studio/personajes/`. Si el usuario no ha
   dicho quién sale, se le pregunta; no se inventan personajes ni se elige por él.
 - No se da por bueno un prompt hasta que `validar_prompt.py` termina sin errores.
+- Todo clip generado se revisa con `revisar_fotogramas.py` (gratis) antes de puntuar su rúbrica; el resultado va en `07_revision/`.
+- El ritmo de redes (gancho, ráfagas de cortes, bucle, texto en pantalla) es solo para contenido de adultos:
+  plantilla `prompt_video_redes.md`, proyecto con `--redes`. Nunca en series infantiles.
+- Cada proyecto lleva `licencias.md` con el origen y la licencia de cada recurso.
 - Los prompts son archivos `.md`. Una vez validado, cada prompt se archiva con `archivar_prompt.py` en
   `video-studio/personajes/<protagonista>/prompts/` dentro de `intro/`, `capitulos/`, `shorts/` u `otros/`.
   Ahí es donde el usuario los busca; `proyectos/` es solo la mesa de trabajo.
@@ -39,9 +70,15 @@ El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
 - Un episodio se crea con `nuevo_proyecto.py <nombre> --serie granja` y pasa por el equipo en este orden:
   `pedagoga-montessori` (ficha pedagógica) → `guionista-interactivo` (guion) → `psicologa-infantil`
   (revisión) → `director-de-prompts` (prompt). Si la psicóloga pide cambios, vuelve al guionista.
+- El `comercial-inteligencia-digital` trabaja después de la ficha pedagógica: entrega `publicacion.md` y su
+  sección de la ficha técnica. Le habla al adulto que elige el video; no cambia el guion, y lo que proponga
+  para dentro del video lo deciden la pedagoga y la psicóloga. Toda cifra lleva fuente y fecha.
+- Idiomas: español (maestro), inglés y portugués de Brasil. El video es el mismo; cambian la voz
+  (`voz_idiomas.md`) y el paquete de publicación (uno por idioma). Se adapta, no se traduce literal.
+- Formatos en `video-studio/formatos.md`: capítulo e intro en 16:9 (1920x1080); short en 9:16 (1080x1920), 60 s o menos.
 - Todos trabajan contra `video-studio/infantil/guia_1_a_3.md`.
 - Cada prompt de serie lleva su `ficha_tecnica.md`: los objetivos de cada disciplina (pedagogía, Montessori,
-  psicología infantil, aprendizaje interactivo, producción), escritos por su responsable antes de generar.
+  psicología infantil, aprendizaje interactivo, producción, comercial e inteligencia digital), escritos por su responsable antes de generar.
   Es la rúbrica del video: una vez generado se puntúa cada criterio y se calcula con `puntuar_ficha.py`.
 - En la serie `granja` solo actúan `@tiky` y `@lumi` hasta que el dueño cargue los secundarios.
 - El contenido infantil nunca se cruza con «M» ni con personajes para adultos.

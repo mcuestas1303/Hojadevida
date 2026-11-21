@@ -14,7 +14,7 @@
 
 - Los muñecos de palitos de este canal son **Tin** (`@tin`, el que hace la cuenta) y **Tan** (`@tan`, la que
   recuerda). Fichas en `video-studio/personajes/tin/` y `tan/`; diseño en código en `herramientas/palitos.py`;
-  bitácora en `creador-personajes/afinado/tin-y-tan.md`. **Versión 1, por aprobar.**
+  bitácora en `creador-personajes/afinado/tin-y-tan.md`. **Versión 1 aprobada el 2026-11-21** («si me gustan»).
 - **Tiky y Lumi siguen siendo de la serie infantil** (`series/granja/`) y no aparecen en este canal.
 - Estilo visual del canal: `DESIGN.md`.
 - Copia en Google Drive: `Personajes/Tin & Tan (palitos)/` (bitácora y `02 Hojas de personaje (v1, por aprobar)`).
@@ -23,7 +23,7 @@
 
 | Campo | Valor |
 |---|---|
-| Nombre | Tiky & Lumi (así se creó; **por decidir si se renombra a «Tin & Tan»**) |
+| Nombre | **Tin & Tan** (decisión del dueño, 2026-11-21: «Cambia el nombre del canal»). Se creó como «Tiky & Lumi»; el cambio en YouTube está pendiente (ver abajo) |
 | Identificador | @TikyAndLumi |
 | Enlace | https://www.youtube.com/channel/UCO6HZWJfilFtsrI4GBEm2gw |
 | Tipo de cuenta | cuenta de marca del dueño |
@@ -50,11 +50,11 @@
 
 1. ~~Público y diseño de los personajes~~ → resuelto el 2026-11-21: Tin & Tan para este canal; Tiky y Lumi siguen en
    la serie infantil.
-2. **Nombre del canal.** El canal de YouTube se creó como «Tiky & Lumi» (@TikyAndLumi). Con los personajes nuevos,
-   ¿se renombra a «Tin & Tan»? Lo cambia el dueño en YouTube Studio (Personalización → Información básica); el
-   identificador nuevo depende de que esté libre. Conviene hacerlo **antes** de publicar el primer video, para no
-   mezclar el nombre con el de la serie infantil.
-3. **Aprobación de Tin & Tan v1** (`creador-personajes/afinado/tin-y-tan.md`).
+2. ~~Nombre del canal~~ → decidido el 2026-11-21: **Tin & Tan**. **Falta aplicarlo en YouTube**: el equipo no tiene
+   conexión con YouTube, así que lo cambia el dueño en YouTube Studio → Personalización → Información básica:
+   «Nombre» = `Tin & Tan` e «Identificador» = `@TinAndTan` (o la variante libre que ofrezca YouTube, p. ej.
+   `@TinAndTanTalks`). Al terminar, se anota aquí el identificador final. Antes de publicar el primer video.
+3. ~~Aprobación de Tin & Tan v1~~ → aprobada el 2026-11-21.
 4. **Presupuesto.** ¿Se confirma el tope de US$500 por 90 días?
 5. **Voz.** Prueba de voces pendiente (`voces.md`).
 

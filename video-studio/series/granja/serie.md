@@ -11,6 +11,7 @@ que comprueba el validador» no se renombran).
 - **Duración mínima de toma:** 4 s
 - **Cámaras permitidas:** fija, paneo lento, acercamiento lento, alejamiento lento, seguimiento lento
 - **Términos prohibidos en prompts:** fast cut, quick cut, whip pan, crash zoom, shaky, handheld, flash, strobe, glitch, flicker, lens flare, explosion, scary, storm, text, subtitle, caption, logo
+- **Idiomas:** es, en, pt-BR
 - **Requiere revisión aprobada:** sí
 - **Requiere ficha técnica:** sí
 
@@ -20,6 +21,14 @@ En los primeros videos solo actúan Tiky y Lumi (decisión del dueño, 2026-11-2
 personajes secundarios de la granja todavía no tienen ficha: mientras no la tengan no entran
 al elenco, no tienen nombre ni acción, y como mucho se oyen fuera de cuadro o se ven quietos
 al fondo. Para sumar uno se crea su ficha en `personajes/` y se agrega a «Elenco permitido».
+
+## Línea editorial
+
+Decisión del dueño (2026-11-20), válida para todo el contenido del estudio:
+
+- Tiky es él y Lumi es ella. Su género es fijo en todos los idiomas y no es tema de ningún episodio.
+- El contenido no trata identidad de género ni ideología de género, en ningún idioma ni
+  formato: ni en guiones, ni en títulos, descripciones, etiquetas o miniaturas.
 
 ## La pareja
 
@@ -43,6 +52,42 @@ a la altura de los ojos de Tiky.
 | 4 | Cierre | 8–10 s | Se guarda todo en su lugar. Se dice una vez más la palabra del día |
 | 5 | Invitación | 6–8 s | A cámara, para el niño y el adulto: hacerlo en casa con algo real |
 | 6 | Despedida | 6 s | Siempre igual: los dos saludan a cámara. Sin gancho para seguir viendo |
+
+## Frases fijas
+
+Fijadas en el capítulo 1 y aprobadas por la psicóloga (2026-11-20). Van palabra por palabra
+en todos los episodios, con los mismos gestos y el mismo encuadre de los dos. Están escritas
+para narradora en off; si los personajes pasan a hablar, se revisan de nuevo.
+
+- **Saludo (10 s):** «Esta es la granja. Hola.» Los dos entran, miran a cámara y saludan con
+  el ala y la pezuña al oírse «Hola»; quedan 2 s con el ala y la pezuña en alto. La música
+  suena solo mientras entran y baja en un fundido lento antes de la voz.
+- **Despedida (6 s):** «Ahora, a jugar. Adiós.» Los dos saludan a cámara al oírse «Adiós».
+  Sin música durante la voz; después entra y se funde despacio. «Hola» nunca se usa para despedirse.
+
+## Idiomas
+
+Español (maestro), inglés y portugués de Brasil. El video es el mismo en los tres; cambia la
+pista de voz (`voz_idiomas.md` en cada proyecto) y el paquete de publicación, que el comercial
+prepara por mercado. Las frases fijas en los tres idiomas están en «Frases fijas».
+
+## Formatos
+
+- **Capítulo e intro:** video largo, 16:9, de 60 a 90 s, con la estructura de arriba.
+- **Short:** 9:16, de 20 a 45 s. Es un solo momento de un capítulo ya aprobado: una pregunta
+  con su pausa entera y su respuesta, y termina con la invitación o con la despedida. Como
+  máximo uno por capítulo. No se hace un short que sea solo el saludo: en reproducción en
+  bucle se repetiría sin fin (veto de la psicóloga, 2026-11-20). Lleva su propia ficha pedagógica y pasa por la
+  psicóloga igual que un capítulo. Detalle técnico en `video-studio/formatos.md`.
+
+Frases fijas por idioma, aprobadas por la psicóloga el 2026-11-20:
+
+| Frase | es | en | pt-BR |
+|---|---|---|---|
+| Saludo | Esta es la granja. Hola. | This is the farm. Hello. | Esta é a fazenda. Oi. |
+| Despedida | Ahora, a jugar. Adiós. | Time to play. Bye-bye. | Agora, vamos brincar. Tchau. |
+
+La palabra de saludo (hola, hello, oi) nunca se usa para despedirse, en ningún idioma.
 
 ## Voz y sonido
 
@@ -70,6 +115,10 @@ text, letters, watermark, logo, extra characters, extra animals, humans, realist
 ```
 
 ## Publicación
+
+- Titular de las cuentas: reside en El Salvador (dato del dueño, 2026-11-20). El Programa de
+  socios de YouTube está disponible allí. El comercial evaluó usar un VPN para entrar a
+  programas de otros países y lo desaconseja (`evaluacion_vpn.md`); la decisión es del dueño.
 
 - En YouTube va como «hecho para niños».
 - Decisión del dueño (2026-11-08): en el contenido infantil no se declara que está hecho con

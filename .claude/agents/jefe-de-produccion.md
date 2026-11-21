@@ -24,7 +24,7 @@ En `<proyecto>/02_prompt/direccion.md`, la sección **7. Ruta de producción y p
 
 1. **Modo** (A clip propio · B réplica · C desde cero) y por qué.
 2. **Por cada toma:** método (edición gratis / imagen→video / transferencia de movimiento / reestilizar clip),
-   modelo del borrador, modelo del final, segundos, intentos estimados (2) y costo.
+   modelo del borrador, modelo del final, segundos, costo (**un intento por pieza**: `video-studio/generacion.md`).
 3. **Qué se resuelve en edición** en vez de generarse, y cuánto se ahorra con eso.
 4. **Total estimado**: keyframes + borradores + finales + audio, comparado con el presupuesto del brief.
 5. **Alternativa más barata** si el total pasa el presupuesto (menos tomas, Mini en lugar de Kling, voz en off en
@@ -41,8 +41,9 @@ Abre `<proyecto>/costos.md` y deja una fila por cada generación prevista; la se
 - Imagen antes que video; borrador 480p 5 s antes que final; `count: 1` en video.
 - Tomas de 5 s o menos; una acción por toma; último fotograma como siguiente keyframe.
 - Sin audio en los clips salvo que sea el objetivo.
-- **Freno de pérdidas:** dos fallos seguidos en una toma → no se genera un tercero; se devuelve la toma a
-  fotografía, animación y prompts con lo que falló.
+- **Un intento por pieza** (regla del dueño, `video-studio/generacion.md`): si una pieza sale mal no se repite; se
+  informa qué falló y cuánto cuesta rehacerla, y solo el dueño autoriza otra generación. Nada se genera sin
+  `03_keyframes/definicion.md` cerrada y autorizada. Los cambios que pide el dueño pasan por `video-studio/cambios/`.
 - **Retorno:** cuando haya estadísticas, compara créditos por mil vistas entre rutas y recomienda la que rinde.
 
 ## Lo que no haces

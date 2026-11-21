@@ -3,6 +3,10 @@
 Carpeta de trabajo para pasar de una idea, o de un video de referencia, a un prompt de video
 listo para generar, con el elenco definido y el costo calculado antes de gastar.
 
+**Para montar un personaje nuevo, sigue `MANUAL.md`.** Este archivo es la referencia de la
+carpeta; el manual es el procedimiento paso a paso y `casos/` guarda el ejemplo real.
+
+
 ## Canales
 
 `canales/<canal>/` guarda las decisiones, pruebas y pendientes de cada canal. Hoy: `canales/nostalgia-tin-y-tan/`
@@ -13,6 +17,8 @@ listo para generar, con el elenco definido y el costo calculado antes de gastar.
 El estudio tiene un equipo completo de producción de audio y video, entrenado con el manual de `manual/`
 (objetivo y emoción, cámara, luz, animación, herramientas y costos, modos, edición, audio, prompts maestros,
 algoritmo y monetización). Se pone en marcha con **`/producir <personaje> <idea o clip>`**.
+
+## Quién hace qué
 
 | Paso | Quién | Entrega |
 |---|---|---|
@@ -40,6 +46,8 @@ toma, el prompt no pasa.
 
 ```
 video-studio/
+├── MANUAL.md                procedimiento para montar un personaje de cero a publicación
+├── casos/                   registro de cada montaje real
 ├── personajes/              elenco: una carpeta por personaje
 │   ├── REGISTRO.md          lista de quién existe
 │   └── <id>/
@@ -54,6 +62,12 @@ video-studio/
 ├── series/<serie>/          biblia, entorno y temario de cada serie
 ├── infantil/                guía de 1 a 3 años y plantillas del equipo creativo
 ├── generador.md             herramienta y precios
+├── formatos.md              formatos de salida para YouTube y redes
+├── estudios/                informes de lo aprendido de material externo
+├── referencias_externas.md  material de terceros para estudiar, no para copiar
+├── generacion.md            reglas de créditos, definición cerrada y cambios
+├── cambios/                 solicitudes de cambio revisadas por el equipo
+├── datos/                   exportaciones del canal para el comercial
 ├── plantillas/
 │   ├── prompt_video.md      estructura fija del prompt
 │   ├── hoja_de_personaje.md prompt para crear la hoja de un personaje
@@ -69,11 +83,15 @@ video-studio/
 │       ├── 06_final/        video terminado
 │       └── costos.md        registro de cada generación
 └── herramientas/
+    ├── estado.py
+    ├── nuevo_personaje.py
+    ├── nueva_serie.py
     ├── nuevo_proyecto.py
     ├── analizar_video.py
     ├── validar_prompt.py
     ├── archivar_prompt.py
     ├── puntuar_ficha.py
+    ├── revisar_fotogramas.py
     └── ensamblar.py
 ```
 
@@ -107,7 +125,7 @@ video-studio/
 7. **Ensamblar**
 
    ```bash
-   python3 video-studio/herramientas/ensamblar.py video-studio/proyectos/<proyecto> --musica ruta/a/musica.mp3
+   python3 video-studio/herramientas/ensamblar.py video-studio/proyectos/<proyecto> --formato largo --musica ruta/a/musica.mp3
    ```
 
 ## Personajes
@@ -123,6 +141,35 @@ aparece en ella. El validador rechaza el prompt si:
 - se usa un `@id` que no tiene ficha, bloque de identidad o imagen de referencia;
 - una toma no dice quién sale, o usa a alguien que no está en el elenco;
 - alguien del elenco no aparece en ninguna toma.
+
+## Revisión de lo generado
+
+Antes de puntuar la rúbrica, cada clip pasa por una revisión automática que no gasta créditos:
+
+```bash
+python3 video-studio/herramientas/revisar_fotogramas.py <clip> video-studio/proyectos/<proyecto>/07_revision/<toma> --serie granja
+```
+
+Marca imagen congelada, fotogramas vacíos, más de 3 destellos por segundo y planos más cortos
+que el mínimo de la serie, y deja una hoja con los fotogramas marcados. Señala dónde mirar; no
+autoriza a regenerar.
+
+## Contenido para redes y adultos
+
+Para piezas que le hablan al adulto (reels, anuncios, personajes no infantiles) hay una
+plantilla aparte, `plantillas/prompt_video_redes.md`, con gancho, mapa de ritmo, texto en
+pantalla y sonido. No se usa en series infantiles.
+
+```bash
+python3 video-studio/herramientas/nuevo_proyecto.py "nombre" --redes
+```
+
+## Créditos, definición y cambios
+
+Tres reglas, detalladas en `generacion.md`: cada pieza se genera una sola vez; no se genera
+nada sin definición cerrada (personaje, lugar y pieza) y sin autorización con el costo a la
+vista; y todo cambio pasa primero por el equipo como una solicitud en `cambios/`, que dice
+qué toca de lo ya definido y cuánto costaría.
 
 ## Dónde quedan los prompts
 
@@ -166,6 +213,7 @@ Para contenido de 1 a 3 años hay un equipo creativo que trabaja antes del promp
 | 2 | `guionista-interactivo` | Aprendizaje interactivo | `guion.md`: planos, voz exacta, preguntas y pausas |
 | 3 | `psicologa-infantil` | Psicología del desarrollo | `revision.md`: APROBADO o CAMBIOS |
 | 4 | `director-de-prompts` | — | `prompt.md` validado |
+| — | `comercial-inteligencia-digital` | Datos de YouTube y redes, inteligencia digital | `publicacion.md`: búsqueda, título, miniatura, shorts derivados, metas |
 
 Los cuatro leen `infantil/guia_1_a_3.md`. Cada serie tiene su carpeta en `series/`:
 `serie.md` (público, elenco permitido, estructura del episodio, estilo), `entorno.md`
@@ -179,6 +227,22 @@ En un prompt de serie el validador además exige: solo personajes del elenco per
 objetivo de aprendizaje, ninguna toma por debajo de la duración mínima, cámara fija o lenta,
 ningún término prohibido en los prompts y la revisión de la psicóloga en APROBADO.
 
+## Idiomas
+
+El contenido sale en español, inglés y portugués de Brasil. Como los videos no llevan texto
+en pantalla ni labios sincronizados, se genera un solo video y cambia la pista de voz: el
+guionista escribe `voz_idiomas.md` (adaptada, no traducida, y ajustada a los mismos tiempos),
+la psicóloga revisa los tres idiomas y el comercial prepara un paquete de publicación por mercado.
+
+## Formatos
+
+Capítulos e intro: 16:9, máster de 1920×1080. Shorts: 9:16, máster de 1080×1920, 60 s o
+menos para reutilizarlos en Reels, TikTok y Facebook. Detalle y fuentes en `formatos.md`.
+
+```bash
+python3 video-studio/herramientas/ensamblar.py video-studio/proyectos/<proyecto> --formato largo
+```
+
 ## Ficha técnica y rúbrica
 
 Cada prompt de serie va acompañado de `ficha_tecnica.md`. Antes de generar, cada profesional
@@ -191,6 +255,7 @@ escribe lo que su disciplina se propone lograr en ese video:
 | Psicología infantil | `psicologa-infantil` |
 | Aprendizaje interactivo | `guionista-interactivo` |
 | Producción | `director-de-prompts` |
+| Comercial e inteligencia digital | `comercial-inteligencia-digital` |
 
 Cada criterio dice qué debe lograrse, cómo se comprueba en el video, en qué plano mirar, su
 peso (1 a 3) y si es crítico. Con el video ya generado se puntúa cada uno (0 no se cumple,

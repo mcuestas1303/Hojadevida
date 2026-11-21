@@ -6,6 +6,7 @@
 - **ID:** `@tiky`
 - **Nombre:** Tiky (el dueño también lo escribe «Tiki»)
 - **Rol / arquetipo:** el pollito curioso que va adelante y quiere probarlo todo
+- **Género:** masculino (él; en portugués, «o Tiky»). Confirmado por el dueño el 2026-11-20
 - **Edad aparente:** cría
 - **Personalidad en una línea:** curioso, ocurrente, con muchas ganas de aprender; se equivoca sin miedo y vuelve a intentar
 - **Voz:** por definir
@@ -46,3 +47,21 @@ Las hojas de personaje (vueltas y 16 emociones) las lleva la conversación de pe
 ## Prompts
 
 Los prompts de video donde sale están en `prompts/`, por tipo: `intro/`, `capitulos/`, `shorts/`, `otros/`. La lista completa está en `prompts/INDICE.md`.
+
+## Definición para generar
+
+Medidas tomadas del keyframe aprobado `series/granja/referencias/patio.png`.
+
+- **Altura:** junto a Lumi, Tiky mide dos tercios de la altura de ella: la punta de su copete llega a la altura de los ojos de Lumi y el borde superior de su cuerpo queda a la altura del hocico de Lumi. Medida oficial, confirmada por el dueño el 2026-11-20.
+- **Ancho:** su cuerpo es tan ancho como tres cuartos del cuerpo de Lumi.
+- **Copete:** tres plumas, la del centro más alta; en total, un cuarto de la altura del cuerpo.
+- **Alas:** pegadas a los lados, llegan a la mitad del cuerpo; son alas, nunca manos.
+- **Patas:** se ven siempre las dos, con tres dedos cada una.
+- **Con qué saluda:** siempre con el ala izquierda, que de frente a cámara queda a la derecha del cuadro, del lado contrario a Lumi.
+
+Lista de comprobación de cada imagen: cuerpo de huevo sin cuello · amarillo con panza crema · copete de 3 plumas rojo anaranjado · ojos marrón oscuro con un brillo blanco · sin cejas · pico coral pequeño · mejillas rosadas · dos alas · dos patas coral de tres dedos · sin ropa ni objetos.
+
+Fallos conocidos del generador:
+
+- Lo dibuja casi tan alto como Lumi si no se le da la altura con un punto de referencia en el cuerpo de ella (2026-11-20).
+- Tiende a agrandar y esponjar el copete.

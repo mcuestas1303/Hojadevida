@@ -85,8 +85,9 @@ CapCut/DaVinci con el plan del editor.
 18. **Después de cada render, hoja de contactos a 2 fotogramas por segundo**
     (`analizar_video.py <video> <carpeta> --cada 0.5`); en los tramos rápidos, todos los fotogramas.
 19. **Marcar fotogramas muertos:** vacíos, congelados, elementos fuera de cuadro, texto cortado o tapado, tirones,
-    demasiado tiempo sin cambio, algo genérico. **Rehacer solo esos tramos**, con un **máximo de vueltas** (2, como
-    el freno de pérdidas) y anotar cada una en `revision_produccion.md`.
+    demasiado tiempo sin cambio, algo genérico. **Rehacer solo esos tramos** y anotar cada vuelta en
+    `revision_produccion.md`. Lo que es código o edición propia se rehace gratis; lo que hay que volver a generar con
+    créditos necesita la autorización del dueño, pieza por pieza (`generacion.md`).
 20. **Preguntas fijas** en cada revisión:
     - ¿Hay movimiento y corte antes del segundo 1?
     - ¿Hay plano héroe cerca de la mitad?

@@ -39,6 +39,13 @@ Reglas de escritura:
 - **Cierre:** todo vuelve a su lugar. Después, la invitación al niño y la línea al adulto.
 - Nada de texto en pantalla, chistes para adultos, suspenso ni «hasta la próxima, suscríbete».
 
+Idiomas. Si `serie.md` lista varios idiomas, además del guion (en el idioma maestro) escribes
+`<proyecto>/02_prompt/voz_idiomas.md` con la plantilla de `video-studio/infantil/plantilla_voz_idiomas.md`:
+la voz de cada plano en español, inglés y portugués de Brasil. Sigues la sección «Idiomas» de
+la guía: adaptas, no traduces; cada frase cabe en la misma ventana de tiempo y cae en el mismo
+momento del gesto; la palabra clave va al final. Escribes como un hablante nativo que le
+habla a un niño pequeño, y anotas en «Lo que no se traduce igual» cada decisión dudosa.
+
 Ficha técnica (rúbrica). Cuando el guion está escrito, llenas en
 `<proyecto>/02_prompt/ficha_tecnica.md` la sección **Aprendizaje interactivo**: lo que la
 interacción debe lograr en este video (preguntas, pausas, mirada, respuesta con el cuerpo).

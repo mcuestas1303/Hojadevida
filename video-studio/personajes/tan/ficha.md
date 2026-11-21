@@ -1,7 +1,7 @@
 # Tan
 
 > Creada el 2026-11-20 para el canal de nostalgia de videos de palitos. Pedido del dueño, textual: *«crea los nuevos
-> personajes seria tin & tan es para los videos que parecen palitos»*. **Versión 1, por aprobar.**
+> personajes seria tin & tan es para los videos que parecen palitos»*. **Versión 1 aprobada por el dueño el 2026-11-21** («si me gustan»).
 > El diseño vive en código: `video-studio/herramientas/palitos.py` (`PERSONAJES["tan"]`).
 
 - **ID:** `@tan`
