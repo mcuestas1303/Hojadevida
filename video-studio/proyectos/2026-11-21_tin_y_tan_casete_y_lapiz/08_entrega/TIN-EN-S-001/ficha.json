@@ -1,0 +1,58 @@
+{
+  "codigo": "TIN-EN-S-001",
+  "canal": "en",
+  "titulo": "Rewind a Cassette With a Pencil: How Many Turns?",
+  "descripcion": "Remember rewinding a cassette with a pencil? Tin and Tan work out how many turns it really takes.\nA nostalgia check for anyone who grew up with cassettes in the 1970s, 80s and 90s.\n\nThe math, step by step:\n- A C90 tape plays 45 minutes per side, which is 2,700 seconds.\n- Tape speed: 1 7/8 inches per second (4.76 cm/s), the standard speed of the compact cassette.\n- 2,700 s x 1 7/8 in/s = 5,062 inches, about 421 feet of tape.\n- One pencil turn winds about 4 1/3 inches (pi x 1.38 in).\n- 5,062 in divided by 4 1/3 in is about 1,170 turns.\n- At 2 turns per second: about 585 seconds, almost 10 minutes. For one side.\n\nThis is an estimate. It assumes an average spool diameter of about 1.38 inches (3.5 cm), which grows as the tape winds. Real tapes and real hands vary.\n\nSource for the tape speed: Philips Technical Review, vol. 31, 1970: \"The design of the Compact Cassette is based on a tape speed of 4.76 cm/s.\"\nhttps://www.musicaememoria.com/docs/PTechReview-31-1970-077.pdf\n\nVoices are AI-generated. The drawings, music and sound effects are original, made with code.\n\n#cassette #nostalgia #retro",
+  "etiquetas": [
+    "cassette",
+    "cassette tape",
+    "rewind a cassette with a pencil",
+    "rewinding cassettes",
+    "pencil and cassette",
+    "cassette nostalgia",
+    "70s nostalgia",
+    "80s nostalgia",
+    "90s nostalgia",
+    "nostalgia",
+    "retro",
+    "retro tech",
+    "Gen X",
+    "baby boomers",
+    "remember when",
+    "cassette math",
+    "stick figure animation",
+    "Tin and Tan"
+  ],
+  "idioma": "en",
+  "categoria_id": "24",
+  "contenido_sintetico_realista": false,
+  "para_ninos": false,
+  "objetivos": [
+    {
+      "metrica": "visto_vs_deslizado_pct",
+      "meta": 60,
+      "plazo_dias": 3
+    },
+    {
+      "metrica": "duracion_media_vista_s",
+      "meta": 20,
+      "plazo_dias": 7
+    },
+    {
+      "metrica": "vistas_desde_feed_de_shorts_pct",
+      "meta": 80,
+      "plazo_dias": 7
+    },
+    {
+      "metrica": "publico_45_o_mas_pct",
+      "meta": 50,
+      "plazo_dias": 28
+    }
+  ],
+  "archivos": {
+    "video": "video.mp4",
+    "miniatura": "miniatura.png",
+    "subtitulos": "subtitulos.srt"
+  },
+  "notas": "Versión v2 (2026-11-21), producida por el Equipo de producción audiovisual; el dueño la escuchó y aprobó la entrega («se escucha bien, arma la entrega»). Video dibujado con código (Python, Pillow, numpy, ffmpeg): no es IA generativa ni hay escenas realistas. Voces: Higgsfield seed_audio, Kevin (Tin) y Zelda (Tan), 4,8 créditos en total; los términos de uso comercial de Higgsfield se vieron solo en resumen de buscador: leer el texto completo antes de publicar. Música y efectos: propios, hechos con código, sin material de terceros. Tipografía Inter Display (SIL OFL 1.1). Fuente de 4,76 cm/s: Philips Technical Review vol. 31, 1970 (vista en resumen de buscador; abrir el PDF antes de publicar). El diámetro promedio de 3,5 cm es un supuesto declarado en la descripción; el resultado es una estimación. Objetivos: metas iniciales sin datos propios (canal nuevo), definidas por el director creativo y comercial; el KPI principal es visto frente a deslizado. Categoría 24 (Entertainment) de memoria: confirmar con videoCategories.list. para_ninos y contenido_sintetico_realista: propuestos en false por el equipo, a confirmar por el dueño. Riesgos: que YouTube marque el video como para niños por los personajes animados; comentarios sobre que el lápiz se usaba sobre todo para cintas enredadas. Canal de destino: «Tin & Tan» (todavía sin crear). Todo se sube en privado."
+}
