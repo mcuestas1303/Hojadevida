@@ -116,7 +116,7 @@ text, letters, watermark, logo, extra characters, extra animals, humans, realist
 
 ## Publicación
 
-- **Canal de YouTube:** Tiky & Lumi (`@TikyAndLumi`, ID `UCO6HZWJfilFtsrI4GBEm2gw`). Es el canal infantil de la serie (confirmado por el dueño el
+- **Canal de YouTube:** Tiky & Lumi (`@TikyAndLumi`, ID `UCO6HZWJfilFtsrI4GBEm2gw`, https://www.youtube.com/channel/UCO6HZWJfilFtsrI4GBEm2gw). Es el canal infantil de la serie (confirmado por el dueño el
   2026-11-21). Su página pública dice que se unió el 20 de noviembre de 2026 y no muestra
   videos ni suscriptores (consultada el 2026-11-21): para la estrategia sigue siendo un canal
   nuevo, sin historial. Los personajes de otros públicos van a otros canales.

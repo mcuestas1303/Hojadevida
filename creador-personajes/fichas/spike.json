@@ -1,0 +1,39 @@
+{
+  "nombre": "Spike",
+  "handle": "spike.beats",
+  "edad": 25,
+  "genero": "masculino",
+  "estiloImagen": "realista",
+  "proporciones": "alto",
+  "piel": "#f8d9c4",
+  "cabello": "puas",
+  "colorCabello": "#ff6a00",
+  "estiloOjos": "grandes",
+  "ojos": "#3f8f3a",
+  "expresion": "carcajada",
+  "orejas": "normales",
+  "barba": "ninguna",
+  "labios": null,
+  "pecas": false,
+  "ojeras": false,
+  "ropa": "chandal",
+  "colorRopa": "#5b2a86",
+  "accesorio": "boa",
+  "fondo": "#ffffff",
+  "extras": "thick bleached eyebrows, chewing bubblegum, chunky rings on every finger, huge white platform sneakers, dramatic rock-star pose",
+  "nicho": "musica",
+  "rasgos": [
+    "irreverente",
+    "audaz",
+    "sociable"
+  ],
+  "tono": "humor",
+  "plataformas": [
+    "YouTube Shorts",
+    "TikTok",
+    "Instagram"
+  ],
+  "publico": "jóvenes de 18 a 30 que aman la música electrónica y el humor absurdo",
+  "frase": "Esto no es un beat, es una emoción.",
+  "historia": "Tecladista excéntrico que explica cosas absurdas con total seriedad."
+}

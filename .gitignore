@@ -6,3 +6,5 @@ video-studio/proyectos/*/01_referencia/analisis/audio.wav
 video-studio/proyectos/*/04_clips/borradores/*
 !video-studio/proyectos/*/04_clips/borradores/.gitkeep
 __pycache__/
+# Datos de las cuentas (exportaciones de estadísticas): no van al repo público
+video-studio/estadisticas/datos/

@@ -6,15 +6,35 @@ listo para generar, con el elenco definido y el costo calculado antes de gastar.
 **Para montar un personaje nuevo, sigue `MANUAL.md`.** Este archivo es la referencia de la
 carpeta; el manual es el procedimiento paso a paso y `casos/` guarda el ejemplo real.
 
+
+## Canales
+
+`canales/<canal>/` guarda las decisiones, pruebas y pendientes de cada canal. Hoy: `canales/nostalgia-tin-y-tan/`
+(formato nostalgia con Tin & Tan, dibujados con `herramientas/palitos.py`).
+
+## Equipo de producción
+
+El estudio tiene un equipo completo de producción de audio y video, entrenado con el manual de `manual/`
+(objetivo y emoción, cámara, luz, animación, herramientas y costos, modos, edición, audio, prompts maestros,
+algoritmo y monetización). Se pone en marcha con **`/producir <personaje> <idea o clip>`**.
+
 ## Quién hace qué
 
 | Paso | Quién | Entrega |
 |---|---|---|
-| Ver el video de referencia | agente `analista-de-video` | `01_referencia/analisis.md` |
+| Ver el clip propio o de referencia | agente `analista-de-video` | `01_referencia/analisis.md` |
+| Objetivo comercial, público, emoción, gancho, medición | agente `director-creativo` (creativo y comercial) | `02_prompt/direccion.md` §1, §2, §8 |
+| Cámara, lente, luz y color por toma | agente `director-de-fotografia` | `direccion.md` §3 |
+| Actuación y movimiento del personaje | agente `director-de-animacion` | `direccion.md` §4 |
+| Voz, música, efectos, mezcla | agente `disenador-de-sonido` | `direccion.md` §5, `05_audio/` |
+| Plan de montaje y salidas | agente `editor-de-video` | `direccion.md` §6, `06_final/` |
+| Ruta más barata y presupuesto cotizado | agente `jefe-de-produccion` | `direccion.md` §7, `costos.md` |
 | Escribir el prompt y fijar el elenco | agente `director-de-prompts` | `02_prompt/prompt.md` |
 | Comprobar elenco, estructura y costo | `herramientas/validar_prompt.py` | pasa o no pasa |
-| Generar keyframes y clips | tú, en tu generador | `03_keyframes/`, `04_clips/` |
-| Unir los clips | `herramientas/ensamblar.py` | `06_final/final.mp4` |
+| Generar keyframes y clips | la sesión principal, con aprobación del dueño | `03_keyframes/`, `04_clips/` |
+| Revisar fidelidad y calidad | agente `supervisor-de-continuidad` | `revision_produccion.md` |
+| Editar, unir, subtitular, mezclar (gratis) | `herramientas/postpro.py`, `ensamblar.py` | `06_final/` |
+| Leer estadísticas y decidir qué repetir | `director-creativo` con `herramientas/estadisticas.py` | `estadisticas/informe_*.md` |
 
 El prompt lo escribe un agente dedicado y no la conversación general por tres razones:
 trabaja siempre con la misma estructura, lee las fichas de personaje en vez de recordarlas, y no

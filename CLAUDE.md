@@ -3,6 +3,25 @@
 El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
 `video-studio/` es un estudio de prompts para generación de video; su guía es `video-studio/README.md`.
 
+## Equipo de producción de audio y video
+
+- El flujo completo se coordina con `/producir` (`.claude/skills/producir/SKILL.md`). La conversación principal habla
+  con el dueño, cotiza y genera; los agentes hacen cada oficio y escriben en `02_prompt/direccion.md`.
+- Equipo: `director-creativo` (creativo y comercial), `jefe-de-produccion`, `director-de-fotografia`,
+  `director-de-animacion`, `director-de-prompts`, `disenador-de-sonido`, `editor-de-video`,
+  `supervisor-de-continuidad`, `analista-de-video`. Su formación está en `video-studio/manual/`.
+- El **objetivo comercial** (monetizar, presencia, recordación, comunidad, conversión, viralidad…) lo fija el dueño
+  en el brief de cada proyecto. Si falta, se pregunta.
+- Solo actúan los personajes de `video-studio/personajes/REGISTRO.md` (Tiky, Lumi, Spike, Tin, Tan). Tin & Tan son
+  los muñecos de palitos del canal de nostalgia y se dibujan con `video-studio/herramientas/palitos.py`. Sus carpetas terminadas
+  están en Google Drive, `Personajes/`.
+- Antes de generar: cotizar con `estimate_video_cost` / `estimate_image_cost` / `estimate_audio_cost`, decir el número
+  y esperar aprobación. Lo editable se hace gratis con `video-studio/herramientas/postpro.py`.
+- Las estadísticas de las cuentas van en `video-studio/estadisticas/datos/` y no se suben (el repo es público).
+- **Coordinación (regla del dueño, 2026-11-21):** el equipo trabaja según los prompts del «Generador de prompts y
+  carpetas para videos» y se comunica con esa conversación constantemente; toda regla nueva va a
+  `video-studio/REGLAS_CEREBRO.md` para el Cerebro. Detalle: `video-studio/COORDINACION.md`.
+
 ## Todo queda como plantilla (regla del dueño, 2026-11-21)
 
 - El procedimiento completo para montar un personaje está en `video-studio/MANUAL.md`; el caso real, en

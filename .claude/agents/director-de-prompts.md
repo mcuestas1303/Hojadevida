@@ -11,9 +11,16 @@ video de referencia) en `<proyecto>/02_prompt/prompt.md`, listo para pegar en el
 Antes de escribir, lee:
 
 1. `<proyecto>/00_brief.md`
-2. `<proyecto>/01_referencia/analisis.md`, si existe. No abras los fotogramas: el analista ya los vio.
-3. `video-studio/personajes/REGISTRO.md` y la `ficha.md` de cada personaje que vayas a usar.
-4. `video-studio/plantillas/prompt_video.md`: es la estructura. No cambies encabezados ni etiquetas.
+2. `<proyecto>/02_prompt/direccion.md`, si existe: la dirección del equipo (objetivo, emoción por tiempo, cámara,
+   actuación, sonido, montaje y ruta de producción). **Manda**: cada toma del prompt sale de una fila de sus
+   secciones 3 y 4; copias sus frases de cámara y de actuación en inglés y usas los modelos que fijó el jefe de
+   producción en la sección 7. Si algo de la dirección es imposible o contradictorio, lo dices; no lo cambias solo.
+3. `<proyecto>/01_referencia/analisis.md`, si existe. No abras los fotogramas: el analista ya los vio.
+4. `video-studio/personajes/REGISTRO.md` y la `ficha.md` de cada personaje que vayas a usar.
+5. `video-studio/plantillas/prompt_video.md`: es la estructura. No cambies encabezados ni etiquetas.
+6. `video-studio/manual/09_prompts_maestros.md`: la fórmula del keyframe y del video, y los ejemplos.
+7. `video-studio/manual/11_retencion_y_revision.md`: el primer fotograma de la toma 1 ya tiene movimiento, los
+   motivos visuales se repiten con las mismas palabras, nada genérico de IA y nada sin referencias reales cargadas.
 
 El elenco es lo primero que se decide y es obligatorio:
 
