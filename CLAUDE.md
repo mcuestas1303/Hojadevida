@@ -3,6 +3,14 @@
 El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
 `video-studio/` es un estudio de prompts para generación de video; su guía es `video-studio/README.md`.
 
+## Todo queda como plantilla (regla del dueño, 2026-11-21)
+
+- El procedimiento completo para montar un personaje está en `video-studio/MANUAL.md`; el caso real, en
+  `video-studio/casos/`. Un personaje nuevo se monta siguiendo ese manual, fase por fase.
+- Cada decisión, paso, costo y error se documenta: si cambia el proceso, se actualiza el manual; si
+  avanza un proyecto, se actualiza su caso. Nada se deja solo en la conversación.
+- `python3 video-studio/herramientas/estado.py` dice en qué fase está cada personaje, serie y proyecto.
+
 ## Línea editorial
 
 - Decisión del dueño (2026-11-20), para todo lo que se produzca aquí: nada de identidad de género ni

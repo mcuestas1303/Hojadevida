@@ -3,6 +3,9 @@
 Carpeta de trabajo para pasar de una idea, o de un video de referencia, a un prompt de video
 listo para generar, con el elenco definido y el costo calculado antes de gastar.
 
+**Para montar un personaje nuevo, sigue `MANUAL.md`.** Este archivo es la referencia de la
+carpeta; el manual es el procedimiento paso a paso y `casos/` guarda el ejemplo real.
+
 ## Quién hace qué
 
 | Paso | Quién | Entrega |
@@ -23,6 +26,8 @@ toma, el prompt no pasa.
 
 ```
 video-studio/
+├── MANUAL.md                procedimiento para montar un personaje de cero a publicación
+├── casos/                   registro de cada montaje real
 ├── personajes/              elenco: una carpeta por personaje
 │   ├── REGISTRO.md          lista de quién existe
 │   └── <id>/
@@ -58,6 +63,9 @@ video-studio/
 │       ├── 06_final/        video terminado
 │       └── costos.md        registro de cada generación
 └── herramientas/
+    ├── estado.py
+    ├── nuevo_personaje.py
+    ├── nueva_serie.py
     ├── nuevo_proyecto.py
     ├── analizar_video.py
     ├── validar_prompt.py

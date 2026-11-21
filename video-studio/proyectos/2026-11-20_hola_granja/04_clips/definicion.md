@@ -1,6 +1,6 @@
 # Definición de generación de los clips — Hola, granja (16 tomas, borrador 480p)
 
-- **Estado:** PENDIENTE
+- **Estado:** REVISADA POR EL EQUIPO
 - **Costo total cotizado:** 44 créditos (88 s × 0,5; clips a 480p, sin audio, un intento por toma)
 - **Autorizado por el dueño:** no
 
@@ -113,7 +113,7 @@ Se aplican a cada pieza que las cita en «Debe verse» y «No debe verse». Vien
 - **Lugar:** patio (`series/granja/entorno.md`), referencia `series/granja/referencias/patio.png`; el patio sale de la imagen de partida, no se describe de nuevo en el clip.
 - **Composición:** Encuadre C (la del keyframe C, no cambia). Cámara fija a la altura de los ojos de Tiky, de frente. Lumi a la izquierda (cuerpo del 23 % al 50 % del ancho, cuernos hacia el 20 % del alto, pezuñas hacia el 91 %) y Tiky a su derecha (del 52 % al 75 %, punta del copete hacia el 33 %, dedos hacia el 91 %); Tiky le llega a Lumi a los ojos con el copete. Granero a la izquierda (del 0 % al 33 % del ancho), cerca baja detrás de los dos, de lado a lado. Cámara fija durante los 6 s: sin zoom, sin paneo, sin corte.
 - **Debe verse:** [T] [L] [P] (listas en «Listas comunes») + **acción (6 s):** Tiky mira hacia un lado, no a Lumi; levanta el ala izquierda (la de la derecha del cuadro), hace un solo movimiento pequeño y corto, y la baja (el «pío» cae hacia el s 1). Lumi, a la izquierda, lo mira tranquila y atenta, con la cabeza un poco inclinada y la cara relajada, sin cambiar de pose: no levanta la pezuña, no se aleja, no le da la espalda. Los dos terminan juntos en su sitio.
-- **No debe verse:** [N-comunes] [N-T] [N-L] [N-P] + Que Tiky se gire de golpe. Que Tiky mire a Lumi o la salude (aquí mira a otro lado). Que Lumi se vea seria, fría, con ceño fruncido, que le dé la espalda, que se aleje o que levante la pezuña y responda. Aleteo de Tiky. Que el ala toque el pico. Ver pregunta 8 sobre «su derecha».
+- **No debe verse:** [N-comunes] [N-T] [N-L] [N-P] + Que Tiky se gire de golpe. Que Tiky mire a Lumi o la salude (aquí mira a otro lado). Que Lumi se vea seria, fría, con ceño fruncido, que le dé la espalda, que se aleje o que levante la pezuña y responda. Aleteo de Tiky. Que el ala toque el pico. Que Tiky mire o salude hacia la izquierda del cuadro (el lado de Lumi) o con el ala de ese lado (pregunta 8, resuelta). Que Lumi copie el gesto de Tiky. Que aparezca alguien a la derecha del cuadro para recibir el saludo. Que Tiky siga moviendo el ala después del único movimiento.
 - **Prompt:** el bloque «Prompt de video» de la **Toma 4** en `02_prompt/prompt.md` (copia idéntica archivada en `personajes/tiky/prompts/capitulos/granja_cap01_hola_granja.md`), pegado completo y sin cambios. Empieza con las cuatro líneas CRITICAL (sin palabras escritas, mismo diseño, cámara fija sin corte, nada en la puerta del granero) y sigue con la acción, «Fixed camera, no zoom, no pan.» y el estilo global.
 
 ### Toma 05 — Tiky saluda a Lumi y ella contesta
@@ -127,7 +127,7 @@ Se aplican a cada pieza que las cita en «Debe verse» y «No debe verse». Vien
 - **Lugar:** patio (`series/granja/entorno.md`), referencia `series/granja/referencias/patio.png`; el patio sale de la imagen de partida, no se describe de nuevo en el clip.
 - **Composición:** Encuadre C (la del keyframe C, no cambia). Cámara fija a la altura de los ojos de Tiky, de frente. Lumi a la izquierda (cuerpo del 23 % al 50 % del ancho, cuernos hacia el 20 % del alto, pezuñas hacia el 91 %) y Tiky a su derecha (del 52 % al 75 %, punta del copete hacia el 33 %, dedos hacia el 91 %); Tiky le llega a Lumi a los ojos con el copete. Granero a la izquierda (del 0 % al 33 % del ancho), cerca baja detrás de los dos, de lado a lado. Cámara fija durante los 7 s: sin zoom, sin paneo, sin corte.
 - **Debe verse:** [T] [L] [P] (listas en «Listas comunes») + **acción (7 s):** Tiky gira hacia Lumi con un giro lento (no de golpe) y la mira (pío hacia el s 1,2). Levanta el ala izquierda (la de la derecha del cuadro), la mueve despacio y la baja. Lumi lo mira, levanta la pezuña derecha, la mueve despacio (el «muu» cae hacia el s 3,2) y la baja hacia el s 4,5. Del s 4,5 al 7 los dos se miran con sonrisas suaves, quietos (la voz «Tiky saludó a Lumi.» va de 5 a 7 s con ambos ya sin gesto).
-- **No debe verse:** [N-comunes] [N-T] [N-L] [N-P] + Giro brusco de Tiky al mirar a Lumi. Aleteo de Tiky o golpe de pezuña de Lumi. Que la pezuña o el ala suba a la boca, al pico o al mentón. Que Lumi responda antes de que Tiky termine de saludar. Que uno de los dos se mueva de su lugar o cambien de tamaño.
+- **No debe verse:** [N-comunes] [N-T] [N-L] [N-P] + Giro brusco de Tiky al mirar a Lumi. Aleteo de Tiky o golpe de pezuña de Lumi. Que la pezuña o el ala suba a la boca, al pico o al mentón. Que Lumi responda antes de que Tiky termine de saludar. Que uno de los dos se mueva de su lugar o cambien de tamaño. Que Tiky salude con el ala pegada a Lumi o que el ala o la pezuña toquen al otro.
 - **Prompt:** el bloque «Prompt de video» de la **Toma 5** en `02_prompt/prompt.md` (copia idéntica archivada en `personajes/tiky/prompts/capitulos/granja_cap01_hola_granja.md`), pegado completo y sin cambios. Empieza con las cuatro líneas CRITICAL (sin palabras escritas, mismo diseño, cámara fija sin corte, nada en la puerta del granero) y sigue con la acción, «Fixed camera, no zoom, no pan.» y el estilo global.
 
 ### Toma 06 — Tiky pregunta con el ala
@@ -372,12 +372,28 @@ Los archivos no lo dicen y no se suponen. Se responden antes de enviar la etapa 
 - **Pregunta 13 (techo del granero):** resuelta. Vale el techo de la imagen de partida, que es el mismo en los cuatro keyframes.
 - **Preguntas 1 a 7, 9 y 10:** siguen abiertas. No se pueden saber sin generar; se observan en la etapa 1 y se anotan antes de autorizar la etapa 2.
 
+## Correcciones de la psicóloga (2026-11-21)
+
+Correcciones de texto en los bloques «Prompt de video» de `02_prompt/prompt.md`. No cambian el guion, la voz, la duración, los personajes, el método ni la cámara; dicen de forma expresa lo que el guion y esta definición ya pedían.
+
+1. **Saludos (tomas 2, 3, 4, 5, 6, 8, 9, 11 y 16):** el ala o la pezuña sube «out to his/her side» (hacia afuera, al costado del cuerpo) y en Lumi «away from her face». Previene el riesgo «Boca» (pezuña al mentón, ala al pico) sin nombrar la boca ni el pico como algo que dibujar. Cada saludo dice de qué lado del cuadro queda el ala o la pezuña.
+2. **Tomas 2 y 16:** «never flapping while Lumi raises…» se leía como «Tiky no aletea mientras Lumi levanta la pezuña» (el aleteo quedaba permitido el resto del tiempo). Se partió en dos frases: «never flapping. At the same time Lumi…». En la toma 2, «After a moment» pasa a «At about one and a half seconds», como pide la definición.
+3. **Toma 4:** el giro de cabeza es «slowly»; el único movimiento del ala cae «at about one second», «never flapping», y después Tiky «stands calmly» (sin esto el modelo rellena los 6 s con más saludos). Lumi «stays in her place», con «a small warm smile», y «her forelegs stay down the whole time» (riesgo S1 y que copie el gesto de Tiky).
+4. **Toma 5:** el giro es «slowly» y «a little» (riesgo «Plano 4: giro de golpe»); el ala lleva «never flapping» y la pezuña «never stamping», que faltaban; Lumi responde «Only after Tiky lowers his wing» (el orden del guion); los dos terminan quietos en su lugar.
+5. **Tomas 6 y 9:** las miradas al ala o a la pezuña y a cámara son «slowly», «with gentle head turns» (riesgo «Planos 5 y 8: giros bruscos»), y la espera dura «until the end» (el último fotograma arranca la toma siguiente).
+6. **Tomas encadenadas 2, 7, 8, 10, 11, 13 y 15:** «in the same place and size as in the start image; the light does not change» (riesgo «saltos entre tomas»). Las líneas CRITICAL solo cubrían diseño y proporciones, no lugar ni luz.
+7. **Tomas 1 y 12 (caminar):** «never bumping into each other» y «wings and forelegs stay down, no waving» (la definición prohíbe saludar antes de la toma 2 y en la 12). En la 1, «for about four seconds». En la 12, «near the red barn» pasa a «beside the red barn on the left», para que no se lea como ir hacia la puerta del granero.
+8. **Lumi en el encuadre B (tomas 3, 9, 10 y 11):** la sonrisa es «closed-mouth» o «with her mouth closed» (riesgo «Caras de cerca: dientes»).
+9. **Esta definición, toma 4, «No debe verse»:** se quitó la referencia a la pregunta 8, que ya estaba resuelta, y se agregaron estos puntos: mirar o saludar hacia el lado de Lumi, que Lumi copie el gesto, que aparezca alguien a la derecha y que el ala siga moviéndose. En la toma 5 se agregó que el ala o la pezuña no deben tocar al otro.
+
+**Pendiente del director de prompts antes de la etapa 1:** volver a pasar `validar_prompt.py` sobre `prompt.md` y volver a archivar con `archivar_prompt.py`. La copia de `personajes/tiky/prompts/capitulos/granja_cap01_hola_granja.md` ya no es idéntica, y la regla de cada pieza dice «copia idéntica… pegado completo y sin cambios». Hay que pegar el bloque de `prompt.md`, no el archivado viejo.
+
 ## Revisión del equipo
 
 | Quién | Qué revisó | ¿Conforme? | Nota |
 |---|---|---|---|
 | director-de-prompts | Que cada dato venga de una ficha o del entorno, sin suposiciones | Sí, con preguntas abiertas | Rasgos, fallos conocidos y patio vienen de las fichas y de `entorno.md`; acciones y tiempos, de `prompt.md` (con las líneas CRITICAL ya añadidas); costos, de la cotización de la coordinación del 2026-11-21. Las medidas de composición son estimaciones visuales sobre los PNG. Preguntas 1 a 13 arriba; la 8 conviene resolverla antes de la etapa 1 |
-| psicologa-infantil | Que nada de lo definido asuste, confunda o sea peligroso de imitar | | |
+| psicologa-infantil | Que nada de lo definido asuste, confunda o sea peligroso de imitar | Sí | Las 16 tomas piden lo que dice el guion aprobado: acción, orden, tiempos, mirada y pausa viva. Nada es peligroso de imitar, porque solo se camina despacio y se saluda. Corregí el texto de 15 prompts y de las tomas 4 y 5 de esta definición (ver «Correcciones de la psicóloga»), sin cambiar el guion ni la voz. El cambio del ala es correcto: cada uno saluda con el miembro de afuera, que se ve entero contra el fondo y no se acerca al otro, y en la toma 5, al girarse uno hacia el otro, ese miembro queda del lado de la cámara. La etapa 1 con la toma 4 sirve para el riesgo crítico S1 y para el lado del ala, pero no prueba el saludo de dos movimientos ni la pezuña. Por eso en la etapa 2 la toma 5 va sola primero, y las 14 y 16 se piden después de revisarla. Antes de generar hay que volver a validar y archivar el prompt |
 
 ## Resultado
 
