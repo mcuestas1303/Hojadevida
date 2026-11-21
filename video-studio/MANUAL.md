@@ -2,8 +2,8 @@
 
 Este es el procedimiento completo del estudio. Sirve para repetir con cualquier personaje nuevo
 lo que se hizo con Tiky y Lumi. Cada fase dice qué se hace, quién lo hace, qué archivo queda,
-con qué comando, cuándo se da por lista y cuánto cuesta. El caso real, con fechas, costos y
-errores, está en `casos/tiky_y_lumi.md`.
+con qué comando, cuándo se da por lista y cuánto cuesta. Hay dos casos reales, con fechas, costos y errores:
+`casos/tiky_y_lumi.md` (serie infantil con generador de video) y `casos/tin_y_tan.md` (canal de adultos dibujado con código).
 
 Regla del dueño (2026-11-21): **todo lo que se trabaje queda documentado como plantilla.** Si
 el proceso cambia, se cambia primero este manual; si aparece un paso nuevo, se agrega aquí con
