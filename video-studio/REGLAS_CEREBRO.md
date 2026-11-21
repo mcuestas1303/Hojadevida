@@ -63,6 +63,16 @@
 26. Revisión de cada render a 2 fotogramas por segundo, marcando fotogramas muertos; máximo 3 destellos por segundo.
 27. Herramientas por instalar (HyperFrames, Remotion, Earshot, transcripción): solo con el sí del dueño.
 
+## Publicación (2026-11-21)
+
+28. **Todo se sube a YouTube en privado.** Para hacerlo público o programarlo, el publicador le presenta al dueño qué se
+    publica, sus objetivos y el plan, y espera su sí a ese video (más adelante el dueño puede autorizar que sea solo).
+29. **Entrega al publicador:** Drive «Canal YouTube - Entregas» / una subcarpeta por código de trazabilidad, con video,
+    miniatura 1280×720 de menos de 2 MB (texto puesto en edición), subtítulos opcionales y `ficha.json`. Un código no
+    se sube dos veces. Detalle: `video-studio/ENTREGA_YOUTUBE.md`.
+30. **Contenido no auténtico:** dos videos seguidos no repiten estructura, música ni estilo de miniatura; el video
+    cumple lo que promete el título; nada de material ajeno sin licencia.
+
 ## Agregado por el Generador de prompts (2026-11-21)
 
 - **Quién decide qué:** el equipo decide todo lo técnico y de producción y lo informa con su razón; al dueño se le llevan ideas, ajustes a las ideas y criterio psicológico. Gastar créditos, instalar, rehacer y publicar siguen necesitando su sí.

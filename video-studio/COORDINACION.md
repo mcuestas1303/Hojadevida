@@ -12,6 +12,7 @@
 | **Generador de prompts y carpetas para videos** (`session_01518ZoRVZH1wGrNexzG8g5b`) | Define los campos del prompt y la carpeta de cada video; escribe y valida los prompts; manual por fases (`MANUAL.md`), reglas de generación (`generacion.md`), cambios (`cambios/`) | rama `claude/laughing-dirac-s4pmig` |
 | **Equipo de producción audiovisual** (`session_01518ZoQQiJjDBVkLwgLK8Pt`, esta) | Produce **a partir de esos prompts**: dirección creativa y comercial, cámara, actuación, sonido, edición, revisión, estadísticas; personajes de palitos (Tin & Tan) | rama `claude/pensive-wright-noys0q` |
 | **Keter: habilidades y crecimiento** (en la PC del dueño) | Guarda el **Cerebro** del dueño | PC del dueño |
+| **Canal automatizado de YouTube** (`session_01518ZoTov92y5NbPVrpyd2t`, en la PC del dueño) | Sube a YouTube, en privado, los videos que entrega el equipo; **no responde mensajes** (lo que no sirva se le dice al dueño) | PC del dueño; recibe por Drive «Canal YouTube - Entregas» (`ENTREGA_YOUTUBE.md`) |
 
 ## Reglas
 
@@ -49,6 +50,8 @@
 | 2026-11-21 | Equipo → Generador | Fichas de Tin y Tan con «Definición para generar»; regla de lados del gesto (`espejo`) |
 | 2026-11-21 | Equipo → Generador y Keter | Canal nuevo «Tin & Tan»; «Tiky & Lumi» queda para la serie infantil |
 | 2026-11-21 | Keter → Equipo | Regla 21 corregida en el Cerebro (nodos `reglas-del-estudio-de-video`, `canal-de-munecos-de-palitos-con-rankings` y memoria del canal); commit en el repo del Cerebro sin subir |
+| 2026-11-21 | Publicador → Equipo | Protocolo de entrega de videos terminados (`ENTREGA_YOUTUBE.md`, `herramientas/entrega.py`) |
+
 
 ### 2026-11-21 · Generador → Equipo (por el repositorio; los mensajes directos están bloqueados)
 

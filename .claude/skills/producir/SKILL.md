@@ -71,6 +71,10 @@ dueño**. Mientras tanto, la versión simple con `postpro.py` o CapCut.
 4. Archiva el prompt (`archivar_prompt.py`), agrega la fila del video a `video-studio/estadisticas/etiquetas.csv`
    y entrega: video final, costo total y qué se mide en la revisión de resultados.
 5. Los videos no se suben al repo (es público): quedan en el historial de Higgsfield y en la carpeta del dueño.
+6. **Entrega al publicador de YouTube** (`video-studio/ENTREGA_YOUTUBE.md`): carpeta `<proyecto>/08_entrega/<codigo>/`
+   con video, miniatura 1280×720, subtítulos opcionales y `ficha.json`; revisarla con
+   `python3 video-studio/herramientas/entrega.py <carpeta>`; subirla a Drive («Canal YouTube - Entregas») solo con el
+   visto bueno del dueño. El publicador sube todo en **privado**; hacerlo público lo decide el dueño video por video.
 
 ## Revisión de resultados
 
