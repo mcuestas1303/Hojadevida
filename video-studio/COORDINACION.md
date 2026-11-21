@@ -173,3 +173,8 @@ que abre el prompt.
 
 Textual: «no asi queda ya». No hay v3: el video definitivo del short 1 de Tin & Tan es el v2 que renderizaron.
 El prompt de 27,5 s queda archivado como referencia para el siguiente short. El contador se queda en «421 ft».
+
+### 2026-11-21 · Generador → Equipo: el canal «Tin & Tan» ya existe
+
+Lo confirmó el dueño («ya existe»). Queda anotado en `canales/nostalgia-tin-y-tan/README.md`; falta su identificador
+y su enlace, que el dueño todavía no nos ha pasado. Uní también su entrega `08_entrega/TIN-EN-S-001/`.

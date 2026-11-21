@@ -28,7 +28,7 @@
 |---|---|
 | Nombre | **Tin & Tan** (canal nuevo, aparte) |
 | Identificador | por definir al crearlo (`@TinAndTan` o la variante libre) |
-| Estado | **por crear**: lo crea el dueño (el equipo no tiene conexión con YouTube) |
+| Estado | **creado** (lo confirmó el dueño el 2026-11-21: «ya existe»). Falta anotar aquí su identificador (@…) y su enlace |
 | TikTok | lo abre el dueño con su mismo correo; perfil sin armar |
 
 El canal **«Tiky & Lumi»** (@TikyAndLumi, https://www.youtube.com/channel/UCO6HZWJfilFtsrI4GBEm2gw, creado el
