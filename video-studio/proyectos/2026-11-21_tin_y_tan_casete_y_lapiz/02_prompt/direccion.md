@@ -45,6 +45,23 @@
 - **Se resuelve en edición:**
 - **Tomas encadenadas (último fotograma → keyframe):**
 
+## 3b. Color con intención — director-de-fotografia (escrito el 2026-11-21, después de entregar)
+
+> Sección agregada a posteriori por la regla nueva del dueño (manual cap. 13). El video no se cambia.
+
+- **Neutros (2):** papel `#F3E9D2` (fondo) · tinta `#2B2420` (líneas y texto), contraste 12,6:1.
+- **Acento (1):** mostaza `#E8B33B` en la palabra clave de cada texto y en el lápiz, con contorno de tinta (sola da
+  1,6:1). **Desvío:** el tomate `#C8553D` funciona como segundo acento en los gráficos (franja de la etiqueta del
+  casete, corchete, arco del diagrama, marca del cronómetro) y en varios planos comparte cuadro con la mostaza; con
+  la regla nueva, un solo acento por plano.
+- **Por qué esta paleta:** impresos y fotos de los 70 y 80, cálidos y de saturación baja, para la nostalgia de un
+  público de 45 o más; se leen bien con la vista de ese público.
+- **Cómo ayuda al objetivo:** retención (KPI visto frente a deslizado): el acento lleva el ojo a la cifra desde el
+  primer segundo; recordación: la misma paleta en todo el canal.
+- **Riesgos de lectura:** el naranja de Tin y el tomate son vecinos de tono; se separan por forma y contorno.
+- **Medido (supervisor, `revisar_color.py`):** ≈ 94 % dentro de la paleta; saturación ≈ 17 %; luminosidad ±3 % entre
+  segundos; fondo papel 83 % del cuadro, sin competir con los personajes. **PASA.**
+
 ## 4. Actuación — director-de-animacion
 
 | Toma | Personaje | Pose inicial (keyframe) | Anticipación → acción → pose final | Secundaria | Mirada | Panel de la hoja |

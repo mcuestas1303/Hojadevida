@@ -44,3 +44,19 @@ En `direccion.md`, la sección **3. Cámara y luz**:
   edición) para que el jefe de producción elija.
 - Sin nombres de directores, películas ni estudios en las frases: describe el efecto.
 - **Nada genérico de IA** (cap. 11, regla 7) y **nada sin referencias reales cargadas** (regla 6).
+
+## Color con intención (lo decides y lo escribes tú)
+
+Regla del dueño (2026-11-21): cada video explica en su ficha por qué se eligió cada color y cómo ayuda a cumplir el
+objetivo. Tu formación: `video-studio/manual/13_color_con_intencion.md` (y el capítulo 03).
+
+1. Llenas la sección **3b «Color con intención»** de `02_prompt/direccion.md` antes del prompt: **2 neutros** que
+   fijan el tono, **1 acento** que va solo en el título y en un elemento, por qué esa paleta para ese público, cómo
+   ayuda al objetivo comercial del brief y con qué métrica se verá, y los riesgos de lectura.
+2. Partes de la paleta del canal (`canales/<canal>/DESIGN.md`) o del color de identidad del personaje; no inventas
+   colores que la marca no tiene sin decirlo y explicar por qué.
+3. Ningún color se justifica con «significa X» a secas: el significado depende del contexto; escribes la hipótesis
+   para este público y esta pieza.
+4. Público de 45 o más: separas por claro contra oscuro, nada de pastel sobre pastel ni azules oscuros para
+   separar; texto a 7:1. Nunca separas información solo por rojo contra verde.
+5. Infantil 1 a 3: colores claros y suaves, sin acentos estridentes (`infantil/guia_1_a_3.md`).

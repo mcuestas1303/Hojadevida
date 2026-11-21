@@ -202,6 +202,7 @@ Pedido del dueño: «prepara un prompt para tin y tan con temática de gta6 agre
 | 2026-11-21 | Dueño → Equipo | Regla: los nombres van con mayúscula, «Tin & Tan» / «Tin y Tan», aunque el estilo pida minúsculas. El banner y las hojas de personaje salieron en minúscula y el equipo no lo vio. Corregido en `marca.py` y `palitos.py`, banner y hojas regenerados; regla en `DESIGN.md`, `REGLAS_CEREBRO.md` y en la lista fija del supervisor de continuidad |
 | 2026-11-21 | Dueño → Equipo | «Estamos produciendo en alta calidad, no amateur»: controles bloqueantes por proceso (`manual/12_controles_de_calidad.md`), filtro de texto `herramientas/revisar_texto.py` (también dentro de `entrega.py`) firmado por el supervisor de continuidad |
 | 2026-11-21 | Dueño → Equipo | Cifras con decimales o fracciones: aproximadas y con «≈»; en la voz, «about / unos». TIN-EN-S-001 se deja como está; la regla vale desde el siguiente video |
+<<<<<<< HEAD
 
 ### 2026-11-21 · Generador → Equipo: voces del short 2 (GTA 6) generadas; les toca armar y renderizar
 
@@ -215,3 +216,9 @@ El dueño autorizó aquí: «sí a todo, instala el corrector y genera las voces
 - `pyspellchecker` quedó instalado en mi entorno (se pierde al reiniciar el contenedor: `pip install pyspellchecker`).
   `revisar_texto.py` sobre los subtítulos: 0 errores. «GTA» está en `glosario.txt`.
 - Radar: fechas de las tres oportunidades comprobadas en la fuente (final de `comercial/radar_de_tendencias.md`).
+=======
+| 2026-11-21 | Keter → Equipo | Regla del dueño para la portada de los Shorts (cambia la regla 29): portada en los primeros 0,5–1 s del video, `miniatura.png` vertical 1080×1920, zona útil x 60–960 / y 380–1440, máx. 4 palabras con mayúscula inicial, sin la respuesta. Aplicada en `REGLAS_CEREBRO.md`, `ENTREGA_YOUTUBE.md`, `DESIGN.md`, `manual/12`, editor y supervisor; `entrega.py` exige la vertical en un Short. Keter tiene un ejemplo para TIN-EN-S-001 en la PC del dueño (Segoe UI Bold) |
+| 2026-11-21 | Equipo → Keter | Marca del canal en Drive «Canal YouTube - Entregas» (raíz), con el sí del dueño: banner (`1F_p15-iWysos1V0dm5cWDycq5w0Er1Vc`), perfil (`1JQN8LgR-moHNKYgwYyFsj5H0SCoTkAGT`), marca de agua (`1T7Kf8qvDKhfHAUnwOMXT_71HRlSgQkgn`) y descripción del canal (`1yDkd_Uj8MTEs8pxkF7Np5hSwZCETS0YX`); filtro de texto en 0 errores |
+| 2026-11-21 | Dueño → Equipo | Corrector ortográfico instalado: Hunspell (spylls) con diccionarios de LibreOffice en, es y pt-BR; en una sesión nueva, `bash video-studio/herramientas/instalar_corrector.sh` |
+| 2026-11-21 | Dueño → Equipo | Color con intención: capacitado el director de fotografía (decide), director creativo (valida contra el objetivo), supervisor (mide con `herramientas/revisar_color.py`, control 8) y editor (aplica). Manual cap. 13; sección 3b de la dirección; campo `color` en `ficha.json` exigido por `entrega.py`. Regla 2 neutros + 1 acento del reel de andrea.eskailet (vía Keter) |
+>>>>>>> origin/claude/pensive-wright-noys0q

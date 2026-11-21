@@ -18,7 +18,7 @@ Si no se da --idioma, se toma «idioma» de la ficha.json que haya; si no hay, s
 
 Qué revisa (cada hallazgo es ERROR salvo que diga AVISO):
   - nombres propios en minúscula: Tin, Tan, Tiky, Lumi, Spike y los nombres de canal (también en hashtags)
-  - ortografía contra el diccionario del idioma (pyspellchecker) más video-studio/glosario.txt
+  - ortografía con Hunspell (diccionarios de LibreOffice: en, es, pt-BR) más video-studio/glosario.txt
   - espacios dobles, espacio antes de signo, palabra repetida («the the»), comillas, paréntesis y ¿? ¡! sin cerrar
   - oraciones de título y descripción que empiezan en minúscula
   - separador decimal del idioma: «4,76» en inglés es error; «4.76» en español es aviso
@@ -78,12 +78,38 @@ def leer(ruta):
             if ln.strip()]
 
 
+DICCIONARIOS = Path(__file__).resolve().parent / "diccionarios"   # los instala instalar_corrector.sh
+ARCHIVO_DIC = {"en": "en", "es": "es", "pt": "pt"}                   # pt = portugués de Brasil
+
+
+class Corrector:
+    """Hunspell (motor spylls, diccionarios de LibreOffice vía wooorm/dictionaries): acepta plurales, conjugaciones
+    y mayúsculas de inicio de oración. Varios idiomas: una palabra vale si la acepta cualquiera."""
+
+    def __init__(self, idiomas):
+        from spylls.hunspell import Dictionary
+        self.dics = []
+        for i in idiomas:
+            base = DICCIONARIOS / ARCHIVO_DIC.get(i, i) / "index"
+            if not base.with_suffix(".dic").exists():
+                raise FileNotFoundError(base)
+            self.dics.append(Dictionary.from_files(str(base)))
+
+    def __contains__(self, palabra):
+        return any(d.lookup(palabra) for d in self.dics)
+
+    def correction(self, palabra):
+        for d in self.dics:
+            for s in d.suggest(palabra):
+                return s
+        return None
+
+
 def corrector(idiomas):
     try:
-        from spellchecker import SpellChecker
-    except ImportError:
+        return Corrector(idiomas)
+    except (ImportError, FileNotFoundError):
         return None
-    return SpellChecker(language=idiomas)   # varios idiomas: se unen los diccionarios
 
 
 def glosario():
@@ -99,8 +125,8 @@ def revisar_textos(textos, idiomas):
     sc = corrector(idiomas)
     permitidas = glosario()
     if sc is None:
-        errores.append("ortografía SIN COMPROBAR: falta el corrector (pyspellchecker). Se instala con el sí del "
-                       "dueño; mientras tanto el supervisor lee cada palabra y lo deja escrito en 07_revision/")
+        errores.append("ortografía SIN COMPROBAR: falta el corrector (Hunspell). Se instala con "
+                       "bash video-studio/herramientas/instalar_corrector.sh; mientras tanto el supervisor lee cada palabra y lo deja escrito en 07_revision/")
     for origen, texto, es_oracion in textos:
         limpio = URL.sub("§", texto)
 
@@ -171,7 +197,7 @@ def revisar_textos(textos, idiomas):
                 bajo = p.lower()
                 if len(p) < 2 or bajo in permitidas or (p[0].isupper() and p in NOMBRES):
                     continue
-                if bajo in sc:
+                if p in sc or bajo in sc:
                     continue
                 if "'" in bajo and all(x in sc or x in permitidas for x in bajo.split("'")):
                     continue

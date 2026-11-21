@@ -22,7 +22,9 @@ Aplica a **todo texto** que vea el público: títulos en pantalla, subtítulos, 
 marca de agua, título, descripción, etiquetas, hashtags, descripción del canal y textos de las hojas de personaje.
 
 1. `python3 video-studio/herramientas/revisar_texto.py <archivos o carpeta> --idioma <en|es|pt>` con **0 errores**.
-   Revisa nombres propios, ortografía (diccionario más `video-studio/glosario.txt`), espacios, palabras repetidas,
+   Revisa nombres propios, ortografía (Hunspell con los diccionarios de LibreOffice de inglés, español y portugués
+   de Brasil, más `video-studio/glosario.txt`; en una sesión nueva se instala con
+   `bash video-studio/herramientas/instalar_corrector.sh`), espacios, palabras repetidas,
    comillas y paréntesis, ¿? y ¡! en español, oraciones en minúscula y separador decimal. `entrega.py` lo corre solo
    sobre la ficha y los subtítulos. El texto que se dibuja con código se revisa pasando los `.py` del render.
 2. Cada **AVISO** se lee uno por uno y se resuelve o se explica por escrito.
@@ -67,6 +69,9 @@ marca de agua, título, descripción, etiquetas, hashtags, descripción del cana
 2. Personajes contra su ficha: rasgos, colores, proporciones, lado y espejo (`DESIGN.md` del canal).
 3. Nada tapado o cortado (lección del casete sobre el moño de Tan en la miniatura vertical).
 4. Se revisa la imagen renderizada a tamaño real, no solo el código que la dibuja.
+5. **Portada de un Short** (`ENTREGA_YOUTUBE.md`, «Portada de los Shorts»): está en los primeros 0,5 a 1 s del
+   video y en `miniatura.png` de 1080×1920; texto y caras dentro de la zona útil x 60–960, y 380–1440; máximo 4
+   palabras con mayúscula inicial; sin la respuesta; el video cumple lo que promete.
 
 ## 5. Video: lo arma el editor, lo firma el supervisor
 
@@ -81,6 +86,16 @@ marca de agua, título, descripción, etiquetas, hashtags, descripción del cana
 1. `python3 video-studio/herramientas/entrega.py <carpeta>` con 0 errores (incluye el control de texto).
 2. `controles.md` del proyecto con los controles 1 a 5 en PASA.
 3. Solo entonces se le pide al dueño el visto bueno para subir (`ENTREGA_YOUTUBE.md`).
+
+## 8. Color: lo decide el director de fotografía, lo firma el supervisor
+
+1. La sección «Color con intención» de la dirección está completa: 2 neutros y 1 acento, por qué, cómo ayuda al
+   objetivo y riesgos de lectura (`manual/13_color_con_intencion.md`).
+2. `revisar_color.py` sobre el video y la miniatura terminados: ≈ 85 % o más dentro de la paleta, sin saltos de
+   luminosidad sin razón, fondo que no compite con el personaje.
+3. Contraste de cada texto ≥ 4,5:1 (≥ 7:1 para público de 45 o más), medido con `--contraste`; un acento claro
+   lleva contorno oscuro.
+4. El acento está solo en el título y en un elemento por plano. Lo medido se copia a la sección y a `ficha.json`.
 
 ## 7. Marca del canal: la firma el supervisor
 
