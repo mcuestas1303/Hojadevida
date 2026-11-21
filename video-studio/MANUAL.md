@@ -35,6 +35,11 @@ El equipo decide lo técnico y lo informa con su razón; al dueño se le llevan 
 psicológico y lo que solo él puede hacer. Gastar créditos, instalar, rehacer una pieza y publicar siguen necesitando
 su sí. Regla completa en `CLAUDE.md`.
 
+## Dónde se presenta cada cosa
+
+Los prompts y las fichas se ven en la conversación del Generador de prompts. Todo lo terminado (videos, audios,
+imágenes, revisiones) se le presenta al dueño en la conversación del Equipo de producción audiovisual.
+
 ## El equipo
 
 | Agente | Disciplina | Qué entrega | Cuándo entra |

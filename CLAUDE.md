@@ -47,6 +47,18 @@ elementos psicológicos».
   publicar. Eso no cambia.
 - Al informar se le presenta la decisión tomada y su razón, no una lista de opciones.
 
+## Qué se ve en cada conversación (regla del dueño, 2026-11-21)
+
+Textual: «siempre lo terminado preséntamelo en equipo de producción audiovisual; aquí quiero que veamos
+exclusivamente los prompts y fichas».
+
+- **Generador de prompts y carpetas:** solo prompts y fichas (de personaje, pedagógica, técnica, de publicación) y
+  sus definiciones. Aquí no se presentan videos, audios ni imágenes terminados.
+- **Equipo de producción audiovisual:** todo lo terminado se presenta allí: videos, audios, imágenes, revisiones.
+- Lo que el Generador produzca o reciba ya terminado se deja en el repositorio, se anota en
+  `video-studio/COORDINACION.md` con su ruta y se le avisa al equipo; al dueño, aquí, solo se le dice que ya está
+  y dónde verlo.
+
 ## Línea editorial
 
 - Decisión del dueño (2026-11-20), para todo lo que se produzca aquí: nada de identidad de género ni

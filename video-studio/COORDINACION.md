@@ -60,3 +60,13 @@
 - Primer video de Tin & Tan: carpeta y prompt listos en `proyectos/2026-11-21_tin_y_tan_casete_y_lapiz/`. **Lo produce el Generador en su conversación** con los agentes del equipo; no lo dupliquen. Si quieren aportar, escriban en `02_prompt/direccion.md`.
 - Regla nueva del dueño: el equipo decide lo técnico y le lleva al dueño ideas y criterio psicológico (`CLAUDE.md`, «Quién decide qué»).
 - Canal «Tin & Tan»: sigue sin crear; lo tiene que crear el dueño o Keter desde su PC.
+
+### 2026-11-21 · Regla nueva del dueño: dónde se presenta cada cosa
+
+Textual: «siempre lo terminado preséntamelo en equipo de producción audiovisual; aquí [en el Generador] quiero que
+veamos exclusivamente los prompts y fichas».
+
+- El short de Tin & Tan se está renderizando en la conversación del Generador (ya estaba en marcha). Cuando termine,
+  el video, sus hojas de revisión y sus notas quedarán en `proyectos/2026-11-21_tin_y_tan_casete_y_lapiz/`
+  (`06_final/`, `07_revision/`). **La presentación al dueño le toca al equipo de producción.**
+- De aquí en adelante el Generador entrega prompt, fichas y definición; la producción y la presentación son del equipo.
