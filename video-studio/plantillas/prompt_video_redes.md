@@ -20,7 +20,7 @@ herramientas/validar_prompt.py las lee. Los textos entre corchetes se reemplazan
 - **Resolución de borrador:** [la más baja que ofrezca el generador]
 - **Resolución final:** [solo para las tomas aprobadas]
 - **Precio por segundo:** [costo de 1 s de video en tu plan, o "desconocido"]
-- **Intentos estimados por toma:** 2
+- **Intentos estimados por toma:** 1
 
 ## 2. Elenco
 
@@ -123,10 +123,13 @@ Van al inicio de cada prompt de video, antes de la descripción. Son las que no 
 CRITICAL: no text, captions, subtitles, logos or watermarks unless listed in section 12.
 CRITICAL: the character looks identical in every shot (same design, colors, proportions).
 CRITICAL: hard cuts only, no morphing between shots.
+CRITICAL: every figure, name or claim on screen comes from the project's facts file, with source and date.
 ```
 
 ## 11. Gancho, ritmo y cierre
 
+- **Regla formal de la pieza:** [la idea única que la sostiene, en una frase: «una sola forma que nunca se corta»]
+- **Rejilla de tiempo:** [pulsos (BPM y compases) o intervalos fijos de N s; la rejilla suma la duración total]
 - **Gancho (0 a 1 s):** [tipo: movimiento | contraste | cifra] — [qué se ve y qué texto lleva, si lleva]
 - **Empieza en movimiento:** [sí: sin intro ni logo | no, y por qué]
 - **Motivo visual que vuelve:** [objeto, gesto o transición que firma el video]
@@ -135,9 +138,12 @@ CRITICAL: hard cuts only, no morphing between shots.
 
 Mapa de ritmo (los tiempos al décimo de segundo):
 
-| Tramo | Segundos | Cortes por segundo | Qué pasa | Respiro |
-|---|---|---|---|---|
-| [inicio] | [0,0–0,6] | [n] | [ráfaga de planos] | [no] |
+| Tramo | Segundos | Pulso o intervalo | Cortes por segundo | Qué pasa (una acción) | Respiro |
+|---|---|---|---|---|---|
+| [inicio] | [0,0–0,6] | [1] | [n] | [ráfaga de planos] | [no] |
+
+Lo que sale se va antes de que entre lo siguiente. El movimiento se describe como mecánica
+(qué parte se mueve, con qué curva, en qué orden entra y sale), no con adjetivos.
 
 Tipos de plano disponibles: detalle o macro, héroe abierto, subjetivo, revelado desde desenfoque,
 objeto que salta sobre el mismo fondo. Transiciones siempre motivadas (obturador lento,
@@ -148,7 +154,10 @@ desenfoque, destello). **No más de 3 destellos por segundo.**
 - **Tipografías:** [nombre y licencia]
 - **Paleta:** [colores con HEX]
 - **Referencias de movimiento:** [archivos en 01_referencia/]
-- **Prohibido:** mayúsculas centradas sobre degradado, tarjetas con degradado, animaciones lineales, [otros]
+- **Prohibido** (de 5 a 10 vicios concretos del generador o motor que se usa, no frases generales): mayúsculas centradas sobre degradado, tarjetas con degradado, animaciones lineales, [otros]
+- **Márgenes seguros y escenario:** [margen en % por lado; qué proporción del cuadro ocupa el contenido]
+- **Texto exacto:** todo texto en pantalla es el de la tabla de abajo, letra por letra
+- **No afirmar:** [cifras, promesas o nombres que no deben aparecer]
 - **Subtítulos:** [de 1 a 3 palabras, con la palabra clave resaltada | no lleva]
 
 | Texto | Entra (s) | Sale (s) | Posición (% del cuadro) | Tamaño (% del alto) |
@@ -169,6 +178,7 @@ En un short, todo texto queda dentro de la zona segura de `formatos.md`.
 ## 14. Motor y revisión
 
 - **Cómo se hace:** [generador de video | gráficos por código (fotograma a fotograma) | mezcla]
-- **Revisión:** `herramientas/revisar_fotogramas.py` sobre cada clip; se anota en `07_revision/`.
+- **Punto de control:** antes de generar o renderizar se presenta la lista de tomas sobre la rejilla y se espera el visto bueno.
+- **Revisión:** `herramientas/revisar_fotogramas.py` sobre cada clip; se anota en `07_revision/`. En piezas por código: prueba corta de 5 s, un fotograma por pulso, hoja de contacto y comprobación de medidas.
 - **Qué se marca:** imagen congelada, fotograma vacío, texto cortado o tapado, elemento fuera de cuadro, tirones, demasiado tiempo sin cambio.
-- **Vueltas:** las correcciones por código son gratis; **las de generador no se repiten sin autorización del dueño** (`generacion.md`).
+- **Vueltas:** las correcciones por código son gratis (salvo servicios de pago, que van a `costos.md`); **las de generador no se repiten sin autorización del dueño** (`generacion.md`).

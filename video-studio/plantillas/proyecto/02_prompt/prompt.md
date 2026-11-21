@@ -18,7 +18,7 @@ herramientas/validar_prompt.py las lee. Los textos entre corchetes se reemplazan
 - **Resolución de borrador:** [la más baja que ofrezca el generador]
 - **Resolución final:** [solo para las tomas aprobadas]
 - **Precio por segundo:** [costo de 1 s de video en tu plan, o "desconocido"]
-- **Intentos estimados por toma:** 2
+- **Intentos estimados por toma:** 1
 
 ## 2. Elenco
 

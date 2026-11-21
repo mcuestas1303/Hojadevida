@@ -236,7 +236,7 @@ def main():
     elif tipo == "short" and total_s > SHORT_REDES_S:
         avisos.append(f"El short dura {total_s:g} s: con más de {SHORT_REDES_S} s no se reutiliza igual en todas las redes.")
     serie = reglas_de_serie(ruta, ficha, elenco, por_titulo, total_s, errores)
-    intentos = numero(campo(ficha, "Intentos estimados por toma")) or 2
+    intentos = numero(campo(ficha, "Intentos estimados por toma")) or 1
     precio = numero(campo(ficha, "Precio por segundo"))
 
     print(f"Prompt: {ruta}")

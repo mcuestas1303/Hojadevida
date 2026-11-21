@@ -10,6 +10,9 @@ Todo lo que se genera debe estar definido antes, y todo cambio pasa primero por 
   costaría rehacerlo. Solo él autoriza otra generación, pieza por pieza.
 - Lo que falló se anota en la ficha del personaje o del lugar («Fallos conocidos»), para que
   la definición lo prevenga la próxima vez.
+- La regla cubre todo lo que cuesta créditos o dinero: generador de imagen y de video, voz y música
+  de pago. Las correcciones de código propio (montaje, gráficos dibujados por código) no cuestan y
+  se pueden repetir; si su render final usa un servicio de pago, se autoriza pieza por pieza.
 - Ningún generador garantiza el resultado al primer intento. Lo que sí se controla es llegar
   con todo definido y no gastar de nuevo sin permiso.
 
@@ -22,6 +25,7 @@ No se genera nada hasta que exista y esté completo:
 | Personaje | `personajes/<id>/ficha.md`, sección «Definición para generar» | Proporciones medibles, lista de rasgos a comprobar, fallos conocidos, imagen de referencia |
 | Lugar | `series/<serie>/entorno.md` | Cada elemento del lugar descrito sin ambigüedad, lo que no debe haber, imagen de referencia del lugar |
 | Pieza | `<proyecto>/03_keyframes/definicion.md` | Por cada imagen o clip: referencias que se suben, composición con medidas, qué debe verse, qué no, modelo, ajustes y costo cotizado |
+| Pieza por código | La misma `definicion.md` | Datos y cifras con su fuente, paleta con HEX, tipografía y licencia, texto exacto, duración y fotogramas por segundo, rejilla de tiempo, lista de prohibidos, motor y versión, costo de servicios externos |
 | Aprobación | La misma `definicion.md` | Visto bueno del equipo y **autorización del dueño** con el costo total a la vista |
 
 Si falta un dato (una proporción, un color, la forma de un objeto), no se supone: se pregunta
