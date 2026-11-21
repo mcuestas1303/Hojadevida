@@ -11,7 +11,7 @@
 - **Edad aparente:** adulta (sin edad marcada)
 - **Personalidad en una línea:** cálida y curiosa; los recuerdos la ponen tierna y los resultados la sorprenden.
 - **Público / canal:** adultos, canal de nostalgia. **Nunca** en contenido infantil.
-- **Voz:** **Zelda** de Higgsfield (`seed_audio`, voz predefinida `b7aaea29-0c88-5925-90c0-8f66754cda53`), elegida por el dueño el 2026-11-21. Se acelera un poco en edición; velocidad por elegir (`canales/nostalgia-tin-y-tan/voces.md`).
+- **Voz:** **Zelda** de Higgsfield (`seed_audio`, voz predefinida `b7aaea29-0c88-5925-90c0-8f66754cda53`), elegida por el dueño el 2026-11-21. En edición se acelera un 10 % sin cambiar el tono (`atempo=1.10`), velocidad elegida por el dueño el 2026-11-21.
 
 ## Bloque de identidad
 

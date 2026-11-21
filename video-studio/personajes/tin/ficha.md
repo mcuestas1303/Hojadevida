@@ -12,7 +12,7 @@
 - **Personalidad en una línea:** preciso y entusiasta con los números; se emociona con el resultado («eureka»).
 - **Público / canal:** adultos, canal de nostalgia (inglés, EE. UU. mayores de 50 según la recomendación sin confirmar).
   **Nunca** en contenido infantil.
-- **Voz:** **Kevin** de Higgsfield (`seed_audio`, voz predefinida `f1373f24-3b96-433f-9a68-e595810ef608`), elegida por el dueño el 2026-11-21 («tiene una energía más encendida al hablar»). Se acelera un poco en edición; velocidad por elegir (`canales/nostalgia-tin-y-tan/voces.md`).
+- **Voz:** **Kevin** de Higgsfield (`seed_audio`, voz predefinida `f1373f24-3b96-433f-9a68-e595810ef608`), elegida por el dueño el 2026-11-21 («tiene una energía más encendida al hablar»). En edición se acelera un 10 % sin cambiar el tono (`atempo=1.10`), velocidad elegida por el dueño el 2026-11-21.
 
 ## Bloque de identidad
 

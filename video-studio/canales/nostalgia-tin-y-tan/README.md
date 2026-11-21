@@ -57,7 +57,7 @@ El canal **«Tiky & Lumi»** (@TikyAndLumi, https://www.youtube.com/channel/UCO6
    **Falta crearlo** (lo hace el dueño) y anotar aquí su identificador y enlace.
 3. ~~Aprobación de Tin & Tan v1~~ → aprobada el 2026-11-21.
 4. **Presupuesto.** ¿Se confirma el tope de US$500 por 90 días?
-5. ~~Voz~~ → 2026-11-21: **Kevin para Tin y Zelda para Tan** (Higgsfield), aceleradas un poco en edición. Falta elegir la velocidad (`voces.md`).
+5. ~~Voz~~ → 2026-11-21: **Kevin para Tin y Zelda para Tan** (Higgsfield), aceleradas un 10 % en edición (`voces.md`).
 
 ## Cómo trabaja el equipo en este canal
 

@@ -44,7 +44,7 @@ El dueño pidió hacer la prueba de sonido con Tin y Tan y eligió él mismo la 
 
 - **Tin: Kevin. Tan: Zelda.** Decisión del dueño, textual: «Ambas voces me gustan pero para el tipo de video necesita más energía y creo que eso se logra acelerando un poco la reproducción; tómalo en cuenta para cuando se esté trabajando».
 - **Regla del canal:** la voz se acelera un poco en edición, sin cambiar el tono (`atempo` de ffmpeg) y sin volver a generar. Es gratis.
-- Para elegir la velocidad se armó el diálogo completo en el orden del guion, con cada voz normalizada a −14 LUFS, a cuatro velocidades: `pruebas/voces/dialogo_tin_y_tan_velocidad_100.mp3` (original, 29,9 s), `_110` (27,2 s), `_115` (26,0 s) y `_120` (24,9 s). **Falta que el dueño elija una.**
+- Para elegir la velocidad se armó el diálogo completo en el orden del guion, con cada voz normalizada a −14 LUFS, a cuatro velocidades: `pruebas/voces/dialogo_tin_y_tan_velocidad_100.mp3` (original, 29,9 s), `_110` (27,2 s), `_115` (26,0 s) y `_120` (24,9 s). **Elegida por el dueño el 2026-11-21: 110** («me gusta 110»). Es la velocidad fija del canal: toda voz se acelera un 10 % en edición (`atempo=1.10`) y se normaliza a −14 LUFS.
 - Los cortes entre líneas se hicieron por las pausas detectadas, sin escuchar el audio: conviene comprobar al oído que ninguna línea quedó cortada.
 - Por probar más adelante (cuesta créditos, necesita autorización): el modelo tiene un ajuste propio de velocidad del habla (`speech_rate`) y otro de intensidad de la expresión; podrían dar más energía que acelerar en edición.
 - Las voces de Windows, Kokoro y Gemini no se probaron: el dueño eligió directamente entre las de Higgsfield.
