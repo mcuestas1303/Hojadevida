@@ -1,0 +1,24 @@
+formato: h264 1080x1920 yuv420p 30/1 fps, 855 fotogramas; audio aac 48000 Hz; duración 28.500 s
+formato pedido (1080x1920, 30 fps, H.264, yuv420p, AAC, 855 fotogramas): sí
+fotogramas leídos: 855
+cortes (cambio medio 0-255 en el fotograma del corte; mediana de sus vecinos):
+    1.0 s  fotograma  30  cambio  17.77  vecinos  1.29  corte
+    2.0 s  fotograma  60  cambio  22.48  vecinos  1.11  corte
+    5.0 s  fotograma 150  cambio  27.86  vecinos  2.00  corte
+    9.0 s  fotograma 270  cambio  28.61  vecinos  0.81  corte
+   11.0 s  fotograma 330  cambio   2.53  vecinos  0.92  REVISAR
+   13.5 s  fotograma 405  cambio   2.65  vecinos  1.09  REVISAR
+   15.0 s  fotograma 450  cambio   2.35  vecinos  1.74  REVISAR
+   17.5 s  fotograma 525  cambio  20.56  vecinos  2.29  corte
+   21.0 s  fotograma 630  cambio  23.74  vecinos  0.99  corte
+   23.5 s  fotograma 705  cambio  18.48  vecinos  1.55  corte
+   25.5 s  fotograma 765  cambio  30.55  vecinos  0.28  corte
+   27.5 s  fotograma 825  cambio  27.09  vecinos  2.07  corte
+cambios grandes fuera de la rejilla (movimiento dentro de la toma, no cortes; fotogramas): [115, 116, 117, 118, 121, 122, 123, 537, 543, 545, 548, 550, 554, 555, 558, 606]
+tramos de 0,5 s o más sin ningún cambio: ninguno
+cambio mínimo por fotograma en todo el video: 0.0001
+bucle: diferencia media entre el último fotograma (854) y el 0: 2.928 (0-255); cambio medio entre fotogramas vecinos de la toma 13: 2.334
+fotogramas vacíos (imagen plana): ninguno
+mitad de abajo del cuadro (desviación de gris; < 3 = vacía): T1 39, T2 45, T3 44, T4 56, T5 40, T6 41, T7 40, T8 40, T9 39, T10 56, T11 45, T12 57, T13 37
+audio del archivo (AAC): -14.0 LUFS integrados, pico real -1.3 dBTP (dentro de -14 ±1 LUFS y -1 dBTP)
+silencios totales de 0,3 s o más (a -50 dB): ninguno

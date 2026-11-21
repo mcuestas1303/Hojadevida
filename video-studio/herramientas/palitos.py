@@ -15,6 +15,15 @@ Desde otro script (render de un video):
     lz.guardar("fotograma_0001.png")
 
 Requiere Pillow (y nada más). Probado con Pillow 12.3.0.
+
+Versiones:
+    1.0 (2026-11-21)  diseño aprobado.
+    1.1 (2026-11-21)  espejo.
+    1.2 (2026-11-21)  objetos de mano por video (fichas de Tin y Tan, «Objetos de mano por video»): `objeto` acepta
+                      también un nombre ("lapiz", "control", "calendario"). `objeto=True` sigue siendo el objeto icónico
+                      del personaje (el lápiz de Tin; Tan no tiene) y `objeto=False` ninguno: lo anterior se dibuja igual.
+                      Nuevo `giro_objeto` (grados; 0 por defecto) para el movimiento secundario del objeto. Gráfico
+                      `mando()` (mando genérico, sin logotipos ni símbolos) y `calendario_de_mano()`.
 """
 import argparse
 import math
@@ -23,7 +32,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
-VERSION = "1.1"  # 1.0: diseño aprobado (2026-11-21) · 1.1: espejo
+VERSION = "1.2"  # 1.0: diseño aprobado (2026-11-21) · 1.1: espejo · 1.2: objetos de mano por nombre (control, calendario)
 SS = 3  # supermuestreo: se dibuja 3 veces más grande y se reduce (Pillow no suaviza las líneas)
 
 # ---------------------------------------------------------------- paleta del canal (años 70, papel crema)
@@ -328,6 +337,127 @@ def lapiz(pl, x, y, angulo=-35, largo=0.95):
                  (p0[0] - nx, p0[1] - ny)], relleno="tomate", ancho=0.04)
 
 
+# ---------------------------------------------------------------- objetos de mano por video (versión 1.2)
+OBJETOS = ("lapiz", "control", "calendario")
+
+
+class _Marco:
+    """Sistema local para los objetos: origen en (cx, cy) px del cuadro, escala en px, rotación en grados (sentido
+    horario en pantalla) y espejo horizontal opcional."""
+
+    def __init__(self, lz, cx, cy, esc=1.0, rot=0.0, espejo=False):
+        self.d, self.cx, self.cy, self.esc = lz.d, cx, cy, esc
+        a = math.radians(rot)
+        self.ca, self.sa, self.sx = math.cos(a), math.sin(a), (-1 if espejo else 1)
+
+    def p(self, x, y):
+        x *= self.sx
+        return ((self.cx + self.esc * (x * self.ca - y * self.sa)) * SS, (self.cy + self.esc * (x * self.sa + y * self.ca)) * SS)
+
+    def poli(self, pts, relleno):
+        self.d.polygon([self.p(*q) for q in pts], fill=color(relleno))
+
+    def disco(self, x, y, r, relleno):
+        X, Y = self.p(x, y)
+        R = r * self.esc * SS
+        self.d.ellipse([X - R, Y - R, X + R, Y + R], fill=color(relleno))
+
+    def rect(self, x0, y0, x1, y1, relleno, radio=0.0):
+        if radio <= 0:
+            self.poli([(x0, y0), (x1, y0), (x1, y1), (x0, y1)], relleno)
+            return
+        pts = []
+        for cx, cy, a0 in ((x1 - radio, y0 + radio, -90), (x1 - radio, y1 - radio, 0),
+                           (x0 + radio, y1 - radio, 90), (x0 + radio, y0 + radio, 180)):
+            for i in range(9):
+                a = math.radians(a0 + 90 * i / 8)
+                pts.append((cx + radio * math.cos(a), cy + radio * math.sin(a)))
+        self.poli(pts, relleno)
+
+
+def mando(lz, cx, cy, ancho, angulo=0.0, boton_pulsado=False, relleno="mostaza", tinta="tinta", contorno=0.012,
+          detalles=True, espejo=False):
+    """Mando de videojuego GENÉRICO (sin logotipos, sin símbolos en los botones, sin la forma de ningún mando comercial).
+
+    (cx, cy): centro del contorno exterior, en px; ancho: W en px; el contorno mide W x 0,55 W. Cuerpo de W x 0,40 W
+    (radio 0,16 W) y dos empuñaduras redondas de radio 0,16 W; dos palancas y cuatro botones de punto en rombo.
+    angulo: grados, sentido horario. boton_pulsado: el botón de abajo del rombo pasa de tinta a papel (nunca a tomate).
+    contorno: grosor del contorno en W. detalles=False dibuja solo la silueta (para una estela plana: pasar el mismo
+    color en relleno y tinta)."""
+    m = _Marco(lz, cx, cy, ancho, angulo, espejo)
+    dy = -0.075                                    # el cuerpo queda 0,075 W por encima del centro del contorno
+    c = contorno
+
+    def silueta(crece, col):
+        m.rect(-0.5 + crece, dy - 0.20 + crece, 0.5 - crece, dy + 0.20 - crece, col, 0.16 - crece)
+        for sx in (-0.34, 0.34):
+            m.disco(sx, dy + 0.19, 0.16 - crece, col)
+
+    silueta(0.0, tinta)
+    silueta(c, relleno)
+    if not detalles:
+        return
+    for x, y in ((-0.24, 0.02), (0.12, 0.14)):     # palancas
+        m.disco(x, dy + y, 0.07, tinta)
+        m.disco(x, dy + y, 0.035, "papel_sombra")
+    for i, (x, y) in enumerate(((0.26, -0.11), (0.20, -0.05), (0.32, -0.05), (0.26, 0.01))):   # rombo; el último es el de abajo
+        if i == 3 and boton_pulsado:
+            m.disco(x, dy + y, 0.028 + c * 0.5, tinta)
+            m.disco(x, dy + y, 0.028 - c * 0.5, "papel")
+        else:
+            m.disco(x, dy + y, 0.028, tinta)
+
+
+def calendario_de_mano(lz, cx, cy, ancho, alto, angulo=0.0, numero="17", cabecera="marron"):
+    """Hoja de calendario pequeña (la que Tin lleva en la mano): cuerpo blanco, cabecera de 0,22 del alto, dos anillas
+    y un número en tinta. (cx, cy): centro de la hoja en px; angulo en grados, sentido horario. El número no se refleja."""
+    m = _Marco(lz, cx, cy, 1.0, angulo)
+    w, h = ancho / 2, alto / 2
+    b = max(2.0, 0.05 * ancho)                     # contorno
+    m.rect(-w, -h, w, h, "tinta", 0.06 * ancho)
+    m.rect(-w + b, -h + b, w - b, h - b, "blanco", 0.03 * ancho)
+    y_cab = -h + 0.22 * alto
+    m.rect(-w + b, -h + b, w - b, y_cab, cabecera, 0.03 * ancho)
+    m.rect(-w + b, y_cab - b * 0.5, w - b, y_cab + b * 0.5, "tinta")
+    for sx in (-0.25, 0.25):                       # anillas sobre el borde de arriba
+        m.disco(sx * ancho, -h + b * 0.5, 0.075 * ancho, "tinta")
+        m.disco(sx * ancho, -h + b * 0.5, 0.075 * ancho - b * 0.6, "papel")
+    if numero:
+        tam = int(round(0.52 * alto * SS))
+        f = fuente(tam)
+        caja = f.getbbox(numero, anchor="mm")
+        lado = int(max(caja[2] - caja[0], caja[3] - caja[1]) * 1.5) + 8
+        capa = Image.new("RGBA", (lado, lado), (0, 0, 0, 0))
+        ImageDraw.Draw(capa).text((lado / 2, lado / 2), numero, font=f, fill=color("tinta"), anchor="mm")
+        capa = capa.rotate(-angulo, resample=Image.BICUBIC)
+        X, Y = m.p(0, (y_cab + h) / 2 - 0.01 * alto)
+        lz.img.paste(capa, (int(round(X - lado / 2)), int(round(Y - lado / 2))), capa)
+
+
+def objeto_de_mano(lz, pl, nombre, mano, pose, giro=0.0):
+    """Dibuja el objeto `nombre` en la mano que gesticula. mano: (x, y) en R, sin reflejar. giro: grados extra."""
+    arriba = pose in ("saluda", "celebra", "pregunta")          # la misma regla de ángulo que el lápiz
+    if nombre == "lapiz":
+        lapiz(pl, mano[0] + 0.05, mano[1] - 0.25, angulo=(-60 if arriba else -35) + giro)
+        return
+    R = pl.r / SS
+    sx = -1 if pl.espejo else 1
+    if nombre == "control":
+        # 1,1 R de ancho (x 0,6 R de alto), agarrado por la empuñadura de adentro
+        ox, oy, base = (0.42, -0.30, -10) if arriba else (0.42, -0.22, 6)
+        ang = (base + giro) * sx
+        mando(lz, pl.cx / SS + sx * (mano[0] + ox) * R, pl.cy / SS + (mano[1] + oy) * R, 1.1 * R, angulo=ang,
+              contorno=0.04, espejo=pl.espejo)
+    elif nombre == "calendario":
+        # 0,9 R x 1,0 R, agarrado por el borde de abajo (sin tapar la cabeza ni salir de la zona segura con x = 70 %)
+        ox, oy, base = (0.34, -0.62, 6) if arriba else (0.15, -0.58, -6)
+        ang = (base + giro) * sx
+        calendario_de_mano(lz, pl.cx / SS + sx * (mano[0] + ox) * R, pl.cy / SS + (mano[1] + oy) * R, 0.9 * R, 1.0 * R,
+                           angulo=ang)
+    else:
+        sys.exit(f"Objeto de mano desconocido: {nombre}. Hay: {', '.join(OBJETOS)}")
+
+
 # ---------------------------------------------------------------- cabeza (sirve sola para primeros planos)
 def cabeza(lz, pid, cx, cy, radio, expresion="feliz", vista="frente", mira=1, espejo=False):
     """Dibuja solo la cabeza con sus accesorios, centrada en (cx, cy) y con ese radio en píxeles."""
@@ -344,13 +474,16 @@ def cabeza(lz, pid, cx, cy, radio, expresion="feliz", vista="frente", mira=1, es
 
 # ---------------------------------------------------------------- personaje completo
 def dibujar(lz, pid, x, suelo, alto, pose="parado", expresion="feliz", vista="frente", mira=1, viento=0.0,
-            objeto=True, espejo=False):
+            objeto=True, espejo=False, giro_objeto=0.0):
     """Dibuja a Tin o Tan con los pies en (x, suelo) y una altura total de `alto` píxeles.
 
     mira: 1 mira a la derecha, -1 a la izquierda (solo en perfil). viento: puntas de la bufanda (-1 a 1).
     espejo: dibuja la figura entera reflejada. Por defecto el brazo que hace el gesto queda a la DERECHA del cuadro;
     con espejo=True queda a la IZQUIERDA. Regla de los planos de dos: cada uno gesticula del lado contrario al otro
     (Tan, a la izquierda del cuadro, va con espejo=True; Tin, a la derecha, sin espejo).
+    objeto: True = el objeto icónico del personaje (el lápiz de Tin; Tan no tiene); False o None = ninguno; o el
+    nombre de un objeto de mano ("lapiz", "control", "calendario"), que vale para los dos personajes.
+    giro_objeto: grados que se suman al ángulo del objeto (movimiento secundario).
     """
     if pid not in PERSONAJES:
         sys.exit(f"Personaje desconocido: {pid}. Hay: {', '.join(PERSONAJES)}")
@@ -398,9 +531,9 @@ def dibujar(lz, pid, x, suelo, alto, pose="parado", expresion="feliz", vista="fr
     cabeza(lz, pid, x, suelo + cabeza_y * R, R, expresion, vista, s, espejo)
 
     # objeto icónico en la mano derecha (vista de frente) o en la de adelante (perfil)
-    if objeto and pj["objeto"] == "lapiz" and vista != "espalda":
-        m = manos[1]
-        lapiz(pl, m[0] + 0.05, m[1] - 0.25, angulo=-60 if pose in ("saluda", "celebra", "pregunta") else -35)
+    nombre = pj["objeto"] if objeto is True else (objeto if isinstance(objeto, str) else None)
+    if nombre and vista != "espalda":
+        objeto_de_mano(lz, pl, nombre, manos[1], pose, giro_objeto)
     return R
 
 
@@ -477,6 +610,8 @@ def main():
     m.add_argument("--expresion", choices=sorted(EXPRESIONES), default="feliz")
     m.add_argument("--vista", choices=VISTAS, default="frente")
     m.add_argument("--mira", type=int, choices=[-1, 1], default=1)
+    m.add_argument("--objeto", choices=OBJETOS, help="objeto de mano (por defecto, el icónico del personaje)")
+    m.add_argument("--espejo", action="store_true")
     a = p.parse_args()
 
     if a.orden == "hojas":
@@ -490,7 +625,8 @@ def main():
         print(f"Hojas -> {c}")
     else:
         lz = Lienzo(1080, 1080)
-        dibujar(lz, a.personaje, 540, 960, 820, pose=a.pose, expresion=a.expresion, vista=a.vista, mira=a.mira)
+        dibujar(lz, a.personaje, 540, 960, 820, pose=a.pose, expresion=a.expresion, vista=a.vista, mira=a.mira,
+                objeto=a.objeto or True, espejo=a.espejo)
         lz.guardar(a.salida)
         print(f"Muestra -> {a.salida}")
 
