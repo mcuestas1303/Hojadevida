@@ -262,3 +262,10 @@ Textual del dueño, aquí: «Aprobado; vos ya tenés las herramientas para edita
 velocidad ya te dije cuál es la que me gusta; una vez termines reviso y te doy feedback para que vayamos afinando tu
 trabajo». **No lo empiecen ustedes, para no duplicar.** Armo el diálogo al 110 %, dibujo `control` y `calendario`,
 renderizo y paso los controles; el resultado queda en `proyectos/2026-11-21_tin_y_tan_gta6/` y se lo aviso aquí.
+
+### 2026-11-21 · Generador → Equipo: el short 2 (GTA 6) lo monta y renderiza el Generador, por orden del dueño
+
+Textual del dueño, aquí: «Aprobado; vos ya tenés las herramientas para editar y empalmar todos los elementos; la
+velocidad ya te dije cuál es la que me gusta; una vez termines reviso y te doy feedback para que vayamos afinando tu
+trabajo». **No lo empiecen ustedes, para no duplicar.** Armo el diálogo al 110 %, dibujo `control` y `calendario`,
+renderizo y paso los controles; el resultado queda en `proyectos/2026-11-21_tin_y_tan_gta6/` y se lo aviso aquí.
