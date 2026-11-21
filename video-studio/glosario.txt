@@ -8,3 +8,16 @@ inter
 # herramientas citadas en descripciones
 ffmpeg
 numpy
+# abreviaturas de unidades del público de EE. UU. (pies, pulgadas por segundo)
+ft
+# «vol.» de volumen en la cita de Philips Technical Review
+vol
+# «retro tech», etiqueta habitual en YouTube
+tech
+# identificador del canal en YouTube (@TinAndTan)
+tinandtan
+# «EE. UU.», abreviatura correcta de Estados Unidos en español
+ee
+uu
+# extensión de archivo de imagen en las notas de entrega
+png

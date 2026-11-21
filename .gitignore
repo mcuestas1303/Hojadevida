@@ -17,3 +17,5 @@ video-studio/proyectos/*/06_final/*.mov
 video-studio/proyectos/*/05_audio/efectos.wav
 video-studio/proyectos/*/05_audio/musica.wav
 video-studio/proyectos/*/05_audio/mezcla*.wav
+# Diccionarios del corrector: se instalan con instalar_corrector.sh, no van al repo
+video-studio/herramientas/diccionarios/

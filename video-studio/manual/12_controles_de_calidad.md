@@ -22,7 +22,9 @@ Aplica a **todo texto** que vea el público: títulos en pantalla, subtítulos, 
 marca de agua, título, descripción, etiquetas, hashtags, descripción del canal y textos de las hojas de personaje.
 
 1. `python3 video-studio/herramientas/revisar_texto.py <archivos o carpeta> --idioma <en|es|pt>` con **0 errores**.
-   Revisa nombres propios, ortografía (diccionario más `video-studio/glosario.txt`), espacios, palabras repetidas,
+   Revisa nombres propios, ortografía (Hunspell con los diccionarios de LibreOffice de inglés, español y portugués
+   de Brasil, más `video-studio/glosario.txt`; en una sesión nueva se instala con
+   `bash video-studio/herramientas/instalar_corrector.sh`), espacios, palabras repetidas,
    comillas y paréntesis, ¿? y ¡! en español, oraciones en minúscula y separador decimal. `entrega.py` lo corre solo
    sobre la ficha y los subtítulos. El texto que se dibuja con código se revisa pasando los `.py` del render.
 2. Cada **AVISO** se lee uno por uno y se resuelve o se explica por escrito.

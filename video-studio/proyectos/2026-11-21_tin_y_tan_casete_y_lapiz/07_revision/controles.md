@@ -12,9 +12,10 @@ esperado: este código quedó entregado antes de la regla y no se vuelve a subir
 ## Control 1 · Texto (supervisor de continuidad, 2026-11-21)
 
 - `revisar_texto.py` sobre ficha, subtítulos, `render_v2.py`, `miniatura.py` y `marca.py`: sin errores de nombres,
-  espacios, puntuación ni separador decimal. **Ortografía sin corrector** (pyspellchecker no está instalado):
-  lectura a mano, palabra por palabra, de título, descripción, etiquetas, subtítulos y textos en pantalla → sin
-  errores de ortografía.
+  espacios, puntuación ni separador decimal. Lectura a mano, palabra por palabra, de título, descripción,
+  etiquetas, subtítulos y textos en pantalla → sin errores de ortografía.
+- Corrector Hunspell instalado con el sí del dueño (2026-11-21) y corrido después: **0 errores de ortografía** en
+  ficha, subtítulos, textos en pantalla, miniaturas y banner. Glosario: «ft», «vol», «tech».
 - Nombres: el banner y las hojas de personaje decían «tin & tan». Corregido a «Tin & Tan» y regenerado.
 
 ## Control 2 · Cifras (recalculadas)
