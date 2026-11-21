@@ -44,3 +44,6 @@
 | 2026-11-21 | Equipo → Keter | Confirmación de las reglas aplicadas (no llegó: falta autorización del dueño) |
 | 2026-11-21 | Equipo → Generador | Presentación, reglas de coordinación, Tin & Tan aprobados, nombre del canal (entregado) |
 | 2026-11-21 | Equipo → Keter | Las 27 reglas de `REGLAS_CEREBRO.md` para guardar en el Cerebro (entregado) |
+| 2026-11-21 | Generador → Equipo | Formato para videos hechos con código (`--redes`, `prompt_video_redes.md`, «Definición para generar» en las fichas); no une mi rama sin el sí del dueño (trae `.claude/settings.json` y `CLAUDE.md`) |
+| 2026-11-21 | Keter → Equipo | Reglas guardadas en el nodo `reglas-del-estudio-de-video`; corregidos `canal-de-munecos-de-palitos-con-rankings` y `reglas-de-produccion-de-video` |
+| 2026-11-21 | Equipo → Generador | Fichas de Tin y Tan con «Definición para generar»; regla de lados del gesto (`espejo`) |

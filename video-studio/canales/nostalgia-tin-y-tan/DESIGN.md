@@ -30,6 +30,7 @@ Nada de degradados de fondo (cap. 11, regla 7). Un color de acento por plano.
 ## Personajes
 
 - **Tan** a la izquierda del cuadro cuando están juntos (abre con la pregunta); **Tin** a la derecha (responde).
+- **Cada uno gesticula del lado contrario al otro:** Tan con `espejo=True`, Tin sin espejo.
 - Plano héroe de los dos: `referencias/principal_tin_y_tan.png` de cada ficha.
 - Expresiones y poses: solo las de `palitos.py` (`EXPRESIONES`, `POSES`).
 

@@ -23,6 +23,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
+VERSION = "1.1"  # 1.0: diseño aprobado (2026-11-21) · 1.1: espejo
 SS = 3  # supermuestreo: se dibuja 3 veces más grande y se reduce (Pillow no suaviza las líneas)
 
 # ---------------------------------------------------------------- paleta del canal (años 70, papel crema)
@@ -131,11 +132,19 @@ def fuente(tam):
 
 # ---------------------------------------------------------------- primitivas (coordenadas ya multiplicadas por SS)
 class Pluma:
-    def __init__(self, lz, cx, cy, r):
+    def __init__(self, lz, cx, cy, r, espejo=False):
         self.d, self.cx, self.cy, self.r = lz.d, cx * SS, cy * SS, r * SS
+        self.espejo = espejo
 
     def p(self, x, y):
-        return (self.cx + x * self.r, self.cy + y * self.r)
+        return (self.cx + (-x if self.espejo else x) * self.r, self.cy + y * self.r)
+
+    def caja(self, x0, y0, x1, y1):
+        a, b = self.p(x0, y0), self.p(x1, y1)
+        return [min(a[0], b[0]), min(a[1], b[1]), max(a[0], b[0]), max(a[1], b[1])]
+
+    def angulos(self, desde, hasta):
+        return (180 - hasta, 180 - desde) if self.espejo else (desde, hasta)
 
     def linea(self, puntos, ancho=GROSOR, tinta="tinta"):
         pts = [self.p(*q) for q in puntos]
@@ -145,26 +154,24 @@ class Pluma:
             self.d.ellipse([q[0] - w / 2, q[1] - w / 2, q[0] + w / 2, q[1] + w / 2], fill=color(tinta))
 
     def circulo(self, x, y, radio, relleno=None, contorno="tinta", ancho=CONTORNO):
-        a, b = self.p(x - radio, y - radio), self.p(x + radio, y + radio)
-        self.d.ellipse([a, b], fill=color(relleno) if relleno else None,
+        self.d.ellipse(self.caja(x - radio, y - radio, x + radio, y + radio), fill=color(relleno) if relleno else None,
                        outline=color(contorno) if contorno else None, width=max(1, int(ancho * self.r)))
 
     def elipse(self, x, y, rx, ry, relleno=None, contorno="tinta", ancho=CONTORNO):
-        a, b = self.p(x - rx, y - ry), self.p(x + rx, y + ry)
-        self.d.ellipse([a, b], fill=color(relleno) if relleno else None,
+        self.d.ellipse(self.caja(x - rx, y - ry, x + rx, y + ry), fill=color(relleno) if relleno else None,
                        outline=color(contorno) if contorno else None, width=max(1, int(ancho * self.r)))
 
     def arco(self, x, y, rx, ry, desde, hasta, ancho=0.07, tinta="tinta"):
-        a, b = self.p(x - rx, y - ry), self.p(x + rx, y + ry)
-        self.d.arc([a, b], desde, hasta, fill=color(tinta), width=max(1, int(ancho * self.r)))
+        desde, hasta = self.angulos(desde, hasta)
+        self.d.arc(self.caja(x - rx, y - ry, x + rx, y + ry), desde, hasta, fill=color(tinta), width=max(1, int(ancho * self.r)))
 
     def poligono(self, puntos, relleno, contorno="tinta", ancho=CONTORNO):
         self.d.polygon([self.p(*q) for q in puntos], fill=color(relleno),
                        outline=color(contorno) if contorno else None, width=max(1, int(ancho * self.r)))
 
     def cuerda(self, x, y, radio, desde, hasta, relleno, contorno="tinta", ancho=CONTORNO):
-        a, b = self.p(x - radio, y - radio), self.p(x + radio, y + radio)
-        self.d.chord([a, b], desde, hasta, fill=color(relleno), outline=color(contorno),
+        desde, hasta = self.angulos(desde, hasta)
+        self.d.chord(self.caja(x - radio, y - radio, x + radio, y + radio), desde, hasta, fill=color(relleno), outline=color(contorno),
                      width=max(1, int(ancho * self.r)))
 
 
@@ -322,10 +329,10 @@ def lapiz(pl, x, y, angulo=-35, largo=0.95):
 
 
 # ---------------------------------------------------------------- cabeza (sirve sola para primeros planos)
-def cabeza(lz, pid, cx, cy, radio, expresion="feliz", vista="frente", mira=1):
+def cabeza(lz, pid, cx, cy, radio, expresion="feliz", vista="frente", mira=1, espejo=False):
     """Dibuja solo la cabeza con sus accesorios, centrada en (cx, cy) y con ese radio en píxeles."""
     pj = PERSONAJES[pid]
-    pc = Pluma(lz, cx, cy, radio)
+    pc = Pluma(lz, cx, cy, radio, espejo)
     if "rodete" in pj["accesorios"]:
         rodete(pc, vista, mira)
     pc.circulo(0, 0, 1.0, relleno=pj["cabeza"])
@@ -337,10 +344,13 @@ def cabeza(lz, pid, cx, cy, radio, expresion="feliz", vista="frente", mira=1):
 
 # ---------------------------------------------------------------- personaje completo
 def dibujar(lz, pid, x, suelo, alto, pose="parado", expresion="feliz", vista="frente", mira=1, viento=0.0,
-            objeto=True):
+            objeto=True, espejo=False):
     """Dibuja a Tin o Tan con los pies en (x, suelo) y una altura total de `alto` píxeles.
 
     mira: 1 mira a la derecha, -1 a la izquierda (solo en perfil). viento: puntas de la bufanda (-1 a 1).
+    espejo: dibuja la figura entera reflejada. Por defecto el brazo que hace el gesto queda a la DERECHA del cuadro;
+    con espejo=True queda a la IZQUIERDA. Regla de los planos de dos: cada uno gesticula del lado contrario al otro
+    (Tan, a la izquierda del cuadro, va con espejo=True; Tin, a la derecha, sin espejo).
     """
     if pid not in PERSONAJES:
         sys.exit(f"Personaje desconocido: {pid}. Hay: {', '.join(PERSONAJES)}")
@@ -348,7 +358,7 @@ def dibujar(lz, pid, x, suelo, alto, pose="parado", expresion="feliz", vista="fr
     R = alto / (2 + CUELLO + TORSO + MUSLO + PIERNA + 0.25)     # la gorra y el rodete suman ~0.25 R
     s = mira
     cabeza_y = -(MUSLO + PIERNA + TORSO + CUELLO + 1.0)
-    pl = Pluma(lz, x, suelo, R)
+    pl = Pluma(lz, x, suelo, R, espejo)
 
     cadera = (0, -(MUSLO + PIERNA))
     cuello_base = (0, cadera[1] - TORSO)
@@ -385,7 +395,7 @@ def dibujar(lz, pid, x, suelo, alto, pose="parado", expresion="feliz", vista="fr
 
     if "bufanda" in pj["accesorios"]:
         bufanda(pl, vista, s, cuello_base[1] - 0.05, viento)
-    cabeza(lz, pid, x, suelo + cabeza_y * R, R, expresion, vista, s)
+    cabeza(lz, pid, x, suelo + cabeza_y * R, R, expresion, vista, s, espejo)
 
     # objeto icónico en la mano derecha (vista de frente) o en la de adelante (perfil)
     if objeto and pj["objeto"] == "lapiz" and vista != "espalda":
@@ -448,7 +458,7 @@ def hoja_poses(pid, ruta):
 def hoja_principal(ruta):
     lz = Lienzo(1920, 1080)
     suelo_linea(lz, 930, 300, 1620)
-    dibujar(lz, "tan", 720, 930, 720, pose="pregunta", expresion="curiosidad", viento=0.4)
+    dibujar(lz, "tan", 720, 930, 720, pose="pregunta", expresion="curiosidad", viento=0.4, espejo=True)
     dibujar(lz, "tin", 1200, 930, 720, pose="explica", expresion="feliz")
     titulo(lz, "tin & tan", 90, 60, tam=72)
     lz.d.text((92 * SS, 150 * SS), "she remembers. he does the math.", font=fuente(34 * SS), fill=color("marron"))

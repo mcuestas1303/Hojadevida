@@ -3,7 +3,8 @@
 > Pedido del dueño (2026-11-21), textual: *«Todas esas reglas deben quedar en el cerebro»*.
 > Es la lista consolidada de reglas y decisiones del dueño sobre producción de video. Se le envía a la conversación
 > de Keter para que la cargue en el Cerebro. Cada vez que se agrega una regla, se actualiza este archivo y se reenvía.
-> Fuente de cada regla entre paréntesis.
+> Fuente de cada regla entre paréntesis. En el Cerebro está en el nodo `reglas-del-estudio-de-video` (guardado por Keter el
+> 2026-11-21); si cambia esta lista, se le manda el cambio a Keter.
 
 ## Organización
 
