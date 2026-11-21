@@ -29,6 +29,8 @@ El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
 - Cada decisión, paso, costo y error se documenta: si cambia el proceso, se actualiza el manual; si
   avanza un proyecto, se actualiza su caso. Nada se deja solo en la conversación.
 - `python3 video-studio/herramientas/estado.py` dice en qué fase está cada personaje, serie y proyecto.
+- El consumo de cada video se anota en `video-studio/consumo.md` al terminar cada fase: créditos de Higgsfield y
+  tokens de cada agente. Sirve para estimar el costo del siguiente video.
 
 ## Línea editorial
 

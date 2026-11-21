@@ -26,6 +26,7 @@ python3 video-studio/herramientas/estado.py
 | Toda cifra o requisito externo lleva fuente y fecha; si no se leyó, dice «sin verificar» | `comercial/base_conocimiento.md` |
 | Línea editorial del dueño | `infantil/guia_1_a_3.md`, `series/<serie>/serie.md` |
 | El contenido infantil nunca se cruza con personajes para adultos | `personajes/REGISTRO.md` |
+| El consumo de cada video se registra: créditos y uso de Claude | `consumo.md` |
 | Las imágenes se revisan a tamaño completo antes de informar un fallo | Lección 3, más abajo |
 
 ## El equipo
@@ -227,6 +228,7 @@ segundo; clip final a 720p, 1 por segundo. Antes de cada generación se cotiza d
 |---|---|
 | Este manual y el caso de ejemplo | `MANUAL.md`, `casos/` |
 | Reglas de créditos y cambios | `generacion.md` |
+| Consumo por video (créditos y uso de Claude) | `consumo.md` |
 | Formatos de salida | `formatos.md` |
 | Generador y precios | `generador.md` |
 | Personajes | `personajes/<id>/` (ficha, referencias, prompts) y `personajes/REGISTRO.md` |
