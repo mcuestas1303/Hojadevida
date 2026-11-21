@@ -21,6 +21,7 @@ de `MANUAL.md`. Se actualiza cada vez que el proyecto avanza.
 | Créditos | Un intento por pieza; todo definido antes; cambios por el equipo | 2026-11-20 |
 | Altura de Tiky | Dos tercios de la de Lumi | 2026-11-21 |
 | Documentación | Todo queda como plantilla para otros personajes | 2026-11-21 |
+| Canal de YouTube | Tiky & Lumi (`@TikyAndLumi`) es el canal infantil; creado el 2026-11-20, sin videos todavía | 2026-11-21 |
 
 ## Fase 1 — Los personajes
 

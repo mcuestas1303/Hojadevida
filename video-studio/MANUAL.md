@@ -56,6 +56,7 @@ Sin estas respuestas no se avanza, porque cada una costó retrabajo o créditos 
 | Idiomas | Define voz y paquetes de publicación | `serie.md` |
 | Voz: narrador o personajes; cómo se hace | Define costo y si hay que declarar IA | `serie.md` |
 | Plataformas y formatos | Define aspecto y duración | `formatos.md`, `serie.md` |
+| Canal de cada plataforma (nombre, identificador, si ya existe) | Un canal por público; define el paquete de publicación y la estrategia | `serie.md` |
 | País del titular de las cuentas | Define qué programas de pago existen | `serie.md` |
 | Generador, plan y saldo | Define precios y límites | `generador.md` |
 | Línea editorial | Filtro de todo el contenido | Guía y `serie.md` |
