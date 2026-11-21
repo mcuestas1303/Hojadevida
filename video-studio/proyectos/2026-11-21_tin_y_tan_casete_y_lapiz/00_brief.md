@@ -2,8 +2,8 @@
 
 - **Título:** How many pencil turns to rewind a cassette?
 - **Modo:** C, desde cero. La imagen se dibuja con código (`herramientas/palitos.py` y gráficos propios); no se usa generador de video.
-- **Objetivo comercial:** POR CONFIRMAR con el dueño. El canal se pensó para monetizar; para este primer video, la coordinación propone «comprobar el formato y medir retención».
-- **Público objetivo:** Estados Unidos, en inglés (confirmado por el dueño el 2026-11-21). La franja de mayores de 50 años es la recomendación del equipo; el dueño no la ha confirmado ni cambiado.
+- **Objetivo comercial:** presencia y alcance, y establecer la línea base de retención del canal (decidido por el equipo el 2026-11-21). El canal busca monetizar, pero un canal sin videos primero necesita saber si el formato retiene.
+- **Público objetivo:** Estados Unidos, en inglés (confirmado por el dueño el 2026-11-21). Edad: de 45 a 70 años, con núcleo en mayores de 50 (decidido por el equipo el 2026-11-21).
 - **Para qué es el video:** que quien lo vea recuerde el gesto de rebobinar un casete con un lápiz y se sorprenda con la cifra real.
 - **Emoción principal:** nostalgia que termina en sorpresa.
 - **Plataforma y formato:** primer video del canal «Tin & Tan». Short vertical 9:16, 1080×1920, unos 30 s, reutilizable en TikTok e Instagram (vertical confirmado por el dueño el 2026-11-21).
@@ -29,9 +29,15 @@
 Supuesto que hay que declarar en la descripción: 3,5 cm es un diámetro promedio del rollo, que crece mientras se rebobina.
 Fuente de los 4,76 cm/s: Philips Technical Review, vol. 31, 1970 («The design of the Compact Cassette is based on a tape speed of 4.76 cm/s»), https://www.musicaememoria.com/docs/PTechReview-31-1970-077.pdf, visto en resumen de buscador el 2026-11-21; equivale a 1⅞ pulgadas por segundo.
 
-## Por confirmar con el dueño
+## Decisiones del equipo (2026-11-21)
 
-1. Objetivo comercial de este video (propuesto: comprobar el formato y medir retención).
-2. Franja de edad del público (propuesta: mayores de 50 años).
+El dueño delegó las decisiones técnicas: él acompaña con ideas, ajustes a las ideas y criterio psicológico.
 
-Confirmado el 2026-11-21: formato vertical, inglés para Estados Unidos y música hecha con código.
+| Decisión | Qué se eligió | Por qué |
+|---|---|---|
+| Gancho | A: «how many turns?» con el casete ya girando. B, para probar después: «1,170 turns?» | El manual (cap. 01) pide que el remate no se adivine desde el inicio; «1,170 turns?» y «almost 10 min?» entregan la respuesta en el primer segundo. La pregunta abre la curiosidad y la cifra la cierra en el segundo 20. Se guardan dos ganchos para comparar (cap. 11, regla 5) |
+| Objetivo comercial | Presencia y línea base de retención; sin llamado a la acción | El canal no existe ni tiene datos: lo primero que hay que medir es cuánta gente pasa del segundo 1 y cuánta llega al final. Pedir suscripción cortaría el bucle |
+| Edad del público | 45 a 70 años, núcleo en mayores de 50 | Quien rebobinó casetes con un lápiz los usó entre los años 70 y 90; hoy tiene esa edad. Es una hipótesis: se corrige con los datos del canal |
+| Quién produce | El Generador de prompts, en su conversación, con los agentes del equipo de producción | El dueño está trabajando aquí y los mensajes hacia la otra conversación están bloqueados. Queda anotado en `COORDINACION.md` para no duplicar |
+
+Confirmado por el dueño el 2026-11-21: formato vertical, inglés para Estados Unidos y música hecha con código.

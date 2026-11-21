@@ -62,3 +62,10 @@
 25. Mapa de ritmo con picos y respiros; acelerar al final; cada corte con su golpe de sonido.
 26. Revisión de cada render a 2 fotogramas por segundo, marcando fotogramas muertos; máximo 3 destellos por segundo.
 27. Herramientas por instalar (HyperFrames, Remotion, Earshot, transcripción): solo con el sí del dueño.
+
+## Agregado por el Generador de prompts (2026-11-21)
+
+- **Quién decide qué:** el equipo decide todo lo técnico y de producción y lo informa con su razón; al dueño se le llevan ideas, ajustes a las ideas y criterio psicológico. Gastar créditos, instalar, rehacer y publicar siguen necesitando su sí.
+- **Consumo:** cada video anota créditos y uso de Claude en `video-studio/consumo.md`.
+- **Voz del canal Tin & Tan:** Kevin (Tin) y Zelda (Tan), aceleradas un 10 % en edición.
+- **Lados:** izquierda y derecha se escriben respecto al cuadro, no respecto al personaje.

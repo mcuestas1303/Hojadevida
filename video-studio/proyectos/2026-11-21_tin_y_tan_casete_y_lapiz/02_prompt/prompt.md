@@ -36,10 +36,12 @@ Tan recuerda el gesto de rebobinar un casete con un lápiz y Tin hace la cuenta 
 
 **Confirmado por el dueño el 2026-11-21:** short vertical 9:16; inglés para Estados Unidos; música hecha con código.
 
-**Por confirmar con el dueño** (no se supone nada):
+**Decidido por el equipo el 2026-11-21** (el dueño delegó las decisiones técnicas; razones en `00_brief.md`):
 
-1. Objetivo comercial de este video (la coordinación propone «comprobar el formato y medir retención»; este prompt no lleva llamado a la acción por eso).
-2. Franja de edad del público (el equipo recomienda mayores de 50 años).
+1. Gancho A: la pregunta «how many turns?», sin adelantar la cifra. Gancho B, para probar en otra publicación: «1,170 turns?».
+2. Objetivo comercial: presencia y línea base de retención; sin llamado a la acción.
+3. Público: Estados Unidos, de 45 a 70 años, con núcleo en mayores de 50.
+4. Lo produce el Generador de prompts en su conversación, con los agentes del equipo de producción.
 
 Fuente de la velocidad de la cinta: Philips Technical Review, vol. 31, 1970 («The design of the Compact Cassette is based on a tape speed of 4.76 cm/s»), https://www.musicaememoria.com/docs/PTechReview-31-1970-077.pdf, visto en resumen de buscador el 2026-11-21; equivale a 1⅞ pulgadas por segundo. Conviene abrir el documento antes de publicar.
 
@@ -91,7 +93,7 @@ Cada corte cae en un pulso de 0,5 s. Voz: línea y texto exactos de 05_audio/lin
 - Casete de W = 70 % del ancho (756 px, alto 476 px), centro final (50 %, 46 %): ocupa de 33,6 % a 58,4 % del alto.
 - Fotograma 0: centro (50 %, 62 %), rotación menos 12 grados, escala 0,9, carretes en ángulo 0. Entra con muelle `slide` hasta (50 %, 46 %), rotación 0, escala 1.
 - Carretes a 720 grados por segundo desde el fotograma 0. Sin lápiz. Sin personajes.
-- El texto «1,170 turns?» entra en 0,2 (fila 1 de la tabla de la sección 12).
+- El texto «how many turns?» entra en 0,2 (fila 1 de la tabla de la sección 12).
 
 ### Toma 2 — Empuje al carrete
 
@@ -423,7 +425,7 @@ CRITICAL: counters only go up and never pass their final value; no text over a c
 
 - **Regla formal de la pieza:** una sola cifra por plano, sobre el mismo papel crema, que solo sube; y todo corte cae en un pulso de 0,5 s, que es lo que dura una vuelta de lápiz.
 - **Rejilla de tiempo:** pulso de 0,5 s (120 BPM, compás de 4 pulsos = 2,0 s); 60 pulsos = 15 compases = 30,0 s. La voz entra en el pulso 2 (1,0 s). Los 15 cortes caen en 0,5; 1,0; 3,5; 5,0; 6,5; 9,5; 12,0; 14,5; 17,0; 18,5; 20,5; 23,5; 25,5; 27,0 y 28,0 (más el bucle en 30,0), a 0,2 s o menos del inicio de la frase de voz que corresponde: el corte se adelanta o coincide con la voz, nunca llega tarde por más de 0,1 s (toma 6 a 7 en 9,5, la voz entra en 9,4).
-- **Gancho (0 a 1 s):** movimiento y cifra. El casete ya está girando en el fotograma 0, sube con muelle y en 0,5 la cámara se mete en el carrete; el texto «1,170 turns?» entra en 0,2 con «1,170» en mostaza. Sin voz, sin logo, sin título. Gancho B para otra publicación (se renderiza gratis): el mismo plano con el texto «almost 10 min?».
+- **Gancho (0 a 1 s):** movimiento y pregunta. El casete ya está girando en el fotograma 0, sube con muelle y en 0,5 la cámara se mete en el carrete; el texto «how many turns?» entra en 0,2 con «turns» en mostaza. Sin voz, sin logo, sin título. Gancho B para otra publicación (se renderiza gratis): el mismo plano con el texto «almost 10 min?».
 - **Empieza en movimiento:** sí: sin intro ni logo; el casete gira y se mueve desde el fotograma 0.
 - **Motivo visual que vuelve:** el casete girando (tomas 1, 2, 3, 5, 6, 8, 15 y 16; el carrete en la 4 y el 9; el lápiz que gira en 13) y el lápiz amarillo de Tin. Los dos giran a 2 vueltas por segundo, una por pulso. Se repiten con las mismas formas y colores.
 - **Cierre:** el casete vuelve a la posición del primer fotograma (50 %, 62 %, rotación menos 12 grados, escala 0,9, carretes en ángulo 0) y el video encadena en bucle con la toma 1. Cierre de 2,0 s sin voz (de 28,0 a 30,0).
@@ -433,7 +435,7 @@ Mapa de ritmo (los tiempos al décimo de segundo; cortes por segundo = cortes qu
 
 | Tramo | Segundos | Pulso o intervalo | Cortes por segundo | Qué pasa (una acción) | Respiro |
 |---|---|---|---|---|---|
-| Gancho | 0,0–1,0 | 0,5 s | 2,0 | casete entra, empuje al carrete, cifra en mostaza | no |
+| Gancho | 0,0–1,0 | 0,5 s | 2,0 | casete entra, empuje al carrete, pregunta con la palabra clave en mostaza | no |
 | Pregunta | 1,0–3,5 | 2,5 s | 0,4 | Tan recuerda el gesto del lápiz | sí |
 | Entra Tin | 3,5–6,5 | 1,5 s | 0,7 | subjetivo del carrete y entrada de Tin | no |
 | Dato 1 | 6,5–9,5 | 3,0 s | 0,3 | un C90 dura 45 min por lado | sí |
@@ -473,7 +475,7 @@ Tipos de plano disponibles y dónde van: detalle o macro (tomas 2, 7, 11 y 14), 
 
 | Texto | Entra (s) | Sale (s) | Posición (% del cuadro) | Tamaño (% del alto) |
 |---|---|---|---|---|
-| 1,170 turns? (clave: 1,170) | 0,2 | 1,3 | 10, 15 | 6 |
+| how many turns? (clave: turns) | 0,2 | 1,3 | 10, 15 | 6 |
 | rewinding a cassette (clave: cassette) | 1,5 | 3,4 | 10, 15 | 5 |
 | how many turns? (clave: turns) | 3,7 | 6,4 | 10, 15 | 5 |
 | 45 min/side (clave: 45) | 6,8 | 9,4 | 10, 15 | 5 |

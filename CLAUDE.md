@@ -32,6 +32,21 @@ El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
 - El consumo de cada video se anota en `video-studio/consumo.md` al terminar cada fase: créditos de Higgsfield y
   tokens de cada agente. Sirve para estimar el costo del siguiente video.
 
+## Quién decide qué (regla del dueño, 2026-11-21)
+
+Textual: «Esto no lo puedo decidir yo, por eso te he estado dando elementos para que te capacites técnicamente; ya
+cuando entremos en calor, en lo que voy a acompañar al equipo creativo es con ideas y ajustes a ideas o los
+elementos psicológicos».
+
+- **Decide el equipo, sin preguntarle al dueño:** todo lo técnico y de producción: gancho, ritmo, formato de cada
+  pieza, objetivo de medición, público estimado, herramienta, orden de trabajo, quién produce. Cada decisión se
+  anota con su porqué en el brief del proyecto («Decisiones del equipo») y se le informa después.
+- **Se le lleva al dueño:** ideas y temas, ajustes a las ideas, lo psicológico y emocional del contenido, la línea
+  editorial, y lo que solo él puede hacer (crear cuentas y canales, exportar estadísticas, publicar).
+- **Sigue necesitando su sí:** gastar créditos o dinero, instalar herramientas, rehacer una pieza ya generada y
+  publicar. Eso no cambia.
+- Al informar se le presenta la decisión tomada y su razón, no una lista de opciones.
+
 ## Línea editorial
 
 - Decisión del dueño (2026-11-20), para todo lo que se produzca aquí: nada de identidad de género ni

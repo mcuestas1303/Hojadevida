@@ -29,6 +29,12 @@ python3 video-studio/herramientas/estado.py
 | El consumo de cada video se registra: créditos y uso de Claude | `consumo.md` |
 | Las imágenes se revisan a tamaño completo antes de informar un fallo | Lección 3, más abajo |
 
+## Quién decide qué
+
+El equipo decide lo técnico y lo informa con su razón; al dueño se le llevan las ideas, los ajustes a las ideas, lo
+psicológico y lo que solo él puede hacer. Gastar créditos, instalar, rehacer una pieza y publicar siguen necesitando
+su sí. Regla completa en `CLAUDE.md`.
+
 ## El equipo
 
 | Agente | Disciplina | Qué entrega | Cuándo entra |

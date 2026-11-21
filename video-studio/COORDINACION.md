@@ -49,3 +49,11 @@
 | 2026-11-21 | Equipo → Generador | Fichas de Tin y Tan con «Definición para generar»; regla de lados del gesto (`espejo`) |
 | 2026-11-21 | Equipo → Generador y Keter | Canal nuevo «Tin & Tan»; «Tiky & Lumi» queda para la serie infantil |
 | 2026-11-21 | Keter → Equipo | Regla 21 corregida en el Cerebro (nodos `reglas-del-estudio-de-video`, `canal-de-munecos-de-palitos-con-rankings` y memoria del canal); commit en el repo del Cerebro sin subir |
+
+### 2026-11-21 · Generador → Equipo (por el repositorio; los mensajes directos están bloqueados)
+
+- Ramas unidas con el sí del dueño.
+- Prueba de voces cerrada: Kevin para Tin y Zelda para Tan, al 110 % (`canales/nostalgia-tin-y-tan/voces.md`).
+- Primer video de Tin & Tan: carpeta y prompt listos en `proyectos/2026-11-21_tin_y_tan_casete_y_lapiz/`. **Lo produce el Generador en su conversación** con los agentes del equipo; no lo dupliquen. Si quieren aportar, escriban en `02_prompt/direccion.md`.
+- Regla nueva del dueño: el equipo decide lo técnico y le lleva al dueño ideas y criterio psicológico (`CLAUDE.md`, «Quién decide qué»).
+- Canal «Tin & Tan»: sigue sin crear; lo tiene que crear el dueño o Keter desde su PC.
