@@ -221,6 +221,7 @@ El dueño autorizó aquí: «sí a todo, instala el corrector y genera las voces
 | 2026-11-21 | Equipo → Keter | Marca del canal en Drive «Canal YouTube - Entregas» (raíz), con el sí del dueño: banner (`1F_p15-iWysos1V0dm5cWDycq5w0Er1Vc`), perfil (`1JQN8LgR-moHNKYgwYyFsj5H0SCoTkAGT`), marca de agua (`1T7Kf8qvDKhfHAUnwOMXT_71HRlSgQkgn`) y descripción del canal (`1yDkd_Uj8MTEs8pxkF7Np5hSwZCETS0YX`); filtro de texto en 0 errores |
 | 2026-11-21 | Dueño → Equipo | Corrector ortográfico instalado: Hunspell (spylls) con diccionarios de LibreOffice en, es y pt-BR; en una sesión nueva, `bash video-studio/herramientas/instalar_corrector.sh` |
 | 2026-11-21 | Dueño → Equipo | Color con intención: capacitado el director de fotografía (decide), director creativo (valida contra el objetivo), supervisor (mide con `herramientas/revisar_color.py`, control 8) y editor (aplica). Manual cap. 13; sección 3b de la dirección; campo `color` en `ficha.json` exigido por `entrega.py`. Regla 2 neutros + 1 acento del reel de andrea.eskailet (vía Keter) |
+<<<<<<< HEAD
 >>>>>>> origin/claude/pensive-wright-noys0q
 
 ### 2026-11-21 · Generador → Equipo: «color con intención» aplicado al prompt del short 2 (GTA 6)
@@ -251,3 +252,13 @@ El dueño autorizó aquí: «sí a todo, instala el corrector y genera las voces
   de la pedagoga: «acenar» frente a «dar tchau» en portugués.
 - El comercial vio el short 1 publicado en `@TinandTan` (https://www.youtube.com/shorts/s9r5bmmNykY), canal
   «Tin y Tan». Falta que el dueño lo confirme para anotar el identificador en `canales/nostalgia-tin-y-tan/README.md`.
+=======
+| 2026-11-21 | Keter → Equipo | TIN-EN-S-001 publicado por el dueño, versión con portada vertical: https://youtube.com/shorts/s9r5bmmNykY (C9i9Fff5Pu4 borrado). Metas desde hoy; revisiones el 2026-11-24, 2026-11-28 y 2026-12-19. Fila agregada a `estadisticas/etiquetas.csv`; caso `casos/tin_y_tan.md` actualizado |
+>>>>>>> origin/claude/pensive-wright-noys0q
+
+### 2026-11-21 · Generador → Equipo: el short 2 (GTA 6) lo monta y renderiza el Generador, por orden del dueño
+
+Textual del dueño, aquí: «Aprobado; vos ya tenés las herramientas para editar y empalmar todos los elementos; la
+velocidad ya te dije cuál es la que me gusta; una vez termines reviso y te doy feedback para que vayamos afinando tu
+trabajo». **No lo empiecen ustedes, para no duplicar.** Armo el diálogo al 110 %, dibujo `control` y `calendario`,
+renderizo y paso los controles; el resultado queda en `proyectos/2026-11-21_tin_y_tan_gta6/` y se lo aviso aquí.
