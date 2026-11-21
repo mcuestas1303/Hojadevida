@@ -21,7 +21,7 @@ desde entonces la estimación se puede dar en porcentaje.
 | Video | Tipo | Créditos gastados | Créditos que faltan (estimado) | Tokens de agentes | % del saldo de créditos (sobre 888) | % del límite de Claude |
 |---|---|---|---|---|---|---|
 | Hola, granja (cap. 1, 88 s, generador de video) | Capítulo infantil 16:9 | 7,5 | 44 en borrador + 88 en final = 132 | 885 k hasta la definición de clips | 0,8 % gastado; 15,7 % al terminar | sin dato |
-| Tin y Tan: casete y lápiz (unos 30 s, dibujado con código) | Short 9:16 | 3 | 0 previstos | 131 k hasta el prompt | 0,3 % | sin dato |
+| Tin y Tan: casete y lápiz (unos 30 s, dibujado con código) | Short 9:16 | 3 | 0 previstos | 405 k hasta el video renderizado | 0,3 % | sin dato |
 
 Lectura rápida:
 
@@ -83,6 +83,7 @@ Trabajo de una sola vez para toda la serie (no se repite en cada capítulo):
 | 3 | Carpeta, brief, línea de tiempo de la voz (conversación principal) | sin medir |
 | 5 | Prompt del video (16 tomas, 30 s) | 131 k |
 
-| 6 y 7 | Dibujo, audio, render y dos vueltas de revisión con código | sin dato todavía |
+| 6 y 7 | Dibujo, audio, render y dos vueltas de revisión con código (20 min de trabajo) | 274 k |
+| | **Total hasta el video renderizado** | **405 k** |
 
 Faltan: revisión del equipo de producción, escucha del audio, ajustes y publicación.
