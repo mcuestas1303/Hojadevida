@@ -286,6 +286,12 @@ Se aplican a cada pieza que las cita en «Debe verse» y «No debe verse». Vien
 
 ## Orden de generación y dependencias
 
+> **Ajuste de etapas tras la revisión de la psicóloga (2026-11-21).** La etapa 2 se parte en dos:
+> primero la toma 5 sola (3,5 créditos; acumulado 6,5), que prueba el saludo lento de dos
+> movimientos, el giro de Tiky y la pezuña de Lumi. Solo si cumple se piden la 14 y la 16
+> (5 créditos; acumulado 11,5). El costo total no cambia: 44 créditos.
+> El prompt se validó y se archivó de nuevo después de sus correcciones.
+
 Cadenas (cada flecha usa el último fotograma del clip anterior): 1 → 2 · 6 → 7 → 8 · 9 → 10 → 11 · 12 → 13 · 14 → 15. Las tomas 3, 4, 5 y 16 no tienen dependientes.
 
 **Etapa 1: Toma 4 (Tiky saluda hacia un lado), 6 s, 3 créditos. Acumulado: 3.**

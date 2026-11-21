@@ -84,7 +84,7 @@ CRITICAL: no written words, letters, brand marks or watermarks anywhere.
 CRITICAL: Tiky and Lumi keep exactly the same design, colors and proportions as in the start image from the first frame to the last; nothing is added or removed.
 CRITICAL: fixed camera, no zoom, no pan, no cut inside the clip; slow, gentle movement only.
 CRITICAL: nothing comes out of or moves inside the barn door; no other characters or animals appear.
-Tiky and Lumi walk slowly toward the camera side by side with small steady steps, Lumi on the left. They stop at the center of the yard, look at the camera and stand still for the last second.
+Tiky and Lumi walk slowly toward the camera side by side with small steady steps for about four seconds, Lumi on the left, never bumping into each other. Their wings and forelegs stay down at their sides; no waving. They stop at the center of the yard, look at the camera and stand still for the last second.
 Fixed camera, no zoom, no pan.
 Modern 3D cartoon render, soft matte vinyl toy figures, children's animation style, simple rounded shapes, clean bright colors, soft even daylight, gentle soft shadows, uncluttered background, calm and slow, eye-level camera at the chick's height.
 ```
@@ -119,7 +119,7 @@ CRITICAL: no written words, letters, brand marks or watermarks anywhere.
 CRITICAL: Tiky and Lumi keep exactly the same design, colors and proportions as in the start image from the first frame to the last; nothing is added or removed.
 CRITICAL: fixed camera, no zoom, no pan, no cut inside the clip; slow, gentle movement only.
 CRITICAL: nothing comes out of or moves inside the barn door; no other characters or animals appear.
-Tiky and Lumi look at the camera. After a moment Tiky raises his left wing slowly and waves it twice with small gentle movements, never flapping while Lumi raises her right foreleg slowly and waves the lilac hoof twice with small gentle movements, never stamping, both at the same slow pace. Then both keep the wing and the hoof raised and keep looking at the camera until the end.
+Tiky and Lumi look at the camera. They stay in the same place and size as in the start image, and the light does not change. At about one and a half seconds Tiky raises his left wing (the wing on the right side of the frame) slowly out to his side and waves it twice with small gentle movements, never flapping. At the same time Lumi raises her right foreleg (on the left side of the frame) slowly out to her side and waves the lilac hoof twice with small gentle movements, never stamping, both at the same slow pace. Then both keep the wing and the hoof raised and keep looking at the camera until the end.
 Fixed camera, no zoom, no pan.
 Modern 3D cartoon render, soft matte vinyl toy figures, children's animation style, simple rounded shapes, clean bright colors, soft even daylight, gentle soft shadows, uncluttered background, calm and slow, eye-level camera at the chick's height.
 ```
@@ -152,7 +152,7 @@ CRITICAL: no written words, letters, brand marks or watermarks anywhere.
 CRITICAL: Lumi keeps exactly the same design, colors and proportions as in the start image from the first frame to the last; nothing is added or removed.
 CRITICAL: fixed camera, no zoom, no pan, no cut inside the clip; slow, gentle movement only.
 CRITICAL: nothing comes out of or moves inside the barn door; no other characters or animals appear.
-Lumi looks at the camera. She raises her right foreleg slowly and waves the lilac hoof twice with small gentle movements, never stamping, then lowers the hoof slowly at about five and a half seconds and keeps looking at the camera with a gentle smile.
+Lumi looks at the camera with a small closed-mouth smile; for the first second her forelegs stay down. Then she raises her right foreleg (on the left side of the frame) slowly out to her side, away from her face, and waves the lilac hoof twice with small gentle movements, never stamping, then lowers the hoof slowly at about five and a half seconds and keeps looking at the camera with a gentle closed-mouth smile until the end.
 Fixed camera, no zoom, no pan.
 Modern 3D cartoon render, soft matte vinyl toy figures, children's animation style, simple rounded shapes, clean bright colors, soft even daylight, gentle soft shadows, uncluttered background, calm and slow, eye-level camera at the chick's height.
 ```
@@ -186,7 +186,7 @@ CRITICAL: no written words, letters, brand marks or watermarks anywhere.
 CRITICAL: Tiky and Lumi keep exactly the same design, colors and proportions as in the start image from the first frame to the last; nothing is added or removed.
 CRITICAL: fixed camera, no zoom, no pan, no cut inside the clip; slow, gentle movement only.
 CRITICAL: nothing comes out of or moves inside the barn door; no other characters or animals appear.
-Tiky turns his head toward the right side of the frame, away from Lumi, raises his left wing (the wing on the right side of the frame, the one farther from Lumi) and makes one small short wave, then lowers it. Lumi, on the left, looks calmly at Tiky with her head tilted a little and a soft relaxed face, waiting.
+Tiky slowly turns his head toward the right side of the frame, away from Lumi. At about one second he raises his left wing (the wing on the right side of the frame, the one farther from Lumi) out to his side and makes one small short wave, never flapping, then lowers it and stands calmly. Lumi, on the left, stays in her place and looks calmly at Tiky with her head tilted a little, a soft relaxed face and a small warm smile, waiting; her forelegs stay down the whole time.
 Fixed camera, no zoom, no pan.
 Modern 3D cartoon render, soft matte vinyl toy figures, children's animation style, simple rounded shapes, clean bright colors, soft even daylight, gentle soft shadows, uncluttered background, calm and slow, eye-level camera at the chick's height.
 ```
@@ -220,7 +220,7 @@ CRITICAL: no written words, letters, brand marks or watermarks anywhere.
 CRITICAL: Tiky and Lumi keep exactly the same design, colors and proportions as in the start image from the first frame to the last; nothing is added or removed.
 CRITICAL: fixed camera, no zoom, no pan, no cut inside the clip; slow, gentle movement only.
 CRITICAL: nothing comes out of or moves inside the barn door; no other characters or animals appear.
-Tiky turns toward Lumi and looks at her. He raises his left wing and waves it slowly, then lowers it. Lumi looks back at him, raises her right foreleg, waves the lilac hoof slowly and lowers it at about four and a half seconds. Both end looking at each other with gentle smiles.
+Tiky slowly turns his head and body a little toward Lumi and looks at her. He raises his left wing (the wing on the right side of the frame) slowly out to his side and waves it gently, never flapping, then lowers it. Only after Tiky lowers his wing, Lumi looks back at him, raises her right foreleg (on the left side of the frame) slowly out to her side, waves the lilac hoof gently, never stamping, and lowers it at about four and a half seconds. Both stay in their places and end looking at each other with gentle smiles, still, until the end.
 Fixed camera, no zoom, no pan.
 Modern 3D cartoon render, soft matte vinyl toy figures, children's animation style, simple rounded shapes, clean bright colors, soft even daylight, gentle soft shadows, uncluttered background, calm and slow, eye-level camera at the chick's height.
 ```
@@ -253,7 +253,7 @@ CRITICAL: no written words, letters, brand marks or watermarks anywhere.
 CRITICAL: Tiky keeps exactly the same design, colors and proportions as in the start image from the first frame to the last; nothing is added or removed.
 CRITICAL: fixed camera, no zoom, no pan, no cut inside the clip; slow, gentle movement only.
 CRITICAL: nothing comes out of or moves inside the barn door; no other characters or animals appear.
-Tiky looks down at his left wing, looks up at the camera, then looks at his wing again (first two seconds). Then he raises his left wing slowly and waves it twice with small gentle movements, never flapping. From four seconds he looks at the camera, lowers the wing slowly and waits with the wing down, still looking at the camera.
+Tiky slowly looks down at his left wing (the wing on the right side of the frame), slowly looks up at the camera, then looks at his wing again, with gentle head turns (first two seconds). Then he raises his left wing slowly out to his side and waves it twice with small gentle movements, never flapping. From four seconds he looks at the camera, lowers the wing slowly and waits with the wing down, still looking at the camera, until the end.
 Fixed camera, no zoom, no pan.
 Modern 3D cartoon render, soft matte vinyl toy figures, children's animation style, simple rounded shapes, clean bright colors, soft even daylight, gentle soft shadows, uncluttered background, calm and slow, eye-level camera at the chick's height.
 ```
@@ -287,7 +287,7 @@ CRITICAL: no written words, letters, brand marks or watermarks anywhere.
 CRITICAL: Tiky keeps exactly the same design, colors and proportions as in the start image from the first frame to the last; nothing is added or removed.
 CRITICAL: fixed camera, no zoom, no pan, no cut inside the clip; slow, gentle movement only.
 CRITICAL: nothing comes out of or moves inside the barn door; no other characters or animals appear.
-Tiky stands with his wing down and looks at the camera. He blinks twice, breathes softly, smiles slightly and tilts his head a little. He does nothing else and his wings stay down.
+Tiky stands with his wing down and looks at the camera, in the same place and size as in the start image; the light does not change. He blinks twice, breathes softly, smiles slightly and tilts his head a little. He does nothing else and his wings stay down.
 Fixed camera, no zoom, no pan.
 Modern 3D cartoon render, soft matte vinyl toy figures, children's animation style, simple rounded shapes, clean bright colors, soft even daylight, gentle soft shadows, uncluttered background, calm and slow, eye-level camera at the chick's height.
 ```
@@ -321,7 +321,7 @@ CRITICAL: no written words, letters, brand marks or watermarks anywhere.
 CRITICAL: Tiky keeps exactly the same design, colors and proportions as in the start image from the first frame to the last; nothing is added or removed.
 CRITICAL: fixed camera, no zoom, no pan, no cut inside the clip; slow, gentle movement only.
 CRITICAL: nothing comes out of or moves inside the barn door; no other characters or animals appear.
-Tiky stands with his wing down and looks at the camera. At one second he raises his left wing slowly and waves it twice with small gentle movements, never flapping. He lowers the wing at about four seconds and smiles quietly at the camera until the end.
+Tiky stands with his wing down and looks at the camera, in the same place and size as in the start image; the light does not change. At one second he raises his left wing (the wing on the right side of the frame) slowly out to his side and waves it twice with small gentle movements, never flapping. He lowers the wing at about four seconds and smiles quietly at the camera until the end.
 Fixed camera, no zoom, no pan.
 Modern 3D cartoon render, soft matte vinyl toy figures, children's animation style, simple rounded shapes, clean bright colors, soft even daylight, gentle soft shadows, uncluttered background, calm and slow, eye-level camera at the chick's height.
 ```
@@ -354,7 +354,7 @@ CRITICAL: no written words, letters, brand marks or watermarks anywhere.
 CRITICAL: Lumi keeps exactly the same design, colors and proportions as in the start image from the first frame to the last; nothing is added or removed.
 CRITICAL: fixed camera, no zoom, no pan, no cut inside the clip; slow, gentle movement only.
 CRITICAL: nothing comes out of or moves inside the barn door; no other characters or animals appear.
-Lumi looks down at her right hoof, looks up at the camera, then looks at the hoof again (first two seconds). Then she raises her right foreleg slowly and waves the lilac hoof twice with small gentle movements, never stamping. From four seconds she looks at the camera, lowers the hoof slowly and waits with the hoof down, still looking at the camera.
+Lumi slowly looks down at her right hoof (on the left side of the frame), slowly looks up at the camera, then looks at the hoof again, with gentle head turns (first two seconds). Then she raises her right foreleg slowly out to her side, away from her face, and waves the lilac hoof twice with small gentle movements, never stamping. From four seconds she looks at the camera, lowers the hoof slowly and waits with the hoof down, still looking at the camera with a small closed-mouth smile, until the end.
 Fixed camera, no zoom, no pan.
 Modern 3D cartoon render, soft matte vinyl toy figures, children's animation style, simple rounded shapes, clean bright colors, soft even daylight, gentle soft shadows, uncluttered background, calm and slow, eye-level camera at the chick's height.
 ```
@@ -388,7 +388,7 @@ CRITICAL: no written words, letters, brand marks or watermarks anywhere.
 CRITICAL: Lumi keeps exactly the same design, colors and proportions as in the start image from the first frame to the last; nothing is added or removed.
 CRITICAL: fixed camera, no zoom, no pan, no cut inside the clip; slow, gentle movement only.
 CRITICAL: nothing comes out of or moves inside the barn door; no other characters or animals appear.
-Lumi stands with her hoof down and looks at the camera. She blinks twice, breathes softly and smiles slightly. She does nothing else and her forelegs stay down.
+Lumi stands with her hoof down and looks at the camera, in the same place and size as in the start image; the light does not change. She blinks twice, breathes softly and smiles slightly with her mouth closed. She does nothing else and her forelegs stay down.
 Fixed camera, no zoom, no pan.
 Modern 3D cartoon render, soft matte vinyl toy figures, children's animation style, simple rounded shapes, clean bright colors, soft even daylight, gentle soft shadows, uncluttered background, calm and slow, eye-level camera at the chick's height.
 ```
@@ -422,7 +422,7 @@ CRITICAL: no written words, letters, brand marks or watermarks anywhere.
 CRITICAL: Lumi keeps exactly the same design, colors and proportions as in the start image from the first frame to the last; nothing is added or removed.
 CRITICAL: fixed camera, no zoom, no pan, no cut inside the clip; slow, gentle movement only.
 CRITICAL: nothing comes out of or moves inside the barn door; no other characters or animals appear.
-Lumi stands with her hoof down and looks at the camera. At one second she raises her right foreleg slowly and waves the lilac hoof twice with small gentle movements, never stamping. She lowers the hoof at about four seconds and smiles quietly at the camera until the end.
+Lumi stands with her hoof down and looks at the camera, in the same place and size as in the start image; the light does not change. At one second she raises her right foreleg (on the left side of the frame) slowly out to her side, away from her face, and waves the lilac hoof twice with small gentle movements, never stamping. She lowers the hoof at about four seconds and smiles quietly at the camera with her mouth closed until the end.
 Fixed camera, no zoom, no pan.
 Modern 3D cartoon render, soft matte vinyl toy figures, children's animation style, simple rounded shapes, clean bright colors, soft even daylight, gentle soft shadows, uncluttered background, calm and slow, eye-level camera at the chick's height.
 ```
@@ -456,7 +456,7 @@ CRITICAL: no written words, letters, brand marks or watermarks anywhere.
 CRITICAL: Tiky and Lumi keep exactly the same design, colors and proportions as in the start image from the first frame to the last; nothing is added or removed.
 CRITICAL: fixed camera, no zoom, no pan, no cut inside the clip; slow, gentle movement only.
 CRITICAL: nothing comes out of or moves inside the barn door; no other characters or animals appear.
-Tiky and Lumi walk slowly toward the camera side by side with small steady steps, Lumi on the left, and stop at the center of the yard near the red barn, looking at the camera. The yard is tidy and empty.
+Tiky and Lumi walk slowly toward the camera side by side with small steady steps, Lumi on the left, never bumping into each other; their wings and forelegs stay down, no waving. They stop side by side at the center of the yard, beside the red barn on the left, and look at the camera. The yard is tidy and empty.
 Fixed camera, no zoom, no pan.
 Modern 3D cartoon render, soft matte vinyl toy figures, children's animation style, simple rounded shapes, clean bright colors, soft even daylight, gentle soft shadows, uncluttered background, calm and slow, eye-level camera at the chick's height.
 ```
@@ -491,7 +491,7 @@ CRITICAL: no written words, letters, brand marks or watermarks anywhere.
 CRITICAL: Tiky and Lumi keep exactly the same design, colors and proportions as in the start image from the first frame to the last; nothing is added or removed.
 CRITICAL: fixed camera, no zoom, no pan, no cut inside the clip; slow, gentle movement only.
 CRITICAL: nothing comes out of or moves inside the barn door; no other characters or animals appear.
-Tiky and Lumi stand still side by side and look at the camera, Lumi on the left. Both blink slowly and breathe softly with small gentle smiles. Nothing else moves.
+Tiky and Lumi stand still side by side and look at the camera, Lumi on the left, in the same place and size as in the start image; the light does not change. Both blink slowly and breathe softly with small gentle smiles. Nothing else moves.
 Fixed camera, no zoom, no pan.
 Modern 3D cartoon render, soft matte vinyl toy figures, children's animation style, simple rounded shapes, clean bright colors, soft even daylight, gentle soft shadows, uncluttered background, calm and slow, eye-level camera at the chick's height.
 ```
@@ -560,7 +560,7 @@ CRITICAL: no written words, letters, brand marks or watermarks anywhere.
 CRITICAL: Tiky and Lumi keep exactly the same design, colors and proportions as in the start image from the first frame to the last; nothing is added or removed.
 CRITICAL: fixed camera, no zoom, no pan, no cut inside the clip; slow, gentle movement only.
 CRITICAL: nothing comes out of or moves inside the barn door; no other characters or animals appear.
-Tiky and Lumi stand side by side and keep looking at the camera, Lumi on the left. Both blink and breathe softly with small gentle smiles. Nothing else moves.
+Tiky and Lumi stand side by side and keep looking at the camera, Lumi on the left, in the same place and size as in the start image; the light does not change. Their wings and forelegs rest down. Both blink and breathe softly with small gentle smiles. Nothing else moves.
 Fixed camera, no zoom, no pan.
 Modern 3D cartoon render, soft matte vinyl toy figures, children's animation style, simple rounded shapes, clean bright colors, soft even daylight, gentle soft shadows, uncluttered background, calm and slow, eye-level camera at the chick's height.
 ```
@@ -594,7 +594,7 @@ CRITICAL: no written words, letters, brand marks or watermarks anywhere.
 CRITICAL: Tiky and Lumi keep exactly the same design, colors and proportions as in the start image from the first frame to the last; nothing is added or removed.
 CRITICAL: fixed camera, no zoom, no pan, no cut inside the clip; slow, gentle movement only.
 CRITICAL: nothing comes out of or moves inside the barn door; no other characters or animals appear.
-Tiky and Lumi look at the camera, Lumi on the left. At two seconds Tiky raises his left wing slowly and waves it twice with small gentle movements, never flapping while Lumi raises her right foreleg slowly and waves the lilac hoof twice with small gentle movements, never stamping, both at the same slow pace. They lower the wing and the hoof at about four and a half seconds and keep looking at the camera, calm, until the end.
+Tiky and Lumi look at the camera, Lumi on the left. At two seconds Tiky raises his left wing (the wing on the right side of the frame) slowly out to his side and waves it twice with small gentle movements, never flapping. At the same time Lumi raises her right foreleg (on the left side of the frame) slowly out to her side and waves the lilac hoof twice with small gentle movements, never stamping, both at the same slow pace. They lower the wing and the hoof at about four and a half seconds and keep looking at the camera, calm, until the end.
 Fixed camera, no zoom, no pan.
 Modern 3D cartoon render, soft matte vinyl toy figures, children's animation style, simple rounded shapes, clean bright colors, soft even daylight, gentle soft shadows, uncluttered background, calm and slow, eye-level camera at the chick's height.
 ```
