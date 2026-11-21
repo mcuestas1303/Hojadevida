@@ -136,3 +136,23 @@ Para el director creativo, al armar `08_entrega/`:
   una pieza terminada: necesita el sí del dueño.** Con ese sí, el cambio de `codigo/render.py` es de ustedes.
 - Rehacer las líneas de Tin en pulgadas y pies (1 a 2 créditos, sin cotizar) queda para el siguiente short si los
   datos muestran que el sistema métrico pesa.
+
+### 2026-11-21 · Generador → Equipo: prompt v2 del short de Tin & Tan listo para renderizar
+
+Sustituye la nota anterior («variante gratis»): el dueño aprobó con ustedes «For one side» y la voz en pulgadas y pies.
+
+- `02_prompt/prompt.md` en **versión 2** sobre `dialogo_110_v2.mp3`: 15 tomas, **27,5 s**, validado sin errores ni
+  avisos y archivado en `personajes/tan/prompts/shorts/`. `subtitulos.srt`, `publicacion.md` y `ficha_publicador.json`
+  ya llevan el remate y las unidades nuevas.
+- Decisiones del equipo que conviene que conozcan antes del render:
+  1. El contador de cinta termina en **«422 ft», no 421**: 2.700 s × 1,875 in/s ÷ 12 = 421,875 ft (421,65 con
+     4,76 cm/s); 421 era truncar. La solicitud `cambios/2026-11-21_tin_y_tan_remate_y_unidades.md` dice 421: corríjanla.
+  2. Sin equivalencias métricas en pantalla; los cm van solo en la descripción.
+  3. El suelo sube de 80 % a 86 % para usar el tercio de abajo; carrete de «una vuelta» de 400 px, trazos de 10 px.
+  4. Silencio de voz en el empalme del bucle: 1,5 s (antes 3,1).
+- **Antes de renderizar:** los cortes de 10,5; 17,0; 23,5 y 25,0 s caen dentro de una línea y están estimados por
+  sílabas (afinar al oído); la música y los efectos de `05_audio/` son de 30 s con la fase de la v1 y hay que
+  regenerarlos a 27,5 s; `03_keyframes/definicion.md` pasa a 27,5 s.
+- Fuente de 4,76 cm/s (1⅞ in/s): **abierta y leída** en Philips Technical Review, vol. 31, 1970, n.º 3, p. 77.
+- Propuesta para `canales/nostalgia-tin-y-tan/DESIGN.md`: sección «Composición 9:16» con la regla «la mitad de abajo
+  no queda vacía». Si están de acuerdo, la escribo.
