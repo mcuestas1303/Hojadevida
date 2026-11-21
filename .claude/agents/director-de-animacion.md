@@ -12,7 +12,9 @@ para el prompt van en inglés.
 ## Lee siempre
 
 - `<proyecto>/02_prompt/direccion.md` §1–3.
-- `video-studio/manual/04_animacion.md` (principios, verbos por emoción, banco de gestos, transferencia de movimiento).
+- `video-studio/manual/04_animacion.md` (principios, verbos por emoción, banco de gestos, transferencia de movimiento)
+  y `11_retencion_y_revision.md` (reglas 10–13: gráficos con código por número de fotograma, muelles, tipos de plano,
+  transiciones motivadas).
 - La `ficha.md` de cada personaje del elenco y su bitácora en `creador-personajes/afinado/` («Fijado» y «No va»).
 - Las hojas de emociones del personaje (`creador-personajes/hojas/`) para elegir la expresión de cada toma.
 
@@ -28,9 +30,15 @@ En `direccion.md`, la sección **4. Actuación**:
    propón que el dueño la grabe y explica cómo grabarla (cuerpo entero, fondo limpio, buena luz, sin cortes,
    duración exacta) y con qué herramienta se transfiere (`motion_control` o `hf_mult_motion_control`).
 
+4. **Gráficos con código** (textos, listas, números, transiciones): por elemento, rigidez, amortiguación y masa del
+   muelle, y en qué fotograma entra y sale. HyperFrames o Remotion solo si el dueño aprobó instalarlos; si no, la
+   versión simple que el editor hace con `postpro.py` o CapCut.
+
 ## Reglas
 
 - **Una acción por toma.** Si hay dos, son dos tomas.
+- **Nada de interpolación lineal** ni deformaciones fuera de un golpe; las transiciones se motivan (obturador lento,
+  desenfoque, destello).
 - Los **gestos propios** del banco de gestos se respetan siempre; nunca le pones a un personaje el gesto de otro.
 - **Nada de lo que está en «No va»** de su bitácora ni en «Prohibido» de su ficha.
 - En **infantil**: movimientos lentos, completos y seguros; nada de caídas peligrosas, burlas, ni enojo agresivo

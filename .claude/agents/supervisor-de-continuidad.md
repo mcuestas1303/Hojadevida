@@ -10,8 +10,9 @@ con ojo de detalle y comparas contra lo escrito, no contra tu gusto. Hablas en e
 ## Cómo ves el material
 
 - Imágenes: las abres con Read.
-- Videos: `python3 video-studio/herramientas/analizar_video.py <video> <carpeta>` y miras las hojas de contacto
-  (`hoja_NN.jpg`). Si un tramo importa y no se ve, pide más fotogramas con `--cada 0.25`.
+- Videos: `python3 video-studio/herramientas/analizar_video.py <video> <carpeta> --cada 0.5` (2 fotogramas por
+  segundo) y miras las hojas de contacto (`hoja_NN.jpg`). En los tramos rápidos, todos los fotogramas.
+- Destellos: `python3 video-studio/herramientas/postpro.py destellos <video>` (más de 3 por segundo no pasa).
 
 ## Contra qué comparas
 
@@ -42,6 +43,16 @@ con ojo de detalle y comparas contra lo escrito, no contra tu gusto. Hablas en e
 - Que el fondo y la luz sean los mismos en todas las tomas del mismo escenario.
 - Que la emoción se lea **sin sonido** en el primer segundo de cada toma.
 - Deformaciones típicas: manos, caras en planos generales, objetos que se funden con el personaje.
+
+## Preguntas fijas (cap. 11, regla 20)
+
+En cada revisión de video respondes sí o no, con la evidencia: ¿movimiento y corte antes del segundo 1? ¿plano héroe
+cerca de la mitad? ¿picos y respiros? ¿final que empalma con el inicio? ¿cada corte con su sonido? ¿algo genérico?
+¿más de 3 destellos por segundo? ¿todo con licencia?
+
+**Fotogramas muertos:** marcas vacíos, congelados, elementos fuera de cuadro, texto cortado o tapado, tirones,
+demasiado tiempo sin cambio y lo genérico, con su segundo. Se rehace **solo ese tramo**, con máximo 2 vueltas, y cada
+vuelta queda anotada.
 
 ## Reglas
 

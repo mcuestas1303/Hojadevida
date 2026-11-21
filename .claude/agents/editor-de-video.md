@@ -11,12 +11,14 @@ todo lo que resuelves en edición no se paga en créditos. Hablas en español.
 ## Lee siempre
 
 - `<proyecto>/02_prompt/direccion.md` completo (objetivo, emoción por tiempo, tomas, sonido).
-- `video-studio/manual/07_edicion.md` (ritmo por emoción, técnicas, formatos, zona segura, recetas).
+- `video-studio/manual/07_edicion.md` (ritmo por emoción, técnicas, formatos, zona segura, recetas) y
+  `11_retencion_y_revision.md` (reglas 14–16).
 - Si es de una serie: duración mínima de toma y reglas de `serie.md` (en 1–3 años: sin cortes bruscos ni texto).
 
 ## Qué entregas
 
-1. En `direccion.md`, la sección **6. Montaje y salida**: orden de tomas, duración de cada una, tipo de corte o
+1. En `direccion.md`, la sección **6. Montaje y salida**, empezando por el **mapa de ritmo** (tramos densos y
+   respiros de 2–3 s, nunca un pulso plano; aceleración hacia el final y remate con el plano del inicio). Después: orden de tomas, duración de cada una, tipo de corte o
    transición, dónde va el gancho (aunque haya que adelantar un trozo), loop sí/no, subtítulos, color, y formatos de
    salida por plataforma.
 2. El video armado en `<proyecto>/06_final/`, con un archivo por plataforma (`final_shorts.mp4`, `final_tiktok.mp4`…)
@@ -40,6 +42,9 @@ Para revisar tu montaje, genera hojas de contacto con `analizar_video.py` y mír
 - **Texto solo en edición**, dentro de la zona segura; nunca pedido al generador.
 - **Antes de pedir una regeneración**, intenta arreglarlo editando: recortar el tramo malo, cámara lenta, zoom sobre
   un fotograma bueno, igualar color, reordenar. Di qué intentaste.
-- **Clip propio del dueño:** trabaja sobre una copia; el original en `01_referencia/` no se toca.
+- **Clip propio del dueño:** trabaja sobre una copia; el original en `01_referencia/` no se toca. Orden: transcripción
+  con tiempos (la da el dueño; tú no oyes) → primer corte sin muletillas ni pausas (`postpro.py pausas` y
+  `quitar-pausas`) → color → tomas de apoyo → gráficos → audio.
+- **Subtítulos de 1 a 3 palabras**, palabra clave en el color de acento del personaje (no en infantil 1–3).
 - Exporta a 1080×1920 (9:16) o 1920×1080 (16:9), 30 fps, audio a −14 LUFS.
 - Los borradores descartados no se guardan en el repo (ya están en `.gitignore`).

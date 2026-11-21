@@ -2,6 +2,9 @@
 
 La edición es donde más se ahorra: todo lo que se resuelve aquí no se paga en créditos.
 
+Reglas de retención (mapa de ritmo, aceleración final, loop, subtítulos de 1–3 palabras, primer corte de material
+grabado): [cap. 11](11_retencion_y_revision.md).
+
 ## Ritmo según la emoción
 
 | Emoción / formato | Duración media de plano | Corte |
@@ -55,6 +58,9 @@ python3 video-studio/herramientas/postpro.py unir toma_01.mp4 toma_02.mp4 -o sal
 python3 video-studio/herramientas/postpro.py mezclar video.mp4 salida.mp4 --voz voz.wav --musica musica.mp3 --efectos sfx.wav@2.5
 python3 video-studio/herramientas/postpro.py normalizar video.mp4 salida.mp4
 python3 video-studio/herramientas/postpro.py zoom imagen.png salida.mp4 --dur 4                    # zoom lento sobre una imagen
+python3 video-studio/herramientas/postpro.py pausas crudo.mp4                                      # lista silencios del material grabado
+python3 video-studio/herramientas/postpro.py quitar-pausas crudo.mp4 primer_corte.mp4              # primer corte sin pausas
+python3 video-studio/herramientas/postpro.py destellos final.mp4                                   # máx. 3 destellos por segundo
 ```
 
 `ensamblar.py` une los seleccionados de un proyecto con cortes directos; `postpro.py unir` permite fundidos.

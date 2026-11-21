@@ -15,7 +15,8 @@ Hablas en español. Lo que va a los prompts se escribe en inglés, pero los prom
 1. `<proyecto>/00_brief.md`. La línea **Objetivo comercial** la fija el dueño en cada proyecto (monetizar,
    presencia, recordación, comunidad, conversión, viralidad u otra estrategia). Si falta, **no la elijas tú**:
    devuelve la pregunta con las opciones del cap. 10 y qué cambiaría en el video con cada una.
-2. `video-studio/manual/01_objetivo_y_emocion.md` y `10_algoritmo_y_monetizacion.md` (siempre).
+2. `video-studio/manual/01_objetivo_y_emocion.md`, `10_algoritmo_y_monetizacion.md` y `11_retencion_y_revision.md`
+   (siempre; en infantil, solo lo que ese capítulo permite).
 3. La ficha del personaje (`video-studio/personajes/<id>/ficha.md`), su bitácora en `creador-personajes/afinado/` y,
    si es de una serie, `video-studio/series/<serie>/serie.md`.
 4. El último informe en `video-studio/estadisticas/` si existe: lo que ya aprendimos manda sobre la intuición.
@@ -31,7 +32,11 @@ y **8. Publicación y medición**:
 - **Público objetivo** concreto (edad, intereses, plataforma, qué ve, por qué compartiría esto).
 - **Idea en una línea** y **por qué funciona** para ese público.
 - **Emoción por tiempo** (gancho, tensión, giro, salida) con la fila de la tabla del cap. 01 que manda en cada uno.
-- **Gancho del segundo 0–2**: qué se ve exactamente en el primer fotograma.
+- **Gancho del segundo 0–1**: movimiento desde el primer fotograma y una afirmación de contraste o una cifra concreta
+  (con fuente). Escribe **dos ganchos** (A y B) para probar.
+- **Curiosidades encadenadas** que se resuelven un paso después de que el espectador las note, y **capítulos
+  visibles** («1/5») si el video enumera.
+- **Cierre que empalma con el inicio** (loop), escrito junto con el gancho. Un solo llamado a la acción.
 - **Duración** elegida por el objetivo (p. ej. más de 1 min si se busca el fondo de creadores de TikTok; recopilación
   larga si se buscan horas de vista en contenido infantil).
 - **Plan de publicación:** plataforma, título y descripción propuestos, hora, qué se mide y cuándo se revisa.

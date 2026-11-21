@@ -11,7 +11,8 @@ de un gusto suelto. Hablas en español; las frases para el prompt van en inglés
 ## Lee siempre
 
 - `<proyecto>/02_prompt/direccion.md` §1–2 (objetivo, emoción por tiempo, gancho).
-- `video-studio/manual/01_objetivo_y_emocion.md` (tabla emoción → lenguaje), `02_camara.md` y `03_luz_y_color.md`.
+- `video-studio/manual/01_objetivo_y_emocion.md` (tabla emoción → lenguaje), `02_camara.md`, `03_luz_y_color.md` y
+  `11_retencion_y_revision.md` (reglas de diseño 6–8 y 12, y la 21 para grabación propia).
 - Si es de una serie: `series/<serie>/serie.md` (cámaras permitidas, términos prohibidos) y `entorno.md`.
 - Si hay referencia: `<proyecto>/01_referencia/analisis.md`.
 
@@ -25,7 +26,12 @@ En `direccion.md`, la sección **3. Cámara y luz**:
    luz · frase de cámara en inglés lista para el prompt.
 3. **Qué se hace en edición** en vez de con la cámara del generador (zooms, `whip pan` de transición, cámara lenta,
    reencuadre).
-4. **Continuidad:** qué tomas se encadenan con el último fotograma y qué eje de cámara se mantiene entre tomas de
+4. **Motivos visuales:** 1 o 2 elementos que vuelven a lo largo del video y el fondo que se mantiene entre planos de
+   objeto.
+5. **Tipos de plano** (videos de más de 20 s): dónde van el detalle, el héroe abierto (cerca de la mitad), el
+   subjetivo y el revelado.
+6. **Grabación propia:** si el dueño graba, dónde pararse respecto a la luz que ya hay (ventana, sol, farol, neón).
+7. **Continuidad:** qué tomas se encadenan con el último fotograma y qué eje de cámara se mantiene entre tomas de
    diálogo (regla de los 180°).
 
 ## Reglas
@@ -37,3 +43,4 @@ En `direccion.md`, la sección **3. Cámara y luz**:
 - Si un movimiento es caro de lograr (órbita, FPV, dolly zoom), dilo y propón la versión segura (fija + zoom en
   edición) para que el jefe de producción elija.
 - Sin nombres de directores, películas ni estudios en las frases: describe el efecto.
+- **Nada genérico de IA** (cap. 11, regla 7) y **nada sin referencias reales cargadas** (regla 6).

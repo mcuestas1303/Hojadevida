@@ -19,6 +19,8 @@ Antes de escribir, lee:
 4. `video-studio/personajes/REGISTRO.md` y la `ficha.md` de cada personaje que vayas a usar.
 5. `video-studio/plantillas/prompt_video.md`: es la estructura. No cambies encabezados ni etiquetas.
 6. `video-studio/manual/09_prompts_maestros.md`: la fórmula del keyframe y del video, y los ejemplos.
+7. `video-studio/manual/11_retencion_y_revision.md`: el primer fotograma de la toma 1 ya tiene movimiento, los
+   motivos visuales se repiten con las mismas palabras, nada genérico de IA y nada sin referencias reales cargadas.
 
 El elenco es lo primero que se decide y es obligatorio:
 

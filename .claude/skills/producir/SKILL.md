@@ -51,11 +51,16 @@ edición. **Espera su aprobación** antes del paso 2.
 
 Freno de pérdidas: dos fallos seguidos en una toma → no hay tercer intento; vuelve a fotografía/animación/prompts.
 
+Herramientas que hay que instalar (HyperFrames, Remotion, Earshot, transcripción con tiempos): **solo con el sí del
+dueño**. Mientras tanto, la versión simple con `postpro.py` o CapCut.
+
 ## 3. Post y entrega (sin costo)
 
 1. `editor-de-video` arma el montaje y las salidas por plataforma (`postpro.py`, `ensamblar.py`).
 2. `disenador-de-sonido` mezcla a −14 LUFS.
-3. `supervisor-de-continuidad` revisa el final → `APROBADO` o `CAMBIOS`.
+3. `supervisor-de-continuidad` revisa el final con hoja de contactos a 2 fotogramas por segundo, `postpro.py
+   destellos` y las preguntas fijas del cap. 11 → `APROBADO` o `CAMBIOS`. Solo se rehacen los tramos marcados,
+   máximo 2 vueltas.
 4. Archiva el prompt (`archivar_prompt.py`), agrega la fila del video a `video-studio/estadisticas/etiquetas.csv`
    y entrega: video final, costo total y qué se mide en la revisión de resultados.
 5. Los videos no se suben al repo (es público): quedan en el historial de Higgsfield y en la carpeta del dueño.

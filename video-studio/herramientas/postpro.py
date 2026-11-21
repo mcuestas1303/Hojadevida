@@ -15,9 +15,13 @@ Uso:
                            [--musica-db -18] [--sin-original]
     postpro.py normalizar  <entrada> <salida> [--lufs -14]
     postpro.py zoom        <imagen> <salida> [--dur 4] [--hacia dentro|fuera] [--ancho 1080 --alto 1920]
+    postpro.py pausas      <entrada> [--umbral -35 --minimo 0.6]          (lista silencios de material grabado)
+    postpro.py quitar-pausas <entrada> <salida> [--margen 0.12]           (primer corte: quita pausas y silencios)
+    postpro.py destellos   <entrada> [--salto 25]                         (accesibilidad: max. 3 destellos por segundo)
 """
 import argparse
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -263,6 +267,84 @@ def cmd_zoom(a):
     print(f"Zoom {a.hacia} {a.dur}s -> {a.salida}")
 
 
+def silencios(ruta, umbral, minimo):
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(ruta), "-af",
+                        f"silencedetect=noise={umbral}dB:d={minimo}", "-f", "null", "-"],
+                       capture_output=True, text=True)
+    inicios = [float(x) for x in re.findall(r"silence_start: (-?[\d.]+)", r.stderr)]
+    finales = [float(x) for x in re.findall(r"silence_end: ([\d.]+)", r.stderr)]
+    total = duracion(ruta)
+    if len(finales) < len(inicios):
+        finales.append(total)
+    return [(max(0.0, i), f) for i, f in zip(inicios, finales)], total
+
+
+def cmd_pausas(a):
+    if not tiene_audio(a.entrada):
+        sys.exit("El video no tiene audio.")
+    tramos, total = silencios(a.entrada, a.umbral, a.minimo)
+    if not tramos:
+        print(f"Sin pausas de más de {a.minimo} s bajo {a.umbral} dB.")
+        return
+    print(f"{len(tramos)} pausas (más de {a.minimo} s bajo {a.umbral} dB) en {total:.1f} s:")
+    for i, f in tramos:
+        print(f"  {i:7.2f} – {f:7.2f}  ({f - i:.2f} s)")
+    print(f"Quitarlas deja unos {total - sum(f - i for i, f in tramos):.1f} s.")
+
+
+def cmd_quitar_pausas(a):
+    """Primer corte de material grabado: deja solo los tramos con sonido (con un margen para no cortar sílabas)."""
+    if not tiene_audio(a.entrada):
+        sys.exit("El video no tiene audio.")
+    tramos, total = silencios(a.entrada, a.umbral, a.minimo)
+    if not tramos:
+        sys.exit(f"Sin pausas de más de {a.minimo} s: no hay nada que quitar.")
+    quedan, cursor = [], 0.0
+    for i, f in tramos:
+        if i - cursor > 0.05:
+            quedan.append((cursor, min(total, i + a.margen)))
+        cursor = max(cursor, f - a.margen)
+    if total - cursor > 0.05:
+        quedan.append((cursor, total))
+    expr = "+".join(f"between(t,{x:.3f},{y:.3f})" for x, y in quedan)
+    ffmpeg(["-i", a.entrada, "-vf", f"select='{expr}',setpts=N/FRAME_RATE/TB",
+            "-af", f"aselect='{expr}',asetpts=N/SR/TB", *CODEC_V, *CODEC_A, a.salida])
+    print(f"{len(tramos)} pausas quitadas: {total:.1f} s -> {sum(y - x for x, y in quedan):.1f} s -> {a.salida}")
+
+
+def cmd_destellos(a):
+    """Control aproximado de accesibilidad: no más de 3 destellos por segundo (criterio WCAG 2.3.1)."""
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", a.entrada, "-vf",
+                        "scale=320:-2,signalstats,metadata=mode=print:key=lavfi.signalstats.YAVG:file=-",
+                        "-an", "-f", "null", "-"], capture_output=True, text=True)
+    tiempos = [float(x) for x in re.findall(r"pts_time:([\d.]+)", r.stdout)]
+    lumas = [float(x) for x in re.findall(r"YAVG=([\d.]+)", r.stdout)]
+    if not lumas:
+        sys.exit(f"No pude medir el brillo:\n{r.stderr[-500:]}")
+    # Una transicion es un salto de brillo grande entre fotogramas seguidos; un destello son dos transiciones opuestas.
+    saltos = []
+    for k in range(1, len(lumas)):
+        d = lumas[k] - lumas[k - 1]
+        if abs(d) >= a.salto:
+            signo = 1 if d > 0 else -1
+            if not saltos or saltos[-1][1] != signo:
+                saltos.append((tiempos[k], signo))
+    malos, j = [], 0
+    for i, (t, _) in enumerate(saltos):
+        while saltos[j][0] < t - 1.0:
+            j += 1
+        destellos = (i - j + 1) / 2
+        if destellos > 3 and (not malos or t - malos[-1][1] > 1.0):
+            malos.append((saltos[j][0], t, destellos))
+    if malos:
+        print(f"⚠️  {len(malos)} tramo(s) con más de 3 destellos por segundo (revisar o suavizar):")
+        for x, y, n in malos:
+            print(f"  {x:6.2f} – {y:6.2f} s · ~{n:.0f} destellos")
+        sys.exit(1)
+    print(f"OK: ningún segundo pasa de 3 destellos ({len(saltos)} cambios fuertes de brillo en total). "
+          "Control aproximado, no un certificado.")
+
+
 def main():
     if shutil.which("ffmpeg") is None:
         sys.exit("Falta ffmpeg.")
@@ -302,6 +384,16 @@ def main():
     s.add_argument("--dur", type=float, default=4); s.add_argument("--hacia", choices=["dentro", "fuera"], default="dentro")
     s.add_argument("--ancho", type=int, default=1080); s.add_argument("--alto", type=int, default=1920)
     s.set_defaults(f=cmd_zoom)
+
+    for nombre, funcion in (("pausas", cmd_pausas), ("quitar-pausas", cmd_quitar_pausas)):
+        s = sub.add_parser(nombre); s.add_argument("entrada")
+        if nombre == "quitar-pausas":
+            s.add_argument("salida"); s.add_argument("--margen", type=float, default=0.12)
+        s.add_argument("--umbral", type=float, default=-35); s.add_argument("--minimo", type=float, default=0.6)
+        s.set_defaults(f=funcion)
+    s = sub.add_parser("destellos"); s.add_argument("entrada")
+    s.add_argument("--salto", type=float, default=25, help="salto de brillo medio (0-255) que cuenta como cambio fuerte")
+    s.set_defaults(f=cmd_destellos)
 
     a = p.parse_args()
     a.f(a)

@@ -16,7 +16,12 @@
 ## 2. Emoción, arco y gancho — director-creativo
 
 - **Duración total:**
-- **Gancho (0–2 s), primer fotograma:**
+- **Gancho A (0–1 s):** (movimiento desde el primer fotograma + afirmación de contraste o cifra con fuente)
+- **Gancho B (para probar):**
+- **Curiosidades encadenadas:** (qué pregunta abre cada tramo y dónde se resuelve)
+- **Capítulos visibles:** (« 1/5 » o lista que crece; «no aplica» si no enumera)
+- **Cierre que empalma con el inicio (loop):**
+- **Llamado a la acción (uno solo):**
 
 | Tiempo | Segundos | Emoción (fila del cap. 01) | Qué pasa |
 |---|---|---|---|
@@ -33,6 +38,10 @@
 |---|---|---|---|---|---|---|---|
 | 1 | | | | | | | |
 
+- **Motivos visuales que vuelven (1 o 2):**
+- **Fondo que se mantiene entre planos de objeto:**
+- **Tipos de plano (videos de más de 20 s):** detalle · héroe abierto (cerca de la mitad) · subjetivo · revelado
+- **Referencias cargadas:** (imagen aprobada, hoja de emociones, `DESIGN.md` si hay gráficos)
 - **Se resuelve en edición:**
 - **Tomas encadenadas (último fotograma → keyframe):**
 
@@ -51,10 +60,22 @@
 |---|---|---|---|
 | 1 | | | |
 
+- **Lista de golpes** (cada corte, destello o salto del mapa de ritmo con su sonido):
+
+| Segundo | Qué pasa en imagen | Sonido |
+|---|---|---|
+| | | |
+
 - **Voz en off o labios:**
 - **Música:** (la pone el dueño / prompt en `05_audio/audio.md`)
 
 ## 6. Montaje y salida — editor-de-video
+
+- **Mapa de ritmo:** (tramos densos y respiros de 2–3 s; nunca pulso plano; acelera hacia el final y remata con el plano del inicio)
+
+| Tramo | Segundos | Densidad (cambios) | Qué pasa |
+|---|---|---|---|
+| | | | |
 
 - **Orden y duración de tomas:**
 - **Cortes y transiciones:**

@@ -11,13 +11,15 @@ que el video se sienta mejor sin gastar en más video. Hablas en español.
 ## Lee siempre
 
 - `<proyecto>/02_prompt/direccion.md` §1–4 (emoción por tiempo, tomas, actuación).
-- `video-studio/manual/08_audio.md` y la columna «Sonido» de la tabla del cap. 01.
+- `video-studio/manual/08_audio.md`, la columna «Sonido» de la tabla del cap. 01 y la regla 17 de
+  `11_retencion_y_revision.md`.
 - La línea **Voz:** de la ficha de cada personaje que habla.
 - Si es de una serie: la sección «Voz y sonido» de `serie.md` y el guion aprobado.
 
 ## Qué entregas
 
-1. En `direccion.md`, la sección **5. Sonido**: por toma, qué suena (voz exacta, efecto, música, silencio) y en qué
+1. En `direccion.md`, la sección **5. Sonido**, con la **lista de golpes**: cada corte, destello o salto del mapa de
+   ritmo con su sonido y su segundo exacto. Además: por toma, qué suena (voz exacta, efecto, música, silencio) y en qué
    segundo; tipo de música con tempo y emoción; y la decisión voz en off o labios (con su costo, que confirma el jefe
    de producción).
 2. En `<proyecto>/05_audio/`, un `audio.md` con los **textos y prompts** listos:

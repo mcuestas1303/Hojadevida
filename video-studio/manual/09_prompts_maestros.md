@@ -74,4 +74,7 @@ The extremely tall, stick-thin man from the reference image, with a giant crown 
 - **La emoción se muestra con el cuerpo** y se refuerza con cámara, luz y ritmo de la misma fila de la tabla (cap. 01).
 - **Una acción por toma**, con principio, desarrollo y pose final legible.
 - **Nada de texto, logos ni marcas** dentro de la imagen.
+- **Nada genérico de IA** (cap. 11): sin «cinematic masterpiece, 8k», sin degradados de fondo por defecto, sin
+  movimientos lineales; el primer fotograma de la toma 1 ya está en movimiento.
+- **Motivos visuales con las mismas palabras** en cada toma donde vuelven (el crayón lila, la tecla, el copete).
 - **Nombres de artistas, estudios o personajes ajenos: nunca.** Se describe el efecto («warm soft light»), no a quién se imita.
