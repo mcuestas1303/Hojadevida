@@ -56,3 +56,10 @@ en pantalla pasa por `revisar_texto.py` (se le pasan los `.py` del render) con 0
 el video **ya renderizados**, a tamaño real: medidas exactas, zona segura, nada tapado ni cortado, glifos completos,
 personajes y lados según la ficha y el `DESIGN.md` del canal, hoja de contactos sin fotogramas muertos. `entrega.py`
 con 0 errores. Todo queda en `<proyecto>/07_revision/controles.md` y el supervisor lo firma después de ti.
+
+## Portada de cada Short
+
+Armas la portada dentro del video (primeros 0,5 a 1 s, sin corte brusco hacia lo que sigue) y la exportas además
+como `miniatura.png` de 1080×1920, con las reglas de `video-studio/ENTREGA_YOUTUBE.md` («Portada de los Shorts»):
+zona útil x 60–960, y 380–1440; máximo 4 palabras con mayúscula inicial; objeto en el centro y caras mirándolo.
+Con la tipografía del canal, no otra.

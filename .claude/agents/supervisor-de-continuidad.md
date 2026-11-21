@@ -84,3 +84,9 @@ Procedimiento completo: `video-studio/manual/12_controles_de_calidad.md`, contro
 4. Lo dejas firmado en `<proyecto>/07_revision/controles.md`. Cualquier hallazgo = `CAMBIOS`, aunque sea una letra.
 5. Si encuentras un error en algo ya entregado o subido, se lo dices a la conversación principal de inmediato para
    que se le avise al dueño con qué está mal, dónde y cuánto cuesta arreglarlo.
+
+## Portada de cada Short
+
+Compruebas con la hoja de contactos que los primeros 0,5 a 1 s son la portada y que `miniatura.png` es vertical
+(1080×1920), con texto y caras dentro de la zona útil (x 60–960, y 380–1440), máximo 4 palabras con mayúscula
+inicial, sin la respuesta, y que el video cumple lo que promete. Detalle: `video-studio/ENTREGA_YOUTUBE.md`.

@@ -7,7 +7,8 @@ Uso:
 
 Controles (los mismos que aplica el publicador, más la miniatura): campos obligatorios, título de 100 caracteres o
 menos y sin < ni >, descripción de 5.000 bytes o menos, etiquetas de 500 caracteres o menos en total, canal e idioma
-válidos, objetivos medibles con plazo, archivos presentes, miniatura 1280x720 y menor de 2 MB.
+válidos, objetivos medibles con plazo, archivos presentes, miniatura menor de 2 MB de 1280x720 (horizontal) o
+1080x1920 (Short, regla 29), y el control de texto de revisar_texto.py.
 Protocolo completo: video-studio/ENTREGA_YOUTUBE.md. No sube nada.
 """
 import json
@@ -34,6 +35,21 @@ PLANTILLA = {
     "archivos": {"video": "video.mp4", "miniatura": "miniatura.png", "subtitulos": "subtitulos.srt"},
     "notas": "",
 }
+
+
+def medida_video(ruta):
+    """(ancho, alto) del video con ffprobe, o None si no se puede medir."""
+    import subprocess
+    if not ruta.is_file():
+        return None
+    try:
+        r = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries",
+                            "stream=width,height", "-of", "csv=p=0:s=x", str(ruta)],
+                           capture_output=True, text=True, timeout=30)
+        w, h = r.stdout.strip().split("x")[:2]
+        return int(w), int(h)
+    except (OSError, ValueError, subprocess.SubprocessError):
+        return None
 
 
 def revisar(carpeta):
@@ -99,13 +115,21 @@ def revisar(carpeta):
             errores.append("la miniatura tiene que ser PNG o JPG")
         if mini.stat().st_size >= 2 * 1024 * 1024:
             errores.append(f"la miniatura pesa {mini.stat().st_size / 1048576:.1f} MB (menos de 2 MB)")
+        # Short (video vertical) → miniatura vertical 1080x1920 (regla 29, 2026-11-21); horizontal → 1280x720
+        short = medida_video(carpeta / archivos.get("video", "")) or None
+        short = (short[1] > short[0]) if short else "-S-" in str(f.get("codigo", ""))
+        esperada = (1080, 1920) if short else (1280, 720)
         try:
             from PIL import Image
             with Image.open(mini) as im:
-                if im.size != (1280, 720):
-                    errores.append(f"la miniatura mide {im.size[0]}x{im.size[1]} (tiene que ser 1280x720)")
+                if im.size != esperada:
+                    errores.append(f"la miniatura mide {im.size[0]}x{im.size[1]} (tiene que ser "
+                                   f"{esperada[0]}x{esperada[1]}{', vertical: es un Short' if short else ''})")
         except ImportError:
             avisos.append("sin Pillow no pude medir la miniatura")
+        if short:
+            avisos.append("Short: la portada va también en los primeros 0,5 a 1 s del video (regla 29); el "
+                          "supervisor la revisa con la hoja de contactos")
 
     # control de texto bloqueante (regla del dueño, 2026-11-21): ortografía, nombres, puntuación, cifras
     sys.path.insert(0, str(Path(__file__).resolve().parent))

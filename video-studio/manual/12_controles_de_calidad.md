@@ -67,6 +67,9 @@ marca de agua, título, descripción, etiquetas, hashtags, descripción del cana
 2. Personajes contra su ficha: rasgos, colores, proporciones, lado y espejo (`DESIGN.md` del canal).
 3. Nada tapado o cortado (lección del casete sobre el moño de Tan en la miniatura vertical).
 4. Se revisa la imagen renderizada a tamaño real, no solo el código que la dibuja.
+5. **Portada de un Short** (`ENTREGA_YOUTUBE.md`, «Portada de los Shorts»): está en los primeros 0,5 a 1 s del
+   video y en `miniatura.png` de 1080×1920; texto y caras dentro de la zona útil x 60–960, y 380–1440; máximo 4
+   palabras con mayúscula inicial; sin la respuesta; el video cumple lo que promete.
 
 ## 5. Video: lo arma el editor, lo firma el supervisor
 

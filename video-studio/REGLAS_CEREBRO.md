@@ -68,8 +68,23 @@
 28. **Todo se sube a YouTube en privado.** Para hacerlo público o programarlo, el publicador le presenta al dueño qué se
     publica, sus objetivos y el plan, y espera su sí a ese video (más adelante el dueño puede autorizar que sea solo).
 29. **Entrega al publicador:** Drive «Canal YouTube - Entregas» / una subcarpeta por código de trazabilidad, con video,
-    miniatura 1280×720 de menos de 2 MB (texto puesto en edición), subtítulos opcionales y `ficha.json`. Un código no
-    se sube dos veces. Detalle: `video-studio/ENTREGA_YOUTUBE.md`.
+    miniatura de menos de 2 MB (1280×720 si el video es horizontal; **1080×1920 si es un Short**), texto puesto en
+    edición, subtítulos opcionales y `ficha.json`. Un código no se sube dos veces. Detalle:
+    `video-studio/ENTREGA_YOUTUBE.md`.
+    **Portada de cada Short** (dueño, 2026-11-21, traída por el Canal automatizado; cambia esta regla):
+    1. Los primeros 0,5 a 1 s del video **son la portada**, y el video sigue desde ahí sin corte brusco; ese cuadro es
+       el que se elige como miniatura (un canal fuera del Programa de Socios no puede subir imagen propia para un Short,
+       y en el feed de Shorts no se ve miniatura: el video arranca solo).
+    2. Además va `miniatura.png` **vertical de 1080×1920** (por si el canal entra al Programa o la API lo permite). Una
+       horizontal se recorta y se pierden los personajes y el texto (pasó en TIN-EN-S-001). `entrega.py` la exige.
+    3. **Zona útil x 60–960, y 380–1440**: fuera de ahí la tapan el título y los botones; solo fondo o cuerpos, nunca
+       texto ni caras. (Zonas tomadas de vidIQ, no de YouTube: ajustarlas con una captura real del estante.)
+    4. **Texto**: máximo 4 palabras en 2 líneas, entre y 400 y 700, letra de unos 120 px o más, **mayúscula inicial en
+       cada palabra** y la palabra clave en el amarillo del canal. Sin la respuesta ni el número; no copia el título
+       palabra por palabra.
+    5. El objeto nostálgico en el centro (y 720–1100) y las caras de Tin y Tan dentro de la zona útil, con curiosidad o
+       sorpresa y mirando el objeto.
+    6. El video cumple lo que promete la portada (si no, YouTube lo trata como clickbait).
 30. **Contenido no auténtico:** dos videos seguidos no repiten estructura, música ni estilo de miniatura; el video
     cumple lo que promete el título; nada de material ajeno sin licencia.
 
