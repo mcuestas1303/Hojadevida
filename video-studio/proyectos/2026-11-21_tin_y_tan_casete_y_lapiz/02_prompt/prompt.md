@@ -477,7 +477,7 @@ Tipos de plano disponibles y dónde van: detalle o macro (tomas 6, 10 y 13), hé
 
 ## 12. Texto en pantalla y sistema de diseño
 
-- **Tipografías:** Inter Display Medium, licencia SIL Open Font License 1.1 (archivo `/usr/share/fonts/opentype/inter/InterDisplay-Medium.otf`; en Windows, si no está, Segoe UI Semibold, que se anota en `licencias.md` antes de usarla). Siempre en minúsculas, alineadas a la izquierda.
+- **Tipografías:** Inter Display Medium, licencia SIL Open Font License 1.1 (archivo `/usr/share/fonts/opentype/inter/InterDisplay-Medium.otf`; en Windows, si no está, Segoe UI Semibold, que se anota en `licencias.md` antes de usarla). Siempre en minúsculas, alineadas a la izquierda, salvo los nombres propios, que llevan mayúscula. Excepción obligatoria (regla del dueño, 2026-11-21): los nombres propios llevan mayúscula inicial («Tin & Tan», «Tin», «Tan»).
 - **Paleta:** papel `#F3E9D2` · papel_sombra `#E6D8B8` · tinta `#2B2420` · naranja `#E07A2E` · marrón `#7A4B2A` · verde azulado `#2F7F7A` · mostaza `#E8B33B` (palabra clave de los subtítulos) · tomate `#C8553D` (cifra final, goma, alertas) · rubor `#E9967A` · blanco `#FFF8EC`. Un color de acento por plano. La palabra clave en mostaza lleva un trazo de tinta de **0,06 em** (era 0,05 em en la v1: el director vio borrosa la palabra clave a ese tamaño) porque mostaza sobre crema no tiene contraste suficiente.
 - **Referencias de movimiento:** `01_referencia/` está vacía (el video de la prueba está en la PC del dueño). Las referencias cargadas son `canales/nostalgia-tin-y-tan/DESIGN.md`, `herramientas/palitos.py` y las hojas de `personajes/tin/referencias/` y `personajes/tan/referencias/`; el movimiento lo definen los muelles de la sección 5.
 - **Prohibido:**
