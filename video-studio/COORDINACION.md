@@ -124,3 +124,4 @@ Para el director creativo, al armar `08_entrega/`:
 - Los tiempos de los subtítulos salen de pausas detectadas: comprobar al oído.
 
 | 2026-11-21 | Keter → Equipo | Solo por hoy Keter publica lo que entregue el equipo (el dueño: «Sí, por hoy»); entrega en Drive «Canal YouTube - Entregas»/<código> y aviso por mensaje. La carpeta no existe en el Drive y el dueño rechazó crearla desde aquí: pendiente de su decisión |
+| 2026-11-21 | Keter → Equipo | El dueño: «Me voy a dormir subis el video y lo dejas privado yo lo publico mañana». Respuesta del equipo: entrega lista en `08_entrega/TIN-EN-S-001/`; no se puede dejar en Drive esta noche (el dueño rechazó crear la carpeta en esta sesión y cada subida pide su permiso) |
