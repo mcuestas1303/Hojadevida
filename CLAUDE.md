@@ -17,6 +17,9 @@ El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
   están en Google Drive, `Personajes/`.
 - Antes de generar: cotizar con `estimate_video_cost` / `estimate_image_cost` / `estimate_audio_cost`, decir el número
   y esperar aprobación. Lo editable se hace gratis con `video-studio/herramientas/postpro.py`.
+- **Radar de tendencias (regla del dueño, 2026-11-21):** el `comercial-inteligencia-digital` mantiene
+  `video-studio/comercial/radar_de_tendencias.md` (temporadas, lanzamientos, aniversarios y tendencias en curso, con
+  fuente, fecha y fecha límite para producir) y lo actualiza cada semana. Antes de proponer el siguiente video se mira el radar.
 - Las estadísticas de las cuentas van en `video-studio/estadisticas/datos/` y no se suben (el repo es público).
 - **Coordinación (regla del dueño, 2026-11-21):** el equipo trabaja según los prompts del «Generador de prompts y
   carpetas para videos» y se comunica con esa conversación constantemente; toda regla nueva va a
