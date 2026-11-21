@@ -38,6 +38,7 @@ video-studio/
 ├── infantil/                guía de 1 a 3 años y plantillas del equipo creativo
 ├── generador.md             herramienta y precios
 ├── formatos.md              formatos de salida para YouTube y redes
+├── referencias_externas.md  material de terceros para estudiar, no para copiar
 ├── generacion.md            reglas de créditos, definición cerrada y cambios
 ├── cambios/                 solicitudes de cambio revisadas por el equipo
 ├── datos/                   exportaciones del canal para el comercial

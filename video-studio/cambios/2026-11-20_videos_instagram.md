@@ -38,6 +38,8 @@ Estas ideas sí sirven para lo que le habla al **adulto**: los reels y carrusele
 | Añadir las «restricciones críticas» al inicio de cada prompt de video de «Hola, granja» antes de generar los clips | Sí o no. Es texto, no cambia el guion; lo revisaría el director de prompts | 0 créditos |
 | Estructura de carpetas del resumen (01_brief … 09_publicacion) | El estudio ya tiene la suya y las herramientas dependen de ella. Se agregó lo que faltaba (`07_revision/`, `licencias.md`); no se renumeró | 0 créditos |
 
+Añadido el 2026-11-21: la misma conversación envió una biblioteca de prompts de animación por código; quedó anotada en `referencias_externas.md` y se estudiará si se aprueba el motor.
+
 ## Opinión del equipo
 
 | Quién | Opinión | Condiciones |
