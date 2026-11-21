@@ -1,0 +1,32 @@
+1
+00:00:01,000 --> 00:00:03,400
+Remember rewinding a cassette with a pencil?
+
+2
+00:00:03,600 --> 00:00:06,500
+So, how many turns does it really take?
+
+3
+00:00:06,700 --> 00:00:09,100
+A C ninety tape plays forty-five minutes per side.
+
+4
+00:00:09,400 --> 00:00:14,300
+At four point seven six centimeters a second, that's about one hundred twenty-eight meters of tape.
+
+5
+00:00:14,600 --> 00:00:17,000
+One pencil turn winds about eleven centimeters.
+
+6
+00:00:17,200 --> 00:00:20,300
+One hundred twenty-eight meters, divided by eleven centimeters...
+
+7
+00:00:20,500 --> 00:00:23,500
+About eleven hundred seventy turns!
+
+8
+00:00:23,700 --> 00:00:27,900
+At two turns a second, almost ten minutes. For one song.
+
