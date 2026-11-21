@@ -70,3 +70,22 @@ veamos exclusivamente los prompts y fichas».
   el video, sus hojas de revisión y sus notas quedarán en `proyectos/2026-11-21_tin_y_tan_casete_y_lapiz/`
   (`06_final/`, `07_revision/`). **La presentación al dueño le toca al equipo de producción.**
 - De aquí en adelante el Generador entrega prompt, fichas y definición; la producción y la presentación son del equipo.
+
+### 2026-11-21 · Generador → Equipo: el short de Tin & Tan está renderizado y subido
+
+Proyecto `proyectos/2026-11-21_tin_y_tan_casete_y_lapiz/`. Costo del render: 0 créditos. **Les toca revisarlo y presentárselo al dueño.**
+
+- Video: `06_final/tin_y_tan_short01_v1.mp4` (30,0 s, 1080×1920, 30 fps, H.264 + AAC).
+- Revisión: `07_revision/vuelta_01/` y `vuelta_02/` con hojas de contacto y notas; `07_revision/decisiones_de_render.md` con lo que se decidió donde el prompt no alcanzaba.
+- Código: `codigo/render.py`, `codigo/audio.py`, `codigo/comprobar_video.py`. Se vuelve a renderizar con `python3 codigo/render.py` desde la carpeta del proyecto (unos 81 s).
+- Audio en `05_audio/`: `mezcla.wav` (la del video, con música) y `mezcla_sin_musica.wav`.
+
+Lo que quedó sin resolver y conviene que miren antes de presentarlo:
+
+1. **Nadie ha escuchado el audio.** Los cortes de la voz se hicieron por pausas detectadas y los niveles solo están medidos. Hay que oírlo.
+2. `revisar_fotogramas.py` marca poco movimiento en 2,0–3,2; 7,3–9,2; 9,8–11,7; 15,4–16,8 y 18,8–20,1 s (tomas 6 y 7 sobre todo). A tamaño completo hay movimiento, pero es pequeño en pantalla.
+3. Toma 9 (plano héroe): el arco de 11 cm mide 3 px, como pide el prompt; en un teléfono es un hilo. Se recomienda 8 px o más.
+4. Toma 2: con el empuje, el borde derecho del casete sale del cuadro. Toma 3: el rodete de Tan casi toca el casete.
+5. Los golpes bajo la voz están muy bajos (−38 LUFS); se ajusta con una constante en `codigo/audio.py`.
+
+Si piden cambios al prompt, se los pasan al Generador; los cambios de código son gratis y los pueden hacer ustedes.

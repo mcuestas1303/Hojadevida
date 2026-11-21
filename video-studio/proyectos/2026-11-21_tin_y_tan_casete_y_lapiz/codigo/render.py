@@ -82,6 +82,12 @@ def eio(u):
     return 4 * u ** 3 if u < 0.5 else 1 - (-2 * u + 2) ** 3 / 2
 
 
+def empuje(tl, dur):
+    """Empuje de cámara de 0 a 1: golpe de muelle `sello` (70 %) y el resto con ease-out cúbico hasta el final de la
+    toma, para que la imagen no quede congelada cuando el muelle se asienta."""
+    return 0.7 * muelle(tl, SELLO) + 0.3 * eo(tl / dur)
+
+
 def lerp(a, b, p):
     return a + (b - a) * p
 
@@ -384,7 +390,7 @@ def toma_3(lz, t):
     suelo(lz)
     casete(lz, 0.5 * W, 0.34 * H, 0.52 * W, 720 * t, lapiz="der" if t >= 2.8 else None,
            lapiz_esc=0.85 + 0.15 * muelle(t - 2.8, POP))
-    viento = 0.3 * math.exp(-0.45 * tl) * math.cos(2 * math.pi * 0.9 * tl)
+    viento = 0.3 * (0.6 + 0.4 * math.exp(-0.8 * tl)) * math.cos(2 * math.pi * 0.9 * tl)
     palitos.dibujar(lz, "tan", 0.5 * W, SUELO, ALTO_PJ, pose="pregunta", expresion="nostalgia", vista="frente",
                     mira=1, viento=viento, espejo=True)
     return 1 + 0.04 * eo(tl / 2.5), (W / 2, H / 2)
@@ -396,7 +402,7 @@ def toma_4(lz, t):
     r = 0.30 * W
     carrete(m, 0, 0, r, 720 * t)
     lapiz_grafico(lz, W / 2, H / 2, 0.9 * 2 * r, 720 * tl, 0.85 + 0.15 * muelle(tl, POP))
-    return 1 + 0.20 * muelle(tl, SELLO), (W / 2, H / 2)
+    return 1 + 0.20 * empuje(tl, 1.5), (W / 2, H / 2)
 
 
 def toma_5(lz, t):
@@ -421,8 +427,11 @@ def toma_6(lz, t):
     suelo(lz)
     casete(lz, 0.5 * W, 0.34 * H, 0.52 * W, 0)                         # carretes quietos: respiro
     palitos.dibujar(lz, "tan", X_TAN, SUELO, ALTO_PJ, pose="parado", expresion="curiosidad", vista="frente",
-                    viento=0.12 * math.sin(2 * math.pi * 0.5 * tl), espejo=True)
-    palitos.dibujar(lz, "tin", X_TIN, SUELO, ALTO_PJ, pose="explica", expresion="feliz", vista="frente", objeto=True)
+                    viento=0.22 * math.sin(2 * math.pi * 0.6 * tl), espejo=True)
+    palitos.dibujar(lz, "tin", X_TIN, SUELO, ALTO_PJ, pose="explica", expresion="feliz", vista="frente", objeto=False)
+    # movimiento secundario del lápiz de Tin: una sacudida de muelle por pulso mientras explica (±3 grados)
+    tau = tl % 1.0
+    lapiz_de_mano(lz, X_TIN, SUELO, ALTO_PJ, "explica", 3 * math.exp(-2.2 * tau) * math.sin(2 * math.pi * 2.0 * tau))
     return 1 + 0.03 * eo(tl / 3.0), (W / 2, H / 2)
 
 
@@ -527,7 +536,7 @@ def toma_10(lz, t):
     suelo(lz)
     palitos.dibujar(lz, "tin", 0.5 * W, SUELO, 0.44 * H, pose="piensa", expresion="pensando", vista="frente",
                     objeto=False)
-    return 1 + 0.06 * muelle(tl, SELLO), (W / 2, H / 2)
+    return 1 + 0.06 * empuje(tl, 1.5), (W / 2, H / 2)
 
 
 def toma_11(lz, t):
@@ -561,7 +570,7 @@ def toma_12(lz, t):
     palitos.dibujar(lz, "tan", X_TAN, SUELO, ALTO_PJ, pose="celebra", expresion="sorpresa", vista="frente",
                     viento=viento, espejo=True)
     palitos.dibujar(lz, "tin", X_TIN, SUELO, ALTO_PJ, pose="saluda", expresion="eureka", vista="frente", objeto=True)
-    return 1 + 0.02 * muelle(tl, SELLO), (W / 2, H / 2)
+    return 1 + 0.02 * empuje(tl, 3.0), (W / 2, H / 2)
 
 
 def reloj(lz, ang_lapiz, ang_aguja):

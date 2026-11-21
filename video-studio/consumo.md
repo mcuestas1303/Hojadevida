@@ -83,4 +83,6 @@ Trabajo de una sola vez para toda la serie (no se repite en cada capítulo):
 | 3 | Carpeta, brief, línea de tiempo de la voz (conversación principal) | sin medir |
 | 5 | Prompt del video (16 tomas, 30 s) | 131 k |
 
-Faltan: dirección del equipo de producción, dibujo y render con código, música, revisión y publicación.
+| 6 y 7 | Dibujo, audio, render y dos vueltas de revisión con código | sin dato todavía |
+
+Faltan: revisión del equipo de producción, escucha del audio, ajustes y publicación.

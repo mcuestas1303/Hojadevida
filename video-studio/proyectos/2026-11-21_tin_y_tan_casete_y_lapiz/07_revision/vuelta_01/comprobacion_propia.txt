@@ -1,0 +1,22 @@
+fotogramas: 900
+cortes (cambio medio 0-255 en el fotograma del corte; mediana de sus 10 vecinos):
+    0.5 s  fotograma  15  cambio   1.66  vecinos  7.84
+    1.0 s  fotograma  30  cambio  38.25  vecinos  1.46
+    3.5 s  fotograma 105  cambio  28.40  vecinos  8.09
+    5.0 s  fotograma 150  cambio  35.22  vecinos 11.74
+    6.5 s  fotograma 195  cambio   2.62  vecinos  0.62
+    9.5 s  fotograma 285  cambio  26.54  vecinos  0.82
+   12.0 s  fotograma 360  cambio   9.08  vecinos  0.52
+   14.5 s  fotograma 435  cambio  17.33  vecinos  0.39
+   17.0 s  fotograma 510  cambio  21.33  vecinos  0.67
+   18.5 s  fotograma 555  cambio  11.99  vecinos  0.43
+   20.5 s  fotograma 615  cambio  16.08  vecinos  0.93
+   23.5 s  fotograma 705  cambio  14.01  vecinos  1.21
+   25.5 s  fotograma 765  cambio   0.96  vecinos  1.55
+   27.0 s  fotograma 810  cambio  20.22  vecinos  0.95
+   28.0 s  fotograma 840  cambio  22.28  vecinos  0.79
+saltos grandes fuera de la rejilla (fotogramas): [np.int64(4), np.int64(108), np.int64(109), np.int64(110), np.int64(111), np.int64(112), np.int64(113), np.int64(114), np.int64(115), np.int64(116), np.int64(117), np.int64(118), np.int64(885), np.int64(886)]
+tramos de 0,5 s o más sin ningún cambio: ['17.57-18.27']
+cambio mínimo por fotograma en todo el video: 0.0000
+bucle: diferencia media entre el último fotograma (899) y el 0: 1.371 (0-255)
+fotogramas vacíos (imagen plana): ninguno
