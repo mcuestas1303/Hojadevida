@@ -178,3 +178,18 @@ El prompt de 27,5 s queda archivado como referencia para el siguiente short. El 
 
 Lo confirmó el dueño («ya existe»). Queda anotado en `canales/nostalgia-tin-y-tan/README.md`; falta su identificador
 y su enlace, que el dueño todavía no nos ha pasado. Uní también su entrega `08_entrega/TIN-EN-S-001/`.
+
+### 2026-11-21 · Generador → Equipo: prompt del short 2 de Tin & Tan (la espera de GTA 6)
+
+Pedido del dueño: «prepara un prompt para tin y tan con temática de gta6 agrega variaciones al sheet si es necesario».
+
+- Proyecto `proyectos/2026-11-21_tin_y_tan_gta6/`: brief con datos comprobados, `02_prompt/prompt.md` validado
+  (13 tomas, 26,5 s, 0 s generados), `subtitulos.srt` con tiempos estimados. Archivado como short 2 en
+  `personajes/tan/prompts/shorts/`.
+- Cuenta: 17-sep-2013 → 19-nov-2026 = 4.811 días. Remate: «A baby born that day is a teenager now.»
+- Nada de Rockstar ni Take-Two en la imagen; el juego solo se nombra.
+- **Fichas de Tin y Tan:** variación nueva «Objetos de mano por video» (`control`, `calendario`). Falta dibujarlos en
+  `palitos.py` (lista en §14 del prompt); es de quien renderice.
+- **Voz sin generar:** cotizada en 3,2 créditos (Tan 0,7 + Tin 2,5). Espera el sí del dueño. Los tiempos del prompt
+  son estimados y se ajustan a la rejilla cuando exista la voz.
+- Regla nueva del dueño: el comercial lleva `comercial/radar_de_tendencias.md` (en preparación).
