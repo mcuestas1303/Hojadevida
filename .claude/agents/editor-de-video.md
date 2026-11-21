@@ -48,3 +48,11 @@ Para revisar tu montaje, genera hojas de contacto con `analizar_video.py` y mír
 - **Subtítulos de 1 a 3 palabras**, palabra clave en el color de acento del personaje (no en infantil 1–3).
 - Exporta a 1080×1920 (9:16) o 1920×1080 (16:9), 30 fps, audio a −14 LUFS.
 - Los borradores descartados no se guardan en el repo (ya están en `.gitignore`).
+
+## Controles de imagen, video y entrega (bloqueantes)
+
+`video-studio/manual/12_controles_de_calidad.md`, controles 1, 4, 5 y 6. Antes de renderizar, el texto que se dibuja
+en pantalla pasa por `revisar_texto.py` (se le pasan los `.py` del render) con 0 errores. Después revisas la imagen y
+el video **ya renderizados**, a tamaño real: medidas exactas, zona segura, nada tapado ni cortado, glifos completos,
+personajes y lados según la ficha y el `DESIGN.md` del canal, hoja de contactos sin fotogramas muertos. `entrega.py`
+con 0 errores. Todo queda en `<proyecto>/07_revision/controles.md` y el supervisor lo firma después de ti.

@@ -26,6 +26,9 @@ Nada de degradados de fondo (cap. 11, regla 7). Un color de acento por plano.
 - **Excepción obligatoria: los nombres propios llevan mayúscula inicial** (regla del dueño, 2026-11-21): «Tin & Tan»,
   «Tin y Tan», «Tin», «Tan». El banner salió como «tin & tan» y el dueño lo rechazó; desde entonces el supervisor de
   continuidad revisa cada nombre letra por letra antes de entregar.
+- **Cifras con decimales o fracciones: aproximadas y con «≈»** («≈ 422 ft», «≈ 1.9 in/s»), regla del dueño del
+  2026-11-21 (`manual/12_controles_de_calidad.md`). Inter Display Medium sí tiene «≈» (comprobado); el cuadro de
+  la prueba de 30 s salió de otra tipografía.
 - La tipografía tiene que tener todos los símbolos que se usan (en la prueba, «≈» y «→» salieron como cuadrados):
   antes de renderizar, comprobar los glifos o escribir «about» y una flecha dibujada.
 - Subtítulos: 1 a 3 palabras, la palabra clave en mostaza.

@@ -29,6 +29,7 @@ de su oficio antes de trabajar; nadie trabaja de memoria.
 | 09 | [Prompts maestros](09_prompts_maestros.md): la fórmula y ejemplos completos con el elenco | prompts, fotografía, animación |
 | 10 | [Algoritmo y monetización](10_algoritmo_y_monetizacion.md): métricas, lectura de estadísticas, requisitos para cobrar | director, jefe de producción |
 | 11 | [Retención y revisión](11_retencion_y_revision.md): las 21 reglas por rol (gancho, loop, ritmo, golpes de sonido, gráficos con código, revisión fotograma a fotograma) | todos |
+| 12 | [Controles de calidad](12_controles_de_calidad.md): los filtros bloqueantes de texto, cifras, voz, imagen, video, entrega y marca, quién firma cada uno | todos |
 
 ## El equipo
 

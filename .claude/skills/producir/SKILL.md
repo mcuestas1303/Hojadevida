@@ -66,14 +66,17 @@ dueño**. Mientras tanto, la versión simple con `postpro.py` o CapCut.
 1. `editor-de-video` arma el montaje y las salidas por plataforma (`postpro.py`, `ensamblar.py`).
 2. `disenador-de-sonido` mezcla a −14 LUFS.
 3. `supervisor-de-continuidad` revisa el final con hoja de contactos a 2 fotogramas por segundo, `postpro.py
-   destellos` y las preguntas fijas del cap. 11 → `APROBADO` o `CAMBIOS`. Solo se rehacen los tramos marcados; si cuesta
+   destellos`, las preguntas fijas del cap. 11 y los **controles bloqueantes** de `manual/12_controles_de_calidad.md`
+   (texto con `revisar_texto.py` en 0 errores más lectura a mano, cifras recalculadas y con «≈», voz contra guion,
+   imagen y video a tamaño real), firmados en `07_revision/controles.md` → `APROBADO` o `CAMBIOS`. Solo se rehacen los tramos marcados; si cuesta
    créditos, con autorización del dueño.
 4. Archiva el prompt (`archivar_prompt.py`), agrega la fila del video a `video-studio/estadisticas/etiquetas.csv`
    y entrega: video final, costo total y qué se mide en la revisión de resultados.
 5. Los videos no se suben al repo (es público): quedan en el historial de Higgsfield y en la carpeta del dueño.
 6. **Entrega al publicador de YouTube** (`video-studio/ENTREGA_YOUTUBE.md`): carpeta `<proyecto>/08_entrega/<codigo>/`
    con video, miniatura 1280×720, subtítulos opcionales y `ficha.json`; revisarla con
-   `python3 video-studio/herramientas/entrega.py <carpeta>`; subirla a Drive («Canal YouTube - Entregas») solo con el
+   `python3 video-studio/herramientas/entrega.py <carpeta>` (0 errores, incluye el control de texto) y
+   `controles.md` completo en PASA; subirla a Drive («Canal YouTube - Entregas») solo con el
    visto bueno del dueño. El publicador sube todo en **privado**; hacerlo público lo decide el dueño video por video.
 
 ## Revisión de resultados
