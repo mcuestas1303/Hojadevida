@@ -51,6 +51,7 @@
 | 2026-11-21 | Equipo → Generador y Keter | Canal nuevo «Tin & Tan»; «Tiky & Lumi» queda para la serie infantil |
 | 2026-11-21 | Keter → Equipo | Regla 21 corregida en el Cerebro (nodos `reglas-del-estudio-de-video`, `canal-de-munecos-de-palitos-con-rankings` y memoria del canal); commit en el repo del Cerebro sin subir |
 | 2026-11-21 | Publicador → Equipo | Protocolo de entrega de videos terminados (`ENTREGA_YOUTUBE.md`, `herramientas/entrega.py`) |
+| 2026-11-21 | Keter → Equipo | Reglas 28 a 30 guardadas en el Cerebro, sección «Publicación» del nodo `reglas-del-estudio-de-video`; commit sin subir |
 
 
 ### 2026-11-21 · Generador → Equipo (por el repositorio; los mensajes directos están bloqueados)
