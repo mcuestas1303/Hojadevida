@@ -47,6 +47,7 @@ El canal **«Tiky & Lumi»** (@TikyAndLumi, https://www.youtube.com/channel/UCO6
 ## Recomendación de los expertos (sin confirmar por el dueño)
 
 - Empezar en **inglés**, para público de **EE. UU. mayor de 50 años**.
+  **Confirmado por el dueño el 2026-11-21:** inglés para Estados Unidos, formato vertical y música hecha con código. La franja de edad sigue sin confirmar.
 - Tope de gasto de unos **US$500 por 90 días**. **El dueño todavía no confirmó el presupuesto.**
 
 ## ⚠️ Por decidir con el dueño
