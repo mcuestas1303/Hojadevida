@@ -1,0 +1,349 @@
+{
+ "niveles_lufs_y_pico_dbtp": {
+  "voz (dialogo_110_v2.mp3 retrasada 1,0 s, sin tocar)": [
+   -15.1,
+   -4.7
+  ],
+  "efectos.wav": [
+   -18.3,
+   -3.1
+  ],
+  "efectos bajo la voz (1,0 a 27,9 s)": [
+   -26.0,
+   -7.3
+  ],
+  "efectos fuera de la voz (gancho y cierre)": [
+   -12.4,
+   -3.1
+  ],
+  "musica.wav": [
+   -24.0,
+   -10.3
+  ],
+  "mezcla_sin_musica.wav": [
+   -14.6,
+   -3.1
+  ],
+  "mezcla.wav": [
+   -14.3,
+   -0.5
+  ]
+ },
+ "golpes": [
+  {
+   "segundo": 0.0,
+   "sonido": "thunk",
+   "atado_a": "arranque, toma 1",
+   "inicio_medido": 0.0002916666666666667,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 0.5,
+   "sonido": "whoosh",
+   "atado_a": "corte 1 a 2",
+   "inicio_medido": 0.5010833333333333,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 1.0,
+   "sonido": "clic_borron",
+   "atado_a": "corte en 1.0",
+   "inicio_medido": 1.0001458333333333,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 2.8,
+   "sonido": "plop",
+   "atado_a": "lápiz al carrete, toma 3",
+   "inicio_medido": 2.800395833333333,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 3.5,
+   "sonido": "clic_borron",
+   "atado_a": "corte en 3.5",
+   "inicio_medido": 3.5001458333333333,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 3.5,
+   "sonido": "matraca",
+   "atado_a": "vuelta del lápiz, toma 4",
+   "inicio_medido": 3.5001458333333333,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 4.0,
+   "sonido": "matraca",
+   "atado_a": "vuelta del lápiz, toma 4",
+   "inicio_medido": 4.000166666666667,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 4.5,
+   "sonido": "matraca",
+   "atado_a": "vuelta del lápiz, toma 4",
+   "inicio_medido": 4.500229166666666,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 5.0,
+   "sonido": "clic_borron",
+   "atado_a": "corte en 5.0",
+   "inicio_medido": 5.000354166666667,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 5.0,
+   "sonido": "paso",
+   "atado_a": "pasos de Tin, toma 5",
+   "inicio_medido": 5.000354166666667,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 5.2,
+   "sonido": "paso",
+   "atado_a": "pasos de Tin, toma 5",
+   "inicio_medido": 5.200666666666667,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 5.4,
+   "sonido": "paso",
+   "atado_a": "pasos de Tin, toma 5",
+   "inicio_medido": 5.400666666666667,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 6.5,
+   "sonido": "clic_borron",
+   "atado_a": "corte en 6.5",
+   "inicio_medido": 6.500145833333334,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 9.5,
+   "sonido": "clic_borron",
+   "atado_a": "corte en 9.5",
+   "inicio_medido": 9.500125,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 9.5,
+   "sonido": "hiss",
+   "atado_a": "cinta que corre, toma 7 (9,5 a 12,0)",
+   "inicio_medido": 9.500125,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 12.0,
+   "sonido": "clic_borron",
+   "atado_a": "corte en 12.0",
+   "inicio_medido": 12.000125,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 12.2,
+   "sonido": "tictac_a",
+   "atado_a": "contador de la toma 8 (12,2 a 13,6)",
+   "inicio_medido": 12.200145833333332,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 14.0,
+   "sonido": "clic",
+   "atado_a": "corte en 14.0",
+   "inicio_medido": 14.000083333333333,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 14.3,
+   "sonido": "vuelta_y_pitido",
+   "atado_a": "vuelta del lápiz y arco, toma 9 (14,3 a 15,3)",
+   "inicio_medido": 14.300104166666667,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 16.5,
+   "sonido": "clic_borron",
+   "atado_a": "corte en 16.5",
+   "inicio_medido": 16.500166666666665,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 17.5,
+   "sonido": "clic_borron",
+   "atado_a": "corte en 17.5",
+   "inicio_medido": 17.500125,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 17.6,
+   "sonido": "corte_0",
+   "atado_a": "duplicación de la barra, toma 11",
+   "inicio_medido": 17.600104166666668,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 17.85,
+   "sonido": "corte_1",
+   "atado_a": "duplicación de la barra, toma 11",
+   "inicio_medido": 17.850104166666668,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 18.1,
+   "sonido": "corte_2",
+   "atado_a": "duplicación de la barra, toma 11",
+   "inicio_medido": 18.100083333333334,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 18.35,
+   "sonido": "corte_3",
+   "atado_a": "duplicación de la barra, toma 11",
+   "inicio_medido": 18.350083333333334,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 18.6,
+   "sonido": "corte_4",
+   "atado_a": "duplicación de la barra, toma 11",
+   "inicio_medido": 18.600083333333334,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 18.85,
+   "sonido": "corte_5",
+   "atado_a": "duplicación de la barra, toma 11",
+   "inicio_medido": 18.850083333333334,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 19.5,
+   "sonido": "clic",
+   "atado_a": "corte en 19.5",
+   "inicio_medido": 19.500083333333333,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 19.6,
+   "sonido": "tictac_b",
+   "atado_a": "contador de la toma 12 (19,6 a 21,9)",
+   "inicio_medido": 19.600145833333336,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 21.9,
+   "sonido": "ding",
+   "atado_a": "llegada a 1,170",
+   "inicio_medido": 21.900479166666667,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 23.0,
+   "sonido": "clic_borron",
+   "atado_a": "corte en 23.0",
+   "inicio_medido": 23.000145833333335,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 23.0,
+   "sonido": "matraca",
+   "atado_a": "vuelta del lápiz, toma 13",
+   "inicio_medido": 23.000145833333335,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 23.5,
+   "sonido": "matraca",
+   "atado_a": "vuelta del lápiz, toma 13",
+   "inicio_medido": 23.5001875,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 24.0,
+   "sonido": "matraca",
+   "atado_a": "vuelta del lápiz, toma 13",
+   "inicio_medido": 24.00025,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 24.5,
+   "sonido": "clic",
+   "atado_a": "corte en 24.5",
+   "inicio_medido": 24.500083333333333,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 24.5,
+   "sonido": "matraca",
+   "atado_a": "vuelta del lápiz, toma 13",
+   "inicio_medido": 24.500083333333333,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 25.6,
+   "sonido": "campanilla",
+   "atado_a": "llega la aguja, toma 14",
+   "inicio_medido": 25.600375,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 26.0,
+   "sonido": "clic",
+   "atado_a": "corte en 26.0",
+   "inicio_medido": 26.000083333333333,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 26.1,
+   "sonido": "nota3",
+   "atado_a": "la corchea, toma 15",
+   "inicio_medido": 26.101395833333335,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 27.5,
+   "sonido": "clic_borron",
+   "atado_a": "corte en 27.5",
+   "inicio_medido": 27.500104166666667,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 27.5,
+   "sonido": "matraca",
+   "atado_a": "vuelta del lápiz, toma 16",
+   "inicio_medido": 27.500104166666667,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 28.0,
+   "sonido": "matraca",
+   "atado_a": "vuelta del lápiz, toma 16",
+   "inicio_medido": 28.000125,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 28.5,
+   "sonido": "matraca",
+   "atado_a": "vuelta del lápiz, toma 16",
+   "inicio_medido": 28.500125,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 29.0,
+   "sonido": "matraca",
+   "atado_a": "vuelta del lápiz, toma 16",
+   "inicio_medido": 29.000104166666667,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 29.4,
+   "sonido": "whoosh",
+   "atado_a": "el casete vuelve a la pose del inicio, toma 16",
+   "inicio_medido": 29.40102083333333,
+   "en_su_tiempo": true
+  }
+ ]
+}

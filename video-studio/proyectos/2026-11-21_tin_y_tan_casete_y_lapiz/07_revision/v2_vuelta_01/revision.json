@@ -1,0 +1,60 @@
+{
+  "video": "tin_y_tan_short01_v2.mp4",
+  "duracion_s": 30.0,
+  "cortes_s": [
+    1.0,
+    3.5,
+    5.0,
+    9.5,
+    16.5
+  ],
+  "planos": 6,
+  "plano_mas_corto_s": 1.0,
+  "congelados": [
+    [
+      2.0,
+      3.2
+    ],
+    [
+      7.8,
+      9.2
+    ],
+    [
+      10.0,
+      11.7
+    ],
+    [
+      15.2,
+      16.2
+    ],
+    [
+      17.8,
+      19.2
+    ]
+  ],
+  "vacios": [],
+  "destellos_s": [],
+  "segundos_con_exceso_de_destellos": [],
+  "marcas": [
+    {
+      "tipo": "Imagen congelada",
+      "donde": "2.0–3.2 s"
+    },
+    {
+      "tipo": "Imagen congelada",
+      "donde": "7.8–9.2 s"
+    },
+    {
+      "tipo": "Imagen congelada",
+      "donde": "10.0–11.7 s"
+    },
+    {
+      "tipo": "Imagen congelada",
+      "donde": "15.2–16.2 s"
+    },
+    {
+      "tipo": "Imagen congelada",
+      "donde": "17.8–19.2 s"
+    }
+  ]
+}
