@@ -11,7 +11,11 @@ quemando el presupuesto y corregir el prompt en vez de seguir tirando intentos.
 | 2026-11-21 | Efectos y música sintetizados con código | audio | 30,0 | 1 | 0 | Sí (medido; falta escucharlo) | — |
 | 2026-11-21 | Voz de Tin, líneas 4, 5, 6 y 8 en pulgadas/pies + «For one side.» (Kevin, job `d86721f1-5d5f-454d-b048-e40bab17e012`) | audio | — | 1 | 1,8 | — | — |
 
-Total gastado: 4,8 créditos (3 de la prueba de voces reutilizada + 1,8 de la corrección autorizada por el dueño el 2026-11-21).
+| 2026-11-21 | Voz de Tin en español (Juan), versión ES · job `09be09bb-dc2c-40d5-aa14-74d8bae2a5ba` | audio | 20,4 | 1 | 2,2 | No | El dueño: «Juan se escucha como un italiano o un portugues». No se regenera sin su autorización; la voz de Tan (Marisol) no se generó |
+| 2026-11-21 | Prueba de voz en español: Tan (Zelda) con motor MiniMax, una frase · job `0da4111b-dafc-465e-a008-910b65a239d0` | audio | 2,8 | 1 | 0,15 | Por escuchar | — |
+Total gastado: 7,15 créditos (4,8 del video en inglés + 2,2 de la voz de Tin en español descartada + 0,15 de la prueba con MiniMax)
+
+Total anterior: 4,8 créditos (3 de la prueba de voces reutilizada + 1,8 de la corrección autorizada por el dueño el 2026-11-21).
 
 **Render (2026-11-21):** el video `06_final/tin_y_tan_short01_v1.mp4` se dibujó con `codigo/render.py` (Pillow, numpy y
 ffmpeg) y el audio con `codigo/audio.py`. Costó **0 créditos**: no se usó Higgsfield ni ningún servicio de pago. Cada
