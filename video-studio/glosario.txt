@@ -8,3 +8,5 @@ inter
 # herramientas citadas en descripciones
 ffmpeg
 numpy
+# sigla del juego que se nombra en el short 2 de Tin & Tan (solo se nombra; nada de su material)
+gta

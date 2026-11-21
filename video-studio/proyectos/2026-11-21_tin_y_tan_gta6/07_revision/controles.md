@@ -12,3 +12,10 @@ Regla: `video-studio/manual/12_controles_de_calidad.md`. Estado: **prompt, antes
   hay decimales ni fracciones, así que no hace falta «≈». Separador de miles con coma, correcto en inglés.
 - **Falta** (no es de esta etapa): la firma del supervisor de continuidad, y repetir el control sobre la ficha de
   publicación, la miniatura y el texto dibujado en el código cuando existan.
+
+## Control de texto con corrector (2026-11-21, Generador)
+
+El dueño autorizó instalar `pyspellchecker` («sí a todo, instala el corrector»). Instalado con `pip install
+pyspellchecker`. «GTA» se añadió a `video-studio/glosario.txt` con su porqué.
+`revisar_texto.py 02_prompt/subtitulos.srt --idioma en`: 9 textos, **PASA: 0 errores**.
+Falta la firma del supervisor de continuidad y repetirlo sobre la ficha de publicación, la miniatura y el código.
