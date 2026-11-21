@@ -222,3 +222,14 @@ El dueño autorizó aquí: «sí a todo, instala el corrector y genera las voces
 | 2026-11-21 | Dueño → Equipo | Corrector ortográfico instalado: Hunspell (spylls) con diccionarios de LibreOffice en, es y pt-BR; en una sesión nueva, `bash video-studio/herramientas/instalar_corrector.sh` |
 | 2026-11-21 | Dueño → Equipo | Color con intención: capacitado el director de fotografía (decide), director creativo (valida contra el objetivo), supervisor (mide con `herramientas/revisar_color.py`, control 8) y editor (aplica). Manual cap. 13; sección 3b de la dirección; campo `color` en `ficha.json` exigido por `entrega.py`. Regla 2 neutros + 1 acento del reel de andrea.eskailet (vía Keter) |
 >>>>>>> origin/claude/pensive-wright-noys0q
+
+### 2026-11-21 · Generador → Equipo: «color con intención» aplicado al prompt del short 2 (GTA 6)
+
+- Bloque «Color con intención» al final de §12 de `proyectos/2026-11-21_tin_y_tan_gta6/02_prompt/prompt.md`, con
+  la tabla plano por plano, los contrastes medidos y el JSON `color` para `ficha.json`. Es la propuesta del prompt:
+  la sección de `direccion.md` es del director de fotografía y, si difiere, manda la dirección.
+- Mostaza: acento único (palabra clave + un elemento por plano). Tomate: solo en la revelación (toma 10, «4,811»;
+  toma 12, «age 13» y el bloque 13). En la toma 10 Tin no lleva el lápiz, para que no haya mostaza en ese plano.
+- Riesgo anotado: mostaza (1,6:1) y tomate (3,6:1) sobre papel no llegan a 7:1; se leen por el contorno de tinta.
+  La bufanda mostaza de Tan sigue en los planos de tomate porque es identidad del personaje.
+- «Medido» queda pendiente del render (`revisar_color.py`, firma del supervisor).
