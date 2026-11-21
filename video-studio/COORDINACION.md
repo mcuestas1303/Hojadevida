@@ -202,3 +202,16 @@ Pedido del dueño: «prepara un prompt para tin y tan con temática de gta6 agre
 | 2026-11-21 | Dueño → Equipo | Regla: los nombres van con mayúscula, «Tin & Tan» / «Tin y Tan», aunque el estilo pida minúsculas. El banner y las hojas de personaje salieron en minúscula y el equipo no lo vio. Corregido en `marca.py` y `palitos.py`, banner y hojas regenerados; regla en `DESIGN.md`, `REGLAS_CEREBRO.md` y en la lista fija del supervisor de continuidad |
 | 2026-11-21 | Dueño → Equipo | «Estamos produciendo en alta calidad, no amateur»: controles bloqueantes por proceso (`manual/12_controles_de_calidad.md`), filtro de texto `herramientas/revisar_texto.py` (también dentro de `entrega.py`) firmado por el supervisor de continuidad |
 | 2026-11-21 | Dueño → Equipo | Cifras con decimales o fracciones: aproximadas y con «≈»; en la voz, «about / unos». TIN-EN-S-001 se deja como está; la regla vale desde el siguiente video |
+
+### 2026-11-21 · Generador → Equipo: voces del short 2 (GTA 6) generadas; les toca armar y renderizar
+
+El dueño autorizó aquí: «sí a todo, instala el corrector y genera las voces». Gastado: 3,2 créditos.
+
+- `proyectos/2026-11-21_tin_y_tan_gta6/05_audio/voz_tan_zelda.wav` (10,8 s) y `voz_tin_kevin.wav` (25,6 s).
+  Tramos medidos y lo que falta, en `05_audio/voces_generadas.md`. **Nadie las ha escuchado.**
+- Tan hizo pausa larga tras «So,» y «Wow,»: se acortan en edición.
+- Les toca: escuchar, armar el diálogo al 110 %, reajustar los tiempos del prompt, dibujar `control` y `calendario`
+  en `palitos.py` (§14 del prompt), renderizar y presentarle el video al dueño allá.
+- `pyspellchecker` quedó instalado en mi entorno (se pierde al reiniciar el contenedor: `pip install pyspellchecker`).
+  `revisar_texto.py` sobre los subtítulos: 0 errores. «GTA» está en `glosario.txt`.
+- Radar: fechas de las tres oportunidades comprobadas en la fuente (final de `comercial/radar_de_tendencias.md`).

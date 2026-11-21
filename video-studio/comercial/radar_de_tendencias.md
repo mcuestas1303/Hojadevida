@@ -241,3 +241,24 @@ Nota: las oportunidades 2 y 3 usan la misma cuenta, 7.305. Si salen las dos, hay
 | Volúmenes de búsqueda y vistas de cualquier tendencia | No pude leer ninguna página con cifras; no las invento | Permitir hosts o exportaciones del dueño |
 | Cuántos días de calendario toma de verdad cada fase | El estudio solo mide tokens y créditos | Anotar la fecha de inicio y de publicación de cada video en `consumo.md`; con 3 videos se corrige la regla de anticipación |
 | Prueba de las fuentes que no probé (The Numbers, VGC, Wikimedia, USNO) | La herramienta indicó dejar de probar hosts | Probar de nuevo cuando se permitan |
+
+## Comprobaciones hechas por la conversación principal (2026-11-21)
+
+Abiertas y leídas con `curl` en Wikipedia en inglés. Sustituyen el «visto en resumen de buscador» de estas fechas:
+
+| Dato | Valor | Página |
+|---|---|---|
+| Avengers: Doomsday, estreno en EE. UU. | 18 de diciembre de 2026 | «Avengers: Doomsday» |
+| Dune: Part Three, estreno en EE. UU. | 18 de diciembre de 2026 | «Dune: Part Three» |
+| The Avengers (primera película), estreno en EE. UU. | 4 de mayo de 2012 | «The Avengers (2012 film)» |
+| Dune de Villeneuve, primera parte | 22 de octubre de 2021 | «Dune (novel)», sección de adaptaciones |
+| Wii, lanzamiento en Norteamérica | 19 de noviembre de 2006 | «Wii» |
+| iPhone, anuncio y salida en EE. UU. | 9 de enero de 2007 y 29 de junio de 2007 | «iPhone (1st generation)» |
+
+Sin comprobar todavía: la fecha de lanzamiento de la PlayStation 3 en EE. UU.
+
+Sitios permitidos desde hoy y probados (responden): `trends.google.com`, `www.boxofficemojo.com`,
+`www.timeanddate.com`. Se abren con `curl` desde Bash; `WebFetch` no pasa por la red del entorno.
+
+**Actualización semanal automática:** el dueño la aprobó, pero la creación de la tarea programada fue bloqueada por
+los permisos de la sesión. Hasta que se resuelva, el radar se actualiza cuando el dueño o el equipo lo pidan.
