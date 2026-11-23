@@ -303,3 +303,7 @@ El dueño pidió publicarlo («Hay que publicar el nuevo video»). Subí a «Can
 `emociones`). La descripción lleva ahora una línea de suscripción, por el objetivo de entrar al Programa de socios.
 El publicador sube en privado; hacerlo público es del dueño con el publicador.
 Plan del canal: `canales/nostalgia-tin-y-tan/plan_programa_de_socios.md` (el comercial; umbrales releídos hoy, sin cambios).
+
+### 2026-11-23 · Generador → Equipo: TIN-EN-S-002 subido por Keter
+
+Lo dijo el dueño: «subí con Keter el video». La página pública `@TinandTan/shorts`, leída después, mostraba solo el short 1 (518 vistas): el short 2 no aparece todavía como público. Falta su enlace para el registro de códigos, el caso y `estadisticas/etiquetas.csv`, y fijar las fechas de revisión (72 h, 7 y 28 días).
