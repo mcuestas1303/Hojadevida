@@ -295,3 +295,11 @@ Textual: «Entonces el objetivo inicial es entrar al programa de socios; todo de
 ### 2026-11-23 · Generador → Equipo: el objetivo de entrar al Programa de socios rige para todos los canales
 
 Textual del dueño: «Rige para todos los canales que trabajemos». Anotado en `CLAUDE.md`, `REGLAS_CEREBRO.md` y `series/granja/serie.md`. En el canal infantil, dentro de los límites de la guía de 1 a 3 años.
+
+### 2026-11-23 · Generador → Equipo: TIN-EN-S-002 entregado al publicador por Drive
+
+El dueño pidió publicarlo («Hay que publicar el nuevo video»). Subí a «Canal YouTube - Entregas»/`TIN-EN-S-002`:
+`video.mp4` (2,75 MB, recomprimido), `miniatura.png`, `subtitulos.srt` y `ficha.json` (con `titulo_ficha`, `color` y
+`emociones`). La descripción lleva ahora una línea de suscripción, por el objetivo de entrar al Programa de socios.
+El publicador sube en privado; hacerlo público es del dueño con el publicador.
+Plan del canal: `canales/nostalgia-tin-y-tan/plan_programa_de_socios.md` (el comercial; umbrales releídos hoy, sin cambios).

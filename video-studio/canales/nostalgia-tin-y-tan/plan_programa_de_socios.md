@@ -71,7 +71,7 @@ Aparte de la entrada, desde el 1-feb-2027 «to be eligible to earn a share of Sh
 
 | Dato | Valor | Fuente |
 |---|---|---|
-| Videos públicos en el canal | **1** («1 video» en la página del canal) | https://www.youtube.com/@TinandTan |
+| Videos públicos en el canal | **1 visible**: la página solo lista el short 1, y el README del canal registra solo TIN-EN-S-001. (Corrección del mismo día: el texto «1 video» que aparece en el HTML es de la interfaz de YouTube, no un conteo; el total de videos no está en la página) | https://www.youtube.com/@TinandTan |
 | Título del video | «Rewind a Cassette With a Pencil: How Many Turns?» (TIN-EN-S-001) | https://www.youtube.com/shorts/s9r5bmmNykY |
 | Publicado | 2026-11-21 («2 days ago») | misma |
 | Vistas que muestra YouTube | **517** (cuenta desde el primer fotograma; **no** son vistas calificadas) | misma |

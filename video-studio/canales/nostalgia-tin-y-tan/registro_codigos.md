@@ -7,4 +7,4 @@ de la ficha del publicador. Un código no se reutiliza: el publicador rechaza un
 | Código | Video | Proyecto | Estado |
 |---|---|---|---|
 | `TIN-EN-S-001` | Rewind a Cassette With a Pencil: How Many Turns? | `proyectos/2026-11-21_tin_y_tan_casete_y_lapiz` | Renderizado; en revisión del equipo de producción |
-| `TIN-EN-S-002` | How Many Days Did We Wait for GTA 6? | `proyectos/2026-11-21_tin_y_tan_gta6` | Entrega armada (`08_entrega/TIN-EN-S-002/`); falta la escucha y la aprobación del dueño |
+| `TIN-EN-S-002` | How Many Days Did We Wait for GTA 6? | `proyectos/2026-11-21_tin_y_tan_gta6` | **Entregado al publicador por Drive el 2026-11-23** (carpeta «Canal YouTube - Entregas»/TIN-EN-S-002), con el sí del dueño («Hay que publicar el nuevo video»). El publicador lo sube en privado y espera el sí del dueño para hacerlo público |
