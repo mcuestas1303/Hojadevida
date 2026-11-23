@@ -11,10 +11,27 @@ sobre el quinto render.
 | Canal | Tin & Tan (`@TinandTan`), inglés, EE. UU. |
 | Tipo | Short n.º 2 |
 | Título | How Many Days Did We Wait for GTA 6? (36 caracteres; filtro de títulos: pasa) |
-| Objetivo comercial | Presencia y línea base del canal (canal nuevo, sin historial) |
+| Objetivo comercial | Presencia y línea base del canal (puesto por el equipo; ver 1b) |
 | Público | EE. UU., adultos de 30 a 50 años que crecieron con la saga |
 | Qué queremos que haga | Verlo entero y dejarlo dar otra vuelta; después, mandarlo a quien esperó el juego |
 | Estado | Renderizado y firmado por el equipo. **Falta la escucha de una persona y el sí del dueño para publicar** |
+
+## 1b. Objetivos comerciales
+
+**Estado: los puso el equipo por defecto; el dueño todavía no los ha fijado para este video.** La regla dice que el
+objetivo comercial lo fija el dueño en el brief y que, si falta, se pregunta. Aquí no se preguntó: se tomó el del canal.
+
+| Objetivo | Qué significa en este video | Cómo se mide | Meta | Plazo |
+|---|---|---|---|---|
+| Presencia (alcance) | Que YouTube lo reparta en el feed de Shorts a gente que no conoce el canal | Vistas; «mostrado en el feed»; vistas desde el feed de Shorts | Línea base: no hay historial | 7 y 28 días |
+| Línea base del canal | Tener las primeras cifras propias para comparar los siguientes videos | Visto frente a deslizado; duración media vista; edad del público | Línea base | 3, 7 y 28 días |
+| Recordación (secundario, propuesto por el equipo) | Que la paleta y los personajes se reconozcan | Espectadores que regresan; suscriptores desde el video | Línea base | 28 días |
+
+Lo que este video **no** persigue hoy: ingresos (el canal no está en el Programa de socios), ventas ni tráfico a otro
+sitio; no lleva llamado a la acción.
+
+**Pendiente del dueño:** confirmar o cambiar el objetivo (monetizar, presencia, recordación, comunidad, conversión,
+viralidad) y, si quiere, una meta en número.
 
 ## 2. Formato
 
@@ -160,5 +177,6 @@ Elemento por elemento, con su fundamento, su métrica y su riesgo: `02_prompt/pe
 ## 14. Pendientes
 
 1. Que el dueño escuche: el final de «now», las pausas acortadas, la campana de la cifra sobre «days» y el golpe del arranque.
-2. Recomprimir el video para subirlo a Drive (pesa 4,5 MB y el límite es de unos 3,1 MB).
+2. Hecho el 2026-11-23, con el sí del dueño: `08_entrega/TIN-EN-S-002/video.mp4` recomprimido a 2,75 MB (H.264 CRF 22, audio sin tocar; el guion sigue coincidiendo, 75 de 75).
+4. Que el dueño fije el objetivo comercial (sección 1b).
 3. Las cinco preguntas emocionales del perfil.

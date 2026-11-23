@@ -12,7 +12,8 @@ Reglas para llenarlo:
 Los textos entre corchetes se reemplazan; validar_prompt.py no deja pasar corchetes sin llenar.
 -->
 
-- **Objetivo comercial del brief:** [el que fijó el dueño]
+- **Objetivo comercial del brief:** [el que fijó el dueño, con sus palabras y la fecha; si no lo ha fijado, se le pregunta antes de seguir]
+- **Cómo se mide ese objetivo y con qué meta:** [métrica, meta o «línea base», plazo]
 - **Público:** [quién, dónde, edad]
 - **Qué queremos que haga al terminar:** [una sola acción principal]
 - **Arco emocional:** [segundo 1 → mitad → final]

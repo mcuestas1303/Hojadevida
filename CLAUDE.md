@@ -71,6 +71,8 @@ exclusivamente los prompts y fichas».
 - Títulos (regla del dueño, 2026-11-21): se escriben con la instrucción de `video-studio/comercial/titulos.md`
   (estudio por público, con fuentes) y pasan `video-studio/herramientas/revisar_titulo.py` con 0 errores; el bloque
   «Título (ficha)» va en la ficha de publicación y en `ficha.json`. El comercial mantiene el estudio.
+- Ficha técnica de cada video (`02_prompt/ficha_tecnica.md`): abre con los **objetivos comerciales** que fijó el dueño
+  (con su métrica, meta y plazo); si el dueño no los ha fijado, se le pregunta y no se pone uno por defecto.
 - Perfil emocional (regla del dueño, 2026-11-23): la ficha de cada video lleva `02_prompt/perfil_emocional.md`: por
   cada elemento (contenido, colores, animaciones, efectos de luz, velocidad del video y del audio, voces, música,
   efectos, texto, cierre, título) qué emoción se busca, con qué fundamento, cómo acerca al objetivo y con qué métrica
