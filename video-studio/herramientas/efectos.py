@@ -624,7 +624,7 @@ def atravesar(a, b, p, centro, radio, zoom_b=0.84):
     za = z_max ** q
     cx, cy = lerp(centro[0], w / 2, eo(p * 1.5)), lerp(centro[1], h / 2, eo(p * 1.5))
     datos = (1 / za, 0, centro[0] - cx / za, 0, 1 / za, centro[1] - cy / za)
-    A = a.transform((w, h), Image.AFFINE, datos, resample=Image.BILINEAR)
+    A = a.transform((w, h), Image.AFFINE, datos, resample=Image.BILINEAR, fillcolor=PAPEL)
     A = desenfocar(A, min(34.0, 2.2 * (za - 1)))
     zb = lerp(zoom_b, 1.0, eo(p))
     B = acercar(b, zb)
@@ -760,7 +760,7 @@ def negativo_paleta(img, mascara=None, mezcla=1.0):
     `comprobar_destellos` lo rechaza. mezcla: 0 a 1."""
     a = np.asarray(img, dtype=np.float32)
     tinta = np.array(TINTA_RGB, dtype=np.float32)
-    t = ((a - tinta) @ _D) / float(_D @ _D)
+    t = np.clip(((a - tinta) @ _D) / float(_D @ _D), 0.0, 1.0)     # nada queda más oscuro que la tinta
     neg = np.clip(a + (1 - 2 * t)[:, :, None] * _D, 0, 255)
     m = mezcla if mascara is None else (mascara * mezcla)[:, :, None]
     return Image.fromarray(np.clip(a * (1 - m) + neg * m + 0.5, 0, 255).astype(np.uint8))
@@ -1059,20 +1059,27 @@ def comprobar_destellos(fotogramas, fps=FPS, umbral=10.0, max_por_segundo=3, sal
 
     Cuenta como «cambio brusco» el paso de un fotograma al siguiente cuando (a) la luminosidad media del cuadro cambia
     `umbral` o más (de 255), o (b) al menos `zona` (25 %) de las celdas de una rejilla de 16 x 9 cambian `umbral_zona`
-    o más (20 % de la escala: un destello que no ocupa todo el cuadro). Falla si:
+    o más (20 % de la escala: un destello que no ocupa todo el cuadro). Varios fotogramas seguidos que cambian en el
+    mismo sentido (algo oscuro que cruza, un fundido) cuentan como un solo cambio: un destello es un par de cambios
+    opuestos. Falla si:
       - en algún tramo de 1 segundo hay más de `max_por_segundo` (3) cambios bruscos, o
       - algún cambio de la luminosidad media pasa de `salto_max` (40 de 255: un salto a pantalla completa).
     Devuelve un dict con las medidas; si falla y `estricto`, lanza DestellosError con el detalle."""
     medidas = [f if isinstance(f, tuple) else luminosidad(f) for f in fotogramas]
     cambios, saltos = [], []
     mayor = (0.0, 0)
+    previo = (None, 0)                                    # (fotograma, signo) del último fotograma con cambio
     for i in range(1, len(medidas)):
-        dm = abs(medidas[i][0] - medidas[i - 1][0])
+        d = medidas[i][0] - medidas[i - 1][0]
+        dm = abs(d)
         dz = float((np.abs(medidas[i][1] - medidas[i - 1][1]) >= umbral_zona).mean())
         if dm > mayor[0]:
             mayor = (dm, i)
         if dm >= umbral or dz >= zona:
-            cambios.append(i)
+            signo = 1 if d >= 0 else -1
+            if not (previo[0] == i - 1 and previo[1] == signo):     # una rampa seguida en el mismo sentido cuenta una vez
+                cambios.append(i)
+            previo = (i, signo)
         if dm > salto_max:
             saltos.append((i, round(dm, 1)))
     peor, peor_en = 0, None

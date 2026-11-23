@@ -1,0 +1,25 @@
+{
+  "video": "prueba_efectos_v1.mp4",
+  "duracion_s": 22.0,
+  "cortes_s": [
+    8.3,
+    9.8,
+    10.5,
+    11.2,
+    11.9,
+    12.4,
+    17.9,
+    19.1,
+    19.6
+  ],
+  "planos": 10,
+  "plano_mas_corto_s": 0.5,
+  "congelados": [],
+  "vacios": [],
+  "destellos_s": [
+    8.5,
+    8.7
+  ],
+  "segundos_con_exceso_de_destellos": [],
+  "marcas": []
+}

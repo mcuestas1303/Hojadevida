@@ -1,0 +1,14 @@
+Color · prueba_efectos_v1.mp4 · 22 cuadro(s)
+Dominantes:
+  #F0E7D1   42.4 %
+  #E5D9BD   26.7 %
+  #C6BBA5   12.4 %
+  #8C8976    8.0 %
+  #594733    6.6 %
+  #CF9A39    4.0 %
+Saturación media ≈ 20 % · luminosidad media ≈ 84 %
+Cálidos ≈ 54 % · fríos ≈ 1 % del cuadro
+Dentro de la paleta declarada (9 colores): ≈ 82 %
+Entre segundos: luminosidad varía ±3 %, saturación ±2 %
+  AVISO  solo ≈ 82 % del cuadro está en la paleta: revisar qué color entró y por qué
+Comparar con la sección «Color con intención» de la dirección: lo medido tiene que contar lo decidido.

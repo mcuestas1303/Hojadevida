@@ -1,8 +1,10 @@
 # Brief
 
 > **Prueba técnica sin publicar.** No es un video del canal: es la prueba de efectos y profundidad que decidió el
-> equipo en `video-studio/cambios/2026-11-23_profundidad_y_efectos_tin_y_tan.md`, para que el dueño elija qué
-> técnicas pasan a `DESIGN.md` y al prompt del short 3. Por eso **no lleva prompt, ficha técnica, perfil emocional
+> equipo en `video-studio/cambios/2026-11-23_profundidad_y_efectos_tin_y_tan.md`. Es una **comprobación técnica**
+> (que cada efecto se pueda hacer por código, se lea en un teléfono y no moleste), no un catálogo para que el dueño
+> escoja: los efectos de cada video los elige el equipo por lo que comunican y la emoción que provocan
+> (`manual/14_efectos_y_emocion.md`; regla del dueño, 2026-11-23). Por eso **no lleva prompt, ficha técnica, perfil emocional
 > ni ficha de publicación, y no pasa por `validar_prompt.py`**: no hay guion ni objetivo comercial que validar. Los
 > archivos de `02_prompt/` quedan como salen de la plantilla, sin llenar. La especificación es `codigo/render.py`.
 
@@ -11,7 +13,7 @@
 - **Objetivo comercial:** no aplica (prueba interna). El objetivo del canal sigue siendo entrar al Programa de socios
   de YouTube; esta prueba sirve para decidir el lenguaje visual del short 3.
 - **Público objetivo:** el dueño y el equipo de producción.
-- **Para qué es el video:** ver cada técnica por separado y rotulada, y decir cuáles se quedan.
+- **Para qué es el video:** comprobar cada técnica por separado y rotulada: si se puede hacer, si se lee y si molesta.
 - **Emoción principal:** no aplica.
 - **Plataforma y formato:** 9:16, 1080x1920, 30 fps, 22 s. No se sube.
 - **Personajes que salen:** `@tin`, `@tan` (dibujados con `herramientas/palitos.py` 1.3, sin tocarlo).
@@ -27,7 +29,7 @@
 
 ## Decisiones del equipo
 
-- Rótulos en español y numerados, dentro de la zona segura, para que el dueño pida las técnicas por número.
+- Rótulos en español y numerados, dentro de la zona segura, para referirse a cada técnica por su número.
 - Sin voz ni música: solo golpes hechos con código, atados a cada efecto (los sonidos del short 2).
 - 22 s en vez de los ≈ 15 s de la solicitud de cambio: son 12 técnicas más el plano de comparación y 2,6 s de «todo junto».
 - Resultados, tiempos y opinión: `07_revision/notas.md`.

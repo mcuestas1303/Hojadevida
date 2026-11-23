@@ -52,7 +52,7 @@ HORIZONTE = 1190.0               # donde la pared toca el suelo, al fondo
 X_TAN, X_TIN = 330.0, 720.0
 ALTO_PJ = 600.0
 Z_PARED, Z_TV, Z_TEL, Z_CASETE, Z_CERCA = 1400.0, 800.0, 450.0, -120.0, -450.0
-CASETE_XY, CASETE_W = (540.0, 660.0), 440.0
+CASETE_XY, CASETE_W = (540.0, 700.0), 440.0
 TV_X, TV_W = 540.0, 360.0
 TEL_X, TEL_W = 915.0, 210.0
 APERTURA, NIEBLA, CAMPO = 0.018, 0.36, 150.0
@@ -372,25 +372,34 @@ def lapiz_que_cruza():
 
 # ---------------------------------------------------------------- bloques: (inicio, rótulo). Cada uno, una técnica.
 ROTULOS = [
-    (0.0, T("0 · plano, como los shorts 1 y 2")),
+    (0.0, T("0 · plano, como los videos 1 y 2")),
     (1.2, T("1 · capas con paralaje")),
     (3.0, T("2 · cambio de foco")),
     (4.8, T("3 · sombras y papel con textura")),
     (6.2, T("4 · revelado desde desenfoque")),
     (7.7, T("5 · atravesar la escena")),
     (9.3, T("6 · barrido de obturador")),
-    (10.9, T("7 · zoom de golpe y sacudida")),
+    (10.9, T("7 · acercamiento de golpe y sacudida")),
     (12.4, T("8 · destello y negativo")),
     (14.0, T("9 · garabatos de tinta")),
     (15.6, T("10 · texto: vidrio, contador y cascada")),
     (17.4, T("11 · cruce, congelado y salida")),
-    (19.4, T("12 · todo junto, como en un short")),
+    (19.4, T("12 · todo junto, como en un video")),
 ]
 INICIOS = [r[0] for r in ROTULOS] + [DUR]
 TXT_X, TXT_TOPE, TXT_TAM = 108.0, 372.0, 112.0
 TAM_VIDRIO = 84.0
-PREGUNTA = (T("¿te "), K("acuerdas"), T("?"))
-MINUTOS = (T("¿cuántos "), K("minutos"), T("?"))
+
+
+def texto(s):
+    """Frase con la palabra clave entre asteriscos -> segmentos (tinta, mostaza con contorno, tinta). Va entera en una
+    sola cadena para que `revisar_texto.py` la lea como se ve en pantalla (con su «¿» y su «?»)."""
+    antes, clave, despues = s.split("*")
+    return (T(antes), K(clave), T(despues))
+
+
+PREGUNTA = texto("¿te *acuerdas*?")
+MINUTOS = texto("¿cuántos *minutos*?")
 TITULARES = ((T("casete"),), (T("televisor de tubo"),), (T("teléfono de disco"),))
 
 
@@ -499,32 +508,29 @@ def b7(t, f):
     return heroe(t, cam, tan=tan, tin=tin)
 
 
-NEG_1, CORTE_8, NEG_2 = 13.0, 13.5, 13.8
+NEG_1, CORTE_8 = 13.0, 13.6
 R_NEG_1, R_NEG_2 = 330.0, 250.0
+RAMPA_NEG = (0.45, 1.0, 1.0, 1.0, 0.45)       # el negativo entra y sale en un fotograma a media fuerza: no parpadea
 
 
 def b8(t, f):
-    """Destello de 3 fotogramas en cada corte y negativo de 4 fotogramas, limitado a un círculo sobre el casete."""
+    """Destello de 3 fotogramas en cada corte y negativo de 5 fotogramas, limitado a un círculo sobre el casete."""
     if t < CORTE_8:
         img = detalle_casete(t, camara_base(avance=40 * fx.eo((t - 12.4) / 1.1), apertura=APERTURA * 0.8))
-        img = fx.destello(img, f - int(round(12.4 * FPS)), dur=3, opacidad=0.5)
+        img = fx.destello(img, f - int(round(12.4 * FPS)), dur=3, opacidad=0.45)
         fl = f - int(round(NEG_1 * FPS))
-        if 0 <= fl < 4:
-            img = fx.negativo_paleta(img, fx.mascara_circulo(MACRO_XY[0], MACRO_XY[1], R_NEG_1, 30.0))
+        if 0 <= fl < len(RAMPA_NEG):
+            img = fx.negativo_paleta(img, fx.mascara_circulo(MACRO_XY[0], MACRO_XY[1], R_NEG_1, 30.0), RAMPA_NEG[fl])
         return img
     img = heroe(t, camara_base(avance=60))
-    img = fx.destello(img, f - int(round(CORTE_8 * FPS)), dur=3, opacidad=0.5)
-    fl = f - int(round(NEG_2 * FPS))
-    if 0 <= fl < 3:
-        img = fx.negativo_paleta(img, fx.mascara_circulo(CASETE_XY[0], CASETE_XY[1] - 6, R_NEG_2, 30.0))
-    return img
+    return fx.destello(img, f - int(round(CORTE_8 * FPS)), dur=3, opacidad=0.45)
 
 
 def subrayado_de(segs, tam, x, tope):
     """Trazo que subraya la palabra clave (el segmento K) de un texto puesto en (x, tope)."""
     antes = fx.ancho_texto(tuple(segs[:1]), tam)
     clave = fx.ancho_texto(tuple(segs[1:2]), tam)
-    return fx.trazo_subrayado(x + antes - 6, x + antes + clave + 10, tope + 0.74 * tam + 0.27 * tam, doble=True)
+    return fx.trazo_subrayado(x + antes - 6, x + antes + clave + 10, tope + 0.74 * tam + 0.16 * tam)
 
 
 def b9(t, f):
@@ -532,7 +538,7 @@ def b9(t, f):
     tl = t - 14.0
     img = heroe(t, camara_base(avance=60))
     fx.poner_texto(img, PREGUNTA, TXT_X, TXT_TOPE, TXT_TAM)
-    fx.garabato(img, fx.trazo_circulo(CASETE_XY[0], CASETE_XY[1], 270, 178), fx.eio((tl - 0.1) / 0.45), grosor=9, semilla=3)
+    fx.garabato(img, fx.trazo_circulo(CASETE_XY[0], CASETE_XY[1] + 4, 292, 186), fx.eio((tl - 0.1) / 0.45), grosor=9, semilla=3)
     fx.garabato(img, fx.trazo_flecha((930, 700), (928, 1100), curva=-0.16), fx.eio((tl - 0.6) / 0.4), grosor=9, semilla=5)
     fx.garabato(img, subrayado_de(PREGUNTA, TXT_TAM, TXT_X, TXT_TOPE), fx.eio((tl - 1.0) / 0.35), grosor=10, semilla=7)
     return img
@@ -549,8 +555,8 @@ def b10(t, f):
         fx.texto_vidrio(img, MINUTOS, TXT_X + 20, TXT_TOPE, TAM_VIDRIO, alfa=fx.clamp((tl - 0.1) * FPS / 3 + 0.34))
     if tl >= 0.35:
         n = fx.contador(t, *C_MIN)
-        ancho = fx.ancho_texto((K("60"), T(" min")), 100)
-        fx.texto_vidrio(img, (K(f"{n}"), T(" min")), TXT_X + 20, 524, 100, alfa=fx.clamp((tl - 0.35) * FPS / 3 + 0.34), ancho=ancho)
+        ancho = fx.ancho_texto((K("60"), T(" minutos")), 100)
+        fx.texto_vidrio(img, (K(f"{n}"), T(" minutos")), TXT_X + 20, 524, 100, alfa=fx.clamp((tl - 0.35) * FPS / 3 + 0.34), ancho=ancho)
     if tl >= 1.0:
         fx.titulares_en_cascada(img, TITULARES, tl - 1.0, TXT_X + 20, 694, 48, paso=76)
     return img
@@ -570,9 +576,8 @@ def b11(t, f):
     if t < CONGELA[0]:
         return detalle_tv(t)
     if t < CONGELA[1]:
-        f0 = int(round(CONGELA[0] * FPS))
-        img = fx.congelado_con_marco(detalle_tv(CONGELA[0]), detalle_telefono(t), (t - CONGELA[0]) / (CONGELA[1] - CONGELA[0]))
-        return fx.destello(img, f - f0, dur=2, opacidad=0.4)
+        # sin destello: viene 0,25 s después del cruce del lápiz y juntos pasaban de 3 cambios de luz en un segundo
+        return fx.congelado_con_marco(detalle_tv(CONGELA[0]), detalle_telefono(t), (t - CONGELA[0]) / (CONGELA[1] - CONGELA[0]))
     if t < SALE[0]:
         return detalle_telefono(t)
     return fx.salida_del_cuadro(detalle_telefono(t), detalle_casete(t, cam_final_1(t)), (t - SALE[0]) / (SALE[1] - SALE[0]), "arriba")
@@ -593,12 +598,12 @@ def b12(t, f):
         return detalle_casete(t, cam_final_1(t))
     if t < F_TEL:
         img = detalle_tv(t, camara_base(zoom=fx.golpe_de_zoom(t - F_TV, 0.10)))
-        return fx.destello(img, f - int(round(F_TV * FPS)), dur=2, opacidad=0.4)
+        return fx.destello(img, f - int(round(F_TV * FPS)), dur=2, opacidad=0.3)
     if t < F_HEROE:
         return detalle_telefono(t, camara_base(zoom=fx.golpe_de_zoom(t - F_TEL, 0.10), x=540 - 60 * (t - F_TEL) / 0.15))
     tl = t - F_HEROE
     u = fx.muelle(tl, fx.SELLO)
-    cam = camara_base(zoom=1.30 - 0.30 * u, avance=150 * fx.eio(tl / 2.1), x=540 - 30 * fx.eio(tl / 2.1),
+    cam = camara_base(zoom=1.30 - 0.30 * u, avance=75 * fx.eio(tl / 2.1), x=540 - 30 * fx.eio(tl / 2.1), y=960 - 45 * fx.eio(tl / 2.1),
                       foco=fx.lerp(Z_CERCA, 0.0, fx.eio(tl / 0.45)), temblor=fx.sacudida(f - int(round(F_HEROE * FPS)), 14))
     reaccion = tl >= 0.9
     img = heroe(t, cam, tan=("celebra", "risa") if reaccion else ("pregunta", "curiosidad"),
@@ -606,10 +611,10 @@ def b12(t, f):
     fx.palabra_clave(img, PREGUNTA, TXT_X, TXT_TOPE, TXT_TAM, tl - 0.1)
     fx.garabato(img, subrayado_de(PREGUNTA, TXT_TAM, TXT_X, TXT_TOPE), fx.eio((tl - 0.4) / 0.3), grosor=10, semilla=7)
     fl = f - int(round(F_NEG * FPS))
-    if 0 <= fl < 3:                                            # la firma: el negativo vuelve una vez, sobre el casete
+    if 0 <= fl < len(RAMPA_NEG):                               # la firma: el negativo vuelve una vez, sobre el casete
         k, tx, ty = cam.proyeccion(Z_CASETE)
         img = fx.negativo_paleta(img, fx.mascara_circulo(round(k * CASETE_XY[0] + tx), round(k * CASETE_XY[1] + ty),
-                                                         round(R_NEG_2 * k), 30.0))
+                                                         round(R_NEG_2 * k), 30.0), RAMPA_NEG[fl])
     return img
 
 
@@ -639,7 +644,7 @@ def todos_los_textos():
     textos = [r[1][0] for r in ROTULOS]
     for segs in (PREGUNTA, MINUTOS) + TITULARES:
         textos.append("".join(s for s, _ in segs))
-    return textos + ["0123456789 min"]
+    return textos + ["0123456789 minutos"]
 
 
 def comprobaciones():
@@ -674,7 +679,7 @@ def comparacion(ruta=COMPARACION):
     despues = heroe(t, camara_base(avance=132))
     w, h, m, cab = 520, 924, 14, 76
     lienzo = Image.new("RGB", (2 * w + 3 * m, h + cab + m), BLANCO)
-    for i, (img, s) in enumerate(((antes, T("antes: plano, como los shorts 1 y 2")), (despues, T("después: con profundidad")))):
+    for i, (img, s) in enumerate(((antes, T("antes: plano, como los videos 1 y 2")), (despues, T("después: con profundidad")))):
         x = m + i * (w + m)
         lienzo.paste(img.resize((w, h), Image.LANCZOS), (x, cab))
         fx.poner_texto(lienzo, (s,), x + 4, 22, 30)
@@ -696,7 +701,7 @@ def audio():
     eventos += [(ATRAVESAR[0], "whoosh_largo", "atravesar"), (BARRIDOS[0][0], "whoosh", "barrido"), (BARRIDOS[1][0], "whoosh", "barrido"),
                 (GOLPES[0], "thunk", "zoom de golpe"), (GOLPES[1], "thunk", "zoom de golpe"),
                 (12.4, "clic_borron", "destello"), (NEG_1, "pop_grave", "negativo"), (CORTE_8, "clic_borron", "destello"),
-                (NEG_2, "pop_grave", "negativo"), (14.1, "hoja_corta", "garabato"), (14.6, "hoja_corta", "garabato"),
+                (14.1, "hoja_corta", "garabato"), (14.6, "hoja_corta", "garabato"),
                 (15.0, "hoja_corta", "garabato"), (15.7, "pop", "texto de vidrio"), (15.95, "pop", "contador"),
                 (16.6, "pop", "cascada"), (16.72, "pop", "cascada"), (16.84, "pop", "cascada"),
                 (CRUCE[0], "whoosh", "cruce"), (CONGELA[0], "hoja", "congelado"), (SALE[0], "whoosh", "salida"),

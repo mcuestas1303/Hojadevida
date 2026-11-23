@@ -1,0 +1,25 @@
+{
+  "fotogramas": 660,
+  "cambios_bruscos": 8,
+  "fotogramas_con_cambio": [
+    254,
+    255,
+    258,
+    372,
+    408,
+    537,
+    540,
+    593
+  ],
+  "max_cambios_en_1_s": 3,
+  "segundo_del_maximo": 8.47,
+  "mayor_salto_de_luminosidad": 33.8,
+  "segundo_del_mayor_salto": 12.4,
+  "saltos_a_pantalla_completa": [],
+  "limites": {
+    "umbral": 10.0,
+    "max_por_segundo": 3,
+    "salto_max": 40.0
+  },
+  "pasa": true
+}

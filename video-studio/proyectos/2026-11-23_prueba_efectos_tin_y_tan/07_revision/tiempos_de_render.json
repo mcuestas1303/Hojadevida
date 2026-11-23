@@ -1,0 +1,21 @@
+{
+  "total_s": 212.8,
+  "dibujo_y_codificacion_s": 212.2,
+  "fotogramas": 660,
+  "s_por_fotograma_con_4_procesos": 0.322,
+  "por_bloque_s": {
+    "0 · plano, como los videos 1 y 2": 7.0,
+    "1 · capas con paralaje": 13.8,
+    "2 · cambio de foco": 14.3,
+    "3 · sombras y papel con textura": 15.6,
+    "4 · revelado desde desenfoque": 8.2,
+    "5 · atravesar la escena": 23.1,
+    "6 · barrido de obturador": 17.9,
+    "7 · acercamiento de golpe y sacudida": 16.7,
+    "8 · destello y negativo": 11.4,
+    "9 · garabatos de tinta": 16.5,
+    "10 · texto: vidrio, contador y cascada": 18.0,
+    "11 · cruce, congelado y salida": 23.7,
+    "12 · todo junto, como en un video": 24.6
+  }
+}
