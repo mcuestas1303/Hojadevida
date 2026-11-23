@@ -14,7 +14,7 @@ sobre el quinto render.
 | Objetivo comercial | Presencia y línea base del canal (puesto por el equipo; ver 1b) |
 | Público | EE. UU., adultos de 30 a 50 años que crecieron con la saga |
 | Qué queremos que haga | Verlo entero y dejarlo dar otra vuelta; después, mandarlo a quien esperó el juego |
-| Estado | Renderizado y firmado por el equipo. **Falta la escucha de una persona y el sí del dueño para publicar** |
+| Estado | Renderizado y firmado por el equipo. El dueño lo escuchó y dio el audio por bueno (2026-11-23). **Falta su sí para publicar y que fije el objetivo comercial** |
 
 ## 1b. Objetivos comerciales
 
@@ -163,7 +163,7 @@ Elemento por elemento, con su fundamento, su métrica y su riesgo: `02_prompt/pe
 | Color | Pasa, con el tomate como excepción declarada | Director de fotografía y supervisor |
 | Voz y audio | Pasa con salvedades | Diseñador de sonido |
 | Título | Pasa el filtro; el video cumple lo que promete | Director creativo |
-| Escucha de una persona | **Pendiente** | Dueño |
+| Escucha de una persona | **Aprobada** el 2026-11-23 («Punto 1 sí escuché y está bien») | Dueño |
 
 ## 13. Costo
 
@@ -176,7 +176,7 @@ Elemento por elemento, con su fundamento, su métrica y su riesgo: `02_prompt/pe
 
 ## 14. Pendientes
 
-1. Que el dueño escuche: el final de «now», las pausas acortadas, la campana de la cifra sobre «days» y el golpe del arranque.
+1. Hecho el 2026-11-23: el dueño escuchó el video y el audio está bien.
 2. Hecho el 2026-11-23, con el sí del dueño: `08_entrega/TIN-EN-S-002/video.mp4` recomprimido a 2,75 MB (H.264 CRF 22, audio sin tocar; el guion sigue coincidiendo, 75 de 75).
 4. Que el dueño fije el objetivo comercial (sección 1b).
 3. Las cinco preguntas emocionales del perfil.

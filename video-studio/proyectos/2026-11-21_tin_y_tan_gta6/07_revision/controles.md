@@ -128,3 +128,7 @@ Revisado sobre el archivo nuevo; la portada, de cero y con medidas propias. Deta
 | 8. Color (medición) | PASA CON SALVEDAD | **FIRMADO** | Video ≈ 93 %, portada ≈ 94 %, luminosidad ±2 %; tinta/tomate 3,5:1 aceptado en 3b |
 | Short 1 con `palitos.py` 1.3 | sin cambios | — | Fotogramas 0, 450 y 800 de `render_v2.py` idénticos byte a byte con `palitos.py` 1.3 y con el 1.2 del commit `139da05` |
 | Título | PASA | — | 0 errores, 0 avisos; falta la revisión humana del director creativo |
+
+## Escucha del dueño (2026-11-23)
+
+Textual: «Punto 1 sí escuché y está bien». Cierra la salvedad de escucha humana del control 3 (voz y audio) sobre el quinto render. No es todavía la autorización para publicar.

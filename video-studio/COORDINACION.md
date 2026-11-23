@@ -283,3 +283,7 @@ renderizo y paso los controles; el resultado queda en `proyectos/2026-11-21_tin_
   `ficha.json`). Para ustedes: que `entrega.py` exija `emociones` y `titulo_ficha`.
 - Norma del canal añadida a `DESIGN.md`: dígitos abiertos (`ss01`) y contorno de 0,045 em en cifras.
 - El video pesa 4,5 MB: hay que recomprimirlo para Drive (límite de 3,1 MB) avisando al dueño.
+
+### 2026-11-23 · Generador → Equipo: el dueño escuchó el short 2 y el audio está bien
+
+Textual: «Punto 1 sí escuché y está bien». Video de entrega recomprimido a 2,75 MB con su sí (`08_entrega/TIN-EN-S-002/video.mp4`). Falta que fije el objetivo comercial y que autorice publicar.
