@@ -263,3 +263,58 @@ vecinos de la toma 13: 1,5).
 - **«GTA 6» y la voz:** la hoja pasa a noviembre en 19,40 s y «to November…» empieza hacia 19,6 s según la envolvente:
   unos 0,2 s antes de oírlo. Solo se confirma al oído.
 - Sigue en pie todo lo de «No se arregló» del tercer render, salvo la portada sin caras.
+
+## Quinto render (2026-11-23): Tan y Tin miran el mando
+
+Mismo archivo de salida (28,5 s, 855 fotogramas, cortes sin cambios). **Sobre las tomas 1 y 13 vale esta sección.**
+
+### Qué cambió
+
+1. **`palitos.py` 1.3:** `cabeza_giro` en `dibujar` (y `giro` en `cabeza`): la cabeza gira como un bloque (cara, rodete,
+   gorra, lentes) alrededor de la base del cuello; la bufanda y el cuerpo no. Con 0 todo se dibuja igual (short 1
+   idéntico byte a byte). Anotado en el encabezado y en las fichas de Tin y Tan («inclinación de cabeza… hasta ±25°»).
+2. **Tomas 1 y 13:** las dos cabezas van inclinadas **25°** hacia arriba y los personajes se separan a x = 24 % y 76 %
+   (antes 30 % y 70 %), para que la mirada suba en diagonal hacia el mando.
+3. **Expresiones** (comparadas a tamaño completo, de perfil y con la inclinación: `sorpresa`, `feliz`, `curiosidad`,
+   `eureka`, `nostalgia` y `risa`, y `sorpresa` de frente): **Tan con `eureka`** (ojo grande y sonrisa abierta: sorpresa
+   alegre; con `sorpresa` la ceja corta la endurecía, y `curiosidad` deja la boca como una raya) y **Tin con
+   `sorpresa`** (ojo grande y boca en «o»: se lee claro bajo la visera; `curiosidad` dejaba la raya rara y `feliz` no
+   es sorpresa). De frente, la inclinación ladea la cabeza y no parece que miren hacia arriba: se descartó.
+4. **Botón del mando:** el latido va en la segunda mitad de cada pulso (0,27–0,47 s; 0,77–0,97 s; 27,77 y 28,27 en la
+   toma 13). En el fotograma 0 los cuatro botones se ven iguales, y el 855 (= 0) también. Los clics de botón del audio
+   se movieron con él (49 golpes, todos en su tiempo).
+
+### Regla de portada sobre el fotograma 0 (medido por `codigo/miniatura.py`)
+
+| # | Regla | Medida | Resultado |
+|---|---|---|---|
+| 1 | El primer segundo es la portada, sin corte brusco | Misma composición de 0,0 a 1,0 s. En los 26 fotogramas de 0,0 a 0,87 s: texto y 482–682, mando y 728–1092, caras x 119–958, y 1154–1365. Primer corte en 1,0 s | cumple |
+| 2 | Miniatura vertical de 1080×1920 | `06_final/portada_short02.png`, 1080×1920, 152 KB: el fotograma 0 tal cual | cumple |
+| 3 | Zona útil x 60–960, y 380–1440: fuera, solo fondo o cuerpos | Texto x 116–848, y 492–682. Cara de Tan x 121–303, y 1201–1364. Cara de Tin x 752–955, y 1163–1364 (con el rebote llega a x = 958: 2 px de margen). Fuera solo quedan piernas y suelo | cumple |
+| 4 | Texto: hasta 4 palabras, y 400–700, letra de 120 px o más, clave en amarillo, sin la respuesta | «GTA 5?»: 2 palabras, y 492–682, letra de 230 px, «5» en mostaza con contorno; sin la cifra; no copia el título | cumple |
+| 5 | Objeto en el centro (y 720–1100); caras en la zona útil, con curiosidad o sorpresa y mirando el objeto | Mando x 239–840, y 744–1075. Tan `eureka` y Tin `sorpresa`, de perfil hacia el centro y con la cabeza levantada 25° hacia el mando | cumple a la vista. Con medida: la línea exacta del ojo al centro del mando pide unos 50° y la ficha permite 25°; la mirada sube hacia el mando sin apuntar a su centro |
+| 6 | El video cumple lo que promete la portada | Pregunta por GTA 5 y el video cuenta los días hasta GTA 6 | cumple (juicio del director creativo) |
+
+Nada tapa el texto ni el mando: hueco mínimo texto–mando 46 px y mando–cabezas 68 px en todo el segundo. Los cuatro
+botones iguales en el fotograma 0. Mostaza solo en el «5» y el mando. Caja de dibujo de todos los fotogramas sin
+borrón: x 100–980, y 256–1662. Bucle: 1,7 de 255 entre el fotograma 854 y el 0 (vecinos de la toma 13: 1,5).
+
+### Controles sobre el archivo nuevo
+
+| Control | Resultado |
+|---|---|
+| `comprobar_video.py` | formato correcto; sin tramos de 0,5 s sin cambio; sin vacíos; −14,0 LUFS y −1,3 dBTP; bucle 1,7 de 255 |
+| `analizar_video.py --cada 0.5` y hojas miradas | portada con las cabezas levantadas en 0,25, 0,75, 27,75 y 28,25 s; resto igual que el cuarto render |
+| `revisar_fotogramas.py` | sin marcas |
+| `revisar_color.py` | video ≈ 93 % en paleta; portada ≈ 94 % |
+| `revisar_texto.py` (srt, `render.py`, `miniatura.py`, descripción) | 53 textos, PASA: 0 errores |
+| `revisar_voz.py` sobre el mp4, guion completo | COINCIDE: 75 palabras, 0 diferencias |
+| `validar_prompt.py` | «Listo para generar», 0 errores |
+| Golpes | 49 de 49 en su tiempo |
+| Short 1 | fotogramas 0, 150, 450, 600 y 800 idénticos byte a byte con `palitos.py` 1.3 |
+
+### Pendiente
+
+- La cara de Tin queda a 2 px del borde de la zona útil (x = 958 de 960) en el pico del rebote.
+- Las hojas `referencias/` de los personajes no se regeneraron (no cambia ningún rasgo; la inclinación no sale en ellas).
+- Sigue sin escucha humana, y siguen en pie los pendientes del tercer y cuarto render.

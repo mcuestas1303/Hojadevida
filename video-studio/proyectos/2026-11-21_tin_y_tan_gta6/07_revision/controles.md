@@ -105,3 +105,8 @@ render». Todos los controles repetidos sobre el archivo nuevo con el mismo resu
 sin diferencias, fotogramas sin marcas, color ≈ 93 %, −14,0 LUFS y −1,3 dBTP, bucle que empalma, prompt con 0 errores).
 **Control 4.5 (portada): pendiente de que el supervisor lo revise sobre este archivo.** Salvedad anotada: la mirada de
 perfil es horizontal y el mando queda por encima de las cabezas.
+
+**Quinto render de la vuelta 1 (2026-11-23, portada):** Tan (`eureka`) y Tin (`sorpresa`) miran el mando con la cabeza
+inclinada 25° (`palitos.py` 1.3, `cabeza_giro`); los cuatro botones del mando iguales en el fotograma 0. Tabla de la
+regla de portada, punto por punto y con medidas, en `vuelta_01/notas.md`, «Quinto render». Controles repetidos con el
+mismo resultado. **Control 4.5 (portada): pendiente de la firma del supervisor sobre este archivo.**
