@@ -81,3 +81,19 @@ fundido final de la voz de 0,20 s. Detalle, defecto por defecto, en `vuelta_01/n
 | 5. Video (`comprobar_video.py`, `revisar_fotogramas.py`) | formato correcto, sin marcas, bucle que empalma | **pendiente del supervisor** |
 | 8. Color (`revisar_color.py`) | ≈ 93 % en paleta (portada ≈ 95 %), ±2 % | firmado sobre el render anterior; cambió el acento de la toma 4 (lápiz en lugar de cabecera) |
 | Título (`revisar_titulo.py` con `--proyecto` y `--descripcion`) | PASA: 0 errores, 0 avisos | falta la revisión humana del director creativo |
+
+## Firmas del supervisor de continuidad, segunda revisión (2026-11-23, tercer render, archivo de las 16:48)
+
+Revisado de cero sobre el archivo nuevo. Detalle: `vuelta_01/firma_supervisor.md`, «Segunda revisión (tercer render)»;
+hojas en `vuelta_01/supervisor_b/`. Estas firmas sustituyen a las de la primera revisión.
+
+| Control (manual 12) | Resultado | Firma | Evidencia |
+|---|---|---|---|
+| 1. Texto | PASA | **FIRMADO** | `revisar_texto.py` (srt, `render.py`, `miniatura.py`, descripción): 53 textos, 0 errores; `.srt` leído línea por línea («GTA 5», «GTA 6», «13 years times 365»); dígitos clave limpios en los recortes ampliados |
+| 2. Cifras | PASA | **FIRMADO** | 4.745 + 3 + 63 = 4.811 recalculado; contadores que solo suben; 4,811 pasa a tomate en el mismo fotograma en que aparece (22,53 s) |
+| 4. Imagen | PASA CON SALVEDAD | **FIRMADO** | Personajes según ficha; Tan sin expresiones que se lean como enojo; mando con palancas dentro del cuerpo; todo el dibujo dentro de la zona segura salvo los fotogramas de borrón. Menores: cabecera de la hoja marrón en la toma 4 y mostaza en las 3 y 9; calendario rozando la visera en la toma 12 |
+| 4.5 Portada | NO PASA (un punto) | **NO FIRMADO** | Fotograma 0: «GTA 5?» en x 116–848, y 492–682, 2 palabras, clave en mostaza, sin la respuesta; `portada_short02.png` es el fotograma 0. **Falta:** la portada no tiene caras (punto 5 de la regla del dueño) y la decisión no está escrita; con una línea del director creativo en el brief, informada al dueño, se firma sin render |
+| 5. Video | PASA CON SALVEDAD | **FIRMADO** | Formato correcto, `revisar_fotogramas.py` sin marcas, 0 destellos, bucle 2,39 de 255, `.srt` igual a la línea de tiempo. El punto 5.4 depende además del control 3 |
+| 7. Marca del canal | PASA CON SALVEDAD | **FIRMADO** | El lápiz de Tin ya aparece. Falta anotar en `DESIGN.md` los dígitos `ss01` y el trazo de 0,045 em |
+| 8. Color (medición) | PASA CON SALVEDAD | **FIRMADO** | Video ≈ 93 %, portada ≈ 95 %, ±2 %; toma 4 con un solo acento (lápiz); tinta/tomate 3,5:1 aceptado en 3b |
+| Título | PASA | — | `revisar_titulo.py` con `--proyecto` y `--descripcion`: 0 errores, 0 avisos; falta la revisión humana del director creativo |

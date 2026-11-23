@@ -103,3 +103,58 @@
 | 8. Color (medición) | **FIRMADO** (con salvedad) |
 
 Supervisor de continuidad, 2026-11-23. Veredicto general: `CAMBIOS`.
+
+---
+
+# Segunda revisión (tercer render)
+
+- **Fecha:** 2026-11-23.
+- **Pieza revisada:** `06_final/tin_y_tan_short02_v1.mp4` del 2026-11-23 16:48 (1080×1920, 30 fps, H.264, yuv420p, AAC, 855 fotogramas, 28,5 s) y `06_final/portada_short02.png` de la misma hora. Leído de nuevo; no usé nada de la revisión anterior.
+- **Cómo se revisó:** hojas nuevas a 2 fotogramas por segundo (`vuelta_01/supervisor_b/hoja_01..03.jpg`, las tres vistas); fotograma 0 como portada y los 14 fotogramas de antes a tamaño completo; recortes ampliados de cada dígito clave («5» de portada y de la toma 4, «13», «3», «63», «6» de GTA 6, contador «4,688», «4,811», «13» tomate, «days»); 24 fotogramas de las transiciones tocadas por los arreglos; caja de dibujo medida en los 855 fotogramas.
+- **No revisado por mí:** control 3 (no escuché nada) y la fecha de salida de GTA VI en una fuente externa.
+
+## Veredicto general
+
+**APROBADO en imagen, texto, cifras, video, marca y color.** Queda sin firma solo **4.5 Portada**, y no por el render: falta una decisión escrita (ver «Lo que falta»).
+
+## Tabla por control
+
+| Control | Qué miré | Evidencia | Resultado | Firma |
+|---|---|---|---|---|
+| 1. Texto | `revisar_texto.py` sobre `subtitulos.srt`, `render.py`, `miniatura.py` y `descripcion_s8.txt` (`--idioma en`); lectura a mano en la imagen; `.srt` línea por línea; dígitos ampliados | 53 textos, **0 errores, 0 avisos**. `descripcion_s8.txt` es idéntica a la de §8 del prompt (comparada con `diff`). `.srt`: «Remember buying GTA 5 at midnight?» / «So, how many days did we wait for GTA 6?» / «GTA 5 came out September 17, 2013.» / «13 years times 365: 4,745 days.» / «Add 3 leap days: 4,748.» / «Plus 63 days: September 17 to November 19.» / «4,811 days.» / «Wow, that long?» / «A baby born that day is a teenager now.»: sin faltas y con la misma grafía que la pantalla. En pantalla: «GTA 5?», «how many days?», «Sep 17, 2013», «Nov 19, 2026», «GTA 5», «13 × 365», contador «… days», «+3 leap days», «+63 days», «Sep 17, 2026», «GTA 6», «4,811 days», «age 13», «17»: igual que la tabla de §12, sin cuadros, sin nombres en minúscula. Dígitos: el «6» queda abierto, el «3» y el «63» sin línea interior, el «5» limpio (la bahía sigue su forma; no hay resto de tinta suelto), «4,811» y «13» tomate limpios. Al tamaño de teléfono se leen todos | **PASA** | **FIRMADO** |
+| 2. Cifras | Recalculé otra vez la cuenta y los cuatro contadores con las constantes nuevas de `render.py` | 4.745 + 3 = 4.748; + 63 = 4.811 (`datetime`: 4.811). Contadores: 0 → 4.745 (llega en 12,83 s), 4.745 → 4.748 (llega en 16,70 s), 0 → 63 (18,60 s), 4.748 → 4.811 (22,53 s); solo suben y no pasan del final. Visto: 646, 3,339, 4,483, 4,688, 4,741, 4,745 / 4,745, 4,747, 4,748 / 53, 63 / 4,748, 4,783, 4,807, 4,810, 4,811. El cambio a tomate cae en el mismo fotograma en que aparece 4,811 (22,53 s; en 22,50 todavía dice 4,810 en tinta). Descripción con «13 × 365». Mismas cifras en guion, pantalla, `.srt` y descripción | **PASA** | **FIRMADO** (sigue valiendo; la salvedad del desfase queda resuelta) |
+| 4. Imagen | Personajes contra ficha y hojas; lados y `espejo`; objetos de mano; mando nuevo; expresiones nuevas de Tan; zona segura en los 855 fotogramas | Tan: `feliz` en la toma 7, `curiosidad` → `feliz` en la 8, `curiosidad` → `nostalgia` en la 9; ya no hay ningún plano que se lea como enojo. Mando: las dos palancas a la misma altura y dentro del cuerpo, cuatro botones en rombo, sin símbolos; también en la mano de Tan (toma 2). Lápiz de Tin en la toma 4, en la mano de la derecha del cuadro, amarillo con goma roja. Tan a la izquierda con `espejo`, Tin a la derecha. Caja de dibujo: todo dentro de x 100–980, y 250–1670; solo salen los fotogramas de borrón en 9,00–9,03, 17,43–17,47, 25,50–25,53 y 27,43–27,47 (hasta 5 px, es el desenfoque del corte). Toma 12: x máxima 978. Nada de Rockstar ni Take-Two | **PASA CON SALVEDAD** (menores 1 a 3) | **FIRMADO** |
+| 4.5 Portada | Fotograma 0 medido y visto; `portada_short02.png` contra el fotograma 0; regla «Portada de los Shorts» punto por punto | «GTA 5?» en **x 116–848, y 492–682** (franja 400–700, zona útil 60–960 × 380–1440), altura de letra ≈ 190 px, 2 palabras, clave en mostaza, sin la respuesta. Mando en y ≈ 800–1260, centrado. Hueco entre texto y mando en todo el primer segundo y en la toma 13: 98 px como mínimo. `portada_short02.png` es el fotograma 0 (diferencia media 0,6 de 255, por la compresión); 1080×1920, 98 kB, ≈ 95 % en paleta. El video cumple lo que promete. **No cumple** el punto 5 de la regla: no hay caras de Tin y Tan, y la decisión no está escrita en ningún documento | **NO PASA** (un solo punto, de decisión) | **NO FIRMADO** |
+| 5. Video | `ffprobe`, `revisar_fotogramas.py`, `postpro.py destellos`, hojas, diferencia entre fotogramas, `.srt` contra la línea de tiempo | Formato correcto. «Sin marcas». 0 destellos. Ningún tramo de 8 fotogramas o más sin cambio (la toma 4 ya tiene su cambio en 6,6 s: entra la fecha, Tin sacude el lápiz y Tan pasa a `feliz`). Bucle: fotograma 854 contra 0, 2,39 de 255 (vecinos de la toma 13: 2,08): empalma. Los nueve tiempos del `.srt` son los de `linea_de_tiempo_voz.md` y coinciden con los silencios medidos en el `dialogo_110.mp3` nuevo (±0,03 s). Preguntas fijas: sin cambios respecto a la primera revisión (primer corte en 1,0 s justo; héroe en ≈ 75 %, declarado) | **PASA CON SALVEDAD** (el punto 5.4 depende además del control 3, que es del diseñador de sonido y está firmado sobre el render anterior) | **FIRMADO** |
+| 7. Marca del canal | Paleta, tipografía, capitalización, lados y motivos contra `DESIGN.md`; solo este Short y su portada | El lápiz de Tin ya aparece (toma 4): la salvedad anterior queda resuelta. Paleta, minúsculas a la izquierda, mayúsculas de sigla y de meses, lados y `espejo`: correctos. **Salvedad nueva:** los dígitos abiertos (`ss01`) y el trazo de 0,045 em son un cambio de tipografía del canal que está en el prompt pero no en `DESIGN.md`, y el short 1 y las piezas de marca usan los dígitos por defecto | **PASA CON SALVEDAD** | **FIRMADO** (sigue valiendo) |
+| 8. Color (medición) | `revisar_color.py` sobre el video y las dos portadas; acento plano por plano con los cambios | Video ≈ 93 % en paleta, saturación ≈ 17 %, luminosidad ≈ 89 %, ±2 % entre segundos. Portada ≈ 95 %; alternativa ≈ 94 %. Contrastes sin cambio (tinta/papel 12,6:1; tinta/tomate 3,5:1, aceptado en 3b). Toma 4: acento mostaza = «5» + lápiz, con la cabecera de la hoja en marrón: sigue habiendo un solo acento. Tomate solo en las tomas 10 a 12. Con el trazo de 0,045 em las claves en mostaza se siguen leyendo al tamaño de teléfono | **PASA CON SALVEDAD** (la misma: tinta/tomate; `ficha.json` no existe todavía) | **FIRMADO** (sigue valiendo) |
+
+## Filtro de títulos
+
+`revisar_titulo.py … --proyecto 2026-11-21_tin_y_tan_gta6 --descripcion 07_revision/vuelta_01/descripcion_s8.txt`: **PASA, 0 errores, 0 avisos.** Falta la revisión humana del director creativo.
+
+## Lo que falta para la firma que queda (4.5 Portada)
+
+1. **0,0–1,0 s (fotograma 0, portada): no hay caras.** La regla del dueño (`ENTREGA_YOUTUBE.md`, «Portada de los Shorts», punto 5) pide las caras de Tin y Tan en la zona útil, mirando el objeto. No hace falta render si se acepta: el director creativo lo escribe en «Decisiones del equipo» del brief con su porqué (objeto desde el fotograma 0, lección del short 1) y se le informa al dueño, porque la regla es suya. Si no se acepta, hay que rediseñar la toma 1 (y la 13, por el bucle). Con esa línea escrita, firmo.
+
+## Defectos nuevos o que siguen (ninguno bloquea)
+
+1. **Menor, 5,0–9,0 s contra 2,0–5,0 y 17,5–21,0 s:** la misma hoja de calendario tiene la cabecera marrón en la toma 4 y mostaza en las tomas 3 y 9. Es consecuencia de «un acento por plano» y está escrito en el prompt; se nota si se mira.
+2. **Menor, 19,37–19,47 s:** «GTA 6» entra unos 3 fotogramas antes de que la hoja deje de decir «Sep 17, 2026». No se llega a leer como asociación.
+3. **Menor, 25,5–27,5 s:** el calendario de Tin sigue rozando la punta de la visera.
+4. **Documentación, sin render:** anotar en `DESIGN.md` los dígitos abiertos `ss01` y el trazo de 0,045 em como norma del canal (o decidir que es solo de esta pieza), para que el control 7 de las siguientes piezas tenga contra qué comparar.
+5. **Siguen como estaban, por decisión anotada:** Tan señala en horizontal (9,0–11,0 s); el brazo detrás de la bufanda en `explica` y `piensa`; cinta del rodete y cejas de Tin en `eureka` (fichas contra dibujo); secciones 1, 2 y 4 a 8 de `direccion.md` en plantilla.
+
+## Firmas (tercer render)
+
+| Control | Firma |
+|---|---|
+| 1. Texto | **FIRMADO** |
+| 2. Cifras | **FIRMADO** |
+| 4. Imagen | **FIRMADO** (con salvedades menores) |
+| 4.5 Portada | **NO FIRMADO** (falta la decisión escrita sobre la portada sin caras) |
+| 5. Video | **FIRMADO** (5.4 depende además del control 3) |
+| 7. Marca del canal | **FIRMADO** (con salvedad: `DESIGN.md`) |
+| 8. Color (medición) | **FIRMADO** (con salvedad) |
+
+Supervisor de continuidad, 2026-11-23, segunda revisión.
