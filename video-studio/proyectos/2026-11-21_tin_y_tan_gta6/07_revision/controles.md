@@ -65,3 +65,19 @@ Revisión hecha de cero. Detalle, evidencia y lista completa de defectos: `07_re
 | 8. Color (medición) | PASA CON SALVEDAD | **FIRMADO** | Video ≈ 93 % en paleta, portada ≈ 95 %, tramo 21,0–27,5 s ≈ 94 %; ±2 % entre segundos; tinta/papel 12,6:1; tinta/tomate 3,5:1 aceptado en 3b; falta copiarlo a `ficha.json` cuando exista |
 | Rúbrica | no existe | — | Ni en `07_revision/` ni en el prompt hay criterios con puntaje; §10 y §14 se repasaron como lista |
 | Título (`revisar_titulo.py`) | PASA con `--proyecto` y `--descripcion` | — | Sin `--proyecto` da M13 contra su propia entrada en `titulos_usados.json` |
+
+**Tercer render de la vuelta 1 (2026-11-23, cambios pedidos por el supervisor de continuidad y el diseñador de
+sonido):** subtítulos con «GTA 5» y «GTA 6»; «GTA 5?» de las tomas 1 y 13 en posición de portada (y 492–682) y la
+portada es el fotograma 0; dígitos abiertos de Inter con trazo de 0,045 em; «Xbox» y «Rockstar» en el glosario; Tan sin
+`pensando`; palancas del mando a la misma altura; `pop`, tomate y ding en el fotograma de llegada (22,53 s); lápiz de
+Tin en la toma 4 con la cabecera de la hoja en marrón; la fecha entra en 6,6 s; toma 12 dentro de la zona segura;
+fundido final de la voz de 0,20 s. Detalle, defecto por defecto, en `vuelta_01/notas.md`, «Tercer render».
+
+| Control | Resultado sobre el archivo nuevo | Firma |
+|---|---|---|
+| 1. Texto (`revisar_texto.py`: srt, `render.py`, `miniatura.py`, descripción de §8) | PASA: 53 textos, 0 errores | **pendiente de que el supervisor vuelva a revisar** |
+| 3. Voz (`revisar_voz.py` sobre el mp4, guion completo) y sonoridad | 75 palabras, 0 diferencias; −14,0 LUFS, −1,3 dBTP | firmado con salvedades sobre el render anterior; la voz solo cambió en el fundido final. **Sin escucha humana** |
+| 4 y 4.5. Imagen y portada | dibujo dentro de la zona segura en todos los fotogramas (x 100–980, y 256–1662); portada = fotograma 0, texto en y 492–682; sin caras en la portada (decisión pendiente del director creativo) | **pendiente del supervisor** |
+| 5. Video (`comprobar_video.py`, `revisar_fotogramas.py`) | formato correcto, sin marcas, bucle que empalma | **pendiente del supervisor** |
+| 8. Color (`revisar_color.py`) | ≈ 93 % en paleta (portada ≈ 95 %), ±2 % | firmado sobre el render anterior; cambió el acento de la toma 4 (lápiz en lugar de cabecera) |
+| Título (`revisar_titulo.py` con `--proyecto` y `--descripcion`) | PASA: 0 errores, 0 avisos | falta la revisión humana del director creativo |

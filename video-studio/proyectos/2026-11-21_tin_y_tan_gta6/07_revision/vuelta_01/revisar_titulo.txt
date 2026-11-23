@@ -1,0 +1,15 @@
+Filtro de títulos v1.0 · «How Many Days Did We Wait for GTA 6?» · 36 caracteres · tin-y-tan · en · short
+
+PASA: 0 error(es), 0 aviso(s). Falta la revisión de una persona (el video cumple el título, no engaña, línea editorial).
+
+Bloque para la ficha:
+{
+  "caracteres": 36,
+  "filtro": {
+    "version": "1.0",
+    "fecha": "2026-11-23",
+    "resultado": "PASA",
+    "errores": [],
+    "avisos": []
+  }
+}

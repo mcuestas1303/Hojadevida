@@ -8,7 +8,7 @@ Instalación (una vez por contenedor): bash video-studio/herramientas/instalar_o
 
 Uso:
   python3 video-studio/herramientas/revisar_voz.py <audio o video> --guion "texto esperado" [--guion-archivo f.txt]
-      [--tramos]  [--salida informe.md]
+      [--tramos] [--voz-sola]  [--salida informe.md]
 
 Sin --guion solo transcribe. Con --tramos transcribe además cada tramo entre silencios (≥ 0,25 s a −35 dB), con
 sus tiempos: sirve para ver qué palabra cae en qué segundo y si el final quedó cortado.
@@ -135,6 +135,8 @@ def main():
     ap.add_argument("--guion")
     ap.add_argument("--guion-archivo")
     ap.add_argument("--tramos", action="store_true")
+    ap.add_argument("--voz-sola", action="store_true",
+                    help="el archivo es solo voz (sin música ni efectos): avisa si termina con la voz sonando")
     ap.add_argument("--salida")
     a = ap.parse_args()
     guion = a.guion or (Path(a.guion_archivo).read_text(encoding="utf8") if a.guion_archivo else None)
@@ -190,7 +192,12 @@ def main():
         cola = dur - ts[-1][1] if ts else dur
         nivel_final = 20 * np.log10(np.sqrt(np.mean(datos[-int(0.05 * sr):] ** 2)) + 1e-9)
         L += ["", f"Silencio al final: {cola:.2f} s. Nivel de los últimos 50 ms: {nivel_final:.0f} dB"
-              + (" — **el audio termina con voz sonando: posible final cortado**" if nivel_final > -40 else "") + ".", ""]
+              + (" — **el audio termina con voz sonando: posible final cortado**" if a.voz_sola and nivel_final > -40
+                 else "") + ".", ""]
+        if not a.voz_sola and nivel_final > -40:
+            # En una mezcla ese nivel puede ser la música o un efecto, no la voz: el aviso solo vale sobre la voz sola.
+            L += ["(El audio no termina en silencio. Si este archivo es solo voz, repite con `--voz-sola` para saber si "
+                  "el final está cortado; en una mezcla con música o efectos no se puede saber desde aquí.)", ""]
 
     L += ["Límite: esto reconoce palabras; no juzga naturalidad, acento ni mezcla. Falta la escucha de una persona "
           "antes de publicar.", ""]

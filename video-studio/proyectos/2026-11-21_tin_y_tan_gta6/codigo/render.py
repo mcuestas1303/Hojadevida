@@ -174,8 +174,12 @@ def suelo(lz):
 # ---------------------------------------------------------------- texto (capa aparte, no escala con la cámara)
 TEXTO_X = 0.10 * W          # 108 px
 Y_15 = 0.15 * H             # 288 px: tope de las letras altas de las filas en (10, 15)
+Y_PORTADA = 0.26 * H        # 499 px: «GTA 5?» de las tomas 1 y 13, al 12 % del alto: el primer segundo ES la portada
+                            # (texto entre y = 400 y 700, dentro de la zona útil de portada de Shorts, y 380-1440)
 Y_132 = 0.14 * H            # 269 px: tope de las cifras al 7 % (el pop de llegada no pasa de y = 250)
-TRAZO_EM = 0.06             # trazo de tinta de la palabra clave (mostaza o tomate sobre crema no contrastan)
+TRAZO_EM = 0.045            # trazo de tinta de la palabra clave (mostaza o tomate sobre crema no contrastan); eran
+                            # 0,06 em, que cerraban las aberturas de los dígitos (revisión del supervisor)
+RASGOS = ["ss01"]           # dígitos abiertos de Inter (3, 4, 6 y 9 alternativos de la misma fuente)
 CON_TRAZO = (MOSTAZA, TOMATE)
 ANCHO_MAX = (SEG_X1 - TEXTO_X) / 1.012     # el pop se pasa menos de 1 %: que ni así salga de la zona segura
 
@@ -196,13 +200,17 @@ def comprobar_glifos(textos):
     return usados
 
 
+def _largo(f, s):
+    return f.getlength(s, features=RASGOS)
+
+
 def _avances(f, s, col, tam):
     """Avance de cada carácter (px x3). La palabra con trazo lleva un espacio extra entre letras del ancho del trazo,
     para que los contornos de dos letras vecinas no se peguen."""
     if col in CON_TRAZO:
         extra = TRAZO_EM * tam * SS
-        return [f.getlength(c) + (extra if i < len(s) - 1 else 0) for i, c in enumerate(s)]
-    return [f.getlength(s)]
+        return [_largo(f, c) + (extra if i < len(s) - 1 else 0) for i, c in enumerate(s)]
+    return [_largo(f, s)]
 
 
 def ancho_texto(segs, tam):
@@ -212,7 +220,10 @@ def ancho_texto(segs, tam):
 
 @lru_cache(maxsize=1024)
 def imagen_texto(segs, tam):
-    """segs: tupla de (texto, color). Mostaza y tomate llevan trazo de tinta. Devuelve (RGBA x3, margen, línea base)."""
+    """segs: tupla de (texto, color). Mostaza y tomate llevan trazo de tinta: Pillow pinta primero el trazo y encima
+    el relleno. Todas las cifras usan los «dígitos abiertos» de la propia Inter (rasgo OpenType ss01): con los dígitos
+    por defecto, las bahías del 6, el 9, el 3 y el 5 son tan estrechas que el trazo las llenaba de tinta y el número
+    salía con una línea por dentro. Devuelve (RGBA x3, margen, línea base)."""
     f = fuente(int(round(tam * SS)))
     sw = max(1, int(round(TRAZO_EM * tam * SS)))
     asc, desc = f.getmetrics()
@@ -224,11 +235,12 @@ def imagen_texto(segs, tam):
     for s, col in segs:
         if col in CON_TRAZO:
             for c, av in zip(s, _avances(f, s, col, tam)):
-                d.text((x, margen + asc), c, font=f, fill=col, anchor="ls", stroke_width=sw, stroke_fill=TINTA)
+                d.text((x, margen + asc), c, font=f, fill=col, anchor="ls", stroke_width=sw, stroke_fill=TINTA,
+                       features=RASGOS)
                 x += av
         else:
-            d.text((x, margen + asc), s, font=f, fill=col, anchor="ls")
-            x += f.getlength(s)
+            d.text((x, margen + asc), s, font=f, fill=col, anchor="ls", features=RASGOS)
+            x += _largo(f, s)
     return img, margen, margen + asc
 
 
@@ -260,25 +272,33 @@ def eo_valor(t, t0, t1, a, b):
 
 # Contadores: (inicio, fin, valor inicial, valor final)
 C_4745 = (11.15, 12.9, 0, 4745)   # empieza 2 fotogramas antes que su texto: nunca se ve «0 days»
-C_4748 = (15.3, 16.6, 4745, 4748)
+C_4748 = (15.6, 18.0, 4745, 4748)   # llega a 4,748 en 16,7, cuando la voz acaba de decir «forty-eight»
 C_63 = (17.75, 18.8, 0, 63)        # ídem: nunca se ve «+0 days»
-C_4811 = (21.4, 22.5, 4748, 4811)   # llega cuando la voz dice «eight hundred eleven» (desde 22,23)
+C_4811 = (21.4, 22.8, 4748, 4811)   # llega a 4,811 en 22,53, mientras la voz dice «eight hundred eleven» (desde 22,23)
+
+def t_llegada(c):
+    """Segundo del primer fotograma en que el contador muestra su valor final (por el redondeo llega antes de que
+    acabe el ease-out). A ese fotograma se atan el cambio a tomate, el pop del texto y el sonido."""
+    return next(f for f in range(N) if eo_valor(f / FPS, *c) == c[3]) / FPS
+
+
+LLEGA_4748, LLEGA_4811 = t_llegada(C_4748), t_llegada(C_4811)
 
 # (entra, sale, tamaño en % del alto, tope de las letras, segmentos o nombre de contador, pop de llegada)
 # Texto exacto de la tabla de la sección 12 del prompt.
 TEXTOS = [
-    (0.0, 0.9, 6, Y_15, (T("GTA "), K("5"), T("?")), None),
+    (0.0, 0.9, 12, Y_PORTADA, (T("GTA "), K("5"), T("?")), None),
     (2.9, 4.9, 5, Y_15, (T("how many "), K("days"), T("?")), None),
     (5.1, 8.9, 7, Y_132, (T("GTA "), K("5")), None),
     (9.2, 10.9, 7, Y_132, (K("13"), T(" × 365")), None),
     (11.2, 13.4, 7, Y_132, "c4745", None),
     (13.7, 14.9, 7, Y_132, (T("+"), K("3"), T(" leap days")), None),
-    (15.1, 17.4, 7, Y_132, "c4748", (C_4748[1], 0.10)),
+    (15.1, 17.4, 7, Y_132, "c4748", (LLEGA_4748, 0.10)),
     (17.8, 19.3, 7, Y_132, "c63", None),
     (19.4, 20.9, 7, Y_132, (T("GTA "), K("6")), None),
-    (21.2, 25.4, 7, Y_15, "c4811", (C_4811[1], 0.14)),    # se queda toda la toma 11 (el pago del video)
+    (21.2, 25.4, 7, Y_15, "c4811", (LLEGA_4811, 0.14)),    # se queda toda la toma 11 (el pago del video)
     (25.7, 27.4, 7, Y_132, (T("age "), R("13")), None),
-    (27.6, 28.5, 6, Y_15, (T("GTA "), K("5"), T("?")), None),
+    (27.6, 28.5, 12, Y_PORTADA, (T("GTA "), K("5"), T("?")), None),
 ]
 
 
@@ -322,7 +342,8 @@ def capa_texto(base, f):
             esc *= 1 + llegada[1] * (1 - muelle(t - llegada[0], POP))
         if f >= fs - 3 and not ultimo:                          # salida: sube 2 % con ease-in en 3 fotogramas
             u = (f - (fs - 3) + 1) / 4
-            dy = -0.02 * H * u * u
+            # sube 2 %, pero sin que el tope del texto pase de la zona segura (y = 250) mientras se desvanece
+            dy = -min(0.02 * H * u * u, max(0.0, tope - TRAZO_EM * tam - 0.03 * tam - SEG_Y0 - 2))
             alfa *= 1 - u * u
         img, margen, linea = imagen_texto(segs, tam)
         k = esc / SS
@@ -420,7 +441,8 @@ def tira_13(lz, llenos=13, color_ultimo=MARRON, marcas=(), corchete=False, esc_b
         e = (0.85 + 0.15 * p) if 0 < p else 1.0
         if i == 12 and esc_bloque:
             e *= esc_bloque
-        mb = Marco(lz, x0 + 30, TIRA_Y, e)
+        # el latido del bloque 13 crece hacia la izquierda: su borde derecho no pasa de x = 978 (zona segura)
+        mb = Marco(lz, x0 + 30 - (30 * (e - 1) if i == 12 and e > 1 else 0), TIRA_Y, e)
         mb.caja(-30, -100, 30, 100, col, 8)
     for k, esc in zip(BISIESTOS, marcas):
         if esc > 0.02:
@@ -482,14 +504,27 @@ def toma_3(lz, t):
     return acercar(empuje_lento(tl, 3.0), 0.06), (0.5 * W, 0.54 * H)
 
 
+T4_FECHA = 6.6            # «September seventeenth» empieza hacia 6,6: ahí entra la fecha en la hoja
+
+
 def toma_4(lz, t):
+    """Tin lleva su lápiz (el motivo del canal): es el elemento mostaza del plano, y por eso aquí la cabecera de la hoja
+    va en marrón (neutro) y no en mostaza. La hoja está en blanco mientras suena «G T A five came out» y la fecha entra
+    con pop en 6,6 (cambio a mitad de toma); Tin sacude el lápiz y Tan pasa de saludar a sonreír."""
     tl = t - 5.0
     suelo(lz)
-    hoja_calendario(lz, texto="Sep 17, 2013", pct=4.6, esc_texto=0.85 + 0.15 * muelle(tl, POP), **HOJA_Z)
-    palitos.dibujar(lz, "tan", X_TAN, SUELO, ALTO_PJ * bote(t), pose="saluda", expresion="nostalgia", vista="frente",
-                    viento=vaiven(tl), espejo=True)
+    if t < T4_FECHA:
+        hoja_calendario(lz, texto=None, pct=4.6, cabecera=MARRON, **HOJA_Z)
+    else:
+        tf = t - T4_FECHA
+        hoja_calendario(lz, texto="Sep 17, 2013", pct=4.6, cabecera=MARRON, esc_texto=0.85 + 0.15 * muelle(tf, POP),
+                        alfa_texto=min(1.0, tf * FPS / 2 + 0.5), **HOJA_Z)
+    palitos.dibujar(lz, "tan", X_TAN, SUELO, ALTO_PJ * bote(t), pose="saluda",
+                    expresion="nostalgia" if t < T4_FECHA else "feliz", vista="frente", viento=vaiven(tl), espejo=True)
+    giro = sacudida(tl) if t < T4_FECHA else 9 * math.exp(-2.5 * (t - T4_FECHA)) * math.cos(2 * math.pi * 2.5 * (t - T4_FECHA)) \
+        + sacudida(tl) * (1 - math.exp(-2.5 * (t - T4_FECHA)))
     palitos.dibujar(lz, "tin", X_TIN, SUELO, ALTO_PJ * bote(t, 0.5), pose="explica", expresion="feliz", vista="frente",
-                    objeto="calendario", giro_objeto=sacudida(tl))
+                    objeto="lapiz", giro_objeto=giro)
     return acercar(empuje_lento(tl, 4.0), 0.03), CENTRO
 
 
@@ -521,7 +556,7 @@ def toma_7(lz, t):
     tl = t - 13.5
     suelo(lz)
     tira_13(lz, marcas=[muelle(t - m, POP) for m in T7_MARCAS])
-    palitos.dibujar(lz, "tan", 0.5 * W, SUELO, ALTO_PJ * bote(t), pose="explica", expresion="curiosidad", vista="frente",
+    palitos.dibujar(lz, "tan", 0.5 * W, SUELO, ALTO_PJ * bote(t), pose="explica", expresion="feliz", vista="frente",
                     viento=vaiven(tl, 0.25), espejo=True)
     return 1.0, CENTRO
 
@@ -530,7 +565,8 @@ def toma_8(lz, t):
     tl = t - 15.0
     suelo(lz)
     tira_13(lz, marcas=(1, 1, 1), corchete=True)
-    palitos.dibujar(lz, "tan", 0.5 * W, SUELO, ALTO_PJ * bote(t), pose="parado", expresion="pensando", vista="frente",
+    palitos.dibujar(lz, "tan", 0.5 * W, SUELO, ALTO_PJ * bote(t), pose="parado",
+                    expresion="curiosidad" if t < LLEGA_4748 else "feliz", vista="frente",   # reacciona al llegar
                     viento=vaiven(tl, 0.22, 0.6), espejo=True)
     return 1.0, CENTRO
 
@@ -556,7 +592,8 @@ def toma_9(lz, t):
             p = muelle(t - T9_FECHA_1, POP)
             hoja_calendario(lz, texto="Sep 17, 2026", pct=4.6, esc_y=e, esc_texto=0.85 + 0.15 * p,
                             alfa_texto=min(1.0, (t - T9_FECHA_1) * FPS / 2 + 0.5), **HOJA_Z)
-    palitos.dibujar(lz, "tan", 0.5 * W, SUELO, ALTO_PJ * bote(t), pose="piensa", expresion="pensando", vista="frente",
+    palitos.dibujar(lz, "tan", 0.5 * W, SUELO, ALTO_PJ * bote(t), pose="piensa",
+                    expresion="curiosidad" if t < T9_VUELTA else "nostalgia", vista="frente",   # cambia con la hoja
                     viento=vaiven(tl, 0.22, 0.7), objeto=False, espejo=True)
     return acercar(empuje_lento(tl, 3.5), 0.04), CENTRO
 
@@ -564,7 +601,7 @@ def toma_9(lz, t):
 def toma_10(lz, t):
     tl = t - 21.0
     suelo(lz)
-    tau = tl if t < C_4811[1] else t - C_4811[1]
+    tau = tl if t < LLEGA_4811 else t - LLEGA_4811
     viento = 0.9 * math.exp(-1.3 * tau) * math.cos(2 * math.pi * 1.5 * tau) + vaiven(tl, 0.12)
     palitos.dibujar(lz, "tan", X_TAN, SUELO, ALTO_PJ * bote(t), pose="celebra", expresion="sorpresa", vista="frente",
                     viento=viento, espejo=True)
@@ -592,7 +629,8 @@ def toma_12(lz, t):
     tira_13(lz, color_ultimo=TOMATE if lat else MARRON, esc_bloque=esc)
     palitos.dibujar(lz, "tan", X_TAN, SUELO, ALTO_PJ * bote(t), pose="encoge", expresion="risa", vista="frente",
                     viento=0.4 * math.exp(-2 * tl) * math.cos(2 * math.pi * 2 * tl) + vaiven(tl, 0.15), espejo=True)
-    palitos.dibujar(lz, "tin", X_TIN, SUELO, ALTO_PJ * bote(t, 0.5), pose="celebra", expresion="risa", vista="frente",
+    # Tin 14 px a la izquierda de x = 70 %: con el brazo arriba el calendario no cabía en la zona segura sin tocar la visera
+    palitos.dibujar(lz, "tin", X_TIN - 14, SUELO, ALTO_PJ * bote(t, 0.5), pose="celebra", expresion="risa", vista="frente",
                     objeto="calendario", giro_objeto=sacudida(tl))
     return 1.0, CENTRO
 

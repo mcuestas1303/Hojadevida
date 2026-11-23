@@ -1,46 +1,43 @@
 #!/usr/bin/env python3
-"""Portada del short 2 de Tin & Tan (1080x1920), dibujada con el mismo código del video.
+"""Portada del short 2 de Tin & Tan (1080x1920): es el fotograma 0 del video, tal cual.
 
 Uso (desde la carpeta del proyecto):
     python3 codigo/miniatura.py [salida.png]          # por defecto 06_final/portada_short02.png
     python3 codigo/miniatura.py --alternativa [png]   # el «4,811 days» en tomate (06_final/portada_short02_alternativa.png)
 
-Sección 8 del prompt: la portada es el fotograma 0 (el mando con «GTA 5?»). Aquí es el mismo dibujo del fotograma 0
-(mando en ángulo 0 con su estela), con el texto más grande y más abajo: en el video el «GTA 5?» va en y = 15 % (288 px)
-y la zona útil de la portada de un Short es x 60-960, y 380-1440 (manual/12, control 4.5; ENTREGA_YOUTUBE.md).
-No adelanta la respuesta. La alternativa es el fotograma de 23,0 s tal cual, para probar en otra publicación.
+Regla del dueño (ENTREGA_YOUTUBE.md, «Portada de los Shorts»; manual/12, control 4.5): el primer segundo del video ES
+la portada. Por eso el «GTA 5?» de las tomas 1 y 13 ya va en el video al 12 % del alto y entre y = 400 y 700, dentro de
+la zona útil (x 60-960, y 380-1440), y este archivo no dibuja nada propio: guarda el fotograma 0 y comprueba la caja
+del texto. No adelanta la respuesta. La alternativa (fotograma de 23,0 s) sí la adelanta: solo para probar aparte.
 """
 import sys
 from pathlib import Path
 
-from PIL import Image
+import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import render as R  # noqa: E402
-import palitos  # noqa: E402
 
-W, H = 1080, 1920
-UTIL = (60, 380, 960, 1440)
+TEXTO_PORTADA = (R.T("GTA "), R.K("5"), R.T("?"))     # el mismo de la fila 1 de la tabla de textos (2 palabras)
+
+
+def caja_del_texto(img):
+    """Caja de lo que no es papel por encima del mando (y < 760): el texto de la portada."""
+    a = np.asarray(img, dtype=np.int16)[:760]
+    m = np.abs(a - np.array([0xF3, 0xE9, 0xD2])).sum(axis=2) > 90
+    ys, xs = np.where(m)
+    return int(xs.min()), int(ys.min()), int(xs.max()), int(ys.max())
 
 
 def portada(salida):
-    lz = palitos.Lienzo(W, H)
-    R.mando_grande(lz, 0.0)                      # centro en 54 %: de y = 817 a 1257
-    img = lz.resultado()
-    segs = (R.T("GTA "), R.K("5"), R.T("?"))     # mismas palabras que el fotograma 0; «GTA» es sigla, va en mayúsculas
-    tam = 230
-    tx, margen, linea = R.imagen_texto(segs, tam)
-    k = 1 / palitos.SS
-    chico = tx.resize((int(tx.width * k), int(tx.height * k)), Image.LANCZOS)
-    x, y = 108 - int(margen * k), 430
-    caja = chico.getbbox()
-    assert UTIL[0] <= x + caja[0] and x + caja[2] <= UTIL[2] and UTIL[1] <= y + caja[1] and y + caja[3] <= 780, \
-        "el texto de la portada sale de la zona útil o toca el mando"
-    img.paste(chico, (x, y), chico)
+    assert R.TEXTOS[0][4] == TEXTO_PORTADA
+    img = R.fotograma(0)
+    x0, y0, x1, y1 = caja_del_texto(img)
+    assert 60 <= x0 and x1 <= 960 and 400 <= y0 and y1 <= 700, f"texto fuera de la franja de portada: {x0, y0, x1, y1}"
     salida.parent.mkdir(parents=True, exist_ok=True)
     img.save(salida, optimize=True)
-    print(f"Portada -> {salida} ({img.size[0]}x{img.size[1]}, {salida.stat().st_size / 1024:.0f} KB; "
-          f"texto de x = {x + caja[0]} a {x + caja[2]}, y = {y + caja[1]} a {y + caja[3]})")
+    print(f"Portada (fotograma 0) -> {salida} ({img.size[0]}x{img.size[1]}, {salida.stat().st_size / 1024:.0f} KB; "
+          f"texto de x = {x0} a {x1}, y = {y0} a {y1})")
 
 
 def alternativa(salida):

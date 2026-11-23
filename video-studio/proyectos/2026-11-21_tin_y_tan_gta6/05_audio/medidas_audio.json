@@ -5,7 +5,7 @@
    -4.7
   ],
   "efectos.wav": [
-   -25.5,
+   -25.6,
    -6.0
   ],
   "efectos bajo la voz (0,5 a 27,0 s)": [
@@ -82,6 +82,13 @@
    "sonido": "clic",
    "atado_a": "corte seco en 5.0",
    "inicio_medido": 5.000083333333333,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 6.6,
+   "sonido": "pop",
+   "atado_a": "la fecha entra en la hoja, toma 4",
+   "inicio_medido": 6.600395833333333,
    "en_su_tiempo": true
   },
   {
@@ -218,10 +225,10 @@
    "en_su_tiempo": true
   },
   {
-   "segundo": 15.377,
+   "segundo": 15.742,
    "sonido": "tictac_4748",
-   "atado_a": "contador de la toma 8, 3 pasos (15,3 a 16,6); el primero en 15,38",
-   "inicio_medido": 15.376778162454665,
+   "atado_a": "contador de la toma 8, 3 pasos (4,746 en 15,74; 4,747 en 16,1; 4,748 en 16,68)",
+   "inicio_medido": 15.741638530685531,
    "en_su_tiempo": true
   },
   {
@@ -290,15 +297,15 @@
   {
    "segundo": 21.4,
    "sonido": "tictac_4811",
-   "atado_a": "contador de la toma 10 (21,4 a 22,5)",
+   "atado_a": "contador de la toma 10 (21,4 a 22,8; llega en 22,53)",
    "inicio_medido": 21.400145833333333,
    "en_su_tiempo": true
   },
   {
-   "segundo": 22.5,
+   "segundo": 22.533,
    "sonido": "ding",
-   "atado_a": "llegada a 4,811",
-   "inicio_medido": 22.50047916666667,
+   "atado_a": "llegada a 4,811 (primer fotograma con el valor final)",
+   "inicio_medido": 22.533812500000003,
    "en_su_tiempo": true
   },
   {

@@ -142,3 +142,65 @@ Silencio de voz en el empalme del bucle: 1,17 s (límite 2 s). Duración 28,5 s 
 - Escucha completa (diseñador de sonido) y firmas del supervisor de continuidad y del director creativo.
 - `03_keyframes/definicion.md` (entrada de «pieza por código» de `generacion.md`), `consumo.md`, el caso y la nota
   en `COORDINACION.md`: no se tocaron en esta vuelta.
+
+## Tercer render (2026-11-23): defectos del supervisor de continuidad y del diseñador de sonido
+
+Mismo archivo de salida (`06_final/tin_y_tan_short02_v1.mp4`, 28,5 s, 855 fotogramas, cortes sin cambios). Informes:
+`firma_supervisor.md` y `firma_sonido.md`. **Las secciones de arriba describen los dos primeros renders; donde digan
+otra cosa, vale esta.** Sigue sin escucharlo nadie.
+
+### Bloqueantes
+
+| # | Defecto | Qué se hizo | Medida o evidencia |
+|---|---|---|---|
+| 1 | `.srt` con «G T A five / six» (0,00–5,12 s) | Líneas 1 y 2: «GTA 5» y «GTA 6». Revisado todo el archivo con el criterio «lo que se lee»: la línea 4 pasa de «Thirteen years times 365» a «13 years times 365» (como «13 × 365» en pantalla). Tiempos sin cambios | `revisar_texto.py`: 0 errores |
+| 2 | Portada dentro del video (0,0–0,9 y 27,6–28,5 s): «GTA 5?» en y ≈ 288–380 | El texto de las tomas 1 y 13 va al 12 % del alto con el tope en y = 26 %: **el fotograma 0 es la portada**. `codigo/miniatura.py` ya no dibuja nada propio: guarda el fotograma 0 y comprueba la caja | Texto en x 116–848, y 492–682 (franja 400–700; zona útil 380–1440). Hueco con el mando en todo el balanceo y el empuje: 97 px como mínimo. Bucle: 2,5 de 255 entre el fotograma 854 y el 0 (vecinos de la toma 13: 2,2) |
+| 3 | Dígitos clave deformados por el trazo | La causa no era el orden (Pillow ya pinta el trazo y encima el relleno): en Inter Display Medium las aberturas del 6, el 9, el 3 y el 5 son más estrechas que el trazo y se llenaban de tinta. Se probó abrir un canal dentro de las bahías (quedaban restos blancos: descartado). Solución: **dígitos abiertos de la propia Inter** (rasgo OpenType `ss01`) en todas las cifras del video y trazo de **0,045 em** (antes 0,06) | Recortes ampliados de «5», «6», «63», «4,734», «4,811», «13» mostaza, «13» tomate, «3» y «days»: sin línea interior; el 6 y el 9 quedan con el trazo recto y abierto. Queda una muesca de tinta corta en el cuello del «5» grande de la portada (es el fondo de su abertura) |
+| 4 | «Xbox» y «Rockstar» fuera del glosario | Añadidos a `video-studio/glosario.txt` con su porqué. «PlayStation» y «Take-Two» no hicieron falta (el filtro no los marca) | `revisar_texto.py` sobre la descripción de §8 (`vuelta_01/descripcion_s8.txt`): 0 errores |
+
+### Convienen
+
+| # | Defecto | Qué se hizo | Medida o evidencia |
+|---|---|---|---|
+| 5 | Tan con `pensando` de 15,0 a 21,0 s | Toma 7 (13,5–15,0): `feliz`. Toma 8 (15,0–17,5): `curiosidad` y, al llegar el contador (16,7), `feliz`. Toma 9 (17,5–21,0): `curiosidad` y, cuando la hoja pasa a «Nov 19, 2026» (19,4), `nostalgia`. Ya no hay `pensando` ni `concentrado` en el video | Caras a tamaño completo en 1,5 · 6,7 · 10,0 · 12,0 · 14,3 · 15,7 · 17,3 · 18,7 · 20,0 · 24,7 s: ninguna se lee como enojo. `curiosidad` (una ceja arriba, boca ladeada) se lee escéptica; sale en 9,0–11,0, 15,0–16,7 y 17,5–19,4 |
+| 6 y 7 | Palanca derecha fuera del cuerpo; disposición del mando | `mando()` de `palitos.py`: las dos palancas a la misma altura, en (−0,26 W, +0,04 W) y (+0,03 W, +0,04 W). También cambia el mando de la mano de Tan (toma 2). Fichas de Tin y Tan y §5 del prompt actualizados | Borde inferior de las palancas en +0,11 W (el cuerpo llega a +0,20 W): ya no cortan el contorno. Visto en el fotograma 0 |
+| 9 | Desfase entre la llegada del número, el `pop` y el sonido | `pop`, cambio a tomate y ding atados al primer fotograma en que el contador muestra el valor final. Toma 10: llega en **22,53 s** (fotograma 676) y ahí van el tomate, el `pop` y el ding; el tictac calla al llegar. Toma 8: el contador se estiró para llegar a 4,748 en **16,70 s** (cuando la voz dice «forty-eight»), con el `pop` en ese fotograma y el tercer tic en 16,68 | `render.t_llegada` y `audio.LLEGA_4811` dan el mismo valor (22,533); 48 de 48 golpes en su tiempo |
+| 10 | El lápiz de Tin no salía | **Decisión:** Tin lleva su lápiz en la toma 4 (5,0–9,0) en lugar del calendario de mano. Por qué: es el motivo del canal y el prompt y la dirección decían que estaba; el calendario de la mano repetía la hoja que ya está encima. Para no romper «un acento por plano», el lápiz es el elemento mostaza de la toma 4 y la cabecera de la hoja pasa a marrón (neutro). La goma tomate del lápiz es parte del objeto, como en el short 1. El calendario de mano queda solo en la toma 12 | Prompt (§2, toma 4, §11, tabla de acento) y `direccion.md` (lista de elementos de acento) actualizados |
+| 11 | Toma 4 casi quieta 4 s | La hoja está en blanco de 5,0 a 6,6 y **en 6,6 s** (cuando la voz dice «September seventeenth») entra «Sep 17, 2013» con `pop` y un sonido; Tin sacude el lápiz 9 grados y Tan pasa de `nostalgia` a `feliz` | `revisar_fotogramas.py`: sin marcas |
+| Sonido | Fundido final de «now» | `armar_dialogo.py`: de 0,12 a 0,20 s; `dialogo_110.mp3` rehecho; la línea de tiempo no cambia | `revisar_voz.py` sobre el mp4: 75 palabras, 0 diferencias |
+| Herramienta | Falso «posible final cortado» sobre una mezcla | `revisar_voz.py`: opción `--voz-sola`; el aviso solo sale con ella. Sin ella, si el audio no acaba en silencio, lo dice y explica que en una mezcla no se puede saber | Probado sobre el mp4: ya no sale el aviso |
+
+### Menores
+
+| # | Defecto | Qué se hizo |
+|---|---|---|
+| 13 | Toma 12 (25,5–27,5): dibujo hasta x = 989 y calendario pegado a la visera | El latido del bloque 13 crece hacia la izquierda; Tin va 14 px a la izquierda de x = 70 % solo en esa toma y el calendario 0,04 R más afuera. Medido en todos los fotogramas: x de 102 a 978 |
+| 16 | «13 x 365» en la descripción | «13 × 365» en §8 del prompt |
+| 17 | `licencias.md`: «(ID …)» | «(ID del trabajo de generación …)» en las dos voces |
+| 19 | Salida de texto hasta y = 239 | La subida de salida se limita para que el tope no pase de y = 250. Caja de dibujo de **todos** los fotogramas sin borrón: x 100–980, y 256–1662: todo dentro de la zona segura |
+
+### Controles sobre el archivo nuevo
+
+| Control | Resultado |
+|---|---|
+| `comprobar_video.py` | 1080x1920, 30 fps, H.264, yuv420p, AAC, 855 fotogramas; sin tramos de 0,5 s sin cambio; sin vacíos; −14,0 LUFS y −1,3 dBTP; bucle 2,5 de 255. Los cortes de 11,0, 13,5 y 15,0 siguen siendo cambios pequeños |
+| `analizar_video.py --cada 0.5` y hojas miradas | Sin texto cortado ni encimado; portada grande en las tomas 1 y 13; lápiz y cabecera marrón en la toma 4; «4,811 days» en tomate en las tomas 10 y 11 |
+| `revisar_fotogramas.py` | Sin marcas |
+| `revisar_color.py` | Video ≈ 93 % en paleta, ±2 % entre segundos; portada ≈ 95 % |
+| `revisar_texto.py` (`subtitulos.srt`, `render.py`, `miniatura.py`, descripción) | 53 textos, PASA: 0 errores |
+| `revisar_voz.py` sobre el mp4 con el guion completo (`revisar_voz_mp4.md`) | COINCIDE: 75 palabras, 0 diferencias |
+| `revisar_titulo.py` con `--proyecto` y `--descripcion` (`revisar_titulo.txt`) | PASA: 0 errores, 0 avisos |
+| `validar_prompt.py` | «Listo para generar», 0 errores |
+| Short 1 | Fotogramas 0, 150, 450, 600 y 800 de `render_v2.py`: idénticos byte a byte a los de antes de tocar `palitos.py` |
+
+### No se arregló (no es de código, o no es de este render)
+
+- **8. Portada sin caras:** el fotograma 0 es el mando con «GTA 5?», como pide el prompt. Aceptarlo por escrito o cambiarlo es del director creativo.
+- **12. `direccion.md`** con secciones en plantilla: es de cada director.
+- **14.** Tan «señala» en horizontal y la tira está arriba (9,0–11,0): la pose `senala` es así; no hay pose que señale hacia arriba.
+- **15.** El brazo por detrás de la bufanda en `explica` y `piensa`: fallo conocido de la ficha de Tan (dibujo del personaje).
+- **18.** Fichas contra dibujo (cinta del rodete, cejas de Tin en `eureka`): no es de este video.
+- **Ficha y prompt no coinciden en la cabecera del calendario de mano:** las fichas dicen tomate y el prompt marrón; se dibujó marrón y quedó anotado en las fichas.
+- **Lo que solo se resuelve al oído** (salvedades del diseñador de sonido): «now», el ataque de «eight» en 22,23 s, «G T A» y las cifras, las pausas acortadas y el golpe del fotograma 0. Además, que «GTA 6» (19,4) y la hoja de noviembre no se adelanten a «to November…».
+- **Cortes** que pisan el final de la línea anterior (5,0, 13,5, 17,5 y 21,0) y el de 25,5 sin margen: siguen igual, vienen de la rejilla.
+- **Portada alternativa** (`portada_short02_alternativa.png`): adelanta la respuesta.

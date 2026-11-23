@@ -38,7 +38,7 @@ LUFS_MEZCLA = -14.0
 TECHO_MEZCLA_DBTP = -1.0
 
 # Contadores del render (inicio, fin): el tictac sigue el mismo ease-out cúbico
-C_4745, C_4748, C_63, C_4811 = (11.15, 12.9), (15.3, 16.6), (17.75, 18.8), (21.4, 22.5)
+C_4745, C_4748, C_63, C_4811 = (11.15, 12.9), (15.6, 18.0), (17.75, 18.8), (21.4, 22.8)
 
 # ---------------------------------------------------------------- golpes de la sección 13: (segundo, sonido, a qué va atado)
 EVENTOS = [(0.0, "thunk", "arranque, toma 1 (y empalme del bucle)"), (0.0, "zumbido", "vibración del mando, toma 1")]
@@ -51,11 +51,15 @@ EVENTOS += [(C_4745[0], "tictac_4745", "contador de la toma 6 (11,15 a 12,9)")]
 EVENTOS += [(t, "pop", "marca bisiesta, toma 7") for t in (13.9, 14.2, 14.5)]
 # el primer paso (4,745 a 4,746) llega cuando el ease-out vale 1/6: 0,077 s después de empezar
 T_4748 = C_4748[0] + (1 - (5 / 6) ** (1 / 3)) * (C_4748[1] - C_4748[0])
-EVENTOS += [(T_4748, "tictac_4748", "contador de la toma 8, 3 pasos (15,3 a 16,6); el primero en 15,38")]
+EVENTOS += [(T_4748, "tictac_4748", "contador de la toma 8, 3 pasos (4,746 en 15,74; 4,747 en 16,1; 4,748 en 16,68)")]
 EVENTOS += [(17.56 + 0.18 * k, "hoja_corta", "hoja en blanco, toma 9") for k in range(6)]
 EVENTOS += [(19.4, "hoja", "vuelta de hoja, toma 9")]
-EVENTOS += [(C_4811[0], "tictac_4811", "contador de la toma 10 (21,4 a 22,5)")]
-EVENTOS += [(C_4811[1], "ding", "llegada a 4,811")]
+EVENTOS += [(C_4811[0], "tictac_4811", "contador de la toma 10 (21,4 a 22,8; llega en 22,53)")]
+# El contador llega a 4,811 en el primer fotograma en que 4748 + 63 * ease-out redondea a 4811 (22,53 s), no al final
+# del ease-out: el ding, el pop del texto y el cambio a tomate van atados a ese fotograma (igual que render.t_llegada).
+LLEGA_4811 = next(f for f in range(900) if round(63 * (1 - (1 - min(1.0, max(0.0, (f / 30 - C_4811[0]) / (C_4811[1] - C_4811[0])))) ** 3)) == 63) / 30
+EVENTOS += [(LLEGA_4811, "ding", "llegada a 4,811 (primer fotograma con el valor final)")]
+EVENTOS += [(6.6, "pop", "la fecha entra en la hoja, toma 4")]
 EVENTOS += [(t, "pop_grave", "latido del bloque 13, toma 12") for t in (26.0, 26.5, 27.0)]
 EVENTOS += [(27.5, "whoosh", "retroceso de cámara, toma 13 (27,5 a 28,3)")]
 EVENTOS += [(t, "boton", "latido del botón, toma 13") for t in (27.5, 28.0)]
@@ -230,7 +234,7 @@ def sonido(nombre, rng):
         y = s_tictac(C_4748[1] - C_4748[0], [1 / 6, 3 / 6, 5 / 6], 880.0, 1100.0)      # cuando el valor pasa a 46, 47 y 48
         return y[int(round((T_4748 - C_4748[0]) * SR)):]
     if nombre == "tictac_4811":
-        return s_tictac(C_4811[1] - C_4811[0], [k / 20 for k in range(20)])
+        return s_tictac(C_4811[1] - C_4811[0], [k / 20 for k in range(16)])     # calla al llegar (ding en 22,53)
     if nombre == "pop":
         return s_plop(rng)
     if nombre == "pop_grave":

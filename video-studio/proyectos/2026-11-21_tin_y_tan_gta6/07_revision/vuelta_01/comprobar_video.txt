@@ -2,23 +2,23 @@ formato: h264 1080x1920 yuv420p 30/1 fps, 855 fotogramas; audio aac 48000 Hz; du
 formato pedido (1080x1920, 30 fps, H.264, yuv420p, AAC, 855 fotogramas): sí
 fotogramas leídos: 855
 cortes (cambio medio 0-255 en el fotograma del corte; mediana de sus vecinos):
-    1.0 s  fotograma  30  cambio  15.84  vecinos  1.26  corte
-    2.0 s  fotograma  60  cambio  22.48  vecinos  1.11  corte
-    5.0 s  fotograma 150  cambio  27.86  vecinos  2.00  corte
-    9.0 s  fotograma 270  cambio  28.62  vecinos  0.83  corte
-   11.0 s  fotograma 330  cambio   2.49  vecinos  0.92  REVISAR
-   13.5 s  fotograma 405  cambio   2.64  vecinos  1.09  REVISAR
-   15.0 s  fotograma 450  cambio   2.35  vecinos  1.74  REVISAR
-   17.5 s  fotograma 525  cambio  20.56  vecinos  2.29  corte
-   21.0 s  fotograma 630  cambio  23.74  vecinos  0.99  corte
-   23.5 s  fotograma 705  cambio  18.43  vecinos  0.83  corte
-   25.5 s  fotograma 765  cambio  30.54  vecinos  1.10  corte
-   27.5 s  fotograma 825  cambio  26.49  vecinos  1.91  corte
-cambios grandes fuera de la rejilla (movimiento dentro de la toma, no cortes; fotogramas): [115, 116, 117, 118, 121, 122, 123, 537, 539, 543, 545, 548, 550, 554, 558, 584]
+    1.0 s  fotograma  30  cambio  15.57  vecinos  1.94  corte
+    2.0 s  fotograma  60  cambio  22.49  vecinos  1.10  corte
+    5.0 s  fotograma 150  cambio  29.32  vecinos  1.49  corte
+    9.0 s  fotograma 270  cambio  30.90  vecinos  0.79  corte
+   11.0 s  fotograma 330  cambio   2.49  vecinos  0.84  REVISAR
+   13.5 s  fotograma 405  cambio   2.74  vecinos  0.92  REVISAR
+   15.0 s  fotograma 450  cambio   2.37  vecinos  1.31  REVISAR
+   17.5 s  fotograma 525  cambio  20.59  vecinos  2.01  corte
+   21.0 s  fotograma 630  cambio  23.66  vecinos  0.69  corte
+   23.5 s  fotograma 705  cambio  18.43  vecinos  0.84  corte
+   25.5 s  fotograma 765  cambio  30.23  vecinos  1.07  corte
+   27.5 s  fotograma 825  cambio  26.72  vecinos  2.72  corte
+cambios grandes fuera de la rejilla (movimiento dentro de la toma, no cortes; fotogramas): [115, 116, 117, 118, 121, 122, 123, 537, 539, 543, 550, 554, 555, 556, 558, 584]
 tramos de 0,5 s o más sin ningún cambio: ninguno
-cambio mínimo por fotograma en todo el video: 0.0001
-bucle: diferencia media entre el último fotograma (854) y el 0: 2.501 (0-255); cambio medio entre fotogramas vecinos de la toma 13: 2.018
+cambio mínimo por fotograma en todo el video: 0.0000
+bucle: diferencia media entre el último fotograma (854) y el 0: 2.521 (0-255); cambio medio entre fotogramas vecinos de la toma 13: 2.166
 fotogramas vacíos (imagen plana): ninguno
-mitad de abajo del cuadro (desviación de gris; < 3 = vacía): T1 37, T2 45, T3 44, T4 56, T5 40, T6 41, T7 40, T8 40, T9 39, T10 56, T11 45, T12 57, T13 35
+mitad de abajo del cuadro (desviación de gris; < 3 = vacía): T1 37, T2 45, T3 44, T4 55, T5 40, T6 41, T7 40, T8 40, T9 40, T10 56, T11 45, T12 57, T13 36
 audio del archivo (AAC): -14.0 LUFS integrados, pico real -1.3 dBTP (dentro de -14 ±1 LUFS y -1 dBTP)
 silencios totales de 0,3 s o más (a -50 dB): ninguno

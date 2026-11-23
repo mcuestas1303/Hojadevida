@@ -62,9 +62,9 @@ en un plano de los dos se dibujan con el mismo `alto`.
   cada prompt puede darle al personaje un objeto de utilería en la mano que gesticula, dibujado con el mismo trazo
   tinta y solo con colores de `PALETA`. El objeto se define en el prompt con medidas en R. Aprobados hasta hoy:
   `lapiz` (el de Tin), `control` (mando de videojuego genérico: cuerpo de 1,1 R × 0,6 R con dos empuñaduras
-  redondeadas, relleno mostaza, dos palancas y cuatro botones de punto tinta; **sin logotipos ni la forma exacta de
+  redondeadas, relleno mostaza, dos palancas **a la misma altura** y cuatro botones de punto tinta; **sin logotipos ni la forma exacta de
   ningún mando comercial**) y `calendario` (hoja de 0,9 R × 1,0 R, cabecera tomate, número en tinta).
-  **Pendiente de dibujar en `palitos.py`** (hoy `objeto` solo conoce el lápiz); lo hace quien renderice.
+  **Dibujados en `palitos.py` 1.2** (2026-11-21; `objeto="control"`, `objeto="calendario"`). El calendario se dibujó con cabecera **marrón**, como pide el prompt del short 2 (aquí arriba dice tomate: falta que el dueño o el director creativo digan cuál vale).
 - **Lo que no es variación:** el vestuario no cambia por la temática del video. Nada de disfraces de personajes de
   terceros ni ropa que imite la de un juego, película o marca.
 

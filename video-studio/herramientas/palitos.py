@@ -23,7 +23,8 @@ Versiones:
                       también un nombre ("lapiz", "control", "calendario"). `objeto=True` sigue siendo el objeto icónico
                       del personaje (el lápiz de Tin; Tan no tiene) y `objeto=False` ninguno: lo anterior se dibuja igual.
                       Nuevo `giro_objeto` (grados; 0 por defecto) para el movimiento secundario del objeto. Gráfico
-                      `mando()` (mando genérico, sin logotipos ni símbolos) y `calendario_de_mano()`.
+                      `mando()` (mando genérico, sin logotipos ni símbolos; las dos palancas a la misma altura)
+                      y `calendario_de_mano()`.
 """
 import argparse
 import math
@@ -397,7 +398,9 @@ def mando(lz, cx, cy, ancho, angulo=0.0, boton_pulsado=False, relleno="mostaza",
     silueta(c, relleno)
     if not detalles:
         return
-    for x, y in ((-0.24, 0.02), (0.12, 0.14)):     # palancas
+    # palancas: las dos a la misma altura y dentro del cuerpo (antes la derecha, en +0,14 W, cortaba el contorno de
+    # abajo; a la misma altura se parece menos todavía a un mando comercial)
+    for x, y in ((-0.26, 0.04), (0.03, 0.04)):
         m.disco(x, dy + y, 0.07, tinta)
         m.disco(x, dy + y, 0.035, "papel_sombra")
     for i, (x, y) in enumerate(((0.26, -0.11), (0.20, -0.05), (0.32, -0.05), (0.26, 0.01))):   # rombo; el último es el de abajo
@@ -450,7 +453,7 @@ def objeto_de_mano(lz, pl, nombre, mano, pose, giro=0.0):
               contorno=0.04, espejo=pl.espejo)
     elif nombre == "calendario":
         # 0,9 R x 1,0 R, agarrado por el borde de abajo (sin tapar la cabeza ni salir de la zona segura con x = 70 %)
-        ox, oy, base = (0.34, -0.62, 6) if arriba else (0.15, -0.58, -6)
+        ox, oy, base = (0.38, -0.62, 6) if arriba else (0.15, -0.58, -6)
         ang = (base + giro) * sx
         calendario_de_mano(lz, pl.cx / SS + sx * (mano[0] + ox) * R, pl.cy / SS + (mano[1] + oy) * R, 0.9 * R, 1.0 * R,
                            angulo=ang)

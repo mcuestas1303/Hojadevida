@@ -5,8 +5,8 @@ No se usa metraje ni audio ajeno sin permiso; dar crédito no da derechos.
 
 | Recurso | Archivo | Origen (generado, propio, comprado, libre) | Herramienta o autor | Licencia o condiciones | Fecha |
 |---|---|---|---|---|---|
-| Voz de Tan (inglés) | `05_audio/voz_tan_zelda.wav` | generado | Higgsfield `seed_audio`, voz Zelda (ID `4d1608d6-40f9-4d37-92b1-80be4ed2dcdd`) | condiciones de la cuenta de Higgsfield del dueño | 2026-11-21 |
-| Voz de Tin (inglés) | `05_audio/voz_tin_kevin.wav` | generado | Higgsfield `seed_audio`, voz Kevin (ID `81c4930b-6858-48c5-8f54-c1bd20787ea6`) | condiciones de la cuenta de Higgsfield del dueño | 2026-11-21 |
+| Voz de Tan (inglés) | `05_audio/voz_tan_zelda.wav` | generado | Higgsfield `seed_audio`, voz Zelda (ID del trabajo de generación `4d1608d6-40f9-4d37-92b1-80be4ed2dcdd`) | condiciones de la cuenta de Higgsfield del dueño | 2026-11-21 |
+| Voz de Tin (inglés) | `05_audio/voz_tin_kevin.wav` | generado | Higgsfield `seed_audio`, voz Kevin (ID del trabajo de generación `81c4930b-6858-48c5-8f54-c1bd20787ea6`) | condiciones de la cuenta de Higgsfield del dueño | 2026-11-21 |
 | Diálogo al 110 % | `05_audio/dialogo_110.mp3` | propio (edición de las dos voces) | `codigo/armar_dialogo.py` (ffmpeg) | igual que las voces | 2026-11-21 |
 | Efectos de sonido (47 golpes) | `05_audio/efectos.wav` (no se sube; se regenera) | propio, hecho con código | `codigo/audio.py` (numpy); sin material de terceros ni del juego | propio del estudio | 2026-11-21 |
 | Música (120 BPM, do mayor) | `05_audio/musica.wav` (no se sube; se regenera) | propio, hecho con código | `codigo/audio.py` (numpy); sin material de terceros ni del juego | propio del estudio | 2026-11-21 |
