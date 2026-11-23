@@ -446,3 +446,21 @@ Regla del dueño (2026-11-21): el comercial debe enterarse de lo que va a entrar
 ## 14. Títulos: remite a `titulos.md`
 
 Regla del dueño (2026-11-21): el título se estudia con datos de lo que penetra el algoritmo y la búsqueda, y de ahí salen una instrucción, un filtro y campos en la ficha. El estudio completo (qué dicen YouTube, TikTok e Instagram; qué dicen los estudios de terceros y dónde se contradicen; parámetros por canal; referencias; la instrucción; el filtro para `revisar_titulo.py`; los campos de la ficha) está en `video-studio/comercial/titulos.md`. Lo que esta base ya tiene y ese documento usa: límite de 100 caracteres y consejos de título de YouTube, la prueba A/B de títulos (no disponible en Shorts ni en videos «hechos para niños») y el relleno de palabras clave como baja calidad infantil (§6). Fecha del estudio: 2026-11-21.
+
+## 15. Relectura del 2026-11-23 y plan del Programa de socios
+
+Pedido del dueño (2026-11-23): el objetivo del canal Tin & Tan es entrar al Programa de socios lo antes posible. El plan completo (cuentas, estrategia, riesgos, tablero) está en `video-studio/canales/nostalgia-tin-y-tan/plan_programa_de_socios.md`.
+
+**Relectura de hoy** de las páginas 72851, 12843009, 13429240, 12504220, 1311392, 7101720, 14328491 y 15424877 (descargadas con `curl` el 2026-11-23): **los umbrales y las reglas de las secciones 1, 2, 3, 4, 7 y 12 siguen vigentes y no se corrige ninguna cifra** (4.000 h o 10 M de vistas de Shorts con 1.000 suscriptores hasta el 31-ene-2027; 8.000 h o 20 M desde el 1-feb-2027; intermedio 500 suscriptores y 3.000 h o 3 M, sin cambios; El Salvador sigue en la lista del YPP y del YPP ampliado). Lo que sí se añade, porque no estaba en la base:
+
+| Hecho | Cita (inglés) | URL y fecha de descarga |
+|---|---|---|
+| Para el umbral, una vista de Short es calificada solo si es «engaged» y no cuenta repeticiones (complementa §2) | "An engaged view means the viewer stayed to watch past the initial seconds, and does not include any loops." | https://blog.youtube/news-and-events/youtube-monetization-qualified-watch-hours-shorts-views/ (publicada 2026-08-12; leída 2026-11-23) |
+| Desde el 2026-08-24 el número de «views» cuenta desde el primer fotograma; el criterio anterior se llama «engaged view»; el YPP se basa en vistas calificadas | "the YouTube Partner Program, that’s based on qualified views" | https://blog.youtube/inside-youtube/engaged-views-youtube-explained/ (publicada 2026-08-19; leída 2026-11-23) |
+| La ventana de 90 días del piso de 10 M para cobrar el reparto de Shorts (complementa §7) termina el día 15 del mes anterior al de las ganancias | "Total views will be measured against this threshold over the 90 day period ending on the 15th day of the calendar month preceding the month for which earnings are being calculated." | https://support.google.com/youtube/answer/12504220?hl=en (2026-11-23) |
+| Para el pago de Shorts no cuentan las compilaciones sin contenido original ni las vistas falsas (complementa §3) | "compilations with no original content added" | https://support.google.com/youtube/answer/12504220?hl=en (2026-11-23) |
+| Pedir suscripción está permitido; el intercambio de suscripciones, no (complementa §3) | "You're allowed to encourage viewers to subscribe, hit the like button, share, or leave a comment" | https://support.google.com/youtube/answer/3399767?hl=en (2026-11-23) |
+| No hay duración ideal de video; hay que usar la curva de retención | "There's no universal “ideal” length for YouTube videos." | https://support.google.com/youtube/answer/16559651?hl=en (2026-11-23) |
+| Los Shorts pueden llevar un enlace «Related video» a un video largo; YouTube recomienda una petición explícita en los últimos 5 segundos | "Craft a High-Converting Call-to-Action" | https://blog.youtube/creator-and-artist-stories/youtube-related-videos-traffic-guide/ (2026-07-14; leída 2026-11-23) |
+
+Sin verificar (siguen igual): cláusula de VPN, si la 13429240 define «valid public upload», y qué umbral aplica a quien lo alcanza antes del 1-feb-2027 y solicita después.

@@ -130,3 +130,10 @@ text, letters, watermark, logo, extra characters, extra animals, humans, realist
   IA, porque se produce revisado. Conviene volver a revisar la política vigente antes de publicar.
 - Los personajes y la granja son originales: no se imita a pollitos, vacas ni granjas de
   series infantiles conocidas, ni se usan sus canciones.
+
+## Objetivo comercial del canal (dueño, 2026-11-23)
+
+Entrar al Programa de socios de YouTube lo antes posible; rige para todos los canales («Rige para todos los canales
+que trabajemos»). En esta serie se persigue sin salirse de `infantil/guia_1_a_3.md`: nada de ganchos para seguir
+mirando ni de pedirle nada al niño; lo que se le diga al adulto lo deciden la pedagoga y la psicóloga. Estrategia:
+`estrategia_monetizacion.md`.

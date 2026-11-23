@@ -291,3 +291,7 @@ Textual: «Punto 1 sí escuché y está bien». Video de entrega recomprimido a 
 ### 2026-11-23 · Generador → Equipo: el dueño fijó el objetivo inicial: entrar al Programa de socios cuanto antes
 
 Textual: «Entonces el objetivo inicial es entrar al programa de socios; todo debe girar en torno a lograr el objetivo a la mayor brevedad posible». Ya está en `CLAUDE.md`, en el README del canal y en la ficha del short 2. El comercial prepara `canales/nostalgia-tin-y-tan/plan_programa_de_socios.md` (umbrales, cuentas, cadencia y qué cambia en los videos).
+
+### 2026-11-23 · Generador → Equipo: el objetivo de entrar al Programa de socios rige para todos los canales
+
+Textual del dueño: «Rige para todos los canales que trabajemos». Anotado en `CLAUDE.md`, `REGLAS_CEREBRO.md` y `series/granja/serie.md`. En el canal infantil, dentro de los límites de la guía de 1 a 3 años.

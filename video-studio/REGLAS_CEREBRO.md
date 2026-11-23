@@ -128,3 +128,7 @@
 
 - **Objetivo inicial (dueño, 2026-11-23):** «Entonces el objetivo inicial es entrar al programa de socios; todo debe girar en torno a lograr el objetivo a la mayor brevedad posible». Vale para el canal Tin & Tan; todo
   brief, ficha técnica y perfil emocional lo lleva como objetivo comercial y mide contra los umbrales del Programa.
+
+- **El objetivo de entrar al Programa de socios rige para todos los canales (dueño, 2026-11-23):** «Rige para todos
+  los canales que trabajemos». Incluye Tin & Tan y Tiky & Lumi. En el canal infantil se persigue dentro de los
+  límites de `infantil/guia_1_a_3.md` (sin ganchos, sin pedir suscripción al niño) y del veto de la psicóloga.
