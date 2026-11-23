@@ -40,6 +40,8 @@ No se afirma: ventas, vistas de tráileres, clasificación por edades, motivos d
 | Remate: «A baby born that day is a teenager now.» | Es cierto por aritmética (13 años) y no depende de ninguna fuente externa |
 | Sin violencia, armas, autos robados ni policía en la imagen | El video trata del tiempo, no del juego; evita restricción de anuncios y mantiene a Tin y Tan en carácter |
 | Voz desde el fotograma 0 y bucle | Lecciones del short 1 |
+| Portada (2026-11-23, director creativo): el fotograma 0 lleva el mando al centro (y 744–1075), con Tan y Tin debajo, de perfil y con la cabeza inclinada 25 grados hacia arriba, mirándolo; «GTA 5?» arriba (y 492–682), sin la respuesta. Las tomas 1 y 13 son ese mismo plano | Cumple la regla de portada del dueño (`ENTREGA_YOUTUBE.md`, «Portada de los Shorts», 2026-11-21), punto 5 incluido: objeto nostálgico en el centro y las caras de los dos dentro de la zona útil, con sorpresa y mirando el objeto. Sustituye a la portada de solo mando que el supervisor dejó sin firmar (control 4.5). Se mantiene la lección del short 1: el objeto y la voz están desde el fotograma 0. Límite aceptado: en ese plano las cabezas miden 176 px (236 px en el resto del video) |
+| Medición (2026-11-23, director creativo): KPI principal «Viewed vs swiped away»; todas las metas son «establecer línea base»; se lee a 72 horas, 7 y 28 días | Canal sin historial: no hay mediana propia contra la que fijar un número, y no se inventa. Detalle en `02_prompt/direccion.md` (secciones 1 y 8) y en `02_prompt/perfil_emocional.md` |
 
 ## Lo que decide el dueño
 

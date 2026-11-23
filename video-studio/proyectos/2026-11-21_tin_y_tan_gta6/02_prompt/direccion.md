@@ -5,30 +5,32 @@
 
 ## 1. Objetivo y público — director-creativo
 
-- **Objetivo comercial:** (copiado del brief: monetizar · presencia · recordación · comunidad · conversión · viralidad · otro)
-- **KPI principal y meta:** (p. ej. compartidos por mil ≥ 15; meta inicial si aún no hay datos propios)
-- **Cómo cambia el objetivo las decisiones:** (duración, gancho, llamada a la acción, formato)
-- **Público objetivo:** (edad, intereses, plataforma, por qué lo compartiría)
-- **Idea en una línea:**
-- **Por qué funciona para ese público:**
-- **Aprendizaje que aplicamos:** (del último informe de `video-studio/estadisticas/`, o «sin datos todavía»)
+Escrito el 2026-11-23, con el video ya renderizado (cuarto render): describe lo que el video es. El detalle emocional, elemento por elemento, está en `02_prompt/perfil_emocional.md`.
+
+- **Objetivo comercial:** presencia y línea base del canal (canal nuevo, sin historial). Copiado del brief; el dueño no fijó otro para esta pieza.
+- **KPI principal y meta:** «Viewed vs swiped away» del Short (en YouTube Studio puede figurar como «How many chose to view»; `comercial/titulos.md`, fila Y20). Meta: establecer línea base, sin número (no hay datos propios). Apoyo: curva de retención por segundo, porcentaje medio visto, vistas, compartidos, comentarios y suscriptores desde el video, a 72 horas, 7 y 28 días.
+- **Cómo cambia el objetivo las decisiones:** formato corto (28,5 s, no se busca el minuto de TikTok); todo el esfuerzo en el segundo 0 (objeto, caras y voz desde el fotograma 0); sin llamado a la acción, para no cortar el bucle; misma paleta, voces y estructura que el short 1, para que los dos videos se puedan comparar y el canal se reconozca.
+- **Público objetivo:** adultos de 30 a 50 años de EE. UU. que crecieron con la saga y compraron GTA 5 en 2013; YouTube Shorts en inglés. Lo compartirían con quien esperó el juego con ellos («no puede ser tanto»). Es más joven que el 45 a 70 del short 1: prueba de línea base con otro público.
+- **Idea en una línea:** Tan pregunta si te acuerdas de comprar GTA 5 a medianoche y Tin hace la cuenta real, un dato por plano, hasta los 4.811 días de espera y el remate cierto: quien nació ese día ya es adolescente.
+- **Por qué funciona para ese público:** el recuerdo es suyo (2013), la espera fue compartida («did we wait») y la cifra convierte algo que todos sabían («fue mucho») en un número que sorprende. Es hipótesis: no hay datos propios.
+- **Aprendizaje que aplicamos:** sin informe de estadísticas todavía (no hay exportaciones en `estadisticas/datos/`). Se aplican las tres lecciones de la revisión del short 1: objeto y voz desde el fotograma 0, cifras grandes usando el tercio de abajo, y un remate que sea cierto.
 
 ## 2. Emoción, arco y gancho — director-creativo
 
-- **Duración total:**
-- **Gancho A (0–1 s):** (movimiento desde el primer fotograma + afirmación de contraste o cifra con fuente)
-- **Gancho B (para probar):**
-- **Curiosidades encadenadas:** (qué pregunta abre cada tramo y dónde se resuelve)
-- **Capítulos visibles:** (« 1/5 » o lista que crece; «no aplica» si no enumera)
-- **Cierre que empalma con el inicio (loop):**
-- **Llamado a la acción (uno solo):**
+- **Duración total:** 28,5 s (855 fotogramas; voz de 0,00 a 27,33 s).
+- **Gancho A (0–1 s):** el que está en el video. El fotograma 0 es la portada: «GTA 5?» con el «5» en mostaza, el mando en el centro ya balanceándose y Tan y Tin debajo mirándolo; la voz de Tan dice «Remember buying G T A five at midnight?» desde el fotograma 0. Es una pregunta, no una cifra: no afirma nada que necesite fuente. Primer corte en 1,0 s.
+- **Gancho B (para probar):** no está renderizado. El prompt propone el mismo plano con el texto «4,811 days?»; **no lo recomiendo**: adelanta la respuesta y choca con la regla de portada del dueño (sin la respuesta ni el número). Si se quiere probar otro gancho en otra publicación, que sea otra pregunta sin cifra (por ejemplo «13 years?»), y es un render nuevo de 0 créditos que se decide aparte.
+- **Curiosidades encadenadas:** «GTA 5?» (0,0 s) → se resuelve en «how many days?» (2,9 s), que abre la pregunta del video → ¿desde cuándo? «Sep 17, 2013» (6,6 s) → ¿cuántos años? 13 bloques (9,2 a 10,4 s) → ¿cuántos días son? 4,745 (12,8 s) → ¿y los bisiestos? +3, 4,748 (16,7 s) → ¿y hasta noviembre? +63 (18,6 s) → total: 4,811 (22,53 s) → ¿y eso cuánto es en una vida? «age 13» (25,7 s).
+- **Capítulos visibles:** no hay «1/5». Hace ese papel la cuenta que crece en pantalla (los contadores solo suben y la tira de 13 bloques vuelve en las tomas 5 a 8 y 12).
+- **Cierre que empalma con el inicio (loop):** la toma 13 (27,5 a 28,5 s) es el plano de la portada; el último fotograma empalma con el primero y la voz vuelve a entrar sin pausa (1,17 s sin voz en el empalme).
+- **Llamado a la acción (uno solo):** ninguno, ni en el video ni en la descripción: el objetivo es línea base y un llamado al final cortaría el bucle.
 
 | Tiempo | Segundos | Emoción (fila del cap. 01) | Qué pasa |
 |---|---|---|---|
-| Gancho | | | |
-| Tensión | | | |
-| Giro / remate | | | |
-| Salida | | | |
+| Gancho | 0,0–2,0 | Curiosidad (con nostalgia: no hay fila propia; se apoya en «Ternura» por el tono cálido) | El mando se balancea, Tan y Tin lo miran; Tan recuerda con el mando en la mano |
+| Tensión | 2,0–21,0 | Curiosidad y Tensión / suspenso en versión ligera (tictac de los contadores) | La hoja pasa de 2013 a 2026; la cuenta sube dato por dato: 13 años, 4,745, +3, 4,748, +63 |
+| Giro / remate | 21,0–27,5 | Sorpresa (22,53 s, la cifra en tomate y el ding), luego Asombro (23,5 a 25,5 s) y Alegría con ternura (25,5 a 27,5 s) | 4,811 días; «Wow, that long?»; el bebé de ese día ya es adolescente y los dos ríen |
+| Salida | 27,5–28,5 | Calma breve y Curiosidad otra vez | Vuelve el plano de la portada y el video empalma con el inicio |
 
 ## 3. Cámara y luz — director-de-fotografia
 
@@ -164,9 +166,9 @@ Lo que el audio ES (2026-11-23, medido; firma en `07_revision/vuelta_01/firma_so
 
 ## 8. Publicación y medición — director-creativo
 
-- **Plataforma(s) y hora:**
-- **Título:**
-- **Descripción y etiquetas:**
-- **Llamada a la acción:**
-- **Etiquetas para estadísticas:** (personaje, modo, gancho, emoción, duración, formato; van a `estadisticas/etiquetas.csv`)
-- **Revisión de resultados:** (fecha: 72 h para Shorts, 7 días para videos largos)
+- **Plataforma(s) y hora:** YouTube Shorts (canal de Tin & Tan, inglés); después se reutiliza en TikTok e Instagram. Hora: sin dato propio para elegirla; no se inventa. Recomendación: cuanto antes, porque el juego salió el 2026-11-19 y el tema pierde fuerza cada semana (`comercial/radar_de_tendencias.md`). Publica el dueño, y antes tiene que oír el audio (salvedades de `07_revision/vuelta_01/firma_sonido.md`).
+- **Título:** «How Many Days Did We Wait for GTA 6?» (36 caracteres; `revisar_titulo.py` con 0 errores y 0 avisos; bloque «Título (ficha)» en `prompt.md`, sección 8). Revisión humana del director creativo, 2026-11-23: el video responde la pregunta del título (4,811 días, en 22,53 s), no adelanta la cifra y no promete nada que no dé. Queda una salvedad que no es mía de cerrar: la fecha de GTA 6 viene de Wikipedia (leída el 2026-11-21) y no se comprobó en el sitio del editor; la descripción lo dice.
+- **Descripción y etiquetas:** la descripción es la de `prompt.md`, sección 8 (la cuenta paso a paso, fuentes con fecha y el descargo «Not affiliated with Rockstar Games or Take-Two Interactive.»); pasó `revisar_texto.py` con 0 errores (`07_revision/vuelta_01/descripcion_s8.txt`). Etiquetas y hashtags: este proyecto todavía no tiene ficha de publicación; se escriben ahí y pasan `revisar_texto.py` antes de entregar. No se añaden aquí sin filtro.
+- **Llamada a la acción:** ninguna.
+- **Etiquetas para estadísticas:** personaje `tin;tan` · modo `C-codigo` · objetivo `presencia` · gancho `pregunta con objeto y caras mirándolo` · emoción `nostalgia-sorpresa` · duración `28.5` · formato `short-9x16` · créditos `3.2` (voz). La fila se añade a `estadisticas/etiquetas.csv` cuando el video tenga su identificador de YouTube.
+- **Revisión de resultados:** a las 72 horas (primera lectura, sin decidir nada), a los 7 días y a los 28 días de publicado. Métricas y qué elemento se ajusta con cada una: tabla «Después de publicar» de `perfil_emocional.md`. Todas las metas son «establecer línea base»; se compara con el short 1 sin sacar conclusiones (menos de 5 videos por grupo no deciden, `manual/10`, sección 4).
