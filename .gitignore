@@ -19,3 +19,6 @@ video-studio/proyectos/*/05_audio/musica.wav
 video-studio/proyectos/*/05_audio/mezcla*.wav
 # Diccionarios del corrector: se instalan con instalar_corrector.sh, no van al repo
 video-studio/herramientas/diccionarios/
+
+# modelo de reconocimiento de voz (1,3 GB; se descarga con instalar_oido.sh)
+video-studio/herramientas/modelos_voz/

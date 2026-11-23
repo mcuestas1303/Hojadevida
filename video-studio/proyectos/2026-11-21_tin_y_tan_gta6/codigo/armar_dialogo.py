@@ -130,7 +130,12 @@ def main():
                 partes.append(np.zeros(int(SILENCIO * SR)))
                 t += SILENCIO
         junta = tmp / "junta.wav"
-        guardar(junta, np.concatenate(partes))
+        todo = np.concatenate(partes)
+        # La grabación de Tin termina con la voz todavía sonando (-27 dB, sin cola; medido con revisar_voz.py el
+        # 2026-11-23). Fundido de salida de 120 ms para que «now» no acabe de golpe. Es edición, no regeneración.
+        n = int(0.12 * SR)
+        todo[-n:] = todo[-n:] * (np.cos(np.linspace(0, np.pi / 2, n)) ** 2).reshape((-1,) + todo.shape[1:])
+        guardar(junta, todo)
         ff("-i", str(junta), "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", "44100", "-b:a", "192k",
            str(AUDIO / "dialogo_110.mp3"))
     r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "json",
