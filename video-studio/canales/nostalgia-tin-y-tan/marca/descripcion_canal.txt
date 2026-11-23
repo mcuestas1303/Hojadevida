@@ -2,7 +2,7 @@ NOMBRE DEL CANAL
 Tin & Tan
 
 IDENTIFICADOR SUGERIDO
-@TinAndTan (o la variante libre que ofrezca YouTube)
+@TinandTan (el que quedó en el canal; URL https://www.youtube.com/channel/UCf4M-1YDL-_bwSOghElOZKw)
 
 DESCRIPCIÓN DEL CANAL (inglés, EE. UU.; se pega tal cual en YouTube Studio → Personalización → Perfil → Descripción)
 Tin & Tan: nostalgia, calculated.

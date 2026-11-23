@@ -265,3 +265,5 @@ renderizo y paso los controles; el resultado queda en `proyectos/2026-11-21_tin_
 - Controles en `07_revision/vuelta_01/` (texto 0 errores, ≈ 93 % en paleta, −14,0 LUFS, bucle). **Sin escucha** y
   sin firmas del supervisor, del diseñador de sonido ni del director creativo.
 - El dueño pidió revisarlo y dar su opinión en el Generador («una vez termines reviso y te doy feedback»).
+
+| 2026-11-21 | Keter → Equipo | Marca de Tin & Tan cargada y publicada en el canal con el sí del dueño (banner, perfil, marca de agua al final del video, descripción en inglés). Identificador @TinandTan, canal UCf4M-1YDL-_bwSOghElOZKw. Palabras clave sin cargar |

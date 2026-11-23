@@ -27,8 +27,9 @@
 | Campo | Valor |
 |---|---|
 | Nombre | **Tin & Tan** (canal nuevo, aparte) |
-| Identificador | por definir al crearlo (`@TinAndTan` o la variante libre) |
-| Estado | **creado** (lo confirmó el dueño el 2026-11-21: «ya existe»). Falta anotar aquí su identificador (@…) y su enlace |
+| Identificador | **@TinandTan** · https://www.youtube.com/channel/UCf4M-1YDL-_bwSOghElOZKw |
+| Estado | **activo** (2026-11-21). Marca cargada por Keter con el sí del dueño: banner, foto de perfil, marca de agua (al final del video) y descripción en inglés. **Palabras clave del canal: sin cargar** (están en `marca/descripcion_canal.txt`) |
+| Videos | TIN-EN-S-001, publicado el 2026-11-21: https://youtube.com/shorts/s9r5bmmNykY |
 | TikTok | lo abre el dueño con su mismo correo; perfil sin armar |
 
 El canal **«Tiky & Lumi»** (@TikyAndLumi, https://www.youtube.com/channel/UCO6HZWJfilFtsrI4GBEm2gw, creado el
