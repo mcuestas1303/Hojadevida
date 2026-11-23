@@ -417,7 +417,7 @@ Sep 17 to Nov 19, 2026: 13 + 31 + 19 = 63 more days.
 4,748 + 63 = 4,811 days.
 A baby born that day is a teenager now.
 
-Release dates: Wikipedia, "Grand Theft Auto V" and "Grand Theft Auto VI", read on 2026-11-21. The GTA 6 date was not checked on the publisher's website.
+Release dates: GTA 6, Rockstar Games official site ("Grand Theft Auto VI Now Available", November 19, 2026), read on 2026-11-23. GTA 5, Wikipedia, "Grand Theft Auto V", read on 2026-11-21.
 Not affiliated with Rockstar Games or Take-Two Interactive.
 ```
 

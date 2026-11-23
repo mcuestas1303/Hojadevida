@@ -21,7 +21,7 @@
 | Dato | Valor | Fuente y fecha |
 |---|---|---|
 | Lanzamiento de Grand Theft Auto V | 17 de septiembre de 2013 (PlayStation 3 y Xbox 360) | Wikipedia en inglés, «Grand Theft Auto V», abierta y leída el 2026-11-21 |
-| Lanzamiento de Grand Theft Auto VI | 19 de noviembre de 2026 (PlayStation 5 y Xbox Series X/S), tras dos retrasos | Wikipedia en inglés, «Grand Theft Auto VI», abierta y leída el 2026-11-21. **No leído en Rockstar Games** (sitio sin acceso) |
+| Lanzamiento de Grand Theft Auto VI | 19 de noviembre de 2026 (PlayStation 5 y Xbox Series X/S), tras dos retrasos | **Rockstar Games, sitio oficial**, https://www.rockstargames.com/VI, abierto y leído el 2026-11-23: «Grand Theft Auto VI Now Available — November 19, 2026». También Wikipedia en inglés (leída el 2026-11-21) |
 | Años completos | 13 | 2013-09-17 → 2026-09-17 |
 | Días de esos 13 años | 13 × 365 = 4.745, más 3 días bisiestos (2016, 2020, 2024) = 4.748 | cálculo |
 | Del 17 de sept. al 19 de nov. | 13 + 31 + 19 = 63 días | cálculo |
