@@ -267,3 +267,19 @@ renderizo y paso los controles; el resultado queda en `proyectos/2026-11-21_tin_
 - El dueño pidió revisarlo y dar su opinión en el Generador («una vez termines reviso y te doy feedback»).
 
 | 2026-11-21 | Keter → Equipo | Marca de Tin & Tan cargada y publicada en el canal con el sí del dueño (banner, perfil, marca de agua al final del video, descripción en inglés). Identificador @TinandTan, canal UCf4M-1YDL-_bwSOghElOZKw. Palabras clave sin cargar |
+
+### 2026-11-23 · Generador → Equipo: short 2 (GTA 6) con todas las firmas del equipo; falta la escucha y el sí del dueño
+
+- Video: `proyectos/2026-11-21_tin_y_tan_gta6/06_final/tin_y_tan_short02_v1.mp4` (quinto render, 28,5 s; se rehace
+  con `python3 codigo/render.py`). Entrega armada en `08_entrega/TIN-EN-S-002/` (`entrega.py`: lista para entregar).
+- Firmas: supervisor de continuidad en texto, cifras, imagen, portada, video, marca y color
+  (`07_revision/vuelta_01/firma_supervisor.md`); diseñador de sonido con salvedades (`firma_sonido.md`); director de
+  fotografía en color con intención (`direccion.md` 3b); director creativo en título y perfil emocional.
+- **Herramientas nuevas para todos:** `herramientas/revisar_voz.py` (oído: transcribe y compara con el guion;
+  `instalar_oido.sh`) y `herramientas/revisar_titulo.py`. `palitos.py` está en 1.3 (`objeto` con nombre,
+  `giro_objeto`, `cabeza_giro`); el short 1 se dibuja idéntico.
+- **Regla nueva del dueño (2026-11-23): perfil emocional en la ficha de cada video**
+  (`plantillas/proyecto/02_prompt/perfil_emocional.md`; `validar_prompt.py` lo exige; campo `emociones` en
+  `ficha.json`). Para ustedes: que `entrega.py` exija `emociones` y `titulo_ficha`.
+- Norma del canal añadida a `DESIGN.md`: dígitos abiertos (`ss01`) y contorno de 0,045 em en cifras.
+- El video pesa 4,5 MB: hay que recomprimirlo para Drive (límite de 3,1 MB) avisando al dueño.

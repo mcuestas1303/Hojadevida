@@ -57,3 +57,32 @@ No pido cambiar `PAUSA_INTERNA` (0,15 s): alargarla mueve todos los cortes de la
 ## Hallazgo sobre las herramientas
 
 `revisar_voz.py --tramos` sobre el mp4 marca «el audio termina con voz sonando: posible final cortado» (−31 dB en los últimos 50 ms). Es un falso positivo para la mezcla: en 28,5 s ya no hay voz (termina en 27,33 s) y esos −31 dB son la música. El aviso solo vale sobre la voz sola (`dialogo_110.mp3`), donde sí se confirmó el corte de origen en «now».
+
+---
+
+# Segunda medición (quinto render)
+
+Fecha 2026-11-23. Mismo archivo, `06_final/tin_y_tan_short02_v1.mp4`, regenerado a las 17:10 (audio de `05_audio/` de las 17:08). Cambió: fundido final de la voz 0,12 a 0,20 s, ding de «4,811» a 22,533 s, contador de «4,748» a 15,742 s (pasos 4,746 en 15,74; 4,747 en 16,1; 4,748 en 16,68), pop nuevo en 6,6 s, clics del botón a 0,267 / 0,767 y 27,767 / 28,267 s, hoja de la toma 9 a 19,25 s (esta última no estaba en el aviso; la leí en `medidas_audio.json`), y 49 golpes (eran 47), todos en su tiempo. La voz (`dialogo_110.mp3`) es la misma salvo el fundido. Mismo límite: nadie ha oído la pieza.
+
+| Control | Medida | Resultado |
+|---|---|---|
+| Transcripción de la mezcla (mp4) contra guion | `revisar_voz.py`: 75 palabras, 0 diferencias | PASA (palabras) |
+| Estrés +12 dB de efectos+música (9 líneas y guion completo) | 0 diferencias en las 9 y en el completo (sobre las pistas nuevas; +18 y +24 no se repitieron: el estrés de +24 rompía en la primera medición y el fondo apenas cambió) | PASA |
+| Sonoridad y pico | −14,0 LUFS, pico −1,3 dBTP (`ebur128`), LRA 1,9 LU | PASA |
+| Clics y saturación | 0 clics por el detector global (mp4), pico de muestra 0,863, 0 muestras ≥ 0,999 y 0 > 0,95. Empalme del bucle: salto 0,0013; últimos 20 ms −31,6 dB, primeros −9,6 dB | PASA |
+| Cola de «now» (fundido de 0,20 s) | Voz por 10 ms: −17 dB (27,18 s), −21 (27,20), −26 (27,24), −31 (27,26), −37 (27,28), −53 (27,30), silencio en 27,32 s. **Mejoró en la forma**: antes bajaba de −15 a −53 dB en 100 ms (27,21 a 27,31 s); ahora empieza a caer 80 ms antes y la pendiente es más suave. **No cambió** el instante en que calla (27,32 s) ni lo que queda hasta el golpe: **170 ms de música sola** (−26,3 dB) hasta 27,5 s. La grabación sigue cortada de origen | PASA (sin clic); si suena natural: NO COMPROBABLE SIN OÍDO HUMANO |
+| Arranque: golpe frente a la primera sílaba | Igual: `thunk` en 0,0004 s, primera sílaba sobre −28 dB en 0,016 s; voz/fondo 0 a 0,1 s +1,6 dB; 0,1 a 0,3 s +9,6 dB | PASA (tiempo); el tapado de «Re-»: NO COMPROBABLE SIN OÍDO HUMANO |
+| Voz/fondo en golpes nuevos (peor ventana de 200 ms con voz activa) | 6,6 s (pop): +4,4 dB; 15,742 s: +5,7 (16,1 s: +5,0; 16,68 s: +9,4); 22,533 s (ding): **+2,3 dB**, el más justo y el único con pico de efecto de −5,2 dBFS bajo la voz; 19,25 s (hoja): +4,7; botón 0,267 s: +7,6; 0,767 s: +6,0; 27,767 y 28,267 s caen sin voz. Los nuevos quedan **mejor** que las peores ventanas de la primera medición (−3,5 a +0,7 dB), porque se movieron a huecos de la voz | PASA |
+
+## Firma actualizada
+
+**FIRMADO con salvedades** (las mismas salvedades al oído que antes, sin las del fundido de 0,12 s):
+
+1. «now» (grabación cortada de origen; el fundido de 0,20 s es el arreglo pedido y mejora la caída, 170 ms de música sola hasta el golpe de 27,5 s).
+2. Ataque de «eight» en 22,23 s (viene de la grabación).
+3. «G T A» y las cifras: pronunciación y acento.
+4. Pausas de 0,08 a 0,11 s (sin cambios).
+5. El `thunk` sobre «Remember» (+1,6 dB).
+6. Nueva, menor: el ding de 22,533 s entra con voz/fondo +2,3 dB sobre «days»; si al oído tapa, bajarlo.
+
+Arreglos nuevos: ninguno obligatorio. El arreglo de la cola con reverberación sigue siendo opcional y solo si la escucha de «now» no convence.

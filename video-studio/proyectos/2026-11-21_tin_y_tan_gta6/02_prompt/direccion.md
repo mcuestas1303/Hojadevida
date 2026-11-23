@@ -101,41 +101,42 @@ Lo que el audio ES (2026-11-23, medido; firma en `07_revision/vuelta_01/firma_so
 
 | Toma | Voz (texto exacto) | Efectos (segundo) | Música |
 |---|---|---|---|
-| 1 (0,0 a 1,0) | L1 Tan (0,00 a 1,93): «Remember buying G T A five at midnight?» | thunk y zumbido 0,0; botón 0,5 | patrón de 120 BPM, −24 LUFS, entra con el video |
+| 1 (0,0 a 1,0) | L1 Tan (0,00 a 1,93): «Remember buying G T A five at midnight?» | thunk y zumbido 0,0; botón 0,267 y 0,767 | patrón de 120 BPM, −24 LUFS, entra con el video |
 | 2 (1,0 a 2,0) | sigue L1 | clic con borrón 1,0 | igual |
 | 3 (2,0 a 5,0) | L2 Tan (2,16 a 5,12): «So, how many days did we wait for G T A six?» | clic con borrón 2,0; hoja 3,8; clic seco 5,0 | igual |
-| 4 (5,0 a 9,0) | L3 Tin (5,35 a 8,83): «G T A five came out September seventeenth, twenty thirteen.» | ninguno (solo voz y música) | igual |
+| 4 (5,0 a 9,0) | L3 Tin (5,35 a 8,83): «G T A five came out September seventeenth, twenty thirteen.» | pop de la fecha que entra 6,6 | igual |
 | 5 (9,0 a 11,0) | L4 Tin (9,06 a 13,64): «Thirteen years times three sixty-five: four thousand, seven hundred forty-five days.» | clic con borrón 9,0; 13 bloques de 9,2 a 10,4 (cada 0,1) | igual |
 | 6 (11,0 a 13,5) | sigue L4 (2.º tramo en 11,13) | tictac del contador 11,15 | igual |
 | 7 (13,5 a 15,0) | L5 Tin (13,87 a 17,54): «Add three leap days: four thousand, seven hundred forty-eight.» | pop 13,9; 14,2; 14,5; clic seco 15,0 | igual |
-| 8 (15,0 a 17,5) | sigue L5 (2.º tramo en 15,26) | tictac 15,38 | igual |
-| 9 (17,5 a 21,0) | L6 Tin (17,77 a 21,15): «Plus sixty-three days: September seventeenth to November nineteenth.» | clic con borrón 17,5; 6 hojas cortas de 17,56 a 18,46 (cada 0,18); hoja 19,4; clic seco 21,0 | igual |
-| 10 (21,0 a 23,5) | L7 Tin (21,38 a 23,56): «Four thousand, eight hundred eleven days.» | tictac 21,4; ding 22,5; clic seco 23,5 | igual |
+| 8 (15,0 a 17,5) | sigue L5 (2.º tramo en 15,26) | tictac 15,742 (4,746), 16,1 (4,747) y 16,68 (4,748) | igual |
+| 9 (17,5 a 21,0) | L6 Tin (17,77 a 21,15): «Plus sixty-three days: September seventeenth to November nineteenth.» | clic con borrón 17,5; 6 hojas cortas de 17,56 a 18,46 (cada 0,18); hoja 19,25; clic seco 21,0 | igual |
+| 10 (21,0 a 23,5) | L7 Tin (21,38 a 23,56): «Four thousand, eight hundred eleven days.» | tictac 21,4; ding 22,533; clic seco 23,5 | igual |
 | 11 (23,5 a 25,5) | L8 Tan (23,79 a 25,27): «Wow, that long?» | silencio de efectos (solo voz y música); clic con borrón 25,5 | igual |
 | 12 (25,5 a 27,5) | L9 Tin (25,50 a 27,33): «A baby born that day is a teenager now.» | pop grave 26,0; 26,5; 27,0 | igual; la voz acaba y la música sigue sola 170 ms |
-| 13 (27,5 a 28,5) | sin voz | clic con borrón, whoosh y botón 27,5; botón 28,0 | cierra en el pulso; el thunk de 0,0 abre el bucle |
+| 13 (27,5 a 28,5) | sin voz | clic con borrón y whoosh 27,5; botón 27,767 y 28,267 | cierra en el pulso; el thunk de 0,0 abre el bucle |
 
-- **Lista de golpes** (47 golpes medidos; cada uno empieza en su segundo, ≤ 1 ms):
+- **Lista de golpes** (49 golpes medidos en el quinto render; cada uno empieza en su segundo, ≤ 1 ms):
 
 | Segundo | Qué pasa en imagen | Sonido |
 |---|---|---|
 | 0,0 | arranque, mando que retumba | thunk + zumbido (golpe seco, a propósito) |
-| 0,5 | latido del botón | boton |
+| 0,267 / 0,767 | latido del botón (segunda mitad del pulso) | boton |
 | 1,0 / 2,0 / 9,0 / 17,5 / 25,5 / 27,5 | corte con borrón | clic_borron |
 | 5,0 / 15,0 / 21,0 / 23,5 | corte seco | clic |
-| 3,8 / 19,4 | vuelta de hoja | hoja |
+| 3,8 / 19,25 | vuelta de hoja | hoja |
 | 9,2 a 10,4 (13 pasos de 0,1) | bloque que se llena | bloque_0 a bloque_12 |
-| 11,15 / 15,38 / 21,4 | contador que sube | tictac_4745 / tictac_4748 / tictac_4811 |
+| 6,6 | la fecha entra en la hoja | pop |
+| 11,15 / 15,742 / 21,4 | contador que sube (el de 4,748 da 3 pasos: 15,742; 16,1; 16,68) | tictac_4745 / tictac_4748 / tictac_4811 |
 | 13,9 / 14,2 / 14,5 | marca bisiesta | pop |
 | 17,56 a 18,46 (6, cada 0,18) | hoja en blanco | hoja_corta |
-| 22,5 | llega a 4,811 | ding |
+| 22,533 | llega a 4,811 (primer fotograma con el valor final) | ding |
 | 26,0 / 26,5 / 27,0 | latido del bloque 13 | pop_grave |
-| 27,5 / 28,0 | retroceso de cámara y latido del botón | whoosh (27,5), boton (27,5 y 28,0) |
+| 27,5 / 27,767 / 28,267 | vuelve el plano de la portada y latido del botón | whoosh (27,5), boton (27,767 y 28,267) |
 
 - **Voz en off o labios:** voz en off de dos personajes de palitos sin boca animada (Tan, Zelda; Tin, Kevin); un solo clip generado por voz (3 créditos en total, ya gastados), `atempo=1,10`, cada voz a −14 LUFS. Empieza en el fotograma 0.
 - **Música:** hecha con código, patrón de 120 BPM (el pulso de 0,5 s de la rejilla), −24 LUFS, 28,5 s, 57 pulsos; sin material de terceros ni del juego (`licencias.md`). Si el dueño prefiere música licenciada, se pone dentro de la app al publicar.
 - **Mezcla medida:** −14,0 LUFS, pico real −1,3 dBTP, LRA 1,9 LU; voz/fondo por línea de 5,8 a 8,6 dB; el guion se sigue reconociendo con el fondo +18 dB (se rompe a +24).
-- **Pendiente solo al oído:** el final de «now» (la grabación llega cortada; fundido de 120 ms), el ataque de «eight» en 22,23 s, pronunciación de «G T A» y de las cifras, y las pausas acortadas (0,08 a 0,11 s).
+- **Pendiente solo al oído:** el final de «now» (la grabación llega cortada; fundido de 200 ms), el ataque de «eight» en 22,23 s, pronunciación de «G T A» y de las cifras, y las pausas acortadas (0,08 a 0,11 s).
 
 ## 6. Montaje y salida — editor-de-video
 
