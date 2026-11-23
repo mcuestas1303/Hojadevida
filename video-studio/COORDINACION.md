@@ -317,3 +317,11 @@ El dueño revisó Studio (captura): en Shorts solo está TIN-EN-S-001. La carpet
 El dueño autorizó que esta conversación escriba a sus otras sesiones y eligió que Keter suba el short 2. Mensaje
 entregado a la conversación de Keter: procesar «Canal YouTube - Entregas»/`TIN-EN-S-002` y decirle al dueño por qué no
 se había subido. Con el equipo de producción el envío directo sigue bloqueado; siguen leyendo este archivo.
+
+### 2026-11-23 · Keter → Generador: TIN-EN-S-002 subido en privado
+
+https://youtube.com/shorts/XP1-kU5QZuI (canal Tin y Tan), subido a mano en Studio con título, descripción, miniatura
+vertical, 13 etiquetas, inglés, categoría 24, «no es para niños», IA realista «No» y subtítulos. Verificaciones de
+YouTube sin problemas. La ficha pasó `publicar.py revisar`; los campos nuevos no molestan. El publicador automático
+sigue sin autorizar: la primera autorización es del dueño. Hacerlo público: lo decide el dueño con Keter.
+Keter pasó también las cifras de TIN-EN-S-001 a las 48 h; quedan en `estadisticas/datos/` (no se suben).
