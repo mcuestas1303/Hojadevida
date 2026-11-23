@@ -48,3 +48,20 @@ está firmado por su responsable todavía**.
 (toda la toma 11), «GTA 6» de 19,4 a 20,9, Tan con `curiosidad` en la toma 5 y mando de 800 px. Se repitieron todos los
 controles de la tabla sobre el archivo nuevo, con el mismo resultado (texto 0 errores, fotogramas sin marcas, color
 ≈ 93 % en paleta, −14,0 LUFS y −1,3 dBTP, bucle que empalma, prompt con 0 errores). Sigue sin escucha y sin firmas.
+
+## Firmas del supervisor de continuidad (2026-11-23, sobre el archivo del 2026-11-23 16:27)
+
+Revisión hecha de cero. Detalle, evidencia y lista completa de defectos: `07_revision/vuelta_01/firma_supervisor.md`
+(hojas propias en `vuelta_01/supervisor/`). **Veredicto general: CAMBIOS.**
+
+| Control (manual 12) | Resultado | Firma | Por qué |
+|---|---|---|---|
+| 1. Texto | NO PASA | **NO FIRMADO** | El `.srt` dice «G T A five» y «G T A six» en las líneas 1 y 2 (y «GTA 5» en la 3); la descripción da 2 errores en `revisar_texto.py` («Xbox» y «Rockstar» fuera del glosario); los dígitos clave con trazo («5», «3», «6», «13», «63») salen deformados. El texto en pantalla, leído a mano, no tiene faltas |
+| 2. Cifras | PASA CON SALVEDAD | **FIRMADO** | Recalculado: 4.745, +3 = 4.748, +63 = 4.811; contadores que solo suben; fechas y bloques bisiestos correctos. Salvedad: el número llega 0,2 s antes que su `pop` y su ding (22,3 contra 22,5 s) |
+| 4. Imagen | NO PASA | **NO FIRMADO** | Palanca del mando que corta el contorno; Tan con `pensando` de 15,0 a 21,0 s se lee como molestia; 9 px fuera de la zona segura en la toma 12 |
+| 4.5 Portada | NO PASA | **NO FIRMADO** | En el video «GTA 5?» va en y ≈ 288–380, fuera de la zona útil (380–1440) y de la franja 400–700; `portada_short02.png` cumple, pero no es el fotograma 0; sin caras |
+| 5. Video | PASA CON SALVEDAD en lo técnico | **NO FIRMADO** | Formato, fotogramas, destellos y bucle pasan; pendiente del nuevo render que exigen los controles 1 y 4, y del control 3 |
+| 7. Marca del canal | PASA CON SALVEDAD | **FIRMADO** | Paleta, tipografía, capitalización y lados según `DESIGN.md`. Salvedad: el lápiz de Tin no aparece en todo el video |
+| 8. Color (medición) | PASA CON SALVEDAD | **FIRMADO** | Video ≈ 93 % en paleta, portada ≈ 95 %, tramo 21,0–27,5 s ≈ 94 %; ±2 % entre segundos; tinta/papel 12,6:1; tinta/tomate 3,5:1 aceptado en 3b; falta copiarlo a `ficha.json` cuando exista |
+| Rúbrica | no existe | — | Ni en `07_revision/` ni en el prompt hay criterios con puntaje; §10 y §14 se repasaron como lista |
+| Título (`revisar_titulo.py`) | PASA con `--proyecto` y `--descripcion` | — | Sin `--proyecto` da M13 contra su propia entrada en `titulos_usados.json` |
