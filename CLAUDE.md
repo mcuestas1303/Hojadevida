@@ -84,6 +84,10 @@ exclusivamente los prompts y fichas».
   cada elemento (contenido, colores, animaciones, efectos de luz, velocidad del video y del audio, voces, música,
   efectos, texto, cierre, título) qué emoción se busca, con qué fundamento, cómo acerca al objetivo y con qué métrica
   se verá. Lo escribe el director creativo (en infantil decide la psicóloga); `validar_prompt.py` lo exige lleno.
+- Efectos y animación (regla del dueño, 2026-11-23): «cada efecto animado comunica y al mismo tiempo provoca una
+  emoción, por eso debe ser basado en tu investigación». Ningún efecto se elige por gusto ni se le pregunta al dueño
+  cuál prefiere: se elige con `video-studio/manual/14_efectos_y_emocion.md` (qué comunica, qué emoción provoca, con
+  fuente) y se justifica en el perfil emocional del video.
 - Color con intención: 2 neutros + 1 acento; por qué cada color y cómo ayuda al objetivo va en la dirección
   (sección 3b) y en `ficha.json`; se mide con `video-studio/herramientas/revisar_color.py` (`manual/13`).
 

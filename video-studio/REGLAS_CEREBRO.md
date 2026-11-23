@@ -132,3 +132,7 @@
 - **El objetivo de entrar al Programa de socios rige para todos los canales (dueño, 2026-11-23):** «Rige para todos
   los canales que trabajemos». Incluye Tin & Tan y Tiky & Lumi. En el canal infantil se persigue dentro de los
   límites de `infantil/guia_1_a_3.md` (sin ganchos, sin pedir suscripción al niño) y del veto de la psicóloga.
+
+- **Los efectos se eligen por investigación, no por gusto (dueño, 2026-11-23):** «No es lo que a mí me guste; cada
+  efecto animado comunica y al mismo tiempo provoca una emoción, por eso debe ser basado en tu investigación».
+  Gramática de efectos: `manual/14_efectos_y_emocion.md`. No se le pregunta al dueño qué efecto prefiere.

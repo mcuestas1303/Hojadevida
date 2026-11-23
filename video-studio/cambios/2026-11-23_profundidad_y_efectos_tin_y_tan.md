@@ -29,12 +29,20 @@
 1. El dueño no dijo cuáles ejemplos son los de «profundidad» ni cuál le gusta; Keter se lo preguntó.
 2. Cuánto efecto aguanta el público del canal sin que se sienta agresivo.
 
+## Corrección del dueño (2026-11-23)
+
+Textual: «No es lo que a mí me guste; cada efecto animado comunica y al mismo tiempo provoca una emoción, por eso
+debe ser basado en tu investigación».
+
 ## Decisión del equipo
 
-Antes de escribir el prompt del tercer video se hace una **prueba de efectos de ≈ 15 s** con Tin y Tan, por código y
-sin créditos, que muestra cada técnica por separado y rotulada. El dueño elige con la prueba delante; lo elegido pasa
-a `DESIGN.md` y al prompt del short 3.
+1. Los efectos **no se eligen por gusto**: cada uno se usa por lo que comunica y la emoción que provoca, según la
+   investigación del equipo (`manual/14_efectos_y_emocion.md`, con fuentes), y por cómo esa emoción acerca al objetivo
+   (entrar al Programa de socios: que se queden a mirar, que lleguen al final, que se suscriban).
+2. La prueba de efectos por código sigue, pero como **comprobación técnica** (que cada efecto se pueda hacer, se lea
+   en un teléfono y no moleste), no como catálogo para que el dueño escoja.
+3. La selección para cada video la hace el equipo y queda escrita en su perfil emocional, fila por fila.
 
 ## Decisión del dueño
 
-Pendiente.
+No elige efectos. Acompaña con las ideas y lo psicológico; se le informa qué se eligió y por qué.
