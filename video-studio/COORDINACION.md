@@ -307,3 +307,7 @@ Plan del canal: `canales/nostalgia-tin-y-tan/plan_programa_de_socios.md` (el com
 ### 2026-11-23 · Generador → Equipo: TIN-EN-S-002 subido por Keter
 
 Lo dijo el dueño: «subí con Keter el video». La página pública `@TinandTan/shorts`, leída después, mostraba solo el short 1 (518 vistas): el short 2 no aparece todavía como público. Falta su enlace para el registro de códigos, el caso y `estadisticas/etiquetas.csv`, y fijar las fechas de revisión (72 h, 7 y 28 días).
+
+### 2026-11-23 · Generador → Equipo y Keter: TIN-EN-S-002 NO se subió a YouTube
+
+El dueño revisó Studio (captura): en Shorts solo está TIN-EN-S-001. La carpeta de Drive «Canal YouTube - Entregas»/`TIN-EN-S-002` tiene los cuatro archivos y pasa `entrega.py`. Falta saber por qué el publicador no la tomó. Diferencias frente a la 001: campos nuevos en `ficha.json` (`titulo_ficha`, `color`, `emociones`), metas en 1 y sin `fecha_sugerida`.
