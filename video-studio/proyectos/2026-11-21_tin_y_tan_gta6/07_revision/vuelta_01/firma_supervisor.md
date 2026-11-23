@@ -158,3 +158,65 @@ Supervisor de continuidad, 2026-11-23. Veredicto general: `CAMBIOS`.
 | 8. Color (medición) | **FIRMADO** (con salvedad) |
 
 Supervisor de continuidad, 2026-11-23, segunda revisión.
+
+---
+
+# Tercera revisión (quinto render)
+
+- **Fecha:** 2026-11-23.
+- **Pieza revisada:** `06_final/tin_y_tan_short02_v1.mp4` del 2026-11-23 17:10 (1080×1920, 30 fps, H.264, yuv420p, 855 fotogramas, 28,5 s) y `06_final/portada_short02.png` de la misma hora. Leído de nuevo.
+- **Cómo se revisó:** hojas nuevas a 2 fotogramas por segundo (`vuelta_01/supervisor_c/hoja_01..03.jpg`, las tres vistas); fotogramas 0,0 · 0,3 · 0,8 · 19,3 · 19,6 · 20,5 · 27,8 · 28,4 s a tamaño completo; las dos caras ampliadas 3×; la portada reducida al 25 %; medidas mías, en píxeles, sobre el fotograma 0, sobre `portada_short02.png` y sobre los fotogramas 0 a 26 y 835 a 854; caja de dibujo en los 855 fotogramas.
+- **No revisado por mí:** control 3 (no escuché nada).
+
+## Veredicto general
+
+**APROBADO.** Firmo los siete puntos, 4.5 con una salvedad medida (2 a 5 px de la gorra de Tin fuera de la zona útil).
+
+## Control 4.5, punto por punto («Portada de los Shorts», `ENTREGA_YOUTUBE.md`)
+
+| # | Regla | Lo que medí o vi | Resultado |
+|---|---|---|---|
+| 1 | Los primeros 0,5 a 1 s son la portada y el video sigue sin corte brusco | La misma composición de 0,0 a 1,0 s (vista en 0,0, 0,3 y 0,8 s). Bandas en los fotogramas 0 a 26: texto y 482–682, mando y 730–1090, personajes desde y 1150. El texto sale en 0,9 s y el primer corte es en 1,0 s. El mando retumba y el botón late: hay movimiento desde el fotograma 0 | cumple |
+| 2 | Miniatura vertical de 1080×1920 | `portada_short02.png`: 1080×1920, 155 kB; es el fotograma 0 (diferencia media 0,62 de 255, por la compresión del video). El nombre `miniatura.png` lo pone la entrega | cumple |
+| 3 | Zona útil x 60–960, y 380–1440: fuera, nunca texto ni caras | Texto x 116–848, y 492–682. Cabeza de Tan (con rodete) x 114–310, y 1196–1370. Cabeza de Tin (con gorra) **x 745–962**, y 1157–1369. Lo que pasa de x = 960 son 2 columnas del contorno de atrás de la gorra (filas 1226–1257); con el rebote llega a **x = 965**. Ojo, lente y boca de Tin están en x ≈ 780–870. Fuera de la zona, por abajo, solo cuerpos y suelo | **cumple con salvedad** |
+| 4 | Texto: hasta 4 palabras en 2 líneas, entre y 400 y 700, letra de 120 px o más, mayúscula inicial, clave en el amarillo, sin la respuesta, sin copiar el título | «GTA 5?»: 2 palabras, 1 línea, y 492–682 (190 px de alto de mayúscula), «5» en mostaza con contorno, sin cifra de respuesta; el título es otro | cumple |
+| 5 | Objeto en el centro (y 720–1100); caras con curiosidad o sorpresa, mirando el objeto | Mando x 240–840 (centro en x = 540), y 745–1075; con el balanceo, y 730–1090. Tan: ojo grande con brillo, ceja levantada y sonrisa abierta con dientes: se lee como sorpresa alegre. Tin: ojo grande tras el lente y boca en «o»: se lee como sorpresa. Los dos de perfil hacia el centro y con la cabeza levantada: se lee que miran al mando, que está arriba entre los dos. Al 25 % se siguen distinguiendo texto, mando y los dos mirando hacia arriba | cumple |
+| 6 | El video cumple lo que promete | La portada pregunta por GTA 5 con un mando; el video cuenta los días desde GTA 5 hasta GTA 6 | cumple |
+
+- **Nada tapa nada:** hueco mínimo texto–mando 46 px y mando–cabezas 60 px en todo el segundo y en la toma 13.
+- **Salvedad del punto 3:** `notas.md` dice que la cara de Tin llega a x = 955 (958 con el rebote). Yo mido 962 y 965 sobre el PNG y sobre el video: lo que sobresale es contorno de la gorra, no rasgos de la cara. Lo acepto porque la zona útil es una estimación de un tercero (la propia regla lo dice) y son 2 a 5 px de gorra. Si hay otro render por cualquier motivo, mover a Tin unos 10 px a la izquierda; y corregir la cifra en `notas.md`.
+- **Detalles de dibujo de las caras de perfil (no bloquean):** el rubor de Tan asoma pegado a la comisura de la boca; bajo la visera de Tin se ve un trazo corto de tinta (la ceja girada); la visera de perfil es una barra fina (fallo conocido de la ficha: se lee como gorra). Las cabezas miden 176 px de diámetro, contra 236 px en el resto del video.
+
+## Tabla por control
+
+| Control | Qué miré | Evidencia | Resultado | Firma |
+|---|---|---|---|---|
+| 1. Texto | `revisar_texto.py` (srt, `render.py`, `miniatura.py`, `descripcion_s8.txt`); lectura a mano del `.srt` y de los textos de los fotogramas vistos | 53 textos, **0 errores**. `.srt` sin cambios y correcto (nueve líneas leídas). En pantalla: «GTA 5?», «+63 days», «Sep 17, 2026», «GTA 6», «Nov 19, 2026» y el resto de las hojas: sin faltas, dígitos limpios | **PASA** | **FIRMADO** (sigue valiendo) |
+| 2. Cifras | Hojas nuevas | Mismos valores que en la segunda revisión: 646, 3,339, 4,483, 4,741, 4,745 / 4,745, 4,747, 4,748 / 53, 63 / 4,748, 4,783, 4,807, 4,811. Las constantes de los contadores no cambiaron | **PASA** | **FIRMADO** (sigue valiendo) |
+| 4. Imagen | Tomas 1 y 13 nuevas contra las fichas; `cabeza_giro`; resto de las hojas | Tan y Tin de perfil con sus colores, rodete, bufanda con dos puntas, gorra con botón, lente con brillo, manos de punto y zapatos. La inclinación de cabeza está anotada en las fichas como variación. Tan a la izquierda, Tin a la derecha. Caja de dibujo: todo dentro de x 100–980, y 250–1670, salvo los fotogramas de borrón (9,00–9,03, 17,43–17,47, 25,50–25,53, 27,43–27,47; hasta 5 px). «GTA 6» entra ya con «Nov 19, 2026» (visto en 19,3 y 19,6 s): el defecto menor 2 de la segunda revisión queda resuelto | **PASA CON SALVEDAD** (menores de antes: cabecera marrón en la toma 4; calendario rozando la visera en la toma 12) | **FIRMADO** (sigue valiendo) |
+| 4.5 Portada | La tabla de arriba | Los seis puntos | **PASA CON SALVEDAD** (2 a 5 px de gorra fuera de x = 960) | **FIRMADO** |
+| 5. Video | `ffprobe`, `revisar_fotogramas.py`, `postpro.py destellos`, diferencia entre fotogramas | Formato correcto. «Sin marcas». 0 destellos. Ningún tramo de 8 fotogramas o más sin cambio. Bucle: fotograma 854 contra 0, 1,68 de 255 (vecinos de la toma 13: 1,76): empalma; vistos 27,8 y 28,4 s, misma composición que 0,0 s. `.srt` sin cambios frente a la línea de tiempo | **PASA CON SALVEDAD** (5.4 depende además del control 3) | **FIRMADO** (sigue valiendo) |
+| 7. Marca del canal | `DESIGN.md` y las tomas nuevas | `DESIGN.md` ya recoge los dígitos `ss01` y el contorno de 0,045 em como norma, con la nota de que el short 1 quedó con los dígitos por defecto: la salvedad anterior queda resuelta. Lados, paleta y tipografía correctos en la portada nueva | **PASA** | **FIRMADO** (sigue valiendo) |
+| 8. Color (medición) | `revisar_color.py` sobre el video y la portada | Video ≈ 93 % en paleta, saturación ≈ 17 %, luminosidad ≈ 89 %, luminosidad ±2 % y saturación ±1 % entre segundos. Portada ≈ 94 %. Tomas 1 y 13: acento mostaza = «5» + mando; cabezas, gorra y bufanda son identidad | **PASA CON SALVEDAD** (la de siempre: tinta/tomate 3,5:1, aceptado en 3b) | **FIRMADO** (sigue valiendo) |
+
+## Short 1 con `palitos.py` 1.3
+
+Saqué los fotogramas 0, 450 y 800 de `proyectos/2026-11-21_tin_y_tan_casete_y_lapiz/codigo/render_v2.py` dos veces: con `palitos.py` 1.3 (el actual) y con el 1.2 del commit `139da05`. Los tres pares son **idénticos byte a byte** (1080×1920).
+
+## Título
+
+`revisar_titulo.py` con `--proyecto` y `--descripcion`: PASA, 0 errores, 0 avisos. Falta la revisión humana del director creativo.
+
+## Firmas (quinto render)
+
+| Control | Firma |
+|---|---|
+| 1. Texto | **FIRMADO** |
+| 2. Cifras | **FIRMADO** |
+| 4. Imagen | **FIRMADO** (con salvedades menores) |
+| 4.5 Portada | **FIRMADO** (con salvedad: 2 a 5 px de la gorra de Tin fuera de x = 960) |
+| 5. Video | **FIRMADO** (5.4 depende además del control 3) |
+| 7. Marca del canal | **FIRMADO** |
+| 8. Color (medición) | **FIRMADO** (con salvedad) |
+
+Supervisor de continuidad, 2026-11-23, tercera revisión. Veredicto general: `APROBADO`.

@@ -438,7 +438,7 @@ Filtro: `revisar_titulo.py` v1.0 (2026-11-21). Estudio y reglas: `video-studio/c
 | `frase_de_busqueda` | how many days did we wait for gta 6 |
 | `fuente_de_la_frase` | `comercial/titulos.md` §3a y §8; volumen: sin dato |
 | `formula` | F1 (la pregunta es el título) |
-| `alternativa_1` | GTA 5 to GTA 6: How Many Days Did We Wait? (42 caracteres; frase «how many days did we wait»; filtro: NO PASA: M4 la frase termina en el carácter 41; debe terminar antes del 40 · avisos: M4 la frase empieza en el carácter 17; mejor al inicio (1 a 4)) |
+| `alternativa_1` | How Many Days Between GTA 5 and GTA 6? (38 caracteres; frase «how many days between gta 5 and gta 6»; filtro: PASA) |
 | `alternativa_2` | How Long Did We Wait for GTA 6? We Counted (42 caracteres; frase «how long did we wait for gta 6»; filtro: PASA) |
 | `uso_de_las_alternativas` | Reserva. YouTube no ofrece prueba A/B de títulos en Shorts ni en videos «hechos para niños» (ayuda oficial, leída el 2026-11-21) |
 | `filtro` | **PASA** · errores: ninguno · avisos: ninguno |

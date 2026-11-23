@@ -110,3 +110,21 @@ perfil es horizontal y el mando queda por encima de las cabezas.
 inclinada 25° (`palitos.py` 1.3, `cabeza_giro`); los cuatro botones del mando iguales en el fotograma 0. Tabla de la
 regla de portada, punto por punto y con medidas, en `vuelta_01/notas.md`, «Quinto render». Controles repetidos con el
 mismo resultado. **Control 4.5 (portada): pendiente de la firma del supervisor sobre este archivo.**
+
+## Firmas del supervisor de continuidad, tercera revisión (2026-11-23, quinto render, archivo de las 17:10)
+
+Revisado sobre el archivo nuevo; la portada, de cero y con medidas propias. Detalle: `vuelta_01/firma_supervisor.md`,
+«Tercera revisión (quinto render)»; hojas en `vuelta_01/supervisor_c/`. Estas firmas sustituyen a las anteriores.
+**Veredicto general: APROBADO.**
+
+| Control (manual 12) | Resultado | Firma | Evidencia |
+|---|---|---|---|
+| 1. Texto | PASA | **FIRMADO** | `revisar_texto.py` (srt, `render.py`, `miniatura.py`, descripción): 53 textos, 0 errores; `.srt` y textos en pantalla leídos a mano |
+| 2. Cifras | PASA | **FIRMADO** | Mismos valores y contadores que en la segunda revisión; 4.745 + 3 + 63 = 4.811 |
+| 4. Imagen | PASA CON SALVEDAD | **FIRMADO** | Tomas 1 y 13 nuevas según las fichas (inclinación de cabeza anotada); todo dentro de la zona segura salvo los borrones; «GTA 6» entra ya con la hoja de noviembre. Menores: cabecera marrón en la toma 4; calendario rozando la visera en la toma 12 |
+| 4.5 Portada | PASA CON SALVEDAD | **FIRMADO** | Fotograma 0 = `portada_short02.png` (1080×1920). Texto x 116–848, y 492–682; mando x 240–840, y 745–1075; Tan x 114–310; Tin x 745–962. Caras con sorpresa y mirando al mando. Huecos mínimos 46 y 60 px. Salvedad: el contorno de atrás de la gorra de Tin pasa de x = 960 por 2 px (5 con el rebote); `notas.md` dice 955–958 |
+| 5. Video | PASA CON SALVEDAD | **FIRMADO** | Formato correcto, `revisar_fotogramas.py` sin marcas, 0 destellos, bucle 1,68 de 255. El punto 5.4 depende además del control 3 |
+| 7. Marca del canal | PASA | **FIRMADO** | `DESIGN.md` ya recoge los dígitos `ss01` y el contorno de 0,045 em |
+| 8. Color (medición) | PASA CON SALVEDAD | **FIRMADO** | Video ≈ 93 %, portada ≈ 94 %, luminosidad ±2 %; tinta/tomate 3,5:1 aceptado en 3b |
+| Short 1 con `palitos.py` 1.3 | sin cambios | — | Fotogramas 0, 450 y 800 de `render_v2.py` idénticos byte a byte con `palitos.py` 1.3 y con el 1.2 del commit `139da05` |
+| Título | PASA | — | 0 errores, 0 avisos; falta la revisión humana del director creativo |
