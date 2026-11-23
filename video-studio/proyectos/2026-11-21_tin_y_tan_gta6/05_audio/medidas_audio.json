@@ -13,7 +13,7 @@
    -7.9
   ],
   "efectos fuera de la voz (arranque y cierre)": [
-   -22.0,
+   -22.1,
    -6.0
   ],
   "musica.wav": [
@@ -50,10 +50,17 @@
    "en_su_tiempo": true
   },
   {
-   "segundo": 0.5,
+   "segundo": 0.267,
    "sonido": "boton",
-   "atado_a": "latido del botón, toma 1",
-   "inicio_medido": 0.5001041666666667,
+   "atado_a": "latido del botón, toma 1 (segunda mitad del pulso)",
+   "inicio_medido": 0.26677083333333335,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 0.767,
+   "sonido": "boton",
+   "atado_a": "latido del botón, toma 1 (segunda mitad del pulso)",
+   "inicio_medido": 0.7667708333333334,
    "en_su_tiempo": true
   },
   {
@@ -347,28 +354,28 @@
    "segundo": 27.5,
    "sonido": "clic_borron",
    "atado_a": "corte con borrón en 27.5",
-   "inicio_medido": 27.500125,
+   "inicio_medido": 27.500145833333335,
    "en_su_tiempo": true
   },
   {
    "segundo": 27.5,
    "sonido": "whoosh",
    "atado_a": "vuelve el plano de la portada, toma 13 (27,5 a 28,3)",
-   "inicio_medido": 27.500125,
+   "inicio_medido": 27.500145833333335,
    "en_su_tiempo": true
   },
   {
-   "segundo": 27.5,
+   "segundo": 27.767,
    "sonido": "boton",
-   "atado_a": "latido del botón, toma 13",
-   "inicio_medido": 27.500125,
+   "atado_a": "latido del botón, toma 13 (segunda mitad del pulso)",
+   "inicio_medido": 27.76675,
    "en_su_tiempo": true
   },
   {
-   "segundo": 28.0,
+   "segundo": 28.267,
    "sonido": "boton",
-   "atado_a": "latido del botón, toma 13",
-   "inicio_medido": 28.001104166666668,
+   "atado_a": "latido del botón, toma 13 (segunda mitad del pulso)",
+   "inicio_medido": 28.266770833333332,
    "en_su_tiempo": true
   }
  ]

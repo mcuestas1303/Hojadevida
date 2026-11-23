@@ -135,6 +135,15 @@ def main():
     texto = re.sub(r"<!--.*?-->", "", crudo, flags=re.S)
     errores, avisos = [], []
 
+    # Perfil emocional (regla del dueño, 2026-11-23): va en la ficha de cada video.
+    perfil = ruta.parent / "perfil_emocional.md"
+    if not perfil.exists():
+        avisos.append("Falta 02_prompt/perfil_emocional.md (emoción buscada con cada elemento y cómo acerca al "
+                      "objetivo). Plantilla: plantillas/proyecto/02_prompt/perfil_emocional.md.")
+    else:
+        cuerpo = re.sub(r"<!--.*?-->", "", perfil.read_text(encoding="utf8"), flags=re.S)
+        if re.search(r"\[[^\]\n]*\]", cuerpo):
+            errores.append("perfil_emocional.md tiene campos sin llenar (corchetes).")
     if re.search(r"\[[^\]\n]*\]", re.sub(r"\[[ xX]\]", "", texto)):
         pendientes = sorted(set(re.findall(r"\[[^\]\n]*\]", texto)))[:5]
         errores.append("Quedan campos de plantilla sin llenar: " + ", ".join(pendientes))

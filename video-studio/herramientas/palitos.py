@@ -25,6 +25,10 @@ Versiones:
                       Nuevo `giro_objeto` (grados; 0 por defecto) para el movimiento secundario del objeto. Gráfico
                       `mando()` (mando genérico, sin logotipos ni símbolos; las dos palancas a la misma altura)
                       y `calendario_de_mano()`.
+    1.3 (2026-11-23)  inclinación de cabeza: `cabeza_giro` en `dibujar` y `giro` en `cabeza` (grados; 0 por defecto, y con 0
+                      todo se dibuja igual que antes). La cabeza gira como un bloque (cara, rodete, gorra, lentes)
+                      alrededor de la base del cuello; la bufanda y el cuerpo no. Sirve para mirar arriba o abajo
+                      (hasta ±25 grados, variación permitida en las fichas). No cambia ningún rasgo.
 """
 import argparse
 import math
@@ -33,7 +37,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
-VERSION = "1.2"  # 1.0: diseño aprobado (2026-11-21) · 1.1: espejo · 1.2: objetos de mano por nombre (control, calendario)
+VERSION = "1.3"  # 1.0: diseño aprobado (2026-11-21) · 1.1: espejo · 1.2: objetos de mano · 1.3: inclinación de cabeza
 SS = 3  # supermuestreo: se dibuja 3 veces más grande y se reduce (Pillow no suaviza las líneas)
 
 # ---------------------------------------------------------------- paleta del canal (años 70, papel crema)
@@ -462,8 +466,28 @@ def objeto_de_mano(lz, pl, nombre, mano, pose, giro=0.0):
 
 
 # ---------------------------------------------------------------- cabeza (sirve sola para primeros planos)
-def cabeza(lz, pid, cx, cy, radio, expresion="feliz", vista="frente", mira=1, espejo=False):
-    """Dibuja solo la cabeza con sus accesorios, centrada en (cx, cy) y con ese radio en píxeles."""
+class _Capa:
+    """Lienzo transparente del mismo trato que Lienzo (tiene .d), para dibujar una pieza aparte y girarla."""
+
+    def __init__(self, lado_ss):
+        self.img = Image.new("RGBA", (lado_ss, lado_ss), (0, 0, 0, 0))
+        self.d = ImageDraw.Draw(self.img)
+
+
+def cabeza(lz, pid, cx, cy, radio, expresion="feliz", vista="frente", mira=1, espejo=False, giro=0.0):
+    """Dibuja solo la cabeza con sus accesorios, centrada en (cx, cy) y con ese radio en píxeles.
+
+    giro (grados, 0 por defecto): inclina la cabeza entera (cara, rodete, gorra y lentes, como un bloque) alrededor de
+    la base del cuello, el punto (cx, cy + radio). Positivo = levanta la cara hacia donde mira (en perfil, hacia `mira`;
+    de frente, hacia la derecha del cuadro, o la izquierda con espejo). Con 0 se dibuja exactamente como antes."""
+    if giro:
+        medio = int(math.ceil(3.2 * radio))                     # la capa cubre la cabeza girada con sus accesorios
+        capa = _Capa(2 * medio * SS)
+        cabeza(capa, pid, medio, medio, radio, expresion, vista, mira, espejo, 0.0)
+        sentido = (mira if vista == "perfil" else 1) * (-1 if espejo else 1)
+        girada = capa.img.rotate(giro * sentido, resample=Image.BICUBIC, center=(medio * SS, (medio + radio) * SS))
+        lz.img.paste(girada, (int(round((cx - medio) * SS)), int(round((cy - medio) * SS))), girada)
+        return
     pj = PERSONAJES[pid]
     pc = Pluma(lz, cx, cy, radio, espejo)
     if "rodete" in pj["accesorios"]:
@@ -477,7 +501,7 @@ def cabeza(lz, pid, cx, cy, radio, expresion="feliz", vista="frente", mira=1, es
 
 # ---------------------------------------------------------------- personaje completo
 def dibujar(lz, pid, x, suelo, alto, pose="parado", expresion="feliz", vista="frente", mira=1, viento=0.0,
-            objeto=True, espejo=False, giro_objeto=0.0):
+            objeto=True, espejo=False, giro_objeto=0.0, cabeza_giro=0.0):
     """Dibuja a Tin o Tan con los pies en (x, suelo) y una altura total de `alto` píxeles.
 
     mira: 1 mira a la derecha, -1 a la izquierda (solo en perfil). viento: puntas de la bufanda (-1 a 1).
@@ -487,6 +511,8 @@ def dibujar(lz, pid, x, suelo, alto, pose="parado", expresion="feliz", vista="fr
     objeto: True = el objeto icónico del personaje (el lápiz de Tin; Tan no tiene); False o None = ninguno; o el
     nombre de un objeto de mano ("lapiz", "control", "calendario"), que vale para los dos personajes.
     giro_objeto: grados que se suman al ángulo del objeto (movimiento secundario).
+    cabeza_giro: inclinación de la cabeza en grados (hasta ±25: variación permitida en las fichas); positivo = levanta
+    la cara para mirar hacia arriba. La bufanda y el cuerpo no giran. Con 0, todo igual que siempre.
     """
     if pid not in PERSONAJES:
         sys.exit(f"Personaje desconocido: {pid}. Hay: {', '.join(PERSONAJES)}")
@@ -531,7 +557,7 @@ def dibujar(lz, pid, x, suelo, alto, pose="parado", expresion="feliz", vista="fr
 
     if "bufanda" in pj["accesorios"]:
         bufanda(pl, vista, s, cuello_base[1] - 0.05, viento)
-    cabeza(lz, pid, x, suelo + cabeza_y * R, R, expresion, vista, s, espejo)
+    cabeza(lz, pid, x, suelo + cabeza_y * R, R, expresion, vista, s, espejo, cabeza_giro)
 
     # objeto icónico en la mano derecha (vista de frente) o en la de adelante (perfil)
     nombre = pj["objeto"] if objeto is True else (objeto if isinstance(objeto, str) else None)

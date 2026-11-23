@@ -42,7 +42,7 @@ C_4745, C_4748, C_63, C_4811 = (11.15, 12.9), (15.6, 18.0), (17.75, 18.8), (21.4
 
 # ---------------------------------------------------------------- golpes de la sección 13: (segundo, sonido, a qué va atado)
 EVENTOS = [(0.0, "thunk", "arranque, toma 1 (y empalme del bucle)"), (0.0, "zumbido", "vibración del mando, toma 1")]
-EVENTOS += [(0.5, "boton", "latido del botón, toma 1")]
+EVENTOS += [(t, "boton", "latido del botón, toma 1 (segunda mitad del pulso)") for t in (8 / 30, 23 / 30)]
 EVENTOS += [(t, "clic_borron", f"corte con borrón en {t}") for t in (1.0, 2.0, 9.0, 17.5, 25.5, 27.5)]
 EVENTOS += [(t, "clic", f"corte seco en {t}") for t in (5.0, 15.0, 21.0, 23.5)]
 EVENTOS += [(3.8, "hoja", "vuelta de hoja, toma 3")]
@@ -62,7 +62,7 @@ EVENTOS += [(LLEGA_4811, "ding", "llegada a 4,811 (primer fotograma con el valor
 EVENTOS += [(6.6, "pop", "la fecha entra en la hoja, toma 4")]
 EVENTOS += [(t, "pop_grave", "latido del bloque 13, toma 12") for t in (26.0, 26.5, 27.0)]
 EVENTOS += [(27.5, "whoosh", "vuelve el plano de la portada, toma 13 (27,5 a 28,3)")]
-EVENTOS += [(t, "boton", "latido del botón, toma 13") for t in (27.5, 28.0)]
+EVENTOS += [(t, "boton", "latido del botón, toma 13 (segunda mitad del pulso)") for t in (27.5 + 8 / 30, 28.0 + 8 / 30)]
 # El thunk de 28,5 es el del segundo 0,0 de la vuelta siguiente: el video dura 28,5 s justos y no se duplica.
 EVENTOS.sort(key=lambda e: e[0])
 

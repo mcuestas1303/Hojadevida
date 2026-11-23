@@ -60,6 +60,10 @@ en un plano de los dos se dibujan con el mismo `alto`.
   redondeadas, relleno mostaza, dos palancas **a la misma altura** y cuatro botones de punto tinta; **sin logotipos ni la forma exacta de
   ningún mando comercial**) y `calendario` (hoja de 0,9 R × 1,0 R, cabecera tomate, número en tinta).
   **Dibujados en `palitos.py` 1.2** (2026-11-21; `objeto="control"`, `objeto="calendario"`). El calendario se dibujó con cabecera **marrón**, como pide el prompt del short 2 (aquí arriba dice tomate: falta que el dueño o el director creativo digan cuál vale).
+- **Variaciones permitidas: inclinación de cabeza para mirar arriba o abajo, hasta ±25°** (añadido el 2026-11-23,
+  `palitos.py` 1.3: `cabeza_giro` en `dibujar`). La cabeza gira como un bloque (cara, rodete) alrededor de la
+  base del cuello; el cuerpo y la bufanda no. No cambia ningún rasgo; con 0 se dibuja igual que siempre. Primer uso: la portada
+  del short 2 (los dos miran el mando, 25°).
 - **Lo que no es variación:** el vestuario no cambia por la temática del video. Nada de disfraces de personajes de
   terceros ni ropa que imite la de un juego, película o marca.
 

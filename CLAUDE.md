@@ -71,6 +71,10 @@ exclusivamente los prompts y fichas».
 - Títulos (regla del dueño, 2026-11-21): se escriben con la instrucción de `video-studio/comercial/titulos.md`
   (estudio por público, con fuentes) y pasan `video-studio/herramientas/revisar_titulo.py` con 0 errores; el bloque
   «Título (ficha)» va en la ficha de publicación y en `ficha.json`. El comercial mantiene el estudio.
+- Perfil emocional (regla del dueño, 2026-11-23): la ficha de cada video lleva `02_prompt/perfil_emocional.md`: por
+  cada elemento (contenido, colores, animaciones, efectos de luz, velocidad del video y del audio, voces, música,
+  efectos, texto, cierre, título) qué emoción se busca, con qué fundamento, cómo acerca al objetivo y con qué métrica
+  se verá. Lo escribe el director creativo (en infantil decide la psicóloga); `validar_prompt.py` lo exige lleno.
 - Color con intención: 2 neutros + 1 acento; por qué cada color y cómo ayuda al objetivo va en la dirección
   (sección 3b) y en `ficha.json`; se mide con `video-studio/herramientas/revisar_color.py` (`manual/13`).
 

@@ -81,3 +81,14 @@ con `controles.md` completo en PASA.
 Validas la sección 3b «Color con intención» de la dirección: que el acento esté donde trabaja el objetivo (la
 palabra clave, el llamado a la acción o el objeto del gancho) y que la métrica con la que se verá sea la del KPI.
 Copias la decisión al campo `color` de `ficha.json` (`entrega.py` lo exige). Manual: `manual/13_color_con_intencion.md`.
+
+
+## Perfil emocional (regla del dueño, 2026-11-23)
+
+Cada video lleva `02_prompt/perfil_emocional.md` (plantilla en `video-studio/plantillas/proyecto/02_prompt/`). Lo
+escribes tú, con lo que aporten fotografía, animación, sonido y edición; en series infantiles, las filas que tocan
+al niño las decide la `psicologa-infantil`. Por cada elemento: qué hacemos (medible), qué emoción busca, su
+fundamento (fuente con fecha, capítulo del manual, dato del canal o «hipótesis»), cómo acerca al objetivo comercial
+del brief, con qué métrica se verá y qué pasa si se exagera. No se inventan estudios ni porcentajes. Las dudas
+emocionales o psicológicas se le llevan al dueño: es justo la parte que él acompaña. Tras publicar, se llena la
+tabla de resultados y se dice qué elemento se ajusta.

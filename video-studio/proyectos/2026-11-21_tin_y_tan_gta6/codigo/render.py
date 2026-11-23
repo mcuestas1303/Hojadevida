@@ -370,9 +370,11 @@ def mando_grande(lz, t):
         return 5 * math.sin(4 * math.pi * tt)
     for atras in (0.08, 0.04):
         palitos.mando(lz, cx, cy, ancho, ang(t - atras), relleno="papel_sombra", tinta="papel_sombra", detalles=False)
-    # el latido se cuenta en fotogramas (6 de cada 15) para que no dependa del redondeo de t
+    # el latido se cuenta en fotogramas (6 de cada 15) para que no dependa del redondeo de t. Va en la segunda mitad
+    # del pulso (fotogramas 8 a 13: 0,27 a 0,47 s): en el fotograma 0, que es la portada, los cuatro botones se ven
+    # iguales, y el fotograma 855 (= 0) también.
     f = int(round(t * FPS))
-    palitos.mando(lz, cx, cy, ancho, ang(t), boton_pulsado=(f % 15) < 6)
+    palitos.mando(lz, cx, cy, ancho, ang(t), boton_pulsado=8 <= (f % 15) < 14)
     return cx, cy
 
 
@@ -481,22 +483,26 @@ HOJA_G = dict(cx=0.5 * W, y_top=0.28 * H, ancho=0.80 * W, alto=1000)       # hoj
 HOJA_Z = dict(cx=0.5 * W, y_top=ZONA_G0, ancho=800, alto=0.485 * H - ZONA_G0 - 28)
 
 
-ALTO_PORTADA = 487.0      # R = 88 px: caras de y 1135 a 1362, dentro de la zona útil de portada (y 380-1440)
+ALTO_PORTADA = 487.0      # R = 88 px: caras dentro de la zona útil de portada (y 380-1440)
+X_PORTADA = (0.24 * W, 0.76 * W)     # más separados que en el resto del video (30 % y 70 %): la mirada sube en diagonal
+GIRO_PORTADA = 25.0       # grados
 
 
 def portada(lz, t):
     """Tomas 1 y 13: el primer segundo ES la portada (ENTREGA_YOUTUBE.md, «Portada de los Shorts»). Texto «GTA 5?» entre
     y 400 y 700 (capa de texto), el mando en el centro (y 720-1100) y, debajo, Tan (izquierda) y Tin (derecha) de
-    perfil, mirando hacia el mando, con sorpresa y curiosidad; las caras quedan dentro de la zona útil (x 60-960,
+    perfil y con la cabeza inclinada hacia arriba, mirando el mando, con sorpresa (Tin) y sorpresa alegre (Tan); las caras quedan dentro de la zona útil (x 60-960,
     y 380-1440) y los cuerpos bajan hasta el suelo (y = 1651). Todo está completo en el fotograma 0; se mueve desde ahí
     (el mando retumba y los personajes rebotan al pulso). Sin empuje de cámara: escala 100 % en toda la toma, para que
     las cajas medidas en el fotograma 0 valgan todo el segundo y el último fotograma sea igual al primero."""
     suelo(lz)
     mando_grande(lz, t)
-    palitos.dibujar(lz, "tan", X_TAN, SUELO, ALTO_PORTADA * bote(t), pose="parado", expresion="sorpresa", vista="perfil",
-                    mira=1, viento=0.2 * math.sin(4 * math.pi * t))      # periódico: igual en 0 y en 28,5
-    palitos.dibujar(lz, "tin", X_TIN, SUELO, ALTO_PORTADA * bote(t, 0.5), pose="parado", expresion="curiosidad",
-                    vista="perfil", mira=-1, objeto=False)
+    # cabezas inclinadas 25 grados hacia arriba (el máximo de las fichas): miran al mando, que está encima y al centro
+    palitos.dibujar(lz, "tan", X_PORTADA[0], SUELO, ALTO_PORTADA * bote(t), pose="parado", expresion="eureka",
+                    vista="perfil", mira=1, viento=0.2 * math.sin(4 * math.pi * t),      # periódico: igual en 0 y en 28,5
+                    cabeza_giro=GIRO_PORTADA)
+    palitos.dibujar(lz, "tin", X_PORTADA[1], SUELO, ALTO_PORTADA * bote(t, 0.5), pose="parado", expresion="sorpresa",
+                    vista="perfil", mira=-1, objeto=False, cabeza_giro=GIRO_PORTADA)
     return 1.0, CENTRO
 
 

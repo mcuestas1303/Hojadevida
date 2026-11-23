@@ -116,3 +116,12 @@
   y eso volverlo instrucción y filtro; esto también debe quedar en la ficha». Estudio: `comercial/titulos.md` (del
   comercial). Filtro: `herramientas/revisar_titulo.py`, 0 errores. Ficha: bloque «Título (ficha)» en la publicación
   y objeto `titulo_ficha` en `ficha.json`.
+
+- **Perfil emocional en la ficha (dueño, 2026-11-23):** textual: «Necesito que en la ficha del video o del contenido
+  incorpores, bajo perfil de colores, animaciones, efectos de luz, velocidad del video, velocidad del audio, contenido
+  del video y alguna otra cosa que consideres pertinente, qué emociones buscas provocar tanto con el contenido como
+  con los elementos del contenido generado y cómo estas emociones nos van a acercar a los objetivos». Plantilla:
+  `plantillas/proyecto/02_prompt/perfil_emocional.md` (15 elementos, cada uno con emoción, fundamento, objetivo,
+  métrica y riesgo). Va también en `ficha.json`, campo `emociones`. `validar_prompt.py` no deja pasar uno sin llenar.
+- **Oído del estudio (dueño, 2026-11-23):** «busca para que puedas auditar el tema de voz y audio».
+  `herramientas/revisar_voz.py` transcribe y compara con el guion (Whisper sin conexión, `instalar_oido.sh`).
