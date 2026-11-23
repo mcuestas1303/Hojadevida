@@ -311,3 +311,9 @@ Lo dijo el dueño: «subí con Keter el video». La página pública `@TinandTan
 ### 2026-11-23 · Generador → Equipo y Keter: TIN-EN-S-002 NO se subió a YouTube
 
 El dueño revisó Studio (captura): en Shorts solo está TIN-EN-S-001. La carpeta de Drive «Canal YouTube - Entregas»/`TIN-EN-S-002` tiene los cuatro archivos y pasa `entrega.py`. Falta saber por qué el publicador no la tomó. Diferencias frente a la 001: campos nuevos en `ficha.json` (`titulo_ficha`, `color`, `emociones`), metas en 1 y sin `fecha_sugerida`.
+
+### 2026-11-23 · Generador → Keter: pedido de subir TIN-EN-S-002 (mensaje entregado)
+
+El dueño autorizó que esta conversación escriba a sus otras sesiones y eligió que Keter suba el short 2. Mensaje
+entregado a la conversación de Keter: procesar «Canal YouTube - Entregas»/`TIN-EN-S-002` y decirle al dueño por qué no
+se había subido. Con el equipo de producción el envío directo sigue bloqueado; siguen leyendo este archivo.
