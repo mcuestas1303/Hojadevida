@@ -495,3 +495,102 @@ Fuentes (terceros, consultadas el 2026-11-20):
 6. Anunciar estrenos fijos o publicar más de un capítulo por semana.
 7. Apps con los personajes para 1 a 3 años; productos con piezas pequeñas.
 8. Publicar un capítulo, un short o una pista de idioma sin revisión aprobada.
+
+## Camino al Programa de socios (objetivo del dueño, 2026-11-23)
+
+- **Autor:** comercial-inteligencia-digital. **Fecha de lectura de las páginas:** 2026-11-23.
+- **Encargo del dueño**, textual: «Rige para todos los canales que trabajemos». El objetivo «entrar al Programa de socios cuanto antes» vale también para `@TikyAndLumi`. El plan del otro canal, con la relectura de umbrales y las fuentes, está en `video-studio/canales/nostalgia-tin-y-tan/plan_programa_de_socios.md`; **aquí no se repite**: solo lo que cambia con 60 a 90 s, «hecho para niños» y 1 a 3 años.
+- **Marcas:** «Supuesto» = lo supuse; «sin dato» = no lo encontré. Nada es promesa de resultado. **Cada cambio que toque lo que se le dice al adulto o lo que pasa en el video queda pendiente de la pedagoga y la psicóloga; la psicóloga tiene veto.**
+- **Umbrales:** los de la nota 1 de abajo, releídos hoy y sin cambios respecto de la base del 2026-11-20.
+
+### Estado hoy (2026-11-23)
+
+La página pública `https://www.youtube.com/@TikyAndLumi` (curl, hoy) muestra el nombre «Tiky & Lumi» y **ningún video ni vista**; suscriptores: sin dato. No hay capítulo publicado que yo pueda comprobar (el capítulo 1 sigue sin generar, `consumo.md`). El dueño puede ver lo demás en Studio.
+
+### 1. Umbrales (releídos hoy; fuentes: 72851, 12843009 y 13429240, `support.google.com/youtube/answer/<número>?hl=en`)
+
+| Nivel | Hasta el 31-ene-2027 | Desde el 1-feb-2027 |
+|---|---|---|
+| Alto | 1.000 suscriptores y (4.000 h en 12 meses o 10 M de vistas de Shorts en 90 días) | 1.000 suscriptores y (8.000 h en 365 días o 20 M en 90 días) |
+| Intermedio | 500 suscriptores, 3 subidas válidas y (3.000 h o 3 M de vistas de Shorts) | igual |
+
+Cuenta como hora la de **videos largos públicos**; las horas de Shorts no cuentan; las vistas de Shorts que cuentan son las «engaged» y no cuentan repeticiones (blog de YouTube, 2026-08-12).
+
+### 2. La cuenta honesta de este canal
+
+**Capítulo de 60 a 90 s en 16:9.** Un video de 3 minutos o menos en formato ancho es video largo (15424877). Vistas **completas** que hacen falta = horas × 3.600 ÷ segundos del capítulo. Es aritmética; el canal no tiene datos de retención (sin dato).
+
+| Duración del capítulo | Para 3.000 h (intermedio) | Para 4.000 h | Para 8.000 h | Por día en 12 meses, para 8.000 h |
+|---|---|---|---|---|
+| 60 s | 180.000 | 240.000 | 480.000 | ≈ 1.315 |
+| 75 s | 144.000 | 192.000 | 384.000 | ≈ 1.052 |
+| 88 s (el capítulo 1) | 122.728 | 163.637 | 327.273 | ≈ 897 |
+| 90 s | 120.000 | 160.000 | 320.000 | ≈ 877 |
+| 90 s, si se ve el 75 % (67,5 s) | 160.000 | 213.333 | 426.667 | ≈ 1.169 |
+| 60 s, si se ve el 50 % (30 s) | 360.000 | 480.000 | 960.000 | ≈ 2.630 |
+
+La ventana de 12 meses es móvil: lo que cuenta es mantener esa velocidad sostenida durante el año, y no un total histórico. Para 4.000 h con capítulos de 88 s son ≈ 448 vistas completas por día; para 3.000 h, ≈ 336.
+
+**Shorts de 20 a 45 s** (máximo uno por capítulo, y la regla de la psicóloga es un solo short por semana; ver 5.3 y 5.4):
+
+| Meta | Por día en 90 días | Si hay ≈ 13 Shorts en esos 90 días (uno por semana, Supuesto), cada uno con |
+|---|---|---|
+| 3 M (intermedio) | 33.333 | ≈ 230.800 vistas calificadas |
+| 10 M (alto, antes del 1-feb) | 111.111 | ≈ 769.200 |
+| 20 M (alto, desde el 1-feb) | 222.222 | ≈ 1.538.500 |
+
+**Compilado de 8 min 48 s** (6 capítulos, hoy vetado): 3.000 h = 20.455 vistas completas; 4.000 h = 27.273; 8.000 h = 54.545. Se muestra solo para ver el tamaño de la diferencia.
+
+### 3. Qué camino se alcanza primero y por qué
+
+1. **El de horas, no el de Shorts.** Con capítulos de 88 s, 8.000 h piden ≈ 897 vistas completas por día; los Shorts piden 222.222 por día para el mismo umbral, ≈ 248 veces más. Un Short infantil de 20 a 45 s, uno por semana y con marca «hecho para niños», no es un camino de planeación.
+2. **Pero 60 a 90 s no deja de ser caro en vistas.** Por cada hora de umbral hay que juntar 40 vistas completas de 90 s (3.600 ÷ 90). Con un video de ocho minutos y la misma fracción vista serían 7,5. **No es imposible, pero depende de una cifra que no tengo: cuántas vistas completas sostenidas por día puede traer un canal infantil nuevo.** No hay dato oficial ni propio (sin dato). Lo digo con el número: ≈ 900 por día durante 12 meses (8.000 h) o ≈ 450 (4.000 h), con 1.000 suscriptores aparte.
+3. **El nivel intermedio casi no sirve aquí.** Lo que da (membresías, Super Chat, Super Thanks, Jewels, Shopping, 13429240) casi todo se apaga en un canal «hecho para niños» (membresías, Super Chat y Shopping requieren que el canal no lo sea; base_conocimiento §5). Super Thanks: sin verificar. Por eso en este canal el hito útil es el **alto**, y no hay un escalón intermedio que valga la pena como meta.
+4. **Los 1.000 suscriptores son la otra mitad y aquí son difíciles de pedir.** Sin campana, sin comentarios, sin petición de suscripción al niño (abajo). El crecimiento depende de búsqueda y recomendación del adulto. Suscriptores por cada 1.000 vistas: sin dato.
+5. **Fecha.** Una cuenta aritmética: el canal no tiene un capítulo publicado. El umbral de antes del 1-feb-2027 no es una meta de planeación aquí; se planea contra 8.000 h. Si se alcanzara antes, se solicita el mismo día.
+
+### 4. Qué dice YouTube de monetizar contenido «hecho para niños» (resumen de base_conocimiento §5 y §6; relecturas de hoy en 1311392)
+
+| Hecho | Fuente |
+|---|---|
+| Los requisitos de entrada al Programa (72851, leídos hoy) **no incluyen** una condición de «no hecho para niños». Ninguna página dice con una frase que un canal infantil pueda entrar; se deduce de que la política dice cómo se evalúa ese contenido | 72851 y 1311392 |
+| «If your channel has “made for kids” content, we’ll use YouTube’s quality principles for kids and family content to determine the monetization status of that content.» | https://support.google.com/youtube/answer/1311392?hl=en (2026-11-23) |
+| Un canal con «strong focus on low-quality “made for kids” content» puede ser suspendido del Programa; un video que viole los principios puede tener anuncios limitados o ninguno | 1311392 |
+| Los principios de baja calidad: muy promocional (marcas, productos, unboxing); educativo engañoso; difícil de seguir (sin inicio, medio y fin, a menudo producción en masa); sensacional o engañoso (incluye relleno de palabras clave); uso extraño de personajes infantiles; conductas negativas | 1311392 y 10774223 (base §6) |
+| Lo de alta calidad «gets raised up in recommendations»: apropiado a la edad, enriquecedor, atractivo; los principios valen para largos y Shorts | 10774223 |
+| Anuncios: solo contextuales (sin personalizados ni remarketing); YouTube reconoce que el ingreso puede bajar; categorías prohibidas para anunciantes (comida y bebida, belleza, citas, política, religión, adultos, videojuegos no aptos) | 9713557 y 9527654 (base §5) |
+| Funciones que no hay: comentarios, campana, tarjetas y pantallas finales, membresías, donaciones, mercancía, Super Chat, guardar en lista; en un canal completo marcado, tampoco Posts | 9527654 y 9632097 |
+| Marcar el público es obligación del creador; YouTube puede cambiarlo por error o abuso | 9527654 |
+
+**Lectura (opinión mía):** el camino existe, con ingreso por anuncios contextuales más bajo y con la calidad como condición de admisión y de permanencia, no solo de recomendación. Eso coincide con lo que la pedagoga y la psicóloga ya piden: la admisión se revisa con el mismo criterio que ellas aplican al contenido.
+
+### 5. Qué NO se puede hacer en este canal para acelerar
+
+Cada punto es una regla que ya existe en este estudio; la fuente es de la guía o del dictamen. **El plan del otro canal (pedir suscripción en el video, ritmo de redes, bucle, frase de suscripción) no aplica aquí.**
+
+| No se hace | Por qué (fuente) |
+|---|---|
+| Ganchos para seguir mirando: suspenso, «no te lo pierdas», «el siguiente» | Guía 1 a 3, sección 1, punto 4; serie.md («Sin gancho para seguir mirando») |
+| Pedirle la suscripción o el «me gusta» al niño, dentro del video | Guía 1 a 3, sección 1, punto 4. Además, YouTube prohíbe en membresías pedir a los niños que insistan a sus padres (7636690, base §5) |
+| Ritmo de redes: ráfagas de cortes, ganchos en el primer segundo, textos en pantalla, aceleración final | `manual/11`, «Excepción infantil»; CLAUDE.md («solo para adultos»); serie.md (términos prohibidos, toma mínima 4 s) |
+| Bucles, «una hora de Tiky y Lumi», un short que sea solo el saludo | Dictamen de la psicóloga (arriba, sección «Lo que no se hace aunque pague»). Además el bucle no suma al umbral: las repeticiones no son vistas calificadas |
+| Más de un capítulo por semana o varios el mismo día; anunciar un día fijo de estreno | Dictamen de la psicóloga |
+| Compilado con anuncios intermedios, o capítulo de más de 90 s | Veto de la psicóloga (arriba) |
+| Anuncios dentro del capítulo; cambiar el capítulo para el anuncio | Dictamen de la psicóloga |
+| Títulos o miniaturas que prometan enseñar lo que el video no enseña, o relleno de palabras clave | 1311392 (principios de calidad); `titulos.md` |
+| Comprar vistas o suscriptores, VPN o país falso | https://support.google.com/youtube/answer/3399767?hl=en (2026-11-23); 1311392 (hay que ser quien se dice ser). La verificación del VPN, sin verificar (base §12.3) |
+| Marcar el canal «no hecho para niños» para ganar funciones | Veto (arriba) y riesgo de que YouTube lo cambie (9527654) |
+
+**Lo que sí se puede hacer sin tocar el video:** descripción para el adulto y su línea de la ficha pedagógica; lista de reproducción «un capítulo por día» con las condiciones ya aprobadas; palabras clave del canal y «Acerca de»; calidad de metadatos para la revisión (que miran título, miniatura, descripción, tema principal). **Si la descripción del adulto puede decir «si te sirvió, suscríbete» es una decisión de la pedagoga y la psicóloga** (YouTube permite pedir la suscripción en general, 3399767, pero la guía lo veta al niño). Queda pendiente.
+
+### 6. Preguntas que deja (para el dueño y el equipo pedagógico; no las decido yo)
+
+| # | Pregunta | A quién | Qué sé |
+|---|---|---|---|
+| Q1 | ¿Se reabre el compilado de episodios (sin anuncios intermedios) para acercar las horas? | Dueño, pedagoga y psicóloga | La pedagoga lo aceptó con condiciones (solo 24 a 36 meses, capítulos enteros, pausas); la psicóloga lo vetó. Un compilado de 6 capítulos de 88 s necesita 6 veces menos vistas por hora acumulada. Ver tabla 2. Sin anuncios intermedios, gana horas y nada más |
+| Q2 | ¿Hay alguna versión del video largo que sirva al niño y sume horas (por ejemplo, una lista «un capítulo por día», que ya está aprobada, o un episodio más largo pensado para el adulto)? | Pedagoga y psicóloga | La lista no suma horas por sí misma: suma si cada capítulo se ve completo. Un episodio nuevo más largo contradice «60 a 90 s» (serie.md) |
+| Q3 | ¿Una línea de suscripción dirigida al adulto en la descripción o en el comentario? | Pedagoga y psicóloga | Permitida por YouTube; no se le pide al niño |
+| Q4 | ¿El objetivo de este canal es el nivel alto aunque las horas dependan de ≈ 900 vistas completas por día durante un año? | Dueño | El intermedio casi no sirve en este canal (3 de la sección 3). Si el dueño quiere una meta con fecha, hay que decir cuál (sin datos de público, no puedo fijarla) |
+| Q5 | ¿Se puede aceptar un canal por idioma frente a pistas de audio, para sumar horas en los tres mercados? | Dueño y equipo | Ya está en 5.5; con pistas, las horas son del mismo video. Si todas las pistas suman al umbral del mismo video: sin verificar (base §2) |
+
+**Qué no pude confirmar para este canal:** suscriptores y vistas (Studio); cómo se marcó el público; si Super Thanks funciona en un canal infantil; cuántas vistas completas por día alcanza un canal infantil nuevo; si una repetición del mismo niño suma horas (la ayuda habla de horas de visualización y no del niño; sin dato); si los capítulos de 60 a 90 s en 16:9 reciben distribución distinta a la de los videos largos (sin dato).
