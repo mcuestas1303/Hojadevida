@@ -204,3 +204,62 @@ otra cosa, vale esta.** Sigue sin escucharlo nadie.
 - **Lo que solo se resuelve al oído** (salvedades del diseñador de sonido): «now», el ataque de «eight» en 22,23 s, «G T A» y las cifras, las pausas acortadas y el golpe del fotograma 0. Además, que «GTA 6» (19,4) y la hoja de noviembre no se adelanten a «to November…».
 - **Cortes** que pisan el final de la línea anterior (5,0, 13,5, 17,5 y 21,0) y el de 25,5 sin margen: siguen igual, vienen de la rejilla.
 - **Portada alternativa** (`portada_short02_alternativa.png`): adelanta la respuesta.
+
+## Cuarto render (2026-11-23): la portada cumple la regla del dueño punto por punto
+
+Mismo archivo de salida (28,5 s, 855 fotogramas, cortes sin cambios). El supervisor firmó todo menos la portada (faltaba
+el punto 5 de `ENTREGA_YOUTUBE.md`, «Portada de los Shorts»). **Donde las secciones de arriba digan otra cosa sobre las
+tomas 1 y 13, vale esta.**
+
+### Qué cambió
+
+1. **Tomas 1 y 13 (0,0–1,0 y 27,5–28,5 s):** el plano es la portada. El mando baja a 600 px de ancho con centro en
+   y = 910; debajo, Tan (x = 30 %) y Tin (x = 70 %) de cuerpo entero y de perfil, mirando hacia el centro, donde está el
+   mando, con `sorpresa` (Tan) y `curiosidad` (Tin); `alto` 487 px, pies en el suelo (y = 1651). Todo está completo en
+   el fotograma 0. Movimiento desde el fotograma 0: el mando retumba, el botón late y los dos rebotan al pulso. Se
+   quitó el empuje de cámara de estas dos tomas (escala 100 %), para que las medidas valgan todo el segundo.
+2. **«GTA 6» (toma 9):** entra en 19,5 s y sale al corte de 21,0 (1,5 s). La vuelta de hoja se adelantó a 19,25–19,55:
+   la hoja deja de decir «Sep 17, 2026» en 19,40 y la nueva, con «Nov 19, 2026», sube de 19,40 a 19,55. «+63 days»
+   sale en 19,4. «Sep 17, 2026» queda 0,65 s en la hoja (18,6–19,25).
+3. **`DESIGN.md` del canal:** norma nueva de cifras (dígitos abiertos `ss01` y contorno de 0,045 em), con su porqué y
+   la nota de que el short 1 quedó con los dígitos por defecto.
+
+### Regla de portada sobre el fotograma 0 (medido en píxeles por `codigo/miniatura.py`)
+
+| # | Regla | Medida | Resultado |
+|---|---|---|---|
+| 1 | Los primeros 0,5 a 1 s son la portada y el video sigue sin corte brusco | El plano dura de 0,0 a 1,0 s con la misma composición; las cajas medidas en los 26 fotogramas de 0,0 a 0,87 s (con balanceo y rebote): texto y 482–682, mando y 728–1092, caras y 1133–1357. Primer corte en 1,0 s | cumple |
+| 2 | `miniatura.png` vertical de 1080×1920 | `06_final/portada_short02.png`, 1080×1920, 138 KB: es el fotograma 0 tal cual | cumple (el nombre `miniatura.png` lo pone la entrega) |
+| 3 | Zona útil x 60–960, y 380–1440: fuera, solo fondo o cuerpos | Texto x 116–848, y 492–682. Cara de Tan (cabeza y rodete) x 242–405, y 1175–1355. Cara de Tin (cabeza y gorra con visera) x 624–837, y 1142–1356. Fuera de la zona útil solo quedan las piernas (hasta y = 1662) y la línea de suelo | cumple |
+| 4 | Texto: máximo 4 palabras en 2 líneas, entre y 400 y 700, letra de 120 px o más, mayúscula inicial, clave en el amarillo del canal, sin la respuesta, sin copiar el título | «GTA 5?»: 2 palabras, 1 línea, y 492–682, letra de 230 px, «GTA» en mayúsculas por ser sigla, «5» en mostaza con contorno; no lleva 4,811 ni «days»; el título es «How Many Days Did We Wait for GTA 6?» | cumple |
+| 5 | Objeto en el centro (y 720–1100); caras de Tin y Tan en la zona útil, con curiosidad o sorpresa, mirando el objeto | Mando x 239–840 (centrado en x = 540), y 744–1075. Tan con `sorpresa`, Tin con `curiosidad`, los dos de perfil hacia el centro (`mira=1` y `mira=-1`) | cumple, **con una salvedad**: la mirada de perfil es horizontal, hacia el centro del cuadro, y el mando está encima de sus cabezas; `palitos.py` no tiene mirada hacia arriba salvo `pensando`, que se descartó porque se lee como molestia |
+| 6 | El video cumple lo que promete la portada | La portada pregunta por GTA 5 y el video cuenta los días desde GTA 5 hasta GTA 6 | cumple (juicio del director creativo) |
+
+Además: nada tapa el texto ni el mando (hueco mínimo texto–mando 46 px y mando–cabezas 47 px en todo el segundo); todo
+dentro de la zona segura del video (caja de dibujo de todos los fotogramas sin borrón: x 100–980, y 256–1662); mostaza
+solo en el «5» y el mando (bufanda, gorra y cabezas son identidad). Bucle: del fotograma 854 al 0 hay 1,7 de 255 (entre
+vecinos de la toma 13: 1,5).
+
+### Controles sobre el archivo nuevo
+
+| Control | Resultado |
+|---|---|
+| `comprobar_video.py` | formato correcto; sin tramos de 0,5 s sin cambio; sin vacíos; −14,0 LUFS y −1,3 dBTP; bucle 1,7 de 255. Los cortes de 11,0, 13,5 y 15,0 siguen siendo cambios pequeños |
+| `analizar_video.py --cada 0.5` y hojas miradas | portada con mando y los dos personajes en 0,25, 0,75, 27,75 y 28,25 s; «GTA 6» ya con la hoja de noviembre; sin texto cortado ni encimado |
+| `revisar_fotogramas.py` | sin marcas |
+| `revisar_color.py` | video ≈ 93 % en paleta, luminosidad ±2 %, saturación ±1 %; portada ≈ 94 % (`revisar_color_portada.txt`) |
+| `revisar_texto.py` (srt, `render.py`, `miniatura.py`, descripción) | 53 textos, PASA: 0 errores |
+| `revisar_voz.py` sobre el mp4, guion completo | COINCIDE: 75 palabras, 0 diferencias |
+| `validar_prompt.py` | «Listo para generar», 0 errores |
+| Golpes | 48 de 48 en su tiempo |
+| Short 1 | fotogramas 0, 150, 450, 600 y 800 idénticos byte a byte |
+
+### No se pudo
+
+- **Mirada hacia arriba:** ver la salvedad del punto 5. Arreglarlo pide una expresión o una vista nueva en `palitos.py`
+  (cambio de diseño de los personajes: pasa por su bitácora, no se hizo aquí).
+- **Caras chicas:** con el mando en y 720–1100 y las caras por debajo, sin salir de la zona útil ni de la zona segura,
+  la cabeza mide 176 px de diámetro (R = 88 px); en el resto del video mide 236 px.
+- **«GTA 6» y la voz:** la hoja pasa a noviembre en 19,40 s y «to November…» empieza hacia 19,6 s según la envolvente:
+  unos 0,2 s antes de oírlo. Solo se confirma al oído.
+- Sigue en pie todo lo de «No se arregló» del tercer render, salvo la portada sin caras.

@@ -97,3 +97,11 @@ hojas en `vuelta_01/supervisor_b/`. Estas firmas sustituyen a las de la primera 
 | 7. Marca del canal | PASA CON SALVEDAD | **FIRMADO** | El lápiz de Tin ya aparece. Falta anotar en `DESIGN.md` los dígitos `ss01` y el trazo de 0,045 em |
 | 8. Color (medición) | PASA CON SALVEDAD | **FIRMADO** | Video ≈ 93 %, portada ≈ 95 %, ±2 %; toma 4 con un solo acento (lápiz); tinta/tomate 3,5:1 aceptado en 3b |
 | Título | PASA | — | `revisar_titulo.py` con `--proyecto` y `--descripcion`: 0 errores, 0 avisos; falta la revisión humana del director creativo |
+
+**Cuarto render de la vuelta 1 (2026-11-23, portada):** las tomas 1 y 13 son la portada completa (texto en y 492–682,
+mando en y 744–1075 y caras de Tan y Tin en y 1142–1356, dentro de la zona útil, de perfil hacia el mando); «GTA 6»
+entra en 19,5 s con la hoja ya en noviembre. Tabla de la regla punto por punto en `vuelta_01/notas.md`, «Cuarto
+render». Todos los controles repetidos sobre el archivo nuevo con el mismo resultado (texto 0 errores, voz 75 palabras
+sin diferencias, fotogramas sin marcas, color ≈ 93 %, −14,0 LUFS y −1,3 dBTP, bucle que empalma, prompt con 0 errores).
+**Control 4.5 (portada): pendiente de que el supervisor lo revise sobre este archivo.** Salvedad anotada: la mirada de
+perfil es horizontal y el mando queda por encima de las cabezas.

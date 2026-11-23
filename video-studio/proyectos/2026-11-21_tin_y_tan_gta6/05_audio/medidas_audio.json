@@ -281,10 +281,10 @@
    "en_su_tiempo": true
   },
   {
-   "segundo": 19.4,
+   "segundo": 19.25,
    "sonido": "hoja",
    "atado_a": "vuelta de hoja, toma 9",
-   "inicio_medido": 19.400145833333333,
+   "inicio_medido": 19.250145833333335,
    "en_su_tiempo": true
   },
   {
@@ -353,7 +353,7 @@
   {
    "segundo": 27.5,
    "sonido": "whoosh",
-   "atado_a": "retroceso de cámara, toma 13 (27,5 a 28,3)",
+   "atado_a": "vuelve el plano de la portada, toma 13 (27,5 a 28,3)",
    "inicio_medido": 27.500125,
    "en_su_tiempo": true
   },

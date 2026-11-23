@@ -72,7 +72,7 @@ text inside the drawing other than the table in section 12, brand names or logos
 - **calendario en la mano (`calendario`):** hoja de 0,9 R × 1,0 R con cabecera marrón `#7A4B2A` de 0,22 de alto, dos anillas y el número «17» en tinta (fila de la tabla de la sección 12); sustituye al lápiz en la mano que gesticula.
 - **tira de 13 años (gráfico propio):** 13 bloques rectangulares de 60 px de ancho y 200 px de alto, separados 8 px, de x = 100 a 980 px, centrados en y = 39 % (de 33,8 % a 44,2 %); relleno papel sombra `#E6D8B8` al empezar y marrón `#7A4B2A` al llenarse, contorno tinta de 8 px; el bloque 13 es el elemento mostaza `#E8B33B` de las tomas 5 y 6 (marrón en las tomas 7 y 8) y pasa a tomate `#C8553D` solo en la toma 12. Los años bisiestos son los bloques 3, 7 y 11 (años de sept. 2015 a sept. 2016, de 2019 a 2020 y de 2023 a 2024: el 29 de febrero de 2016, 2020 y 2024 cae en cada uno). Marca bisiesta: círculo **mostaza** `#E8B33B` con contorno tinta de 4 px, de radio 18 px (36 px de diámetro) centrado 40 px sobre el bloque. Sin letras.
 - **Muelles (masa 1, rigidez, amortiguación), declarados por elemento:** `pop` 220 y 20 (entrada de textos y gráficos, escala de 0,85 a 1); `slide` 120 y 16 (personajes y gráficos que se desplazan); `sello` 320 y 26 (empujes de cámara y vueltas de hoja). Contadores: ease-out cúbico sin muelle, para que el valor nunca pase de su final ni retroceda. Todo depende del número de fotograma (30 fps).
-- **mando a pantalla completa (tomas 1 y 13):** el mando de W = 800 px (74 % del ancho; eran 864 px, pero con el balanceo y el empuje a 106 % salía de la zona segura), centro en (50 %, 54 %) de x = 140 a 940 px y de 42,5 % a 65,5 % del alto, sin etiquetas. «Retumba»: se balancea ±5 grados con un periodo de 0,5 s, ángulo = 5 × seno(4 pi t) grados (el periodo es un pulso; 28,5 s son 57 periodos exactos, por eso el último fotograma es igual al primero). Estela plana: dos copias del mando en `#E6D8B8` detrás, a los ángulos de t menos 0,04 s y t menos 0,08 s. El botón de abajo late en cada pulso (pasa a papel durante 0,2 s; nunca a tomate).
+- **mando del gancho y portada (tomas 1 y 13):** el primer segundo del video **es la portada** (`ENTREGA_YOUTUBE.md`, «Portada de los Shorts»). El mando de W = 600 px, centro en (50 %, y = 910 px): ocupa x 239–840 e y 744–1075 en el fotograma 0, dentro de la franja y 720–1100 que la regla pide para el objeto (fue de 864 y de 800 px; se redujo para dejar sitio a las caras). Sin etiquetas. «Retumba»: se balancea ±5 grados con un periodo de 0,5 s, ángulo = 5 × seno(4 pi t) grados (28,5 s son 57 periodos exactos, por eso el último fotograma es igual al primero). Estela plana: dos copias del mando en `#E6D8B8` detrás, a los ángulos de t menos 0,04 s y t menos 0,08 s. El botón de abajo late en cada pulso (pasa a papel durante 0,2 s; nunca a tomate). Debajo, Tan (x = 30 %) y Tin (x = 70 %) de cuerpo entero y **de perfil, mirando hacia el mando**, `alto` 487 px (R = 88 px), pies a 86 %: las caras quedan en y 1142–1356, dentro de la zona útil de portada (x 60–960, y 380–1440). Sin empuje de cámara (escala 100 % en toda la toma).
 - **Transición `borrón`:** corte seco con desenfoque de movimiento horizontal de 18 px en los 2 últimos fotogramas de la toma que sale y en los 2 primeros de la que entra. Cero destellos.
 
 ## 6. Tomas
@@ -86,22 +86,22 @@ Cada corte cae en el pulso anterior al inicio de la línea (o del tramo) que le 
 ### Toma 1 — Gancho: el mando, ya retumbando
 
 - **Duración:** 1,0 s (de 0,0 a 1,0)
-- **Personajes:** ninguno
+- **Personajes:** @tan, @tin
 - **Método:** edición
 - **Escenario:** papel_crema
-- **Encuadre:** el mando a pantalla completa, de frente (el «mando a pantalla completa» de la sección 5)
-- **Cámara:** empuje de 100 % a 106 % centrado en el centro del mando, muelle `sello`; en el fotograma 0 la escala es 100 %
-- **Acción:** el mando ya está retumbando en el fotograma 0 (con su estela) y el botón de abajo late en 0,0 y 0,5.
+- **Encuadre:** la portada: «GTA 5?» arriba (y 400–700), el mando en el centro (y 720–1100) y Tan y Tin debajo, de perfil, mirando el mando (sección 5)
+- **Cámara:** fija, escala 100 % (sin empuje: las medidas de la portada valen todo el segundo y nada sale de la zona segura)
+- **Acción:** el mando ya está retumbando en el fotograma 0 (con su estela) y el botón de abajo late en 0,0 y 0,5; Tan y Tin, completos desde el fotograma 0, lo miran y rebotan al pulso.
 - **Audio:** línea 1, Tan (primera parte): "Remember buying G T A five at midnight?" Aquí suena el principio de la línea (la línea entera va de 0,00 a 1,93 s; el corte de 1,0 cae dentro de ella, hacia «G T A»; sin escucha no se sabe en qué sílaba). Golpe 1 de la sección 13.
 - **Referencia:** toma 1 del short 1 (objeto a pantalla completa, ya en movimiento)
 - **Transición de entrada:** ninguna (primer fotograma; es también el último del bucle). Salida: `borrón` hacia la toma 2.
 
 **Especificación de dibujo:**
 
-- Mando exactamente como lo define la sección 5, con el ángulo de t = 0 (cero grados) y las dos copias de estela. **Sin muelle de entrada ni escala 0,85 en el fotograma 0**: todo está ya en su estado pleno y en movimiento (este fotograma es la portada y el empalme del bucle).
+- Mando y personajes exactamente como los define la sección 5, con el ángulo de t = 0 (cero grados) y las dos copias de estela. **Sin muelle de entrada ni escala 0,85 en el fotograma 0**: todo está ya en su estado pleno y en movimiento (este fotograma es la portada y el empalme del bucle).
 - Texto «GTA 5?» (fila 1 de la tabla de la sección 12) ya entero y quieto en el fotograma 0 (sin `pop`); sale a los 0,9 s. **El primer segundo es la portada** (regla del dueño): el texto va al 12 % del alto, con el tope de las letras en y = 26 % (medido: x 116–848, y 492–682; franja pedida y 400–700, zona útil y 380–1440), a 97 px o más del mando en todo el balanceo.
-- **Color:** acento mostaza = el «5» de «GTA 5?» + el mando; el botón que late pasa a papel, no a tomate.
-- Sin personajes ni suelo.
+- **Color:** acento mostaza = el «5» de «GTA 5?» + el mando; el botón que late pasa a papel, no a tomate. Cabezas, gorra y bufanda son identidad, no acento.
+- Tan: pose `parado`, expresión `sorpresa`, vista `perfil`, `mira=1` (hacia el centro), x = 30 %, pies a 86 %, `alto` 487 px. Tin: pose `parado`, expresión `curiosidad`, vista `perfil`, `mira=-1`, x = 70 %, `objeto=False`. Con suelo. Medido en el fotograma 0: texto x 116–848, y 492–682; mando x 239–840, y 744–1075; cara de Tan x 242–405, y 1175–1355; cara de Tin x 624–837, y 1142–1356.
 
 ### Toma 2 — Tan recuerda, mando en mano
 
@@ -258,9 +258,9 @@ Cada corte cae en el pulso anterior al inicio de la línea (o del tramo) que le 
 
 **Especificación de dibujo:**
 
-- Hoja de calendario de la sección 5 (W = 800 px, de 27 % a 48,5 % con la pila). De 17,5 a 18,6: 6 hojas **en blanco** (sin fecha) pasan de hoja, una cada 0,18 s (para que la zona de gráficos no quede vacía); «Sep 17, 2026» entra con `pop` en 18,6 y se queda hasta 19,4; vuelta de hoja de 19,4 a 19,7 (con «to November…», que por la envolvente empieza hacia 19,6); «Nov 19, 2026» de 19,7 a 21,0.
-- Tan (reacción al dato «63 días»): pose `piensa`, expresión `curiosidad` y, cuando la hoja pasa a «Nov 19, 2026» (19,4), `nostalgia` (`pensando` se leía como molestia), vista `frente`, x = 50 %, `espejo=True`, pies a 86 %, `alto` 34 %, `objeto=False` (en `piensa` el objeto cruza la cara).
-- Contador de 0 a 63 con ease-out cúbico de 17,75 a 18,8, que se queda fijo. Texto «+63 days» al 7 % de 17,8 a 19,3 (clave: 63); después «GTA 6» al 7 % de 19,4 a 20,9 (clave: 6; 1,5 s), que dice a qué lanzamiento corresponde la fecha.
+- Hoja de calendario de la sección 5 (W = 800 px, de 27 % a 48,5 % con la pila). De 17,5 a 18,6: 6 hojas **en blanco** (sin fecha) pasan de hoja, una cada 0,18 s (para que la zona de gráficos no quede vacía); «Sep 17, 2026» entra con `pop` en 18,6 y se queda hasta 19,25; vuelta de hoja de 19,25 a 19,55 (la hoja nueva sube desde 19,40; «to November…» empieza hacia 19,6 según la envolvente); «Nov 19, 2026» de 19,55 a 21,0.
+- Tan (reacción al dato «63 días»): pose `piensa`, expresión `curiosidad` y, cuando la hoja pasa a «Nov 19, 2026» (19,25), `nostalgia` (`pensando` se leía como molestia), vista `frente`, x = 50 %, `espejo=True`, pies a 86 %, `alto` 34 %, `objeto=False` (en `piensa` el objeto cruza la cara).
+- Contador de 0 a 63 con ease-out cúbico de 17,75 a 18,8, que se queda fijo. Texto «+63 days» al 7 % de 17,8 a 19,4 (clave: 63); después «GTA 6» al 7 % de 19,5 a 21,0 (clave: 6; 1,5 s; entra cuando la hoja ya dice «Nov 19, 2026»), que dice a qué lanzamiento corresponde la fecha.
 - **Color:** acento mostaza = la clave («63», luego «6») + la cabecera de la hoja; sin tomate.
 
 ### Toma 10 — Dato 7: 4.811 días
@@ -326,19 +326,19 @@ Cada corte cae en el pulso anterior al inicio de la línea (o del tramo) que le 
 ### Toma 13 — Cierre en bucle: vuelve el mando
 
 - **Duración:** 1,0 s (de 27,5 a 28,5)
-- **Personajes:** ninguno
+- **Personajes:** @tan, @tin
 - **Método:** edición
 - **Escenario:** papel_crema
-- **Encuadre:** el mismo mando a pantalla completa de la toma 1
-- **Cámara:** retroceso de 106 % a 100 % centrado en el centro del mando, muelle `sello`; en 28,5 la escala es 100 %
-- **Acción:** el mando retumba, ya en el plano exacto del fotograma 0; el último fotograma es igual al primero.
+- **Encuadre:** el mismo plano de portada de la toma 1 (mando, Tan y Tin de perfil)
+- **Cámara:** fija, escala 100 %
+- **Acción:** el mando retumba y Tan y Tin lo miran, ya en el plano exacto del fotograma 0; el último fotograma es igual al primero.
 - **Audio:** sin voz (la voz terminó en 27,33: 1,17 s de silencio de voz hasta el empalme; en el fotograma 0 la voz vuelve a entrar sin pausa). Golpes finales de la sección 13.
 - **Referencia:** toma 1 de esta versión (cierre en bucle con el plano del inicio)
 - **Transición de entrada:** `borrón` desde la toma 12. Salida: bucle al fotograma 0 de la toma 1.
 
 **Especificación de dibujo:**
 
-- Mando y estela de la sección 5, con el ángulo de la fórmula (5 × seno(4 pi t) grados); en 28,5 el ángulo es 0 y la escala 100 %: **el fotograma 855 (el que sigue al último, el 854) es igual al fotograma 0**.
+- Mando y estela de la sección 5, con el ángulo de la fórmula (5 × seno(4 pi t) grados); en 28,5 el ángulo es 0, la escala 100 % y el rebote de Tan y Tin está en la misma fase que en 0: **el fotograma 855 (el que sigue al último, el 854) es igual al fotograma 0**.
 - Texto «GTA 5?» entra con `pop` en 27,6 y está a escala 1 en 28,5; sigue sin corte en la toma 1 del bucle (de 0,0 a 0,9). Misma posición y tamaño que en la toma 1 (12 % del alto, y 492–682).
 
 ## 7. Audio
@@ -401,7 +401,7 @@ Los cortes de cada pieza en líneas se hacen por las pausas medidas, como en el 
 - **Orden:** Toma 1 → Toma 2 → Toma 3 → Toma 4 → Toma 5 → Toma 6 → Toma 7 → Toma 8 → Toma 9 → Toma 10 → Toma 11 → Toma 12 → Toma 13 (y vuelve a la toma 1). Las tomas 1 y 13 son el mismo plano.
 - **Transiciones:** corte seco; entre planos de objeto o de cámara distinta, el `borrón` de la sección 5 (1→2, 2→3, 4→5, 8→9, 11→12 y 12→13, como dicen las tomas). Sin destellos, sin fundidos.
 - **Texto en pantalla:** se dibuja en el mismo render, solo el de la tabla de la sección 12. El texto nunca contradice lo que se oye.
-- **Portada:** el fotograma 0 (o el de 0,5 s, que es el mismo plano): el mando con el «GTA 5?». Alternativa para probar en otra publicación: el fotograma de 21,0 s (el «4,811 days» en tomate con los dos celebrando).
+- **Portada:** el fotograma 0, que cumple los 6 puntos de la regla del dueño (`ENTREGA_YOUTUBE.md`, «Portada de los Shorts»): «GTA 5?» (2 palabras, letra de 230 px, clave en mostaza, sin la respuesta) entre y 400 y 700, el mando en el centro (y 720–1100) y las caras de Tan y Tin dentro de la zona útil (x 60–960, y 380–1440), con sorpresa y curiosidad, mirando el mando. `codigo/miniatura.py` guarda ese fotograma como `06_final/portada_short02.png` (1080x1920) y mide las cajas. Alternativa solo para probar aparte: el fotograma de 23,0 s (el «4,811 days» en tomate), que adelanta la respuesta.
 - **Formato de salida:** 1080x1920, 30 fps, H.264, yuv420p, AAC a 48 kHz. Archivo `06_final/tin_y_tan_short02_v1.mp4`.
 - **Título de la publicación (inglés):** How Many Days Did We Wait for GTA 6?
 - **Descripción de la publicación (en inglés, obligatoria; sin llamado a la acción):**
@@ -473,10 +473,10 @@ CRITICAL: counters only go up and never pass their final value; no text over a c
 
 - **Regla formal de la pieza:** un solo dato por plano, sobre el mismo papel crema, y la cuenta solo sube; todo corte cae en un pulso de 0,5 s, que es lo que dura un balanceo del mando.
 - **Rejilla de tiempo:** pulso de 0,5 s (120 BPM, compás de 4 pulsos = 2,0 s); 57 pulsos = 28,5 s (14 compases y 1 pulso). La voz entra en el pulso 0 (fotograma 0). Los 12 cortes caen en 1,0; 2,0; 5,0; 9,0; 11,0; 13,5; 15,0; 17,5; 21,0; 23,5; 25,5 y 27,5 (más el bucle en 28,5). Inicios reales de la voz: 0,00; 2,16; 5,35; 9,06 (y 11,13 dentro de la línea 4); 13,87 (y 15,26 dentro de la línea 5); 17,77; 21,38; 23,79; 25,50; fin en 27,33. Cada corte cae en el pulso anterior al inicio que le toca (de 0,00 a 0,37 s antes): ninguno llega tarde. A cambio, cuatro cortes caen de 0,04 a 0,15 s antes de que acabe la línea anterior (5,0 sobre «six?», 13,5 sobre «days.», 17,5 sobre «forty-eight.» y 21,0 sobre «nineteenth.»), y el de 25,5 no tiene margen (la línea 9 empieza en 25,50). El corte de 1,0 cae dentro de la línea 1. Se revisan al oído.
-- **Gancho (0 a 2,0 s):** el fotograma 0 es el mando a pantalla completa, ya retumbando (con estela), con «GTA 5?» ya entero (clave: 5, en mostaza; el otro elemento mostaza es el mando), que sale a los 0,9 s, y la voz de Tan ya diciendo «Remember buying G T A five…» desde el fotograma 0. En 1,0 el `borrón` pasa a Tan con el mando en la mano y, en 2,0, a la hoja de calendario que pasa de 2013 a 2026. Sin logo, sin título, sin segundo mudo. Gancho B para otra publicación (se renderiza gratis): el mismo plano con el texto «4,811 days?».
-- **Empieza en movimiento:** sí: sin intro ni logo; el mando retumba y el botón de abajo late desde el fotograma 0, a tamaño completo.
+- **Gancho (0 a 2,0 s):** el fotograma 0 es la portada: el mando en el centro, ya retumbando (con estela), Tan y Tin debajo mirándolo, y «GTA 5?» ya entero (clave: 5, en mostaza; el otro elemento mostaza es el mando), que sale a los 0,9 s, y la voz de Tan ya diciendo «Remember buying G T A five…» desde el fotograma 0. En 1,0 el `borrón` pasa a Tan con el mando en la mano y, en 2,0, a la hoja de calendario que pasa de 2013 a 2026. Sin logo, sin título, sin segundo mudo. Gancho B para otra publicación (se renderiza gratis): el mismo plano con el texto «4,811 days?».
+- **Empieza en movimiento:** sí: sin intro ni logo; el mando retumba, el botón de abajo late y Tan y Tin rebotan al pulso desde el fotograma 0.
 - **Motivo visual que vuelve:** el mando (tomas 1, 2 y 13), la hoja de calendario (tomas 3, 4, 9 y 12, y el calendario en la mano de Tin), la tira de 13 años (tomas 5 a 8 y 12) y el lápiz mostaza de Tin (toma 4). Se repiten con las mismas formas y colores.
-- **Cierre:** el video vuelve al plano exacto del fotograma 0 (mando a pantalla completa, ángulo 0, escala 100 %, «GTA 5?» ya entero) y encadena en bucle con la toma 1: el último fotograma es el primero. Cierre de 1,0 s (de 27,5 a 28,5); la voz termina en 27,33; silencio de voz en el empalme: 1,17 s (menos de 2 s).
+- **Cierre:** el video vuelve al plano exacto del fotograma 0 (la portada: mando en el centro con ángulo 0, Tan y Tin mirándolo, escala 100 %, «GTA 5?» ya entero) y encadena en bucle con la toma 1: el último fotograma es el primero. Cierre de 1,0 s (de 27,5 a 28,5); la voz termina en 27,33; silencio de voz en el empalme: 1,17 s (menos de 2 s).
 - **Llamado a la acción:** ninguno. Por qué: el objetivo comercial es presencia y línea base de retención; el canal todavía no existe y un llamado al final cortaría el bucle.
 
 Mapa de ritmo (los tiempos al décimo de segundo; cortes por segundo = cortes que caen dentro del tramo, sin contar el inicio):
@@ -536,10 +536,10 @@ Tipos de plano disponibles y dónde van: detalle o macro (tomas 5 a 8), héroe a
 | 4,745 days (contador de 0 a 4,745; clave: el número) | 11,2 | 13,4 | 10, 14 | 7 |
 | +3 leap days (clave: 3) | 13,7 | 14,9 | 10, 14 | 7 |
 | 4,748 days (contador de 4,745 a 4,748; clave: el número) | 15,1 | 17,4 | 10, 14 | 7 |
-| +63 days (contador de 0 a 63; clave: 63) | 17,8 | 19,3 | 10, 14 | 7 |
-| Sep 17, 2026 (en la hoja de la zona de gráficos; sin clave) | 18,6 | 19,4 | 18,1, 39,2 | 4,6 |
-| Nov 19, 2026 (en la hoja de la zona de gráficos; sin clave) | 19,7 | 21,0 | 18,1, 39,2 | 4,6 |
-| GTA 6 (clave: 6) | 19,4 | 20,9 | 10, 14 | 7 |
+| +63 days (contador de 0 a 63; clave: 63) | 17,8 | 19,4 | 10, 14 | 7 |
+| Sep 17, 2026 (en la hoja de la zona de gráficos; sin clave) | 18,6 | 19,25 | 18,1, 39,2 | 4,6 |
+| Nov 19, 2026 (en la hoja de la zona de gráficos; sin clave) | 19,4 | 21,0 | 18,1, 39,2 | 4,6 |
+| GTA 6 (clave: 6) | 19,5 | 21,0 | 10, 14 | 7 |
 | 4,811 days (contador de 4,748 a 4,811; en tinta mientras sube, al llegar el número en tomate con trazo de tinta; se queda durante toda la toma 11) | 21,2 | 25,4 | 10, 15 | 7 |
 | age 13 (clave: 13, en tomate con trazo de tinta; «age» en tinta) | 25,7 | 27,4 | 10, 14 | 7 |
 | 17 (en el calendario de la mano de Tin; tinta) | 25,5 | 27,5 | sobre la mano de Tin | 3 |
@@ -610,7 +610,7 @@ Los golpes bajo la voz van a unos **−26 LUFS** (−12 dB respecto a la voz, qu
 | Tictac de contador (3 pasos) | 15,74 / 16,1 / 16,68 | contador de la toma 8 (el tercero, con el `pop` del texto) | código, propio |
 | Clic suave de borrón | 17,5 | corte de toma 8 a toma 9 | código, propio |
 | 6 tics de hoja en blanco | 17,56–18,46 | pila de hojas de la toma 9 | código, propio |
-| Papel que pasa de hoja (tic corto) | 19,4 | vuelta de hoja de la toma 9 | código, propio |
+| Papel que pasa de hoja (tic corto) | 19,25 | vuelta de hoja de la toma 9 | código, propio |
 | Clic suave | 21,0 | corte de toma 9 a toma 10 | código, propio |
 | Tictac de contador que sube de tono | 21,4–22,5 | contador de la toma 10 (calla al llegar) | código, propio |
 | Ding de campana al llegar a 4,811 | 22,53 | primer fotograma con el valor final de la toma 10 (mismo fotograma que el tomate y el `pop`) |
@@ -619,7 +619,7 @@ Los golpes bajo la voz van a unos **−26 LUFS** (−12 dB respecto a la voz, qu
 | Clic suave de borrón | 25,5 | corte de toma 11 a toma 12 | código, propio |
 | Pop del bloque 13 (pasa a tomate) (3) | 26,0 / 26,5 / 27,0 | latidos de la toma 12 | código, propio |
 | Clic suave de borrón | 27,5 | corte de toma 12 a toma 13 | código, propio |
-| Whoosh suave de retroceso de cámara | 27,5–28,3 | retroceso de la toma 13 | código, propio |
+| Whoosh suave | 27,5–28,3 | vuelve el plano de la portada, toma 13 | código, propio |
 | Clic de botón, uno por pulso | 27,5 / 28,0 | latidos del botón de la toma 13 | código, propio |
 | Thunk grave idéntico al del segundo 0,0 (cierra el bucle; el del 0,0 lo continúa) | 28,5 | bucle: es el del segundo 0,0 de la vuelta siguiente (el archivo dura 28,5 s justos y no lo duplica) | código, propio |
 

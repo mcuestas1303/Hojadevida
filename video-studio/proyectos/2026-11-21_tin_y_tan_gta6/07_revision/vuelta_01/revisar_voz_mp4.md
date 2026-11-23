@@ -16,7 +16,7 @@ Duración: 28.50 s. Reconocedor: Whisper small.en (sherpa-onnx), sin conexión.
 
 | De (s) | A (s) | Dura | Se oye |
 |---|---|---|---|
-| 0.00 | 28.50 | 28.50 | Remember buying GTA 5 at midnight? So, how many days did we wait for GTA 6? Wow, that long? |
+| 0.00 | 28.50 | 28.50 | Remember buying GTA 5 at midnight? So, how many days did we wait for GTA 6? GTA 5 came out September 17th, 2013. 13 years times 365. 4,745 days. Add 3 leap days. 4,748. Plus, 63 days September 17th to November 19th. 4,811 days. Wow, that long? A baby born that day is a teenager now. |
 
 Silencio al final: 0.00 s. Nivel de los últimos 50 ms: -31 dB.
 

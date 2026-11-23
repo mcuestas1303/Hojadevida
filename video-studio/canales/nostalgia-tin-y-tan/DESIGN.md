@@ -46,6 +46,13 @@ Nada de degradados de fondo (cap. 11, regla 7). Un color de acento por plano.
 - La tipografía tiene que tener todos los símbolos que se usan (en la prueba, «≈» y «→» salieron como cuadrados):
   antes de renderizar, comprobar los glifos o escribir «about» y una flecha dibujada.
 - Subtítulos: 1 a 3 palabras, la palabra clave en mostaza.
+- **Cifras: dígitos abiertos de Inter (rasgo OpenType `ss01`) y contorno de 0,045 em** (norma del canal desde el
+  short 2, «How Many Days Did We Wait for GTA 6?», 2026-11-23). Por qué: con los dígitos por defecto de Inter Display
+  Medium y el contorno de 0,06 em, las aberturas del 6, el 9, el 3 y el 5 son más estrechas que el trazo, se llenaban
+  de tinta y el número salía con una línea por dentro (lo marcó el supervisor de continuidad). `ss01` es de la misma
+  fuente (3, 4, 6 y 9 alternativos) y se aplica a **todas** las cifras de la pieza, con o sin contorno, para que no se
+  mezclen dos formas del mismo número. En Pillow: `features=["ss01"]` (necesita libraqm). El short 1 («pencil turns»)
+  quedó con los dígitos por defecto y el contorno de 0,05 em: no se rehace; si se vuelve a renderizar, se pasa a esta norma.
 
 ## Personajes
 

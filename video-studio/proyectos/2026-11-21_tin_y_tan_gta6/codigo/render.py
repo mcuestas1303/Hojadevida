@@ -294,8 +294,8 @@ TEXTOS = [
     (11.2, 13.4, 7, Y_132, "c4745", None),
     (13.7, 14.9, 7, Y_132, (T("+"), K("3"), T(" leap days")), None),
     (15.1, 17.4, 7, Y_132, "c4748", (LLEGA_4748, 0.10)),
-    (17.8, 19.3, 7, Y_132, "c63", None),
-    (19.4, 20.9, 7, Y_132, (T("GTA "), K("6")), None),
+    (17.8, 19.4, 7, Y_132, "c63", None),
+    (19.5, 21.0, 7, Y_132, (T("GTA "), K("6")), None),
     (21.2, 25.4, 7, Y_15, "c4811", (LLEGA_4811, 0.14)),    # se queda toda la toma 11 (el pago del video)
     (25.7, 27.4, 7, Y_132, (T("age "), R("13")), None),
     (27.6, 28.5, 12, Y_PORTADA, (T("GTA "), K("5"), T("?")), None),
@@ -361,9 +361,10 @@ def capa_texto(base, f):
 
 # ---------------------------------------------------------------- gráficos propios del video
 def mando_grande(lz, t):
-    """El mando a pantalla completa (sección 5): W = 800 px, centro en (50 %, 54 %), balanceo de ±5 grados con periodo
-    de 0,5 s, estela plana de dos copias en papel sombra y botón de abajo que late 0,2 s en cada pulso (a papel)."""
-    cx, cy, ancho = 0.5 * W, 0.54 * H, 800.0      # 800 px: con el balanceo y el empuje a 106 % queda en x 100-980
+    """El mando del gancho (sección 5): W = 600 px, centro en (50 %, y = 910): ocupa y 745-1075, dentro de la franja
+    y 720-1100 que la regla de portada de Shorts pide para el objeto. Balanceo de ±5 grados con periodo de 0,5 s, estela
+    plana de dos copias en papel sombra y botón de abajo que late 0,2 s en cada pulso (a papel)."""
+    cx, cy, ancho = 0.5 * W, 910.0, 600.0
 
     def ang(tt):
         return 5 * math.sin(4 * math.pi * tt)
@@ -480,9 +481,27 @@ HOJA_G = dict(cx=0.5 * W, y_top=0.28 * H, ancho=0.80 * W, alto=1000)       # hoj
 HOJA_Z = dict(cx=0.5 * W, y_top=ZONA_G0, ancho=800, alto=0.485 * H - ZONA_G0 - 28)
 
 
+ALTO_PORTADA = 487.0      # R = 88 px: caras de y 1135 a 1362, dentro de la zona útil de portada (y 380-1440)
+
+
+def portada(lz, t):
+    """Tomas 1 y 13: el primer segundo ES la portada (ENTREGA_YOUTUBE.md, «Portada de los Shorts»). Texto «GTA 5?» entre
+    y 400 y 700 (capa de texto), el mando en el centro (y 720-1100) y, debajo, Tan (izquierda) y Tin (derecha) de
+    perfil, mirando hacia el mando, con sorpresa y curiosidad; las caras quedan dentro de la zona útil (x 60-960,
+    y 380-1440) y los cuerpos bajan hasta el suelo (y = 1651). Todo está completo en el fotograma 0; se mueve desde ahí
+    (el mando retumba y los personajes rebotan al pulso). Sin empuje de cámara: escala 100 % en toda la toma, para que
+    las cajas medidas en el fotograma 0 valgan todo el segundo y el último fotograma sea igual al primero."""
+    suelo(lz)
+    mando_grande(lz, t)
+    palitos.dibujar(lz, "tan", X_TAN, SUELO, ALTO_PORTADA * bote(t), pose="parado", expresion="sorpresa", vista="perfil",
+                    mira=1, viento=0.2 * math.sin(4 * math.pi * t))      # periódico: igual en 0 y en 28,5
+    palitos.dibujar(lz, "tin", X_TIN, SUELO, ALTO_PORTADA * bote(t, 0.5), pose="parado", expresion="curiosidad",
+                    vista="perfil", mira=-1, objeto=False)
+    return 1.0, CENTRO
+
+
 def toma_1(lz, t):
-    c = mando_grande(lz, t)
-    return 1 + 0.06 * empuje(t, 1.0), c
+    return portada(lz, t)
 
 
 def toma_2(lz, t):
@@ -572,7 +591,8 @@ def toma_8(lz, t):
 
 
 T9_BLANCAS = [17.56 + 0.18 * k for k in range(6)]     # 6 hojas en blanco, una cada 0,18 s (la última acaba en 18,64)
-T9_FECHA_1, T9_VUELTA = 18.6, 19.4      # la hoja pasa a «Nov 19, 2026» con «to November…» (hacia 19,6)
+T9_FECHA_1, T9_VUELTA = 18.6, 19.25     # la hoja pasa a «Nov 19, 2026» (la nueva sube de 19,40 a 19,55), poco antes
+                                        # de «to November…» (hacia 19,6), para que «GTA 6» entre con la hoja ya en noviembre
 
 
 def toma_9(lz, t):
@@ -636,10 +656,7 @@ def toma_12(lz, t):
 
 
 def toma_13(lz, t):
-    tl = t - 27.5
-    c = mando_grande(lz, t)
-    p = 0.7 * muelle_exacto(tl, SELLO, 1.0) + 0.3 * eo(tl / 1.0)      # llega a 1 exacto en 28,5: escala 100 %
-    return 1.06 - 0.06 * p, c
+    return portada(lz, t)
 
 
 TOMAS = [toma_1, toma_2, toma_3, toma_4, toma_5, toma_6, toma_7, toma_8, toma_9, toma_10, toma_11, toma_12, toma_13]
