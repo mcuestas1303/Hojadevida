@@ -31,6 +31,7 @@ de su oficio antes de trabajar; nadie trabaja de memoria.
 | 11 | [Retención y revisión](11_retencion_y_revision.md): las 21 reglas por rol (gancho, loop, ritmo, golpes de sonido, gráficos con código, revisión fotograma a fotograma) | todos |
 | 13 | [Color con intención](13_color_con_intencion.md): psicología del color con fuentes, 2 neutros + 1 acento, color según el objetivo y el público, colorimetría medible y qué se escribe en la ficha | director de fotografía, director creativo, supervisor, editor |
 | 12 | [Controles de calidad](12_controles_de_calidad.md): los filtros bloqueantes de texto, cifras, voz, imagen, video, entrega y marca, quién firma cada uno | todos |
+| 14 | [Efectos y emoción](14_efectos_y_emocion.md): la gramática de efectos; qué comunica y qué emoción provoca cada efecto de profundidad, cámara, montaje, animación, luz, texto y sonido, con su respaldo (investigación, oficio o hipótesis), dosis, público, seguridad y métrica | director creativo, fotografía, animación, editor, sonido, supervisor |
 
 ## El equipo
 

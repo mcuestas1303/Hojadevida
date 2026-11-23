@@ -100,3 +100,5 @@ Faltan: revisión del equipo de producción, escucha del audio, ajustes y public
 | Color con intención en el prompt del short 2 (director de prompts) | 74 k | 0 |
 | Short 2: firmas del equipo (sonido 110 k, supervisor 358 k, fotografía 71 k), perfil emocional 219 k, montaje y cinco renders 559 k | ≈ 1,3 M | 0 |
 | Plan para entrar al Programa de socios (comercial) | 173 k | 0 |
+| Biblioteca de efectos y prueba técnica de profundidad (4 renders) | 324 k | 0 |
+| Investigación: capítulo 14, efectos y emoción | 293 k | 0 |

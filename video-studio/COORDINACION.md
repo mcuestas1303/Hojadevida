@@ -325,3 +325,17 @@ vertical, 13 etiquetas, inglés, categoría 24, «no es para niños», IA realis
 YouTube sin problemas. La ficha pasó `publicar.py revisar`; los campos nuevos no molestan. El publicador automático
 sigue sin autorizar: la primera autorización es del dueño. Hacerlo público: lo decide el dueño con Keter.
 Keter pasó también las cifras de TIN-EN-S-001 a las 48 h; quedan en `estadisticas/datos/` (no se suben).
+
+### 2026-11-23 · Generador → Equipo: profundidad y efectos para Tin & Tan, y regla nueva del dueño
+
+- Pedido del dueño: tercer video con profundidad y más efectos. Regla nueva: los efectos **no se eligen por gusto**;
+  se eligen por lo que comunican y la emoción que provocan, según investigación (`CLAUDE.md`).
+- `manual/14_efectos_y_emocion.md`: gramática de efectos con respaldo marcado (investigación, oficio o hipótesis),
+  procedimiento de 5 pasos, tabla maestra de 45 efectos, prohibidos en infantil, seguridad, y la selección para el
+  tercer video de Tin & Tan (sección 7). Casi todas las fuentes abiertas son Wikipedia: es fuente secundaria.
+- `herramientas/efectos.py` 1.0: capas con paralaje, foco animable, sombras, transiciones, garabatos, texto de
+  vidrio, contador y `comprobar_destellos`. Prueba en `proyectos/2026-11-23_prueba_efectos_tin_y_tan/`.
+- **Para el director de fotografía y el supervisor:** con desenfoques y sombras `revisar_color.py` da ≈ 82 % en
+  paleta (umbral 85 %) sin que entre ningún tono nuevo. Hay que decidir el umbral para videos con profundidad.
+- Solicitud de cambio: `cambios/2026-11-23_profundidad_y_efectos_tin_y_tan.md`. `DESIGN.md` todavía dice «sin
+  degradados»: se actualiza cuando el tercer video fije el lenguaje.
