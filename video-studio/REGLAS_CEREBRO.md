@@ -125,3 +125,6 @@
   métrica y riesgo). Va también en `ficha.json`, campo `emociones`. `validar_prompt.py` no deja pasar uno sin llenar.
 - **Oído del estudio (dueño, 2026-11-23):** «busca para que puedas auditar el tema de voz y audio».
   `herramientas/revisar_voz.py` transcribe y compara con el guion (Whisper sin conexión, `instalar_oido.sh`).
+
+- **Objetivo inicial (dueño, 2026-11-23):** «Entonces el objetivo inicial es entrar al programa de socios; todo debe girar en torno a lograr el objetivo a la mayor brevedad posible». Vale para el canal Tin & Tan; todo
+  brief, ficha técnica y perfil emocional lo lleva como objetivo comercial y mide contra los umbrales del Programa.

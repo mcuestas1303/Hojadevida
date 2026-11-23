@@ -3,7 +3,7 @@
 - **Título:** How Many Days Did We Wait for GTA 6?
 - **Pedido del dueño (2026-11-21, textual):** «prepara un prompt para tin y tan con temática de gta6 agrega variaciones al sheet si es necesario».
 - **Modo:** C desde cero, dibujado por código (método «edición», 0 créditos de imagen y video).
-- **Objetivo comercial:** el del canal: presencia y línea base (canal nuevo, sin historial). El dueño no fijó otro para esta pieza.
+- **Objetivo comercial:** **entrar al Programa de socios de YouTube lo antes posible** (fijado por el dueño el 2026-11-23, textual: «Entonces el objetivo inicial es entrar al programa de socios; todo debe girar en torno a lograr el objetivo a la mayor brevedad posible»). Hasta ese día el equipo había puesto «presencia y línea base» por defecto.
 - **Público objetivo:** EE. UU., adultos de 30 a 50 años que crecieron con la saga. Es más joven que el 45–70 del primer short: ver «Decisiones del equipo».
 - **Para qué es el video:** que quien esperó el juego sienta el paso del tiempo y lo comparta («no puede ser tanto»).
 - **Emoción principal:** nostalgia → sorpresa.

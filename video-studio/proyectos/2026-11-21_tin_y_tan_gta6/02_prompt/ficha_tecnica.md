@@ -11,27 +11,30 @@ sobre el quinto render.
 | Canal | Tin & Tan (`@TinandTan`), inglés, EE. UU. |
 | Tipo | Short n.º 2 |
 | Título | How Many Days Did We Wait for GTA 6? (36 caracteres; filtro de títulos: pasa) |
-| Objetivo comercial | Presencia y línea base del canal (puesto por el equipo; ver 1b) |
+| Objetivo comercial | Entrar al Programa de socios de YouTube lo antes posible (dueño, 2026-11-23; ver 1b) |
 | Público | EE. UU., adultos de 30 a 50 años que crecieron con la saga |
 | Qué queremos que haga | Verlo entero y dejarlo dar otra vuelta; después, mandarlo a quien esperó el juego |
-| Estado | Renderizado y firmado por el equipo. El dueño lo escuchó y dio el audio por bueno (2026-11-23). **Falta su sí para publicar y que fije el objetivo comercial** |
+| Estado | Renderizado y firmado por el equipo. El dueño lo escuchó y dio el audio por bueno (2026-11-23). **Falta su sí para publicar** |
 
 ## 1b. Objetivos comerciales
 
-**Estado: los puso el equipo por defecto; el dueño todavía no los ha fijado para este video.** La regla dice que el
-objetivo comercial lo fija el dueño en el brief y que, si falta, se pregunta. Aquí no se preguntó: se tomó el del canal.
+**Fijado por el dueño el 2026-11-23:** entrar al Programa de socios de YouTube a la mayor brevedad posible. Textual:
+«Entonces el objetivo inicial es entrar al programa de socios; todo debe girar en torno a lograr el objetivo a la mayor brevedad posible».
 
-| Objetivo | Qué significa en este video | Cómo se mide | Meta | Plazo |
-|---|---|---|---|---|
-| Presencia (alcance) | Que YouTube lo reparta en el feed de Shorts a gente que no conoce el canal | Vistas; «mostrado en el feed»; vistas desde el feed de Shorts | Línea base: no hay historial | 7 y 28 días |
-| Línea base del canal | Tener las primeras cifras propias para comparar los siguientes videos | Visto frente a deslizado; duración media vista; edad del público | Línea base | 3, 7 y 28 días |
-| Recordación (secundario, propuesto por el equipo) | Que la paleta y los personajes se reconozcan | Espectadores que regresan; suscriptores desde el video | Línea base | 28 días |
+| Umbral del Programa (fuente oficial, leída el 2026-11-20) | Antes del 1-feb-2027 | Desde el 1-feb-2027 |
+|---|---|---|
+| Suscriptores | 1.000 | 1.000 |
+| Camino de Shorts | 10 millones de vistas de Shorts en 90 días | 20 millones en 90 días |
+| Camino de video largo | 4.000 horas públicas en 12 meses | 8.000 horas en 365 días |
 
-Lo que este video **no** persigue hoy: ingresos (el canal no está en el Programa de socios), ventas ni tráfico a otro
-sitio; no lleva llamado a la acción.
+| Qué aporta este video al objetivo | Cómo se mide | Meta |
+|---|---|---|
+| Vistas de Shorts que cuentan para el umbral (públicas y en el feed de Shorts) | Vistas desde el feed de Shorts, a 7 y 28 días | Línea base: es el segundo video del canal |
+| Suscriptores nuevos | Suscriptores ganados desde este video | Línea base |
+| Aprender qué retiene, para repetirlo | Visto frente a deslizado; retención por segundo | Línea base |
 
-**Pendiente del dueño:** confirmar o cambiar el objetivo (monetizar, presencia, recordación, comunidad, conversión,
-viralidad) y, si quiere, una meta en número.
+**Lo que este video no hace todavía por el objetivo:** no pide la suscripción ni lleva llamado a la acción (se decidió
+antes de que el dueño fijara el objetivo). Se revisa en el plan del canal: `canales/nostalgia-tin-y-tan/plan_programa_de_socios.md`.
 
 ## 2. Formato
 
@@ -178,5 +181,4 @@ Elemento por elemento, con su fundamento, su métrica y su riesgo: `02_prompt/pe
 
 1. Hecho el 2026-11-23: el dueño escuchó el video y el audio está bien.
 2. Hecho el 2026-11-23, con el sí del dueño: `08_entrega/TIN-EN-S-002/video.mp4` recomprimido a 2,75 MB (H.264 CRF 22, audio sin tocar; el guion sigue coincidiendo, 75 de 75).
-4. Que el dueño fije el objetivo comercial (sección 1b).
 3. Las cinco preguntas emocionales del perfil.

@@ -287,3 +287,7 @@ renderizo y paso los controles; el resultado queda en `proyectos/2026-11-21_tin_
 ### 2026-11-23 · Generador → Equipo: el dueño escuchó el short 2 y el audio está bien
 
 Textual: «Punto 1 sí escuché y está bien». Video de entrega recomprimido a 2,75 MB con su sí (`08_entrega/TIN-EN-S-002/video.mp4`). Falta que fije el objetivo comercial y que autorice publicar.
+
+### 2026-11-23 · Generador → Equipo: el dueño fijó el objetivo inicial: entrar al Programa de socios cuanto antes
+
+Textual: «Entonces el objetivo inicial es entrar al programa de socios; todo debe girar en torno a lograr el objetivo a la mayor brevedad posible». Ya está en `CLAUDE.md`, en el README del canal y en la ficha del short 2. El comercial prepara `canales/nostalgia-tin-y-tan/plan_programa_de_socios.md` (umbrales, cuentas, cadencia y qué cambia en los videos).

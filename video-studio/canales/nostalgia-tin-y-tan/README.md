@@ -19,6 +19,11 @@
 - Estilo visual del canal: `DESIGN.md`.
 - Copia en Google Drive: `Personajes/Tin & Tan (palitos)/` (`01 Diseño aprobado`, `02 Hojas de personaje` y la bitácora).
 
+## Objetivo comercial del canal (dueño, 2026-11-23)
+
+**Entrar al Programa de socios de YouTube a la mayor brevedad posible.** Textual: «Entonces el objetivo inicial es entrar al programa de socios; todo debe girar en torno a lograr el objetivo a la mayor brevedad posible».
+Plan, umbrales y cuentas: `plan_programa_de_socios.md`. Requisitos oficiales: `video-studio/comercial/base_conocimiento.md`, secciones 1, 2, 7 y 12.
+
 ## Datos del canal
 
 > Decisión del dueño (2026-11-21), textual: *«No estamos complicando solo abre otro canal con Tin&Tan igual despues

@@ -12,6 +12,10 @@ El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
   `supervisor-de-continuidad`, `analista-de-video`. Su formación está en `video-studio/manual/`.
 - El **objetivo comercial** (monetizar, presencia, recordación, comunidad, conversión, viralidad…) lo fija el dueño
   en el brief de cada proyecto. Si falta, se pregunta.
+- **Objetivo inicial fijado por el dueño (2026-11-23): entrar al Programa de socios de YouTube lo antes posible.**
+  Textual: «Entonces el objetivo inicial es entrar al programa de socios; todo debe girar en torno a lograr el objetivo a la mayor brevedad posible». Cada decisión de tema, formato, título, gancho,
+  ritmo y cadencia se justifica por cuánto acerca a los umbrales (suscriptores y vistas de Shorts u horas de video
+  largo). Plan y cuentas: `video-studio/canales/nostalgia-tin-y-tan/plan_programa_de_socios.md`.
 - Solo actúan los personajes de `video-studio/personajes/REGISTRO.md` (Tiky, Lumi, Spike, Tin, Tan). Tin & Tan son
   los muñecos de palitos del canal de nostalgia y se dibujan con `video-studio/herramientas/palitos.py`. Sus carpetas terminadas
   están en Google Drive, `Personajes/`.
