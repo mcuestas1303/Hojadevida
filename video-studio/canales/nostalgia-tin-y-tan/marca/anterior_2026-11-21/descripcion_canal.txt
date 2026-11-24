@@ -1,0 +1,27 @@
+NOMBRE DEL CANAL
+Tin & Tan
+
+IDENTIFICADOR SUGERIDO
+@TinandTan (el que quedó en el canal; URL https://www.youtube.com/channel/UCf4M-1YDL-_bwSOghElOZKw)
+
+DESCRIPCIÓN DEL CANAL (inglés, EE. UU.; se pega tal cual en YouTube Studio → Personalización → Perfil → Descripción)
+Tin & Tan: nostalgia, calculated.
+
+Tan remembers. Tin does the math.
+
+Remember rewinding a cassette with a pencil? We answer the little questions you grew up with, using real numbers, step by step, in short videos made for anyone who grew up in the 70s, 80s and 90s.
+
+Every number comes with its source and its assumptions in the description.
+
+The drawings, music and sound effects are original, made with code. The voices are AI-generated.
+
+PALABRAS CLAVE DEL CANAL (YouTube Studio → Configuración → Canal → Palabras clave)
+nostalgia, retro, cassette, cassette tape, 70s, 80s, 90s, Gen X, remember when, retro tech, everyday math, stick figure animation, Tin and Tan
+
+ARCHIVOS
+- perfil.png: foto de perfil, 800x800 (YouTube la recorta en círculo).
+- banner.png: imagen del banner, 2560x1440; lo importante está en la zona segura central de 1546x423.
+- marca_de_agua.png: marca de agua de los videos, 150x150, fondo transparente (YouTube Studio → Personalización → Marca → Marca de agua; mostrar «al final del video» o «todo el video»).
+
+Todo dibujado con código por el equipo de producción (video-studio/canales/nostalgia-tin-y-tan/marca/marca.py), 0 créditos.
+Nota: la descripción no promete un calendario de publicación; se agrega cuando el dueño lo defina con el Generador de prompts.
