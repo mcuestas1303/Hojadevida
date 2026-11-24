@@ -369,8 +369,109 @@ Cada corte y cada efecto llevan su sonido (cap. 11, regla 17). El sonido no es u
 | **Remate** | corte seco, congelado, pausa; plano fijo | añadir información nueva; música que tapa |
 | **Cierre y bucle** | plano fijo de los personajes (firma del canal), mismo gesto y mismo sonido siempre; último fotograma igual al primero | despedida larga; lista de peticiones; cualquier efecto nuevo |
 
+Cómo elegir con qué emoción termina el video (pregunta abierta, respuesta con remate, invitación, bucle): **sección 4b**.
+
 Infantil (1 a 3 años): estos momentos **no aplican**. La estructura es saludo → presentación → práctica → cierre →
 invitación (`infantil/guia_1_a_3.md` §3) y no hay gancho ni bucle.
+
+## 4b. Cómo se cierra un video: con qué emoción terminar
+
+> Encargo del dueño (2026-11-24), textual: «considera iniciar con esa pregunta de curiosidad, y cómo finalizas con una
+> pregunta de suspenso, o investiga con qué emoción es mejor cerrar». Escrito el 2026-11-24 para decidir el cierre del
+> short 3 de Tin & Tan sin elegir por gusto. Mismos sellos que el resto del capítulo (sección 0). **Abiertas el
+> 2026-11-24** (Wikipedia en inglés, `curl`, una petición cada 10 s): Peak–end rule · Zeigarnik effect · Ovsiankina
+> effect · Curiosity · Cliffhanger · Need for cognitive closure · Serial-position effect · Viral phenomenon. De los
+> estudios que esas páginas citan, **ningún artículo primario se abrió**.
+
+### 4b.1 Qué dice cada fuente (y qué no prueba)
+
+- **R48 · Regla del pico y el final. [investigación]** Fredrickson y Kahneman propusieron que una experiencia se
+  recuerda por «instantáneas»: el promedio del momento más intenso y de lo que se siente al final; la duración casi no
+  pesa («duration neglect»). Kahneman y Redelmeier (1996) lo midieron con colonoscopias (el dolor del peor momento y del
+  final predijo la evaluación, sin importar el largo), y en el estudio de 1993 y el de los tres minutos extra, un
+  final menos molesto hizo recordar el procedimiento largo como menos desagradable. La página dice que la regla
+  «solo aplica cuando la experiencia tiene principio y final definidos» y que Kahneman y Carmon hallaron una condición
+  límite (no se leyó cuál). **Límite:** son procedimientos médicos y tareas de laboratorio con dolor o molestia, no
+  videos; y en un Short el espectador que desliza antes del final nunca vive el final. Abierta: «Peak–end rule».
+- **R49 · Zeigarnik y Ovsiankina. [investigación, discutida]** Zeigarnik (1927) halló que se recuerdan mejor las
+  tareas interrumpidas que las terminadas (explicación de Lewin: una tarea iniciada crea una «tensión» que
+  persiste). **Varias réplicas no lo encontraron** (Van Bergen, 1968) y un metaanálisis de 2025, que cita la página,
+  concluye que **no hay ventaja de memoria para lo inconcluso**, pero **sí una tendencia general a retomar la
+  tarea** (efecto Ovsiankina: el impulso de terminar lo ya iniciado). Consecuencia: el argumento «lo inacabado se
+  recuerda más» no se usa; lo que queda en pie es solo el impulso de retomar, que se refiere a una tarea que la
+  persona empezó, no a un contenido que se le cortó. Abiertas: «Zeigarnik effect» y «Ovsiankina effect». Ya estaba
+  en la sección 8, punto 14, como «no se usa»: sigue sin usarse.
+- **R50 · Brecha de información y «cliffhanger». [investigación] y [oficio]** La curiosidad nace de novedad,
+  complejidad, incertidumbre y conflicto (Berlyne) y es un deseo de información que se activa cuando se percibe
+  una brecha entre lo que se sabe y lo que se quiere saber (Loewenstein, 1994: R28; el artículo no se abrió, solo su
+  referencia en «Curiosity», que también cita a Kang y otros, 2009, sobre el circuito de recompensa: solo el título).
+  El «cliffhanger» es un recurso de ficción que deja a un personaje en una situación sin resolver al final de una
+  entrega y «está diseñado para incentivar la audiencia en las entregas siguientes» (Baldick; Fulton; Mittell,
+  citados en la página). **Límite:** funciona en narrativas seriadas donde la siguiente entrega existe y se
+  anuncia («To be continued»); un Short que llega por recomendación no garantiza que haya otro. Abiertas: «Curiosity»
+  y «Cliffhanger».
+- **R51 · Necesidad de cierre. [investigación]** Kruglanski y otros: deseo de una respuesta clara para evitar la
+  ambigüedad; aumenta con los costos percibidos de no tenerla; tiene una tendencia de urgencia (cerrar cuanto
+  antes) y una de permanencia (mantener el cierre); la escala es de Kruglanski, Webster y Klem (1993). Quien la tiene
+  alta soporta peor lo ambiguo y se aferra a las primeras señales. Consecuencia **[hipótesis del equipo]**: una
+  pregunta central que el video no cierra se siente como incumplimiento; solo se puede dejar abierta una pregunta
+  **nueva**. Abierta: «Need for cognitive closure».
+- **R52 · Posición serial. [investigación, con límite]** Al recordar una lista libremente, los últimos elementos se
+  recuerdan mejor (recencia) y, entre los anteriores, los primeros (primacía); una explicación de la recencia es que
+  esos elementos siguen en la memoria de trabajo. **Límite:** son listas de palabras recordadas al momento, no un
+  video visto en un teléfono. Consecuencia **[hipótesis del equipo]**: lo último que se dice es lo mejor recordado;
+  ahí va lo que se quiere que quede (el contraste o la invitación), no un dato nuevo. Abierta: «Serial-position effect».
+- **R32 (ampliado) · Compartir y activación. [investigación]** La página abierta dice: cuanto más activa una pieza una
+  emoción, «particularly high arousal ones», más probable es que se pase (Berger y Milkman, 2012). **Qué emociones por
+  nombre empujan a compartir o no, no se leyó hoy** (el artículo no se abrió): no se usa ninguna lista de emociones
+  como dato. Consecuencia **[hipótesis del equipo]**: el final no debe ser de baja activación (calma, resignación);
+  conviene que termine en asombro, sorpresa o curiosidad.
+- **P · Datos de YouTube** (leídos el 2026-11-23, no reabiertos hoy; `comercial/base_conocimiento.md` §15 y
+  `canales/nostalgia-tin-y-tan/plan_programa_de_socios.md`, 1.3): «An engaged view … does not include any loops»
+  (blog, 2026-08-12): **la repetición no suma al umbral**; está permitido pedir la suscripción («You're allowed to
+  encourage viewers to subscribe», ayuda 3399767); para un enlace «Related video» YouTube aconseja una petición
+  explícita en los últimos 5 segundos (blog, 2026-07-14). No hay dato oficial sobre si terminar en pregunta cambia
+  suscriptores o comentarios.
+
+### 4b.2 Lo que sale de esto (reglas de partida; cada una con su sello)
+
+1. **Se cierra la pregunta con la que se abrió** (R51, R48; hipótesis). Si el video abre con una pregunta de
+   curiosidad, el pico y el remate la responden con una frase que se pueda citar.
+2. **Se termina en activación alta y positiva** (asombro, sorpresa, curiosidad), no en calma (R48, R32;
+   hipótesis). El respiro de 60 a 90 f después del pico se mantiene, pero **no es el final**: el final es un último golpe corto.
+3. **Lo último que se dice es lo que debe recordarse** (R52; hipótesis).
+4. **Una sola pregunta abierta al final, distinta de la central**, sobre hechos públicos que el canal pueda
+   responder y que se compromete a responder. Nunca sobre la vida privada, nunca sobre un trámite ajeno que el canal
+   no controla, nunca una insinuación (R50, R51; línea editorial y `PARAMETROS.md`, sección 2).
+5. **La invitación a suscribirse es la salida de esa pregunta**, una sola vez (R49, solo el impulso de retomar;
+   hipótesis; permitido por YouTube).
+6. **El bucle visual es gratis y se mantiene, pero no decide el cierre**: la repetición no es vista calificada (P).
+
+### 4b.3 Tabla de decisión
+
+| Tipo de cierre | Emoción que deja | Métrica del objetivo a la que sirve | Riesgo | Cuándo usarlo | Respaldo |
+|---|---|---|---|---|---|
+| **Pregunta de suspenso abierta** (sobre algo que va a pasar) | curiosidad con tensión | regreso al canal, suscriptores, comentarios | frustración si no hay respuesta próxima (R51); sensación de engaño o de clickbait; con personas reales, insinuación | solo si el hecho pendiente es público, con fecha y del que el canal se compromete a informar, y no toca la vida privada ni asuntos legales de una persona | R50 [oficio]; R51 [inv.]; R49 (ventaja de memoria: no) |
+| **Respuesta completa con remate** | asombro o satisfacción (cierre) | retención final, compartidos | sentirse «ya está»: sin razón para quedarse con el canal | cuando la pregunta del video es la razón de verlo; siempre como base | R48, R51 [inv.]; R32 [hip. en el final] |
+| **Pregunta al espectador para comentar** | participación, identidad | comentarios | no hay evidencia de que los comentarios acerquen al umbral; pide un esfuerzo extra | cuando el tema divide opiniones y el canal quiere medir comentarios; **no** con personas en una polémica (invita al juicio) | hipótesis |
+| **Promesa de continuación** (el siguiente conteo, la parte 2) | anticipación | suscriptores, regreso al canal | prometer lo que no se hace | cuando el siguiente video ya está decidido y con datos | R50 [oficio]; R49 (solo impulso de retomar) |
+| **Bucle perfecto** (el último fotograma es el primero) | cierre redondo, ganas de repetir | duración media vista sobre 100 % | **la repetición no es vista calificada** (P); si el final es de baja activación, deja poco | siempre que no cueste nada; nunca a cambio del remate o de la invitación | R34 [inv.]; P |
+| **Invitación a suscribirse** | gratitud, pertenencia | suscriptores | sonar a súplica o a trato; más de una petición | una vez, **después** del remate, atada a una razón concreta | permitido por YouTube (3399767); que convierta: hipótesis |
+
+### 4b.4 Recomendación para el objetivo actual (Programa de socios: suscriptores y vistas calificadas)
+
+1. **Base (respaldada por varias fuentes, con el límite de que no son videos):** cerrar la pregunta de apertura con un
+   remate de asombro o sorpresa (R48, R51, R52).
+2. **Lo que se añade (hipótesis del equipo, medible):** una **pregunta abierta de verdad, nueva y respondible por el
+   canal, dicha justo antes de la invitación**, de modo que la pregunta sea la razón de suscribirse («promesa de
+   continuación»). Es un solo bloque de ≈ 2 s, no una segunda historia.
+3. **No se recomienda** la pregunta de suspenso sobre «lo que pasará con» una persona en una noticia con polémica
+   (insinúa, invita al juicio y el canal no controla la respuesta) ni la pregunta para comentar en ese tipo de tema.
+4. **El bucle** se deja como extra visual y no se usa como argumento: no suma a las vistas calificadas.
+5. **Qué sigue siendo hipótesis:** que una pregunta final suba los suscriptores; que termine mejor en activación
+   alta que en calma; que la recencia valga para un Short. Se prueba en pares: dos Shorts del mismo formato, uno con
+   pregunta + invitación y otro con respuesta + invitación, y se compara **suscriptores por cada mil vistas** y
+   compartidos. Un solo par no decide (`PARAMETROS.md`, sección 4).
 
 ## 5. Por público
 
@@ -540,6 +641,8 @@ Lo que el capítulo 11 trae de videos de Instagram sigue siendo hipótesis, como
 convierte en dato.
 
 ## 9. Fuentes
+
+**Abiertas el 2026-11-24** (sección 4b): Wikipedia en inglés, «Peak–end rule», «Zeigarnik effect», «Ovsiankina effect», «Curiosity», «Cliffhanger», «Need for cognitive closure», «Serial-position effect» y «Viral phenomenon».
 
 **Abiertas de verdad el 2026-11-23** (descargadas y leídas):
 

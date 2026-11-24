@@ -33,6 +33,8 @@ No son parámetros de rendimiento: son condiciones para existir.
 | Fijo | Por qué |
 |---|---|
 | Tin y Tan, sus rasgos y sus voces | Son lo que se reconoce; a ellos se suscribe la gente |
+| La firma del lápiz bumerán en todos los videos: al terminar Tan lanza el lápiz y al empezar el lápiz vuelve (`FIRMA_LAPIZ_BUMERAN.md`) | Pedido del dueño (2026-11-24); es lo que hace reconocible al canal de un video a otro |
+| Subtítulos en español dentro del video, con la voz en inglés | Pedido del dueño (2026-11-24) |
 | Cada dato con fuente y fecha; se dice qué se afirma y qué no | Es la promesa del canal y lo que evita ser engañoso |
 | Personas reales: solo hechos públicos verificables; sin vida privada en detalle, sin burla, sin su cara ni su voz, sin frases puestas en su boca | Daño a terceros y políticas de YouTube |
 | Marcas de terceros: se nombran; no se usan sus logotipos, tipografías ni colores | Marca y reclamos |

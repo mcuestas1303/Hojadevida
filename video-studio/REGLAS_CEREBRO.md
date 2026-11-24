@@ -151,3 +151,10 @@
   investigación… me seguís colocando nostalgia aun cuando me dijiste que es una limitante; no es lógico. Haz los
   cambios con respecto a la investigación». Las seis limitantes halladas (nostalgia, cuenta obligatoria, público de
   45 a 70, evitar toda palabra de la polémica, filtro de títulos por opinión, no repetir forma) quedan sin efecto.
+
+- **Firma del lápiz bumerán (dueño, 2026-11-24):** «quiero un efecto para todos los videos en el que el lápiz sirva
+  como un bumerán: cuando comienza el video el bumerán está regresando a sus manos y cuando está terminando el video
+  Tan tira el lápiz; definilo bien con el equipo». Especificación: `canales/nostalgia-tin-y-tan/FIRMA_LAPIZ_BUMERAN.md`.
+- **Subtítulos en español en el video (dueño, 2026-11-24):** «te pido colocar subtítulos en español… en el video».
+  Voz en inglés y traducción al español quemada en pantalla, en todos los videos de Tin & Tan.
+- **Marca nueva autorizada (dueño, 2026-11-24):** «Sí, carga lo nuevo con Keter»: banner y descripción v2.

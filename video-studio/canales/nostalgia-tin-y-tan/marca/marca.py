@@ -104,7 +104,7 @@ def banner(ruta):
     for x, y in palomita:
         d.ellipse([(x - 6.5) * SS, (y - 6.5) * SS, (x + 6.5) * SS, (y + 6.5) * SS], fill=PALETA["tinta"])
     # zona segura: 1546x423 centrada → x 507–2053, y 508–931
-    palitos.dibujar(lz, "tan", 720, suelo, 520, pose="pregunta", expresion="curiosidad", viento=0.4, espejo=True)
+    palitos.dibujar(lz, "tan", 720, suelo, 520, pose="pregunta", expresion="feliz", viento=0.4, espejo=True)
     palitos.dibujar(lz, "tin", 1840, suelo, 520, pose="saluda", expresion="eureka")
     img = lz.resultado()
     texto(img, (E.T("?"),), 72, xq, suelo - 3 - lado + 6, centrado=True)

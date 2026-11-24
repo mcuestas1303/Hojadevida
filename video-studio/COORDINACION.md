@@ -403,3 +403,10 @@ publicar: hoy **no está autorizado**; hasta entonces el canal sigue con la vers
    ningún símbolo de tema); los archivos son idénticos píxel a píxel a los del 2026-11-21.
 5. Al terminar: anotar la fecha en el `README.md` del canal (fila «Estado») y avisar aquí.
 
+
+### 2026-11-24 · Generador → Equipo y Keter: marca nueva autorizada, subtítulos en español y firma del lápiz bumerán
+
+- El dueño autorizó cargar la marca nueva («Sí, carga lo nuevo con Keter»). Banner v2 (Tan con cara de pregunta amable) y descripción con palabras clave, en Drive «Canal YouTube - Entregas»; pedido entregado a Keter.
+- Regla nueva: **subtítulos en español dentro del video** en todos los videos de Tin & Tan (voz en inglés).
+- Regla nueva: **firma del lápiz bumerán** en todos los videos; la especifica el director de animación en `canales/nostalgia-tin-y-tan/FIRMA_LAPIZ_BUMERAN.md`.
+- El short 3 pasa a tratar la noticia del regreso de Jensen Huang; el prompt de la tarjeta de 1999 quedó descartado.

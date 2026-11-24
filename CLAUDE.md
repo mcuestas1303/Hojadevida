@@ -25,6 +25,10 @@ El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
   cada 5 videos. Tin & Tan: `video-studio/canales/nostalgia-tin-y-tan/PARAMETROS.md`; **la nostalgia quedó eliminada como
   criterio** (corrección del dueño: «me seguís colocando nostalgia aun cuando me dijiste que es una limitante»): Tin y
   Tan explican con hechos lo que la gente ya está mirando; el tema lo pone la demanda y la cuenta es opcional. Ese archivo manda sobre el diseño, los títulos y el radar.
+- **Tin & Tan, en todos los videos (reglas del dueño, 2026-11-24):** la firma del **lápiz bumerán** («cuando comienza el
+  video el bumerán está regresando a sus manos y cuando está terminando el video Tan tira el lápiz»; especificación en
+  `video-studio/canales/nostalgia-tin-y-tan/FIRMA_LAPIZ_BUMERAN.md`) y **subtítulos en español dentro del video**
+  (voz en inglés, traducción quemada en pantalla, más la pista `subtitulos_es.srt`).
 - Solo actúan los personajes de `video-studio/personajes/REGISTRO.md` (Tiky, Lumi, Spike, Tin, Tan). Tin & Tan son
   los muñecos de palitos del canal Tin & Tan y se dibujan con `video-studio/herramientas/palitos.py`. Sus carpetas terminadas
   están en Google Drive, `Personajes/`.
