@@ -19,8 +19,13 @@ El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
   largo). Plan y cuentas de Tin & Tan: `video-studio/canales/nostalgia-tin-y-tan/plan_programa_de_socios.md`; de Tiky y
   Lumi: `video-studio/series/granja/estrategia_monetizacion.md`. En el canal infantil el objetivo nunca pasa por
   encima de `infantil/guia_1_a_3.md` ni del veto de la psicóloga.
+- **Parámetros flexibles (regla del dueño, 2026-11-24):** «Cambia esas limitantes y define nuevos parámetros; podría
+  ser que los parámetros sean flexibles». Cada canal tiene su `PARAMETROS.md`: lo poco que no se mueve (identidad,
+  veracidad, seguridad, línea editorial, el sí del dueño) y lo demás como hipótesis con métrica, rango y revisión
+  cada 5 videos. Tin & Tan: `video-studio/canales/nostalgia-tin-y-tan/PARAMETROS.md`; ya no es «canal de nostalgia»:
+  Tin y Tan hacen la cuenta de lo que la gente está mirando. Ese archivo manda sobre el diseño, los títulos y el radar.
 - Solo actúan los personajes de `video-studio/personajes/REGISTRO.md` (Tiky, Lumi, Spike, Tin, Tan). Tin & Tan son
-  los muñecos de palitos del canal de nostalgia y se dibujan con `video-studio/herramientas/palitos.py`. Sus carpetas terminadas
+  los muñecos de palitos del canal Tin & Tan y se dibujan con `video-studio/herramientas/palitos.py`. Sus carpetas terminadas
   están en Google Drive, `Personajes/`.
 - Antes de generar: cotizar con `estimate_video_cost` / `estimate_image_cost` / `estimate_audio_cost`, decir el número
   y esperar aprobación. Lo editable se hace gratis con `video-studio/herramientas/postpro.py`.

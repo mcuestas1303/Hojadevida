@@ -141,3 +141,8 @@
   ya te dije que estamos afinando un canal automatizado». Dado un tema, el equipo decide ángulo, tono, límites,
   título y efectos con su investigación y lo deja escrito; al dueño solo se le pide el sí para créditos, instalar,
   rehacer y publicar.
+
+- **Parámetros flexibles (dueño, 2026-11-24):** «Cambia esas limitantes y define nuevos parámetros; podría ser que los
+  parámetros sean flexibles; con este cambio considera cambios en todo lo demás si es necesario, incluso en banner e
+  imagen de perfil». Tin & Tan deja de ser «canal de nostalgia»: hacen la cuenta de lo que la gente está mirando.
+  `canales/nostalgia-tin-y-tan/PARAMETROS.md` separa lo fijo de lo flexible (cada parámetro con métrica y rango).
