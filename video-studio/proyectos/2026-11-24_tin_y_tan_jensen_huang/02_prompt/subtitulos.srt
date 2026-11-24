@@ -1,0 +1,47 @@
+1
+00:00:00,000 --> 00:00:02,300
+Remember putting one of these in your PC?
+
+2
+00:00:02,550 --> 00:00:05,680
+That's the GeForce 256, from 1999.
+
+3
+00:00:06,080 --> 00:00:09,060
+Nvidia's board brought Jensen Huang back as CEO.
+
+4
+00:00:09,310 --> 00:00:11,260
+How many of those are in a new one?
+
+5
+00:00:11,510 --> 00:00:13,360
+We're counting transistors, not speed.
+
+6
+00:00:13,610 --> 00:00:16,380
+That card had up to 23 million transistors.
+
+7
+00:00:16,630 --> 00:00:20,030
+The RTX 5090 has about 92 billion.
+
+8
+00:00:20,280 --> 00:00:20,980
+Divide them.
+
+9
+00:00:21,380 --> 00:00:22,480
+More than 4,000.
+
+10
+00:00:22,730 --> 00:00:24,480
+Four thousand of these in one of those?
+
+11
+00:00:24,730 --> 00:00:27,160
+That whole wall, in transistors, is one chip.
+
+12
+00:00:27,500 --> 00:00:28,800
+Subscribe and count with us.

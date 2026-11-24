@@ -102,3 +102,4 @@ Faltan: revisión del equipo de producción, escucha del audio, ajustes y public
 | Plan para entrar al Programa de socios (comercial) | 173 k | 0 |
 | Biblioteca de efectos y prueba técnica de profundidad (4 renders) | 324 k | 0 |
 | Investigación: capítulo 14, efectos y emoción | 293 k | 0 |
+| Short 3 (Jensen Huang y la tarjeta de 1999): análisis de temáticas en dos vueltas 305 k; prompt, perfil emocional y ficha 352 k | 657 k | 0 gastados; 3,7 cotizados de voz |

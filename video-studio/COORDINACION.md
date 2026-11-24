@@ -339,3 +339,12 @@ Keter pasó también las cifras de TIN-EN-S-001 a las 48 h; quedan en `estadisti
   paleta (umbral 85 %) sin que entre ningún tono nuevo. Hay que decidir el umbral para videos con profundidad.
 - Solicitud de cambio: `cambios/2026-11-23_profundidad_y_efectos_tin_y_tan.md`. `DESIGN.md` todavía dice «sin
   degradados»: se actualiza cuando el tercer video fije el lenguaje.
+
+### 2026-11-24 · Generador → Equipo: short 3 de Tin & Tan (Jensen Huang volvió; la tarjeta de 1999)
+
+- Regla nueva del dueño: **canal automatizado**: dado un tema, el equipo investiga, filtra y decide solo (`CLAUDE.md`).
+- Proyecto `proyectos/2026-11-24_tin_y_tan_jensen_huang/`: análisis de temáticas, brief con las decisiones, prompt
+  validado (14 tomas, ≈ 30,5 s, con profundidad y efectos según `manual/14`), perfil emocional, ficha técnica y
+  subtítulos. Título: «Jensen Huang Is Back: GeForce 256 vs RTX 5090» (pasa el filtro).
+- Límites: solo el hecho del regreso; sin la palabra «scandal», sin vida privada, sin su cara ni su voz, sin bolsa.
+- Voz cotizada en 3,7 créditos (Tan 1,2 + Tin 2,5): espera el sí del dueño. El montaje por código lo hace el Generador.

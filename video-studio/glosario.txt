@@ -26,3 +26,9 @@ png
 # nombres de terceros que solo se nombran en la descripción del short 2 de Tin & Tan: consola del lanzamiento original de GTA 5 (Xbox 360) y editora del juego (Rockstar Games), esta en el descargo de no afiliación; no se usa nada de su material
 xbox
 rockstar
+# nombre de la empresa que se nombra en el short 3 de Tin & Tan (regreso de su director ejecutivo, 2026-11-23); solo se nombra, sin logotipo ni su verde; descargo de no afiliación en la descripción
+nvidia
+# línea de tarjetas gráficas que se nombra en el short 3 (GeForce 256, 1999): solo el nombre, sin su tipografía ni su logotipo
+geforce
+# sigla de la serie de tarjetas gráficas actual (GeForce RTX 5090) que se nombra en la descripción y en las etiquetas del short 3
+rtx
