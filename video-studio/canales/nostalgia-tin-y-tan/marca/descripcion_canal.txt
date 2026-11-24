@@ -1,27 +1,33 @@
 NOMBRE DEL CANAL
 Tin & Tan
 
-IDENTIFICADOR SUGERIDO
+IDENTIFICADOR
 @TinandTan (el que quedó en el canal; URL https://www.youtube.com/channel/UCf4M-1YDL-_bwSOghElOZKw)
 
+VERSIÓN
+2 (2026-11-24), por el cambio de parámetros del canal (../PARAMETROS.md). La versión del 2026-11-21 está en
+anterior_2026-11-21/descripcion_canal.txt. Cargarla en YouTube necesita el sí del dueño.
+
 DESCRIPCIÓN DEL CANAL (inglés, EE. UU.; se pega tal cual en YouTube Studio → Personalización → Perfil → Descripción)
-Tin & Tan: nostalgia, calculated.
+Tin & Tan: what everyone's watching, explained with facts.
 
-Tan remembers. Tin does the math.
+Tan asks. Tin brings the facts.
 
-Remember rewinding a cassette with a pencil? We answer the little questions you grew up with, using real numbers, step by step, in short videos made for anyone who grew up in the 70s, 80s and 90s.
+Tan asks the question everyone is asking. Tin answers it in under a minute with checked facts: what happened, how big it is, and how it compares.
 
-Every number comes with its source and its assumptions in the description.
+Every fact and every number comes with its source and date in the description. We say what we know and what we don't.
 
 The drawings, music and sound effects are original, made with code. The voices are AI-generated.
 
+Subscribe for the next question.
+
 PALABRAS CLAVE DEL CANAL (YouTube Studio → Configuración → Canal → Palabras clave)
-nostalgia, retro, cassette, cassette tape, 70s, 80s, 90s, Gen X, remember when, retro tech, everyday math, stick figure animation, Tin and Tan
+explained, facts, fact check, news explained, trending explained, what happened, by the numbers, explained in one minute, quick explanation, animated explanation, stick figure animation, shorts, Tin and Tan
 
 ARCHIVOS
-- perfil.png: foto de perfil, 800x800 (YouTube la recorta en círculo).
-- banner.png: imagen del banner, 2560x1440; lo importante está en la zona segura central de 1546x423.
-- marca_de_agua.png: marca de agua de los videos, 150x150, fondo transparente (YouTube Studio → Personalización → Marca → Marca de agua; mostrar «al final del video» o «todo el video»).
+- banner.png: imagen del banner, 2560x1440; lo importante está en la zona segura central de 1546x423. NUEVO (versión 2): lema «she asks. he brings the facts.» y motivo «?» → visto bueno.
+- perfil.png: foto de perfil, 800x800 (YouTube la recorta en círculo). SIN CAMBIO: son las dos cabezas; no hace falta volver a cargarla.
+- marca_de_agua.png: marca de agua de los videos, 150x150, fondo transparente (YouTube Studio → Personalización → Marca → Marca de agua). SIN CAMBIO.
 
 Todo dibujado con código por el equipo de producción (video-studio/canales/nostalgia-tin-y-tan/marca/marca.py), 0 créditos.
-Nota: la descripción no promete un calendario de publicación; se agrega cuando el dueño lo defina con el Generador de prompts.
+Nota: la descripción no promete un calendario de publicación ni un tipo de tema; el tema lo pone la demanda.

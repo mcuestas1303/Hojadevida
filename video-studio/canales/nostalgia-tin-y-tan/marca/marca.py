@@ -89,25 +89,25 @@ def banner(ruta):
     d.rectangle([0, suelo * SS, W * SS, (suelo + 64) * SS], fill=PALETA["papel_sombra"])
     d.line([(0, suelo * SS), (W * SS, suelo * SS)], fill=PALETA["tinta"], width=5 * SS)
     # la pregunta que se vuelve respuesta comprobada: «?» → «✓» (dos fichas apoyadas en el suelo; adorno)
-    lado = 124
-    xq, xr = 1280 - 150, 1280 + 150
+    lado = 96                                                   # tope en y 941: nada asoma en el recorte de 423
+    xq, xr = 1280 - 125, 1280 + 125
     for cx in (xq, xr):
         sombra(lz, cx, suelo + 4, lado * 1.25, 0.26)
     sombra(lz, 720, suelo + 4, 250)
     sombra(lz, 1840, suelo + 4, 250)
     ficha(lz, xq, suelo - 3, lado, "mostaza")
     ficha(lz, xr, suelo - 3, lado, "blanco")
-    flecha(lz, xq + lado / 2 + 30, xr - lado / 2 - 30, suelo - 3 - lado / 2)
-    cy = suelo - 3 - lado / 2                                   # visto bueno, en verde azulado (el color de Tan)
-    palomita = [(xr - 34, cy + 2), (xr - 10, cy + 26), (xr + 36, cy - 28)]
-    d.line([(x * SS, y * SS) for x, y in palomita], fill=PALETA["tinta"], width=17 * SS, joint="curve")
+    flecha(lz, xq + lado / 2 + 26, xr - lado / 2 - 26, suelo - 3 - lado / 2)
+    cy = suelo - 3 - lado / 2                                   # visto bueno, en tinta
+    palomita = [(xr - 26, cy + 2), (xr - 8, cy + 20), (xr + 28, cy - 22)]
+    d.line([(x * SS, y * SS) for x, y in palomita], fill=PALETA["tinta"], width=13 * SS, joint="curve")
     for x, y in palomita:
-        d.ellipse([(x - 8.5) * SS, (y - 8.5) * SS, (x + 8.5) * SS, (y + 8.5) * SS], fill=PALETA["tinta"])
+        d.ellipse([(x - 6.5) * SS, (y - 6.5) * SS, (x + 6.5) * SS, (y + 6.5) * SS], fill=PALETA["tinta"])
     # zona segura: 1546x423 centrada → x 507–2053, y 508–931
     palitos.dibujar(lz, "tan", 720, suelo, 520, pose="pregunta", expresion="curiosidad", viento=0.4, espejo=True)
     palitos.dibujar(lz, "tin", 1840, suelo, 520, pose="saluda", expresion="eureka")
     img = lz.resultado()
-    texto(img, (E.T("?"),), 92, xq, suelo - 3 - lado + 8, centrado=True)
+    texto(img, (E.T("?"),), 72, xq, suelo - 3 - lado + 6, centrado=True)
     # nombre y lema dentro de la zona segura (y 508–931), centrados
     cajas = [texto(img, NOMBRE, 170, 1280, 548, centrado=True), texto(img, LEMA, 60, 1280, 778, centrado=True)]
     for c in cajas:
