@@ -28,12 +28,9 @@ xbox
 rockstar
 # nombre de la empresa que se nombra en el short 3 de Tin & Tan (regreso de su director ejecutivo, 2026-11-23); solo se nombra, sin logotipo ni su verde; descargo de no afiliación en la descripción
 nvidia
-# línea de tarjetas gráficas que se nombra en el short 3 (GeForce 256, 1999): solo el nombre, sin su tipografía ni su logotipo
-geforce
-# sigla de la serie de tarjetas gráficas actual (GeForce RTX 5090) que se nombra en la descripción y en las etiquetas del short 3
-rtx
 # nombres propios del short 3 de Tin & Tan (2026-11-24): personas y empresas que se nombran con su grafía oficial (Nvidia, OpenAI, Apple) y nombres de pila y apellidos de personas públicas citadas solo por sus fechas
 openai
+jensen
 huang
 altman
 sam
