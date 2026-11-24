@@ -24,3 +24,13 @@ quemando el presupuesto y corregir el prompt en vez de seguir tirando intentos.
 | **Total** | | **3,7 créditos** |
 
 Estado: cotizado con `estimate_audio_cost`; **falta el sí del dueño**. No se ha gastado nada.
+
+## Gasto real (2026-11-24, con el sí del dueño: «sí y construí el video»)
+
+| Pieza | Trabajo de Higgsfield | Dura | Costo |
+|---|---|---|---|
+| Voz de Tan (Zelda) | `1105ef98-9f10-4481-9daf-2d85b9d1a4eb` | 16,78 s | 1,1 créditos |
+| Voz de Tin (Kevin) | `2ecb6271-74da-4fa3-a101-ce8886fed275` | 22,78 s | 2,6 créditos |
+| **Total** | | | **3,7 créditos** |
+
+Una generación por voz. No se regeneran.
