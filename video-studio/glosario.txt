@@ -32,3 +32,15 @@ nvidia
 geforce
 # sigla de la serie de tarjetas gráficas actual (GeForce RTX 5090) que se nombra en la descripción y en las etiquetas del short 3
 rtx
+# nombres propios del short 3 de Tin & Tan (2026-11-24): personas y empresas que se nombran con su grafía oficial (Nvidia, OpenAI, Apple) y nombres de pila y apellidos de personas públicas citadas solo por sus fechas
+openai
+huang
+altman
+sam
+steve
+jobs
+apple
+# «CEO» es la sigla que usan los titulares en español para «director ejecutivo»: se eligió por ser la forma común y corta (subtítulos)
+ceo
+# imperativo con pronombre, forma correcta en español («suscríbete»); el diccionario solo trae «suscribirte»
+suscríbete

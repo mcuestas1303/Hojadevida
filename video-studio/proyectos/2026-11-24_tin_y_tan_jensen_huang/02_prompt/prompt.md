@@ -1,12 +1,11 @@
-# Prompt de video para redes — Jensen Huang Is Back: GeForce 256 vs RTX 5090
+# Prompt de video para redes — Jensen Huang Is Back as Nvidia CEO After 11 Days
 
-> **ESTADO (2026-11-24):** la voz **no está generada** (necesita el sí del dueño con la cotización), así que **todos los tiempos son estimados** (sílabas a ritmo del short 2 al 110 %, sección 7) y se reajustan a la voz real; el video **no está renderizado**. No se ha generado nada, no se ha gastado ningún crédito. Es el **primer video del canal con profundidad y efectos** (`manual/14_efectos_y_emocion.md`, sección 7; técnica probada en `2026-11-23_prueba_efectos_tin_y_tan`). Hereda del short 2 el formato, la portada dentro del video, las cifras con dígitos abiertos (`ss01`), la rejilla de 0,5 s y la mezcla (golpes bajo la voz a unos −26 LUFS). La dirección del equipo (`02_prompt/direccion.md`) sigue con la plantilla vacía: las decisiones de abajo salen del brief, del manual 14 y de la prueba de efectos; si el equipo llena la dirección y difiere, manda la dirección.
+> **ESTADO (2026-11-24, versión 2):** sustituye por completo al prompt de la tarjeta de 1999 (descartado: el dueño eliminó la nostalgia como criterio del canal, `canales/nostalgia-tin-y-tan/PARAMETROS.md`). Este video trata de **la noticia**: Jensen Huang volvió como director ejecutivo de Nvidia a los 11 días. **La voz no está generada, los tiempos son estimados** (ritmo medido en el short 2: Tin ≈ 4,6 sílabas por segundo, Tan ≈ 5,2) y el video no está renderizado. El dueño ordenó que el equipo decida todo con su investigación; no quedan preguntas para él, solo su sí para gastar créditos de voz y para publicar.
 
 <!--
-Pieza dibujada con código (sin generador de video). Todas las tomas son método «edición»: se resuelven gratis
-en el montaje. En lugar de «Prompt de keyframe» y «Prompt de video» cada toma lleva una «Especificación de dibujo».
-Los tiempos son del video final y de la voz ESTIMADA (sección 7); se reajustan con la voz real.
-Un solo plano continuo puede dividirse en dos tomas encadenadas (sin corte): 3 y 4, 9 y 10, 11 y 12.
+Pieza dibujada con código (sin generador de video). Todas las tomas son método «edición». En lugar de «Prompt de keyframe»
+y «Prompt de video» cada toma lleva una «Especificación de dibujo». Los tiempos son estimados con la voz del short 2 y se
+reajustan con la voz real. Sin corchetes en el texto: el validador los trata como campos sin llenar.
 -->
 
 ## 1. Ficha técnica
@@ -16,489 +15,469 @@ Un solo plano continuo puede dividirse en dos tomas encadenadas (sin corte): 3 y
 - **Número:** 3
 - **Serie:** ninguna
 - **Objetivo de aprendizaje:** no aplica
-- **Generador:** ninguno: imagen dibujada con código (palitos.py + efectos.py + gráficos propios), armada con ffmpeg
+- **Generador:** ninguno: imagen dibujada con código (palitos.py 1.3 + efectos.py + gráficos propios), armada con ffmpeg
 - **Aspecto:** 9:16
-- **Duración total:** 30,5 s estimados (la voz estimada va de 0,00 a 28,80 s, sin gancho mudo; cierre de 1,7 s sin voz, de 28,8 a 30,5 s; múltiplo de 0,5 s)
+- **Duración total:** 30,5 s (la voz estimada va de 0,00 a 29,09 s; cierre de 1,41 s sin voz con el lanzamiento del lápiz; múltiplo de 0,5 s; 915 fotogramas)
 - **Resolución de borrador:** 540x960 a 30 fps, prueba de 5 s con un fotograma por pulso (render propio)
 - **Resolución final:** 1080x1920 a 30 fps, 915 fotogramas
 - **Precio por segundo:** 0 (render propio; no hay servicio de pago)
 - **Intentos estimados por toma:** 1
-- **Versión:** 1 (voz sin generar; tiempos estimados; render pendiente)
+- **Versión:** 2 (tiempos estimados; sin voz ni render)
 
 ## 2. Elenco
 
 | Personaje | Papel en este video | Vestuario | Referencia que se sube |
 |---|---|---|---|
-| @tan | Abre con la pregunta nostálgica y hace las dos preguntas de la cuenta; se asombra ante el tamaño; **dice la única invitación a suscribirse**. Lado izquierdo del cuadro con `espejo=True` (en el centro cuando está sola). | base de su ficha (rodete y bufanda mostaza); sin objeto de mano | personajes/tan/referencias/principal_tin_y_tan.png |
-| @tin | Cuenta qué es la tarjeta, da la noticia del regreso, aclara que se cuentan transistores y hace la división. Lado derecho del cuadro, sin espejo; su lápiz en las tomas 3, 4 y 5 (el motivo del canal, que no salió en el short 2). | base de su ficha (gorra marrón, lentes, lápiz) | personajes/tin/referencias/principal_tin_y_tan.png |
+| @tan | Abre con la pregunta de curiosidad desde el fotograma 0, hace las preguntas del público, dice la pregunta final con la invitación y **lanza el lápiz**. Lado izquierdo con `espejo=True` (centro cuando está sola). | base de su ficha (rodete y bufanda mostaza); objeto de mano `lapiz` solo en las tomas 13 y 14 | personajes/tan/referencias/principal_tin_y_tan.png |
+| @tin | Responde con datos; **atrapa el lápiz** en el fotograma 15 y lo lleva en la mano. Lado derecho, sin espejo. | base de su ficha (gorra marrón, lentes, lápiz); `objeto=False` hasta atrapar el lápiz y en las tomas 10 y 11 (acento tomate) | personajes/tin/referencias/principal_tin_y_tan.png |
 
-No se sube nada a un generador: las referencias son las del diseño en código (`herramientas/palitos.py`, versión 1.3) y se usan solo para comparar. **Jensen Huang no aparece dibujado ni imitado: solo se le nombra** (brief). No salen más personajes.
-
-Poses y expresiones usadas (todas existen en `POSES` y `EXPRESIONES` de `palitos.py`, comprobado el 2026-11-24 en `video-studio/personajes/*/ficha.md`): poses `parado`, `saluda`, `senala`, `pregunta`, `explica`, `encoge`, `celebra`; expresiones `feliz`, `nostalgia`, `curiosidad`, `sorpresa`, `risa`, `eureka`. **No se usan `pensando` ni `concentrado`** (se leen como enojo: lección de la revisión del short 2). No se inventa ningún rasgo.
+No se sube nada a un generador: las referencias son el diseño en código (`herramientas/palitos.py`, versión 1.3) y solo sirven para comparar. **Jensen Huang, Sam Altman y Steve Jobs no aparecen dibujados ni imitados ni se les cita: solo se les nombra.** Poses y expresiones usadas (todas existen en `POSES` y `EXPRESIONES`, comprobado el 2026-11-24): `parado`, `explica`, `senala`, `pregunta`, `encoge`, `celebra`, `saluda`; `curiosidad`, `sorpresa`, `feliz`, `risa`, `eureka`. **No se usan** `pensando` ni `concentrado` (se leen como enojo, lección del short 2). Tamaño de los personajes en este video: `alto` = 29 % del alto (557 px) para dejar la banda de subtítulos en español (sección 12).
 
 ## 3. Idea en una línea
 
-Tan pregunta «¿te acuerdas de poner una de estas en tu PC?» y una tarjeta gráfica de 1999 crece hacia la cámara; Tin dice qué es, que el 23 de noviembre la junta de Nvidia repuso a Jensen Huang como director ejecutivo, y hace una división entre dos objetos: los transistores de la RTX 5090 entre los de aquella tarjeta, **más de 4.000**; el remate es de tamaño (un muro de 4.000 tarjetitas que equivale a un solo chip) y Tan pide una vez, con calidez, que se suscriban. Nostalgia que se vuelve asombro por el tamaño; el que la vivió lo manda a quien armó una PC con él.
+Tan pregunta lo que el público se pregunta, «¿fue rápido el regreso de Jensen Huang en 11 días?», y Tin responde con los hechos en orden y con fechas (renunció el 12, la junta dijo que no el 17, lo repuso el 23) y con una comparación: Sam Altman volvió en 5 días y Steve Jobs tardó 4.382 días (≈ 12 años). Respuesta: más rápido que Jobs, más lento que Altman. Emoción: curiosidad → tensión → asombro. El lápiz de Tin hace de bumerán: vuelve al empezar y sale lanzado por Tan al terminar.
 
-**Decidido por el equipo el 2026-11-24** (razones en `00_brief.md` y aquí; el dueño ordenó que el equipo decida todo con su investigación):
+**Decisiones del equipo (2026-11-24), todas con su porqué** (el dueño ordenó decidir con la investigación):
 
-1. **Ángulo y cuenta:** «cuántas tarjetas de 1999 caben, en transistores, en una de hoy». Es una división entre dos objetos y el remate es de tamaño: distinto del short 1 (distancia a minutos, remate de tiempo) y del short 2 (días entre dos fechas, remate de edad). Variación obligatoria según `plan_programa_de_socios.md`, 4.3 y P11.
-2. **Se dice «más de 4.000» y se usa el número más cauteloso de 1999.** Las fuentes dan 17 o 23 millones de transistores para la GeForce 256. El video dice «hasta 23 millones» (el mayor) y la división da ≈ 4.009: «más de 4.000» es cierto con las dos cifras (con 17 millones daría ≈ 5.424). La descripción lo explica.
-3. **Se dice «la RTX 5090», no «el chip de hoy».** Nvidia fabrica chips de centros de datos con más transistores; «de hoy» sería ambiguo. Los 92.200 millones son los de la RTX 5090 (GB202, a la venta desde el 30 de enero de 2025). Por eso el título compara con la «RTX 5090» y no con «Today's GPU».
-4. **El vínculo entre la tarjeta y el regreso es la empresa, no la persona.** La tabla de datos del brief no incluye que él dirigiera Nvidia en 1999, y el brief prohíbe afirmar que diseñó la tarjeta. El video dice «Nvidia lanzó la tarjeta en 1999» (implícito: «es la GeForce 256, de 1999») y, aparte, «la junta de Nvidia repuso a Jensen Huang como director ejecutivo». Dos hechos con fuente, uno al lado del otro. Si el comercial quiere «su» tarjeta, primero hay que añadir al brief la fuente de que era CEO en 1999.
-5. **Sin motivo, sin juicio, sin «11 días» y sin la palabra que el brief prohíbe para calificar la polémica** (en ningún archivo del proyecto salvo el brief): solo el hecho y su fecha («Nov 23» en pantalla). La voz no dice la fecha para que el video no caduque; la pantalla sí.
-6. **Una sola invitación a suscribirse, de Tan, antes del último fotograma** (`plan_programa_de_socios.md`, P6c: palanca del objetivo; YouTube lo permite: support.google.com/youtube/answer/3399767, leída el 2026-11-23). Corta y cálida; sin promesas ni recompensas (prohibido pedirla a cambio de otra). Es la única diferencia de contenido de cierre frente a los shorts 1 y 2.
-7. **Un solo cambio «grande» en el primer segundo respecto del short 2: la tarjeta crece hacia la cámara** (efecto 1 de la sección 7 del manual 14, 12 fotogramas). En el short 2 el mando solo retumbaba a escala fija. Lo demás del primer segundo se mantiene igual para poder atribuir el dato: mismo corte en 1,0 s, mismas caras de perfil mirando el objeto, mismo texto de dos palabras de peso. El golpe de la palabra clave dura 12 fotogramas y no cambia lo que se ve en el fotograma 0. Ver «Profundidad y efectos» en la sección 11.
-8. **Objetivo comercial:** entrar al Programa de socios lo antes posible (dueño, 2026-11-23). Métricas de este video: se quedó a mirar frente a deslizó (el short 1 dio 20,7 %), retención por segundo, compartidos y suscriptores por cada mil vistas.
-
-Verificación de la cuenta (2026-11-24, con Python): 92.200.000.000 / 23.000.000 = 4.008,7; 92.200.000.000 / 17.000.000 = 5.423,5; 2025 − 1999 = 26 años (no se dice en el video).
+1. **Tema = la noticia.** La demanda está en el regreso (cientos de miles de vistas en horas, lectura del 2026-11-24, `00_analisis_de_tematicas.md`, S2); el tema lo pone la demanda (`PARAMETROS.md`). Sin objetos de época ni nostalgia.
+2. **Apertura: una pregunta de curiosidad dicha por Tan desde el fotograma 0** («Was Jensen Huang's comeback in eleven days fast?»). Es una brecha de información real (¿rápido comparado con qué?) que el video cierra en el pico y en el remate (R28, R51; manual 14, sección 4b).
+3. **Fechas verificadas hoy** (Wikipedia en inglés, páginas «Removal of Sam Altman from OpenAI», «Steve Jobs», «Jensen Huang», abiertas con `curl` el 2026-11-24; cuentas con `datetime`). Altman: destituido el 2023-11-17 y repuesto el 2023-11-22 = **5 días**. Jobs: carta de renuncia el 1985-09-17 y nombrado director ejecutivo interino el 1997-09-16 = **4.382 días** (11,9975 años). Huang: renuncia el 2026-11-12 y reposición el 2026-11-23 = **11 días**; desde la constitución de Nvidia (1993-04-05) hasta la renuncia = **12.274 días** (33,6 años); del «no» del 17 a la reposición del 23 = **6 días**. **Mismo método para los tres:** del día en que se anuncia la salida al día en que la persona vuelve a ser la cabeza de la empresa. Matiz que va en la descripción: Jobs ya había vuelto a Apple en febrero de 1997 con la compra de NeXT; y Altman fue destituido, no renunció.
+4. **El pico es «Steve Jobs, 4.382 días» (≈ 398 veces los 11 días)**, no la proporción «1 día fuera por cada ≈ 1.116 al mando». Por qué: asombro es magnitud comparada con algo conocido (R37), y Jobs es la referencia que el público ya usa para esta noticia; la proporción es abstracta y se entiende peor en 3 s. La proporción 1.116 no se usa en el video (queda en reserva para otra pieza). Se dice también el 5 de Altman: sin él, «el regreso más corto» sería falso (Altman volvió antes).
+5. **Se nombra el hecho con las palabras que la gente busca**: «resigned», «reinstated» y **una sola mención neutra del motivo en la voz, «after a scandal»**, sin detalles, sin terceros, sin adjetivos y sin juicio. La descripción trae la misma única mención.
+6. **«CEO» y no «director ejecutivo»** en los subtítulos en español: es la forma que usan los titulares en español de la noticia, y es más corta (la banda cabe ≈ 21 caracteres por línea).
+7. **Portada con la cifra «11 Days?» a la vista** (parámetro flexible, `PARAMETROS.md`): no es la respuesta del video (la respuesta es «más rápido que Jobs, más lento que Altman»). Se mide contra los shorts 1 y 2, que la ocultaban.
+8. **Acento por plano:** mostaza en todo el video y **tomate solo en el pico** (cifra «4.382», tomas 10 y 11), como en el short 2: el cambio de mostaza a tomate marca el golpe y el canal se reconoce (R26, R33).
+9. **Cierre decidido con la tabla de decisión del manual 14, sección 4b:** respuesta con remate («Faster than Jobs. Slower than Altman.») + **una pregunta abierta, nueva y respondible por el canal** («Who else came back?») que es la razón de la **única** invitación («Subscribe for the next count.») + el lápiz lanzado. **No se cierra con una pregunta de suspenso sobre el futuro de la persona**: lo único público y pendiente en las fuentes es una comparecencia ante el Congreso, que cuelga de las investigaciones sobre terceros; sería insinuar, invita al juicio y el canal no controla la respuesta (línea editorial y `PARAMETROS.md`, sección 2). Compromiso del canal: el siguiente conteo es el de otros regresos de directores ejecutivos (datos ya verificados el 2026-11-24 en `00_analisis_de_tematicas.md`, S3: Dell, Schultz, Dorsey, cada uno con su matiz). Si no se publica en 7 días, se avisa en un comentario fijado.
+10. **El bucle es el vuelo del lápiz** (el último fotograma empalma con el primero), pero **no decide el cierre**: la repetición no es vista calificada (`plan_programa_de_socios.md`, 1.3). El remate y la invitación no se sacrifican por el empalme.
+11. **Firma del canal: el lápiz bumerán** (regla del dueño, 2026-11-24). La especificación común del canal es `canales/nostalgia-tin-y-tan/FIRMA_LAPIZ_BUMERAN.md` y **manda sobre este prompt**; al escribir esto aún no existía y se usó la definición de partida del encargo. Qué hace aquí: al empezar, el lápiz **ya viene girando de vuelta** y Tin lo atrapa en el fotograma 15; al terminar, Tan lo lanza girando fuera del cuadro y esa es la última acción. El objeto que miran las caras en la portada es **la silla de director vacía** (el objeto que cuenta la noticia); el lápiz es el elemento de acento mostaza del plano.
+12. **Subtítulos en español quemados** (encargo del dueño): banda fija entre la zona de gráficos y los personajes (sección 12). **El primer segundo (portada) no lleva subtítulo**: la banda tapa la silla (y 720–1100) y la regla de portada pide el cuadro limpio; la línea 1 se subtitula desde 1,0 s.
+13. **Sin cambio de foco:** no hay hueco de voz de 8 a 12 fotogramas entre líneas sin romper la rejilla de 0,5 s; no se fuerza (el límite de la prueba es «solo entre líneas»). La profundidad viene de capas, paralaje, sombras y desenfoque fijo del fondo.
+14. **Sin «congelado con marco» al cierre** (estaba en el plan anterior): el último movimiento es el lápiz; dos adornos de cierre serían uno sin función (manual 14, sección 1).
+15. **Una cosa que cambia por video:** respecto de los shorts 1 y 2 cambia el **tipo de tema** (noticia). Cambian además, por orden del dueño, la profundidad y los efectos y la firma del lápiz: no se podrán separar en la medición; los resultados de este video son «a prueba» (`PARAMETROS.md`, sección 4).
 
 ## 4. Estilo global
 
 ```text
-Flat 2D vector drawing on warm cream paper (#F3E9D2), 1970s palette: two neutrals (cream paper, dark ink) plus ONE accent per shot (mustard in every shot except the reveal shots, tomato red only in the reveal shots), character colors (orange, brown, teal) are identity and not accents, thick dark ink outlines (#2B2420), hand-made stick-figure look, 2 to 4 flat layers at different depths with slow parallax, out-of-focus layers softly blurred and faded toward the paper color, thin contact shadows under objects, no gradient fills, no glow, no lens flare, crisp anti-aliased lines (supersampled), spring-based motion with ease-out stops, small camera pushes.
+Flat 2D vector drawing on warm cream paper (#F3E9D2) with a faint fixed paper grain and soft vignette, 1970s palette: two neutrals (cream paper, dark ink) plus ONE accent per shot (mustard in every shot except the reveal shots, tomato red only in the reveal shots), character colors (orange, brown, teal) are identity and not accents, thick dark ink outlines (#2B2420), hand-made stick-figure look, layered depth with parallax, contact shadows under feet and objects, distant layers lightly blurred and faded into the paper, no gradients on shapes, no glow, no neon, spring-based motion, slow camera push-ins.
 ```
 
 **Negativo global:**
 
 ```text
-text inside the drawing other than the table in section 12, brand logos, Nvidia logo or lettering or its green, any green accent, GeForce or RTX lettering or logo style, Jensen Huang drawn or imitated, a real person's face, gradient fills, drop shadows on the stick figures, glow, lens flare, neon, blue and orange cinematic grade, two accent colors in the same shot, tomato red outside the reveal shots, mustard in the reveal shots other than the characters' own scarf, strobe or flashing, negative color flash over text, glass-panel app look, bouncing karaoke subtitles, extra characters, extra fingers, characters other than Tin and Tan, uppercase centered titles, square placeholder glyphs, symbols that are not in the font
+text inside the drawing other than the table in section 12, brand names or logos, Nvidia logo lettering or Nvidia green, any real person drawn or imitated, faces of real people, photographs, stock charts, money, flags, courtroom or police imagery, neon, gradients on shapes, lens flare, flashes, strobing, negative-color effect, whole-screen white or black, two accent colors in the same shot, tomato red outside the reveal shots, extra characters, extra fingers, characters other than Tin and Tan, uppercase centered titles, square placeholder glyphs, symbols that are not in the font, lying-down shadow under the stick figures
 ```
 
 ## 5. Escenarios
 
-- **papel_crema:** fondo plano `#F3E9D2` con la viñeta y el grano fijo de `efectos.papel()` (el grano no cambia entre fotogramas). Cuando hay personajes, línea de suelo `#E6D8B8` de 4 px a **86 % del alto (y = 1651 px)**, de 9,3 % a 90,7 % del ancho.
-- **Lienzo y zonas (1080x1920):** zona segura de `formatos.md`: x de 100 a 980 px, y de 250 a 1670 px. Zona de texto fija: arriba a la izquierda, alineado a la izquierda en x = 10 % (108 px), de y = 13,2 % a 24 %. **Zona de gráficos de 27 % a 51 %** (518 a 979 px; 460 px de alto, x de 100 a 980). Personajes: pies a 86 %, `alto` = 34 % (653 px), cabeza más alta a 52 %; plano medio de uno solo: `alto` 44 % (845 px). Los personajes nunca pisan la zona de texto ni la de gráficos.
-- **Lados:** Tan en x = 30 % con `espejo=True`; Tin en x = 70 % sin espejo; cada uno gesticula hacia afuera. En las tomas 3 a 5 se abren a x = 22 % y 78 % para dejar sitio al pedestal. Solos, en x = 50 %.
-- **Profundidad (`efectos.py` 1.0):** `z` = 0 es el plano de los personajes; positivo, más lejos; negativo, más cerca. Distancia focal 1000: una capa a `z` se ve a escala 1000 / (1000 + z). Cada capa se dibuja como se ve con la cámara quieta. Valores de trabajo de la prueba: `apertura` 0,018, `campo` 150, `niebla` 0,30, `desenfoque_max` 60. **En las tomas 1 y 14 (la portada) la apertura es 0: todo nítido.**
-- **tarjeta_1999 (gráfico propio, ancho W; es el objeto del video):** tarjeta gráfica **genérica** de la época, vista desde el lado de los componentes, sin logotipos, sin letras y sin ningún verde. Alto de la placa 0,42 W. Placa: rectángulo redondeado (radio 0,02 W), relleno marrón `#7A4B2A`, contorno tinta de 0,012 W. **Escuadra metálica** en el extremo izquierdo: rectángulo de 0,05 W × 0,42 W, relleno `#E6D8B8`, contorno tinta, dos orificios (círculos tinta de radio 0,008 W). **Ventilador:** círculo de radio 0,15 W centrado en (0,36 W; 0,21 W) desde la esquina superior izquierda de la placa, relleno `#E6D8B8`, contorno tinta; 5 aspas curvas en tinta y buje central de radio 0,03 W en papel; gira a 90 grados por segundo (acción secundaria; con ease no, es mecánico y lineal, como el segundero). **Memorias:** 4 rectángulos tinta de 0,07 W × 0,05 W en dos filas a la derecha (x de 0,62 W a 0,95 W). **Dedos del conector:** franja bajo el borde inferior, de 0,62 W × 0,05 W, desde x = 0,12 W, con 14 marcas tinta verticales de 0,004 W; **relleno mostaza `#E8B33B` cuando la tarjeta es el elemento de acento del plano, y marrón `#7A4B2A` en los planos de la revelación y cuando otro elemento lleva el acento**. Altura total del objeto con los dedos: 0,47 W. Mide lo que mide una tarjeta genérica de dibujo: no se afirma ninguna medida real.
-- **tarjeta_actual (gráfico propio, ancho W; es «la nueva», la RTX 5090):** tarjeta **genérica** moderna, sin logotipos, sin letras, sin luces de color y sin verde. Alto 0,34 W. Carcasa: rectángulo redondeado (radio 0,03 W) en tinta `#2B2420` con contorno tinta de 0,012 W. **Tres ventiladores:** círculos de radio 0,15 W en x = 0,2 W; 0,5 W y 0,8 W, y = 0,17 W; relleno `#E6D8B8`, 7 aspas finas en tinta y buje marrón `#7A4B2A`. Escuadra izquierda como la de la tarjeta_1999. Dedos del conector como en la tarjeta_1999 (0,04 W de alto; mostaza o marrón con la misma regla). Se reconoce por tamaño y por los tres ventiladores contra uno; el dibujo no copia ninguna tarjeta comercial.
-- **pedestal (toma 3 a 5):** columna de museo, 150 px de ancho, de la base de la tarjeta al suelo (y = 1651), relleno `#E6D8B8`, contorno tinta; placa superior de 220 × 26 px. Sombra de contacto en el suelo. La tarjeta_1999 (W = 420 px, alto con dedos 197 px) está de pie sobre la placa, con los dedos metidos en una ranura de la placa (no se ven), centrada en (50 %; 39 %) de modo que su parte alta cae en y = 700 px.
-- **pc_beige (fondo, tomas 3 a 5):** siluetas de una torre y de un monitor de tubo, relleno `#E6D8B8` y contorno tinta de 0,008 de su ancho, sin botones con símbolos ni letras (dos bahías de unidad como rectángulos tinta). Torre de 300 × 560 px a la izquierda y monitor de 360 × 330 px a la derecha, en la capa z = +420 (se ven más chicos y se funden con el papel por la niebla).
-- **placa_base y ranura (toma 2):** vista de cerca de una placa base: rectángulo `#E6D8B8` con contorno tinta que ocupa de x = 100 a 980 px y de y = 1100 a 1500 px; ranura = rectángulo redondeado tinta de 560 × 44 px con dos muescas; tres chips cuadrados tinta de 70 px y dos condensadores (círculos marrón con contorno tinta de 34 px). Sin letras.
-- **manos_de_palitos (toma 2):** dos brazos de tinta de 36 px de grosor (el trazo de cuerpo de los personajes, ampliado) que entran por abajo, terminan en manos de punto de radio 34 px y sostienen la tarjeta por la escuadra y por el borde superior. Son las del espectador (subjetivo): no se reconocen como Tin ni como Tan y no llevan color.
-- **die (toma 6):** el chip visto de cerca: cuadrado de 400 × 400 px, relleno mostaza `#E8B33B`, contorno tinta de 10 px; dentro, una cuadrícula de 12 × 12 puntos tinta de 12 px de radio (144 puntos, que representan «interruptores diminutos»; no se dice que sean 144 de nada).
-- **pared_de_tarjetas (toma 11 y 12):** cuadrícula de **80 columnas × 50 filas = 4.000 minitarjetas** que llena la zona de gráficos (880 × 460 px; celda de 11 × 9,2 px). Cada minitarjeta es un rectángulo marrón `#7A4B2A` de 9 × 7,4 px con una separación de papel de 2 px y un punto `#E6D8B8` de 3 px (su ventilador). Sin mostaza. Cuatro mil, exactos: el rótulo dice «más de 4.000», así que el dibujo no exagera.
-- **ecuación (tomas 9 y 10):** dos filas en la zona de gráficos. Fila 1 (centro en y = 600 px): tarjeta_actual de W = 260 px a la izquierda (x 100 a 360) y el texto «≈ 92 billion» a su derecha. Fila 2 (centro en y = 770 px): el signo «÷» (106 px) en x = 100 a 170, la tarjeta_1999 de W = 180 px (x 190 a 370) y el texto «23 million» a su derecha. Las dos tarjetas pequeñas llevan los dedos en marrón (planos de revelación).
-- **Muelles (masa 1, rigidez, amortiguación), declarados por elemento:** `pop` 220 y 20 (entrada de textos y gráficos, escala de 0,85 a 1); `slide` 120 y 16 (personajes y gráficos que se desplazan); `sello` 320 y 26 (empujes de cámara y golpe de zoom). Contadores: ease-out cúbico sin muelle, para que el valor nunca pase de su final ni retroceda. Todo depende del número de fotograma (30 fps).
-- **portada (tomas 1 y 14):** el primer segundo **es la portada** (`ENTREGA_YOUTUBE.md`, «Portada de los Shorts»). En el fotograma 0: la tarjeta_1999 de W = 600 px (apariencia) centrada en x = 540 y en y = 910, con los dedos mostaza (su elemento de acento); el alto del objeto con los dedos es 282 px (y 769 a 1051), dentro de la franja 720 a 1100. Sobre ella, el texto del gancho (fila 1 de la sección 12) entre y = 415 y y = 690. Debajo, Tan (x = 24 %) y Tin (x = 76 %) de cuerpo entero, **de perfil y con la cabeza inclinada 25 grados hacia arriba (`cabeza_giro=25`), mirando la tarjeta**, `alto` 487 px, pies a 86 %: las caras quedan, como en el short 2, en x 121 a 303 y x 752 a 955, y 1163 a 1364, dentro de la zona útil de portada (x 60 a 960, y 380 a 1440). La tarjeta crece hasta W = 760 px en 12 fotogramas y a partir de ahí sigue siendo del mismo tamaño hasta que baja hacia el corte (altura con dedos 357 px: y 731 a 1089, dentro de la franja).
-- **Transiciones:** `corte seco`; **`corte en el movimiento`** (toma 1 a 2: el corte cae 4 fotogramas después de que arranca el descenso de la tarjeta); `borrón` (corte seco con desenfoque de movimiento horizontal de 18 px en los 2 últimos fotogramas de la toma que sale y en los 2 primeros de la que entra; cero destellos); **`barrido_obturador`** una sola vez, de 6 fotogramas (toma 7 a 8); **`congelado_con_marco`** una sola vez, en el cierre (toma 13 a 14).
+- **papel_crema:** fondo `#F3E9D2` con grano fijo y viñeta suave (`efectos.papel`, el mismo grano en todos los fotogramas). Con personajes: línea de suelo `#E6D8B8` de 4 px a **86 % del alto (y = 1651)**, de 9,3 % a 90,7 % del ancho. Planos de objeto solo: sin suelo.
+- **Zonas (1080x1920), zona segura de `formatos.md`:** x 100–980, y 250–1670.
+  - **Texto en inglés (rótulos):** x = 10 % (108), de y = 13,2 % a 24 % (253–461); cifras al 7 % del alto (134 px).
+  - **Gráficos:** de 27 % a 46,5 % (y 518–893), x 100–980.
+  - **Banda de subtítulos en español:** y 905–1085 (47,1 % a 56,5 %), x 100–980 (sección 12).
+  - **Personajes:** pies a 86 % (y 1651), `alto` 29 % (557 px), cabeza más alta en y 1094; nunca pisan la banda ni los gráficos. Tan en x = 30 % con `espejo=True`; Tin en x = 70 % sin espejo; solos, en x = 50 %.
+- **Profundidad (`efectos.componer`):** la z 0 es el plano de los personajes; positivo = más lejos. Cámara con `apertura` 0,018, `campo` 150, `niebla` 0,30, `focal` 1000; capas lejanas (z de +260 a +420) se funden con el papel. Sombras de contacto (opacidad 0,25 a 0,30) bajo pies y objetos; sombra proyectada de objetos 0,22. **Sin sombra tumbada de los muñecos.**
+- **silla_director (gráfico propio, el objeto que cuenta la noticia; genérica, vacía y sin marca):** silla plegable de director vista de frente y tres cuartos: dos patas en X de madera marrón `#7A4B2A` con contorno tinta de 0,03 H, travesaño, brazos y respaldo y asiento de lona **papel sombra `#E6D8B8`** (neutro: el acento del plano es el lápiz) con dos costuras de tinta; sin letras, sin nombre en el respaldo. Alto H, ancho 0,95 H. En la portada H = 380 px (y 720–1100, centrada en x = 540); en el fotograma 0 está a escala 0,82 (H = 312, y 754–1066) y crece a 1,0 en 12 fotogramas con frenada.
+- **calendario_noviembre (gráfico propio):** hoja de noviembre de 2026 de 7 columnas (domingo a sábado) y 6 filas, ancho 840 px y alto 700 px, cuerpo blanco `#FFF8EC`, contorno tinta de 0,012 W, cabecera marrón `#7A4B2A` de 0,16 H con las siete iniciales (la fecha es el contenido del objeto), números en tinta (el 1 es domingo; el 12 jueves, el 17 martes, el 23 lunes: comprobado con `calendar`). Marcas: círculo mostaza trazado a mano (`trazo_circulo`) sobre el 12, flecha de tinta del 17 al 23 y círculo mostaza sobre el 23; **11 cruces de tinta** (del 13 al 23) que entran una cada 3 fotogramas.
+- **mesa_junta (gráfico propio, genérica):** tablero marrón `#7A4B2A` de 800 x 64 px con dos patas, cinco sillas genéricas detrás (rectángulos redondeados de 90 x 150 px, papel sombra con contorno tinta) y a la izquierda la silla_director vacía a escala 1,25. **Ninguna persona, ningún papel con texto.**
+- **barras (gráfico propio, escala lineal y honesta):** barras horizontales de 56 px de alto, separadas 36 px, de x = 100 a 980. Tenencia (tomas 6 y 7): 12.274 días = 880 px; 11 días = 0,8 px, **se dibuja una marca de 4 px** (la de 11 días, en mostaza) para que se vea. Comparación (tomas 9 a 12): 4.382 días = 880 px; Huang (11) = 2,2 px y Altman (5) = 1,0 px, **ambos con una marca mínima de 4 px**. Es una convención anotada en la descripción («bars to scale; the shortest are drawn at a minimum width»), no un engaño. Sin letras dentro de las barras.
+- **lápiz libre (gráfico propio, firma del canal):** el lápiz de la ficha de Tin (cuerpo amarillo, punta naranja, goma roja, contorno tinta) de 2,4 R de largo (R = radio de cabeza de Tin; a `alto` 487 px, R = 88 px, largo 211 px) que gira libre. **Estela plana:** dos copias en papel sombra detrás, a los ángulos de 2 y 4 fotogramas antes. Escala de vuelo 1,4 (más cerca de la cámara, z de −420) que baja a 1,0 al llegar a la mano.
+- **Muelles (masa 1, rigidez, amortiguación) por elemento:** `pop` 220 y 20 (entradas de texto y gráficos, escala de 0,85 a 1); `slide` 120 y 16 (personajes y gráficos que se desplazan); `sello` 320 y 26 (empujes y zoom de golpe). Contadores y barras: ease-out cúbico, sin muelle, para que el valor nunca pase de su final ni retroceda. Todo depende del número de fotograma (30 fps).
+- **Transición `borrón`:** corte seco con desenfoque de movimiento horizontal de 18 px en los 2 últimos fotogramas de la toma que sale y en los 2 primeros de la que entra. Cero destellos.
 
 ## 6. Tomas
 
 <!--
-Todas las tomas son «edición»: dibujo por código. Tiempos al décimo de segundo, del video final (30,5 s).
-Cada corte cae en un pulso de 0,5 s. Voz: líneas de la sección 7, con tiempos ESTIMADOS.
-Cada corte cae en el pulso anterior al inicio de la línea que le toca (de 0,00 a 0,25 s antes).
+Todas las tomas son «edición»: dibujo por código. Tiempos al décimo de segundo, del video final (30,5 s, 915 fotogramas),
+sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes del inicio de la línea que le toca.
 -->
 
-### Toma 1 — Gancho: la tarjeta de 1999 viene hacia ti
+### Toma 1 — Gancho: la silla vacía y el lápiz que vuelve
 
 - **Duración:** 1,0 s (de 0,0 a 1,0)
 - **Personajes:** @tan, @tin
 - **Método:** edición
 - **Escenario:** papel_crema
-- **Encuadre:** la portada: texto del gancho arriba (y 415 a 690), la tarjeta_1999 en el centro (y 731 a 1089) y Tan y Tin debajo, de perfil, mirándola
-- **Cámara:** fija; todo nítido (apertura 0). El acercamiento es de la capa de la tarjeta, no de la cámara, para que los personajes y el texto no cambien de lugar
-- **Acción:** la tarjeta ya viene hacia la cámara en el fotograma 0 (su ventilador ya gira); en 12 fotogramas pasa de 600 a 760 px de ancho con frenada; en el fotograma 6 la palabra clave da su golpe; desde el fotograma 26 la tarjeta empieza a bajar 30 px (anticipa la inserción de la toma 2).
-- **Audio:** línea 1, Tan (primera parte): "Remember putting one of these in your P C?" Aquí suena «Remember putting one of these…» (el corte de 1,0 cae dentro de la línea, hacia «one of these»; sin escucha no se sabe en qué sílaba). Golpe 1 y golpe de palabra de la sección 13.
-- **Referencia:** toma 1 del short 2 (objeto en movimiento desde el fotograma 0, portada con caras); efecto 1 de `manual/14`, sección 7.1
-- **Transición de entrada:** ninguna (primer fotograma; es también el último del bucle). Salida: `corte en el movimiento` hacia la toma 2.
+- **Encuadre:** la portada: texto «Back In / 11 Days?» arriba (y 400–700), la silla_director en el centro (y 720–1100), Tan y Tin debajo de perfil mirando la silla
+- **Cámara:** fija, escala 100 %
+- **Acción:** el lápiz de Tin ya viene girando de vuelta desde el fotograma 0 (estela plana), baja por el lado derecho, se frena y **Tin lo atrapa en el fotograma 15**; la silla crece de 0,82 a 1,0 en 12 fotogramas; Tan, con el brazo aún extendido del lanzamiento, pregunta.
+- **Audio:** línea 1, Tan (primera parte): "Was Jensen Huang's comeback in eleven days fast?" (la línea va de 0,00 a 2,31 s). Vuelo del lápiz con vibrato de 0,0 a 0,5 s y golpe al atrapar en 0,5 s (sección 13).
+- **Referencia:** toma 1 del short 2 (objeto en movimiento desde el fotograma 0, portada con caras mirando)
+- **Transición de entrada:** ninguna (primer fotograma; es también el último del bucle). Salida: corte en el movimiento hacia la toma 2.
 
 **Especificación de dibujo:**
 
-- Tarjeta_1999 como en la sección 5, como `Capa` con `z` animado de −100 (W aparente 600 px) a −290 (W aparente 760 px) con ease-out cúbico en los fotogramas 0 a 12: **en el fotograma 0 ya hay velocidad** (el ease-out arranca rápido). Sombra proyectada sobre el papel (dx 14, dy 10, radio 10, opacidad 0,22) porque la tarjeta «flota». Dedos mostaza.
-- Texto «Jensen Huang / Is Back» (fila 1 de la sección 12) en dos líneas, **entero y quieto en el fotograma 0** (sin `pop`), letra de 128 px, tope de la primera línea en y = 415; «Back» en mostaza con trazo de tinta de 0,045 em. En el fotograma 6 «Back» da el **golpe** (escala 1,0 a 1,18 en 5 fotogramas con `pop` y asiento en 7; el resto del texto no se mueve). Sale en el corte de 1,0 (30 fotogramas visibles).
-- Tan: pose `parado`, expresión `eureka` (sorpresa alegre; en perfil `sorpresa` se le leía seria), vista `perfil`, `mira=1`, `cabeza_giro=25`, x = 24 %, pies a 86 %, `alto` 487 px, `objeto=False`. Tin: pose `parado`, expresión `sorpresa`, vista `perfil`, `mira=-1`, `cabeza_giro=25`, x = 76 %, `objeto=False` (el lápiz es mostaza y la tarjeta ya lleva el acento). Con suelo y sombra de contacto (opacidad 0,25). Los dos rebotan al pulso de 0,5 s con la bufanda de Tan en movimiento secundario.
-- **Color:** acento mostaza = «Back» + los dedos del conector de la tarjeta (único elemento). Cabezas, gorra y bufanda son identidad.
-- Medidas que el render debe comprobar en el fotograma 0 y en el 12: texto dentro de x 108 a 942 e y 415 a 690; tarjeta dentro de y 720 a 1100; caras dentro de x 60 a 960 e y 380 a 1440; el texto a 40 px o más de la tarjeta.
+- Fotograma 0: lápiz libre con centro en (930, 790) a ángulo 35 grados y escala 1,4, estela de dos copias; **el último fotograma del video (el 914) es esta misma imagen con el lápiz saliendo** (toma 14). El lápiz puede pasar de x = 960 (solo es objeto, no cara ni texto); se mide que no toque el texto ni la silla (≥ 40 px).
+- Recorrido de llegada (15 fotogramas, ease-out): (930, 790) → (975, 1050) → mano de Tin (≈ 860, 1380; se mide en el render), giro de 2,5 vueltas que se frena, escala de 1,4 a 1,0. En el fotograma 15, `pop` pequeño de 4 px hacia abajo en la mano de Tin y sonido.
+- Texto «Back In / 11 Days?» entero y quieto desde el fotograma 0 (es la portada; sin `pop` de entrada), tamaño 12 % del alto, tope de las letras en y = 26 % (medida a repetir: x 116–848, y 492–682); clave «11» en mostaza con contorno de tinta; golpe de la clave en el fotograma 6 (escala 1,0 a 1,18 en 5 fotogramas y asiento en 7). Sale a los 0,9 s.
+- Tan: pose `pregunta`, expresión `curiosidad`, vista `perfil`, `mira=1`, `cabeza_giro=25`, x = 24 %, pies a 86 %, `alto` 487 px (el plano de portada es más grande que el resto), `espejo=True`. Tin: pose `parado`, expresión `sorpresa`, vista `perfil`, `mira=-1`, `cabeza_giro=25`, x = 76 %, `objeto=False` hasta el fotograma 15 y `objeto="lapiz"` desde entonces. Las caras quedan dentro de la zona útil de portada (x 60–960, y 380–1440). Con suelo.
+- **Sin subtítulo en español** (portada). **Color:** acento mostaza = la clave «11» + el lápiz; la silla es neutra (papel sombra y marrón). Cabezas, gorra y bufanda son identidad, no acento.
 
-### Toma 2 — Subjetivo: las manos meten la tarjeta en la ranura
+### Toma 2 — Tan hace la pregunta
 
 - **Duración:** 1,5 s (de 1,0 a 2,5)
-- **Personajes:** ninguno
-- **Método:** edición
-- **Escenario:** papel_crema
-- **Encuadre:** subjetivo y macro: la placa base de una PC en la mitad de abajo, la ranura en el centro y la tarjeta bajando entre dos manos
-- **Cámara:** empuje lento con profundidad (la cámara se mete 110 unidades), sin cortes dentro de la toma (45 fotogramas)
-- **Acción:** dos manos de palitos bajan la tarjeta_1999 hasta que los dedos dorados entran en la ranura; asienta con un pequeño rebote en 2,2 s y la toma sigue 0,3 s.
-- **Audio:** línea 1, Tan (final): "Remember putting one of these in your P C?" Aquí suena «…in your P C?» (hasta unos 2,30 s). Clic de inserción de la sección 13.
-- **Referencia:** efecto 5 de `manual/14`, sección 7.1 (subjetivo o macro de las manos usando el objeto)
-- **Transición de entrada:** `corte en el movimiento` desde la toma 1 (la tarjeta, que ya bajaba, sigue bajando: mismo centro en x, tamaño dentro del ±10 %). Salida: corte seco.
-
-**Especificación de dibujo:**
-
-- Capas (z): papel (+900), placa_base y ranura (+60), tarjeta_1999 de W = 700 px (−120), manos_de_palitos (−220). Foco en −120 (la tarjeta y los dedos), apertura 0,018, campo 120: las manos quedan nítidas y la placa casi (1 o 2 px de desenfoque).
-- Sombra proyectada de la tarjeta sobre la placa (dx 10, dy 14, radio 8) que sube de opacidad 0,15 a 0,30 al acercarse y, al asentar, sombra de contacto bajo los dedos.
-- **Color:** acento mostaza = los dedos del conector (único elemento; la ranura, la placa y las manos, en neutros). Sin texto. Sin tomate.
-- Movimiento secundario: las manos oscilan ±2 grados con muelle y la tarjeta rebota 8 px al asentar (se pasa menos del 12 %). El ventilador de la tarjeta sigue girando.
-
-### Toma 3 — La tarjeta, en su pedestal: capas, sombras y foco
-
-- **Duración:** 3,5 s (de 2,5 a 6,0)
-- **Personajes:** @tan, @tin
-- **Método:** edición
-- **Escenario:** papel_crema
-- **Encuadre:** héroe abierto: la tarjeta_1999 sobre su pedestal en el centro, Tan a la izquierda y Tin a la derecha, mirándola; las siluetas de una PC al fondo
-- **Cámara:** empuje lento con barrido mínimo (la cámara va de x = 540 a 580 y se mete de 0 a 90 unidades: ≈ 1 % del ancho por segundo, muy por debajo del 8 % del límite)
-- **Acción:** Tin señala la tarjeta con el lápiz y Tan la mira con nostalgia; al final de la toma, **el foco pasa de la tarjeta a Tin** mientras Tin acaba de decir el año (cambio de foco de 12 fotogramas en la pausa entre líneas).
-- **Audio:** línea 2, Tin: "That's the G Force two fifty-six, from nineteen ninety-nine." (de 2,55 a 5,68 s; «That's the G Force two fifty-six,» hasta 4,25 y «from nineteen ninety-nine.» desde 4,40).
-- **Referencia:** efectos 4 y de cambio de foco de `manual/14` (capas con paralaje, sombras de contacto, `Camara.foco`); prueba de efectos, técnicas 1 y 2
-- **Transición de entrada:** corte seco desde la toma 2. Salida: ninguna (continúa, sin corte, en la toma 4).
-
-**Especificación de dibujo:**
-
-- Capas (z): papel (+900); pc_beige (+420, con niebla); pedestal y tarjeta_1999 de W = 420 px (−260, la más cercana a la cámara de las nítidas); Tan y Tin (0); **primer plano: un cable de tinta de 36 px en un lazo grande en la esquina inferior izquierda (−320), siempre desenfocado** (el lápiz de Tin no puede ir ahí: es mostaza y competiría con el acento).
-- Foco: de 2,5 a 5,68 en z = −260 (la tarjeta nítida; Tan y Tin a 260 unidades del foco, con 4 o 5 px de desenfoque: se les ve el gesto y no se les lee la cara, y ninguno habla en esta toma); de 5,68 a 6,08 el foco viaja a z = 0 (Tin y Tan nítidos; la tarjeta queda con 4 o 5 px). Apertura 0,03, campo 100.
-- Sombras: contacto bajo el pedestal y bajo los pies de Tan y Tin (opacidad 0,25 a 0,30). Sin sombra tumbada de los muñecos (la prueba de efectos la descartó: con palitos es una mancha).
-- Tan: pose `pregunta`, expresión `nostalgia`, vista `frente`, `mira=1`, `espejo=True`, x = 22 %, pies a 86 %, `alto` 34 %, `objeto=False`, `viento` oscilando. Tin: pose `senala`, expresión `feliz`, vista `frente`, `mira=-1`, x = 78 %, `objeto="lapiz"` (movimiento secundario de ±3 grados).
-- Texto «GeForce 256» de 2,7 a 4,3 y «1999» de 4,4 a 5,9 (filas 2 y 3 de la sección 12), con `pop`.
-- **Color:** acento mostaza = la clave del texto («256»; luego «1999») + el lápiz de Tin (único elemento: los dedos de la tarjeta están dentro de la ranura del pedestal y no se ven). Sin tomate.
-
-### Toma 4 — Tin da la noticia del regreso (el mismo plano continúa)
-
-- **Duración:** 3,0 s (de 6,0 a 9,0)
-- **Personajes:** @tan, @tin
-- **Método:** edición
-- **Escenario:** papel_crema
-- **Encuadre:** el mismo héroe abierto de la toma 3; la cámara se acerca a Tin; la tarjeta queda a un lado, desenfocada
-- **Cámara:** sigue el empuje de la toma 3 (avance de 90 a 150 y x de 580 a 600); sin cortes ni nuevos movimientos de cámara encadenados
-- **Acción:** Tin se vuelve hacia la cámara y explica con el lápiz; entra la fecha y después el hecho; Tan escucha con curiosidad. Un cambio a mitad de toma (a los 7,5 s Tin levanta el lápiz y Tan asiente) para que los 3 s no queden planos.
-- **Audio:** línea 3, Tin: "Nvidia's board brought Jensen Huang back as C E O." (de 6,08 a 9,06 s).
-- **Referencia:** prueba de efectos, técnica 1 (profundidad); lección del short 2 (planos largos con un cambio a mitad)
-- **Transición de entrada:** continúa de la toma 3 (sin corte). Salida: corte seco.
-
-**Especificación de dibujo:**
-
-- Mismas capas y sombras que la toma 3, con el foco en z = 0. Tin: pose `explica`, expresión `feliz`, `objeto="lapiz"`. Tan: pose `parado`, expresión `curiosidad`, `espejo=True`. Posiciones de la toma 3.
-- Texto «Nov 23» de 6,2 a 7,5 y «Back as CEO» de 7,6 a 8,9 (filas 4 y 5), con `pop`; nunca sobre un personaje.
-- **Color:** acento mostaza = la clave («23», luego «CEO») + el lápiz de Tin. Sin tomate.
-- No se dibuja a Jensen Huang ni nada que lo sugiera (ni foto, ni silueta, ni sombra).
-
-### Toma 5 — Tan pregunta: la tarjeta nueva aparece desde el desenfoque
-
-- **Duración:** 2,5 s (de 9,0 a 11,5)
-- **Personajes:** @tan, @tin
-- **Método:** edición
-- **Escenario:** papel_crema
-- **Encuadre:** héroe abierto de los dos; en la zona de gráficos, las dos tarjetas lado a lado: la de 1999, chica, a la izquierda, y la nueva, grande, a la derecha
-- **Cámara:** fija
-- **Acción:** Tan pregunta con la mano levantada; la tarjeta_actual **aparece desde el desenfoque** en 8 fotogramas (a los 9,3 s) en cuanto Tan empieza a hablar; Tin sonríe.
-- **Audio:** línea 4, Tan: "How many of those are in a new one?" (de 9,31 a 11,26 s; el corte de 11,5 cae justo antes de la línea 5).
-- **Referencia:** técnica 4 de la prueba de efectos (`revelar_desde_desenfoque`); efecto de revelado de `manual/14`, 2.2
-- **Transición de entrada:** corte seco desde la toma 4. Salida: `borrón` hacia la toma 6.
-
-**Especificación de dibujo:**
-
-- Capas (z): papel (+900); tarjeta_1999 de W = 300 px (0; x 100 a 400, y centro 39 %); tarjeta_actual de W = 416 px (−200: se ve a W = 500 px, x 440 a 940; y centro 39 %); Tan y Tin (0). Foco en 0; **la tarjeta_actual entra con `revelar_desde_desenfoque` (radio 42 a 0 en 8 fotogramas, f 279 a 287) y se queda nítida**. Sombra proyectada de las dos tarjetas (opacidad 0,2). El ventilador de la tarjeta_1999 sigue girando; los tres de la nueva, también (más lento).
-- Tan: pose `pregunta`, expresión `curiosidad`, vista `frente`, `espejo=True`, x = 30 %, `alto` 34 %, `objeto=False`. Tin: pose `parado`, expresión `feliz`, vista `frente`, x = 70 %, `objeto=False` (la tarjeta_1999 lleva los dedos mostaza: ahora es ella el elemento).
-- Texto «RTX 5090» de 9,4 a 11,4 (fila 6), con `pop`.
-- **Color:** acento mostaza = la clave («5090») + los dedos de la tarjeta_1999 (único elemento); los dedos de la nueva, marrón. Sin tomate.
-
-### Toma 6 — Se cuentan transistores, no velocidad
-
-- **Duración:** 2,0 s (de 11,5 a 13,5)
-- **Personajes:** @tan, @tin
-- **Método:** edición
-- **Escenario:** papel_crema
-- **Encuadre:** detalle: el chip (die) en la zona de gráficos, con Tan y Tin debajo
-- **Cámara:** fija
-- **Acción:** el chip entra con `pop`; un círculo de tinta lo rodea, dibujándose a mano (garabato); Tin explica y Tan asiente.
-- **Audio:** línea 5, Tin: "We're counting transistors, not speed." (de 11,51 a 13,36 s).
-- **Referencia:** técnica 9 de la prueba de efectos (garabatos de tinta); `manual/14`, 2.7
-- **Transición de entrada:** `borrón` desde la toma 5. Salida: corte seco.
-
-**Especificación de dibujo:**
-
-- Die de la sección 5 en el centro de la zona de gráficos (centro en x = 540, y = 750), con `pop`. Garabato `trazo_circulo` de 12 fotogramas (f 358 a 370) alrededor del die, grosor 9 px, tinta; un solo trazo.
-- Capas (z): papel (+900), die (−100, con sombra proyectada), personajes (0). Foco en −100; apertura 0,018.
-- Tan: pose `parado`, expresión `curiosidad`, vista `frente`, `espejo=True`, x = 30 %, `alto` 34 %. Tin: pose `explica`, expresión `feliz`, x = 70 %, `objeto=False` (el die es mostaza).
-- Texto en dos líneas «transistors, / not speed» (fila 7), tamaño 5,5 %, de 11,6 a 13,4; clave: «transistors».
-- **Color:** acento mostaza = la clave + el die (único elemento). Sin tomate.
-
-### Toma 7 — La tarjeta de 1999: hasta 23 millones
-
-- **Duración:** 3,0 s (de 13,5 a 16,5)
 - **Personajes:** @tan
 - **Método:** edición
 - **Escenario:** papel_crema
-- **Encuadre:** héroe de objeto (cerca de la mitad del video): la tarjeta_1999 grande en la zona de gráficos, con Tan debajo
-- **Cámara:** empuje lento con profundidad (avance de 0 a 70)
-- **Acción:** la tarjeta_1999 flota sobre el papel con su ventilador girando; Tan la mira; el rótulo entra.
-- **Audio:** línea 6, Tin: "That card had up to twenty-three million transistors." (de 13,61 a 16,38 s).
-- **Referencia:** técnica 1 de la prueba de efectos; plano héroe (`manual/14`, sección 4)
-- **Transición de entrada:** corte seco desde la toma 6. Salida: **`barrido_obturador`** hacia la toma 8 (6 fotogramas, f 492 a 498).
+- **Encuadre:** plano medio de Tan sola, de frente, con la silla pequeña al fondo (capa lejana)
+- **Cámara:** empuje lento (avance 0 a 40)
+- **Acción:** el brazo de Tan sigue subiendo a través del corte mientras termina la pregunta; la silla se ve lejos y desenfocada detrás.
+- **Audio:** línea 1, Tan (segunda parte): «…in eleven days fast?» (hasta 2,31 s). Clic suave del corte.
+- **Referencia:** toma 2 del short 2 (Tan pregunta)
+- **Transición de entrada:** corte en el movimiento (4 fotogramas después de que arranca el brazo; el primer plano dura 30 fotogramas). Salida: corte seco.
 
 **Especificación de dibujo:**
 
-- Capas (z): papel (+900); sombra proyectada de la tarjeta sobre el papel (dx 14, dy 10, radio 10, opacidad 0,22); tarjeta_1999 de W = 800 px (−150), centrada en (50 %; 39 %); Tan (0). Foco en −150.
-- Tan: pose `parado`, expresión `curiosidad`, vista `frente`, `espejo=True`, x = 50 %, `alto` 34 %, `objeto=False`.
-- Texto «up to / 23 million» (fila 8): «up to» al 4,5 % y «23 million» al 7 %, de 13,6 a 16,4; clave: «23».
-- **Color:** acento mostaza = «23» + los dedos de la tarjeta (único elemento). Sin tomate.
+- Capas: papel z +900; silla_director z +420 (niebla), x = 540; Tan z 0. Tan: pose `pregunta`, expresión `curiosidad`, vista `frente`, `mira=1`, `espejo=True`, x = 50 %, pies a 86 %, `alto` 29 %, `viento` oscilante con muelle.
+- Rótulo «11 days?» (clave 11) entra con `pop` en 1,1 y sale en 2,4. Subtítulo ES tarjeta 1 de 1,0 a 2,4.
+- **Color:** acento mostaza = la clave «11». La silla, neutra. Con suelo.
 
-### Toma 8 — La RTX 5090: unos 92.000 millones
+### Toma 3 — Renunció el 12 de noviembre
 
-- **Duración:** 3,5 s (de 16,5 a 20,0)
+- **Duración:** 4,0 s (de 2,5 a 6,5)
+- **Personajes:** @tan, @tin
+- **Método:** edición
+- **Escenario:** papel_crema
+- **Encuadre:** héroe abierto de los dos, con el calendario de noviembre detrás y la silla en primer plano
+- **Cámara:** empuje lento con profundidad (avance 0 a 90, x 540 a 575; ≈ 1 % del ancho por segundo)
+- **Acción:** Tin explica con el lápiz; un círculo de tinta mostaza se dibuja sobre el 12 cuando la voz dice «twelfth»; Tan se sorprende.
+- **Audio:** línea 2, Tin: "He resigned from Nvidia on November twelfth after a scandal." (de 2,54 a 6,45 s). Raspado de lápiz en el garabato.
+- **Referencia:** toma 4 del short 2 (héroe abierto con el objeto del tema)
+- **Transición de entrada:** corte seco. Salida: corte seco.
+
+**Especificación de dibujo:**
+
+- Capas: papel +900; calendario_noviembre z +260 (niebla 0,30, ligeramente desenfocado: es fondo y su fecha se lee por el rótulo, no por la hoja); silla_director z −220 (primer plano, a la izquierda, x = 150, 60 % de su tamaño de portada, **nítida y sin tapar las caras**); Tan y Tin z 0. Sombras de contacto bajo pies y bajo la silla.
+- Tin: pose `explica`, expresión `feliz`, `objeto="lapiz"`, vista `frente`, x = 70 %, sin espejo, lápiz con movimiento secundario de ±3 grados. Tan: pose `senala`, expresión `curiosidad` y, desde 4,5, `sorpresa`, `espejo=True`, x = 30 %.
+- `garabato` con `trazo_circulo` sobre el 12 de 4,3 a 4,7 s (12 fotogramas); rótulo «Nov 12» (clave 12) entra con `pop` en 4,2 y sale en 6,4. Subtítulo ES tarjeta 2 de 2,55 a 6,40.
+- **Color:** acento mostaza = la clave «12» + el círculo del 12 + el lápiz (el lápiz es identidad de Tin; el círculo y la clave son el acento; se mide que no haya un cuarto elemento mostaza en el calendario). Con suelo.
+
+### Toma 4 — El 17, la junta dijo que no
+
+- **Duración:** 3,5 s (de 6,5 a 10,0)
+- **Personajes:** @tan, @tin
+- **Método:** edición
+- **Escenario:** papel_crema
+- **Encuadre:** héroe abierto de los dos con la mesa de junta detrás
+- **Cámara:** empuje lento (avance 90 a 150)
+- **Acción:** la mesa de junta entra desde el desenfoque; la silla de director vacía queda a la cabecera; Tin señala la mesa; Tan pregunta con la mano.
+- **Audio:** línea 3, Tin: "On the seventeenth the board said it would not bring him back." (de 6,68 a 9,72 s). Clic del corte y golpe suave del revelado.
+- **Referencia:** toma 4 del short 2
+- **Transición de entrada:** corte seco con `revelar_desde_desenfoque` de la mesa (8 fotogramas, de 6,5 a 6,77; uno por video). Salida: corte seco.
+
+**Especificación de dibujo:**
+
+- Capas: papel +900; mesa_junta z +180; Tan y Tin z 0; sombra proyectada de la mesa 0,22. Tin: pose `senala`, expresión `curiosidad`, `objeto="lapiz"`, x = 70 %. Tan: pose `pregunta`, expresión `curiosidad`, `espejo=True`, x = 30 %.
+- Rótulo «Nov 17» (clave 17) con `pop` en 7,0, hasta 9,9. Subtítulo ES tarjeta 3 de 6,70 a 9,70.
+- **Color:** acento mostaza = la clave «17» + el lápiz como identidad; sin otro elemento mostaza. No hay tachaduras ni cruces sobre la silla (sería juicio sobre la persona). Con suelo.
+
+### Toma 5 — Seis días después, repuesto el 23
+
+- **Duración:** 3,0 s (de 10,0 a 13,0)
+- **Personajes:** @tan, @tin
+- **Método:** edición
+- **Escenario:** papel_crema
+- **Encuadre:** héroe abierto con el calendario de noviembre en la zona de gráficos
+- **Cámara:** fija, escala 100 %
+- **Acción:** una flecha de tinta se dibuja del 17 al 23; un círculo mostaza rodea el 23; empiezan a caer las cruces del 13 al 23 (una cada 3 fotogramas, desde 11,9); Tan celebra.
+- **Audio:** línea 4, Tin: "Six days later it reinstated him as C E O." (de 9,95 a 13,00 s). Tictac de las cruces con tono que sube.
+- **Referencia:** toma 5 del short 1 (tira que se llena)
+- **Transición de entrada:** corte seco. Salida: corte seco.
+
+**Especificación de dibujo:**
+
+- Calendario_noviembre en la zona de gráficos (W = 780, de 27 % a 46,5 %), z 0; flecha `trazo_flecha` de 10,3 a 10,8; círculo `trazo_circulo` sobre el 23 de 11,3 a 11,7; 11 cruces del 13 al 23 con entrada `pop` de 8 fotogramas, desfase de 3 fotogramas, de 11,9 a 13,0.
+- Tin: pose `explica`, expresión `feliz`, `objeto="lapiz"`, x = 70 %. Tan: pose `celebra`, expresión `eureka`, `espejo=True`, x = 30 %, `viento` alto.
+- Rótulo «+6 days» (clave 6) de 10,2 a 11,7 y rótulo «Nov 23» (clave 23) de 11,8 a 12,95, ambos al 7 %. Subtítulo ES tarjeta 4 de 10,0 a 13,0.
+- **Color:** acento mostaza = la clave y el círculo del 23; flecha y cruces en tinta. Con suelo.
+
+### Toma 6 — Once días
+
+- **Duración:** 1,0 s (de 13,0 a 14,0)
 - **Personajes:** @tan
 - **Método:** edición
 - **Escenario:** papel_crema
-- **Encuadre:** héroe de objeto: la tarjeta_actual grande en la zona de gráficos, con Tan debajo
-- **Cámara:** empuje lento con profundidad (avance de 0 a 70)
-- **Acción:** la tarjeta nueva entra con el barrido y se asienta con frenada; sus tres ventiladores giran; Tan se asombra un poco más que en la toma anterior.
-- **Audio:** línea 7, Tin: "The R T X fifty-ninety has about ninety-two billion." (de 16,63 a 20,03 s).
-- **Referencia:** toma 7 de esta pieza (mismo plano, otro objeto)
-- **Transición de entrada:** `barrido_obturador` desde la toma 7. Salida: corte seco.
-
-**Especificación de dibujo:**
-
-- Capas como la toma 7, con la tarjeta_actual de W = 840 px (−150), centrada en (50 %; 39 %); su alto con dedos es 0,38 W = 319 px. Dedos mostaza.
-- Tan: pose `parado`, expresión `sorpresa`, vista `frente`, `espejo=True`, x = 50 %, `alto` 34 %, `objeto=False`.
-- Texto «RTX 5090 / ≈ 92 billion» (fila 9): «RTX 5090» al 4,5 % y «≈ 92 billion» al 7 %, de 16,6 a 19,9; clave: «92».
-- **Color:** acento mostaza = «92» + los dedos de la tarjeta_actual (único elemento). Sin tomate.
-
-### Toma 9 — «Divide them»: la ecuación entre dos objetos
-
-- **Duración:** 1,0 s (de 20,0 a 21,0)
-- **Personajes:** @tan, @tin
-- **Método:** edición
-- **Escenario:** papel_crema
-- **Encuadre:** héroe abierto de los dos; en la zona de gráficos, la ecuación de dos filas (sección 5)
+- **Encuadre:** el calendario con sus 11 cruces ya puestas y Tan debajo
 - **Cámara:** fija
-- **Acción:** las dos tarjetas «vuelan» a sus filas con `slide`, entran los textos y el signo «÷»; Tin levanta la mano y Tan espera. La subida de sonido corre bajo «Divide them.» y, al terminar la línea, el silencio de 12 fotogramas.
-- **Audio:** línea 8, Tin: "Divide them." (de 20,28 a 20,98 s). **Silencio total de 12 fotogramas de 20,98 a 21,38 s** (ni voz, ni música, ni efectos). Subida de la sección 13.
-- **Referencia:** «subida de sonido, silencio de 10 a 12 fotogramas» de `manual/14`, 7.1 efecto 6
-- **Transición de entrada:** corte seco desde la toma 8. Salida: ninguna (continúa en la toma 10).
+- **Acción:** el rótulo «11 days» entra con `pop`; Tan asiente con la boca abierta.
+- **Audio:** línea 5, Tin (primera parte): «Before that:» (de 13,23 a ≈ 14,0 s).
+- **Referencia:** toma 6 del short 2
+- **Transición de entrada:** corte seco. Salida: corte seco.
 
 **Especificación de dibujo:**
 
-- Ecuación de la sección 5. Las tarjetas pequeñas con los **dedos marrón** (plano de revelación: ningún elemento mostaza). Textos «≈ 92 billion» y «÷ 23 million» al 5,5 % (fila 10), en tinta y sin clave.
-- Tan: pose `parado`, expresión `curiosidad`, vista `frente`, `espejo=True`, x = 30 %, `alto` 34 %. Tin: pose `saluda`, expresión `feliz`, x = 70 %, `objeto=False`.
-- **Color:** ni mostaza ni tomate todavía: el plano está en neutros; el tomate llega con la cifra.
+- Calendario de la toma 5 con las 11 cruces; Tan: pose `senala`, expresión `sorpresa`, `espejo=True`, x = 50 %, `alto` 29 %. Rótulo «11 days» (clave 11) de 13,05 a 13,95 (27 fotogramas: es el único texto, ya se leyó en la portada). Subtítulo ES tarjeta 5 empieza en 13,25.
+- **Color:** acento mostaza = la clave «11»; Con suelo.
 
-### Toma 10 — El pico: más de 4.000 (el mismo plano continúa)
+### Toma 7 — 12.274 días al mando
 
-- **Duración:** 3,0 s (de 21,0 a 24,0)
-- **Personajes:** @tan, @tin
+- **Duración:** 2,0 s (de 14,0 a 16,0)
+- **Personajes:** @tin
 - **Método:** edición
 - **Escenario:** papel_crema
-- **Encuadre:** héroe abierto con la cifra arriba (pico de emoción)
-- **Cámara:** fija hasta la cifra; en el fotograma de llegada, **un solo golpe de zoom suave de +10 %** (5 fotogramas de ida con `sello` y 8 de asiento) con origen en el centro de la cifra; después, quieta
-- **Acción:** el contador sube de 250 a 4.000 con ease (acelera y frena) en 36 fotogramas (de 21,0 a 22,2); al llegar, el número pasa a tomate, aparece el «+» con un `pop` y la cifra se queda quieta 54 fotogramas; Tan celebra y Tin levanta la mano.
-- **Audio:** línea 9, Tin: "More than four thousand." (de 21,38 a 22,48 s; «four thousand» hacia 22,0 a 22,48). Tictac y ding de la sección 13. Línea 10, Tan: "Four thousand of these in one of those?" (de 22,73 a 24,48 s) suena sobre la cifra quieta; el corte de 24,0 cae dentro de «in one of those?».
-- **Referencia:** toma 10 del short 2 (contador y celebración); efecto 6 de `manual/14`, 7.1
-- **Transición de entrada:** continúa de la toma 9. Salida: corte seco.
-
-**Especificación de dibujo:**
-
-- Contador de 250 a 4.000 en la zona de texto (y = 15 %), tamaño 7 %, ease-out cúbico de 21,0 a 22,2; **el valor llega a 4.000 en el mismo fotograma que el tomate, el «+» y el `pop`** (lección del short 2: el `pop` y el sonido atados al fotograma de llegada). Solo sube; nunca pasa de 4.000; nunca se ve «0». Al llegar, el texto «4,000+» pasa de tinta a tomate `#C8553D` con contorno tinta de 0,045 em.
-- Mientras la cifra se lee **nada se mueve detrás de ella**: la ecuación queda quieta; solo hay la respiración de los personajes (acción secundaria de amplitud pequeña).
-- Subtítulo fijo bajo la cifra «transistors, not speed» al 3,5 % en tinta (fila 12), de 21,4 a 27,4.
-- Tan: pose `celebra`, expresión `sorpresa`, vista `frente`, `espejo=True`, x = 30 %, `viento` alto con muelle; desde 22,73 (cuando habla) mantiene la expresión. Tin: pose `saluda`, expresión `eureka`, x = 70 %, `objeto=False`.
-- **Color (revelación):** acento tomate = la cifra «4,000+» al llegar; **nada en mostaza como acento** (Tan conserva su bufanda mostaza, que es identidad).
-
-### Toma 11 — El muro de 4.000 tarjetas crece
-
-- **Duración:** 1,5 s (de 24,0 a 25,5)
-- **Personajes:** @tan, @tin
-- **Método:** edición
-- **Escenario:** papel_crema
-- **Encuadre:** héroe abierto; la pared_de_tarjetas llena la zona de gráficos; la cifra sigue arriba
+- **Encuadre:** la barra de tenencia a todo el ancho útil y Tin debajo
 - **Cámara:** fija
-- **Acción:** la pared se llena de arriba abajo, fila por fila, con ease-out (gráfico que crece, 30 fotogramas: de 24,0 a 25,0); Tan se encoge de hombros con la boca abierta; la última fila cae en 25,0 y la pared queda quieta 15 fotogramas.
-- **Audio:** línea 10, Tan (final): "Four thousand of these in one of those?" (hasta 24,48 s). Línea 11, Tin (inicio): "That whole wall, in transistors, is one chip." (desde 24,73 s; «That whole wall,» ya con la pared completa). Cascada de la sección 13.
-- **Referencia:** «gráfico que crece» y asombro de `manual/14`, 2.7 y sección 3
-- **Transición de entrada:** corte seco desde la toma 10 (el corte cae durante «in one of those?», con la cifra de tomate ya leída 54 fotogramas). Salida: continúa en la toma 12.
+- **Acción:** una barra larga crece de izquierda a derecha en 30 fotogramas y frena; en su extremo derecho una marca mínima mostaza señala los 11 días; Tin explica.
+- **Audio:** línea 5, Tin (segunda parte): «more than thirty-three years in charge.» (hasta 15,77 s).
+- **Referencia:** toma 7 del short 2 (cifra grande)
+- **Transición de entrada:** corte seco. Salida: corte seco.
 
 **Especificación de dibujo:**
 
-- Pared_de_tarjetas de la sección 5, filas apareciendo cada 0,6 fotogramas (50 filas en 30 fotogramas). Capas (z): papel (+900); pared (0). Sombra de contacto fina bajo la pared (opacidad 0,15).
-- Cifra «4,000+» en tomate arriba y subtítulo «transistors, not speed» al 3,5 %, quietos.
-- Tan: pose `encoge`, expresión `sorpresa`, vista `frente`, `espejo=True`, x = 30 %. Tin: pose `parado`, expresión `feliz`, x = 70 %, `objeto=False`.
-- **Color (revelación):** acento tomate = la cifra; la pared, en marrón y papel (neutros).
+- Barra de tenencia (sección 5): marrón, 880 px, crece de 14,1 a 15,1 (`eo`, sin muelle); marca de 4 píxeles mostaza en el extremo. Tin: pose `explica`, expresión `feliz`, `objeto="lapiz"`, x = 50 %, `alto` 29 %.
+- Rótulo «12,274 days» (clave: el número) entra con `pop` en 14,3 y queda hasta 15,95. Subtítulo ES tarjeta 5 sigue hasta 15,8.
+- **Color:** acento mostaza = la clave + la marca de 11 días; barra marrón (neutro de relleno). Con suelo.
 
-### Toma 12 — Todo el muro es un solo chip (la pared se pliega)
+### Toma 8 — Tan: «¿rápido comparado con quién?»
 
-- **Duración:** 2,0 s (de 25,5 a 27,5)
+- **Duración:** 1,0 s (de 16,0 a 17,0)
+- **Personajes:** @tan
+- **Método:** edición
+- **Escenario:** papel_crema
+- **Encuadre:** plano medio de Tan sola, de frente
+- **Cámara:** empuje lento (avance 0 a 30)
+- **Acción:** Tan se encoge de hombros y pregunta; el rótulo no cambia de lugar.
+- **Audio:** línea 6, Tan: "Fast compared to who?" (de 16,00 a 16,96 s).
+- **Referencia:** toma 9 del short 2 (respiro de composición)
+- **Transición de entrada:** corte seco. Salida: corte seco.
+
+**Especificación de dibujo:**
+
+- Tan: pose `encoge`, expresión `curiosidad`, `espejo=True`, x = 50 %, `alto` 29 %, silla_director pequeña al fondo (z +420). Sin rótulo. Subtítulo ES tarjeta 6 de 16,0 a 16,95. Con suelo. **Color:** sin acento (solo neutros y colores de Tan).
+
+### Toma 9 — Sam Altman: 5 días
+
+- **Duración:** 2,5 s (de 17,0 a 19,5)
+- **Personajes:** @tin
+- **Método:** edición
+- **Escenario:** papel_crema
+- **Encuadre:** barras de comparación en la zona de gráficos y Tin debajo
+- **Cámara:** empuje lento (avance 0 a 50)
+- **Acción:** aparece una barra de Huang (11 días, marca de 4 px) y debajo la de Altman (5 días, marca de 4 px) en mostaza; Tin explica.
+- **Audio:** línea 7, Tin: "Sam Altman at OpenAI: five days." (de 17,19 a 19,30 s).
+- **Referencia:** toma 7 del short 2
+- **Transición de entrada:** corte seco. Salida: corte seco.
+
+**Especificación de dibujo:**
+
+- Barras (sección 5) con `pop` de 8 fotogramas; la de Huang en tinta, la de Altman en mostaza. Tin: pose `explica`, expresión `feliz`, `objeto="lapiz"`, x = 50 %.
+- Rótulo «5 days» (clave 5) de 17,4 a 19,4. Subtítulo ES tarjeta 7 de 17,2 a 19,4. **Color:** acento mostaza = la clave y la barra de Altman. Con suelo.
+
+### Toma 10 — El pico: Steve Jobs, 4.382 días
+
+- **Duración:** 4,0 s (de 19,5 a 23,5)
 - **Personajes:** @tan, @tin
 - **Método:** edición
 - **Escenario:** papel_crema
-- **Encuadre:** héroe abierto: a la izquierda la pared encogida, a la derecha la tarjeta_actual, y el signo «=» entre las dos
+- **Encuadre:** héroe abierto de los dos con la barra grande en la zona de gráficos y la cifra arriba (pico de emoción)
+- **Cámara:** fija; zoom de golpe suave de +10 % en la llegada de la cifra
+- **Acción:** subida de sonido, **silencio de 12 fotogramas**, la barra de Jobs crece a todo el ancho mientras el contador sube de 0 a 4.382 con ease-out; al llegar, la cifra pasa a tomate y el zoom da su golpe; Tan se asombra y Tin levanta la mano vacía.
+- **Audio:** línea 8, Tin: "Steve Jobs at Apple: four thousand, three hundred eighty-two days." (de 19,53 a 23,24 s; el número empieza ≈ 21,5).
+- **Referencia:** toma 10 del short 2 (contador final)
+- **Transición de entrada:** corte seco. Salida: corte seco.
+
+**Especificación de dibujo:**
+
+- Barras: las de Huang y Altman (marcas de 4 px, en tinta; la de Altman ya no es mostaza) y la de Jobs en marrón, que crece de 21,85 a 23,05 con el contador.
+- Contador de 0 a 4.382 (enteros, formato inglés con coma en pantalla) `fx.contador` de 21,85 a 23,05 (36 fotogramas), ease-out cúbico, solo sube; en tinta mientras sube y en **tomate `#C8553D` con contorno de tinta de 0,045 em** al llegar, con `pop` del texto en ese mismo fotograma. `golpe_de_zoom` de +10 % (5 fotogramas de ida y 8 de asiento) en 23,05. Cifra quieta desde 23,05 (sigue en la toma 11: 45 fotogramas o más).
+- Tan: pose `celebra`, expresión `sorpresa`, `espejo=True`, x = 30 %, `viento` alto. Tin: pose `saluda`, expresión `eureka`, **`objeto=False`** (sin lápiz: aquí el único acento es el tomate), x = 70 %.
+- Rótulo «4,382 days» (arriba, 7 %): entra con el contador (21,85). Subtítulo ES tarjeta 8 de 19,55 a 21,4 («Steve Jobs, Apple:»); de 21,4 a 23,5 no hay subtítulo (la cifra ya está en grande).
+- **Color (revelación):** acento tomate = la cifra; nada mostaza como acento (la bufanda de Tan es identidad). Con suelo.
+
+### Toma 11 — Tan se asombra (la cifra queda quieta)
+
+- **Duración:** 1,0 s (de 23,5 a 24,5)
+- **Personajes:** @tan
+- **Método:** edición
+- **Escenario:** papel_crema
+- **Encuadre:** plano medio de Tan sola con la cifra en tomate arriba y la barra de Jobs detrás
 - **Cámara:** fija
-- **Acción:** la pared se encoge y se desplaza a la izquierda (36 fotogramas con ease, de 25,5 a 26,7); la tarjeta_actual entra deslizándose desde la derecha y se asienta; el signo «=» aparece con `pop` y las dos quedan a la misma altura; Tin señala; Tan se ríe.
-- **Audio:** línea 11, Tin: "That whole wall, in transistors, is one chip." (de 24,73 a 27,16 s; «is one chip.» sobre la tarjeta que entra).
-- **Referencia:** toma 11 (continuación); remate de tamaño (`manual/14`, 2.7 y sección 3: «la magnitud comparada con algo conocido»)
-- **Transición de entrada:** continúa de la toma 11. Salida: corte seco.
+- **Acción:** Tan se encoge de hombros con la boca abierta; la cifra no se mueve.
+- **Audio:** línea 9, Tan: "That is twelve years?" (de 23,47 a 24,43 s).
+- **Referencia:** toma 11 del short 2
+- **Transición de entrada:** corte seco. Salida: corte seco.
 
 **Especificación de dibujo:**
 
-- Pared encogida a 380 × 237 px (x 100 a 480; centro en y = 750). Tarjeta_actual de W = 380 px (x 600 a 980; alto 0,38 W = 144 px; centro en y = 750). Signo «=» de tinta, 100 px, centrado en x = 540, entra en 26,7 con `pop`. Dedos de la tarjeta, marrón.
-- Cifra «4,000+» en tomate arriba y subtítulo «transistors, not speed» al 3,5 %, quietos hasta 27,4.
-- Tan: pose `encoge`, expresión `risa`, vista `frente`, `espejo=True`, x = 30 %. Tin: pose `senala`, expresión `eureka`, x = 70 %, `objeto=False`.
-- **Color (revelación):** acento tomate = la cifra; sin mostaza como acento.
+- Tan: pose `encoge`, expresión `sorpresa`, `espejo=True`, x = 50 %, `alto` 29 %. Rótulo «4,382 days» en tomate, el mismo de la toma 10, hasta 24,4. Subtítulo ES tarjeta 9 de 23,5 a 24,45. **Color:** acento tomate = la cifra; sin mostaza. Con suelo.
 
-### Toma 13 — Cierre de firma: Tin y Tan, y la invitación
+### Toma 12 — Remate: más rápido que Jobs, más lento que Altman
 
-- **Duración:** 2,0 s (de 27,5 a 29,5)
+- **Duración:** 2,0 s (de 24,5 a 26,5)
 - **Personajes:** @tan, @tin
 - **Método:** edición
 - **Escenario:** papel_crema
-- **Encuadre:** plano fijo de respiro de los dos, de frente, saludando a cámara
-- **Cámara:** fija, escala 100 % (respiro de 60 fotogramas)
-- **Acción:** Tin y Tan saludan con el mismo gesto en todos los videos; Tan dice la invitación; entra la palabra «Subscribe» con su nombre debajo.
-- **Audio:** línea 12, Tan: "Subscribe and count with us." (de 27,50 a 28,80 s; **la única invitación a suscribirse**). Después, 0,7 s de silencio de voz.
-- **Referencia:** efecto 7 de `manual/14`, 7.1 (cierre de firma); `plan_programa_de_socios.md`, P6c
-- **Transición de entrada:** corte seco desde la toma 12 (con un respiro de voz de unos 0,34 s antes de la invitación). Salida: **`congelado_con_marco`** hacia la toma 14.
-
-**Especificación de dibujo:**
-
-- Tan: pose `saluda`, expresión `feliz`, vista `frente`, `espejo=True`, x = 30 %, `alto` 34 %. Tin: pose `saluda`, expresión `feliz`, vista `frente`, x = 70 %, `objeto=False`. Los dos saludan hacia afuera. Suelo y sombra de contacto.
-- Texto «Subscribe» (clave, entero) al 7 % de 27,7 a 29,4 y «Tin & Tan» al 3,8 %, en tinta, debajo, de 27,7 a 29,4 (filas 14 y 15).
-- **Color:** acento mostaza = «Subscribe» (palabra clave; sin elemento mostaza aparte). Sin tomate.
-
-### Toma 14 — Congelado con marco y vuelta a la portada (bucle)
-
-- **Duración:** 1,0 s (de 29,5 a 30,5)
-- **Personajes:** @tan, @tin
-- **Método:** edición
-- **Escenario:** papel_crema
-- **Encuadre:** el cierre se congela como una foto con marco, cae, y aparece exactamente el plano del fotograma 0
+- **Encuadre:** héroe abierto de los dos con las tres barras en la zona de gráficos
 - **Cámara:** fija
-- **Acción:** el plano de la toma 13 se congela, se reduce a una foto con marco que gira 4 grados y cae (22 fotogramas, de 29,5 a 30,25); detrás aparece el plano de la portada (tarjeta de 600 px, texto, Tan y Tin de perfil); queda quieto 8 fotogramas. **El último fotograma es igual al primero.**
-- **Audio:** sin voz (la voz terminó en 28,80: 1,7 s de silencio de voz hasta el empalme; en el fotograma 0 la voz vuelve a entrar sin pausa). Clic de cámara y thunk de la sección 13.
-- **Referencia:** técnica 11 de la prueba de efectos (`congelado_con_marco`), que ahí se guardó «para un cierre»; `manual/14`, 2.4
-- **Transición de entrada:** `congelado_con_marco` desde la toma 13. Salida: bucle al fotograma 0 de la toma 1.
+- **Acción:** la cifra en tomate sale; el rótulo «11 days» vuelve en mostaza y la marca de Huang pasa a mostaza; Tin asiente y levanta el lápiz; Tan se ríe (respiro tras el pico, sin efectos).
+- **Audio:** línea 10, Tin: "Faster than Jobs. Slower than Altman." (de 24,66 a 26,55 s).
+- **Referencia:** toma 12 del short 2 (remate con los dos)
+- **Transición de entrada:** corte seco. Salida: corte seco.
 
 **Especificación de dibujo:**
 
-- `congelado_con_marco(a, b, p)` con a = la toma 13, b = el plano del fotograma 0 de la toma 1 (tarjeta de 600 px aparente en z = −100, ángulo cero, estela ninguna), escala 0,62, giro −4, marco 26, salida 0,68. **Sin destello** (el de la prueba se quitó).
-- Texto «Jensen Huang / Is Back» (fila 16) forma parte del plano b y llega entero; la palabra clave no da su golpe aquí (solo en el fotograma 6 de la toma 1). Tan y Tin rebotan al pulso de 0,5 s: 61 pulsos en 30,5 s, así que **el fotograma 915 (el que sigue al último, el 914) es igual al fotograma 0**.
-- **Color:** acento mostaza = «Back» + los dedos de la tarjeta, como en la toma 1.
+- Barras de la toma 10 (Jobs marrón, Altman y Huang con marca de 4 px); la marca de Huang en mostaza. Tin: pose `explica`, expresión `risa`, `objeto="lapiz"` (vuelve el lápiz), x = 70 %. Tan: pose `encoge`, expresión `risa`, `espejo=True`, x = 30 %.
+- Rótulo «11 days» (clave 11) de 24,6 a 26,4. Subtítulo ES tarjeta 10 de 24,7 a 26,5.
+- **Color:** acento mostaza = la clave + la marca de Huang. Sin tomate. Con suelo.
+
+### Toma 13 — Pregunta final e invitación; el lápiz pasa a Tan
+
+- **Duración:** 2,5 s (de 26,5 a 29,0)
+- **Personajes:** @tan, @tin
+- **Método:** edición
+- **Escenario:** papel_crema
+- **Encuadre:** plano de los dos con la silla de director vacía entre ellos (el plano del fotograma 0, más pequeño)
+- **Cámara:** fija, escala 100 %
+- **Acción:** Tan pregunta «¿quién más volvió?», Tin le pasa el lápiz en un arco corto (28,4 a 28,7) y Tan dice la invitación con el lápiz en la mano.
+- **Audio:** línea 11, Tan: "Who else came back? Subscribe for the next count." (de 26,78 a 29,09 s). Una sola invitación.
+- **Referencia:** toma 12 del short 2 (cierre de firma)
+- **Transición de entrada:** corte seco. Salida: corte seco.
+
+**Especificación de dibujo:**
+
+- Silla_director (H = 312, a escala 0,82, centro x = 540, y 754–1066 como en el fotograma 0) entre los dos; Tan: pose `pregunta`, expresión `curiosidad`, vista `frente`, `espejo=True`, x = 30 %; Tin: pose `explica`, expresión `feliz`, x = 70 %. Lápiz libre que pasa de Tin a Tan en 8 fotogramas (28,4–28,67) con giro de media vuelta; desde 28,67 Tan lleva `objeto="lapiz"` y Tin `objeto=False`.
+- Rótulos: «Who else?» (clave: else) de 26,85 a 28,1; «Subscribe» (clave) de 28,2 a 28,95. Subtítulo ES tarjeta 11 de 26,8 a 27,9 y tarjeta 12 de 28,0 a 29,1.
+- **Color:** acento mostaza = la clave y el lápiz. Con suelo.
+
+### Toma 14 — Cierre en bucle: Tan lanza el lápiz
+
+- **Duración:** 1,5 s (de 29,0 a 30,5)
+- **Personajes:** @tan, @tin
+- **Método:** edición
+- **Escenario:** papel_crema
+- **Encuadre:** el plano de la toma 13 que se transforma en el de la portada
+- **Cámara:** fija, escala 100 %
+- **Acción:** Tan, con el lápiz, hace la **anticipación** (6 fotogramas hacia atrás, de 29,63 a 29,83) y lo **lanza** girando (20 fotogramas, de 29,83 a 30,5): el lápiz sale hacia la cámara y hacia arriba a la derecha; el último fotograma es el fotograma 0 (lápiz en (930, 790) a 1,4 de escala y Tan con el brazo extendido).
+- **Audio:** sin voz (la voz terminó en ≈ 29,09: 1,41 s de silencio de voz hasta el empalme). Whoosh con vibrato atado al giro (sección 13).
+- **Referencia:** toma 1 de esta versión (el vuelo del lápiz cierra el bucle)
+- **Transición de entrada:** corte seco. Salida: bucle al fotograma 0 de la toma 1.
+
+**Especificación de dibujo:**
+
+- De 29,0 a 29,6 plano fijo con los dos de frente, respirando (acción secundaria). A 29,63 se pasan, sin corte, a la composición de la portada (personajes de perfil con la cabeza a 25 grados) en 6 fotogramas de `slide`; **el último fotograma debe ser igual al fotograma 0** (diferencia media menor de 3 de 255, como en el short 2). Lápiz libre con estela, z de 0 a −420, escala de 1,0 a 1,4, giro de 3 vueltas con aceleración (ease-in), trayectoria de la mano de Tan (≈ 280, 1380) a (930, 790).
+- Texto «Back In / 11 Days?» entra con `pop` en 30,0 y está a escala 1 en 30,5 (igual que el fotograma 0). Sin subtítulo en español en 29,6–30,5 (cuadro de portada limpio). **Color:** acento mostaza = la clave «11» + el lápiz. Con suelo.
 
 ## 7. Audio
 
-- **Voz (no generada):** Tan con Zelda (líneas 1, 4, 10 y 12) y Tin con Kevin (líneas 2, 3, 5, 6, 7, 8, 9 y 11), Higgsfield `seed_audio`, ajustes por defecto, **una sola generación por voz** (regla de un solo intento), al 110 % con `atempo=1.10` y normalizada a −14 LUFS, como en el short 2. **Necesita el sí del dueño con la cotización de `estimate_audio_cost`** (estimado por analogía con el short 2: ≈ 0,8 créditos para Tan y ≈ 2,5 para Tin, ≈ 3,3 en total; no se ha cotizado).
-- **Tiempos estimados.** Ritmo medido del short 2 (`2026-11-21_tin_y_tan_gta6/05_audio/linea_de_tiempo_voz.md`, 110 %): ≈ 4,7 sílabas por segundo en las frases de Tin y ≈ 5,2 en las de Tan, más 0,15 s por cada pausa interna (coma o dos puntos) y 0,25 s entre líneas. Dos pausas están diseñadas más largas: 0,40 s entre las líneas 2 y 3 (para el cambio de foco de 12 fotogramas) y 0,40 s entre las líneas 8 y 9 (el silencio de 12 fotogramas antes de la cifra). **Se reajustan con la voz real** (cortes por `silencedetect` a −35 dB, como en el short 2) y los cortes del video se afinan después; nadie ha oído nada.
-- **Pausas del generador:** Zelda hizo pausas de 0,7 a 0,8 s tras una coma en el short 2. Por eso las líneas de Tan de este video **no llevan comas** (las de Tin sí, y se acortan a 0,15 s en edición).
-- **Pronunciación (decisión del equipo):** «GeForce 256» se escribe **«G Force two fifty-six»** para el generador: «G Force» con espacio (sin guion, que puede provocar una pausa) se lee «jee force», que es como se dice «GeForce»; «two fifty-six» evita que lea «two hundred fifty-six». La RTX 5090 se escribe **«R T X fifty-ninety»** (como se dice en inglés de EE. UU.) y «CEO», «PC», con las letras separadas, como «G T A» en el short 2. **«Jensen Huang» y «Nvidia» van tal cual** (no se puede comprobar el acento sin oír; si sale mal, se corrige en edición, o se pide autorización para regenerar esa voz; no se regenera por cuenta propia). En los subtítulos y en pantalla va lo que se lee: «GeForce 256», «RTX 5090», «CEO», «PC».
-- **Final de archivo:** la grabación de Tin del short 2 llegó cortada en «now» (palabra corta abierta). Aquí **la última línea útil de cada voz termina en consonante** («us» y «chip») **y cada pieza lleva al final una coletilla que se descarta en el montaje** («That's all, folks.»), así, si el generador recorta el final, se pierde la coletilla y no la frase.
+- **Voz (por generar; una sola generación por voz, regla de un solo intento):** Tan con Zelda (líneas 1, 6, 9 y 11) y Tin con Kevin (líneas 2, 3, 4, 5, 7, 8 y 10), Higgsfield `seed_audio`, voces ya elegidas por el dueño. Después, `atempo=1.10`, −14 LUFS y armado del diálogo como en el short 2 (0,23 s entre líneas, pausas internas largas acortadas a 0,15 s, salvo la de «Apple:», que se deja de 0,45 s a propósito para el silencio antes del número). **Costo: por cotizar con `estimate_audio_cost` antes de pedir el sí del dueño** (la cotización del plan anterior fue 3,7 créditos con un texto parecido). Nadie ha oído las voces: «Nvidia», «Huang», «C E O» y «OpenAI» se comprueban al oído; si el generador lee mal un nombre, se corrige en edición o se pide autorización para regenerar esa voz.
 
-Guion de voz (líneas numeradas, quién habla, texto exacto, inicio y fin ESTIMADOS en el diálogo al 110 %):
+Guion de voz (líneas numeradas, quién habla, texto exacto, inicio y fin estimados):
 
 | Línea | Quién | Empieza (s) | Termina (s) | Dura (s) | Texto exacto (números como se dicen) | Sílabas |
 |---|---|---|---|---|---|---|
-| 1 | Tan | 0,00 | 2,30 | 2,30 | Remember putting one of these in your P C? | 12 |
-| 2 | Tin | 2,55 | 5,68 | 3,13 | That's the G Force two fifty-six, from nineteen ninety-nine. | 14 |
-| 3 | Tin | 6,08 | 9,06 | 2,98 | Nvidia's board brought Jensen Huang back as C E O. | 14 |
-| 4 | Tan | 9,31 | 11,26 | 1,95 | How many of those are in a new one? | 10 |
-| 5 | Tin | 11,51 | 13,36 | 1,85 | We're counting transistors, not speed. | 8 |
-| 6 | Tin | 13,61 | 16,38 | 2,77 | That card had up to twenty-three million transistors. | 13 |
-| 7 | Tin | 16,63 | 20,03 | 3,40 | The R T X fifty-ninety has about ninety-two billion. | 16 |
-| 8 | Tin | 20,28 | 20,98 | 0,70 | Divide them. | 3 |
-| 9 | Tin | 21,38 | 22,48 | 1,10 | More than four thousand. | 5 |
-| 10 | Tan | 22,73 | 24,48 | 1,75 | Four thousand of these in one of those? | 9 |
-| 11 | Tin | 24,73 | 27,16 | 2,43 | That whole wall, in transistors, is one chip. | 10 |
-| 12 | Tan | 27,50 | 28,80 | 1,30 | Subscribe and count with us. | 6 |
+| 1 | Tan | 0,00 | 2,31 | 2,31 | Was Jensen Huang's comeback in eleven days fast? | 12 |
+| 2 | Tin | 2,54 | 6,45 | 3,91 | He resigned from Nvidia on November twelfth after a scandal. | 18 |
+| 3 | Tin | 6,68 | 9,72 | 3,04 | On the seventeenth the board said it would not bring him back. | 14 |
+| 4 | Tin | 9,95 | 13,00 | 3,04 | Six days later it reinstated him as C E O. | 14 |
+| 5 | Tin | 13,23 | 15,77 | 2,54 | Before that: more than thirty-three years in charge. | 11 |
+| 6 | Tan | 16,00 | 16,96 | 0,96 | Fast compared to who? | 5 |
+| 7 | Tin | 17,19 | 19,30 | 2,11 | Sam Altman at OpenAI: five days. | 9 |
+| 8 | Tin | 19,53 | 23,24 | 3,71 | Steve Jobs at Apple: four thousand, three hundred eighty-two days. | 15 |
+| 9 | Tan | 23,47 | 24,43 | 0,96 | That is twelve years? | 5 |
+| 10 | Tin | 24,66 | 26,55 | 1,89 | Faster than Jobs. Slower than Altman. | 8 |
+| 11 | Tan | 26,78 | 29,09 | 2,32 | Who else came back? Subscribe for the next count. | 11 |
 
-Voz total: de 0,00 a 28,80 s; hasta 30,5 hay 1,7 s sin voz y al volver al fotograma 0 la voz entra otra vez sin silencio inicial (silencio total del empalme: 1,7 s, menos de 2 s). Tramos internos: línea 2, «from nineteen ninety-nine.» desde 4,40; línea 9, «four thousand.» desde 22,0.
+Voz total estimada de 0,00 a 29,09 s; hasta 30,5 hay 1,41 s sin voz y al volver al fotograma 0 la voz entra sin silencio inicial (silencio del empalme: 1,41 s, menos de 2 s).
 
-**Texto para generar cada voz (una pieza por personaje; las líneas van separadas por una línea en blanco; las letras sueltas se leen letra por letra):**
+**Pregunta de apertura:** línea 1 («Was Jensen Huang's comeback in eleven days fast?»). **Pregunta de cierre:** línea 11 («Who else came back?»). **Respuesta a la de apertura:** línea 10.
 
-Voz de Tan (Zelda), una sola generación, 5 líneas (la última, coletilla que se descarta):
+**Texto para generar cada voz (una pieza por personaje; líneas separadas por una línea en blanco; la última es una coletilla descartable para que no llegue cortada la última palabra útil; sin comas en las líneas de Tan: Zelda hace pausas de 0,7 a 0,8 s tras una coma):**
+
+Voz de Tan (Zelda), una sola generación, 4 líneas y coletilla:
 
 ```text
-Remember putting one of these in your P C?
+Was Jensen Huang's comeback in eleven days fast?
 
-How many of those are in a new one?
+Fast compared to who?
 
-Four thousand of these in one of those?
+That is twelve years?
 
-Subscribe and count with us.
+Who else came back? Subscribe for the next count.
 
 That's all, folks.
 ```
 
-Voz de Tin (Kevin), una sola generación, 9 líneas (la última, coletilla que se descarta):
+Voz de Tin (Kevin), una sola generación, 7 líneas y coletilla:
 
 ```text
-That's the G Force two fifty-six, from nineteen ninety-nine.
+He resigned from Nvidia on November twelfth after a scandal.
 
-Nvidia's board brought Jensen Huang back as C E O.
+On the seventeenth the board said it would not bring him back.
 
-We're counting transistors, not speed.
+Six days later it reinstated him as C E O.
 
-That card had up to twenty-three million transistors.
+Before that: more than thirty-three years in charge.
 
-The R T X fifty-ninety has about ninety-two billion.
+Sam Altman at OpenAI: five days.
 
-Divide them.
+Steve Jobs at Apple: four thousand, three hundred eighty-two days.
 
-More than four thousand.
-
-That whole wall, in transistors, is one chip.
+Faster than Jobs. Slower than Altman.
 
 That's all, folks.
 ```
 
-Los cortes de cada pieza en líneas se hacen por las pausas medidas, como en el short 2, y se comprueban al oído antes de publicar (en particular «G Force», «R T X fifty-ninety», «Nvidia» y «Huang»).
-
-- **Subtítulos:** `02_prompt/subtitulos.srt` (12 líneas, las del guion escritas como se leen), con los tiempos estimados; se reajustan con la voz real. Lección del short 2: el `.srt` lleva lo que se lee en pantalla, no la grafía del generador.
-- **Idioma:** inglés de EE. UU. Un solo idioma (el canal no es de series).
-- **Música:** hecha con código (Python y numpy), **distinta de la de los shorts 1 y 2** (variación): en re dórico (modo menor cálido, no el tono mayor del short 2), con un acorde cada 2,0 s (sensación de 60 por minuto aunque los cortes sigan la rejilla de 0,5 s), timbre de piano eléctrico suave y bajo redondo, sin el patrón de 120 BPM del short 2. A −24 LUFS, 10 dB por debajo de la voz; calla en el silencio de 20,98 a 21,38 s y vuelve con el ding a los 22,2 s. Cubre 30,5 s y su último acorde (1,5 s) resuelve a la tónica del primero para el bucle. Se anota en `licencias.md`. Sin música de terceros.
+- **Subtítulos:** `02_prompt/subtitulos.srt` (inglés, igual que la voz) y `02_prompt/subtitulos_es.srt` (español, pista para YouTube). Tiempos estimados.
+- **Música:** hecha con código (Python y numpy), **mi menor (eólico)** a 120 BPM (el pulso de la rejilla), a −24 LUFS (10 dB bajo la voz): ostinato de bajo en corcheas, pad suave y un riser que sube de 20,5 a 21,3 s; calla 12 fotogramas en 21,1–21,5 s y en 23,05 entra un acorde de **mi mayor** abierto con el ding (de tensión a asombro). **Distinta de la del short 2 (do mayor, 120 BPM)**; la del short 1 se comprueba en su `licencias.md` antes de componer. Sin música de terceros.
 - **Efectos:** los de la sección 13, hechos con código, sin material de terceros.
 
 ## 8. Montaje
 
-- **Orden:** Toma 1 → Toma 2 → Toma 3 → Toma 4 → Toma 5 → Toma 6 → Toma 7 → Toma 8 → Toma 9 → Toma 10 → Toma 11 → Toma 12 → Toma 13 → Toma 14 (y vuelve a la toma 1). Las tomas 3 y 4, 9 y 10, y 11 y 12 son tres planos continuos partidos para describirlos: no hay corte entre ellas.
-- **Transiciones (todas motivadas):** `corte en el movimiento` (1 a 2), corte seco (2 a 3, 4 a 5, 6 a 7, 8 a 9, 10 a 11, 12 a 13), `borrón` (5 a 6), `barrido_obturador` una vez (7 a 8) y `congelado_con_marco` una vez (13 a 14). Sin destellos, sin negativo, sin «atravesar la escena».
-- **Texto en pantalla:** se dibuja en el mismo render, solo el de la tabla de la sección 12. El texto nunca contradice lo que se oye.
-- **Portada:** el fotograma 0, que cumple los 6 puntos de la regla del dueño (`ENTREGA_YOUTUBE.md`, «Portada de los Shorts»): «Jensen Huang / Is Back» (4 palabras en 2 líneas, mayúscula inicial en cada una, «Back» en mostaza, sin la cifra ni la respuesta) entre y 415 y 690, la tarjeta_1999 en el centro (y 769 a 1051 en el fotograma 0; 731 a 1089 desde el 12), y las caras de Tan y Tin dentro de la zona útil (x 60 a 960, y 380 a 1440), de perfil y con la cabeza inclinada 25 grados hacia arriba, mirando la tarjeta. `codigo/miniatura.py` (copia del del short 2) guarda ese fotograma como `06_final/portada_short03.png` (1080x1920) y mide las cajas. El video cumple lo que promete la portada: dice que Jensen Huang volvió (línea 3) y cuenta la tarjeta (el título y la portada no prometen más: no dicen «más rápida» ni dan la cifra).
-- **Formato de salida:** 1080x1920, 30 fps, H.264, yuv420p, AAC a 48 kHz. Archivo `06_final/tin_y_tan_short03_v1.mp4`. Pesa unos 3 MB: se recomprime a CRF 22 si pasa de 3,1 MB (`ENTREGA_YOUTUBE.md`, «Límite de subida desde la nube»).
-- **Título de la publicación (inglés):** Jensen Huang Is Back: GeForce 256 vs RTX 5090
+- **Orden:** Toma 1 → Toma 2 → … → Toma 14 (y vuelve a la toma 1). Las tomas 1 y 14 comparten el fotograma de empalme.
+- **Transiciones (todas motivadas):** corte en el movimiento (1 a 2), revelado desde desenfoque de la mesa (3 a 4, una vez), corte seco en el resto. Sin barridos, sin destellos, sin negativo, sin «atravesar la escena», sin congelado.
+- **Texto en pantalla:** se dibuja en el mismo render: los rótulos en inglés de la sección 12 y la banda de subtítulos en español. El texto nunca contradice lo que se oye.
+- **Portada:** el fotograma 0 cumple los 6 puntos de la regla del dueño (`ENTREGA_YOUTUBE.md`, «Portada de los Shorts»): «Back In / 11 Days?» (4 palabras en 2 líneas, mayúscula inicial en cada una, clave «11» en mostaza) entre y 400 y 700; **el objeto del centro es la silla de director vacía** (y 720–1100), que es el que cuenta la noticia (esa regla habla de «objeto nostálgico»; aquí manda `PARAMETROS.md`: el objeto es el del tema); las caras de Tan y Tin, de perfil y con la cabeza a 25 grados, mirándola, dentro de la zona útil (x 60–960, y 380–1440). **Excepción a «sin la respuesta ni el número»:** la cifra «11» va a la vista por decisión del equipo (`PARAMETROS.md`: «La cifra en el título o en la portada: se decide por video»); no es la respuesta del video. El video cumple lo que promete la portada. `codigo/miniatura.py` guarda el fotograma 0 como `06_final/portada_short03.png` (1080x1920) y mide las cajas.
+- **Formato de salida:** 1080x1920, 30 fps, H.264, yuv420p, AAC a 48 kHz. Archivo `06_final/tin_y_tan_short03_v1.mp4`. Pesa unos 3 MB: se recomprime a CRF 22 si pasa de 3,1 MB.
+- **Título de la publicación (inglés):** Jensen Huang Is Back as Nvidia CEO After 11 Days
 - **Descripción de la publicación (en inglés, obligatoria; con una línea de suscripción):**
 
 ```text
-Jensen Huang is back as Nvidia's CEO (announced Nov 23, 2026). Nvidia launched the GeForce 256 in 1999. How many of those fit in the RTX 5090? We counted transistors, not speed.
+Jensen Huang is back as Nvidia's CEO. Was 11 days fast? We counted.
 
-GeForce 256 (launched Oct 11, 1999): up to 23 million transistors. Wikipedia's "Transistor count" table lists 17 million; 1999 press reports said ≈ 23 million. We use the larger number, so the result is the cautious one.
-GeForce RTX 5090 (GB202, on sale since Jan 30, 2025): ≈ 92.2 billion transistors.
-≈ 92.2 billion ÷ 23 million ≈ 4,009, so more than 4,000. With 17 million it is ≈ 5,424.
+Timeline:
+Nov 12, 2026: Jensen Huang resigned from Nvidia after a scandal.
+Nov 17, 2026: Nvidia's board said it would not bring him back.
+Nov 23, 2026: the board reinstated him as president and CEO, 6 days later. Nov 12 to Nov 23 is 11 days.
+Before that he had led Nvidia since it was incorporated on Apr 5, 1993: 12,274 days, more than 33 years.
 
-This counts transistors only. It says nothing about speed, price or performance.
+Other comebacks, counted the same way (from the day the exit was announced to the day the person was back at the top job):
+Sam Altman, OpenAI: removed on Nov 17, 2023, reinstated on Nov 22, 2023: 5 days.
+Steve Jobs, Apple: resignation letter on Sep 17, 1985, named interim CEO on Sep 16, 1997: 4,382 days (≈ 12 years). He had rejoined Apple earlier, in February 1997, when it bought his company NeXT.
+So 11 days is faster than Jobs and slower than Altman. The exits were different: one resigned, one was removed. Bars are to scale; the shortest are drawn at a minimum width so they can be seen.
 
-Want more counts like this? Subscribe to Tin & Tan.
+Who else came back? Subscribe to Tin & Tan for the next count.
 
-Sources, all read on 2026-11-24: Wikipedia, "Jensen Huang"; Wikipedia, "GeForce 256"; Wikipedia, "Transistor count"; Wikipedia, "GeForce RTX 50 series". Nvidia's own announcement could not be opened, so the return date also rests on news channel headlines.
+Sources, all read on 2026-11-24: Wikipedia, "Jensen Huang"; Wikipedia, "Nvidia"; Wikipedia, "Removal of Sam Altman from OpenAI"; Wikipedia, "Steve Jobs". Nvidia's own announcement could not be opened, so the Nov 23 date also rests on news channel headlines (CNN, BBC, NBC, CBS, ABC and Fox News).
 
 Not affiliated with Nvidia. Jensen Huang is not involved in this video.
 ```
 
-- **Etiquetas (en total, menos de 500 caracteres):** Jensen Huang, Nvidia, GeForce 256, RTX 5090, graphics card, 1999, retro PC, nostalgia, transistors, Tin & Tan, shorts
-- **Pasan por `revisar_texto.py --idioma en`** (descripción, etiquetas, `subtitulos.srt` y los textos de pantalla del código): 0 errores (2026-11-24; los nombres «Nvidia», «GeForce» y «RTX» se añadieron a `video-studio/glosario.txt` con su porqué; «Jensen» y «Huang» ya los conoce el diccionario). Ni la voz, ni el título, ni la descripción, ni las etiquetas usan la palabra que el brief prohíbe para calificar la polémica.
-- **Fuentes y fechas:** Wikipedia en inglés, «Jensen Huang» (reposición el 23 de noviembre de 2026), «GeForce 256» (11 de octubre de 1999), «Transistor count» (17 millones; 92.200 millones para el GB202) y «GeForce RTX 50 series» (a la venta desde el 30 de enero de 2025), todas leídas el 2026-11-24; las cadenas de noticias (CNN, BBC, NBC, CBS, ABC, Fox) coinciden en sus títulos de YouTube del mismo día. **El comunicado de Nvidia no se pudo abrir.** La cifra de 23 millones de 1999 solo se vio en un resumen de buscador.
+- **Etiquetas (en total, menos de 500 caracteres):** Jensen Huang, Nvidia, Jensen Huang is back, Nvidia CEO, Jensen Huang CEO, Jensen Huang reinstated, Jensen Huang resigned, CEO comeback, Sam Altman, Steve Jobs, Tin & Tan, shorts
+- **Pasan por `revisar_texto.py`:** la descripción, las etiquetas y `subtitulos.srt` con `--idioma en`; `subtitulos_es.srt` con `--idioma es`; los textos de pantalla del código se pasan antes de renderizar. Resultado y glosario: sección 14.
+- **Fuentes y fechas:** Wikipedia en inglés «Jensen Huang» (renuncia el 2026-11-12; reposición el 2026-11-23; «does not intend to reinstate» el 2026-11-17, citado en `00_analisis_de_tematicas.md`), «Nvidia» (constitución el 5 de abril de 1993), «Removal of Sam Altman from OpenAI» (destituido el 17 y repuesto el 22 de noviembre de 2023) y «Steve Jobs» (carta de renuncia el 17 de septiembre de 1985; compra de NeXT cerrada en febrero de 1997; nombrado director ejecutivo interino el 16 de septiembre de 1997), todas leídas el 2026-11-24. Las cadenas (CNN, BBC, NBC, CBS, ABC, Fox News) coinciden en sus títulos de YouTube del mismo día. **El comunicado de Nvidia no se pudo abrir.** El título de The New York Times sobre Jobs es del 17 de septiembre de 1997 (Wikipedia da el 16): la diferencia es de un día y se declara aquí.
 
 ### Título (ficha)
 
-Filtro: `revisar_titulo.py` v1.0 (2026-11-24). Estudio y reglas: `video-studio/comercial/titulos.md`.
+Filtro: `revisar_titulo.py` **versión 1.1 (modo flexible)**, corrido el 2026-11-24. Estudio y reglas: `video-studio/comercial/titulos.md`.
 
 | Campo | Valor |
 |---|---|
-| `titulo_elegido` | Jensen Huang Is Back: GeForce 256 vs RTX 5090 |
-| `caracteres` | 45 |
+| `titulo_elegido` | Jensen Huang Is Back as Nvidia CEO After 11 Days |
+| `caracteres` | 48 |
 | `idioma` | en |
 | `canal` | tin-y-tan |
 | `formato` | short |
-| `publico` | EE. UU., adultos de 45 a 62 años que armaban o compraban una PC en 1999; secundario, de 30 a 45 que juegan hoy |
+| `publico` | EE. UU., adultos que siguen la noticia; sin edad fija (manda el dato de Studio) |
 | `frase_de_busqueda` | jensen huang is back |
-| `fuente_de_la_frase` | los títulos de YouTube del 2026-11-24 (`00_analisis_de_tematicas.md`, «Segunda vuelta», S2: «Jensen Huang Is Back…», «JENSEN HUANG IS BACK!!!»); volumen: sin dato |
-| `formula` | nombre buscado al inicio + dos objetos que se comparan |
-| `alternativa_1` | Jensen Huang Is Back: 1999 GeForce 256 vs Now (45 caracteres; misma frase; filtro: PASA) |
-| `alternativa_2` | Jensen Huang Is Back: GeForce 256 vs Today's GPU (48 caracteres; misma frase; filtro: PASA; menos exacta: «Today's» es ambiguo, ver la decisión 3 de la sección 3) |
+| `fuente_de_la_frase` | títulos de YouTube del 2026-11-24 (`00_analisis_de_tematicas.md`, «Segunda vuelta», S2: «Jensen Huang Is Back…»); volumen: sin dato |
+| `formula` | nombre buscado + palabras de la noticia + cifra a la vista |
+| `alternativa_1` | Jensen Huang Nvidia CEO: Back After 11 Days (43 caracteres; frase «jensen huang nvidia ceo»; filtro: PASA, 0 errores, 0 avisos) |
+| `alternativa_2` | Jensen Huang Is Back: Was 11 Days Fast? (39 caracteres; frase «jensen huang is back»; filtro: PASA, 0 errores y 1 aviso: M11, la marca «Nvidia» no aparece en el título; se acepta porque el descargo va en la descripción y el título no lo necesita) |
 | `uso_de_las_alternativas` | Reserva. YouTube no ofrece prueba A/B de títulos en Shorts (ayuda oficial, leída el 2026-11-21). No se cambia un título publicado antes de los 28 días y sin datos del canal |
-| `filtro` | **PASA** · errores: ninguno · avisos: ninguno (corrido con `--marca "GeForce 256" --marca "Jensen Huang" --marca "RTX 5090" --respuesta 4000 --descripcion`) |
-| `revision_humana` | **Pendiente**: que el video cumpla lo que el título promete (dice que Jensen Huang volvió, compara las dos tarjetas en transistores y aclara que no es velocidad), que no engañe y que pase la línea editorial (sin motivo, sin juicio). Firma el director creativo cuando exista el video |
+| `filtro` | **PASA** · errores: ninguno · avisos: ninguno (corrido con `--marca "Jensen Huang" --marca "Nvidia" --descripcion` y `--proyecto 2026-11-24_tin_y_tan_jensen_huang`) |
+| `revision_humana` | **Pendiente**: que el video cumpla lo que el título promete (dice que volvió a los 11 días y la compara con otros regresos), que no engañe y que pase la línea editorial (una sola mención neutra del motivo, sin detalles ni juicio). Firma el director creativo cuando exista el video |
 | `medicion` | Visto frente a deslizado, mostrado en el feed y tráfico de búsqueda; a 7 y 28 días; meta: superar el 20,7 % del short 1 |
 
-El título no lleva la cifra (4.000): es la respuesta del video. **Riesgo declarado:** la frase buscada es la noticia; el video es nostalgia con una cuenta. Por eso el video dice el hecho en los primeros 9 s y el título dice el objeto («GeForce 256 vs RTX 5090»); la persona que firma decide si basta.
+La cifra «11 Days» está en el título y en la portada a propósito (parámetro flexible); no es la respuesta del video.
 
 ## 9. Presupuesto
 
@@ -507,8 +486,8 @@ El título no lleva la cifra (4.000): es la respuesta del video. **Riesgo declar
 | Segundos generados (tomas × intentos) | 0 s (las 14 tomas son edición; 30,5 s se resuelven en edición) | 0 |
 | Keyframes | 0 | 0 |
 | Remates en resolución final | 0 | 0 |
-| Voz (Tan con Zelda y Tin con Kevin, una generación por voz) | 2 generaciones, sin generar | ≈ 3,3 créditos estimados (≈ 0,8 + ≈ 2,5, por analogía con el short 2); cotizar con `estimate_audio_cost`; necesita el sí del dueño |
-| **Total estimado** | 0 créditos en imagen y video; voz: ≈ 3,3 créditos por autorizar | 0 |
+| Voz (Tan con Zelda y Tin con Kevin, una generación por voz) | 2 generaciones, sin generar | por cotizar con `estimate_audio_cost` (referencia del plan anterior: 3,7 créditos); necesita el sí del dueño |
+| **Total estimado** | 0 créditos en imagen y video; voz por cotizar y por autorizar | 0 |
 
 ## 10. Restricciones críticas
 
@@ -519,161 +498,188 @@ CRITICAL: no text, captions, subtitles, logos or watermarks unless listed in sec
 CRITICAL: the character looks identical in every shot (same design, colors, proportions).
 CRITICAL: hard cuts only, no morphing between shots.
 CRITICAL: every figure, name or claim on screen comes from the project's facts file, with source and date.
-CRITICAL: counters only go up and never pass their final value; no text over a character; no Nvidia logo, lettering or green; both cards are generic drawings with no logos; Jensen Huang is only named, never drawn; the video counts transistors and never says or shows speed, price or performance.
-CRITICAL: no flashes: at most 3 sudden brightness changes in any second (target: zero); no negative-color effect, no go-through-the-scene transition.
+CRITICAL: counters only go up and never pass their final value; no text over a character; no Nvidia logo, lettering or green; all objects are generic drawings with no logos; no real person is drawn, imitated, quoted or given words; the reason for the resignation is named once, neutrally, and never described.
+CRITICAL: no flashes: at most 2 sudden brightness changes in any second (hard limit 3); no negative-color effect, no go-through-the-scene transition, no strobing.
 ```
 
 ## 11. Gancho, ritmo y cierre
 
-- **Regla formal de la pieza:** una cuenta que es **una división entre dos objetos** (los transistores de la RTX 5090 entre los de la tarjeta de 1999) y un remate **de tamaño**; la cifra solo sube, y todo corte cae en un pulso de 0,5 s.
-- **Rejilla de tiempo:** pulso de 0,5 s (los cortes); 61 pulsos = 30,5 s. La voz entra en el pulso 0 (fotograma 0). Los 10 cortes caen en 1,0; 2,5; 9,0; 11,5; 13,5; 16,5; 20,0; 24,0; 27,5 y 29,5 (más el bucle en 30,5); los planos continuos pasan por 6,0; 21,0 y 25,5 sin corte. Inicios estimados de la voz: 0,00; 2,55; 6,08; 9,31; 11,51; 13,61; 16,63; 20,28; 21,38; 22,73; 24,73 y 27,50. Cada corte cae de 0,0 a 0,25 s antes del inicio de la línea que le toca; el de 20,0 cae 0,03 s antes de que acabe la línea 7 y el de 24,0 cae dentro de la línea 10 a propósito (la pared aparece mientras Tan pregunta). Se revisan al oído con la voz real.
-- **Gancho (0 a 2,5 s):** el fotograma 0 es la portada: la tarjeta de 1999 ya viene hacia la cámara y su ventilador gira, el texto «Jensen Huang / Is Back» ya entero, Tan y Tin debajo mirándola, y la voz de Tan ya diciendo «Remember putting one of these…» desde el fotograma 0. En 1,0 el `corte en el movimiento` pasa a las manos que meten la tarjeta en la ranura (el gesto que hicieron) y en 2,5 al plano de los dos con la tarjeta en su pedestal. Sin logo, sin título, sin segundo mudo. Una sola incógnita abierta: «¿cuántas de estas caben en una nueva?».
-- **Empieza en movimiento:** sí: sin intro ni logo; la tarjeta crece hacia la cámara (ease-out: ya tiene velocidad en el fotograma 0), el ventilador gira y Tan y Tin rebotan al pulso.
-- **Motivo visual que vuelve:** la tarjeta_1999 (tomas 1, 2, 3 a 5, 7, 9 a 10 en pequeña y 14), la tarjeta_actual (tomas 5, 8, 9 y 12) y el lápiz de Tin (tomas 3, 4 y 5). Se repiten con las mismas formas y colores.
-- **Cierre:** firma del canal (toma 13: Tin y Tan saludan con el mismo gesto, Tan dice la invitación y aparece el nombre del canal) y luego `congelado_con_marco` que cae y deja el plano exacto del fotograma 0: el último fotograma es el primero. La voz termina en 28,80; silencio de voz en el empalme: 1,7 s (menos de 2 s).
-- **Llamado a la acción:** **uno solo**: «Subscribe and count with us.», dicha por Tan en 27,5 a 28,8 s, corta y cálida; sin promesas ni recompensas. Por qué: el objetivo del dueño es entrar al Programa de socios y los suscriptores son uno de sus dos umbrales (`plan_programa_de_socios.md`, P6c); el short 1 dio 0 suscriptores sin pedirla.
+- **Regla formal de la pieza:** hechos en orden con fecha, una cifra por plano y una comparación honesta; la cifra solo sube; todo corte cae en un pulso de 0,5 s.
+- **Rejilla de tiempo:** pulso de 0,5 s; 61 pulsos = 30,5 s. La voz entra en el pulso 0 (fotograma 0). Los 13 cortes caen en 1,0; 2,5; 6,5; 10,0; 13,0; 14,0; 16,0; 17,0; 19,5; 23,5; 24,5; 26,5 y 29,0 (más el bucle en 30,5). Inicios estimados de la voz: 0,00; 2,54; 6,68; 9,95; 13,23; 16,00; 17,19; 19,53; 23,47; 24,66 y 26,78. Cada corte cae de 0,0 a 0,25 s antes de la línea que le toca; los de 13,0 y 14,0 caen dentro de la línea 5 a propósito («Before that:» / el número). Se revisan al oído con la voz real.
+- **Gancho (0 a 2,5 s):** el fotograma 0 es la portada: la silla de director vacía, el lápiz de Tin ya girando de vuelta (con estela), «Back In / 11 Days?» entero, Tan y Tin de perfil mirando la silla, y la voz de Tan ya preguntando «Was Jensen Huang's comeback…» desde el fotograma 0. Tin atrapa el lápiz en el fotograma 15. En 1,0 el corte en el movimiento pasa a Tan sola. Sin logo, sin título, sin segundo mudo. **Una sola incógnita abierta:** ¿rápido comparado con quién?
+- **Empieza en movimiento:** sí: el lápiz gira y se acerca desde el fotograma 0, la silla crece y Tan y Tin rebotan.
+- **Motivo visual que vuelve (con las mismas formas y colores):** la silla_director vacía (tomas 1, 2, 3, 4, 8, 13 y 14), el calendario de noviembre (tomas 3, 5 y 6), las barras (tomas 7 y 9 a 12) y el lápiz de Tin (tomas 1, 3 a 7, 9, 12, 13 y 14).
+- **Cierre:** decidido con la tabla de la sección 4b del manual 14 (resumida en 4b.3): **respuesta con remate** (toma 12), **una pregunta abierta, nueva y respondible** (toma 13: «Who else came back?») **que es la razón de la única invitación** («Subscribe for the next count.») y el lápiz lanzado (toma 14) que empalma con el fotograma 0. La pregunta final no es de suspenso sobre la persona. La voz termina en 29,09; silencio de voz en el empalme: 1,41 s.
+- **Llamado a la acción:** **uno solo**: «Subscribe for the next count.», dicho por Tan en 28,3 a 29,09 s, corto y sin promesas ni recompensas. Por qué: los suscriptores son uno de los dos umbrales del Programa; el short 1 dio 0 sin pedirla (`plan_programa_de_socios.md`, P6).
 
-Mapa de ritmo (los tiempos al décimo de segundo; cortes por segundo = cortes que caen dentro del tramo, sin contar el inicio):
+Mapa de ritmo (tiempos estimados; cortes por segundo = cortes dentro del tramo, sin contar el inicio):
 
 | Tramo | Segundos | Pulso o intervalo | Cortes por segundo | Qué pasa (una acción) | Respiro |
 |---|---|---|---|---|---|
-| Gancho | 0,0–2,5 | 1,0 s y 1,5 s | 0,4 | la tarjeta viene hacia ti y las manos la meten en la ranura | no |
-| Presentación | 2,5–9,0 | 6,5 s (un plano continuo) | 0,0 | la tarjeta en su pedestal; foco a Tin; el regreso del 23 de noviembre | sí |
-| Pregunta y cuenta | 9,0–20,0 | 2,5 s; 2,0 s; 3,0 s y 3,5 s | 0,36 | la tarjeta nueva aparece; transistores, no velocidad; hasta 23 millones; 92.000 millones | no |
-| Pico | 20,0–24,0 | 1,0 s y 3,0 s (continuos) | 0,0 | «Divide them», silencio, contador hasta 4.000+ | sí (cifra quieta 54 fotogramas) |
-| Remate | 24,0–27,5 | 1,5 s y 2,0 s (continuos) | 0,3 | el muro de 4.000 tarjetas equivale a un chip | no |
-| Cierre | 27,5–30,5 | 2,0 s y 1,0 s | 0,3 | firma, invitación, congelado y vuelta | sí |
+| Gancho | 0,0–2,5 | 1,0 s y 1,5 s | 0,4 | la silla vacía, el lápiz que vuelve y la pregunta de Tan | no |
+| Hechos | 2,5–13,0 | 4,0 s, 3,5 s y 3,0 s | 0,2 | renunció el 12; el 17 la junta dijo que no; el 23 lo repuso | sí (planos largos) |
+| Cuenta | 13,0–17,0 | 1,0 s, 2,0 s y 1,0 s | 0,75 | 11 días; 12.274 al mando; «¿rápido comparado con quién?» | no |
+| Comparación y pico | 17,0–24,5 | 2,5 s, 4,0 s y 1,0 s | 0,3 | Altman 5 días; Jobs 4.382 días (pico en 23,05 s, 75,6 %) | sí (cifra quieta 1,45 s) |
+| Remate y cierre | 24,5–30,5 | 2,0 s, 2,5 s y 1,5 s | 0,3 | más rápido que Jobs; pregunta final, invitación y lápiz lanzado | sí (final con movimiento) |
 
-Total: 10 cortes en 30,5 s. Densidad baja a propósito (la voz es continua y cada cifra necesita su plano); la densidad extra va dentro de cada toma (ventiladores que giran, profundidad que se mueve, contador, muro que se llena, una reacción de Tan por dato). Todas las líneas de Tan mueven una reacción distinta: nostalgia, curiosidad, sorpresa, asombro y risa.
+Total: 13 cortes en 30,5 s. Densidad baja a propósito: la voz es continua y cada cifra necesita su plano; la densidad extra va dentro de cada toma (lápiz, barras, cruces, contador, reacciones de Tan).
 
-Lo que sale se va antes de que entre lo siguiente: los textos salen 0,1 s antes del corte siguiente (el de la portada, en el corte de 1,0). El movimiento es mecánica: entradas con `pop` o `slide` (muelle), contadores con ease-out cúbico, rotación del ventilador lineal (es mecánica), sin interpolación lineal en lo vivo.
+**Dónde cae el pico:** la subida empieza al 67 % (20,5 s), el silencio de 12 fotogramas al 69 % y la cifra llega al **75,6 %** (23,05 s). Si la voz real lo lleva más allá del 75 %, se recorta la pausa de «Apple:» o la línea 5 en edición (≈ 0,5 s).
 
-Tipos de plano disponibles y dónde van: detalle o macro (tomas 2, 6, 7 y 8), héroe abierto (tomas 3, 4, 5, 9 a 13; el principal es la 10, con la cifra), subjetivo (toma 2), revelado desde desenfoque (la tarjeta nueva, toma 5), objeto que salta sobre el mismo fondo (las dos tarjetas en las tomas 7 y 8). **No más de 3 destellos por segundo:** hay cero (no hay destello ni negativo; el barrido y el congelado pasan `efectos.comprobar_destellos`).
+Lo que sale se va antes de que entre lo siguiente: los textos salen de 0,05 a 0,2 s antes del corte siguiente. El movimiento es mecánica: entradas con `pop` o `slide`, contadores con ease-out cúbico, el giro del lápiz con ease, sin interpolación lineal en lo vivo.
+
+Tipos de plano disponibles y dónde van: detalle (tomas 6, 7 y 9), héroe abierto (tomas 3, 4, 5, 10, 12 y 13; el principal es la 10, con la cifra), subjetivo (no hay: no hay objeto de época que usar con las manos), revelado (la mesa de junta, toma 4), objeto que salta sobre el mismo fondo (las marcas de 11 y 5 días en las barras). **No más de 3 destellos por segundo:** hay cero (no hay destello ni negativo).
 
 ### Profundidad y efectos
 
-Cada efecto sale de `manual/14_efectos_y_emocion.md` (la sección 7.1, y la 2.2, 2.4, 2.7 y 2.8 donde se dice). Procedimiento de 5 pasos: objetivo (Programa de socios) → emoción de ese segundo → punto de mirada → efecto de la tabla → métrica con su segundo. Las tres respuestas (emoción, punto de mirada, métrica) van en la tabla B. Sellos: **(inv.)** investigación, **(oficio)** oficio, **(hip.)** hipótesis del equipo (ver manual 14, sección 0).
+Cada efecto sale de `manual/14_efectos_y_emocion.md` (secciones 2, 3, 4, 4b y 6). Procedimiento de 5 pasos: objetivo (Programa de socios) → emoción de ese segundo → punto de mirada → efecto de la tabla → métrica con su segundo. Sellos: **(inv.)** investigación, **(oficio)**, **(hip.)** hipótesis del equipo (manual 14, sección 0). Emoción buscada: **curiosidad → tensión → asombro** (alta activación, R32).
 
 **Tabla A — por toma: capas y z, foco, cámara, sombras, transición y efecto de acento**
 
 | Toma | Capas y su z | Foco | Cámara | Sombras | Transición de entrada | Efecto de acento |
 |---|---|---|---|---|---|---|
-| 1 (0,0–1,0) | papel +900; Tan y Tin 0; tarjeta −100 a −290 | todo nítido (apertura 0) | fija | contacto bajo los pies; proyectada de la tarjeta | ninguna (bucle) | tarjeta que crece (12 f) y golpe de «Back» (f 6) |
-| 2 (1,0–2,5) | papel +900; placa +60; tarjeta −120; manos −220 | z −120 | empuje con profundidad: avance 0 a 110 | proyectada de la tarjeta sobre la placa; contacto al asentar | `corte en el movimiento` | clic de inserción y rebote de 8 px |
-| 3 (2,5–6,0) | papel +900; pc_beige +420 (niebla); tarjeta y pedestal −260; Tan y Tin 0; cable −320 | −260, y de 5,68 a 6,08 viaja a 0 | x 540 a 580, avance 0 a 90 | contacto bajo pedestal y pies | corte seco | cambio de foco (12 f) |
-| 4 (6,0–9,0) | las de la toma 3 | 0 | continúa: avance 90 a 150, x 580 a 600 | las de la toma 3 | continúa | `pop` de «Nov 23» y de «Back as CEO» |
-| 5 (9,0–11,5) | papel +900; tarjeta_1999 0; tarjeta_actual −200; Tan y Tin 0 | 0 | fija | proyectada de las dos tarjetas; contacto de los personajes | corte seco | revelado desde desenfoque de la tarjeta nueva (8 f) |
-| 6 (11,5–13,5) | papel +900; die −100; Tan y Tin 0 | −100 | fija | proyectada del die | `borrón` | garabato: círculo de tinta (12 f) |
-| 7 (13,5–16,5) | papel +900; tarjeta_1999 −150; Tan 0 | −150 | avance 0 a 70 | proyectada de la tarjeta | corte seco | `pop` del rótulo «23 million» |
-| 8 (16,5–20,0) | papel +900; tarjeta_actual −150; Tan 0 | −150 | avance 0 a 70 | proyectada de la tarjeta | `barrido_obturador` (6 f) | `pop` del rótulo «≈ 92 billion» |
-| 9 (20,0–21,0) | papel +900; ecuación 0; Tan y Tin 0 | 0 | fija | contacto de los personajes | corte seco | subida de sonido y silencio de 12 f |
-| 10 (21,0–24,0) | las de la toma 9 | 0 | fija; golpe de zoom +10 % en la llegada | contacto de los personajes | continúa | contador, tomate y `pop` del «+» |
-| 11 (24,0–25,5) | papel +900; pared 0; Tan y Tin 0 | 0 | fija | contacto de la pared (0,15) | corte seco | gráfico que crece (30 f) |
-| 12 (25,5–27,5) | papel +900; pared encogida 0; tarjeta_actual 0; Tan y Tin 0 | 0 | fija | contacto | continúa | pliegue de la pared (36 f) y `pop` del «=» |
-| 13 (27,5–29,5) | papel +900; Tan y Tin 0 | 0 | fija, 100 % | contacto bajo los pies | corte seco | saludo igual en todos los videos y `pop` de «Subscribe» |
-| 14 (29,5–30,5) | a = la toma 13; b = el fotograma 0 | 0 | fija | contacto | `congelado_con_marco` (22 f) | foto con marco que cae |
+| 1 (0,0–1,0) | papel +900; silla 0 a −100 (crece); Tan y Tin 0; lápiz libre −420 a 0 | todo nítido | fija | contacto bajo pies y silla | ninguna (bucle) | lápiz que vuelve (15 f) y golpe de «11» (f 6) |
+| 2 (1,0–2,5) | papel +900; silla +420 (niebla); Tan 0 | z 0 | avance 0 a 40 | contacto de Tan | corte en el movimiento | `pop` de «11 days?» |
+| 3 (2,5–6,5) | papel +900; calendario +260; silla −220; Tan y Tin 0 | z 0 | x 540 a 575, avance 0 a 90 | contacto de pies y silla | corte seco | círculo mostaza sobre el 12 (12 f) |
+| 4 (6,5–10,0) | papel +900; mesa +180; Tan y Tin 0 | z 0 | avance 90 a 150 | proyectada de la mesa; contacto | revelado desde desenfoque (8 f) | `pop` de «Nov 17» |
+| 5 (10,0–13,0) | papel +900; calendario 0 (zona de gráficos); Tan y Tin 0 | z 0 | fija | contacto de pies | corte seco | flecha, círculo del 23 y 11 cruces |
+| 6 (13,0–14,0) | papel +900; calendario 0; Tan 0 | z 0 | fija | contacto de Tan | corte seco | `pop` de «11 days» |
+| 7 (14,0–16,0) | papel +900; barra 0; Tin 0 | z 0 | fija | contacto de Tin | corte seco | barra que crece (30 f) |
+| 8 (16,0–17,0) | papel +900; silla +420; Tan 0 | z 0 | avance 0 a 30 | contacto de Tan | corte seco | ninguno (respiro) |
+| 9 (17,0–19,5) | papel +900; barras 0; Tin 0 | z 0 | avance 0 a 50 | contacto de Tin | corte seco | barra de Altman en mostaza |
+| 10 (19,5–23,5) | papel +900; barras 0; Tan y Tin 0 | z 0 | fija; golpe de zoom +10 % en 23,05 | contacto de pies | corte seco | subida, silencio, contador, tomate |
+| 11 (23,5–24,5) | papel +900; barras 0; Tan 0 | z 0 | fija | contacto de Tan | corte seco | cifra quieta |
+| 12 (24,5–26,5) | papel +900; barras 0; Tan y Tin 0 | z 0 | fija | contacto de pies | corte seco | mostaza de vuelta en «11 days» |
+| 13 (26,5–29,0) | papel +900; silla 0; Tan y Tin 0; lápiz libre (arco) | z 0 | fija | contacto de pies y silla | corte seco | pase del lápiz y `pop` de «Subscribe» |
+| 14 (29,0–30,5) | las de la toma 13 más el lápiz libre −420 | z 0 | fija | contacto | corte seco | anticipación y lanzamiento del lápiz (26 f) |
 
 **Tabla B — por efecto: las tres respuestas del manual (emoción, punto de mirada, métrica), su dosis y su respaldo**
 
 | N.º | Efecto (herramienta) | Segundo y dosis | Emoción | Punto de mirada | Métrica | Respaldo y sello |
 |---|---|---|---|---|---|---|
-| 1 | **Objeto de época nítido que crece hacia cámara** (capa animada en z) — es el **único cambio grande del primer segundo** | 0,0–0,4 s; 12 f con frenada; de 600 a 760 px (70 % del ancho) | alerta leve y curiosidad | el centro de la tarjeta (540, 910) | visto frente a deslizado, contra el 20,7 % del short 1 | R4, R5 **(inv.)** para el mecanismo; R30 **(inv.)** para el objeto (los que tuvieron una en 1999 están en el pico de reminiscencia); que baje los deslizados: **(hip.)** |
-| 2 | **Palabra clave con golpe en mostaza** (`palabra_clave`) más su golpe de sonido | f 6 a 18 (0,2–0,6 s); 5 f de ida, 7 de asiento; escala 1,0 a 1,18; el texto está entero desde el fotograma 0 y queda 30 f | énfasis | «Back» | visto frente a deslizado; retención al segundo 1 | R33, R10 **(inv.)**; R39 **(oficio)**. **Adaptación:** la portada exige el texto entero en el fotograma 0, así que la palabra no entra: da el golpe estando ya puesta |
-| 3 | **Corte en el movimiento** | en 1,0 s, 4 f después de que la tarjeta arranca su descenso; el primer plano dura 30 f (≥ 20) | reorientación sin sobresalto | la tarjeta, que sigue bajando entre las manos | que no haya caída en 1,0–1,5 s | R14 **(oficio)**, R13 **(inv.)** (resumen), R11 **(inv.)** (resumen). **Desviación del manual:** el manual dice ≈ 0,7 s; aquí 1,0 s para respetar la rejilla de 0,5 s y para no cambiar el momento del primer corte respecto del short 2 (atribución del dato) |
-| 4 | **Capas con paralaje y sombras de contacto** (`Capa`, `Camara`, `componer`, `sombra_contacto`) | 2,5–9,0 s; 3 capas y primer plano; cámara ≈ 1 % del ancho por segundo (límite 8 %) | presencia, atención tranquila; solidez | la tarjeta sobre el pedestal y luego Tin | retención de 2,5 a 9,0 s sin caída | R1, R3, R8 **(inv.)/(oficio)**; que se perciba más cuidado y se deslice menos: **(hip.)** |
-| 5 | **Subjetivo o macro de las manos usando el objeto** | 1,0–2,5 s; 45 f sin cortes dentro de la toma | nostalgia sensorial, «yo estuve ahí» | los dedos dorados entrando en la ranura | compartidos por mil vistas; comentarios «yo también» | R21 **(oficio)**, R29, R30, R31 **(inv.)**; que lleve a enviarlo: **(hip.)** |
-| 6 | **Cambio de foco** (`Camara.foco`) | de 5,68 a 6,08 s; 12 f; solo entre líneas de voz (la pausa de 0,40 s está diseñada para esto) | curiosidad que se resuelve | de la tarjeta a Tin | retención en 6,0 s | R9 **(oficio)**, R7 **(inv.)**; que la mirada siga al foco en un Short: **(hip.)** |
-| 7 | **Revelado desde desenfoque** (`revelar_desde_desenfoque`), una vez | 9,3–9,57 s; 8 f (6 a 10) | anticipación breve | la tarjeta nueva a la derecha | retención en 9,3 s | R28 **(inv.)**; que lo borroso se lea como recuerdo: **(hip.)**. No va en el fotograma 0 |
-| 8 | **Garabato que se dibuja** (`trazo_circulo`, `garabato`), uno solo | 11,95–12,35 s; 12 f; sin texto debajo | cercanía, curiosidad por el trazo | el die del chip | retención de 11,5 a 13,5 s | R28 **(inv.)**; R41 (poca prueba de que enseñe más): **(hip.)** |
-| 9 | **Barrido de obturador**, una vez | 16,4–16,6 s; 6 f | energía, avance en el tiempo (de 1999 a hoy) | la tarjeta nueva que entra | que no haya caída en 16,5 s | cap. 02 **(oficio)**; riesgo R44 **(inv.)** (dentro del límite: 1 barrido, sin encadenar) |
-| 10 | **El pico: subida de sonido, silencio de 12 f, contador que acelera y frena, un zoom de golpe suave, cifra quieta** (`contador`, `golpe_de_zoom`, `acercar`) | 20,1–22,2 s subida y silencio; contador 36 f; zoom +10 % (5 f + 8 f); cifra quieta 54 f; 73 % del video | anticipación y luego sorpresa y asombro | la cifra «4,000+» arriba a la izquierda | pico de retención hacia 22,2 s; compartidos por mil | R22 **(oficio)**, R28, R32, R34, R35 **(inv.)**. Solo zoom, sin destello (manual 7.1: «uno o el otro») |
-| 11 | **Gráfico que crece** (la pared de 4.000 tarjetas) | 24,0–25,0 s; 30 f con frenada (20 a 40) | asombro por el tamaño | el centro de la pared | retención de 24 a 27 s; compartidos | R37 **(inv.)** (asombro ante lo mucho mayor); su uso en gráficos: **(hip.)** |
-| 12 | **Cierre de firma con congelado con marco** (`congelado_con_marco`) y una sola invitación | 27,5–30,5 s; respiro de 60 f y congelado de 22 f | calidez, recuerdo de álbum, gratitud | Tin y Tan, y «Subscribe» | suscriptores por cada mil vistas | R26, R27, R34 **(inv.)**; R20 **(oficio)**; que una firma repetida convierta: **(hip.)** |
-| 13 | **Acción secundaria continua y curvas con frenada** | todo el video: bufanda de Tan (`viento`), lápiz de Tin (±3 grados), ventiladores de las tarjetas | calidez, vida | los personajes | comentarios que nombran a Tin o a Tan; suscriptores | R22 **(oficio)**, R24 **(inv.)**; que el apego lleve a suscribirse: **(hip.)** |
-| 14 | **Paso de neutro a acento** (mostaza y tomate) | la clave y un elemento por plano; el tomate solo de 22,2 a 27,4 s | foco y recordación; la cifra como golpe | la palabra o la cifra que lleva el acento | retención de los segundos 1 a 3 | R33 **(inv.)**; cap. 13 |
+| 1 | **Firma: el lápiz bumerán llega y Tin lo atrapa** (lápiz libre con estela, giro con frenada, escala 1,4 a 1,0) | 0,0–0,5 s; 15 f; 2,5 vueltas que se frenan; golpe de sonido al atrapar | orientación y curiosidad («algo vuelve») | el lápiz y después la mano de Tin (≈ 860, 1380) | visto frente a deslizado, contra el 20,7 % del short 1; retención 0–1,5 s | R4, R5 **(inv.)** (lo que crece y se acerca atrae); R10 **(inv.)**; R22 **(oficio)** (anticipación y acción superpuesta); que una firma repetida se reconozca (R26 **(inv.)**) y que baje los deslizados: **(hip.)** |
+| 2 | **Silla vacía que crece** (capa animada en z, de 0,82 a 1,0) | 0,0–0,4 s; 12 f con frenada; ocupa ≈ 35 % del ancho | curiosidad (una silla vacía es una incógnita) | el centro de la silla (540, 910) | visto frente a deslizado | R28 **(inv.)** (incertidumbre); R4 **(inv.)**. Movimiento secundario: el principal es el lápiz (un solo cambio grande) |
+| 3 | **Palabra clave con golpe en mostaza** (`palabra_clave`) más su golpe de sonido | f 6 a 18; 5 f de ida y 7 de asiento; escala 1,0 a 1,18; el texto está entero desde el fotograma 0 y queda hasta 0,9 s | énfasis | «11» | visto frente a deslizado; retención al segundo 1 | R33, R10 **(inv.)**; R39 **(oficio)**. Adaptación: la portada exige el texto entero en el fotograma 0 |
+| 4 | **Corte en el movimiento** | 1,0 s, 4 f después de que arranca el brazo de Tan; el primer plano dura 30 f | reorientación sin sobresalto | el brazo y la cara de Tan | que no haya caída en 1,0–1,5 s | R14 **(oficio)**, R13 y R11 **(inv.)** (resumen). Desviación: 1,0 s y no 0,7 s para respetar la rejilla |
+| 5 | **Capas con paralaje, desenfoque fijo del fondo y sombras de contacto** (`Capa`, `Camara`, `componer`, `sombra_contacto`) | tomas 2 a 13; 3 capas; cámara ≈ 1 % del ancho por segundo (límite 8 %) | presencia y atención tranquila; credibilidad | los personajes y el rótulo | retención de 2,5 a 13,0 s sin caída | R1, R3, R7 **(inv.)**, R8 **(oficio)**; que retenga más: **(hip.)** |
+| 6 | **Revelado desde desenfoque** (`revelar_desde_desenfoque`), una vez | 6,5–6,77 s; 8 f | anticipación breve («¿quién es la junta?») | la mesa y la silla a la cabecera | retención en 6,5 s | R28 **(inv.)**; que lo borroso se lea como «entra algo nuevo»: **(hip.)** |
+| 7 | **Garabato que se dibuja** (`trazo_circulo`, `trazo_flecha`, `garabato`) | círculo del 12 en 4,3–4,7 s (12 f); flecha 17 a 23 en 10,3–10,8 s (15 f); círculo del 23 en 11,3–11,7 s (12 f); sin texto debajo | cercanía y curiosidad por el trazo | la fecha rodeada | retención en cada trazo | R28 **(inv.)**; R41 (poca prueba de que enseñe más): **(hip.)** |
+| 8 | **Cruces que caen** (11 marcas, una cada 3 f; el patrón de la tira de 13 bloques del short 2) | 11,9–13,0 s; entrada de 8 f, desfase de 3 f | anticipación y satisfacción al contar | la fila de fechas del 13 al 23 | retención de 11,9 a 14,0 s | R22 **(oficio)**; R28 **(inv.)**; la forma: **(hip.)** |
+| 9 | **Gráfico que crece** (barras a escala, con marca mínima de 4 px) | tenencia 14,1–15,1 s (30 f con frenada); Jobs 21,85–23,05 s (36 f) | comprensión y asombro ante lo mucho mayor | el extremo de la barra | retención y compartidos | R37 **(inv.)**; su uso en gráficos: **(hip.)**; la escala no engaña: la marca mínima se declara (manual 12, cifras con fuente) |
+| 10 | **El pico: subida de sonido, silencio de 12 f, contador que acelera y frena, un zoom de golpe suave, cifra quieta** (`contador`, `golpe_de_zoom`, `acercar`) | subida 20,5–21,3 s; silencio de 21,1 a 21,5 s; contador 21,85–23,05 s (36 f); zoom +10 % (5 f + 8 f); cifra quieta 23,05–24,5 s (≈ 43 f; con la voz real se alarga a 45 f); 75,6 % del video | anticipación → sorpresa → asombro | la cifra «4,382 days» arriba a la izquierda | pico de retención en 23,05 s; compartidos por mil vistas | R22 **(oficio)**, R28, R32, R34, R35 **(inv.)**. Solo zoom, sin destello (manual 4: «uno o el otro») |
+| 11 | **Paso a tomate** (mostaza a tomate solo en el pico) | 23,05–24,5 s; un elemento | golpe y recordación de la cifra | la cifra | retención de los segundos 1 a 3 y del 23 al 24 | R33 **(inv.)**; manual 13 |
+| 12 | **Plano de respiro tras el pico** | 24,5–26,5 s; 60 f sin efectos nuevos | alivio breve, sin dejar caer la activación | los dos personajes | línea plana en la curva (P1) | el estímulo repetido pierde efecto, R10 **(inv.)**; «picos y respiros» **(hip.)** |
+| 13 | **Cierre: respuesta con remate + pregunta abierta + una invitación + lápiz lanzado** (pase del lápiz, anticipación y lanzamiento) | 24,66–30,5 s; pase 8 f (28,4–28,67); anticipación 6 f y lanzamiento 20 f (29,63–30,5); whoosh con vibrato atado al giro | sorpresa y asombro cerrados, curiosidad nueva, gratitud | el lápiz que sale y la boca de Tan | suscriptores por cada mil vistas; compartidos; regreso al canal | R48, R51, R52 **(inv.)** (manual 4b); R50 **(oficio)**; que la pregunta suba los suscriptores: **(hip.)** |
+| 14 | **Acción secundaria continua y curvas con frenada** | todo el video: bufanda de Tan (`viento`), lápiz de Tin (±3 grados) | calidez y vida | los personajes | comentarios que nombran a Tin o a Tan | R22 **(oficio)**, R24 **(inv.)** |
+| 15 | **Paso de neutro a acento** (mostaza) | la clave y un elemento por plano | foco y recordación | la palabra o la cifra | retención de los segundos 1 a 3 | R33 **(inv.)**; manual 13 |
 
-**Dosis y límites (manual 14, sección 6) que este video respeta:** 1 cambio de foco (máximo 1 cada 5 s); 1 revelado (máximo 2 por video); 1 barrido (máximo 2 para 45 a 70 años); 1 golpe de zoom de +10 % (máximo +35 %, y 1 para 45 a 70 años); 1 sola animación de acercamiento (máximo 2); cámara por debajo de ≈ 8 % del ancho por segundo y sin dos movimientos de cámara encadenados; cero destellos y cero negativos; **ningún «atravesar la escena»** (no hay un hueco natural en una tarjeta: la prueba obligó a ampliar ×33 y marcaba 3 cambios de luz en 0,15 s, en el límite; no aporta una emoción que el pico ya da); sin sombra tumbada de los muñecos; texto sin movimiento mientras se lee; el texto entra con `pop` y se queda 30 f o más (45 f para la cifra). **`efectos.comprobar_destellos` debe pasar** sobre los 915 fotogramas; el barrido y el congelado son los únicos tramos con cambios de luminosidad grandes y se miran fotograma a fotograma.
+**Dosis y límites (manual 14, sección 6) que este video respeta:** sin cambio de foco (ver decisión 13); 1 revelado; 1 golpe de zoom de +10 % (máximo +35 %); 1 animación de acercamiento fuerte (el lápiz; la silla es suave); cámara por debajo de ≈ 8 % del ancho por segundo y sin dos movimientos de cámara encadenados; **cero destellos y cero negativos**; sin «atravesar la escena»; sin sombra tumbada de los muñecos; texto sin movimiento mientras se lee; el texto entra con `pop` y se queda 30 f o más (45 f para la cifra del pico). **`efectos.comprobar_destellos` se corre con margen** (máximo 2 cambios bruscos por segundo, no 3) sobre los 915 fotogramas; no hay estrobo; ningún rojo parpadea.
 
-**Lo que se descarta de la lista de moda** (manual 14, 7.2) **y por qué:** estrobo (destellos, negativos a pantalla completa y cortes de menos de 8 f al pulso), subtítulos que saltan y cambian de color en cada palabra, y estética de aplicación (vidrio, degradados, neón, órbitas): ninguno está en este video. **Tampoco se usan** el negativo de paleta (una vez como máximo y solo sobre el objeto: se evita porque cuenta como destello y la prueba lo dejó para una firma que aquí es el congelado), el destello, la ráfaga de cortes (el público de 45 a 62 años; máximo 12 f por plano) ni la órbita (los muñecos son planos).
+**Cierre, decidido con la tabla del manual (4b.3), resumida:**
 
-**Qué se espera medir y qué no se puede atribuir:** solo hay tres videos y los temas cambian; la comparación con el short 1 (20,7 %) y con el short 2 es orientativa, no una prueba. El único cambio del primer segundo es el 1, así que si el visto frente a deslizado cambia, la hipótesis principal es la tarjeta que crece; los demás efectos (2 a 14) se evalúan por la retención de su propio tramo. **Con profundidad, el porcentaje de color dentro de la paleta baja** (≈ 82 a 85 % esperado, contra el 93 % del short 2: el desenfoque y la niebla crean mezclas de tinta y papel que no están en la lista; la prueba midió 82 %); está anotado como esperado y se pide al supervisor que lo mida también sobre un fotograma nítido (por ejemplo el 0).
+| Tipo de cierre | Emoción | Métrica | Riesgo | Decisión aquí |
+|---|---|---|---|---|
+| Pregunta de suspenso abierta | curiosidad con tensión | regreso, suscriptores | frustración, engaño, insinuación sobre una persona | **No**: el único hecho público pendiente cuelga de investigaciones sobre terceros |
+| Respuesta completa con remate | asombro, cierre | retención final, compartidos | «ya está» | **Sí** (toma 12): base |
+| Pregunta al espectador para comentar | participación | comentarios | invita al juicio de una persona | **No** |
+| Promesa de continuación (pregunta abierta, nueva y respondible) | anticipación | suscriptores, regreso | prometer lo que no se hace | **Sí** (toma 13), con compromiso de publicar el siguiente conteo |
+| Bucle perfecto | cierre redondo | duración media > 100 % | la repetición no es vista calificada | **Visual y gratis** (el lápiz), no decide el cierre |
+| Invitación a suscribirse | gratitud | suscriptores | súplica, más de una petición | **Sí**, una vez, después del remate y atada a la pregunta |
 
 ## 12. Texto en pantalla y sistema de diseño
 
-- **Tipografías:** Inter Display Medium con sus **dígitos abiertos** (rasgo OpenType `ss01`, para todas las cifras de la pieza), licencia SIL Open Font License 1.1 (archivo `/usr/share/fonts/opentype/inter/InterDisplay-Medium.otf`; en Windows, si no está, Segoe UI Semibold, que se anota en `licencias.md` antes de usarla). Contorno de las claves de 0,045 em, dibujando primero el trazo y encima el relleno. Subtítulos y rótulos **en minúsculas**, alineados a la izquierda; **excepción: la portada, con mayúscula inicial en cada palabra** (regla del dueño, `DESIGN.md`), y los nombres propios («Jensen Huang», «Nvidia», «GeForce», «RTX», «Tin & Tan», «Nov» y las siglas «CEO»), que llevan mayúscula inicial. Glifos comprobados el 2026-11-24 en la fuente: «≈», «÷», «=», «+», «–», «&», «,», «.», «:» y «?». No se usa la tipografía de ningún logotipo de la marca.
-- **Paleta:** papel `#F3E9D2` · papel_sombra `#E6D8B8` · tinta `#2B2420` · naranja `#E07A2E` · marrón `#7A4B2A` · verde azulado `#2F7F7A` · mostaza `#E8B33B` (**acento único** de todos los planos salvo la revelación: palabra clave y un elemento) · tomate `#C8553D` (**acento solo de la revelación**, tomas 10 a 12: la cifra «4,000+») · rubor `#E9967A`. Un color de acento por plano; mostaza y tomate nunca comparten plano. La palabra clave en mostaza o en tomate lleva un trazo de tinta de 0,045 em. Los colores propios de los personajes no cuentan como acento. **Ningún verde de marca** (el verde azulado de Tan es identidad, no un verde de Nvidia). Detalle y razones en «Color con intención».
-- **Referencias de movimiento:** `01_referencia/` está vacía (no hay video de referencia). Las referencias cargadas son `canales/nostalgia-tin-y-tan/DESIGN.md`, `herramientas/palitos.py` (1.3), `herramientas/efectos.py` (1.0), las hojas de `personajes/tin/referencias/` y `personajes/tan/referencias/`, el prompt del short 2 y `2026-11-23_prueba_efectos_tin_y_tan/07_revision/notas.md`; el movimiento lo definen los muelles de la sección 5.
+- **Tipografías:** Inter Display Medium con sus **dígitos abiertos** (`ss01`), licencia SIL Open Font License 1.1 (`/usr/share/fonts/opentype/inter/InterDisplay-Medium.otf`). Rótulos en inglés en minúsculas, a la izquierda, salvo los nombres propios y siglas con mayúscula inicial («Nov», «CEO»); la portada con mayúscula inicial en cada palabra. **Excepción obligatoria (regla del dueño):** los nombres propios llevan mayúscula («Tin & Tan», «Tin», «Tan», «Nvidia», «Jensen Huang»).
+- **Paleta:** papel `#F3E9D2` · papel_sombra `#E6D8B8` · tinta `#2B2420` · naranja `#E07A2E` · marrón `#7A4B2A` · verde azulado `#2F7F7A` · mostaza `#E8B33B` (**acento único** salvo en el pico) · tomate `#C8553D` (**acento solo del pico**, tomas 10 y 11: la cifra «4,382») · rubor `#E9967A` · blanco `#FFF8EC` (cuerpo del calendario). Un acento por plano; mostaza y tomate nunca comparten plano. La palabra clave lleva trazo de tinta de 0,045 em. **Ningún verde de Nvidia.**
+- **Referencias de movimiento:** `01_referencia/` está vacía. Referencias cargadas: `canales/nostalgia-tin-y-tan/DESIGN.md`, `herramientas/palitos.py`, `herramientas/efectos.py`, las hojas de `personajes/tin/referencias/` y `personajes/tan/referencias/`, el prompt del short 2 y la prueba de efectos (`proyectos/2026-11-23_prueba_efectos_tin_y_tan/07_revision/notas.md`).
 - **Prohibido:**
-  1. Mayúsculas centradas sobre degradado, tarjetas con degradado o cualquier fondo con degradado de relleno (el desenfoque de profundidad y la niebla de las capas lejanas **no** son degradados: son los de la prueba de efectos).
-  2. Animaciones lineales de posición o escala de lo vivo (solo muelle o ease-out cúbico; lo mecánico —el ventilador que gira— sí es lineal).
-  3. Texto de vidrio o paneles translúcidos, subtítulos que saltan o cambian de color por palabra, neón, órbitas: estética de aplicación (manual 14, 7.2).
-  4. Un contador que retrocede o que se pasa de su valor final y vuelve (el rebote solo es de escala).
-  5. Texto encima de un personaje o de la tarjeta, salvo las cifras que son el rótulo de un objeto en su zona de gráficos.
-  6. Cualquier elemento de Nvidia: logotipo, letra del logo o de «GeForce» o «RTX» en su tipografía, el verde de marca, luces de color en las tarjetas; tampoco la cara de Jensen Huang, una caricatura, una silueta o su voz.
+  1. Mayúsculas centradas sobre degradado o cualquier fondo con degradado.
+  2. Animaciones lineales de posición o escala en lo vivo (solo muelle o ease-out cúbico; lineal solo en lo mecánico).
+  3. Los símbolos «→» y cualquier glifo sin comprobar. «≈» solo si la fuente lo trae (se comprueba antes de renderizar); si no, en la descripción.
+  4. Un contador que retrocede o que se pasa de su valor final y vuelve.
+  5. Texto encima de un personaje o de la silla. Excepción: la fecha del calendario es el contenido de ese objeto.
+  6. Cualquier elemento de Nvidia: logotipo, letra del logo, verde, tarjetas, chips; y cualquier rostro, voz o frase de una persona real.
   7. Líneas sin suavizar: ningún dibujo fuera de un `Lienzo` o `LienzoCapa` con supermuestreo.
-  8. Sombras tumbadas de los muñecos, resplandor, partículas, confeti, destellos y negativo.
-  9. Subtítulos de más de 3 palabras o de más de una línea (los rótulos de objeto de las filas 8 y 9 llevan 4 palabras en dos líneas y se declaran: la aclaración «up to» no se quita, es lo que hace cierta la cifra), o fuera de la zona segura.
-  10. Cualquier pose, expresión o vista que no esté en `palitos.py`, y cambiar los colores o accesorios de Tin y Tan (solo cambia el objeto de la mano: aquí solo el lápiz, o ninguno).
-- **Márgenes seguros y escenario:** zona segura de `formatos.md`: x de 9,3 % a 90,7 % y y de 13 % a 87 %. Texto en x = 10 % y de 13,2 % a 24 %; personajes con pies a 86 % y cabeza desde 52 %; gráficos entre 27 % y 51 %. Excepción declarada: la portada (tomas 1 y 14) usa el texto entre y 415 y 690 por la regla del dueño.
-- **Texto exacto:** todo texto en pantalla es el de la tabla de abajo, letra por letra. Los contadores muestran enteros entre su valor de inicio y su valor final.
-- **No afirmar:** ninguna cifra ni dato fuera de la tabla «Datos del video» del brief, verificados el 2026-11-24:
-  - **La junta de Nvidia repuso a Jensen Huang como presidente y director ejecutivo el 23 de noviembre de 2026** (Wikipedia en inglés, «Jensen Huang», y títulos de cadenas en YouTube; el comunicado de Nvidia no se pudo abrir).
-  - **GeForce 256: lanzada el 11 de octubre de 1999; 17 millones de transistores según «Transistor count», ≈ 23 millones según la prensa de 1999** (esta cifra solo se vio en un resumen de buscador). **RTX 5090 (GB202): 92.200 millones de transistores; a la venta desde el 30 de enero de 2025.**
-  - **La cuenta: 92.200 millones ÷ 23 millones ≈ 4.009; ÷ 17 millones ≈ 5.424; se dice «más de 4.000».** (cálculo, comprobado con Python).
-  - **No decir ni mostrar:** rendimiento («4.000 veces más rápida» es falso; la cuenta es de transistores y el video lo dice dos veces), precio, bolsa, fortuna, motivo de la renuncia o del regreso, nada de la vida privada ni de investigaciones, los «11 días», nada del gobierno de EE. UU., que Jensen Huang diseñó la tarjeta o que dirigía la empresa en 1999, que la RTX 5090 es «la más potente» o «la más grande» (ningún superlativo), que «hoy» el chip de Nvidia con más transistores es ese (los de centros de datos tienen más), y ninguna cifra de 5.424 en pantalla.
-- **Subtítulos:** de 1 a 3 palabras (salvo los dos rótulos declarados), con la palabra clave en mostaza (con trazo de tinta); en la revelación (tomas 10 a 12) la cifra va en tomate con trazo de tinta y no hay mostaza como acento. Cifras del valle al 7 % del alto.
+  8. Sombras tumbadas de los muñecos, resplandor, partículas, confeti.
+  9. Rótulos de más de 3 palabras (salvo la portada, de 4 en 2 líneas), de más de una línea o fuera de la zona segura.
+  10. Cambiar los colores o accesorios de Tin y Tan (solo cambia el objeto de la mano).
+  11. Tachar, cruzar o señalar con un trazo la silla vacía (sería juicio sobre la persona).
+- **Márgenes seguros:** zona segura de `formatos.md` (x 100–980, y 250–1670); portada: zona útil x 60–960, y 380–1440.
+- **Texto exacto:** todo texto en pantalla es el de las tablas de abajo, letra por letra. Los contadores muestran enteros entre su valor de inicio y su valor final.
+- **No afirmar:** nada fuera de la tabla del brief y de las fechas verificadas hoy:
+  - **12 de noviembre de 2026** (renuncia), **17** (la junta dijo que no pensaba reponerlo), **23** (reposición como presidente y director ejecutivo, con efecto inmediato): Wikipedia en inglés, «Jensen Huang», leída el 2026-11-24, y títulos de cadenas; **el comunicado de Nvidia no se pudo abrir**.
+  - **11 días, 6 días, 12.274 días (más de 33 años desde el 5 de abril de 1993)**, **5 días** (Altman, 2023-11-17 a 2023-11-22), **4.382 días** (Jobs, 1985-09-17 a 1997-09-16; ≈ 12 años): cálculo con `datetime`, 2026-11-24.
+  - **No decir ni mostrar:** el motivo de la renuncia más allá de «after a scandal» (una sola vez, en la voz de la línea 2 y en la descripción), detalles de la vida privada, nombres de terceros, investigaciones o comparecencias, el papel del gobierno o de ningún político en la reposición, el motivo de la junta para cambiar de postura, cifras de bolsa, fortuna o precio de acciones, citas de Huang, que Huang «fue despedido» (renunció), que haya sido «el regreso más corto» o «el más rápido» (Altman volvió en 5 días), superlativos, que Altman renunció (fue destituido; no se dice cómo salió), quién lidera Nvidia hoy más allá de lo dicho, predicciones sobre su permanencia. Del fabricante solo se dice el nombre.
+
+**Rótulos en inglés (los que van en pantalla):**
 
 | Texto | Entra (s) | Sale (s) | Posición (% del cuadro) | Tamaño (% del alto) |
 |---|---|---|---|---|
-| Jensen Huang / Is Back (2 líneas; clave: Back; ya entero en el fotograma 0, sin pop; es la portada; mayúscula inicial en cada palabra) | 0,0 | 1,0 | 10, 21,6 | 6,7 |
-| GeForce 256 (clave: 256) | 2,7 | 4,3 | 10, 14 | 7 |
-| 1999 (clave: 1999) | 4,4 | 5,9 | 10, 14 | 7 |
-| Nov 23 (clave: 23) | 6,2 | 7,5 | 10, 14 | 7 |
-| Back as CEO (clave: CEO) | 7,6 | 8,9 | 10, 14 | 7 |
-| RTX 5090 (clave: 5090) | 9,4 | 11,4 | 10, 14 | 7 |
-| transistors, / not speed (2 líneas; clave: transistors) | 11,6 | 13,4 | 10, 14 | 5,5 |
-| up to / 23 million (2 líneas; «up to» al 4,5 %; clave: 23) | 13,6 | 16,4 | 10, 14 | 7 |
-| RTX 5090 / ≈ 92 billion (2 líneas; «RTX 5090» al 4,5 %; clave: 92) | 16,6 | 19,9 | 10, 14 | 7 |
-| ≈ 92 billion (en la ecuación, fila 1; tinta, sin clave) | 20,1 | 23,9 | 38,5, 31,3 | 5,5 |
-| ÷ 23 million (en la ecuación, fila 2; tinta, sin clave) | 20,2 | 23,9 | 9,3, 40 | 5,5 |
-| 4,000+ (contador de 250 a 4,000; en tinta mientras sube, al llegar el número en tomate con trazo de tinta y el «+» con pop) | 21,0 | 27,4 | 10, 14 | 7 |
-| transistors, not speed (subtítulo fijo bajo la cifra, tinta) | 21,4 | 27,4 | 10, 22 | 3,5 |
-| = (signo entre la pared y la tarjeta; tinta) | 26,7 | 27,4 | 50, 39 | 5,2 |
-| Subscribe (clave: Subscribe entera) | 27,7 | 29,4 | 10, 14 | 7 |
-| Tin & Tan (tinta; nombres propios con mayúscula) | 27,7 | 29,4 | 10, 22 | 3,8 |
-| Jensen Huang / Is Back (en el plano b del congelado; entero; bucle) | 29,9 | 30,5 | 10, 21,6 | 6,7 |
+| Back In / 11 Days? (clave: 11; entero en el fotograma 0, sin pop; es la portada) | 0,0 | 0,9 | 10, 26 | 12 |
+| 11 days? (clave: 11) | 1,1 | 2,4 | 10, 14 | 7 |
+| Nov 12 (clave: 12) | 4,2 | 6,4 | 10, 14 | 7 |
+| Nov 17 (clave: 17) | 7,0 | 9,9 | 10, 14 | 7 |
+| +6 days (clave: 6) | 10,2 | 11,7 | 10, 14 | 7 |
+| Nov 23 (clave: 23) | 11,8 | 12,95 | 10, 14 | 7 |
+| 11 days (clave: 11) | 13,05 | 13,95 | 10, 14 | 7 |
+| 12,274 days (clave: el número) | 14,3 | 15,95 | 10, 14 | 7 |
+| 5 days (clave: 5) | 17,4 | 19,4 | 10, 14 | 7 |
+| 4,382 days (contador de 0 a 4,382; en tinta mientras sube y en tomate al llegar; sigue en la toma 11) | 21,85 | 24,4 | 10, 15 | 7 |
+| 11 days (clave: 11) | 24,6 | 26,4 | 10, 14 | 7 |
+| Who else? (clave: else) | 26,85 | 28,1 | 10, 14 | 7 |
+| Subscribe (clave) | 28,2 | 28,95 | 10, 14 | 7 |
+| Back In / 11 Days? (entra con pop; sigue sin corte en la toma 1) | 30,0 | 30,5 | 10, 26 | 12 |
+
+**Subtítulos en español (quemados en el video; encargo del dueño, 2026-11-24).** La voz sigue en inglés; en pantalla va la traducción al español de cada línea, sincronizada con ella.
+
+- **Dónde va la banda:** fija, de **y = 905 a y = 1085** (47,1 % a 56,5 % del alto) y de x = 100 a x = 980: **entre la zona de gráficos** (que termina en y = 893) **y la cabeza de los personajes** (que empieza en y = 1094, con `alto` de 29 %). Por eso los personajes son más pequeños que en el short 2 (29 % y no 34 %). No tapa personajes ni objetos y no choca con los rótulos en inglés (arriba, y 253–461) ni con las cifras. La parte de abajo (y > 1500) queda libre porque la interfaz de los Shorts (título, canal y botones) la cubre.
+- **Formato:** Inter Display Medium a **4,5 % del alto (86 px)**; tinta `#2B2420` sobre un **panel de papel `#F3E9D2` translúcido** (opacidad 0,82, esquinas de 20 px, relleno de 12 px); contraste tinta/papel 12,6:1 (mínimo pedido 7:1). **Máximo 2 líneas y ≈ 21 caracteres por línea** (≤ 856 px medidos con la fuente): con 86 px no caben 32 caracteres en 880 px, por eso las tarjetas son cortas y no literales. Entrada de 3 fotogramas (fundido de la opacidad), sin `pop`; cada tarjeta dura 30 fotogramas o más.
+- **Cómo conviven con los rótulos en inglés:** los rótulos de cifra y palabra clave siguen en inglés y en grande; **el subtítulo no repite la cifra ni la fecha si ya están en grande** (por eso omite «11 días», «el 12», «el 17», «5 días» y «4.382»). La portada (0,0–1,0 s y 29,6–30,5 s) **no lleva subtítulo**: la banda taparía la silla y la regla de portada pide el cuadro limpio; la línea 1 se subtitula desde 1,0 s. En la toma 10, de 21,4 a 23,5 s no hay subtítulo: la cifra ya está en grande.
+- **Decisiones de redacción:** español neutro, natural y no literal; «CEO» (no «director ejecutivo»: es la forma de los titulares y cabe); «Nvidia», «Jensen Huang», «Sam Altman», «Steve Jobs», «OpenAI» y «Apple» como en inglés; cifras con formato español (12.274, 4.382; en los rótulos en inglés, 12,274 y 4,382).
+
+| Tarjeta | Empieza (s) | Termina (s) | Línea de voz | Texto en español (una línea por renglón) |
+|---|---|---|---|---|
+| 1 | 1,00 | 2,40 | 1 | ¿Fue rápido el regreso / de Jensen Huang? |
+| 2 | 2,55 | 6,40 | 2 | Renunció a Nvidia / tras un escándalo. |
+| 3 | 6,70 | 9,70 | 3 | La junta dijo que no / lo repondría. |
+| 4 | 10,00 | 13,00 | 4 | Lo repuso como CEO. |
+| 5 | 13,25 | 15,80 | 5 | Antes: más de 33 / años al mando. |
+| 6 | 16,00 | 16,95 | 6 | ¿Rápido comparado / con quién? |
+| 7 | 17,20 | 19,40 | 7 | Sam Altman, OpenAI: |
+| 8 | 19,55 | 21,40 | 8 | Steve Jobs, Apple: |
+| 9 | 23,50 | 24,45 | 9 | ¿Son 12 años? |
+| 10 | 24,70 | 26,50 | 10 | Más rápido que Jobs. / Más lento que Altman. |
+| 11 | 26,80 | 27,90 | 11 | ¿Quién más volvió? |
+| 12 | 28,00 | 29,10 | 11 | Suscríbete al próximo / conteo. |
 
 ### Color con intención
 
-Propuesta del prompt (regla del dueño, 2026-11-21; `manual/13_color_con_intencion.md`, sección 6). La sección equivalente de `02_prompt/direccion.md` la escribe el director de fotografía y la valida el director creativo; este bloque es la propuesta del prompt y, si difiere, manda la dirección.
+Propuesta del prompt (`manual/13_color_con_intencion.md`); la sección equivalente de `02_prompt/direccion.md` la escribe el director de fotografía y, si difiere, manda la dirección (hoy `direccion.md` está en plantilla).
 
-- **Neutros (2):** papel `#F3E9D2` (fondo de todos los planos y suelo `#E6D8B8`) y tinta `#2B2420` (líneas, contornos y todo texto que no sea clave). Contraste tinta/papel 12,6:1; tinta/papel_sombra 10,8:1 (los dos pasan 7:1).
-- **Acento (1):** mostaza `#E8B33B`, siempre con contorno de tinta, solo en la palabra clave y en **un** elemento por plano (los dedos dorados de la tarjeta, el lápiz de Tin o el chip, según la toma). **No va** en: texto que no sea clave, personajes (su bufanda y lápiz son identidad), suelo, pared de tarjetas (marrón) ni en los planos de la revelación. **Tomate `#C8553D` queda reservado a la revelación** (tomas 10 a 12: la cifra «4,000+») y nunca comparte plano con la mostaza. Marrón `#7A4B2A` solo como relleno (placa de la tarjeta, minitarjetas, dedos en la revelación), nunca como texto. **Ningún verde** salvo el verde azulado de Tan (identidad).
-- **Por qué esta paleta:** papel crema y tinta marrón remiten a impresos y fotos de los 70 y 80, y las placas marrón y los dedos dorados, a una PC de 1999 vista con cariño: nostalgia cálida y de saturación baja para el público de 45 a 62 años de EE. UU., que se lee bien con su vista. La mostaza lleva el ojo al dato; el tomate, guardado para el final, hace que «más de 4.000» se sienta como un golpe de emoción (hipótesis, no significado fijo). Se evita a propósito el verde de Nvidia: no es la marca la que habla, es la tarjeta del recuerdo.
-- **Cómo ayuda al objetivo:** Programa de socios → la misma paleta y el mismo acento de los shorts 1 y 2 hacen que el canal se reconozca antes de leer el nombre, y el paso de mostaza a tomate marca el pico en 22,2 s → se verá con la retención del segundo 1 al 3, visto frente a deslizado, y los suscriptores por mil vistas.
-- **Riesgos de lectura:** (1) mostaza sobre papel da 1,6:1: solo se lee por el contorno de tinta; (2) tomate sobre papel da 3,6:1 y tinta sobre tomate 3,5:1: la cifra se lee por su contorno, por ser texto grande y por la posición, se revisa en teléfono; (3) rojo contra verde: la cabeza verde azulada de Tan y el tomate no llevan la información; (4) **con profundidad, el desenfoque y la niebla bajan el porcentaje en paleta** (la prueba midió ≈ 82 %; el plano nítido, 91 %): es lo esperado y no un error; (5) pantalla chica: cifras al 7 % del alto; (6) Tan conserva su bufanda mostaza en la revelación (identidad, no acento): se vigila que no se lea como segundo acento.
-- **Medido:** pendiente (no hay video). Se pide al supervisor correr `revisar_color.py` sobre el video, sobre el fotograma 0 y sobre el tramo de 21,0 a 27,5 s por separado, y anotar el porcentaje con y sin desenfoque (umbral de la herramienta 85 %: se espera un aviso explicado, no un error).
+- **Neutros (2):** papel `#F3E9D2` (fondo de todos los planos; cuerpo del calendario en `#FFF8EC`; suelo `#E6D8B8`) y tinta `#2B2420` (líneas, contornos y todo texto que no sea clave). Contraste tinta/papel 12,6:1; tinta/blanco 14,5:1.
+- **Acento (1):** mostaza `#E8B33B`, con contorno de tinta, solo en la palabra clave y en **un** elemento por plano (el lápiz, el círculo, la marca o la barra, según la toma). **No va** en el texto que no es clave, en la silla, en el calendario (salvo el círculo), en las barras (salvo la marca de 11 días y la de Altman en la toma 9). **Tomate `#C8553D` queda reservado al pico** (tomas 10 y 11) y ahí no hay mostaza como acento: por eso Tin no lleva el lápiz en esas dos tomas. Marrón `#7A4B2A` solo como relleno.
+- **Por qué esta paleta:** la misma de los shorts 1 y 2, para que el canal se reconozca (R26 inv.); papel y tinta dan contraste alto y lectura fácil (R27 inv.); el acento único se recuerda (R33 inv.) y el cambio a tomate marca el golpe del dato. Para una noticia, la saturación baja evita sensación de alarma o de burla; el significado emocional del color es **hipótesis** (Elliot y Maier, 2014, manual 13).
+- **Cómo ayuda al objetivo:** Programa de socios → reconocimiento del canal y un pico visible en la cifra → retención de los segundos 1 a 3 y pico en 23,05 s; regreso de espectadores.
+- **Riesgos de lectura:** (1) mostaza sobre papel da 1,6:1: se lee por el contorno de tinta; (2) tinta sobre tomate 3,5:1: la cifra se lee por contorno y tamaño; (3) la bufanda mostaza de Tan es identidad y no debe leerse como segundo acento en las tomas 10 y 11; (4) rojo y verde azulado: la información no depende del tono; (5) el desenfoque y la niebla bajan el porcentaje en paleta (≈ 82–85 % esperado, la prueba midió 82 %): se mide también sobre un fotograma nítido (el 0).
+- **Medido:** pendiente (falta el render); lo mide el supervisor con `revisar_color.py`.
 
 Tabla de acento por plano:
 
 | Toma | Mostaza (palabra clave + un elemento) | Tomate |
 |---|---|---|
-| 1 | «Back» + dedos de la tarjeta | no |
-| 2 | dedos de la tarjeta (sin texto) | no |
-| 3 | «256» y luego «1999» + lápiz de Tin | no |
-| 4 | «23» y luego «CEO» + lápiz de Tin | no |
-| 5 | «5090» + dedos de la tarjeta de 1999 | no |
-| 6 | «transistors» + el chip | no |
-| 7 | «23» + dedos de la tarjeta | no |
-| 8 | «92» + dedos de la tarjeta nueva | no |
-| 9 | ninguno (neutros) | no |
-| 10 | ninguno | cifra «4,000+» |
-| 11 | ninguno | cifra «4,000+» (sigue) |
-| 12 | ninguno | cifra «4,000+» (sigue) |
-| 13 | «Subscribe» | no |
-| 14 | «Back» + dedos de la tarjeta (plano b, como en la toma 1) | no |
-
-Contrastes (medidos en el short 2 con `revisar_color.py --contraste`, 2026-11-21, mismos colores): tinta/papel 12,6:1; tinta/papel_sombra 10,8:1; tinta/mostaza 8,0:1; tinta/tomate 3,5:1; mostaza/papel 1,6:1; tomate/papel 3,6:1; marrón/papel 6,1:1.
+| 1 | «11» + lápiz | no |
+| 2 | «11» | no |
+| 3 | «12» + círculo del 12 | no |
+| 4 | «17» | no |
+| 5 | «6» y luego «23» + círculo del 23 | no |
+| 6 | «11» | no |
+| 7 | número «12,274» + marca de 11 días | no |
+| 8 | ninguno | no |
+| 9 | «5» + barra de Altman | no |
+| 10 | ninguno | cifra «4,382» |
+| 11 | ninguno | cifra «4,382» |
+| 12 | «11» + marca de Huang | no |
+| 13 | «else» y luego «Subscribe» + lápiz | no |
+| 14 | «11» + lápiz | no |
 
 Campo para `ficha.json`:
 
@@ -682,65 +688,70 @@ Campo para `ficha.json`:
             "#F3E9D2",
             "#2B2420"
           ], "acento": "#E8B33B",
-          "por_que": "papel crema y tinta de impresos de los 70 y 80 (nostalgia cálida, saturación baja) para un público de 45 a 62 años de EE. UU.; la mostaza lleva el ojo al dato y el tomate se reserva a la cifra del pico (tomas 10 a 12), nunca junto a la mostaza; sin el verde de Nvidia",
-          "objetivo": "Programa de socios: misma paleta y acento en todo el canal para reconocerlo; mostaza a tomate marca el pico; métrica: retención del segundo 1 al 3, visto frente a deslizado y suscriptores por mil vistas",
-          "medido": "pendiente: el porcentaje en paleta baja con profundidad (≈ 82 a 85 % esperado); se mide también el fotograma nítido"}
+          "por_que": "papel y tinta como neutros del canal; mostaza como acento único (clave y un elemento por plano); tomate solo en el pico (la cifra de Jobs) para marcar el golpe; la misma paleta que los shorts 1 y 2 para reconocer el canal",
+          "objetivo": "Programa de socios: reconocimiento del canal y un pico visible; métrica: retención de los segundos 1 a 3 y pico de retención en 23,05 s",
+          "medido": "pendiente: falta el render"}
 ```
 
-En un short, todo texto queda dentro de la zona segura de `formatos.md`. Entrada de cada texto: `pop` con escala de 0,85 a 1 en 8 fotogramas; salida: subir 2 % con ease-in en 3 fotogramas (excepciones: la fila 1 en el fotograma 0 está ya a escala 1; la última fila llega entera con el plano b y queda a escala 1 en el último fotograma para que el bucle empalme).
+En un short, todo texto queda dentro de la zona segura. Entrada de cada rótulo: `pop` con escala de 0,85 a 1 en 8 fotogramas; salida: subir 2 % con ease-in en 3 fotogramas (excepción: el rótulo de portada en el fotograma 0 y en el último ya están a escala 1).
 
 ## 13. Sonido
 
-Los golpes bajo la voz van a unos **−26 LUFS** (−12 dB respecto a la voz, que está a −14 LUFS; lección del short 1: a −38 LUFS no se oían en un teléfono). Cada corte y cada efecto llevan su sonido atado al fotograma (±1 f; `manual/14`, 2.8). **Nadie ha oído nada: se comprueba al oído.** Variación respecto del short 2: no hay clics de botón al pulso ni el zumbido del mando; hay un zumbido de ventilador que sube de tono, un ding de campana más grave y una cascada de tics.
+Los golpes bajo la voz van a unos **−26 LUFS** (−12 dB respecto a la voz, a −14 LUFS; lección del short 1: a −38 LUFS no se oían). Se comprueba al oído. Cada corte y cada efecto lleva su golpe a ±1 fotograma (manual 14, 2.8).
 
 | Golpe o efecto | Segundo | A qué corte o efecto va atado | Origen y licencia |
 |---|---|---|---|
-| Thunk grave de 80 ms y zumbido de ventilador que sube de tono (0,0 a 0,4 s) | 0,0 | arranque, toma 1: la tarjeta que crece (es también el empalme del bucle: no se duplica) | código, propio (ver licencias.md) |
-| Tic seco de énfasis | 0,2 | golpe de la palabra clave «Back» (f 6) | código, propio |
-| Clic suave y soplo corto | 1,0 | corte en el movimiento, toma 1 a 2 | código, propio |
-| Clac seco de inserción | 2,2 | la tarjeta asienta en la ranura, toma 2 | código, propio |
-| Clic suave | 2,5 | corte de toma 2 a toma 3 | código, propio |
-| Pop | 2,7 y 4,4 | textos «GeForce 256» y «1999» | código, propio |
-| Soplo de aire de 12 fotogramas | 5,68–6,08 | cambio de foco de la toma 3 a Tin | código, propio |
-| Pop | 6,2 y 7,6 | textos «Nov 23» y «Back as CEO» | código, propio |
-| Clic suave | 9,0 | corte de toma 4 a toma 5 | código, propio |
-| Zumbido corto de 8 fotogramas que se aclara | 9,3 | la tarjeta nueva aparece desde el desenfoque | código, propio |
-| Pop | 9,4 | texto «RTX 5090» | código, propio |
-| Clic suave de borrón | 11,5 | corte de toma 5 a toma 6 | código, propio |
-| Pop | 11,6 | texto «transistors, not speed» | código, propio |
-| Rasguño de lápiz sobre papel | 11,95–12,35 | el garabato que rodea el chip | código, propio |
-| Clic suave | 13,5 | corte de toma 6 a toma 7 | código, propio |
-| Pop | 13,6 | rótulo «up to 23 million» | código, propio |
-| Whoosh de 6 fotogramas y golpe seco | 16,4–16,6 | barrido de toma 7 a toma 8 | código, propio |
-| Pop | 16,6 | rótulo «≈ 92 billion» | código, propio |
-| Clic suave | 20,0 | corte de toma 8 a toma 9 | código, propio |
-| Subida (riser) de 25 fotogramas | 20,15–20,98 | antes de la cifra, bajo «Divide them.» | código, propio |
-| **Silencio total de 12 fotogramas** (voz, música y efectos) | 20,98–21,38 | justo antes del contador | código, propio |
-| Tictac de contador que sube de tono | 21,38–22,2 | contador de la toma 10 (calla al llegar) | código, propio |
-| Ding de campana grave y golpe seco; vuelve la música | 22,2 | primer fotograma con el valor final: el mismo fotograma que el tomate, el «+», el `pop` y el golpe de zoom | código, propio |
-| Clic suave | 24,0 | corte de toma 10 a toma 11 | código, propio |
-| Cascada de tics que sube de tono (50 filas) | 24,0–25,0 | la pared de 4.000 tarjetas que crece | código, propio |
-| Whoosh suave | 25,5–26,5 | la pared se encoge y la tarjeta nueva entra | código, propio |
-| Clic y pop | 26,7 | la tarjeta se asienta y entra el signo «=» | código, propio |
-| Clic suave | 27,5 | corte de toma 12 a toma 13 | código, propio |
-| Pop | 27,7 | texto «Subscribe» y «Tin & Tan» | código, propio |
-| Clic de obturador de cámara | 29,5 | el cierre se congela como foto, toma 13 a 14 | código, propio |
-| Thunk grave idéntico al del segundo 0,0 (cierra el bucle; el del 0,0 lo continúa) | 30,5 | bucle: es el del segundo 0,0 de la vuelta siguiente (el archivo dura 30,5 s justos y no lo duplica) | código, propio |
+| Whoosh con vibrato (vuelo del lápiz que se frena) | 0,0–0,5 | firma: llegada del lápiz (toma 1) | código, propio |
+| Golpe seco al atrapar (thwack, 80 ms) | 0,5 | Tin atrapa el lápiz (f 15) | código, propio |
+| Golpe de la clave «11» | 0,2 | `palabra_clave` de la portada (f 6) | código, propio |
+| Clic suave | 1,0 | corte en el movimiento, toma 1 a 2 | código, propio |
+| Clic suave | 2,5 | corte, toma 2 a 3 | código, propio |
+| Raspado de lápiz | 4,3–4,7 | círculo del 12 | código, propio |
+| Clic y golpe suave de revelado | 6,5 | corte con revelado, toma 3 a 4 | código, propio |
+| Clic suave | 10,0 | corte, toma 4 a 5 | código, propio |
+| Raspado de lápiz | 10,3–10,8 y 11,3–11,7 | flecha y círculo del 23 | código, propio |
+| Tictac de cruces, 11 veces, subiendo de tono | 11,9–13,0 | cruces del 13 al 23 | código, propio |
+| Clic suave | 13,0 | corte, toma 5 a 6 | código, propio |
+| Clic suave | 14,0 | corte, toma 6 a 7 | código, propio |
+| Deslizar de la barra (tono que sube y frena) | 14,1–15,1 | barra de tenencia | código, propio |
+| Clic suave | 16,0 | corte, toma 7 a 8 | código, propio |
+| Clic suave | 17,0 | corte, toma 8 a 9 | código, propio |
+| Pop de la barra de Altman | 17,5 | barra de Altman | código, propio |
+| Clic suave | 19,5 | corte, toma 9 a 10 | código, propio |
+| Subida (riser) de 25 fotogramas | 20,5–21,3 | antes del pico | código, propio |
+| **Silencio de efectos y música de 12 fotogramas** | 21,1–21,5 | antes del número (cae en la pausa de la voz tras «Apple:») | código, propio |
+| Tictac de contador que sube de tono | 21,85–23,05 | contador de 4.382 (calla al llegar) | código, propio |
+| Ding grave + acorde de mi mayor abierto + golpe del zoom | 23,05 | llegada de la cifra, paso a tomate y `pop` (mismo fotograma) | código, propio |
+| Clic suave | 23,5 | corte, toma 10 a 11 | código, propio |
+| Clic suave | 24,5 | corte, toma 11 a 12 (respiro) | código, propio |
+| Clic suave | 26,5 | corte, toma 12 a 13 | código, propio |
+| Whoosh corto del pase del lápiz | 28,4–28,67 | lápiz de Tin a Tan | código, propio |
+| Crujido de anticipación (6 f) | 29,63–29,83 | anticipación del lanzamiento | código, propio |
+| **Whoosh con vibrato que se acelera** | 29,83–30,5 | lanzamiento: último movimiento; es el mismo vuelo que abre el bucle (empalme con el 0,0) | código, propio |
 
-- **Música:** hecha con código a −24 LUFS (ver sección 7); sin material de terceros.
-- **Voz:** sí (por generar; ver sección 7). Sin retraso: empieza en el fotograma 0.
+- **Música:** mi menor a 120 BPM (sección 7), −24 LUFS; sin material de terceros. **Voz:** sí (por generar); empieza en el fotograma 0 sin retraso.
+- Los pasos de música y efectos entre cortes no pueden tener más de 2 golpes fuertes por segundo.
 
 ## 14. Motor y revisión
 
-- **Cómo se hace:** gráficos por código (fotograma a fotograma): Python, Pillow, numpy y ffmpeg. Cada plano se compone con `efectos.componer` (capas con `z`, cámara con foco y niebla) y los personajes se dibujan con `palitos.dibujar(lz, id, x, suelo, alto, pose, expresion, vista, mira, viento, objeto, espejo, cabeza_giro)` en un `LienzoCapa` con supermuestreo. Todo depende del número de fotograma, no del reloj. Se guardan PNG numerados y ffmpeg los une con la voz y los efectos. Costo de render estimado con la prueba de efectos (≈ 10 s de reloj por segundo de video con profundidad, 4 procesos): **≈ 5 a 6 minutos para los 915 fotogramas**.
-- **Qué hay que añadir al código (nada de esto existe todavía; costo en créditos: 0):**
-  1. `herramientas/palitos.py` **no cambia** (los dos personajes y sus poses son los de la versión 1.3; `git diff` debe quedar vacío, igual que en la prueba de efectos).
-  2. Gráficos nuevos en `codigo/render.py` del proyecto (o, si el equipo los reutiliza, en `efectos.py`): `tarjeta_1999(marco, ancho, dedos, giro_ventilador)` y `tarjeta_actual(marco, ancho, dedos, giro_ventiladores)` (secciones 5), `pc_beige(marco)` (torre y monitor), `placa_base_y_ranura(marco)`, `manos_de_palitos(marco, posicion)`, `die(marco, lado)`, `pared_de_tarjetas(marco, filas_visibles)` y `ecuacion(marco, ...)`; también el `pedestal` y el cable de primer plano. Sin ningún logotipo, letra ni verde.
-  3. Planos por capas con `efectos.Capa`, `Camara` (con `foco` animado entre las líneas de voz, `apertura`, `campo`, `niebla`), `componer`, `revelar_desde_desenfoque`, `barrido_obturador`, `congelado_con_marco`, `golpe_de_zoom` (con `acercar(img, zoom, centro)` para que el zoom salga de la cifra), `trazo_circulo` y `garabato`, `contador`, `sombra_contacto`, `sombra_proyectada`, `papel`. No hace falta tocar `efectos.py`; si el zoom con origen en la cifra no sale limpio con `acercar`, se añade un parámetro `centro` a `golpe_de_zoom` y se anota en el encabezado de versiones.
-  4. `codigo/audio.py` (copia del del short 2): los golpes de la sección 13, la música en re dórico, el silencio de 12 fotogramas y el armado del diálogo con las dos pausas de 0,40 s; `codigo/miniatura.py` para la portada.
-  5. Comprobar al arrancar el render los glifos «≈», «÷», «=», «+», «–» y «&» (ya comprobados con la fuente instalada el 2026-11-24) y `la opción de fuente ss01 de Pillow (features con ss01)` (necesita libraqm: disponible).
-- **Quién renderiza y autorización:** el render lo hace el equipo de producción (0 créditos). **La voz necesita el sí del dueño con la cotización.** Antes de renderizar se llena `03_keyframes/definicion.md` (hecho en borrador: pieza por código y las dos voces) y se anotan la fuente y la licencia de cada recurso en `licencias.md`.
-- **Punto de control:** antes de generar la voz o renderizar se presenta la lista de tomas sobre la rejilla y se espera el visto bueno del dueño o la decisión del equipo según `CLAUDE.md`; con la voz real se reajustan los tiempos y se vuelve a archivar el prompt.
-- **Revisión:** prueba corta de 5 s (de 0,0 a 5,0: portada, tarjeta que crece, manos, plano con capas y el cambio de foco), un fotograma por pulso, hoja de contacto y comprobación de medidas (zona segura, `alto` y x de cada personaje, pies a 86 %, tarjeta dentro de y 720 a 1100 en los fotogramas 0 y 12, texto de la portada entre y 415 y 690 a 40 px o más de la tarjeta, caras dentro de la zona útil). Después del render completo: `efectos.comprobar_destellos` (debe pasar; informe en `07_revision/`), `postpro.py destellos`, `herramientas/revisar_fotogramas.py`, `analizar_video.py <video> <carpeta> --cada 0.5` y `revisar_color.py` (video, fotograma 0 y tramo 21,0–27,5 s; se espera un aviso por el desenfoque, explicado), `revisar_texto.py --idioma en` sobre `subtitulos.srt`, el código del render, la descripción y las etiquetas, `revisar_titulo.py` sobre el título y `revisar_voz.py` sobre la mezcla (guion contra lo que se oye). Se comprueba al oído que cada corte cae donde dice la sección 6 con la voz real, que la voz arranca en el fotograma 0, que los golpes se oyen bajo la voz, el silencio de 12 fotogramas y que «G Force», «R T X fifty-ninety» y «Nvidia» suenan bien.
-- **Qué se marca:** imagen congelada, fotograma vacío (la mitad de abajo no debe quedar vacía), texto cortado o tapado, texto que sigue sobre el plano siguiente, elemento fuera de cuadro, tirones, contador que retrocede o que se ve en «0», glifos cuadrados, el fotograma 915 (el que sigue al último) distinto del 0, más de 3 destellos por segundo, **caras borrosas mientras su personaje habla** (el foco solo cambia entre líneas), una tarjeta que se parezca a una comercial o lleve logotipo, letra o verde, cualquier cosa que recuerde a Nvidia o dibuje a Jensen Huang, expresiones que se lean como enojo, y en el teléfono: que la tarjeta, los rótulos y la cifra se lean y que cada dato lleve una reacción de Tan distinta. Nota para el validador: en las tomas con personajes (1, 3 a 6 y 9 a 14), el bloque de identidad de la ficha no se pega en el prompt porque no hay generador de imágenes; el diseño oficial es el código de `palitos.py` y se comprueba con la lista de comprobación de cada ficha.
-- **Vueltas:** las correcciones por código son gratis (salvo servicios de pago, que van a `costos.md`); **las de generador no se repiten sin autorización del dueño** (`generacion.md`). Aquí solo hay generador en la voz: una generación por voz, sin segundos intentos.
+- **Cómo se hace:** gráficos por código (fotograma a fotograma): Python, Pillow, numpy y ffmpeg. Cada plano con capas se compone con `efectos.componer` (`Capa`, `Camara`) desde `LienzoCapa` con supermuestreo; los personajes con `palitos.dibujar(lz, id, x, suelo, alto, pose, expresion, vista, mira, viento, objeto, espejo)`. Todo depende del número de fotograma. Se guardan PNG numerados y ffmpeg los une con la voz, los efectos y la música (`postpro.py mezclar` o ffmpeg directo). `codigo/render.py` de este proyecto es del prompt anterior (tarjeta de 1999) y **hay que reescribirlo**.
+- **Qué hay que dibujar (todo nuevo, genérico y sin marca):**
+  1. `silla_director` (sección 5), a escala variable, también pequeña y lejana.
+  2. `calendario_noviembre` con sus marcas: círculo, flecha y 11 cruces.
+  3. `mesa_junta` con cinco sillas genéricas y la silla de director.
+  4. `barras` (tenencia y comparación) con la marca mínima de 4 px.
+  5. **`lapiz_libre(lz, x, y, ang, esc, estela)`: el lápiz de Tin girando con estela plana de dos copias**, con la trayectoria de llegada, el pase y el lanzamiento; el lápiz que lleva Tin en la mano sigue siendo `objeto="lapiz"` de `palitos.py` (aquí `objeto="lapiz"` también para Tan en las tomas 13 y 14, aprobado en su ficha). Costo: 0.
+  6. Banda de subtítulos en español: panel translúcido y texto con medida previa (`ancho_texto`) para que ninguna línea pase de 856 px.
+  7. Comprobar los glifos «¿», «?», «,», «.», «:», «+», «&» y, si se usa, «≈» en la fuente antes de renderizar.
+- **Quién renderiza y autorización:** el equipo de producción renderiza (0 créditos); **la voz necesita la cotización y el sí del dueño**; publicar también. Antes de renderizar se revisa `03_keyframes/definicion.md` y se anotan fuente y licencia de cada recurso en `licencias.md`.
+- **Controles (todo gratis, en `07_revision/`):**
+  - **Texto:** `revisar_texto.py` con 0 errores. Corrido el 2026-11-24 sobre `subtitulos.srt`, la descripción y las etiquetas (`--idioma en`) y sobre `subtitulos_es.srt` (`--idioma es`): resultado en el informe final. Los textos de pantalla del código se pasan antes de renderizar.
+  - **Destellos:** `efectos.comprobar_destellos` con margen (máximo 2 por segundo) y `postpro.py destellos`; mirada fotograma a fotograma a la llegada de la cifra (zoom y tomate) y al lanzamiento del lápiz.
+  - **Fotogramas:** `revisar_fotogramas.py` y `analizar_video.py --cada 0.5`; hojas de contacto miradas una por una.
+  - **Medidas:** zona segura en los 915 fotogramas; portada (texto y 492–682, silla y 754–1066, caras dentro de x 60–960 e y 380–1440); la banda de subtítulos (y 905–1085) sin tocar gráficos ni cabezas; cada línea de subtítulo ≤ 856 px; pies a 86 %; `alto` 29 %.
+  - **Bucle:** el fotograma 915 (el que sigue al último) igual al 0 (diferencia media menor de 3 de 255); el lápiz sale en la toma 14 y entra en la toma 1.
+  - **Color:** `revisar_color.py` (paleta, contraste, saltos); se espera ≈ 82–85 % en paleta con profundidad, y se mide también el fotograma 0.
+  - **Cifras:** recalcular con `datetime` (11, 6, 12.274, 5, 4.382) y comparar pantalla, subtítulos, guion y descripción; los contadores solo suben.
+  - **Oído:** que cada corte caiga donde dice la sección 6 con la voz real, que «Nvidia», «Huang», «C E O» y «OpenAI» suenen bien, que la pausa tras «Apple:» sea de ≈ 0,45 s y que el golpe del lápiz se oiga bajo la voz.
+- **Qué se marca:** imagen congelada, fotograma vacío, texto cortado o tapado, texto que sigue sobre el plano siguiente, elemento fuera de cuadro, tirones, contador que retrocede, glifos cuadrados, el fotograma 915 distinto del 0, más de 2 destellos por segundo, cualquier cosa que recuerde a Nvidia (verde, ojo, logotipo), cualquier rostro o silueta que se lea como una persona real, la silla que parezca tachada o señalada, una expresión de Tan o de Tin que se lea como burla o enojo, y en el teléfono: que silla, calendario, barras, cifras y subtítulos se lean. Nota para el validador: en las tomas con personajes el bloque de identidad de la ficha no se pega en el prompt porque no hay generador de imágenes; el diseño oficial es el código de `palitos.py` y se comprueba con la lista de comprobación de cada ficha.
+- **Vueltas:** las correcciones por código son gratis; **las de generador no se repiten sin autorización del dueño** (`generacion.md`). Aquí solo hay generador en la voz: una generación por voz, sin segundos intentos.

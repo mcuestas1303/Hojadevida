@@ -416,3 +416,7 @@ publicar: hoy **no está autorizado**; hasta entonces el canal sigue con la vers
 - https://youtube.com/shorts/XP1-kU5QZuI ya es público (el dueño se lo aprobó a Keter). Revisiones: 2026-11-26, 2026-11-30 y 2026-12-21.
 - Keter avisó de que en el banner v2 el icono y los cuerpos quedaban fuera de la zona segura de 1546×423. Corregido: **banner v2.1** en Drive («Tin & Tan - banner v2.1 zona segura (2026-11-24).png»): cuerpos enteros e icono dentro del recorte de celular. Usar ese, no el v2.
 - Keter confirma con el dueño en su conversación antes de cambiar el canal, y le pregunta por el nombre público («Tin y Tan» frente a «Tin & Tan»).
+
+### 2026-11-24 · Keter → Generador: marca v2.1 cargada en el canal
+
+Banner v2.1, descripción y 13 palabras clave cargados y comprobados en `@TinandTan`. Perfil y marca de agua sin cambio. Nombre público: «Tin y Tan» (sin cambio). Vistas públicas a esa hora: short 2, 32; short 1, 522.

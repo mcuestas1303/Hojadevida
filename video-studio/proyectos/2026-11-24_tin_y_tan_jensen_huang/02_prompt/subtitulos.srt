@@ -1,47 +1,43 @@
 1
-00:00:00,000 --> 00:00:02,300
-Remember putting one of these in your PC?
+00:00:00,000 --> 00:00:02,310
+Was Jensen Huang's comeback in eleven days fast?
 
 2
-00:00:02,550 --> 00:00:05,680
-That's the GeForce 256, from 1999.
+00:00:02,540 --> 00:00:06,450
+He resigned from Nvidia on November twelfth after a scandal.
 
 3
-00:00:06,080 --> 00:00:09,060
-Nvidia's board brought Jensen Huang back as CEO.
+00:00:06,680 --> 00:00:09,720
+On the seventeenth the board said it would not bring him back.
 
 4
-00:00:09,310 --> 00:00:11,260
-How many of those are in a new one?
+00:00:09,950 --> 00:00:13,000
+Six days later it reinstated him as CEO.
 
 5
-00:00:11,510 --> 00:00:13,360
-We're counting transistors, not speed.
+00:00:13,230 --> 00:00:15,770
+Before that: more than thirty-three years in charge.
 
 6
-00:00:13,610 --> 00:00:16,380
-That card had up to 23 million transistors.
+00:00:16,000 --> 00:00:16,960
+Fast compared to who?
 
 7
-00:00:16,630 --> 00:00:20,030
-The RTX 5090 has about 92 billion.
+00:00:17,190 --> 00:00:19,300
+Sam Altman at OpenAI: five days.
 
 8
-00:00:20,280 --> 00:00:20,980
-Divide them.
+00:00:19,530 --> 00:00:23,240
+Steve Jobs at Apple: four thousand, three hundred eighty-two days.
 
 9
-00:00:21,380 --> 00:00:22,480
-More than 4,000.
+00:00:23,470 --> 00:00:24,430
+That is twelve years?
 
 10
-00:00:22,730 --> 00:00:24,480
-Four thousand of these in one of those?
+00:00:24,660 --> 00:00:26,550
+Faster than Jobs. Slower than Altman.
 
 11
-00:00:24,730 --> 00:00:27,160
-That whole wall, in transistors, is one chip.
-
-12
-00:00:27,500 --> 00:00:28,800
-Subscribe and count with us.
+00:00:26,780 --> 00:00:29,090
+Who else came back? Subscribe for the next count.

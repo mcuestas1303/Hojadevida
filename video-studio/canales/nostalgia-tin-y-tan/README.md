@@ -103,3 +103,12 @@ El canal **«Tiky & Lumi»** (@TikyAndLumi, https://www.youtube.com/channel/UCO6
 **Dónde más está:** en el «Cerebro» del dueño (nodos `canal-de-munecos-de-palitos-con-rankings`,
 `reglas-de-produccion-de-video` y `prompts-para-replicar-videos`) y en su PC, en `Canal YouTube/conocimiento/` y
 `Canal YouTube/analisis/`. Esta sesión no puede leer ninguno de los dos: si hacen falta, se le piden al dueño.
+
+## Marca cargada en YouTube
+
+| Fecha | Qué | Estado |
+|---|---|---|
+| 2026-11-24 | Banner v2.1 (lema «she asks. he brings the facts.»), descripción nueva y 13 palabras clave | Cargado por Keter con el sí del dueño («Sí, cárgalos»); comprobado en la página pública |
+| 2026-11-21 | Foto de perfil y marca de agua | Sin cambio |
+
+El nombre público del canal sigue siendo «Tin y Tan» (identificador `@TinandTan`); el dueño no ha pedido cambiarlo.
