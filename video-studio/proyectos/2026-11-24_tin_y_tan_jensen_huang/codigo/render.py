@@ -479,11 +479,15 @@ def toma_10(t):
     # el nombre «Jobs 4,382» entra cuando el contador llega (no adelanta la cifra); la barra crece con el contador
     fila_barra(lz, 2, pop(t, tm.LLEGA), color=MARRON, largo=880 * tm.contador(t) / tm.VALOR_JOBS)
     # Asombro, sin festejo: Tan abre las manos con sorpresa; Tin levanta la mano vacía, también con sorpresa.
-    pose_tan = palitos.pose_entre("pregunta", ASOMBRO, muelle(tau, SLIDE)) if llego else "pregunta"
-    pj(lz, "tan", X_TAN, t, pose_tan, "sorpresa" if llego else "curiosidad",
+    # antes del contador el plano no se queda quieto: Tan pasa de `encoge` a `pregunta`, Tin baja la mano del lápiz y
+    # la cámara empuja despacio hasta que arranca el contador (revisar_fotogramas marcaba 19,1-20,8 s como congelado)
+    pose_tan = palitos.pose_entre("pregunta", ASOMBRO, muelle(tau, SLIDE)) if llego else \
+        palitos.pose_entre("encoge", "pregunta", muelle(tl - 0.5, SLIDE))
+    pj(lz, "tan", X_TAN, t, pose_tan, "sorpresa" if llego else "curiosidad", amp=0.022,
        viento=(0.9 * math.exp(-1.3 * tau) * math.cos(2 * math.pi * 1.5 * tau) if llego else 0.0) + vaiven(tl, 0.15))
-    pose_tin = palitos.pose_entre("explica", "saluda", muelle(tau, SLIDE)) if llego else "explica"
-    pj(lz, "tin", X_TIN, t, pose_tin, "sorpresa" if llego else "neutra", fase=0.5, objeto=False)
+    pose_tin = palitos.pose_entre("explica", "saluda", muelle(tau, SLIDE)) if llego else \
+        palitos.pose_entre("parado", "explica", muelle(tl - 0.15, SLIDE))
+    pj(lz, "tin", X_TIN, t, pose_tin, "sorpresa" if llego else "neutra", fase=0.5, objeto=False, amp=0.022)
     # Zoom de golpe de +10 % al llegar la cifra. Para que la barra de 880 px no salga de la zona segura, la cámara se
     # abre despacio un 9 % mientras el contador sube y el golpe la devuelve al encuadre de diseño (escala 1, nunca más).
     abierto = 1 / 1.10
@@ -491,7 +495,8 @@ def toma_10(t):
         zoom = min(1.0, abierto * fx.golpe_de_zoom(tau, 0.10))
     else:
         zoom = lerp(1.0, abierto, eio((t - tm.CONTADOR[0]) / (tm.LLEGA - tm.CONTADOR[0]))) if t > tm.CONTADOR[0] else 1.0
-    cam = camara(zoom=zoom, ancla=(BANDA_Y0 + BANDA_Y1) / 2)     # anclada en la banda: ni las barras ni las cabezas la pisan
+    antes = clamp(tl / (tm.CONTADOR[0] - C(10)))
+    cam = camara(zoom=zoom, avance=-40 * (1 - eio(antes)), ancla=(BANDA_Y0 + BANDA_Y1) / 2)     # anclada en la banda: ni las barras ni las cabezas la pisan
     cam.apertura = 0.0
     return componer(sombras(X_TAN, X_TIN) + [principal(lz)], cam)
 

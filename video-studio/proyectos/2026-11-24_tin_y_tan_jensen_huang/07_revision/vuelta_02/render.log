@@ -27,13 +27,13 @@ Audio: efectos, música y mezcla
   whoosh a los dos lados del empalme (dBFS, últimos y primeros 20 ms): [-34.0, -33.5]
   limitador en la mezcla final: True
   golpes: 38; fuera de su tiempo: 0
-  fotograma 0/930  (14 s)
-  fotograma 150/930  (35 s)
-  fotograma 300/930  (58 s)
-  fotograma 450/930  (80 s)
-  fotograma 600/930  (102 s)
-  fotograma 750/930  (123 s)
-  fotograma 900/930  (149 s)
+  fotograma 0/930  (15 s)
+  fotograma 150/930  (36 s)
+  fotograma 300/930  (60 s)
+  fotograma 450/930  (81 s)
+  fotograma 600/930  (103 s)
+  fotograma 750/930  (125 s)
+  fotograma 900/930  (150 s)
 Destellos: 0 cambios bruscos (fotogramas []), máximo 0 en 1 s, mayor salto de luminosidad 6.1 de 255: PASA
 Bucle: último fotograma frente al 0: diferencia media 0.271 de 255 (un paso del vuelo del lápiz)
-Video -> /home/user/Hojadevida/video-studio/proyectos/2026-11-24_tin_y_tan_jensen_huang/06_final/tin_y_tan_short03_v1.mp4  (157 s en total)
+Video -> /home/user/Hojadevida/video-studio/proyectos/2026-11-24_tin_y_tan_jensen_huang/06_final/tin_y_tan_short03_v1.mp4  (159 s en total)

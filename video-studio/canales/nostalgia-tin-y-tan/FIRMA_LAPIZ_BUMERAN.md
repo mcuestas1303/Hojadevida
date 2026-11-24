@@ -33,6 +33,34 @@
 9. **Variantes:** `atrapa="tin"` (si el dueño quiso decir otra cosa) y «sin retorno» (cierre con pregunta de suspenso).
 10. **No va** en infantil ni en videos cuya portada no deje pasillo libre.
 
+## 0b. Corrección de medidas tras el primer uso (short 3, vuelta 2, 2026-11-24)
+
+El supervisor de continuidad rechazó el primer render con la firma: con el brazo en `saluda` (100°, 155°) la mano queda a
+1,07 R del eje de Tan, pegada a la mejilla, y **el lápiz cruzaba su cara al soltarlo (c = −15 a −13) y pisaba la mejilla al
+atraparlo (f10)**. Lo que cambió en `herramientas/efectos.py` 1.1 (y manda sobre los valores de las secciones 2 a 4 y 9 de
+este archivo, que se dejan como historia del diseño):
+
+| Qué | Antes | Ahora |
+|---|---|---|
+| Brazo `bd` de Tan en el empalme, al soltar y al atrapar (`BD_FIRMA`) | `saluda` (100°, 155°) | **(95°, 108°)**: brazo abierto hacia delante, mano a la altura del hombro |
+| Mano | (x + 1,07 R; suelo − 3,67 R) | **(x + 1,46 R; suelo − 3,17 R)** |
+| Punto de mano H (centro del lápiz sujeto), plano de prueba | (358,0; 1306,1) = x + 1,12 R | **(392.1; 1349.8) = x + 1,51 R; suelo − 3,42 R** (el brazo mide 1,50 R: 1,6 R no se alcanza) |
+| Bézier de ida B1 (plano de prueba) | H, (372; 1240), (570; 1165), S | **H, H + (110; −10), (570; 1165), S = (585; 1235)**: el lápiz sale hacia delante, lejos de la cara, y luego sube |
+| Bézier de vuelta B2 | S, (597; 1290), (420; 1372), H | **S, (597; 1290), H + (95; 40), H** |
+| `_despejes` | no medía los fotogramas junto a la mano («junto a la mano no se mide») y medía contra cajas | **mide TODOS los fotogramas (c = −30 a 30, en la mano y en vuelo) contra las cabezas como círculos** (`cabezas_firma`: centro con la inclinación de la cabeza, radio 1,04 R, más la visera de Tin) |
+| Criterio de `geometria_firma` y `comprobar_firma` | «no toca las caras» | **8 px o más a cualquier cabeza en cualquier fotograma**; 30 px al texto y al objeto |
+| Obturador | 1 a 6 subpasos (`1 + v/10`) | **1 a 16 subpasos (`1 + v/4`)**: con 6 se veía un abanico de copias en f4–f7 |
+| Cara de la anticipación | `concentrado` | **la de la portada** (el prompt del short 3 no admite `concentrado`: se lee como enojo); lo decide cada render |
+
+**Medido en el short 3 (render 2), con `comprobar_firma` sobre los 61 fotogramas de la firma:** distancia mínima del lápiz a la
+cabeza de Tan **28,8 px** (en c = −14), a la de Tin (con visera) **46,2 px** (en c = 0), al objeto 61 px, al texto 461 px;
+velocidad en el empalme 5,2 y 4,7 px/f; giro 4,4 y 4,0 °/f; máximos 58 px/f y 24,9 °/f; giro total 330°. Visto fotograma a
+fotograma (f0–f14 y f900–f929): el lápiz no toca ninguna cabeza. El render del short 3 aplica además el desplazamiento del
+cuerpo a la mitad (`dx_cuerpo = 0,5`: −4/+5 px) para que los pies no patinen, y baja el lazo 10 px (`subir = −10`).
+La dirección en el empalme se mide por la tangente de las curvas (77,9° y 77,7°); por cuerdas de un fotograma la tuerce la curvatura.
+Funciones programadas: `geometria_firma`, `lapiz_bumeran`, `pintar_lapiz_volador`, `golpes_firma`, `comprobar_firma`, `cabezas_firma`
+(`efectos.py` 1.1) y `pose_entre`, `mano_de` y pose como dict (`palitos.py` 1.4). **Sin programar:** la variante «sin retorno» (§4.2) y `atrapa="tin"` (§4.3).
+
 ## 1. Idea y significado
 
 ### 1.1 Qué dice la frase del dueño y qué lecturas caben

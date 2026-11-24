@@ -1,0 +1,20 @@
+== pantalla (en)
+Control de texto · 42 textos · idioma en
+
+PASA: 0 errores.
+== tarjetas (es)
+Control de texto · 12 textos · idioma es
+
+PASA: 0 errores.
+== srt en
+Control de texto · 11 textos · idioma en
+
+PASA: 0 errores.
+== srt es
+Control de texto · 11 textos · idioma es
+
+PASA: 0 errores.
+== ficha.json
+Control de texto · 26 textos · idioma en
+
+PASA: 0 errores.

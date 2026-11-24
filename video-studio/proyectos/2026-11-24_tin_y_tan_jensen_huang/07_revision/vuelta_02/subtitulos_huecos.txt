@@ -5,9 +5,9 @@ tarjeta  4 (64 fotogramas): hueco mínimo con las cabezas 25 px; con los gráfic
 tarjeta  5 (53 fotogramas): hueco mínimo con las cabezas 26 px; con los gráficos de arriba 198 px; píxeles dibujados bajo el panel 0: pasa
 tarjeta  6 (44 fotogramas): hueco mínimo con las cabezas 27 px; con los gráficos de arriba 79 px; píxeles dibujados bajo el panel 0: pasa
 tarjeta  7 (75 fotogramas): hueco mínimo con las cabezas 27 px; con los gráficos de arriba 141 px; píxeles dibujados bajo el panel 0: pasa
-tarjeta  8 (104 fotogramas): hueco mínimo con las cabezas 15 px; con los gráficos de arriba 17 px; píxeles dibujados bajo el panel 0: pasa
+tarjeta  8 (104 fotogramas): hueco mínimo con las cabezas 12 px; con los gráficos de arriba 17 px; píxeles dibujados bajo el panel 0: pasa
 tarjeta  9 (53 fotogramas): hueco mínimo con las cabezas 61 px; con los gráficos de arriba 32 px; píxeles dibujados bajo el panel 0: pasa
 tarjeta 10 (61 fotogramas): hueco mínimo con las cabezas 25 px; con los gráficos de arriba 28 px; píxeles dibujados bajo el panel 0: pasa
 tarjeta 11 (36 fotogramas): hueco mínimo con las cabezas 62 px; con los gráficos de arriba 999 px; píxeles dibujados bajo el panel 0: pasa
 tarjeta 12 (50 fotogramas): hueco mínimo con las cabezas 25 px; con los gráficos de arriba 999 px; píxeles dibujados bajo el panel 0: pasa
-mínimo general con las cabezas: 15 px; con los gráficos: 16 px (criterio: 12 px o más y nada bajo el panel): PASA
+mínimo general con las cabezas: 12 px; con los gráficos: 16 px (criterio: 12 px o más y nada bajo el panel): PASA

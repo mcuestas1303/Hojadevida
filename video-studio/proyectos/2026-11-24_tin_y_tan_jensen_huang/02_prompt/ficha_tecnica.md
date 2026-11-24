@@ -1,6 +1,6 @@
 # Ficha técnica — Jensen Huang Is Back as Nvidia CEO After 11 Days
 
-Resumen de una página del video. El detalle de cada bloque está en el archivo que se cita. Escrita el 2026-11-24 con el prompt versión 2: **actualizada el 2026-11-24 con la voz real y el render (vuelta 1): los tiempos de las secciones 2, 5 y 6 son los reales; el resto del contenido no cambió.** La apertura y el cierre siguen la firma del canal (`canales/nostalgia-tin-y-tan/FIRMA_LAPIZ_BUMERAN.md`): Tan lanza el lápiz al final y lo atrapa al principio; la voz entra en el fotograma 14. Sustituye a la ficha de la tarjeta de 1999 (descartada).
+Resumen de una página del video. El detalle de cada bloque está en el archivo que se cita. Escrita el 2026-11-24 con el prompt versión 2: **actualizada el 2026-11-24 con la voz real y el render 2 (vuelta 2): los tiempos de las secciones 2, 5 y 6 son los reales; el resto del contenido no cambió.** La apertura y el cierre siguen la firma del canal (`canales/nostalgia-tin-y-tan/FIRMA_LAPIZ_BUMERAN.md`): Tan lanza el lápiz al final y lo atrapa al principio; la voz entra en el fotograma 14. Sustituye a la ficha de la tarjeta de 1999 (descartada).
 
 ## 1. Identificación
 
@@ -31,7 +31,7 @@ Resumen de una página del video. El detalle de cada bloque está en el archivo 
 | Se quedó a mirar frente a deslizó (cuatro de cada cinco deslizaron en el short 1) | Visto frente a deslizado, retención por segundo | Superar el 20,7 % del short 1 |
 | **Suscriptores nuevos:** una pregunta nueva («¿quién más volvió?») y una sola invitación de Tan | Suscriptores ganados desde este video, por cada mil vistas | Línea base (el short 1 dio 0; comparar con un video de cierre sin pregunta) |
 | Compartidos (la comparación con Jobs y Altman) | Compartidos por cada mil vistas | Línea base (el short 1 dio 0) |
-| Aprender qué efectos y qué cierre retienen | Retención por tramo con efecto (tabla B de la sección 11 del prompt) | Un pico visible en 23,05 s |
+| Aprender qué efectos y qué cierre retienen | Retención por tramo con efecto (tabla B de la sección 11 del prompt) | Un pico visible en 22,07 s |
 
 ## 2. Formato
 
@@ -39,7 +39,7 @@ Resumen de una página del video. El detalle de cada bloque está en el archivo 
 |---|---|
 | Aspecto y tamaño | 9:16, 1080×1920 |
 | Duración | 31,0 s reales (930 fotogramas a 30 por segundo), en bucle (el vuelo del lápiz); pico en 22,07 s (71,2 %) |
-| Cómo se hizo | Dibujado por código (`palitos.py` 1.3, `efectos.py` y gráficos propios); sin generador de imagen ni de video. Render estimado: 5 a 6 minutos |
+| Cómo se hizo | Dibujado por código (`palitos.py` 1.4, `efectos.py` 1.1 y gráficos propios); sin generador de imagen ni de video. Render real: ≈ 160 s |
 | Archivo | `06_final/tin_y_tan_short03_v1.mp4` (por renderizar) |
 | Portada | El fotograma 0: `06_final/portada_short03.png` (por guardar con `miniatura.py`) |
 | Subtítulos | `02_prompt/subtitulos.srt` (inglés, 11 líneas) y `02_prompt/subtitulos_es.srt` (español, 11 líneas); además, 12 tarjetas en español quemadas en el video (banda de y 905 a 1085) |
@@ -49,7 +49,7 @@ Resumen de una página del video. El detalle de cada bloque está en el archivo 
 | Personaje | Papel | Voz | Objeto de mano |
 |---|---|---|---|
 | Tan | Abre con la pregunta, hace las preguntas del público, dice la pregunta final con la invitación y lanza el lápiz | Zelda, al 110 % | lápiz (tomas 13 y 14) |
-| Tin | Responde con datos; atrapa el lápiz en el fotograma 15 | Kevin, al 110 % | lápiz (tomas 1 a 9 y 12 a 13) |
+| Tin | Responde con datos; va sin lápiz en el plano de firma (lo lanza y lo atrapa Tan, en el fotograma 10) | Kevin, al 110 % | lápiz (tomas 1 a 9 y 12 a 13) |
 
 Jensen Huang, Sam Altman y Steve Jobs no aparecen dibujados ni imitados ni se les cita: solo se les nombra.
 
@@ -97,9 +97,9 @@ Pregunta de apertura: línea 1. Pregunta de cierre: línea 11. Respuesta a la de
 | 2 | 1,0–3,5 | Tan pregunta; la silla, lejos | 11 days? |
 | 3 | 3,5–6,5 | Los dos con el calendario de noviembre; círculo en el 12 | Nov 12 |
 | 4 | 6,5–9,0 | Mesa de junta (revelado) con la silla a la cabecera | Nov 17 |
-| 5 | 9,0–12,0 | Flecha del 17 al 23; círculo en el 23; 11 cruces | +6 days, Nov 23 |
-| 6 | 12,0–13,0 | Las 11 cruces; Tan asiente | 11 days |
-| 7 | 13,0–14,5 | Barra de 12.274 días con una marca de 11 | 12,274 days |
+| 5 | 9,0–11,5 | Flecha del 17 al 23; círculo en el 23; 11 cruces | +6 days, Nov 23 |
+| 6 | 11,5–12,5 | Las 11 cruces; Tan asiente | 11 days |
+| 7 | 12,5–14,5 | Barra de 12.274 días con una marca de 11 | 12,274 days |
 | 8 | 14,5–16,0 | Tan: «¿rápido comparado con quién?» | — |
 | 9 | 16,0–19,0 | Barras: Huang 11 y Altman 5 | 5 days |
 | 10 | 19,0–22,5 | Pico: barra de Jobs, contador hasta 4.382, tomate y zoom | 4,382 days |
@@ -115,9 +115,9 @@ Pregunta de apertura: línea 1. Pregunta de cierre: línea 11. Respuesta a la de
 | Papel (neutro) | `#F3E9D2` | Fondo | Calidez de papel impreso |
 | Tinta (neutro) | `#2B2420` | Líneas y texto | Lectura: contraste 12,6:1 |
 | Mostaza (acento) | `#E8B33B` | La palabra clave y un elemento por plano (lápiz, círculo, marca o barra) | Lleva el ojo al dato |
-| Tomate (excepción del pico) | `#C8553D` | Solo la cifra «4,382», de 23,05 a 24,5 s | Marca el pico |
+| Tomate (excepción del pico) | `#C8553D` | Solo la cifra «4,382», de 22,07 a 24,4 s | Marca el pico |
 
-Medido: pendiente. Con profundidad se espera ≈ 82 a 85 % dentro de la paleta. Ningún verde de Nvidia. Detalle: `prompt.md`, «Color con intención».
+Medido (render 2, `revisar_color.py`): ≈ 93 % dentro de la paleta en el video y en la portada, saturación ≈ 16 %, ±1 % entre segundos. Ningún verde de Nvidia. Detalle: `prompt.md`, «Color con intención».
 
 ## 8. Animación, luz y velocidad
 
@@ -134,7 +134,7 @@ Medido: pendiente. Con profundidad se espera ≈ 82 a 85 % dentro de la paleta. 
 |---|---|
 | Voces | Zelda (Tan) y Kevin (Tin), una generación cada una, **sin generar** (costo por cotizar; pide el sí del dueño) |
 | Música | Por código, mi menor a 120 BPM que pasa a mi mayor en el pico (distinta de la del short 2, en do mayor) |
-| Efectos | Por código: whoosh con vibrato y golpe del lápiz, raspado de garabatos, tictac, subida, silencio de 12 fotogramas y ding en 23,05 s |
+| Efectos | Por código: whoosh con vibrato y golpe del lápiz, raspado de garabatos, tictac, subida, silencio de 12 fotogramas y ding en 22,07 s |
 | Volumen | Por medir: objetivo −14,0 LUFS; golpes bajo la voz a unos −26 LUFS |
 | Guion contra lo que se oye | Por comprobar con `revisar_voz.py` sobre la mezcla |
 
@@ -145,8 +145,8 @@ Medido: pendiente. Con profundidad se espera ≈ 82 a 85 % dentro de la paleta. 
 | Gancho | 0 a 2,5 | Curiosidad y orientación |
 | Hechos | 2,5 a 13 | Tensión |
 | Cuenta y comparación | 13 a 23 | Anticipación y asombro |
-| Pico | 23,05 | Asombro |
-| Remate y cierre | 24,5 a 30,5 | Sorpresa cerrada, curiosidad nueva y gratitud |
+| Pico | 22,07 | Asombro |
+| Remate y cierre | 24,5 a 31,0 | Sorpresa cerrada, curiosidad nueva y gratitud |
 
 Elemento por elemento, con su fundamento, su métrica y su riesgo: `02_prompt/perfil_emocional.md` (17 filas, con «Cierre y bucle» y «Firma del canal»).
 
@@ -170,7 +170,7 @@ Elemento por elemento, con su fundamento, su métrica y su riesgo: `02_prompt/pe
 | Cifras | Recalculadas con Python; falta compararlas con voz, pantalla, `.srt` y descripción cuando exista el video | Por firmar |
 | Imagen | Por revisar: silla, calendario, mesa y barras genéricos, sin logotipo ni verde; los personajes contra su ficha | Por firmar |
 | Portada | Por medir en el fotograma 0 (texto y 492–682; silla y 754–1066; caras en la zona útil) | Por firmar |
-| Video y bucle | Por revisar: `comprobar_destellos` con margen, `revisar_fotogramas.py`, fotograma 915 igual al 0 | Por firmar |
+| Video y bucle | Render 2: `comprobar_destellos` con margen en 0 cambios, `revisar_fotogramas.py` sin marcas, fotograma 930 igual al 0 (`07_revision/vuelta_02/`) | Por firmar |
 | Subtítulos en español | Por medir: banda de y 905 a 1085 sin tocar gráficos ni cabezas; líneas de 856 px o menos | Por firmar |
 | Marca del canal | Por revisar (incluida la firma del lápiz, `FIRMA_LAPIZ_BUMERAN.md`) | Por firmar |
 | Color | Por medir (se espera aviso por el desenfoque) | Por firmar (director de fotografía y supervisor) |

@@ -1,2 +1,29 @@
-formato: h264 1080x1920 yuv420p 30/1 fps, 930 fotogramas; audio aac 48000 Hz; duración 31.000 s; 7.80 MB
+formato: h264 1080x1920 yuv420p 30/1 fps, 930 fotogramas; audio aac 48000 Hz; duración 31.000 s; 7.97 MB
 formato pedido (1080x1920, 30 fps, H.264, yuv420p, AAC, 930 fotogramas): sí
+fotogramas leídos: 930
+cortes (cambio medio 0-255 en el fotograma del corte; mediana de sus vecinos):
+    1.0 s  fotograma  30  cambio  15.17  vecinos  0.98  corte
+    3.5 s  fotograma 105  cambio  16.06  vecinos  0.50  corte
+    6.5 s  fotograma 195  cambio  17.86  vecinos  0.85  corte
+    9.0 s  fotograma 270  cambio  15.03  vecinos  0.61  corte
+   11.5 s  fotograma 345  cambio  10.27  vecinos  0.93  corte
+   12.5 s  fotograma 375  cambio   9.97  vecinos  0.47  corte
+   14.5 s  fotograma 435  cambio   6.98  vecinos  0.47  corte
+   16.0 s  fotograma 480  cambio   3.43  vecinos  0.07  corte
+   19.0 s  fotograma 570  cambio  10.90  vecinos  0.50  corte
+   22.5 s  fotograma 675  cambio  16.27  vecinos  0.45  corte
+   24.5 s  fotograma 735  cambio  10.30  vecinos  1.01  corte
+   27.0 s  fotograma 810  cambio   6.97  vecinos  1.35  corte
+   30.0 s  fotograma 900  cambio  17.11  vecinos  1.59  corte
+cambios grandes fuera de la rejilla (movimiento dentro de la toma, no cortes; fotogramas): [534, 644, 645, 646, 648, 662, 663, 664, 665, 666, 667]
+tramos de 0,5 s o más sin ningún cambio: ninguno
+cambio mínimo por fotograma en todo el video: 0.0040
+bucle: diferencia media entre el último fotograma (929) y el 0: 0.549 (0-255); cambio medio entre fotogramas vecinos del plano de cierre: 0.679
+fotogramas vacíos (imagen plana): ninguno
+mitad de abajo del cuadro (desviación de gris; < 3 = vacía): T1 46, T2 40, T3 50, T4 48, T5 50, T6 31, T7 39, T8 38, T9 38, T10 48, T11 36, T12 51, T13 52, T14 46
+fotogramas con tinta por encima de y = 250: ninguno
+fotogramas con tinta fuera de x 100-980 en la mitad de arriba (texto y gráficos): ninguno
+fotogramas casi blancos a pantalla completa (media > 250): ninguno (máxima media: 229)
+audio del archivo (AAC): -14.0 LUFS integrados, pico real -1.7 dBTP (dentro de -14 ±1 LUFS y -1 dBTP)
+silencios totales de 0,3 s o más (a -50 dB): ['silence_start: 20.2375']
+pico (llegada de 4,382): 22.07 s = 71.2 % de 31.0 s; la voz entra en 0.467 s y termina en 30.05 s (0.95 s sin voz hasta el empalme)

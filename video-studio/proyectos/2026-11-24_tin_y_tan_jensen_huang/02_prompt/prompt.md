@@ -2,7 +2,7 @@
 
 > **ESTADO (2026-11-24, versión 2):** sustituye por completo al prompt de la tarjeta de 1999 (descartado: el dueño eliminó la nostalgia como criterio del canal, `canales/nostalgia-tin-y-tan/PARAMETROS.md`). Este video trata de **la noticia**: Jensen Huang volvió como director ejecutivo de Nvidia a los 11 días. **La voz no está generada, los tiempos son estimados** (ritmo medido en el short 2: Tin ≈ 4,6 sílabas por segundo, Tan ≈ 5,2) y el video no está renderizado. El dueño ordenó que el equipo decida todo con su investigación; no quedan preguntas para él, solo su sí para gastar créditos de voz y para publicar.
 
-> **TIEMPOS REALES (2026-11-24, vuelta 1):** voz generada y video renderizado. Duración real **31,0 s** (930 fotogramas). Cortes reales: 1,0, 3,5, 6,5, 9,0, 12,0, 13,0, 14,5, 16,0, 19,0, 22,5, 24,5, 27,0, 30,0 y bucle en 31,0. La voz entra en el fotograma 14 (0,47 s) y termina en 30,05 s. Pico (llegada de «4,382») en **22,07 s = 71,2 %**. Están actualizados con los tiempos reales: la ficha (sección 1), la línea «Duración» de cada toma (sección 6), el guion (sección 7) y las dos tablas de texto (sección 12). **Los segundos que aparecen dentro de las especificaciones de dibujo, del mapa de ritmo y de la tabla de sonido siguen siendo los estimados de la versión 2**: los reales salen de `codigo/tiempos.py` y están en `05_audio/linea_de_tiempo_voz.md` y en `07_revision/vuelta_01/notas.md`. **La apertura y el cierre siguen `canales/nostalgia-tin-y-tan/FIRMA_LAPIZ_BUMERAN.md`, que manda sobre este prompt:** Tan lanza y Tan atrapa (f 10), Tin va sin lápiz en el plano de firma, la toma 14 dura 30 fotogramas y la silla de la portada está quieta. El guion y el contenido no cambiaron.
+> **TIEMPOS REALES (2026-11-24, render 2 / vuelta 2):** voz generada y video renderizado. Duración real **31,0 s** (930 fotogramas). Cortes reales: 1,0, 3,5, 6,5, 9,0, 11,5, 12,5, 14,5, 16,0, 19,0, 22,5, 24,5, 27,0, 30,0 y bucle en 31,0. La voz entra en el fotograma 14 (0,47 s) y termina en 30,05 s. Pico (llegada de «4,382») en **22,07 s = 71,2 %**. Están actualizados con los tiempos reales: la ficha (sección 1), la línea «Duración» de cada toma (sección 6), el guion (sección 7) y las dos tablas de texto (sección 12). **Los segundos que aparecen dentro de las especificaciones de dibujo, del mapa de ritmo y de la tabla de sonido siguen siendo los estimados de la versión 2**: los reales salen de `codigo/tiempos.py` y están en `05_audio/linea_de_tiempo_voz.md` y en `07_revision/vuelta_02/notas.md`. **La apertura y el cierre siguen `canales/nostalgia-tin-y-tan/FIRMA_LAPIZ_BUMERAN.md`, que manda sobre este prompt:** Tan lanza y Tan atrapa (f 10), Tin va sin lápiz en el plano de firma, la toma 14 dura 30 fotogramas y la silla de la portada está quieta. **Correcciones de la vuelta 2 (rechazo del supervisor, decisiones del equipo):** cara de Tan en la portada `sorpresa`; nadie sonríe ni festeja sobre la renuncia ni la reposición (Tin con cara neutra, Tan con sorpresa y sin brazos arriba; la alegría solo en el remate y la invitación); las barras llevan nombre («Huang 11», «Altman 5», «Jobs 4,382»); la barra de 12.274 días va sin la marca mostaza; el calendario lleva círculo en el 17, flecha larga del 17 al 23 y el círculo del 12 en tinta en las tomas 5 y 6; la toma 6 va de 11,5 a 12,5 s; las tarjetas en español llevan la cifra y «días»; personajes a 505 px de alto (26,3 %). El guion de voz no cambió.
 
 <!--
 Pieza dibujada con código (sin generador de video). Todas las tomas son método «edición». En lugar de «Prompt de keyframe»
@@ -174,7 +174,7 @@ sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes
 
 ### Toma 5 — Seis días después, repuesto el 23
 
-- **Duración:** 3,0 s (de 9,0 a 12,0)
+- **Duración:** 2,5 s (de 9,0 a 11,5)
 - **Personajes:** @tan, @tin
 - **Método:** edición
 - **Escenario:** papel_crema
@@ -194,7 +194,7 @@ sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes
 
 ### Toma 6 — Once días
 
-- **Duración:** 1,0 s (de 12,0 a 13,0)
+- **Duración:** 1,0 s (de 11,5 a 12,5)
 - **Personajes:** @tan
 - **Método:** edición
 - **Escenario:** papel_crema
@@ -212,7 +212,7 @@ sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes
 
 ### Toma 7 — 12.274 días al mando
 
-- **Duración:** 1,5 s (de 13,0 a 14,5)
+- **Duración:** 2,0 s (de 12,5 a 14,5)
 - **Personajes:** @tin
 - **Método:** edición
 - **Escenario:** papel_crema
@@ -616,20 +616,23 @@ Cada efecto sale de `manual/14_efectos_y_emocion.md` (secciones 2, 3, 4, 4b y 6)
 
 | Texto | Entra (s) | Sale (s) | Posición (% del cuadro) | Tamaño (% del alto) |
 |---|---|---|---|---|
-| Back In / 11 Days? (clave: 11; entero en el fotograma 0, sin pop; es la portada) | 0,00 | 0,90 | 10, 26 | 12 |
+| Back In / 11 Days? (clave: 11; entero en el fotograma 0, sin pop; es la portada; dos renglones) | 0,00 | 0,90 | 10, 22 | 7 |
 | 11 days? (clave: 11) | 1,10 | 3,40 | 10, 14 | 7 |
 | Nov 12 (clave: 12) | 5,36 | 6,40 | 10, 14 | 7 |
 | Nov 17 (clave: 17) | 7,00 | 8,90 | 10, 14 | 7 |
-| +6 days (clave: 6) | 9,20 | 10,70 | 10, 14 | 7 |
-| Nov 23 (clave: 23) | 10,80 | 11,95 | 10, 14 | 7 |
-| 11 days (clave: 11) | 12,05 | 12,95 | 10, 14 | 7 |
-| 12,274 days (clave: el número) | 13,20 | 14,45 | 10, 14 | 7 |
+| +6 days (clave: 6) | 9,20 | 10,30 | 10, 14 | 7 |
+| Nov 23 (clave: 23) | 10,40 | 11,45 | 10, 14 | 7 |
+| 11 days (clave: 11) | 11,55 | 12,45 | 10, 14 | 7 |
+| 12,274 days (clave: el número) | 12,80 | 14,45 | 10, 14 | 7 |
 | 5 days (clave: 5) | 17,80 | 18,90 | 10, 14 | 7 |
-| 4,382 days (contador de 0 a 4,382; en tinta mientras sube y en tomate al llegar; sigue en la toma 11) | 20,88 | 24,40 | 10, 15 | 7 |
+| 4,382 days (contador de 0 a 4,382; en tinta mientras sube y en tomate al llegar; sigue en la toma 11) | 20,88 | 24,40 | 10, 14 | 7 |
 | 11 days (clave: 11) | 24,60 | 26,90 | 10, 14 | 7 |
 | Who else? (clave: else) | 27,05 | 28,19 | 10, 14 | 7 |
 | Subscribe (clave) | 28,34 | 29,90 | 10, 14 | 7 |
-| Back In / 11 Days? (entra con pop; sigue sin corte en la toma 1) | 30,00 | 31,00 | 10, 26 | 12 |
+| Back In / 11 Days? (entra con pop; sigue sin corte en la toma 1) | 30,00 | 31,00 | 10, 22 | 7 |
+| Huang 11 (nombre de la barra de 11 días; en tinta, sobre su marca) | 16,30 | 27,00 | 9, 27 | 2,9 |
+| Altman 5 (nombre de la barra de 5 días; en tinta, sobre su marca) | 17,80 | 27,00 | 9, 34 | 2,9 |
+| Jobs 4,382 (nombre de la barra de 4.382 días; en tinta, sobre su barra; entra cuando el contador llega) | 22,07 | 27,00 | 9, 40 | 2,9 |
 
 **Subtítulos en español (quemados en el video; encargo del dueño, 2026-11-24).** La voz sigue en inglés; en pantalla va la traducción al español de cada línea, sincronizada con ella.
 
@@ -640,18 +643,20 @@ Cada efecto sale de `manual/14_efectos_y_emocion.md` (secciones 2, 3, 4, 4b y 6)
 
 | Tarjeta | Empieza (s) | Termina (s) | Línea de voz | Texto en español (una línea por renglón) |
 |---|---|---|---|---|
-| 1 | 1,00 | 3,47 | 1 | ¿Fue rápido el regreso / de Jensen Huang? |
+| 1 | 1,00 | 3,47 | 1 | ¿Jensen Huang volvió / rápido en 11 días? |
 | 2 | 3,69 | 6,47 | 2 | Renunció a Nvidia / tras un escándalo. |
-| 3 | 6,78 | 8,97 | 3 | La junta dijo que no / lo repondría. |
-| 4 | 9,33 | 11,79 | 4 | Lo repuso como CEO. |
-| 5 | 12,00 | 14,28 | 5 | Antes: más de 33 / años al mando. |
+| 3 | 6,78 | 8,97 | 3 | El 17, la junta dijo / que no lo repondría. |
+| 4 | 9,33 | 11,47 | 4 | Seis días después, / lo repuso como CEO. |
+| 5 | 12,50 | 14,28 | 5 | Antes: más de 33 / años al mando. |
 | 6 | 14,50 | 15,97 | 6 | ¿Rápido comparado / con quién? |
-| 7 | 16,35 | 18,82 | 7 | Sam Altman, OpenAI: |
-| 8 | 19,00 | 20,48 | 8 | Steve Jobs, Apple: |
-| 9 | 22,71 | 24,47 | 9 | ¿Son 12 años? |
+| 7 | 16,35 | 18,82 | 7 | Sam Altman, OpenAI: / 5 días. (el segundo renglón entra en 17,80 s) |
+| 8 | 19,00 | 22,47 | 8 | Steve Jobs, Apple: / 4.382 días. (el segundo renglón entra en 22,07 s) |
+| 9 | 22,71 | 24,47 | 9 | ¿Casi 12 años? |
 | 10 | 24,72 | 26,78 | 10 | Más rápido que Jobs. / Más lento que Altman. |
 | 11 | 27,00 | 28,21 | 11 | ¿Quién más volvió? |
 | 12 | 28,29 | 29,97 | 11 | Suscríbete al próximo / conteo. |
+
+Textos de la vuelta 2 (correcciones del supervisor): la cifra y la palabra «días» van también en español («11 días» en la tarjeta 1, «5 días», «4.382 días» con punto de millares, «Seis días después», «El 17»); «¿Casi 12 años?» lleva la aproximación (4.382 días son 12 años menos un día). El segundo renglón de la tarjeta 8 entra cuando el contador llega, para no adelantar la cifra. Hueco medido entre el panel y las cabezas en todos los fotogramas: 12 px o más (`07_revision/vuelta_02/subtitulos_huecos.txt`).
 
 ### Color con intención
 
@@ -662,7 +667,7 @@ Propuesta del prompt (`manual/13_color_con_intencion.md`); la sección equivalen
 - **Por qué esta paleta:** la misma de los shorts 1 y 2, para que el canal se reconozca (R26 inv.); papel y tinta dan contraste alto y lectura fácil (R27 inv.); el acento único se recuerda (R33 inv.) y el cambio a tomate marca el golpe del dato. Para una noticia, la saturación baja evita sensación de alarma o de burla; el significado emocional del color es **hipótesis** (Elliot y Maier, 2014, manual 13).
 - **Cómo ayuda al objetivo:** Programa de socios → reconocimiento del canal y un pico visible en la cifra → retención de los segundos 1 a 3 y pico en 23,05 s; regreso de espectadores.
 - **Riesgos de lectura:** (1) mostaza sobre papel da 1,6:1: se lee por el contorno de tinta; (2) tinta sobre tomate 3,5:1: la cifra se lee por contorno y tamaño; (3) la bufanda mostaza de Tan es identidad y no debe leerse como segundo acento en las tomas 10 y 11; (4) rojo y verde azulado: la información no depende del tono; (5) el desenfoque y la niebla bajan el porcentaje en paleta (≈ 82–85 % esperado, la prueba midió 82 %): se mide también sobre un fotograma nítido (el 0).
-- **Medido (vuelta 1, 2026-11-24):** `revisar_color.py` sobre el video: ≈ 93 % en paleta, saturación ≈ 16 %, luminosidad ≈ 89 %, variación ±1 % entre segundos; fotograma 0: ≈ 93 %. Falta la firma del supervisor.
+- **Medido (render 2, 2026-11-24):** `revisar_color.py` sobre el video: ≈ 93 % en paleta, saturación ≈ 16 %, luminosidad ≈ 89 %, variación ±1 % entre segundos; fotograma 0: ≈ 93 %. Falta la firma del supervisor.
 
 Tabla de acento por plano:
 

@@ -1,0 +1,12 @@
+Color · portada_short03.png · 1 cuadro(s)
+Dominantes:
+  #F2E7D0   74.2 %
+  #E8DDC5   11.6 %
+  #53574C    5.5 %
+  #ABA290    3.6 %
+  #F8EED6    2.8 %
+  #9E622C    2.2 %
+Saturación media ≈ 17 % · luminosidad media ≈ 90 %
+Cálidos ≈ 17 % · fríos ≈ 1 % del cuadro
+Dentro de la paleta declarada (9 colores): ≈ 93 %
+Comparar con la sección «Color con intención» de la dirección: lo medido tiene que contar lo decidido.
