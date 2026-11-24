@@ -44,3 +44,14 @@ suscríbete
 # nombres de medios citados como fuente en la descripción del short 3 (CNBC, Al Jazeera)
 CNBC
 Jazeera
+# nombres propios del short 4 de Tin & Tan (2026-11-24): directores ejecutivos y empresas que se nombran con su grafía oficial solo por sus fechas públicas (Bob Iger, Disney, Michael Dell, Dell, Jack Dorsey, Twitter, Dick Costolo); sin logotipo, tipografía ni color de marca; descargo de no afiliación en la descripción
+iger
+disney
+dell
+dorsey
+twitter
+costolo
+# nombres de pila de los directores ejecutivos del short 4 (Bob Iger, Michael Dell, Jack Dorsey) que el diccionario en español no trae; se escriben como en su grafía oficial en inglés
+bob
+michael
+jack
