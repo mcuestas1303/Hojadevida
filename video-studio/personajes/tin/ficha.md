@@ -73,6 +73,9 @@ en un plano de los dos se dibujan con el mismo `alto`.
   `palitos.py` 1.3: `cabeza_giro` en `dibujar`). La cabeza gira como un bloque (cara, gorra y lentes) alrededor de la
   base del cuello; el cuerpo no. No cambia ningún rasgo; con 0 se dibuja igual que siempre. Primer uso: la portada
   del short 2 (los dos miran el mando, 25°).
+- **Firma del canal (añadido el 2026-11-24, borrador):** Tan puede lanzar el lápiz de Tin en la firma del canal
+  (lo lanza al final del video y lo atrapa al principio); en esos planos Tin va con `objeto=False`. Detalle en
+  `video-studio/canales/nostalgia-tin-y-tan/FIRMA_LAPIZ_BUMERAN.md`.
 - **Lo que no es variación:** el vestuario no cambia por la temática del video. Nada de disfraces de personajes de
   terceros ni ropa que imite la de un juego, película o marca.
 

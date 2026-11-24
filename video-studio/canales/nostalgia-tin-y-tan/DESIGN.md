@@ -127,6 +127,12 @@ Hasta la firma, un video con profundidad que dé menos de 85 % se entrega con la
 - En la marca del canal: la pregunta que se vuelve respuesta comprobada («?» → visto bueno). Ningún objeto de un
   tema concreto es símbolo del canal.
 
+## Firma del canal: el lápiz bumerán (borrador del 2026-11-24, pendiente de firmas y de prueba técnica)
+
+Pedido del dueño: en todos los videos, al final Tan lanza el lápiz y al principio vuelve a sus manos (bucle). Dura 34 f
+(1,13 s); el lápiz es identidad, no acento; cámara fija, sin destellos. Valores, fotogramas, sonido, seguridad y
+medición: `FIRMA_LAPIZ_BUMERAN.md`. Si algo de ese archivo contradice a este, manda ese para la firma.
+
 ## Composición 16:9
 
 - Zona de texto fija arriba a la izquierda; los personajes nunca debajo del texto (en la prueba hubo textos sobre
