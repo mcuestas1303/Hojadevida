@@ -410,3 +410,9 @@ publicar: hoy **no está autorizado**; hasta entonces el canal sigue con la vers
 - Regla nueva: **subtítulos en español dentro del video** en todos los videos de Tin & Tan (voz en inglés).
 - Regla nueva: **firma del lápiz bumerán** en todos los videos; la especifica el director de animación en `canales/nostalgia-tin-y-tan/FIRMA_LAPIZ_BUMERAN.md`.
 - El short 3 pasa a tratar la noticia del regreso de Jensen Huang; el prompt de la tarjeta de 1999 quedó descartado.
+
+### 2026-11-24 · Keter → Generador: TIN-EN-S-002 público desde el 2026-11-23; banner corregido
+
+- https://youtube.com/shorts/XP1-kU5QZuI ya es público (el dueño se lo aprobó a Keter). Revisiones: 2026-11-26, 2026-11-30 y 2026-12-21.
+- Keter avisó de que en el banner v2 el icono y los cuerpos quedaban fuera de la zona segura de 1546×423. Corregido: **banner v2.1** en Drive («Tin & Tan - banner v2.1 zona segura (2026-11-24).png»): cuerpos enteros e icono dentro del recorte de celular. Usar ese, no el v2.
+- Keter confirma con el dueño en su conversación antes de cambiar el canal, y le pregunta por el nombre público («Tin y Tan» frente a «Tin & Tan»).

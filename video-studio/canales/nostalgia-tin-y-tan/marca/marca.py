@@ -82,34 +82,34 @@ def perfil(ruta):
 
 def banner(ruta):
     W, H = 2560, 1440
-    suelo = 1040
+    suelo = 922                                                # v2.1: todo (cuerpos e icono) dentro de la zona segura y 508–931 (aviso de Keter)
     lz = Lienzo(W, H)
     d = lz.d
     # suelo liso (neutro: no es símbolo de ningún tema), fuera de la zona segura
     d.rectangle([0, suelo * SS, W * SS, (suelo + 64) * SS], fill=PALETA["papel_sombra"])
     d.line([(0, suelo * SS), (W * SS, suelo * SS)], fill=PALETA["tinta"], width=5 * SS)
     # la pregunta que se vuelve respuesta comprobada: «?» → «✓» (dos fichas apoyadas en el suelo; adorno)
-    lado = 96                                                   # tope en y 941: nada asoma en el recorte de 423
+    lado = 70                                                   # tope en y 941: nada asoma en el recorte de 423
     xq, xr = 1280 - 125, 1280 + 125
     for cx in (xq, xr):
         sombra(lz, cx, suelo + 4, lado * 1.25, 0.26)
-    sombra(lz, 720, suelo + 4, 250)
-    sombra(lz, 1840, suelo + 4, 250)
+    sombra(lz, 720, suelo + 4, 195)
+    sombra(lz, 1840, suelo + 4, 195)
     ficha(lz, xq, suelo - 3, lado, "mostaza")
     ficha(lz, xr, suelo - 3, lado, "blanco")
     flecha(lz, xq + lado / 2 + 26, xr - lado / 2 - 26, suelo - 3 - lado / 2)
     cy = suelo - 3 - lado / 2                                   # visto bueno, en tinta
-    palomita = [(xr - 26, cy + 2), (xr - 8, cy + 20), (xr + 28, cy - 22)]
-    d.line([(x * SS, y * SS) for x, y in palomita], fill=PALETA["tinta"], width=13 * SS, joint="curve")
+    palomita = [(xr - 19, cy + 2), (xr - 6, cy + 14), (xr + 20, cy - 16)]
+    d.line([(x * SS, y * SS) for x, y in palomita], fill=PALETA["tinta"], width=10 * SS, joint="curve")
     for x, y in palomita:
-        d.ellipse([(x - 6.5) * SS, (y - 6.5) * SS, (x + 6.5) * SS, (y + 6.5) * SS], fill=PALETA["tinta"])
+        d.ellipse([(x - 5) * SS, (y - 5) * SS, (x + 5) * SS, (y + 5) * SS], fill=PALETA["tinta"])
     # zona segura: 1546x423 centrada → x 507–2053, y 508–931
-    palitos.dibujar(lz, "tan", 720, suelo, 520, pose="pregunta", expresion="feliz", viento=0.4, espejo=True)
-    palitos.dibujar(lz, "tin", 1840, suelo, 520, pose="saluda", expresion="eureka")
+    palitos.dibujar(lz, "tan", 720, suelo, 384, pose="pregunta", expresion="feliz", viento=0.4, espejo=True)
+    palitos.dibujar(lz, "tin", 1840, suelo, 384, pose="saluda", expresion="eureka")
     img = lz.resultado()
-    texto(img, (E.T("?"),), 72, xq, suelo - 3 - lado + 6, centrado=True)
+    texto(img, (E.T("?"),), 52, xq, suelo - 3 - lado + 6, centrado=True)
     # nombre y lema dentro de la zona segura (y 508–931), centrados
-    cajas = [texto(img, NOMBRE, 170, 1280, 548, centrado=True), texto(img, LEMA, 60, 1280, 778, centrado=True)]
+    cajas = [texto(img, NOMBRE, 150, 1280, 528, centrado=True), texto(img, LEMA, 56, 1280, 728, centrado=True)]
     for c in cajas:
         assert SEGURA[0] <= c[0] and c[2] <= SEGURA[2] and SEGURA[1] <= c[1] and c[3] <= SEGURA[3], \
             f"texto fuera de la zona segura: {c}"
