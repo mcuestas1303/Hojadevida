@@ -1,24 +1,23 @@
-# Ficha técnica — Jensen Huang Is Back: GeForce 256 vs RTX 5090
+# Ficha técnica — Jensen Huang Is Back as Nvidia CEO After 11 Days
 
-Resumen de una página del video. El detalle de cada bloque está en el archivo que se cita. Escrita el 2026-11-24 con el prompt versión 1: **la voz no está generada, los tiempos son estimados y el video no está renderizado.**
+Resumen de una página del video. El detalle de cada bloque está en el archivo que se cita. Escrita el 2026-11-24 con el prompt versión 2: **la voz no está generada, los tiempos son estimados y el video no está renderizado.** Sustituye a la ficha de la tarjeta de 1999 (descartada).
 
 ## 1. Identificación
 
 | Campo | Valor |
 |---|---|
 | Código | `TIN-EN-S-003` |
-| Canal | Tin & Tan, inglés, EE. UU. |
-| Tipo | Short n.º 3 (el primero con profundidad y efectos) |
-| Título | Jensen Huang Is Back: GeForce 256 vs RTX 5090 (45 caracteres; filtro de títulos: pasa, 0 errores y 0 avisos) |
+| Canal | Tin & Tan, inglés, EE. UU. (con subtítulos en español quemados y pista `subtitulos_es.srt`) |
+| Tipo | Short n.º 3 (primero de actualidad; primero con profundidad, efectos, pregunta final y firma del lápiz bumerán) |
+| Título | Jensen Huang Is Back as Nvidia CEO After 11 Days (48 caracteres; filtro de títulos 1.1 flexible: pasa, 0 errores y 0 avisos) |
 | Objetivo comercial | Entrar al Programa de socios de YouTube lo antes posible (dueño, 2026-11-23; ver 1b) |
-| Público | EE. UU., adultos de 45 a 62 años que armaban o compraban una PC en 1999; secundario, de 30 a 45 que juegan hoy |
-| Qué queremos que haga | Verlo entero y mandárselo a quien armó una PC con él; después, suscribirse |
-| Estado | Prompt escrito y validado; falta el sí del dueño para la voz (≈ 3,3 créditos), el render y la escucha. Fecha límite para publicar: 2026-12-01 (estimación del comercial) |
+| Público | Quien sigue la noticia en EE. UU., sin edad fija (manda el dato de Studio); hispanohablantes con los subtítulos |
+| Qué queremos que haga | Verlo entero, mandarlo y suscribirse para ver el siguiente conteo |
+| Estado | Prompt escrito y validado; falta el sí del dueño para la voz (por cotizar), el render y la escucha. Fecha límite para publicar: lo antes posible (la noticia es del 23 de noviembre y cada día pierde demanda) |
 
 ## 1b. Objetivos comerciales
 
-**Fijado por el dueño el 2026-11-23:** entrar al Programa de socios de YouTube a la mayor brevedad posible. Textual:
-«Entonces el objetivo inicial es entrar al programa de socios; todo debe girar en torno a lograr el objetivo a la mayor brevedad posible».
+**Fijado por el dueño el 2026-11-23:** entrar al Programa de socios de YouTube a la mayor brevedad posible. Textual: «Entonces el objetivo inicial es entrar al programa de socios; todo debe girar en torno a lograr el objetivo a la mayor brevedad posible».
 
 | Umbral del Programa (fuente oficial, leída el 2026-11-20) | Antes del 1-feb-2027 | Desde el 1-feb-2027 |
 |---|---|---|
@@ -28,84 +27,86 @@ Resumen de una página del video. El detalle de cada bloque está en el archivo 
 
 | Qué aporta este video al objetivo | Cómo se mide | Meta |
 |---|---|---|
-| Vistas de Shorts que cuentan para el umbral (públicas y en el feed de Shorts); el tema (un objeto de 1999 y una cuenta) sigue valiendo cuando la noticia se enfríe | Vistas desde el feed de Shorts, a 7 y 28 días; «engaged views» entre vistas totales | Línea base (3.er video) |
-| Se quedó a mirar frente a deslizó, que el short 1 midió en 20,7 % (cuatro de cada cinco deslizaron) | Visto frente a deslizado, retención por segundo | Superar el 20,7 % del short 1 |
-| **Suscriptores nuevos: este es el primer video que los pide** (una sola frase de Tan, 27,5–28,8 s) | Suscriptores ganados desde este video, por cada mil vistas | Línea base (el short 1 dio 0; el short 2 no los pedía) |
-| Compartidos (que el que lo vivió se lo mande a otro) | Compartidos por cada mil vistas; comentarios «yo también» | Línea base (el short 1 dio 0) |
-| Aprender qué efectos retienen, para repetirlos | Retención de cada tramo con efecto (tabla B de la sección 11 del prompt) | Un pico visible en 22,2 s |
-
-**Lo que este video hace nuevo por el objetivo:** pide la suscripción una sola vez (`plan_programa_de_socios.md`, P6c) y usa los efectos de `manual/14_efectos_y_emocion.md`, sección 7, contra los tres problemas medidos en el short 1.
+| Vistas calificadas de Shorts (el tema tiene demanda hoy; el bucle no suma) | «Engaged views» de Studio a 7 y 28 días, frente a vistas totales | Línea base (3.er video) |
+| Se quedó a mirar frente a deslizó (cuatro de cada cinco deslizaron en el short 1) | Visto frente a deslizado, retención por segundo | Superar el 20,7 % del short 1 |
+| **Suscriptores nuevos:** una pregunta nueva («¿quién más volvió?») y una sola invitación de Tan | Suscriptores ganados desde este video, por cada mil vistas | Línea base (el short 1 dio 0; comparar con un video de cierre sin pregunta) |
+| Compartidos (la comparación con Jobs y Altman) | Compartidos por cada mil vistas | Línea base (el short 1 dio 0) |
+| Aprender qué efectos y qué cierre retienen | Retención por tramo con efecto (tabla B de la sección 11 del prompt) | Un pico visible en 23,05 s |
 
 ## 2. Formato
 
 | Campo | Valor |
 |---|---|
 | Aspecto y tamaño | 9:16, 1080×1920 |
-| Duración | 30,5 s estimados (915 fotogramas a 30 por segundo), en bucle |
-| Cómo se hizo | Dibujado por código (`palitos.py` 1.3, `efectos.py` 1.0 y gráficos propios); sin generador de imagen ni de video. Render estimado: 5 a 6 minutos |
+| Duración | 30,5 s estimados (915 fotogramas a 30 por segundo), en bucle (el vuelo del lápiz) |
+| Cómo se hizo | Dibujado por código (`palitos.py` 1.3, `efectos.py` y gráficos propios); sin generador de imagen ni de video. Render estimado: 5 a 6 minutos |
 | Archivo | `06_final/tin_y_tan_short03_v1.mp4` (por renderizar) |
 | Portada | El fotograma 0: `06_final/portada_short03.png` (por guardar con `miniatura.py`) |
-| Subtítulos | `02_prompt/subtitulos.srt`, 12 líneas con tiempos estimados |
+| Subtítulos | `02_prompt/subtitulos.srt` (inglés, 11 líneas) y `02_prompt/subtitulos_es.srt` (español, 11 líneas); además, 12 tarjetas en español quemadas en el video (banda de y 905 a 1085) |
 
 ## 3. Elenco
 
 | Personaje | Papel | Voz | Objeto de mano |
 |---|---|---|---|
-| Tan | Abre con el recuerdo, hace las dos preguntas y dice la invitación a suscribirse | Zelda, al 110 % | ninguno |
-| Tin | Da la noticia del regreso, aclara «transistores, no velocidad» y hace la división | Kevin, al 110 % | Lápiz (tomas 3, 4 y 5) |
+| Tan | Abre con la pregunta, hace las preguntas del público, dice la pregunta final con la invitación y lanza el lápiz | Zelda, al 110 % | lápiz (tomas 13 y 14) |
+| Tin | Responde con datos; atrapa el lápiz en el fotograma 15 | Kevin, al 110 % | lápiz (tomas 1 a 9 y 12 a 13) |
 
-Jensen Huang no aparece dibujado ni imitado: solo se le nombra.
+Jensen Huang, Sam Altman y Steve Jobs no aparecen dibujados ni imitados ni se les cita: solo se les nombra.
 
-## 4. Contenido: la cuenta
+## 4. Contenido: los hechos y las cuentas
 
 | Dato | Valor | Fuente |
 |---|---|---|
-| Regreso | La junta de Nvidia repuso a Jensen Huang como presidente y director ejecutivo el 23 de noviembre de 2026 | Wikipedia en inglés, «Jensen Huang», y títulos de cadenas en YouTube, leídos el 2026-11-24; **el comunicado de Nvidia no se pudo abrir** |
-| GeForce 256 | Lanzada el 11 de octubre de 1999; 17 millones de transistores («Transistor count»); ≈ 23 millones según la prensa de 1999 (solo en un resumen de buscador) | Wikipedia en inglés, «GeForce 256» y «Transistor count», leídas el 2026-11-24 |
-| RTX 5090 (GB202) | 92.200 millones de transistores; a la venta desde el 30 de enero de 2025 | Wikipedia en inglés, «Transistor count» y «GeForce RTX 50 series», leídas el 2026-11-24 |
-| La cuenta | 92.200 millones ÷ 23 millones ≈ 4.009; ÷ 17 millones ≈ 5.424 | cálculo (Python, 2026-11-24) |
-| **Lo que se dice** | **«más de 4.000»**, cierto con las dos cifras; el video usa la de 23 millones (la cautelosa) | cálculo |
-| Aclaración | Se cuentan transistores, no velocidad: en voz (línea 5) y en pantalla (11,6–13,4 s y 21,4–27,4 s) | — |
+| Renuncia | 12 de noviembre de 2026 | Wikipedia en inglés, «Jensen Huang», leída el 2026-11-24; títulos de cadenas en YouTube |
+| «No lo repondremos» | 17 de noviembre de 2026 (la junta) | Wikipedia, leída el 2026-11-24 |
+| Reposición | 23 de noviembre de 2026, presidente y director ejecutivo, con efecto inmediato | Wikipedia y títulos de CNN, BBC, NBC, CBS, ABC y Fox News; **el comunicado de Nvidia no se pudo abrir** |
+| Días fuera | 12 → 23 de noviembre = **11** | cálculo con `datetime` (2026-11-24) |
+| Del «no» a la reposición | 17 → 23 = **6** | cálculo |
+| Al mando antes | 5 abril 1993 → 12 nov 2026 = **12.274 días** (33,6 años) | Wikipedia, «Nvidia» (constitución); cálculo |
+| Sam Altman, OpenAI | destituido 17 nov 2023, repuesto 22 nov 2023 = **5 días** | Wikipedia, «Removal of Sam Altman from OpenAI», leída el 2026-11-24 |
+| Steve Jobs, Apple | carta de renuncia 17 sep 1985, nombrado director ejecutivo interino 16 sep 1997 = **4.382 días** (≈ 12 años; ≈ 398 veces los 11 días) | Wikipedia, «Steve Jobs», leída el 2026-11-24; cálculo. Volvió antes a Apple (febrero de 1997, compra de NeXT); un título del NYT es del 17 de sep de 1997 (un día de diferencia) |
+| **Lo que se dice** | Más rápido que Jobs; más lento que Altman | cálculo |
 
-No se dice: rendimiento, precio, bolsa, fortuna, motivo de la salida o del regreso, vida privada, los «11 días», que Jensen Huang diseñó la tarjeta o dirigía la empresa en 1999, ni que la RTX 5090 sea la más grande. Del fabricante solo se dice el nombre: no hay logotipo, letra de marca ni su verde.
+**Por qué el pico es Jobs y no la proporción «1 día fuera por cada ≈ 1.116 al mando»:** el asombro es magnitud comparada con algo conocido, y Jobs es la referencia que el público ya usa para esta noticia; la proporción es abstracta. La proporción queda en reserva.
+
+No se dice: el motivo de la renuncia más allá de «after a scandal» (una sola vez), detalles de la vida privada, terceros, investigaciones o comparecencias, el papel del gobierno, el motivo de la junta, cifras de bolsa o fortuna, citas, que «fue despedido», que sea «el regreso más corto», superlativos ni predicciones. Del fabricante solo se dice el nombre: sin logotipo, letra de marca ni su verde.
 
 ## 5. Guion de voz (tiempos estimados)
 
 | N.º | Quién | De–a (s) | Texto |
 |---|---|---|---|
-| 1 | Tan | 0,00–2,30 | Remember putting one of these in your PC? |
-| 2 | Tin | 2,55–5,68 | That's the GeForce 256, from 1999. |
-| 3 | Tin | 6,08–9,06 | Nvidia's board brought Jensen Huang back as CEO. |
-| 4 | Tan | 9,31–11,26 | How many of those are in a new one? |
-| 5 | Tin | 11,51–13,36 | We're counting transistors, not speed. |
-| 6 | Tin | 13,61–16,38 | That card had up to 23 million transistors. |
-| 7 | Tin | 16,63–20,03 | The RTX 5090 has about 92 billion. |
-| 8 | Tin | 20,28–20,98 | Divide them. |
-| 9 | Tin | 21,38–22,48 | More than 4,000. |
-| 10 | Tan | 22,73–24,48 | Four thousand of these in one of those? |
-| 11 | Tin | 24,73–27,16 | That whole wall, in transistors, is one chip. |
-| 12 | Tan | 27,50–28,80 | Subscribe and count with us. |
+| 1 | Tan | 0,00–2,31 | Was Jensen Huang's comeback in eleven days fast? |
+| 2 | Tin | 2,54–6,45 | He resigned from Nvidia on November twelfth after a scandal. |
+| 3 | Tin | 6,68–9,72 | On the seventeenth the board said it would not bring him back. |
+| 4 | Tin | 9,95–13,00 | Six days later it reinstated him as C E O. |
+| 5 | Tin | 13,23–15,77 | Before that: more than thirty-three years in charge. |
+| 6 | Tan | 16,00–16,96 | Fast compared to who? |
+| 7 | Tin | 17,19–19,30 | Sam Altman at OpenAI: five days. |
+| 8 | Tin | 19,53–23,24 | Steve Jobs at Apple: four thousand, three hundred eighty-two days. |
+| 9 | Tan | 23,47–24,43 | That is twelve years? |
+| 10 | Tin | 24,66–26,55 | Faster than Jobs. Slower than Altman. |
+| 11 | Tan | 26,78–29,09 | Who else came back? Subscribe for the next count. |
 
-La grafía para el generador (letras separadas, «G Force two fifty-six», «R T X fifty-ninety») está en la sección 7 del prompt. Los tiempos se reajustan con la voz real.
+Pregunta de apertura: línea 1. Pregunta de cierre: línea 11. Respuesta a la de apertura: línea 10.
 
 ## 6. Tomas
 
-| Toma | De–a (s) | Qué se ve | Texto en pantalla |
+| N.º | Segundos | Qué se ve | Rótulo en inglés |
 |---|---|---|---|
-| 1 | 0,0–1,0 | Portada: la tarjeta de 1999 viene hacia la cámara; Tan y Tin debajo, de perfil, mirándola | Jensen Huang / Is Back |
-| 2 | 1,0–2,5 | Subjetivo: dos manos meten la tarjeta en la ranura de una PC | — |
-| 3 | 2,5–6,0 | La tarjeta en su pedestal, Tin y Tan a los lados, PC de 1999 al fondo; el foco pasa a Tin | GeForce 256, luego 1999 |
-| 4 | 6,0–9,0 | El mismo plano: Tin da la noticia del regreso | Nov 23, luego Back as CEO |
-| 5 | 9,0–11,5 | Aparece la tarjeta nueva desde el desenfoque; Tan pregunta | RTX 5090 |
-| 6 | 11,5–13,5 | El chip con un círculo de tinta; «transistores, no velocidad» | transistors, not speed |
-| 7 | 13,5–16,5 | La tarjeta de 1999 grande | up to 23 million |
-| 8 | 16,5–20,0 | La RTX 5090 grande (barrido) | RTX 5090, ≈ 92 billion |
-| 9 | 20,0–21,0 | La ecuación: una tarjeta entre la otra; subida de sonido y silencio | ≈ 92 billion, ÷ 23 million |
-| 10 | 21,0–24,0 | El contador sube hasta la cifra; Tan y Tin celebran | 4,000+ |
-| 11 | 24,0–25,5 | Un muro de 4.000 tarjetitas crece | 4,000+ y transistors, not speed |
-| 12 | 25,5–27,5 | El muro se pliega y queda igual a una sola tarjeta nueva | = |
-| 13 | 27,5–29,5 | Tin y Tan saludan; Tan pide la suscripción | Subscribe, Tin & Tan |
-| 14 | 29,5–30,5 | El cierre se congela como foto y cae; vuelve la portada | Jensen Huang / Is Back |
+| 1 | 0,0–1,0 | Portada: silla de director vacía; el lápiz vuelve girando y Tin lo atrapa (f 15) | Back In / 11 Days? |
+| 2 | 1,0–2,5 | Tan pregunta; la silla, lejos | 11 days? |
+| 3 | 2,5–6,5 | Los dos con el calendario de noviembre; círculo en el 12 | Nov 12 |
+| 4 | 6,5–10,0 | Mesa de junta (revelado) con la silla a la cabecera | Nov 17 |
+| 5 | 10,0–13,0 | Flecha del 17 al 23; círculo en el 23; 11 cruces | +6 days, Nov 23 |
+| 6 | 13,0–14,0 | Las 11 cruces; Tan asiente | 11 days |
+| 7 | 14,0–16,0 | Barra de 12.274 días con una marca de 11 | 12,274 days |
+| 8 | 16,0–17,0 | Tan: «¿rápido comparado con quién?» | — |
+| 9 | 17,0–19,5 | Barras: Huang 11 y Altman 5 | 5 days |
+| 10 | 19,5–23,5 | Pico: barra de Jobs, contador hasta 4.382, tomate y zoom | 4,382 days |
+| 11 | 23,5–24,5 | Tan se asombra; la cifra queda quieta | 4,382 days |
+| 12 | 24,5–26,5 | Remate: más rápido que Jobs, más lento que Altman | 11 days |
+| 13 | 26,5–29,0 | Pregunta final, invitación; el lápiz pasa a Tan | Who else? / Subscribe |
+| 14 | 29,0–30,5 | Tan lanza el lápiz; vuelve el fotograma 0 | Back In / 11 Days? |
 
 ## 7. Perfil de colores
 
@@ -113,27 +114,27 @@ La grafía para el generador (letras separadas, «G Force two fifty-six», «R T
 |---|---|---|---|
 | Papel (neutro) | `#F3E9D2` | Fondo | Calidez de papel impreso |
 | Tinta (neutro) | `#2B2420` | Líneas y texto | Lectura: contraste 12,6:1 |
-| Mostaza (acento) | `#E8B33B` | La palabra clave y un elemento por plano (dedos de la tarjeta, lápiz o chip) | Lleva el ojo al dato |
-| Tomate (excepción del giro) | `#C8553D` | Solo la cifra «4,000+», de 22,2 a 27,4 s | Marca el pico |
+| Mostaza (acento) | `#E8B33B` | La palabra clave y un elemento por plano (lápiz, círculo, marca o barra) | Lleva el ojo al dato |
+| Tomate (excepción del pico) | `#C8553D` | Solo la cifra «4,382», de 23,05 a 24,5 s | Marca el pico |
 
-Medido: pendiente. Con profundidad se espera ≈ 82 a 85 % dentro de la paleta (el short 2 midió 93 %): el desenfoque y la niebla crean mezclas que no están en la lista. Detalle: `prompt.md`, «Color con intención».
+Medido: pendiente. Con profundidad se espera ≈ 82 a 85 % dentro de la paleta. Ningún verde de Nvidia. Detalle: `prompt.md`, «Color con intención».
 
 ## 8. Animación, luz y velocidad
 
 | Elemento | Qué hay |
 |---|---|
-| Animaciones | **Nuevas:** capas con paralaje y sombras de contacto, tarjeta que crece hacia la cámara, subjetivo de las manos, garabato, muro que crece, congelado con marco. Se mantienen: muelles con rebote, personajes al pulso, contadores que frenan al llegar |
-| Efectos de luz | **Nuevos y sin destellos:** cambio de foco, revelado desde desenfoque, sombras, niebla en las capas lejanas, paso de mostaza a tomate. Cero destellos y cero negativos (`comprobar_destellos` debe pasar) |
-| Velocidad del video | 14 tomas y 10 cortes (más 3 planos continuos); la toma más corta dura 1,0 s y la más larga 3,5 s |
-| Velocidad del audio | Voz al 110 % (`atempo=1.10`); pausas internas acortadas; dos pausas de 0,40 s diseñadas |
+| Animaciones | Capas con paralaje y sombras de contacto, silla que crece, lápiz bumerán, garabatos, 11 cruces que caen, barras que crecen, revelado desde desenfoque, golpe de zoom de +10 % en el pico |
+| Efectos de luz | Sin destellos ni negativo; desenfoque fijo del fondo, niebla, sombras, paso de mostaza a tomate; sin cambio de foco (no cabe en la rejilla) |
+| Velocidad del video | 14 tomas y 13 cortes; la toma más corta dura 1,0 s y la más larga 4,0 s |
+| Velocidad del audio | Voz al 110 %; pausas internas acortadas, salvo 0,45 s tras «Apple:» |
 
 ## 9. Sonido
 
 | Elemento | Valor |
 |---|---|
-| Voces | Zelda (Tan) y Kevin (Tin), una generación cada una, **sin generar** (≈ 3,3 créditos estimados; pide el sí del dueño) |
-| Música | Hecha por código, re dórico (distinta de los shorts 1 y 2), un acorde cada 2 s |
-| Efectos | ≈ 35 golpes por código; subida, silencio de 12 fotogramas y ding en la cifra (22,2 s) |
+| Voces | Zelda (Tan) y Kevin (Tin), una generación cada una, **sin generar** (costo por cotizar; pide el sí del dueño) |
+| Música | Por código, mi menor a 120 BPM que pasa a mi mayor en el pico (distinta de la del short 2, en do mayor) |
+| Efectos | Por código: whoosh con vibrato y golpe del lápiz, raspado de garabatos, tictac, subida, silencio de 12 fotogramas y ding en 23,05 s |
 | Volumen | Por medir: objetivo −14,0 LUFS; golpes bajo la voz a unos −26 LUFS |
 | Guion contra lo que se oye | Por comprobar con `revisar_voz.py` sobre la mezcla |
 
@@ -141,24 +142,23 @@ Medido: pendiente. Con profundidad se espera ≈ 82 a 85 % dentro de la paleta (
 
 | Tramo | Segundos | Emoción |
 |---|---|---|
-| Gancho | 0 a 2,5 | Reconocimiento, alerta leve y curiosidad |
-| Presentación | 2,5 a 9 | Nostalgia y presencia tranquila |
-| Cuenta | 9 a 21 | Anticipación que crece |
-| Pico | 22,2 | Sorpresa y asombro |
-| Remate | 24 a 27,5 | Asombro por el tamaño |
-| Cierre | 27,5 a 30,5 | Calidez, gratitud y ganas de verlo otra vez |
+| Gancho | 0 a 2,5 | Curiosidad y orientación |
+| Hechos | 2,5 a 13 | Tensión |
+| Cuenta y comparación | 13 a 23 | Anticipación y asombro |
+| Pico | 23,05 | Asombro |
+| Remate y cierre | 24,5 a 30,5 | Sorpresa cerrada, curiosidad nueva y gratitud |
 
-Elemento por elemento, con su fundamento, su métrica y su riesgo: `02_prompt/perfil_emocional.md` (15 filas).
+Elemento por elemento, con su fundamento, su métrica y su riesgo: `02_prompt/perfil_emocional.md` (17 filas, con «Cierre y bucle» y «Firma del canal»).
 
 ## 11. Publicación y medición
 
 | Campo | Valor |
 |---|---|
 | Plataforma | YouTube Shorts primero; después TikTok e Instagram |
-| Descripción | La cuenta, las fuentes con fecha, la aclaración de transistores, una línea de suscripción y «Not affiliated with Nvidia. Jensen Huang is not involved in this video.» |
-| Categoría | 24 (Entertainment), la misma con la que YouTube aceptó el short 1 |
+| Descripción | Cronología, comparaciones con el mismo método, fuentes con fecha, aclaración de que el comunicado oficial no se pudo abrir, una línea de suscripción y «Not affiliated with Nvidia. Jensen Huang is not involved in this video.» |
+| Categoría | 24 (Entertainment) o 25 (News and Politics): la decide el dueño al publicar; el equipo propone 24, la que YouTube aceptó en el short 1 |
 | Hecho para niños | No |
-| Qué se mide | Visto frente a deslizado, duración media vista, vistas desde el feed de Shorts, compartidos, suscriptores, edad del público |
+| Qué se mide | Visto frente a deslizado, duración media vista, vistas calificadas del feed, compartidos, suscriptores, tráfico de búsqueda, vistas por idioma |
 | Metas | Superar el 20,7 % del short 1; línea base de compartidos y suscriptores |
 | Entrega | `08_entrega/TIN-EN-S-003/` (pasa los controles del publicador) |
 
@@ -166,30 +166,33 @@ Elemento por elemento, con su fundamento, su métrica y su riesgo: `02_prompt/pe
 
 | Control | Resultado | Firma |
 |---|---|---|
-| Texto y ortografía | Descripción, etiquetas y subtítulos: 0 errores (2026-11-24); falta el texto del render | Por firmar (supervisor de continuidad) |
+| Texto y ortografía | Descripción, etiquetas, `subtitulos.srt`, rótulos y `subtitulos_es.srt`: 0 errores (2026-11-24); falta el texto del render | Por firmar (supervisor de continuidad) |
 | Cifras | Recalculadas con Python; falta compararlas con voz, pantalla, `.srt` y descripción cuando exista el video | Por firmar |
-| Imagen | Por revisar: las dos tarjetas genéricas, sin logotipo, letra ni verde; los personajes contra su ficha | Por firmar |
-| Portada | Por medir en el fotograma 0 (texto y 415–690; tarjeta y 720–1100; caras en la zona útil) | Por firmar |
-| Video y bucle | Por revisar: `comprobar_destellos`, `revisar_fotogramas.py`, fotograma 915 igual al 0 | Por firmar |
-| Marca del canal | Por revisar | Por firmar |
+| Imagen | Por revisar: silla, calendario, mesa y barras genéricos, sin logotipo ni verde; los personajes contra su ficha | Por firmar |
+| Portada | Por medir en el fotograma 0 (texto y 492–682; silla y 754–1066; caras en la zona útil) | Por firmar |
+| Video y bucle | Por revisar: `comprobar_destellos` con margen, `revisar_fotogramas.py`, fotograma 915 igual al 0 | Por firmar |
+| Subtítulos en español | Por medir: banda de y 905 a 1085 sin tocar gráficos ni cabezas; líneas de 856 px o menos | Por firmar |
+| Marca del canal | Por revisar (incluida la firma del lápiz, `FIRMA_LAPIZ_BUMERAN.md`) | Por firmar |
 | Color | Por medir (se espera aviso por el desenfoque) | Por firmar (director de fotografía y supervisor) |
 | Voz y audio | Por generar y oír | Por firmar (diseñador de sonido) |
-| Título | Pasa el filtro; falta que el video cumpla lo que promete | Por firmar (director creativo) |
+| Título y línea editorial | Pasa el filtro; falta que el video cumpla lo que promete y que la única mención del motivo sea neutra | Por firmar (director creativo) |
 | Escucha de una persona | Pendiente | Dueño |
 
 ## 13. Costo
 
 | Concepto | Costo |
 |---|---|
-| Voz de Tan | ≈ 0,8 créditos (estimado, sin cotizar) |
-| Voz de Tin | ≈ 2,5 créditos (estimado, sin cotizar) |
+| Voz de Tan | por cotizar con `estimate_audio_cost` |
+| Voz de Tin | por cotizar con `estimate_audio_cost` |
 | Imagen, video, música y efectos | 0 (por código) |
-| **Total** | **≈ 3,3 créditos, por autorizar** |
+| **Total** | **por cotizar y por autorizar** (referencia del plan anterior: 3,7 créditos) |
 
 ## 14. Pendientes
 
 1. Cotizar la voz con `estimate_audio_cost` y pedir el sí del dueño; generar una sola vez cada voz.
-2. Reajustar los tiempos de las secciones 5, 6 y 7 con la voz real; volver a validar y a archivar el prompt.
-3. Escribir el código del render (gráficos nuevos de la sección 14 del prompt), renderizar y correr los controles de la sección 12.
-4. Medir el color con y sin desenfoque y anotar el resultado en `direccion.md` (sección 3b) y en `ficha.json`.
-5. Armar `08_entrega/TIN-EN-S-003/` y pasar `entrega.py`; publicar solo con el sí del dueño.
+2. Reajustar los tiempos de las secciones 5 y 6 y de los subtítulos con la voz real; comprobar que el pico siga entre el 70 y el 75 %; volver a validar y a archivar el prompt.
+3. Reescribir el código del render (gráficos nuevos de la sección 14 del prompt, lápiz libre, banda de subtítulos), renderizar y correr los controles de la sección 12.
+4. Leer `FIRMA_LAPIZ_BUMERAN.md` cuando exista y ajustar el prompt si difiere (manda la del canal).
+5. Medir el color con y sin desenfoque y anotarlo en `direccion.md` (sección 3b) y en `ficha.json`.
+6. Compromiso del cierre: preparar el siguiente conteo (otros regresos de directores ejecutivos) dentro de 7 días; si no sale, avisar en un comentario fijado.
+7. Armar `08_entrega/TIN-EN-S-003/` y pasar `entrega.py`; publicar solo con el sí del dueño.
