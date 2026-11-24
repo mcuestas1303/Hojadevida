@@ -45,15 +45,16 @@ def medidas(img):
     silla[1105:] = False
     silla[:, :300] = False
     silla[:, 780:] = False
-    lapiz = mostaza.copy()
-    lapiz[:1105] = False
-    lapiz[1400:] = False
-    lapiz[:, :330] = False
-    lapiz[:, 750:] = False
+    # el lápiz entero: cuerpo mostaza, punta naranja claro, goma tomate y su contorno de tinta, dentro del pasillo
+    lapiz = mostaza | _cerca(a, P["naranja_claro"]) | _cerca(a, P["tomate"]) | tinta
+    lapiz[:1140] = False
+    lapiz[1330:] = False
+    lapiz[:, :420] = False
+    lapiz[:, 730:] = False
     izq = np.zeros(a.shape[:2], bool)
     izq[1105:1500, :540] = True
     der = np.zeros(a.shape[:2], bool)
-    der[1105:1500, 720:] = True
+    der[1105:1500, 735:] = True
     tan = (_cerca(a, P["verde_azulado"]) | _cerca(a, P["verde_azulado_osc"])) & izq      # cabeza y rodete
     tin = (_cerca(a, P["naranja"]) | (marron & der)) & der                                # cabeza y gorra
     return {"texto": _caja(texto), "silla": _caja(silla), "lápiz": _caja(lapiz), "cara de Tan": _caja(tan),
@@ -87,7 +88,7 @@ def portada(salida):
     for k, c in m.items():
         print(f"  {k}: x {c[0]}-{c[2]}, y {c[1]}-{c[3]}")
     print("  separación del lápiz (px, entre cajas): " + ", ".join(f"{k} {v:.0f}" for k, v in sep.items()))
-    print(f"  ancho del lápiz: {m['lápiz'][2] - m['lápiz'][0] + 1} px ({100 * (m['lápiz'][2] - m['lápiz'][0] + 1) / 1080:.0f} % del ancho)")
+    print(f"  ancho del lápiz (con punta y goma): {m['lápiz'][2] - m['lápiz'][0] + 1} px ({100 * (m['lápiz'][2] - m['lápiz'][0] + 1) / 1080:.0f} % del ancho)")
 
 
 if __name__ == "__main__":

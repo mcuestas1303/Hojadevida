@@ -1,0 +1,39 @@
+palitos.py 1.4, efectos.py 1.1. Glifos comprobados en Inter Display Medium: +,.0123456789:?ABCDEFHIJMNOQRSTWabcdeghijklmnopqrstuvxy¿áéíñó
+930 fotogramas (31.0 s). Cortes: [0.0, 1.0, 3.5, 6.5, 9.0, 11.5, 12.5, 14.5, 16.0, 19.0, 22.5, 24.5, 27.0, 30.0, 31.0]. Pico en 22.07 s (71.2 %).
+Subtítulos (px por renglón, máximo 856): 1: 845, 1: 665, 2: 686, 2: 695, 3: 629, 3: 756, 4: 706, 4: 803, 5: 667, 5: 576, 6: 770, 6: 422, 7: 816, 7: 247, 8: 708, 8: 420, 9: 570, 10: 817, 10: 854, 11: 747, 12: 827, 12: 285
+Firma del lápiz bumerán: {'empalme_v_px_f': (5.17, 4.73), 'empalme_omega_grados_f': (4.4, 3.97), 'empalme_direccion_grados': (77.9, 77.7), 'v_max_px_f': 58.0, 'omega_max_grados_f': 24.9, 'giro_total_grados': 330.0, 'escala_max': 1.7, 'brazo_en_c_-1': (94.7, 107.67), 'cuerpo_dx_en_c_-1': -0.31, 'cabeza_en_c_-1': 24.97, 'despejes_px': {'texto_min': 461.0, 'objeto_min': 61.0, 'cabeza_tan_min': 28.8, 'cabeza_tin_min': 46.2, 'centro_en_zona_util': True, 'caras_min': 28.8, 'cabeza_tan_en_c': -14, 'cabeza_tin_en_c': 0}, 'pasa': True}
+dialogo_110.wav: 29.58 s; en el video la voz va de 0.47 a 30.05 s
+   1 Tan 0.47-3.46 []
+   2 Tin 3.69-6.55 [4.96]
+   3 Tin 6.78-9.10 []
+   4 Tin 9.33-11.74 []
+   5 Tin 11.97-14.23 []
+   6 Tan 14.46-16.12 []
+   7 Tin 16.35-18.77 [18.038]
+   8 Tin 19.00-22.48 [20.634]
+   9 Tan 22.71-24.49 [23.45]
+  10 Tin 24.72-26.73 [25.903]
+  11 Tan 26.96-30.05 [28.286]
+Audio: efectos, música y mezcla
+  voz (dialogo_110.wav, desde el fotograma 14, sin tocar): -14.8 LUFS, pico real -4.5 dBTP
+  efectos.wav: -26.1 LUFS, pico real -5.1 dBTP
+  efectos bajo la voz: -26.0 LUFS, pico real -5.1 dBTP
+  musica.wav: -24.2 LUFS, pico real -10.3 dBTP
+  mezcla_sin_musica.wav (sin ganancia final): -14.8 LUFS, pico real -2.8 dBTP
+  mezcla antes de la ganancia final: -14.5 LUFS, pico real -1.7 dBTP
+  mezcla.wav (final): -14.0 LUFS, pico real -1.6 dBTP
+  pico de efectos y música en el silencio antes del número (dBFS): -180.0
+  picos de la firma (dBFS): chasquido, whoosh de ida, whoosh de vuelta, atrapada: [-20.0, -20.8, -18.0, -12.0]
+  whoosh a los dos lados del empalme (dBFS, últimos y primeros 20 ms): [-34.0, -33.5]
+  limitador en la mezcla final: True
+  golpes: 38; fuera de su tiempo: 0
+  fotograma 0/930  (14 s)
+  fotograma 150/930  (35 s)
+  fotograma 300/930  (58 s)
+  fotograma 450/930  (80 s)
+  fotograma 600/930  (102 s)
+  fotograma 750/930  (123 s)
+  fotograma 900/930  (149 s)
+Destellos: 0 cambios bruscos (fotogramas []), máximo 0 en 1 s, mayor salto de luminosidad 6.1 de 255: PASA
+Bucle: último fotograma frente al 0: diferencia media 0.271 de 255 (un paso del vuelo del lápiz)
+Video -> /home/user/Hojadevida/video-studio/proyectos/2026-11-24_tin_y_tan_jensen_huang/06_final/tin_y_tan_short03_v1.mp4  (157 s en total)

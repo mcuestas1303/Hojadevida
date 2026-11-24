@@ -5,12 +5,12 @@
    -4.5
   ],
   "efectos.wav": [
-   -26.0,
-   -4.9
+   -26.1,
+   -5.1
   ],
   "efectos bajo la voz": [
    -26.0,
-   -4.9
+   -5.1
   ],
   "musica.wav": [
    -24.2,
@@ -18,28 +18,28 @@
   ],
   "mezcla_sin_musica.wav (sin ganancia final)": [
    -14.8,
-   -2.7
+   -2.8
   ],
   "mezcla antes de la ganancia final": [
-   -14.6,
-   -1.6
+   -14.5,
+   -1.7
   ],
   "mezcla.wav (final)": [
    -14.0,
-   -1.0
+   -1.6
   ],
   "pico de efectos y música en el silencio antes del número (dBFS)": -180.0,
   "picos de la firma (dBFS): chasquido, whoosh de ida, whoosh de vuelta, atrapada": [
-   -16.8,
-   -16.8,
+   -20.0,
+   -20.8,
    -18.0,
    -12.0
   ],
   "whoosh a los dos lados del empalme (dBFS, últimos y primeros 20 ms)": [
-   -33.8,
-   -33.6
+   -34.0,
+   -33.5
   ],
-  "limitador en la mezcla final": false
+  "limitador en la mezcla final": true
  },
  "golpes": [
   {
@@ -92,115 +92,115 @@
    "en_su_tiempo": true
   },
   {
-   "segundo": 9.3,
+   "segundo": 9.45,
    "sonido": "raspado_50",
    "atado_a": "flecha del 17 al 23 (toma 5)",
-   "inicio_medido": 9.3095,
+   "inicio_medido": 9.459499999999998,
    "en_su_tiempo": true
   },
   {
-   "segundo": 10.3,
+   "segundo": 10.4,
    "sonido": "raspado_40",
    "atado_a": "círculo del 23 (toma 5)",
-   "inicio_medido": 10.307895833333333,
+   "inicio_medido": 10.400145833333333,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 10.4,
+   "sonido": "cruz_0",
+   "atado_a": "cruz del calendario (toma 5)",
+   "inicio_medido": 10.400145833333333,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 10.5,
+   "sonido": "cruz_1",
+   "atado_a": "cruz del calendario (toma 5)",
+   "inicio_medido": 10.500229166666667,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 10.6,
+   "sonido": "cruz_2",
+   "atado_a": "cruz del calendario (toma 5)",
+   "inicio_medido": 10.600270833333333,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 10.7,
+   "sonido": "cruz_3",
+   "atado_a": "cruz del calendario (toma 5)",
+   "inicio_medido": 10.700208333333334,
+   "en_su_tiempo": true
+  },
+  {
+   "segundo": 10.8,
+   "sonido": "cruz_4",
+   "atado_a": "cruz del calendario (toma 5)",
+   "inicio_medido": 10.800145833333334,
    "en_su_tiempo": true
   },
   {
    "segundo": 10.9,
-   "sonido": "cruz_0",
+   "sonido": "cruz_5",
    "atado_a": "cruz del calendario (toma 5)",
    "inicio_medido": 10.900145833333333,
    "en_su_tiempo": true
   },
   {
    "segundo": 11.0,
-   "sonido": "cruz_1",
+   "sonido": "cruz_6",
    "atado_a": "cruz del calendario (toma 5)",
-   "inicio_medido": 11.000145833333333,
+   "inicio_medido": 11.000125,
    "en_su_tiempo": true
   },
   {
    "segundo": 11.1,
-   "sonido": "cruz_2",
+   "sonido": "cruz_7",
    "atado_a": "cruz del calendario (toma 5)",
-   "inicio_medido": 11.100145833333332,
+   "inicio_medido": 11.100125,
    "en_su_tiempo": true
   },
   {
    "segundo": 11.2,
-   "sonido": "cruz_3",
+   "sonido": "cruz_8",
    "atado_a": "cruz del calendario (toma 5)",
-   "inicio_medido": 11.200145833333334,
+   "inicio_medido": 11.200125000000002,
    "en_su_tiempo": true
   },
   {
    "segundo": 11.3,
-   "sonido": "cruz_4",
+   "sonido": "cruz_9",
    "atado_a": "cruz del calendario (toma 5)",
-   "inicio_medido": 11.300145833333334,
+   "inicio_medido": 11.300125000000001,
    "en_su_tiempo": true
   },
   {
    "segundo": 11.4,
-   "sonido": "cruz_5",
+   "sonido": "cruz_10",
    "atado_a": "cruz del calendario (toma 5)",
-   "inicio_medido": 11.400145833333333,
+   "inicio_medido": 11.400125000000001,
    "en_su_tiempo": true
   },
   {
    "segundo": 11.5,
-   "sonido": "cruz_6",
-   "atado_a": "cruz del calendario (toma 5)",
-   "inicio_medido": 11.500125,
-   "en_su_tiempo": true
-  },
-  {
-   "segundo": 11.6,
-   "sonido": "cruz_7",
-   "atado_a": "cruz del calendario (toma 5)",
-   "inicio_medido": 11.600125,
-   "en_su_tiempo": true
-  },
-  {
-   "segundo": 11.7,
-   "sonido": "cruz_8",
-   "atado_a": "cruz del calendario (toma 5)",
-   "inicio_medido": 11.700125000000002,
-   "en_su_tiempo": true
-  },
-  {
-   "segundo": 11.8,
-   "sonido": "cruz_9",
-   "atado_a": "cruz del calendario (toma 5)",
-   "inicio_medido": 11.800125000000001,
-   "en_su_tiempo": true
-  },
-  {
-   "segundo": 11.9,
-   "sonido": "cruz_10",
-   "atado_a": "cruz del calendario (toma 5)",
-   "inicio_medido": 11.900125000000001,
-   "en_su_tiempo": true
-  },
-  {
-   "segundo": 12.0,
    "sonido": "clic",
    "atado_a": "corte a la toma 6",
-   "inicio_medido": 12.000083333333333,
+   "inicio_medido": 11.500083333333333,
    "en_su_tiempo": true
   },
   {
-   "segundo": 13.0,
+   "segundo": 12.5,
    "sonido": "clic",
    "atado_a": "corte a la toma 7",
-   "inicio_medido": 13.000083333333333,
+   "inicio_medido": 12.500083333333333,
    "en_su_tiempo": true
   },
   {
-   "segundo": 13.1,
+   "segundo": 12.6,
    "sonido": "deslizar",
    "atado_a": "barra de tenencia que crece (toma 7)",
-   "inicio_medido": 13.102812499999999,
+   "inicio_medido": 12.602812499999999,
    "en_su_tiempo": true
   },
   {

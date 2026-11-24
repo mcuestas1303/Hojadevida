@@ -1,0 +1,9 @@
+Portada (fotograma 0) -> /home/user/Hojadevida/video-studio/proyectos/2026-11-24_tin_y_tan_jensen_huang/06_final/portada_short03.png (1080x1920, 1235 KB)
+  letra de 134 px, dos renglones, 4 palabras
+  texto: x 106-607, y 416-692
+  silla: x 348-731, y 715-1104
+  lápiz: x 486-672, y 1222-1269
+  cara de Tan: x 121-303, y 1201-1364
+  cara de Tin: x 741-945, y 1163-1364
+  separación del lápiz (px, entre cajas): texto 530, silla 118, cara de Tan 183, cara de Tin 69
+  ancho del lápiz (con punta y goma): 187 px (17 % del ancho)

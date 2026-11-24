@@ -35,7 +35,7 @@ PULSO = 0.5                   # 120 BPM: la rejilla del video
 LUFS_MUSICA = -24.0
 LUFS_BAJO_VOZ = -26.0
 LUFS_MEZCLA = -14.0
-TECHO_MEZCLA_DBTP = -1.0
+TECHO_MEZCLA_DBTP = -1.5          # con margen: el AAC del archivo no debe pasar de -1,0 dBTP
 
 # ---------------------------------------------------------------- golpes (sección 13 del prompt): (segundo, sonido, a qué va atado)
 EVENTOS = [(14 / FPS, "pop_suave", "golpe de la clave «11» de la portada (fotograma 14)")]
@@ -194,19 +194,21 @@ def sonidos_firma(rng):
         return 10 ** (x / 20)
     ida, vuelta = _velocidad_lapiz()
     out = {}
-    t = tiempo(0.1)
-    y = ruido(rng, 0.1, 1000, 4000) * (t / 0.1) ** 2
+    t = tiempo(2 / FPS)                                                        # termina justo en la suelta (c = -15)
+    y = ruido(rng, 2 / FPS, 1000, 4000) * (t / (2 / FPS)) ** 2
     out["chasquido"] = cola(y, 4) / np.max(np.abs(y)) * db(-20)
     d = 15 / FPS
     t = tiempo(d)
     env = np.interp(t, np.linspace(0, d, len(ida)), ida)
     env = db(-34) + (db(-20) - db(-34)) * (env - env[-1]) / (env.max() - env[-1])
+    env = env * 0.74                                                           # deja sitio a los pulsos de +3 dB
     for tc in (1 / FPS, 13 / FPS):                                             # dos pulsos al cruzar la horizontal
         env = env * (1 + 0.35 * np.exp(-((t - tc) / 0.012) ** 2))
+    env[-int(0.05 * SR):] = np.maximum(env[-int(0.05 * SR):], db(-34))        # el empalme sigue a -34 dBFS
     f = 1800 * (900 / 1800) ** (t / d)
     port = np.sin(2 * np.pi * np.cumsum(f) / SR)
     y = (0.75 * ruido(rng, d, 600, 2500) + 0.25 * port)
-    out["whoosh_ida"] = ataque(np.clip(1.5 * y / np.max(np.abs(y)), -1, 1) * np.clip(env, 0, db(-20)), 5)
+    out["whoosh_ida"] = ataque(np.clip(1.5 * y / np.max(np.abs(y)), -1, 1) * np.clip(env, 0, db(-20)), 5)     # tope: -20 dBFS
     d = 10 / FPS
     t = tiempo(d)
     env = np.interp(t, np.linspace(0, d, len(vuelta)), vuelta)
@@ -389,7 +391,7 @@ def construir(verboso=True):
     sin_musica = voz + efectos
     mezcla = sin_musica + musica
     antes = medir_pista(mezcla)
-    limitada, techo = False, TECHO_MEZCLA_DBTP - 0.3
+    limitada, techo = False, TECHO_MEZCLA_DBTP - 0.2
     for _ in range(6):
         l, p = medir_pista(mezcla)
         if abs(l - LUFS_MEZCLA) > 0.05:
@@ -420,7 +422,7 @@ def construir(verboso=True):
             round(float(20 * np.log10(np.max(np.abs((efectos + musica)[a:b])) + 1e-9)), 1),
         "picos de la firma (dBFS): chasquido, whoosh de ida, whoosh de vuelta, atrapada":
             [round(float(20 * np.log10(np.max(np.abs(firma[int(t * SR):int(t * SR) + int(d * SR)])) + 1e-9)), 1)
-             for (t, _, _), d in zip(FIRMA, (0.1, 0.5, 0.3, 0.12))],
+             for (t, _, _), d in zip(FIRMA, (0.064, 0.5, 0.3, 0.12))],
         "whoosh a los dos lados del empalme (dBFS, últimos y primeros 20 ms)":
             [round(float(20 * np.log10(np.max(np.abs(firma[-960:])) + 1e-9)), 1),
              round(float(20 * np.log10(np.max(np.abs(firma[:960])) + 1e-9)), 1)],

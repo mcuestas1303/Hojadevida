@@ -1,0 +1,2 @@
+formato: h264 1080x1920 yuv420p 30/1 fps, 930 fotogramas; audio aac 48000 Hz; duración 31.000 s; 7.80 MB
+formato pedido (1080x1920, 30 fps, H.264, yuv420p, AAC, 930 fotogramas): sí

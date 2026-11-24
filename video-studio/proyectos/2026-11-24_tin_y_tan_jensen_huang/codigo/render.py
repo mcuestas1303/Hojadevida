@@ -46,23 +46,29 @@ POP, SLIDE, SELLO = fx.POP, fx.SLIDE, fx.SELLO
 
 SEG_X0, SEG_X1, SEG_Y0, SEG_Y1 = 100, 980, 250, 1670         # zona segura (formatos.md)
 SUELO = 0.86 * H                 # 1651
-ALTO_PJ = 540.0                  # 28,1 % (el prompt pedía 29 %, 557 px: con el rebote el rodete y la gorra tocaban
-                                 # el panel de subtítulos de dos renglones); cabeza más alta en y = 1111
+ALTO_PJ = 505.0                  # 26,3 % (el prompt pedía 29 %, 557 px): con 557 y con 540 el rodete y la gorra quedaban
+                                 # pegados al panel de subtítulos de dos renglones (y con 520 quedaban a 9 px); cabeza más alta en y ≈ 1120.
+                                 # El hueco panel-cabeza se mide en todos los fotogramas con --medir-subtitulos (≥ 12 px)
 X_TAN, X_TIN, X_SOLO = 0.30 * W, 0.70 * W, 0.50 * W
 ZONA_G0, ZONA_G1 = 518, 893      # zona de gráficos
 BANDA_Y0, BANDA_Y1 = 905, 1085   # banda de subtítulos en español
 
 # ---------------------------------------------------------------- portada y firma del lápiz bumerán
 ALTO_PORTADA = 487.0             # R = 88 px
-X_PORTADA = (0.24 * W, 0.76 * W)
+X_PORTADA = (0.24 * W, 0.75 * W)    # Tin en 75 %: con 76 % la gorra salía 2 px de la zona útil (x 960)
 SILLA_PORTADA = dict(cx=540.0, base=1100.0, alto=380.0)      # y 720-1100
 TAM_PORTADA = 0.07 * H           # 134 px: dos renglones entre y = 400 y 700 (a 12 % no caben dos renglones)
 Y_PORTADA = (414.0, 566.0)       # tope de las letras altas de cada renglón
 DX_CUERPO = 0.5                  # el desplazamiento del cuerpo de Tan de la firma, a la mitad (-4/+5 px): que no patine
 PORTADA_GEO = dict(R=ALTO_PORTADA / 5.53, x_tan=X_PORTADA[0], x_tin=X_PORTADA[1], suelo=SUELO,
                    texto=(108, 400, 700, 700), objeto=(540 - 181, 720, 540 + 181, 1100),
-                   cara_tan=(121, 1201, 303, 1364), cara_tin=(752, 1163, 955, 1364))
-GEO = fx.geometria_firma(PORTADA_GEO, subir=-10.0)           # el lazo 10 px más abajo: la silla llega a y = 1100
+                   cara_tan=(121, 1201, 303, 1364), cara_tin=(741, 1163, 944, 1364))
+# el lazo 10 px más abajo (la silla llega a y = 1100). Las cabezas se miden como círculos en TODOS los fotogramas.
+GEO = fx.geometria_firma(PORTADA_GEO, subir=-10.0, dx_cuerpo=DX_CUERPO)
+
+# Cara neutra (línea editorial, vuelta 2): nadie sonríe sobre la renuncia ni sobre la reposición. Se arma con piezas
+# que ya existen en las fichas (ojos de punto, cejas en reposo, boca suave) y sin rubor.
+palitos.EXPRESIONES.setdefault("neutra", {"ojos": "punto", "cejas": (0, 0, 0), "boca": "suave", "rubor": False})
 
 
 # ---------------------------------------------------------------- movimiento
@@ -126,11 +132,18 @@ def capa_silla(cx, base, alto, z=0.0, **kw):
     return Capa(img, z=z, x=cx - w / 2, y=base - (h - 6), esc=2, nombre="silla", **kw)
 
 
-def texto_en_lienzo(lz, s, cx, cy, tam, color=TINTA):
-    """Texto que es parte de un dibujo (los números del calendario): centrado en (cx, cy)."""
+def texto_en_lienzo(lz, s, cx, cy, tam, color=TINTA, izquierda=False, esc=1.0):
+    """Texto que es parte de un dibujo (números del calendario, nombres de las barras): centrado en (cx, cy), o con el
+    borde izquierdo en cx si izquierda=True. esc: escala de entrada (pop), alrededor del punto dado."""
     img, margen, linea = fx.imagen_texto(((s, color),), tam)
     ancho = fx.ancho_texto(((s, color),), tam)
-    x = (cx - ancho / 2) * SS - margen
+    if esc != 1.0:
+        img = img.resize((max(1, int(img.width * esc)), max(1, int(img.height * esc))), Image.LANCZOS)
+        y = (cy + 0.36 * tam * esc) * SS - linea * esc
+        x = (cx - (0 if izquierda else ancho * esc / 2)) * SS - margen * esc
+        lz.img.alpha_composite(img, (int(round(x)), int(round(y))))
+        return
+    x = (cx - (0 if izquierda else ancho / 2)) * SS - margen
     y = (cy + 0.36 * tam) * SS - linea
     lz.img.alpha_composite(img, (int(round(x)), int(round(y))))
 
@@ -162,21 +175,34 @@ class Calendario:
         tam = 0.46 * self.ch
         for i, d in enumerate(DIAS):
             texto_en_lienzo(lz, d, self.x0 + (i + 0.5) * self.cw, self.y0 + self.cab * 0.52, 0.5 * self.cab, PAPEL)
-        for dia in range(1, 31):
+        for dia in range(1, 31):                          # el número va en la parte de arriba de la celda
             cx, cy = self.celda(dia)
-            texto_en_lienzo(lz, str(dia), cx, cy, tam)
+            texto_en_lienzo(lz, str(dia), cx, cy - 0.14 * self.ch, tam)
         for dia, e in (cruces or {}).items():             # cruces de tinta, con entrada de pop
             if e <= 0.02:
                 continue
-            cx, cy = self.celda(dia)
-            r = 0.30 * min(self.cw, self.ch) * e
-            mm = Marco(lz, cx, cy)
-            mm.linea([(-r, -r), (r, r)], 0.09 * self.ch, TINTA)
-            mm.linea([(-r, r), (r, -r)], 0.09 * self.ch, TINTA)
+            cx, cy = self.celda(dia)                      # la cruz va debajo del número: no lo tapa
+            r = 0.15 * self.ch * e
+            mm = Marco(lz, cx, cy + 0.29 * self.ch)
+            mm.linea([(-r, -r), (r, r)], 0.075 * self.ch, TINTA)
+            mm.linea([(-r, r), (r, -r)], 0.075 * self.ch, TINTA)
 
     def circulo(self, dia):
         cx, cy = self.celda(dia)
-        return fx.trazo_circulo(cx, cy, 0.46 * self.cw, 0.44 * self.ch)
+        return fx.trazo_circulo(cx, cy - 0.14 * self.ch, 0.36 * self.cw, 0.33 * self.ch)
+
+    def flecha(self, a, b):
+        """Flecha larga del día a al día b (celdas vecinas en diagonal): sale por la derecha del círculo de a, da la
+        vuelta por fuera de las dos celdas y entra por la derecha en el círculo de b. Cuerpo y punta."""
+        (xa, ya), (xb, yb) = self.celda(a), self.celda(b)
+        ya, yb = ya - 0.14 * self.ch, yb - 0.14 * self.ch
+        p0, p3 = (xa + 0.42 * self.cw, ya), (xb + 0.46 * self.cw, yb + 0.04 * self.ch)
+        p1, p2 = (xa + 1.9 * self.cw, ya - 0.1 * self.ch), (xa + 1.7 * self.cw, yb + 0.25 * self.ch)
+        cuerpo = [fx._bezier((p0, p1, p2, p3), i / 28) for i in range(29)]
+        ang = math.atan2(p3[1] - cuerpo[-3][1], p3[0] - cuerpo[-3][0])
+        L = 0.42 * self.ch
+        punta = [(p3[0] - L * math.cos(ang + q), p3[1] - L * math.sin(ang + q)) for q in (-0.55, 0.55)]
+        return [cuerpo, [punta[0], p3, punta[1]]]
 
 
 def garabato_mostaza(img, trazos, p, grosor, semilla=3):
@@ -187,7 +213,7 @@ def garabato_mostaza(img, trazos, p, grosor, semilla=3):
 
 CAL_FONDO = Calendario(0, 0, 840, 364)                          # toma 3: capa lejana, por encima de la banda de
 CAL_FONDO_XY = (120, 468)                                       # subtítulos (con 700 px de alto quedaba debajo del texto)
-CAL_ZONA = Calendario(150, ZONA_G0, 780, ZONA_G1 - ZONA_G0)     # tomas 5 y 6: en la zona de gráficos
+CAL_ZONA = Calendario(150, ZONA_G0 - 6, 780, ZONA_G1 - ZONA_G0 - 8)     # tomas 5 y 6: en la zona de gráficos
 
 
 @lru_cache(maxsize=2)
@@ -216,27 +242,41 @@ def img_mesa():
     return lz.resultado(2)
 
 
-BARRA_H, BARRA_SEP = 56, 36
-BARRAS_Y = 566                     # tope de la primera barra de la comparación (Huang); Altman y Jobs debajo
+BARRA_H = 40                       # alto de las barras de la comparación (la de tenencia de la toma 7 mide 56)
+FILA_ALTO, FILA_Y0 = 124, 522      # cada fila: el nombre (56 px) arriba y su barra debajo; tres filas en y 522-876
+TAM_NOMBRE = 56
 MARCA_MIN = 4                      # ancho mínimo dibujado de las barras de 11 y 5 días (a escala serían 2,2 y 1,0 px)
+NOMBRES = ("Huang 11", "Altman 5", "Jobs 4,382")       # texto exacto (tabla de rótulos de la sección 12 del prompt)
 
 
-def barra(lz, x0, y, largo, color, esc=1.0):
-    if largo * esc < 1 or esc <= 0:
+def barra(lz, x0, y, largo, color, alto=BARRA_H):
+    if largo < 1:
         return
-    m = Marco(lz, x0, y + BARRA_H / 2, 1.0)
-    h = BARRA_H * esc / 2
-    m.caja(0, -h, largo, h, color, 5 if largo > 14 else 0, radio=6 if largo > 14 else 0)
+    m = Marco(lz, x0, y + alto / 2, 1.0)
+    m.caja(0, -alto / 2, largo, alto / 2, color, 5 if largo > 14 else 0, radio=6 if largo > 14 else 0)
 
 
 def marca_minima(lz, x, y, color, esc=1.0):
-    """Marca de 4 px (más 3 px de contorno de tinta a cada lado, para que se vea), un poco más alta que la barra."""
+    """Marca de 4 px (más 3 px de contorno de tinta a cada lado, para que se vea), del alto de la barra."""
     if esc <= 0.02:
         return
     m = Marco(lz, x, y + BARRA_H / 2)
-    h = (BARRA_H / 2 + 12) * esc
+    h = BARRA_H / 2 * esc
     m.rect(-3, -h - 3, MARCA_MIN + 3, h + 3, TINTA, 3)
     m.rect(0, -h, MARCA_MIN, h, color)
+
+
+def fila_barra(lz, i, esc_nombre, color=TINTA, esc_marca=None, largo=None):
+    """Fila i (0 Huang, 1 Altman, 2 Jobs): su nombre en tinta arriba, a la izquierda, y debajo su barra a escala
+    (largo en px) o su marca mínima de 4 px."""
+    y = FILA_Y0 + i * FILA_ALTO
+    if esc_nombre > 0.02:
+        texto_en_lienzo(lz, NOMBRES[i], SEG_X0 + 2, y + 0.37 * TAM_NOMBRE, TAM_NOMBRE, izquierda=True, esc=esc_nombre)
+    yb = y + TAM_NOMBRE + 10
+    if largo is not None:
+        barra(lz, SEG_X0, yb, largo, color)
+    else:
+        marca_minima(lz, SEG_X0 + 3, yb, color, esc_nombre if esc_marca is None else esc_marca)
 
 
 # ---------------------------------------------------------------- escena: capas, cámara y personajes
@@ -255,12 +295,13 @@ def sombras(*xs, ancho=200):
     return [fx.capa_sombra_contacto(x, SUELO + 3, ancho, opacidad=0.28) for x in xs]
 
 
-def camara(avance=0.0, x=W / 2, zoom=1.0):
+def camara(avance=0.0, x=W / 2, zoom=1.0, ancla=None):
     """Cámara de trabajo del video (prompt, sección 5). El encuadre final de cada empuje es el de diseño (avance 0) y
     la toma EMPIEZA más abierta (avance negativo): así nada sale nunca de la zona segura. El empuje se ancla en la
     línea de suelo (los pies no se mueven y las cabezas no suben hacia la banda de subtítulos)."""
     pz = zoom * 1000.0 / (1000.0 - avance)
-    return Camara(x=x, y=SUELO - (SUELO - H / 2) / pz, avance=avance, zoom=zoom, apertura=0.018, campo=150, niebla=0.30,
+    ancla = SUELO if ancla is None else ancla
+    return Camara(x=x, y=ancla - (ancla - H / 2) / pz, avance=avance, zoom=zoom, apertura=0.018, campo=150, niebla=0.30,
                   focal=1000)
 
 
@@ -286,9 +327,10 @@ def plano_firma(c):
     lz = LienzoCapa(W, H)
     suelo(lz)
     silla_director(lz, SILLA_PORTADA["cx"], SILLA_PORTADA["base"], SILLA_PORTADA["alto"])
-    # Tan: la cara de la portada también en la anticipación (el prompt no admite `concentrado`: se lee como enojo)
+    # Tan: `sorpresa` (decisión del equipo, vuelta 2: `curiosidad` se leía seria); la misma cara en la anticipación
+    # (el prompt no admite `concentrado`: se lee como enojo)
     palitos.dibujar(lz, "tan", X_PORTADA[0] + DX_CUERPO * tan["dx"], SUELO, ALTO_PORTADA, pose=tan["pose"],
-                    expresion="curiosidad", vista="perfil", mira=1, viento=tan["viento"], objeto=tan["objeto"],
+                    expresion="sorpresa", vista="perfil", mira=1, viento=tan["viento"], objeto=tan["objeto"],
                     giro_objeto=tan["giro_objeto"], cabeza_giro=tan["cabeza_giro"])
     palitos.dibujar(lz, "tin", X_PORTADA[1], SUELO + tin["dy"], ALTO_PORTADA, pose="parado", expresion="sorpresa",
                     vista="perfil", mira=-1, objeto=False, cabeza_giro=tin["cabeza_giro"])
@@ -318,15 +360,17 @@ def toma_3(t):
     sorprendida = t >= tm.T3_CIRCULO[1]
     pj(lz, "tan", X_TAN, t, "senala", "sorpresa" if sorprendida else "curiosidad",
        viento=vaiven(tl, 0.25) + (0.6 * math.exp(-2 * (t - tm.T3_CIRCULO[1])) if sorprendida else 0.0))
-    pj(lz, "tin", X_TIN, t, "explica", "feliz", fase=0.5, objeto="lapiz", giro_objeto=sacudida(tl))
+    # Tin dice «resigned… after a scandal» con cara neutra y sin rubor (línea editorial)
+    pj(lz, "tin", X_TIN, t, "explica", "neutra", fase=0.5, objeto="lapiz", giro_objeto=sacudida(tl))
     cal, c = img_calendario_fondo()
     p = clamp((t - tm.T3_CIRCULO[0]) / (tm.T3_CIRCULO[1] - tm.T3_CIRCULO[0]))
     if p > 0:
         cal = cal.copy()
         garabato_mostaza(cal, c.circulo(12), eo(p), 9)
+    # la silla de primer plano va al centro, entre los dos: a la izquierda salía de la zona segura (x < 100)
     capas = [Capa(cal, z=260.0, x=CAL_FONDO_XY[0] - 4, y=CAL_FONDO_XY[1] - 4, nombre="calendario"),
-             fx.capa_sombra_contacto(150, 1668, 190, z=-220.0, opacidad=0.25),
-             capa_silla(150, 1668, 228, z=-220.0, desenfoque=0.0)] + sombras(X_TAN, X_TIN) + [principal(lz)]
+             fx.capa_sombra_contacto(540, 1668, 150, z=-220.0, opacidad=0.25),
+             capa_silla(540, 1668, 176, z=-220.0, desenfoque=0.0)] + sombras(X_TAN, X_TIN) + [principal(lz)]
     u = eio(tl / dur)
     return componer(capas, camara(avance=-90 * (1 - u), x=lerp(540, 562, u)))
 
@@ -336,11 +380,11 @@ def toma_4(t):
     lz = LienzoCapa(W, H)
     suelo(lz)
     pj(lz, "tan", X_TAN, t, "pregunta", "curiosidad", viento=vaiven(tl, 0.25))
-    pj(lz, "tin", X_TIN, t, dict(palitos.POSES["senala"], bd=(118.0, 142.0), objeto_arriba=True), "curiosidad", fase=0.5,
+    pj(lz, "tin", X_TIN, t, dict(palitos.POSES["senala"], bd=(118.0, 142.0), objeto_arriba=True), "neutra", fase=0.5,
        objeto="lapiz", giro_objeto=sacudida(tl) - 10, espejo=True)       # señala la mesa: arriba y hacia el centro
     p = clamp((t - tm.T4_REVELADO[0]) / (tm.T4_REVELADO[1] - tm.T4_REVELADO[0]))
     q = 1 - eo(p)
-    mesa = Capa(img_mesa(), z=180.0, x=100, y=ZONA_G0 - 40, esc=2, nombre="mesa", desenfoque=(42.0 * q ** 1.4) if q > 0.002 else None,
+    mesa = Capa(img_mesa(), z=180.0, x=100, y=ZONA_G0 - 54, esc=2, nombre="mesa", desenfoque=(42.0 * q ** 1.4) if q > 0.002 else None,
                 opacidad=1 - 0.25 * q, sombra=dict(dx=14, dy=10, radio=10, opacidad=0.22))
     return componer([mesa] + sombras(X_TAN, X_TIN) + [principal(lz)], camara(avance=-60 * (1 - eio(tl / dur))))
 
@@ -352,11 +396,15 @@ def _calendario_zona(lz, t):
 
 
 def _marcas_zona(img, t):
+    """Marcas del calendario de las tomas 5 y 6: el círculo del 12 sigue a la vista (en tinta: no suma otro acento),
+    círculo de tinta en el 17 (de ahí sale «+6 days»), flecha larga del 17 al 23 y círculo mostaza en el 23."""
+    fx.garabato(img, CAL_ZONA.circulo(12), 1.0, grosor=6, semilla=3)
+    p17 = clamp((t - tm.T5_MARCA_17[0]) / (tm.T5_MARCA_17[1] - tm.T5_MARCA_17[0]))
+    if p17 > 0:
+        fx.garabato(img, CAL_ZONA.circulo(17), eo(p17), grosor=6, semilla=7)
     pf = clamp((t - tm.T5_FLECHA[0]) / (tm.T5_FLECHA[1] - tm.T5_FLECHA[0]))
     if pf > 0:
-        a, b = CAL_ZONA.celda(17), CAL_ZONA.celda(23)
-        fx.garabato(img, fx.trazo_flecha((a[0] - 30, a[1] + 16), (b[0] + 26, b[1] - 20), curva=-0.3, punta=20), eo(pf),
-                    grosor=6, semilla=5)
+        fx.garabato(img, CAL_ZONA.flecha(17, 23), eo(pf), grosor=8, semilla=5, temblor=1.5)
     pc = clamp((t - tm.T5_CIRCULO[0]) / (tm.T5_CIRCULO[1] - tm.T5_CIRCULO[0]))
     if pc > 0:
         garabato_mostaza(img, CAL_ZONA.circulo(23), eo(pc), 6)
@@ -368,10 +416,11 @@ def toma_5(t):
     lz = LienzoCapa(W, H)
     suelo(lz)
     _calendario_zona(lz, t)
+    # Reposición: sin festejo (línea editorial). Tan señala y se sorprende; Tin explica con cara neutra.
     repuesto = t >= tm.T5_CIRCULO[0]
-    pj(lz, "tan", X_TAN, t, "celebra" if repuesto else "senala", "eureka" if repuesto else "curiosidad",
-       viento=vaiven(tl, 0.25) + (0.7 * math.exp(-2 * (t - tm.T5_CIRCULO[0])) * math.cos(9 * (t - tm.T5_CIRCULO[0])) if repuesto else 0))
-    pj(lz, "tin", X_TIN, t, "explica", "feliz", fase=0.5, objeto="lapiz", giro_objeto=sacudida(tl))
+    pj(lz, "tan", X_TAN, t, "senala", "sorpresa" if repuesto else "curiosidad",
+       viento=vaiven(tl, 0.25) + (0.5 * math.exp(-2 * (t - tm.T5_CIRCULO[0])) * math.cos(9 * (t - tm.T5_CIRCULO[0])) if repuesto else 0))
+    pj(lz, "tin", X_TIN, t, "explica", "neutra", fase=0.5, objeto="lapiz", giro_objeto=sacudida(tl))
     capa = Capa(_marcas_zona(lz.resultado(), t), z=0.0, nombre="principal")
     return componer(sombras(X_TAN, X_TIN) + [capa])
 
@@ -391,10 +440,9 @@ def toma_7(t):
     lz = LienzoCapa(W, H)
     suelo(lz)
     p = eo((t - tm.T7_BARRA[0]) / (tm.T7_BARRA[1] - tm.T7_BARRA[0])) if t >= tm.T7_BARRA[0] else 0.0
-    y = 650
-    barra(lz, SEG_X0, y, 880 * p, MARRON)                           # 12.274 días = 880 px
-    marca_minima(lz, SEG_X1 - MARCA_MIN - 3, y, MOSTAZA, pop(t, tm.T7_BARRA[1]))     # 11 días = 0,8 px: marca de 4 px
-    pj(lz, "tin", X_SOLO, t, "explica", "feliz", objeto="lapiz", giro_objeto=sacudida(tl))
+    # 12.274 días = 880 px. Sin la marca mostaza de los 11 días al final (0,8 px a escala): parecía un remate de la barra.
+    barra(lz, SEG_X0, 650, 880 * p, MARRON, alto=56)
+    pj(lz, "tin", X_SOLO, t, "explica", "neutra", objeto="lapiz", giro_objeto=sacudida(tl))
     return componer(sombras(X_SOLO) + [principal(lz)])
 
 
@@ -407,32 +455,35 @@ def toma_8(t):
     return componer(capas, camara(avance=-30 * (1 - eio(tl / (C(9) - C(8))))))
 
 
-def _barras(lz, t, huang=TINTA, altman=TINTA, e_huang=1.0, e_altman=1.0, jobs=0.0):
-    marca_minima(lz, SEG_X0 + 3, BARRAS_Y, huang, e_huang)                               # Huang: 11 días
-    marca_minima(lz, SEG_X0 + 3, BARRAS_Y + BARRA_H + BARRA_SEP, altman, e_altman)       # Altman: 5 días
-    if jobs > 0:
-        barra(lz, SEG_X0, BARRAS_Y + 2 * (BARRA_H + BARRA_SEP), 880 * jobs, MARRON)      # Jobs: 4.382 días = 880 px
-
-
 def toma_9(t):
     tl = t - C(9)
     lz = LienzoCapa(W, H)
     suelo(lz)
-    _barras(lz, t, altman=MOSTAZA, e_huang=pop(t, tm.T9_HUANG), e_altman=pop(t, tm.T9_ALTMAN))
-    pj(lz, "tin", X_SOLO, t, "explica", "feliz", objeto="lapiz", giro_objeto=sacudida(tl))
+    fila_barra(lz, 0, pop(t, tm.T9_HUANG))                               # Huang 11 (tinta)
+    fila_barra(lz, 1, pop(t, tm.T9_ALTMAN), color=MOSTAZA)               # Altman 5 (mostaza: el acento del plano)
+    pj(lz, "tin", X_SOLO, t, "explica", "neutra", objeto="lapiz", giro_objeto=sacudida(tl))
     return componer(sombras(X_SOLO) + [principal(lz)], camara(avance=-50 * (1 - eio(tl / (C(10) - C(9))))))
+
+
+ASOMBRO = dict(palitos.POSES["encoge"], bi=(78.0, 150.0), bd=(78.0, 150.0))    # manos abiertas a la altura de la cara
 
 
 def toma_10(t):
     tl = t - C(10)
     lz = LienzoCapa(W, H)
     suelo(lz)
-    _barras(lz, t, jobs=tm.contador(t) / tm.VALOR_JOBS)
     llego = t >= tm.LLEGA
     tau = t - tm.LLEGA
-    pj(lz, "tan", X_TAN, t, "celebra" if llego else "pregunta", "sorpresa" if llego else "curiosidad",
+    fila_barra(lz, 0, 1.0)
+    fila_barra(lz, 1, 1.0)
+    # el nombre «Jobs 4,382» entra cuando el contador llega (no adelanta la cifra); la barra crece con el contador
+    fila_barra(lz, 2, pop(t, tm.LLEGA), color=MARRON, largo=880 * tm.contador(t) / tm.VALOR_JOBS)
+    # Asombro, sin festejo: Tan abre las manos con sorpresa; Tin levanta la mano vacía, también con sorpresa.
+    pose_tan = palitos.pose_entre("pregunta", ASOMBRO, muelle(tau, SLIDE)) if llego else "pregunta"
+    pj(lz, "tan", X_TAN, t, pose_tan, "sorpresa" if llego else "curiosidad",
        viento=(0.9 * math.exp(-1.3 * tau) * math.cos(2 * math.pi * 1.5 * tau) if llego else 0.0) + vaiven(tl, 0.15))
-    pj(lz, "tin", X_TIN, t, "saluda" if llego else "explica", "eureka" if llego else "feliz", fase=0.5, objeto=False)
+    pose_tin = palitos.pose_entre("explica", "saluda", muelle(tau, SLIDE)) if llego else "explica"
+    pj(lz, "tin", X_TIN, t, pose_tin, "sorpresa" if llego else "neutra", fase=0.5, objeto=False)
     # Zoom de golpe de +10 % al llegar la cifra. Para que la barra de 880 px no salga de la zona segura, la cámara se
     # abre despacio un 9 % mientras el contador sube y el golpe la devuelve al encuadre de diseño (escala 1, nunca más).
     abierto = 1 / 1.10
@@ -440,16 +491,22 @@ def toma_10(t):
         zoom = min(1.0, abierto * fx.golpe_de_zoom(tau, 0.10))
     else:
         zoom = lerp(1.0, abierto, eio((t - tm.CONTADOR[0]) / (tm.LLEGA - tm.CONTADOR[0]))) if t > tm.CONTADOR[0] else 1.0
-    cam = camara(zoom=zoom)
+    cam = camara(zoom=zoom, ancla=(BANDA_Y0 + BANDA_Y1) / 2)     # anclada en la banda: ni las barras ni las cabezas la pisan
     cam.apertura = 0.0
     return componer(sombras(X_TAN, X_TIN) + [principal(lz)], cam)
+
+
+def _tres_filas(lz, huang=TINTA):
+    fila_barra(lz, 0, 1.0, color=huang)
+    fila_barra(lz, 1, 1.0)
+    fila_barra(lz, 2, 1.0, color=MARRON, largo=880)
 
 
 def toma_11(t):
     tl = t - C(11)
     lz = LienzoCapa(W, H)
     suelo(lz)
-    _barras(lz, t, jobs=1.0)
+    _tres_filas(lz)
     # La cifra queda quieta (capa de texto fija); para que el plano no se congele, Tan pasa de `pregunta` a `encoge`
     # cuando dice «twelve years?», la bufanda se mueve y la cámara empuja despacio (anclada al suelo).
     dicho = max(0.0, t - (tm.P(9) - 0.1))
@@ -462,10 +519,11 @@ def toma_11(t):
 
 
 def toma_12(t):
+    """Remate: aquí sí se permite la alegría (risa de los dos)."""
     tl = t - C(12)
     lz = LienzoCapa(W, H)
     suelo(lz)
-    _barras(lz, t, huang=MOSTAZA, jobs=1.0)
+    _tres_filas(lz, huang=MOSTAZA)
     pj(lz, "tan", X_TAN, t, "encoge", "risa", viento=0.4 * math.exp(-2 * tl) * math.cos(2 * math.pi * 2 * tl) + vaiven(tl, 0.15))
     pj(lz, "tin", X_TIN, t, "explica", "risa", fase=0.5, objeto="lapiz", giro_objeto=sacudida(tl) + 8 * math.exp(-3 * tl))
     return componer(sombras(X_TAN, X_TIN) + [principal(lz)])
@@ -574,28 +632,81 @@ def _linea_sub(s):
     return ((s, TINTA),)
 
 
-def capa_subtitulos(base, f):
-    """Banda de subtítulos en español: panel de papel translúcido (0,82) con esquinas de 20 px y texto en tinta a 86 px,
-    centrado en la banda y 905-1085. Entrada con fundido de 3 fotogramas."""
-    for k, entra, sale, renglones in tm.SUBTITULOS:
+def caja_subtitulo(f):
+    """(tarjeta, renglones visibles con su alfa, caja del panel (x0, y0, x1, y1), tope del primer renglón, alfa) del
+    subtítulo del fotograma f, o None. La usan el dibujo y la medición del hueco con las cabezas."""
+    for k, entra, sale, renglones, aparece in tm.SUBTITULOS:
         fi, fs = F(entra), F(sale)
         if not (fi <= f < fs):
             continue
         alfa = min(1.0, (f - fi + 1) / 3, (fs - f) / 2)
-        anchos = [fx.ancho_texto(_linea_sub(r), TAM_SUB) for r in renglones]
-        n = len(renglones)
+        vis = []
+        for i, r in enumerate(renglones):
+            fa = F(aparece[i]) if aparece and aparece[i] is not None else fi
+            if f >= fa:
+                vis.append((r, min(1.0, (f - fa + 1) / 3)))
+        anchos = [fx.ancho_texto(_linea_sub(r), TAM_SUB) for r, _ in vis]
+        n = len(vis)
         alto_texto = 0.74 * TAM_SUB + (n - 1) * SUB_INTERLINEA
         cy = (BANDA_Y0 + BANDA_Y1) / 2
         tope = cy - alto_texto / 2 - 3
         w, h = max(anchos) + 2 * 12, alto_texto + 2 * 12 + 18
         x0, y0 = W / 2 - w / 2, max(BANDA_Y0, cy - h / 2)
-        y1 = min(BANDA_Y1, y0 + h)
-        panel = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-        ImageDraw.Draw(panel).rounded_rectangle([x0, y0, x0 + w, y1], radius=20, fill=fx._rgb(PAPEL) + (int(255 * 0.82 * alfa),))
-        base.paste(panel, (0, 0), panel)
-        for i, (r, a) in enumerate(zip(renglones, anchos)):
-            fx.poner_texto(base, _linea_sub(r), W / 2 - a / 2, tope + i * SUB_INTERLINEA, TAM_SUB, alfa=alfa)
+        return k, vis, (x0, y0, x0 + w, min(BANDA_Y1, y0 + h)), tope, alfa
+    return None
+
+
+def capa_subtitulos(base, f):
+    """Banda de subtítulos en español: panel de papel translúcido (0,82) con esquinas de 20 px y texto en tinta a 86 px,
+    centrado en la banda y 905-1085. Entrada con fundido de 3 fotogramas. Un renglón puede aparecer más tarde que su
+    tarjeta (la cifra de la tarjeta 8 entra cuando el contador llega)."""
+    c = caja_subtitulo(f)
+    if c is None:
+        return base
+    k, vis, caja, tope, alfa = c
+    panel = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ImageDraw.Draw(panel).rounded_rectangle(list(caja), radius=20, fill=fx._rgb(PAPEL) + (int(255 * 0.82 * alfa),))
+    base.paste(panel, (0, 0), panel)
+    for i, (r, a_r) in enumerate(vis):
+        a = fx.ancho_texto(_linea_sub(r), TAM_SUB)
+        fx.poner_texto(base, _linea_sub(r), W / 2 - a / 2, tope + i * SUB_INTERLINEA, TAM_SUB, alfa=alfa * a_r)
     return base
+
+
+def _hueco_subtitulo(f):
+    """Para el fotograma f con subtítulo: (f, tarjeta, hueco en px entre el panel y lo dibujado más cercano por debajo
+    —las cabezas—, hueco por encima —los gráficos—, píxeles dibujados que quedan debajo del propio panel)."""
+    c = caja_subtitulo(f)
+    if c is None:
+        return None
+    k, _, (x0, y0, x1, y1), _, _ = c
+    a = np.asarray(escena(f), dtype=np.int16)
+    dif = np.abs(a - np.asarray(fondo_papel(), dtype=np.int16)).sum(axis=2) > 60
+    x0, y0, x1, y1 = int(x0), int(y0), int(math.ceil(x1)), int(math.ceil(y1))
+    filas_abajo = np.nonzero(dif[y1:1500, :].any(axis=1))[0]
+    filas_arriba = np.nonzero(dif[400:y0, :].any(axis=1))[0]
+    abajo = int(filas_abajo[0]) if len(filas_abajo) else 999
+    arriba = int(y0 - 400 - 1 - filas_arriba[-1]) if len(filas_arriba) else 999
+    return f, k, abajo, arriba, int(dif[y0:y1, x0:x1].sum())
+
+
+def medir_subtitulos():
+    """Mide en TODOS los fotogramas con subtítulo el hueco entre el panel y las cabezas (criterio: 12 px o más) y
+    comprueba que el panel no tapa nada dibujado. Devuelve líneas de informe y si pasa."""
+    fs = [f for f in range(N) if caja_subtitulo(f)]
+    with Pool(4) as pool:
+        datos = [d for d in pool.map(_hueco_subtitulo, fs, chunksize=8) if d]
+    lineas, pasa = [], True
+    for k in sorted({d[1] for d in datos}):
+        dk = [d for d in datos if d[1] == k]
+        ab, ar, tap = min(d[2] for d in dk), min(d[3] for d in dk), max(d[4] for d in dk)
+        ok = ab >= 12 and ar >= 12 and tap == 0
+        pasa &= ok
+        lineas.append(f"tarjeta {k:2d} ({len(dk)} fotogramas): hueco mínimo con las cabezas {ab} px; con los gráficos de arriba "
+                      f"{ar} px; píxeles dibujados bajo el panel {tap}: {'pasa' if ok else 'NO PASA'}")
+    lineas.append(f"mínimo general con las cabezas: {min(d[2] for d in datos)} px; con los gráficos: {min(d[3] for d in datos)} px "
+                  f"(criterio: 12 px o más y nada bajo el panel): {'PASA' if pasa else 'NO PASA'}")
+    return lineas, pasa
 
 
 # ---------------------------------------------------------------- fotograma
@@ -631,8 +742,8 @@ def _lum(f):
 
 def todos_los_textos():
     """Todo lo que se escribe en pantalla (para `revisar_texto.py` y la comprobación de glifos)."""
-    ingles = ["Back In", "11 Days?"] + list(FIJOS) + ["4,382 days"]
-    espanol = [" ".join(r) for *_, r in tm.SUBTITULOS]
+    ingles = ["Back In", "11 Days?"] + list(FIJOS) + ["4,382 days"] + list(NOMBRES)
+    espanol = [" ".join(r[3]) for r in tm.SUBTITULOS]
     return ingles, espanol
 
 
@@ -651,7 +762,9 @@ def comprobaciones():
         assert TEXTO_X + ancho <= SEG_X1, f"rótulo fuera de la zona segura: {que} ({TEXTO_X + ancho:.0f} px)"
         assert len("".join(s for s, _ in segs).split()) <= 3, f"rótulo de más de 3 palabras: {que}"
     medidas = []
-    for k, entra, sale, renglones in tm.SUBTITULOS:
+    for nombre in NOMBRES:
+        assert SEG_X0 + 2 + fx.ancho_texto(((nombre, TINTA),), TAM_NOMBRE) * 1.02 <= SEG_X1 and len(nombre.split()) <= 3
+    for k, entra, sale, renglones, _ap in tm.SUBTITULOS:
         assert len(renglones) <= 2 and F(sale) - F(entra) >= 30, f"tarjeta {k}: más de 2 renglones o menos de 30 fotogramas"
         assert entra >= C(2) and sale <= C(14), f"tarjeta {k} pisa la portada"
         for r in renglones:
@@ -700,6 +813,7 @@ def main():
     ap.add_argument("--cada", type=int, default=15)
     ap.add_argument("--fotograma", nargs=2, metavar=("N", "PNG"), help="guarda un solo fotograma")
     ap.add_argument("--tira", nargs=3, metavar=("DESDE", "HASTA", "JPG"), help="tira de fotogramas seguidos (a 1/3)")
+    ap.add_argument("--medir-subtitulos", metavar="TXT", help="mide el hueco panel-cabezas en todos los fotogramas")
     ap.add_argument("--sin-audio", action="store_true", help="no rehace el diálogo ni el audio (usa 05_audio/mezcla.wav)")
     a = ap.parse_args()
 
@@ -711,6 +825,11 @@ def main():
     if a.fotograma:
         fotograma(int(a.fotograma[0])).save(a.fotograma[1])
         return
+    if a.medir_subtitulos:
+        lineas, pasa = medir_subtitulos()
+        Path(a.medir_subtitulos).write_text("\n".join(lineas) + "\n", encoding="utf-8")
+        print("\n".join(lineas))
+        sys.exit(0 if pasa else 1)
     if a.tira:
         d, h = int(a.tira[0]), int(a.tira[1])
         fs = [f % N for f in range(d, h + 1)]
@@ -756,7 +875,7 @@ def main():
         sys.exit("ffmpeg falló")
     # seguridad: destellos sobre todos los fotogramas, con margen (máximo 2 cambios bruscos por segundo; el límite es 3)
     d = fx.comprobar_destellos(lums + [lums[0]], max_por_segundo=2, estricto=False)
-    rev = PROY / "07_revision" / "vuelta_01"
+    rev = PROY / "07_revision" / "vuelta_02"
     rev.mkdir(parents=True, exist_ok=True)
     import json
     (rev / "destellos.json").write_text(json.dumps(d, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")

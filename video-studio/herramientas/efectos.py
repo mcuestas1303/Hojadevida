@@ -1058,10 +1058,17 @@ class FirmaError(ValueError):
 
 
 _R_PRUEBA, _X_PRUEBA, _SUELO_PRUEBA = 88.0651, 259.0, 1651.0          # plano de prueba de la especificación (§2.1)
-_B1_PRUEBA = ((358.0, 1306.1), (372.0, 1240.0), (570.0, 1165.0), (585.0, 1235.0))     # ida: H -> S
-_B2_PRUEBA = ((585.0, 1235.0), (597.0, 1290.0), (420.0, 1372.0), (358.0, 1306.1))     # vuelta: S -> H
+# Punto de mano H (1.1, corregido tras la vuelta 1 del short 3): con la pose `saluda` (100°, 155°) la mano queda a
+# 1,07 R del eje de Tan, pegada a la mejilla, y el lápiz cruzaba la cara al soltarlo y al atraparlo. El brazo de la
+# firma va ahora más abierto, BD_FIRMA = (95°, 108°): mano en (x + 1,46 R; suelo − 3,17 R) y centro del lápiz
+# H = (x + 1,51 R; suelo − 3,42 R). Los puntos de control guardan su forma respecto de H y de S.
+BD_FIRMA, BD_ATRAS = (95.0, 108.0), (-25.0, 20.0)
+BD_SALUDA = BD_FIRMA                                # nombre anterior, por compatibilidad
+_H_PRUEBA = (259.0 + (0.78 * math.sin(math.radians(95)) + 0.72 * math.sin(math.radians(108)) + 0.05) * 88.0651,
+             1651.0 + (-2.88 + 0.78 * math.cos(math.radians(95)) + 0.72 * math.cos(math.radians(108)) - 0.25) * 88.0651)
+_B1_PRUEBA = (_H_PRUEBA, (_H_PRUEBA[0] + 110.0, _H_PRUEBA[1] - 10.0), (570.0, 1165.0), (585.0, 1235.0))     # ida: H -> S
+_B2_PRUEBA = ((585.0, 1235.0), (597.0, 1290.0), (_H_PRUEBA[0] + 95.0, _H_PRUEBA[1] + 40.0), _H_PRUEBA)    # vuelta: S -> H
 F_ANTICIPA, F_IMPULSO, F_SUELTA, F_ATRAPA = -24, -19, -15, 10
-BD_SALUDA, BD_ATRAS = (100.0, 155.0), (-25.0, 20.0)
 MUELLE_LAPIZ = (560.0, 10.0)
 
 
@@ -1114,14 +1121,16 @@ def _despeje(x, y, esc, ang, R, caja):
     return max(0.0, min(_dist_caja((lerp(g[0], p[0], i / 12), lerp(g[1], p[1], i / 12)), caja) for i in range(13)) - m)
 
 
-def geometria_firma(portada, atrapa="tan", subir=0.0):
+def geometria_firma(portada, atrapa="tan", subir=0.0, dx_cuerpo=1.0):
     """Puntos del vuelo a partir de las medidas de la portada del video.
 
     portada: {"R", "x_tan", "x_tin", "suelo", "texto": caja, "objeto": caja, "cara_tan": caja, "cara_tin": caja}
     (cajas x0, y0, x1, y1 medidas en el fotograma 0; Tan de perfil con `mira=1` y sin espejo). subir: px que sube el
-    lazo (S y los puntos de control; la mano no) si el pasillo lo pide (±40 como mucho, §5.1).
+    lazo (S y los puntos de control; la mano no) si el pasillo lo pide (±40 como mucho, §5.1). dx_cuerpo: factor del
+    desplazamiento del cuerpo de Tan que aplica el render (1 = el de la especificación).
     Devuelve {"H", "S", "B1", "B2", "R", "s_max", "zona_util", "paso_libre", "portada"}. Falla con FirmaError si en
-    algún fotograma del vuelo el lápiz queda a menos de 30 px del texto o del objeto, o toca una cara."""
+    algún fotograma del vuelo el lápiz queda a menos de 30 px del texto o del objeto, o si en algún fotograma de la
+    firma (en la mano o en vuelo) queda a menos de 8 px de una cabeza."""
     if atrapa != "tan":
         raise FirmaError("Solo está escrita la variante de partida (atrapa Tan); atrapa='tin' es la §4.3, sin programar.")
     R, k = float(portada["R"]), float(portada["R"]) / _R_PRUEBA
@@ -1132,26 +1141,67 @@ def geometria_firma(portada, atrapa="tan", subir=0.0):
     B1 = (H, pt(_B1_PRUEBA[1]), pt(_B1_PRUEBA[2]), pt(_B1_PRUEBA[3]))
     B2 = (B1[3], pt(_B2_PRUEBA[1]), pt(_B2_PRUEBA[2]), H)
     geo = {"H": H, "S": B1[3], "B1": B1, "B2": B2, "R": R, "s_max": 1.7, "zona_util": (60, 380, 960, 1440),
-           "suelo": float(portada["suelo"]), "portada": dict(portada)}
+           "suelo": float(portada["suelo"]), "portada": dict(portada), "dx_cuerpo": dx_cuerpo}
     geo["paso_libre"] = (portada["cara_tan"][2], portada["objeto"][3], portada["cara_tin"][0], portada["cara_tan"][3])
     inf = _despejes(geo)
-    if inf["texto_min"] < 30 or inf["objeto_min"] < 30 or inf["caras_min"] <= 0:
+    if inf["texto_min"] < 30 or inf["objeto_min"] < 30 or inf["caras_min"] < 8:
         raise FirmaError(f"La portada no deja pasillo para el lápiz: {inf}")
     return geo
 
 
+def _dist_circulo(x, y, esc, ang, R, cx, cy, r):
+    """Distancia (px) del lápiz a un círculo de centro (cx, cy) y radio r; negativa si lo pisa."""
+    g, p, m = _eje_lapiz(x, y, esc, ang, R)
+    return min(math.hypot(lerp(g[0], p[0], i / 16) - cx, lerp(g[1], p[1], i / 16) - cy) for i in range(17)) - m - r
+
+
+def cabezas_firma(c, geo):
+    """Círculos (cx, cy, r) de las cabezas de Tan y de Tin en el fotograma c del plano de firma, con su inclinación
+    (la cabeza gira alrededor de la base del cuello). Radio de Tan: 1,04 R (contorno); el de Tin, 1,04 R más la
+    visera, que se mide aparte como un segundo círculo hacia el frente."""
+    R, por = geo["R"], geo["portada"]
+    base = por["suelo"] - 3.28 * R
+    a = math.radians(_cuerpo_tan(c)[3])
+    dx = _cuerpo_tan(c)[1] * geo.get("dx_cuerpo", 1.0)
+    # al levantar la cara la cabeza se echa hacia atrás: el centro se aleja del lado al que mira
+    tan = (por["x_tan"] + dx - R * math.sin(a), base - R * math.cos(a), 1.04 * R)
+    b = math.radians(25.0)
+    tin = (por["x_tin"] + R * math.sin(b), base - R * math.cos(b), 1.04 * R)
+    visera = (tin[0] - 1.0 * R, tin[1] - 0.35 * R, 0.30 * R)
+    return tan, tin, visera
+
+
 def _despejes(geo):
+    """Despejes mínimos del lápiz EN TODOS los fotogramas de la firma (c = -30 a 30, en la mano y en vuelo): al texto
+    y al objeto (cajas de la portada) y a las cabezas (círculos de `cabezas_firma`; negativo = las pisa)."""
     por = geo["portada"]
-    d = {"texto_min": 1e9, "objeto_min": 1e9, "caras_min": 1e9, "centro_en_zona_util": True}
+    d = {"texto_min": 1e9, "objeto_min": 1e9, "cabeza_tan_min": 1e9, "cabeza_tin_min": 1e9, "centro_en_zona_util": True}
     zu = geo["zona_util"]
-    for c in range(F_SUELTA, F_ATRAPA + 1):
-        x, y, s, a = _vuelo(c, geo)
-        d["texto_min"] = min(d["texto_min"], _despeje(x, y, s, a, geo["R"], por["texto"]))
-        d["objeto_min"] = min(d["objeto_min"], _despeje(x, y, s, a, geo["R"], por["objeto"]))
-        d["caras_min"] = min(d["caras_min"], _despeje(x, y, s, a, geo["R"], por["cara_tan"]) if F_SUELTA + 2 < c < F_ATRAPA - 2 else 1e9,   # junto a la mano no se mide: la mano está al lado de la cara
-                             _despeje(x, y, s, a, geo["R"], por["cara_tin"]))
-        d["centro_en_zona_util"] &= zu[0] <= x <= zu[2] and zu[1] <= y <= zu[3]
-    return {k: (round(v, 1) if isinstance(v, float) else v) for k, v in d.items()}
+    peor = {}
+    for c in range(-30, 31):
+        if F_SUELTA <= c < F_ATRAPA:
+            x, y, s, a = _vuelo(c, geo)
+        else:
+            bd, dx, giro, _ = _cuerpo_tan(c)
+            R = geo["R"]
+            mx = por["x_tan"] + dx * geo.get("dx_cuerpo", 1.0) + (0.78 * math.sin(math.radians(bd[0])) + 0.72 * math.sin(math.radians(bd[1])) + 0.05) * R
+            my = por["suelo"] + (-2.88 + 0.78 * math.cos(math.radians(bd[0])) + 0.72 * math.cos(math.radians(bd[1])) - 0.25) * R
+            x, y, s, a = mx, my, 1.0, -60.0 + giro
+        tan, tin, visera = cabezas_firma(c, geo)
+        if F_SUELTA <= c < F_ATRAPA:
+            d["texto_min"] = min(d["texto_min"], _despeje(x, y, s, a, geo["R"], por["texto"]))
+            d["objeto_min"] = min(d["objeto_min"], _despeje(x, y, s, a, geo["R"], por["objeto"]))
+            d["centro_en_zona_util"] &= zu[0] <= x <= zu[2] and zu[1] <= y <= zu[3]
+        dt = _dist_circulo(x, y, s, a, geo["R"], *tan)
+        if dt < d["cabeza_tan_min"]:
+            d["cabeza_tan_min"], peor["cabeza_tan_en_c"] = dt, c
+        dn = min(_dist_circulo(x, y, s, a, geo["R"], *tin), _dist_circulo(x, y, s, a, geo["R"], *visera))
+        if dn < d["cabeza_tin_min"]:
+            d["cabeza_tin_min"], peor["cabeza_tin_en_c"] = dn, c
+    d["caras_min"] = min(d["cabeza_tan_min"], d["cabeza_tin_min"])
+    out = {k: (round(v, 1) if isinstance(v, float) else v) for k, v in d.items()}
+    out.update(peor)
+    return out
 
 
 def _cuerpo_tan(c):
@@ -1207,8 +1257,12 @@ def lapiz_bumeran(c, geo, variante="bucle"):
         x2, y2, _, ang2 = _vuelo(min(c + 1, F_ATRAPA) if c + 1 <= F_ATRAPA else c, geo)
         v, om = math.hypot(x2 - x, y2 - y), ang2 - ang
     else:
-        (x, y), esc, ang, v, om = geo["H"], 1.0, -60.0 + giro, 0.0, 0.0
+        (x, y), esc, ang, v, om = geo["H"], 1.0, -60.0 + giro, 0.0, 0.0      # (x, y) se afina abajo, con la pose
     pose = dict(palitos.POSES["saluda"], bd=bd, objeto_arriba=True)
+    if not volando:                                   # el lápiz en la mano: donde lo dibuja `palitos` con ese brazo
+        (mx, my), _ = palitos.mano_de(geo["portada"]["x_tan"] + dx * geo.get("dx_cuerpo", 1.0), geo["suelo"],
+                                      geo["R"] * 5.53, pose, "perfil", 1)
+        x, y = mx + 0.05 * geo["R"], my - 0.25 * geo["R"]
     return {"c": c, "fase": fase,
             "lapiz": {"visible": True, "en_mano": not volando, "x": x, "y": y, "esc": esc, "angulo": ang, "v": v, "omega": om},
             "tan": {"pose": pose, "dx": dx, "expresion": "concentrado" if F_ANTICIPA <= c <= -16 else None,
@@ -1226,7 +1280,7 @@ def pintar_lapiz_volador(est, geo, fps=FPS, obturador=0.5):
     if lp["en_mano"] or not lp["visible"]:
         return []
     c, R = est["c"], geo["R"]
-    n = int(clamp(round(1 + lp["v"] / 10.0), 1, 6))
+    n = int(clamp(round(1 + lp["v"] / 4.0), 1, 16))      # 1.1b: más subpasos (con 6 se veía un abanico de copias)
     pasos = [_vuelo(clamp(c + obturador * ((i + 0.5) / n - 0.5), F_SUELTA, F_ATRAPA), geo) for i in range(n)]
     m = 1.0 * R * geo["s_max"] + 8
     x0, y0 = int(min(q[0] for q in pasos) - m), int(min(q[1] for q in pasos) - m)
@@ -1278,8 +1332,8 @@ def comprobar_firma(geo, N=None):
     d = inf["despejes_px"]
     inf["pasa"] = (abs(antes[0] - despues[0]) <= 1.0 and abs(antes[1] - despues[1]) <= 0.5 and abs(antes[2] - despues[2]) <= 3.0
                    and inf["v_max_px_f"] <= 90 and inf["omega_max_grados_f"] <= 40 and min(p[1] for p in pasos) > 0
-                   and abs(final["pose"]["bd"][0] - 100) <= 2 and abs(final["pose"]["bd"][1] - 155) <= 2
-                   and abs(final["dx"]) <= 1 and d["texto_min"] >= 30 and d["objeto_min"] >= 30 and d["caras_min"] > 0
+                   and abs(final["pose"]["bd"][0] - BD_FIRMA[0]) <= 2 and abs(final["pose"]["bd"][1] - BD_FIRMA[1]) <= 2
+                   and abs(final["dx"]) <= 1 and d["texto_min"] >= 30 and d["objeto_min"] >= 30 and d["caras_min"] >= 8
                    and d["centro_en_zona_util"])
     return inf
 
