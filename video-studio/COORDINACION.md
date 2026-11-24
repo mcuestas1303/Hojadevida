@@ -443,3 +443,6 @@ Banner v2.1, descripción y 13 palabras clave cargados y comprobados en `@Tinand
 - 2026-11-24: Keter cargó la v2 del short 3 en privado (https://youtube.com/shorts/jB695mJFsGY); el viejo sigue público.
   Frenó por la miniatura: YouTube exige **verificar la cuenta** (lo hace el dueño) para subir miniaturas propias; quedó el
   cuadro «Nov 23». El dueño decide en la conversación de Keter si se publica así. Pendiente fijo del canal: verificar la cuenta.
+- 2026-11-23, ≈ 22:55 (El Salvador): **v2 del short 3 pública**, https://youtube.com/shorts/jB695mJFsGY; la v1 quedó en
+  privado. Pendientes: el dueño verifica la cuenta de YouTube para subir la miniatura propia; siguiente conteo antes del
+  2026-11-30; revisiones el 2026-11-26, 11-30 y 12-21.
