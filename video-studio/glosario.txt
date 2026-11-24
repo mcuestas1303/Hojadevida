@@ -41,3 +41,6 @@ apple
 ceo
 # imperativo con pronombre, forma correcta en español («suscríbete»); el diccionario solo trae «suscribirte»
 suscríbete
+# nombres de medios citados como fuente en la descripción del short 3 (CNBC, Al Jazeera)
+CNBC
+Jazeera
