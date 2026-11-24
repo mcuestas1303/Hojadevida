@@ -36,7 +36,7 @@ PERFILES = {
     ("tiky-lumi", "largo"): dict(min=20, max=60, rec=(35, 50), frase_antes=45, excl=0),
     ("tiky-lumi", "short"): dict(min=15, max=50, rec=(25, 40), frase_antes=40, excl=0),
 }
-SIGLAS = {"GTA", "VHS", "CD", "TV", "DVD", "AI", "USA", "UK", "NES", "PS5"}
+SIGLAS = {"GTA", "VHS", "CD", "TV", "DVD", "AI", "USA", "UK", "NES", "PS5", "CEO", "GPU", "RTX", "PC", "CPU", "RAM"}
 MENORES_EN = {"a", "an", "the", "and", "but", "or", "nor", "for", "so", "yet", "at", "by", "in", "of", "on", "to",
               "up", "as", "vs", "with", "from"}
 PERMITIDOS = set(". , : ? ! ' ’ ( ) & ≈ – - \" “ ” ¿ ¡".split()) | {" "}

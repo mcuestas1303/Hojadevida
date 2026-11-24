@@ -56,6 +56,12 @@ elementos psicológicos».
 - **Sigue necesitando su sí:** gastar créditos o dinero, instalar herramientas, rehacer una pieza ya generada y
   publicar. Eso no cambia.
 - Al informar se le presenta la decisión tomada y su razón, no una lista de opciones.
+- **Canal automatizado (regla del dueño, 2026-11-24):** «Filtra todo vos con base a tu investigación; ya te dije que
+  estamos afinando un canal automatizado». Cuando el dueño da un tema, el equipo investiga, filtra y decide solo el
+  ángulo, el tono, lo que se dice y lo que no, el título y los efectos, lo deja escrito con su porqué y sigue hasta
+  tener la pieza lista. No se le devuelven listas de decisiones ni preguntas de gusto o de tono. Solo se le detiene
+  para lo que sigue necesitando su sí (créditos o dinero, instalar, rehacer una pieza, publicar) y para lo que solo él
+  puede hacer.
 
 ## Qué se ve en cada conversación (regla del dueño, 2026-11-21)
 

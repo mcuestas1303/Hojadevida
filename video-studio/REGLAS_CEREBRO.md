@@ -136,3 +136,8 @@
 - **Los efectos se eligen por investigación, no por gusto (dueño, 2026-11-23):** «No es lo que a mí me guste; cada
   efecto animado comunica y al mismo tiempo provoca una emoción, por eso debe ser basado en tu investigación».
   Gramática de efectos: `manual/14_efectos_y_emocion.md`. No se le pregunta al dueño qué efecto prefiere.
+
+- **Canal automatizado: el equipo filtra y decide (dueño, 2026-11-24):** «Filtra todo vos con base a tu investigación;
+  ya te dije que estamos afinando un canal automatizado». Dado un tema, el equipo decide ángulo, tono, límites,
+  título y efectos con su investigación y lo deja escrito; al dueño solo se le pide el sí para créditos, instalar,
+  rehacer y publicar.
