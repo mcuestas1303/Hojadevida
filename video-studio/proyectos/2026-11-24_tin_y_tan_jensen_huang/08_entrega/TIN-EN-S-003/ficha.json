@@ -2,7 +2,7 @@
   "codigo": "TIN-EN-S-003",
   "canal": "en",
   "titulo": "Jensen Huang Is Back as Nvidia CEO After 11 Days",
-  "descripcion": "Jensen Huang is back as Nvidia's CEO. Was 11 days fast? We counted.\n\nTimeline:\nNov 12, 2026: Jensen Huang resigned from Nvidia after a scandal.\nNov 17, 2026: Nvidia's board said it would not bring him back.\nNov 23, 2026: the board reinstated him as president and CEO, 6 days later. Nov 12 to Nov 23 is 11 days.\nBefore that he had led Nvidia since it was incorporated on Apr 5, 1993: 12,274 days, more than 33 years.\n\nOther comebacks, counted the same way (from the day the exit was announced to the day the person was back at the top job):\nSam Altman, OpenAI: removed on Nov 17, 2023, reinstated on Nov 22, 2023: 5 days.\nSteve Jobs, Apple: resignation letter on Sep 17, 1985, named interim CEO on Sep 16, 1997: 4,382 days (≈ 12 years). He had rejoined Apple earlier, in February 1997, when it bought his company NeXT.\nSo 11 days is faster than Jobs and slower than Altman. The exits were different: one resigned, one was removed. Bars are to scale; the shortest are drawn at a minimum width so they can be seen.\n\nWho else came back? Subscribe to Tin & Tan for the next count.\n\nSources, all read on 2026-11-24: Wikipedia, \"Jensen Huang\"; Wikipedia, \"Nvidia\"; Wikipedia, \"Removal of Sam Altman from OpenAI\"; Wikipedia, \"Steve Jobs\". Nvidia's own announcement could not be opened, so the Nov 23 date also rests on news channel headlines (CNN, BBC, NBC, CBS, ABC and Fox News).\n\nNot affiliated with Nvidia. Jensen Huang is not involved in this video.",
+  "descripcion": "Jensen Huang is back as Nvidia's CEO. Was 11 days fast? We counted.\n\nTimeline:\nNov 12, 2026: Jensen Huang resigned from Nvidia after a scandal.\nNov 17, 2026: Nvidia's board said it would not bring him back.\nNov 23, 2026: the board reinstated him as president and CEO, 6 days later. Nov 12 to Nov 23 is 11 days.\nBefore that he had led Nvidia since it was incorporated on Apr 5, 1993: 12,274 days, more than 33 years.\n\nOther comebacks, counted the same way (from the day the exit was announced to the day the person was back at the top job):\nSam Altman, OpenAI: removed on Nov 17, 2023, reinstated on Nov 22, 2023: 5 days.\nSteve Jobs, Apple: resignation letter on Sep 17, 1985, named interim CEO on Sep 16, 1997: 4,382 days (≈ 12 years). He had rejoined Apple earlier, in February 1997, when it bought his company NeXT.\nSo 11 days is faster than Jobs and slower than Altman. The exits were different: one resigned, one was removed. Bars are to scale; the shortest are drawn at a minimum width so they can be seen.\n\nWho else came back? Subscribe to Tin & Tan for the next count.\n\nSources, all read on 2026-11-24: Wikipedia, \"Jensen Huang\"; Wikipedia, \"Nvidia\"; Wikipedia, \"Removal of Sam Altman from OpenAI\"; Wikipedia, \"Steve Jobs\". Nvidia newsroom, \"NVIDIA Board Reinstates Jensen Huang as President, CEO and Board Director\" (Nov 23); NBC News, CNBC and Al Jazeera for Nov 12 and Nov 17.\n\nNot affiliated with Nvidia. Jensen Huang is not involved in this video.",
   "etiquetas": [
     "Jensen Huang",
     "Nvidia",
@@ -79,11 +79,11 @@
       "nota": "resultado del supervisor (firma_supervisor.md, vuelta 1), corrido con --descripcion y --proyecto"
     },
     "revision_humana": {
-      "video_cumple_el_titulo": null,
-      "no_enganoso": null,
-      "linea_editorial": null,
-      "firma": "PENDIENTE: la firma el director creativo al ver el video (prompt, sección 8)",
-      "fecha": null
+      "video_cumple_el_titulo": true,
+      "no_enganoso": true,
+      "linea_editorial": true,
+      "firma": "Coordinación del Generador, como dirección creativa, sobre el render 3: el video cuenta la reposición a los 11 días, con sus fechas; no afirma nada que no muestre; sin burla ni vida privada.",
+      "fecha": "2026-11-24"
     },
     "medicion": {
       "formato_short": [

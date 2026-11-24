@@ -17,3 +17,12 @@ Los `.srt` no cambian: son la pista completa; las tarjetas quemadas son su versi
 
 Escucha: el dueño aprobó voz, pronunciación y mezcla sobre el render 1 (`../escucha_del_dueno.md`). Desde entonces solo
 bajaron a −20 dBFS el chasquido y el silbido de ida de la firma del lápiz (pico de −1,0 a −1,7 dBTP); se le avisó.
+
+## Verificación externa de Keter (2026-11-24, antes de publicar)
+
+Keter abrió las fuentes que desde aquí estaban bloqueadas: renuncia el 12-nov (Al Jazeera y NBC; un punto de CNBC dice
+13-nov, con lo que serían 10 días: se mantiene el 12 por tener dos fuentes); el 17-nov el presidente de la junta dijo
+que no pensaban reponerlo (NBC y CNBC); reposición el 23-nov en el comunicado de Nvidia
+(nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director). Sus cuentas dan
+11, 6, 12.274, 5 y 4.382. La descripción deja de decir que el comunicado no se pudo abrir y lo cita. Desde esta
+conversación el comunicado no se leyó: la lectura es de Keter.
