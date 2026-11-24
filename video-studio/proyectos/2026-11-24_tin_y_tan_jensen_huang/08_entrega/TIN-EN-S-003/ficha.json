@@ -1,0 +1,112 @@
+{
+  "codigo": "TIN-EN-S-003",
+  "canal": "en",
+  "titulo": "Jensen Huang Is Back as Nvidia CEO After 11 Days",
+  "descripcion": "Jensen Huang is back as Nvidia's CEO. Was 11 days fast? We counted.\n\nTimeline:\nNov 12, 2026: Jensen Huang resigned from Nvidia after a scandal.\nNov 17, 2026: Nvidia's board said it would not bring him back.\nNov 23, 2026: the board reinstated him as president and CEO, 6 days later. Nov 12 to Nov 23 is 11 days.\nBefore that he had led Nvidia since it was incorporated on Apr 5, 1993: 12,274 days, more than 33 years.\n\nOther comebacks, counted the same way (from the day the exit was announced to the day the person was back at the top job):\nSam Altman, OpenAI: removed on Nov 17, 2023, reinstated on Nov 22, 2023: 5 days.\nSteve Jobs, Apple: resignation letter on Sep 17, 1985, named interim CEO on Sep 16, 1997: 4,382 days (≈ 12 years). He had rejoined Apple earlier, in February 1997, when it bought his company NeXT.\nSo 11 days is faster than Jobs and slower than Altman. The exits were different: one resigned, one was removed. Bars are to scale; the shortest are drawn at a minimum width so they can be seen.\n\nWho else came back? Subscribe to Tin & Tan for the next count.\n\nSources, all read on 2026-11-24: Wikipedia, \"Jensen Huang\"; Wikipedia, \"Nvidia\"; Wikipedia, \"Removal of Sam Altman from OpenAI\"; Wikipedia, \"Steve Jobs\". Nvidia's own announcement could not be opened, so the Nov 23 date also rests on news channel headlines (CNN, BBC, NBC, CBS, ABC and Fox News).\n\nNot affiliated with Nvidia. Jensen Huang is not involved in this video.",
+  "etiquetas": [
+    "Jensen Huang",
+    "Nvidia",
+    "Jensen Huang is back",
+    "Nvidia CEO",
+    "Jensen Huang CEO",
+    "Jensen Huang reinstated",
+    "Jensen Huang resigned",
+    "CEO comeback",
+    "Sam Altman",
+    "Steve Jobs",
+    "Tin & Tan",
+    "shorts"
+  ],
+  "idioma": "en",
+  "categoria_id": "24",
+  "contenido_sintetico_realista": false,
+  "para_ninos": false,
+  "objetivos": [
+    {
+      "metrica": "visto_vs_deslizado_pct",
+      "meta": 20.7,
+      "plazo_dias": 7
+    },
+    {
+      "metrica": "vistas_calificadas_shorts",
+      "meta": 1,
+      "plazo_dias": 28
+    },
+    {
+      "metrica": "suscriptores_por_mil_vistas",
+      "meta": 1,
+      "plazo_dias": 28
+    },
+    {
+      "metrica": "compartidos_por_mil_vistas",
+      "meta": 1,
+      "plazo_dias": 28
+    }
+  ],
+  "archivos": {
+    "video": "video.mp4",
+    "miniatura": "miniatura.png",
+    "subtitulos": "subtitulos.srt",
+    "subtitulos_es": "subtitulos_es.srt"
+  },
+  "titulo_ficha": {
+    "elegido": "Jensen Huang Is Back as Nvidia CEO After 11 Days",
+    "caracteres": 48,
+    "idioma": "en",
+    "canal": "tin-y-tan",
+    "formato": "short",
+    "publico": "EE. UU., adultos que siguen la noticia; sin edad fija (manda el dato de Studio)",
+    "frase_de_busqueda": "jensen huang is back",
+    "fuente_de_la_frase": "títulos de YouTube del 2026-11-24 (00_analisis_de_tematicas.md, «Segunda vuelta», S2); volumen: sin dato",
+    "formula": "nombre buscado + palabras de la noticia + cifra a la vista",
+    "alternativas": [
+      {
+        "texto": "Jensen Huang Nvidia CEO: Back After 11 Days",
+        "caracteres": 43
+      },
+      {
+        "texto": "Jensen Huang Is Back: Was 11 Days Fast?",
+        "caracteres": 39
+      }
+    ],
+    "uso_de_las_alternativas": "Reserva: YouTube no ofrece prueba A/B de títulos en Shorts",
+    "filtro": {
+      "version": "1.1",
+      "fecha": "2026-11-24",
+      "resultado": "PASA",
+      "errores": [],
+      "avisos": []
+    },
+    "revision_humana": {
+      "video_cumple_el_titulo": null,
+      "no_enganoso": null,
+      "linea_editorial": null,
+      "firma": "PENDIENTE: la firma el director creativo al ver el video (prompt, sección 8)",
+      "fecha": null
+    },
+    "medicion": {
+      "formato_short": [
+        "visto_frente_a_deslizado",
+        "mostrado_en_el_feed",
+        "fuente_de_trafico_busqueda"
+      ],
+      "plazos_dias": [
+        7,
+        28
+      ],
+      "meta": "superar el 20,7 % del short 1"
+    }
+  },
+  "color": {
+    "neutros": [
+      "#F3E9D2",
+      "#2B2420"
+    ],
+    "acento": "#E8B33B",
+    "por_que": "papel y tinta como neutros del canal; mostaza como acento único (clave y un elemento por plano); tomate solo en el pico (la cifra de Jobs) para marcar el golpe; la misma paleta que los shorts 1 y 2 para reconocer el canal",
+    "objetivo": "Programa de socios: reconocimiento del canal y un pico visible; métrica: retención de los segundos 1 a 3 y pico de retención en 22,07 s",
+    "medido": "revisar_color.py sobre el video (2026-11-24, vuelta 1): ≈ 93 % en paleta, saturación ≈ 16 %, luminosidad ≈ 89 %, variación ±1 % entre segundos; portada (fotograma 0) ≈ 93 %. Medido por quien renderizó; falta la firma del supervisor de continuidad."
+  },
+  "emociones": "Objetivo: entrar al Programa de socios lo antes posible (dueño, 2026-11-23). Arco: curiosidad (0-3,5 s) → tensión (3,5-12 s) → comparación (12-19 s) → asombro (pico real 22,07 s) → curiosidad nueva y gratitud (24,5-31 s).\ncontenido: curiosidad, tensión y asombro → vistas calificadas y compartidos → vistas a 7 y 28 días\ngancho: curiosidad y orientación (silla vacía, lápiz que vuelve, pregunta de Tan) → baja los deslizados → visto frente a deslizado (meta: más de 20,7 %)\nestructura y giro: curiosidad que se resuelve y sorpresa (pico real al 71,2 %) → pide ser enviado → retención hacia 22,07 s\npersonajes y actuación: calidez y confianza (una reacción de Tan por dato) → apego → suscriptores por mil vistas\ncolores: atención tranquila; tomate solo en la cifra de Jobs → reconocer el canal → retención de los segundos 1 a 3\nanimaciones: presencia, satisfacción y asombro (capas, cruces, barra) → atacan los tres problemas del short 1 → retención 3,5-12 s\nefectos de luz: solidez sin destellos (desenfoque fijo, sombras, tomate) → retener sin incomodar → comprobar_destellos en 0\nvelocidad del video: curiosidad con calma (13 cortes en 31 s) → mantiene el 63 % del short 1 → duración media vista\nvelocidad del audio: claridad (voz al 110 %) → se entiende a la primera → retención en las cifras\nvoces: calidez y familiaridad (Zelda y Kevin) → firma del canal → espectadores que regresan\nmúsica: tensión que se resuelve en asombro (mi menor a mi mayor) → clima sin tapar la voz → retención 19,4-24 s\nefectos de sonido: impacto y anticipación (subida, silencio de 12 f, ding) → pico que se envía → pico en 22,07 s\ntexto: énfasis y claridad (claves con contorno, cifras al 7 %) → la cifra se lee de un vistazo → retención en cada texto\nsubtítulos en español: comprensión y cercanía → más vistas y suscriptores hispanohablantes → vistas y retención por idioma\ncierre y bucle: sorpresa cerrada, curiosidad nueva y una invitación (lápiz lanzado, bucle visual) → suscriptores → suscriptores por mil vistas\nfirma del canal: sorpresa breve y reconocimiento (lápiz bumerán) → espectadores que regresan → regreso y suscriptores por mil vistas\ntítulo y descripción: curiosidad y confianza → búsqueda por el nombre → visto frente a deslizado y búsqueda\nnota: tiempos reales de la vuelta 1 (voz real); nadie ha oído el audio",
+  "notas": "Vuelta 1, renderizado por código (0 créditos de imagen y video; voz: 3,7 créditos, una generación por personaje, autorizada por el dueño). Duración real 31,0 s (930 fotogramas); pico en 22,07 s (71,2 %). Voz transcrita contra el guion con revisar_voz.py sobre el video final: 87 palabras, 0 diferencias. NADIE HA ESCUCHADO el audio: falta la escucha del dueño. Abre y cierra con la firma del lápiz bumerán (Tan lanza y atrapa; la voz entra en el fotograma 14). Subtítulos en español quemados (12 tarjetas del prompt) y pista subtitulos_es.srt. video.mp4 recomprimido a 2,92 MB con CRF 26 (con CRF 22 pesaba 4,21 MB, por el grano del papel), audio copiado. Pendientes antes de publicar: el sí del dueño, la firma del director creativo sobre el título (revision_humana) y registrar el código en canales/nostalgia-tin-y-tan/registro_codigos.md. categoria_id 24 (Entertainment), como TIN-EN-S-002."
+}

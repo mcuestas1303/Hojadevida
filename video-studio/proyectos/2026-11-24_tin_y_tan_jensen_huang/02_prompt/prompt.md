@@ -2,6 +2,8 @@
 
 > **ESTADO (2026-11-24, versión 2):** sustituye por completo al prompt de la tarjeta de 1999 (descartado: el dueño eliminó la nostalgia como criterio del canal, `canales/nostalgia-tin-y-tan/PARAMETROS.md`). Este video trata de **la noticia**: Jensen Huang volvió como director ejecutivo de Nvidia a los 11 días. **La voz no está generada, los tiempos son estimados** (ritmo medido en el short 2: Tin ≈ 4,6 sílabas por segundo, Tan ≈ 5,2) y el video no está renderizado. El dueño ordenó que el equipo decida todo con su investigación; no quedan preguntas para él, solo su sí para gastar créditos de voz y para publicar.
 
+> **TIEMPOS REALES (2026-11-24, vuelta 1):** voz generada y video renderizado. Duración real **31,0 s** (930 fotogramas). Cortes reales: 1,0, 3,5, 6,5, 9,0, 12,0, 13,0, 14,5, 16,0, 19,0, 22,5, 24,5, 27,0, 30,0 y bucle en 31,0. La voz entra en el fotograma 14 (0,47 s) y termina en 30,05 s. Pico (llegada de «4,382») en **22,07 s = 71,2 %**. Están actualizados con los tiempos reales: la ficha (sección 1), la línea «Duración» de cada toma (sección 6), el guion (sección 7) y las dos tablas de texto (sección 12). **Los segundos que aparecen dentro de las especificaciones de dibujo, del mapa de ritmo y de la tabla de sonido siguen siendo los estimados de la versión 2**: los reales salen de `codigo/tiempos.py` y están en `05_audio/linea_de_tiempo_voz.md` y en `07_revision/vuelta_01/notas.md`. **La apertura y el cierre siguen `canales/nostalgia-tin-y-tan/FIRMA_LAPIZ_BUMERAN.md`, que manda sobre este prompt:** Tan lanza y Tan atrapa (f 10), Tin va sin lápiz en el plano de firma, la toma 14 dura 30 fotogramas y la silla de la portada está quieta. El guion y el contenido no cambiaron.
+
 <!--
 Pieza dibujada con código (sin generador de video). Todas las tomas son método «edición». En lugar de «Prompt de keyframe»
 y «Prompt de video» cada toma lleva una «Especificación de dibujo». Los tiempos son estimados con la voz del short 2 y se
@@ -17,12 +19,12 @@ reajustan con la voz real. Sin corchetes en el texto: el validador los trata com
 - **Objetivo de aprendizaje:** no aplica
 - **Generador:** ninguno: imagen dibujada con código (palitos.py 1.3 + efectos.py + gráficos propios), armada con ffmpeg
 - **Aspecto:** 9:16
-- **Duración total:** 30,5 s (la voz estimada va de 0,00 a 29,09 s; cierre de 1,41 s sin voz con el lanzamiento del lápiz; múltiplo de 0,5 s; 915 fotogramas)
+- **Duración total:** 31,0 s reales (la voz va de 0,47 a 30,05 s; cierre de 0,95 s sin voz con el lanzamiento del lápiz; múltiplo de 0,5 s; 930 fotogramas)
 - **Resolución de borrador:** 540x960 a 30 fps, prueba de 5 s con un fotograma por pulso (render propio)
-- **Resolución final:** 1080x1920 a 30 fps, 915 fotogramas
+- **Resolución final:** 1080x1920 a 30 fps, 930 fotogramas
 - **Precio por segundo:** 0 (render propio; no hay servicio de pago)
 - **Intentos estimados por toma:** 1
-- **Versión:** 2 (tiempos estimados; sin voz ni render)
+- **Versión:** 2 con tiempos reales (voz real y render de la vuelta 1)
 
 ## 2. Elenco
 
@@ -114,7 +116,7 @@ sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes
 
 ### Toma 2 — Tan hace la pregunta
 
-- **Duración:** 1,5 s (de 1,0 a 2,5)
+- **Duración:** 2,5 s (de 1,0 a 3,5)
 - **Personajes:** @tan
 - **Método:** edición
 - **Escenario:** papel_crema
@@ -133,7 +135,7 @@ sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes
 
 ### Toma 3 — Renunció el 12 de noviembre
 
-- **Duración:** 4,0 s (de 2,5 a 6,5)
+- **Duración:** 3,0 s (de 3,5 a 6,5)
 - **Personajes:** @tan, @tin
 - **Método:** edición
 - **Escenario:** papel_crema
@@ -153,7 +155,7 @@ sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes
 
 ### Toma 4 — El 17, la junta dijo que no
 
-- **Duración:** 3,5 s (de 6,5 a 10,0)
+- **Duración:** 2,5 s (de 6,5 a 9,0)
 - **Personajes:** @tan, @tin
 - **Método:** edición
 - **Escenario:** papel_crema
@@ -172,7 +174,7 @@ sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes
 
 ### Toma 5 — Seis días después, repuesto el 23
 
-- **Duración:** 3,0 s (de 10,0 a 13,0)
+- **Duración:** 3,0 s (de 9,0 a 12,0)
 - **Personajes:** @tan, @tin
 - **Método:** edición
 - **Escenario:** papel_crema
@@ -192,7 +194,7 @@ sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes
 
 ### Toma 6 — Once días
 
-- **Duración:** 1,0 s (de 13,0 a 14,0)
+- **Duración:** 1,0 s (de 12,0 a 13,0)
 - **Personajes:** @tan
 - **Método:** edición
 - **Escenario:** papel_crema
@@ -210,7 +212,7 @@ sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes
 
 ### Toma 7 — 12.274 días al mando
 
-- **Duración:** 2,0 s (de 14,0 a 16,0)
+- **Duración:** 1,5 s (de 13,0 a 14,5)
 - **Personajes:** @tin
 - **Método:** edición
 - **Escenario:** papel_crema
@@ -229,7 +231,7 @@ sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes
 
 ### Toma 8 — Tan: «¿rápido comparado con quién?»
 
-- **Duración:** 1,0 s (de 16,0 a 17,0)
+- **Duración:** 1,5 s (de 14,5 a 16,0)
 - **Personajes:** @tan
 - **Método:** edición
 - **Escenario:** papel_crema
@@ -246,7 +248,7 @@ sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes
 
 ### Toma 9 — Sam Altman: 5 días
 
-- **Duración:** 2,5 s (de 17,0 a 19,5)
+- **Duración:** 3,0 s (de 16,0 a 19,0)
 - **Personajes:** @tin
 - **Método:** edición
 - **Escenario:** papel_crema
@@ -264,7 +266,7 @@ sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes
 
 ### Toma 10 — El pico: Steve Jobs, 4.382 días
 
-- **Duración:** 4,0 s (de 19,5 a 23,5)
+- **Duración:** 3,5 s (de 19,0 a 22,5)
 - **Personajes:** @tan, @tin
 - **Método:** edición
 - **Escenario:** papel_crema
@@ -285,7 +287,7 @@ sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes
 
 ### Toma 11 — Tan se asombra (la cifra queda quieta)
 
-- **Duración:** 1,0 s (de 23,5 a 24,5)
+- **Duración:** 2,0 s (de 22,5 a 24,5)
 - **Personajes:** @tan
 - **Método:** edición
 - **Escenario:** papel_crema
@@ -302,7 +304,7 @@ sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes
 
 ### Toma 12 — Remate: más rápido que Jobs, más lento que Altman
 
-- **Duración:** 2,0 s (de 24,5 a 26,5)
+- **Duración:** 2,5 s (de 24,5 a 27,0)
 - **Personajes:** @tan, @tin
 - **Método:** edición
 - **Escenario:** papel_crema
@@ -321,7 +323,7 @@ sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes
 
 ### Toma 13 — Pregunta final e invitación; el lápiz pasa a Tan
 
-- **Duración:** 2,5 s (de 26,5 a 29,0)
+- **Duración:** 3,0 s (de 27,0 a 30,0)
 - **Personajes:** @tan, @tin
 - **Método:** edición
 - **Escenario:** papel_crema
@@ -340,7 +342,7 @@ sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes
 
 ### Toma 14 — Cierre en bucle: Tan lanza el lápiz
 
-- **Duración:** 1,5 s (de 29,0 a 30,5)
+- **Duración:** 1,0 s (de 30,0 a 31,0)
 - **Personajes:** @tan, @tin
 - **Método:** edición
 - **Escenario:** papel_crema
@@ -364,17 +366,17 @@ Guion de voz (líneas numeradas, quién habla, texto exacto, inicio y fin estima
 
 | Línea | Quién | Empieza (s) | Termina (s) | Dura (s) | Texto exacto (números como se dicen) | Sílabas |
 |---|---|---|---|---|---|---|
-| 1 | Tan | 0,00 | 2,31 | 2,31 | Was Jensen Huang's comeback in eleven days fast? | 12 |
-| 2 | Tin | 2,54 | 6,45 | 3,91 | He resigned from Nvidia on November twelfth after a scandal. | 18 |
-| 3 | Tin | 6,68 | 9,72 | 3,04 | On the seventeenth the board said it would not bring him back. | 14 |
-| 4 | Tin | 9,95 | 13,00 | 3,04 | Six days later it reinstated him as C E O. | 14 |
-| 5 | Tin | 13,23 | 15,77 | 2,54 | Before that: more than thirty-three years in charge. | 11 |
-| 6 | Tan | 16,00 | 16,96 | 0,96 | Fast compared to who? | 5 |
-| 7 | Tin | 17,19 | 19,30 | 2,11 | Sam Altman at OpenAI: five days. | 9 |
-| 8 | Tin | 19,53 | 23,24 | 3,71 | Steve Jobs at Apple: four thousand, three hundred eighty-two days. | 15 |
-| 9 | Tan | 23,47 | 24,43 | 0,96 | That is twelve years? | 5 |
-| 10 | Tin | 24,66 | 26,55 | 1,89 | Faster than Jobs. Slower than Altman. | 8 |
-| 11 | Tan | 26,78 | 29,09 | 2,32 | Who else came back? Subscribe for the next count. | 11 |
+| 1 | Tan | 0,47 | 3,46 | 2,99 | Was Jensen Huang's comeback in eleven days fast? | 12 |
+| 2 | Tin | 3,69 | 6,55 | 2,87 | He resigned from Nvidia on November twelfth after a scandal. | 18 |
+| 3 | Tin | 6,78 | 9,10 | 2,32 | On the seventeenth the board said it would not bring him back. | 14 |
+| 4 | Tin | 9,33 | 11,74 | 2,41 | Six days later it reinstated him as C E O. | 14 |
+| 5 | Tin | 11,97 | 14,23 | 2,26 | Before that: more than thirty-three years in charge. | 11 |
+| 6 | Tan | 14,46 | 16,12 | 1,66 | Fast compared to who? | 5 |
+| 7 | Tin | 16,35 | 18,77 | 2,42 | Sam Altman at OpenAI: five days. | 9 |
+| 8 | Tin | 19,00 | 22,48 | 3,49 | Steve Jobs at Apple: four thousand, three hundred eighty-two days. | 15 |
+| 9 | Tan | 22,71 | 24,49 | 1,78 | That is twelve years? | 5 |
+| 10 | Tin | 24,72 | 26,73 | 2,00 | Faster than Jobs. Slower than Altman. | 8 |
+| 11 | Tan | 26,96 | 30,05 | 3,09 | Who else came back? Subscribe for the next count. | 11 |
 
 Voz total estimada de 0,00 a 29,09 s; hasta 30,5 hay 1,41 s sin voz y al volver al fotograma 0 la voz entra sin silencio inicial (silencio del empalme: 1,41 s, menos de 2 s).
 
@@ -614,20 +616,20 @@ Cada efecto sale de `manual/14_efectos_y_emocion.md` (secciones 2, 3, 4, 4b y 6)
 
 | Texto | Entra (s) | Sale (s) | Posición (% del cuadro) | Tamaño (% del alto) |
 |---|---|---|---|---|
-| Back In / 11 Days? (clave: 11; entero en el fotograma 0, sin pop; es la portada) | 0,0 | 0,9 | 10, 26 | 12 |
-| 11 days? (clave: 11) | 1,1 | 2,4 | 10, 14 | 7 |
-| Nov 12 (clave: 12) | 4,2 | 6,4 | 10, 14 | 7 |
-| Nov 17 (clave: 17) | 7,0 | 9,9 | 10, 14 | 7 |
-| +6 days (clave: 6) | 10,2 | 11,7 | 10, 14 | 7 |
-| Nov 23 (clave: 23) | 11,8 | 12,95 | 10, 14 | 7 |
-| 11 days (clave: 11) | 13,05 | 13,95 | 10, 14 | 7 |
-| 12,274 days (clave: el número) | 14,3 | 15,95 | 10, 14 | 7 |
-| 5 days (clave: 5) | 17,4 | 19,4 | 10, 14 | 7 |
-| 4,382 days (contador de 0 a 4,382; en tinta mientras sube y en tomate al llegar; sigue en la toma 11) | 21,85 | 24,4 | 10, 15 | 7 |
-| 11 days (clave: 11) | 24,6 | 26,4 | 10, 14 | 7 |
-| Who else? (clave: else) | 26,85 | 28,1 | 10, 14 | 7 |
-| Subscribe (clave) | 28,2 | 28,95 | 10, 14 | 7 |
-| Back In / 11 Days? (entra con pop; sigue sin corte en la toma 1) | 30,0 | 30,5 | 10, 26 | 12 |
+| Back In / 11 Days? (clave: 11; entero en el fotograma 0, sin pop; es la portada) | 0,00 | 0,90 | 10, 26 | 12 |
+| 11 days? (clave: 11) | 1,10 | 3,40 | 10, 14 | 7 |
+| Nov 12 (clave: 12) | 5,36 | 6,40 | 10, 14 | 7 |
+| Nov 17 (clave: 17) | 7,00 | 8,90 | 10, 14 | 7 |
+| +6 days (clave: 6) | 9,20 | 10,70 | 10, 14 | 7 |
+| Nov 23 (clave: 23) | 10,80 | 11,95 | 10, 14 | 7 |
+| 11 days (clave: 11) | 12,05 | 12,95 | 10, 14 | 7 |
+| 12,274 days (clave: el número) | 13,20 | 14,45 | 10, 14 | 7 |
+| 5 days (clave: 5) | 17,80 | 18,90 | 10, 14 | 7 |
+| 4,382 days (contador de 0 a 4,382; en tinta mientras sube y en tomate al llegar; sigue en la toma 11) | 20,88 | 24,40 | 10, 15 | 7 |
+| 11 days (clave: 11) | 24,60 | 26,90 | 10, 14 | 7 |
+| Who else? (clave: else) | 27,05 | 28,19 | 10, 14 | 7 |
+| Subscribe (clave) | 28,34 | 29,90 | 10, 14 | 7 |
+| Back In / 11 Days? (entra con pop; sigue sin corte en la toma 1) | 30,00 | 31,00 | 10, 26 | 12 |
 
 **Subtítulos en español (quemados en el video; encargo del dueño, 2026-11-24).** La voz sigue en inglés; en pantalla va la traducción al español de cada línea, sincronizada con ella.
 
@@ -638,18 +640,18 @@ Cada efecto sale de `manual/14_efectos_y_emocion.md` (secciones 2, 3, 4, 4b y 6)
 
 | Tarjeta | Empieza (s) | Termina (s) | Línea de voz | Texto en español (una línea por renglón) |
 |---|---|---|---|---|
-| 1 | 1,00 | 2,40 | 1 | ¿Fue rápido el regreso / de Jensen Huang? |
-| 2 | 2,55 | 6,40 | 2 | Renunció a Nvidia / tras un escándalo. |
-| 3 | 6,70 | 9,70 | 3 | La junta dijo que no / lo repondría. |
-| 4 | 10,00 | 13,00 | 4 | Lo repuso como CEO. |
-| 5 | 13,25 | 15,80 | 5 | Antes: más de 33 / años al mando. |
-| 6 | 16,00 | 16,95 | 6 | ¿Rápido comparado / con quién? |
-| 7 | 17,20 | 19,40 | 7 | Sam Altman, OpenAI: |
-| 8 | 19,55 | 21,40 | 8 | Steve Jobs, Apple: |
-| 9 | 23,50 | 24,45 | 9 | ¿Son 12 años? |
-| 10 | 24,70 | 26,50 | 10 | Más rápido que Jobs. / Más lento que Altman. |
-| 11 | 26,80 | 27,90 | 11 | ¿Quién más volvió? |
-| 12 | 28,00 | 29,10 | 11 | Suscríbete al próximo / conteo. |
+| 1 | 1,00 | 3,47 | 1 | ¿Fue rápido el regreso / de Jensen Huang? |
+| 2 | 3,69 | 6,47 | 2 | Renunció a Nvidia / tras un escándalo. |
+| 3 | 6,78 | 8,97 | 3 | La junta dijo que no / lo repondría. |
+| 4 | 9,33 | 11,79 | 4 | Lo repuso como CEO. |
+| 5 | 12,00 | 14,28 | 5 | Antes: más de 33 / años al mando. |
+| 6 | 14,50 | 15,97 | 6 | ¿Rápido comparado / con quién? |
+| 7 | 16,35 | 18,82 | 7 | Sam Altman, OpenAI: |
+| 8 | 19,00 | 20,48 | 8 | Steve Jobs, Apple: |
+| 9 | 22,71 | 24,47 | 9 | ¿Son 12 años? |
+| 10 | 24,72 | 26,78 | 10 | Más rápido que Jobs. / Más lento que Altman. |
+| 11 | 27,00 | 28,21 | 11 | ¿Quién más volvió? |
+| 12 | 28,29 | 29,97 | 11 | Suscríbete al próximo / conteo. |
 
 ### Color con intención
 
@@ -660,7 +662,7 @@ Propuesta del prompt (`manual/13_color_con_intencion.md`); la sección equivalen
 - **Por qué esta paleta:** la misma de los shorts 1 y 2, para que el canal se reconozca (R26 inv.); papel y tinta dan contraste alto y lectura fácil (R27 inv.); el acento único se recuerda (R33 inv.) y el cambio a tomate marca el golpe del dato. Para una noticia, la saturación baja evita sensación de alarma o de burla; el significado emocional del color es **hipótesis** (Elliot y Maier, 2014, manual 13).
 - **Cómo ayuda al objetivo:** Programa de socios → reconocimiento del canal y un pico visible en la cifra → retención de los segundos 1 a 3 y pico en 23,05 s; regreso de espectadores.
 - **Riesgos de lectura:** (1) mostaza sobre papel da 1,6:1: se lee por el contorno de tinta; (2) tinta sobre tomate 3,5:1: la cifra se lee por contorno y tamaño; (3) la bufanda mostaza de Tan es identidad y no debe leerse como segundo acento en las tomas 10 y 11; (4) rojo y verde azulado: la información no depende del tono; (5) el desenfoque y la niebla bajan el porcentaje en paleta (≈ 82–85 % esperado, la prueba midió 82 %): se mide también sobre un fotograma nítido (el 0).
-- **Medido:** pendiente (falta el render); lo mide el supervisor con `revisar_color.py`.
+- **Medido (vuelta 1, 2026-11-24):** `revisar_color.py` sobre el video: ≈ 93 % en paleta, saturación ≈ 16 %, luminosidad ≈ 89 %, variación ±1 % entre segundos; fotograma 0: ≈ 93 %. Falta la firma del supervisor.
 
 Tabla de acento por plano:
 
@@ -690,7 +692,7 @@ Campo para `ficha.json`:
           ], "acento": "#E8B33B",
           "por_que": "papel y tinta como neutros del canal; mostaza como acento único (clave y un elemento por plano); tomate solo en el pico (la cifra de Jobs) para marcar el golpe; la misma paleta que los shorts 1 y 2 para reconocer el canal",
           "objetivo": "Programa de socios: reconocimiento del canal y un pico visible; métrica: retención de los segundos 1 a 3 y pico de retención en 23,05 s",
-          "medido": "pendiente: falta el render"}
+          "medido": "vuelta 1: ≈ 93 % en paleta (video y fotograma 0); falta la firma del supervisor"}
 ```
 
 En un short, todo texto queda dentro de la zona segura. Entrada de cada rótulo: `pop` con escala de 0,85 a 1 en 8 fotogramas; salida: subir 2 % con ease-in en 3 fotogramas (excepción: el rótulo de portada en el fotograma 0 y en el último ya están a escala 1).

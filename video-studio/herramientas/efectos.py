@@ -77,12 +77,22 @@ FUNCIONES (con un ejemplo corto de cada una)
     titulares_en_cascada(base, titulares, t, x, tope, tam)   paneles que caen uno tras otro.
     rotulo(base, s)               rótulo pequeño de la zona segura (para pruebas y notas).
 
+  Firma del canal (lápiz bumerán; Tan lanza al final y atrapa al principio)
+    geometria_firma(portada)      puntos del vuelo a partir de las medidas de la portada; falla si no hay pasillo.
+    lapiz_bumeran(c, geo)         estado de la firma en el fotograma c (c < 0 cierre, c >= 0 apertura), sin dibujar.
+    pintar_lapiz_volador(est, geo)   las `Capa` del lápiz en vuelo (obturador de subpasos) y de su sombra de suelo.
+    golpes_firma(N)               los sonidos de la firma: (fotograma, nombre, pico en dBFS).
+    comprobar_firma(geo, N)       empalme, velocidades y despejes medidos.
+
   Seguridad
     comprobar_destellos(fotogramas, fps)      falla (DestellosError) si hay más de 3 cambios bruscos de luminosidad
                                               por segundo o un salto a pantalla completa mayor que el umbral.
 
 Versiones:
     1.0 (2026-11-23)  primera versión, hecha para la prueba de efectos de Tin & Tan.
+    1.1 (2026-11-24)  firma del canal, el lápiz bumerán (`canales/nostalgia-tin-y-tan/FIRMA_LAPIZ_BUMERAN.md`, §9):
+                      geometria_firma, lapiz_bumeran, pintar_lapiz_volador, golpes_firma, comprobar_firma.
+                      Solo la variante de partida (bucle, atrapa Tan); «sin retorno» y atrapa="tin" no están escritas.
 """
 import math
 from dataclasses import dataclass, field
@@ -97,7 +107,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import palitos  # noqa: E402
 from palitos import PALETA, SS  # noqa: E402
 
-VERSION = "1.0"
+VERSION = "1.1"
 W, H, FPS = 1080, 1920, 30
 SEG_X0, SEG_X1, SEG_Y0, SEG_Y1 = 100, 980, 250, 1670          # zona segura de los Shorts (formatos.md)
 FUENTE = "/usr/share/fonts/opentype/inter/InterDisplay-Medium.otf"   # Inter Display Medium, SIL OFL 1.1
@@ -1038,6 +1048,240 @@ def rotulo(base, s, x=SEG_X0 + 8, tope=SEG_Y0 + 20, tam=42):
     base.paste(capa, (caja[0], caja[1]), capa)
     poner_texto(base, segs, x + 0.45 * tam, tope, tam)
     return base
+
+
+# ---------------------------------------------------------------- firma del canal: el lápiz bumerán (1.1)
+# Especificación: canales/nostalgia-tin-y-tan/FIRMA_LAPIZ_BUMERAN.md (secciones 2, 3, 4 y 9). Todo depende de `c`:
+# c = 0 es el fotograma 0 del video; c = -1 el último. Cierre: c -30 a -1. Apertura: c 0 a 30.
+class FirmaError(ValueError):
+    """La portada no deja pasillo para el vuelo del lápiz, o se pidió una variante que no está escrita."""
+
+
+_R_PRUEBA, _X_PRUEBA, _SUELO_PRUEBA = 88.0651, 259.0, 1651.0          # plano de prueba de la especificación (§2.1)
+_B1_PRUEBA = ((358.0, 1306.1), (372.0, 1240.0), (570.0, 1165.0), (585.0, 1235.0))     # ida: H -> S
+_B2_PRUEBA = ((585.0, 1235.0), (597.0, 1290.0), (420.0, 1372.0), (358.0, 1306.1))     # vuelta: S -> H
+F_ANTICIPA, F_IMPULSO, F_SUELTA, F_ATRAPA = -24, -19, -15, 10
+BD_SALUDA, BD_ATRAS = (100.0, 155.0), (-25.0, 20.0)
+MUELLE_LAPIZ = (560.0, 10.0)
+
+
+def impulso_muelle(t, kc=POP):
+    """Respuesta de un muelle a un impulso, normalizada a 1 en su pico (sube, se pasa y se apaga). t en segundos."""
+    if t <= 0:
+        return 0.0
+    k, c = kc
+    w0 = math.sqrt(k)
+    z = c / (2 * math.sqrt(k))
+    wd = w0 * math.sqrt(1 - z * z)
+    tp = math.atan2(wd, z * w0) / wd
+    return math.exp(-z * w0 * t) * math.sin(wd * t) / (math.exp(-z * w0 * tp) * math.sin(wd * tp))
+
+
+def _bezier(P, t):
+    u = 1 - t
+    return (u ** 3 * P[0][0] + 3 * u * u * t * P[1][0] + 3 * u * t * t * P[2][0] + t ** 3 * P[3][0],
+            u ** 3 * P[0][1] + 3 * u * u * t * P[1][1] + 3 * u * t * t * P[2][1] + t ** 3 * P[3][1])
+
+
+def _vuelo(c, geo):
+    """(x, y, escala, ángulo) del lápiz en vuelo en el fotograma c (puede llevar decimales): -15 <= c <= 10."""
+    if c < 0:
+        u = clamp((c - F_SUELTA) / float(-F_SUELTA))
+        x, y = _bezier(geo["B1"], 0.65 * (1 - (1 - u) ** 2) + 0.35 * u)
+        return x, y, 1 + (geo["s_max"] - 1) * (1 - (1 - u) ** 2), -30 + 220 * (0.75 * (1 - (1 - u) ** 2) + 0.25 * u)
+    u = clamp(c / float(F_ATRAPA))
+    x, y = _bezier(geo["B2"], 0.753 * eio(u) + 0.247 * u)
+    return x, y, geo["s_max"] - (geo["s_max"] - 1) * eio(u), 190 + 110 * (0.666 * eio(u) + 0.334 * u)
+
+
+def _eje_lapiz(x, y, esc, ang, R):
+    """Extremos (goma, punta) del lápiz de `palitos.lapiz` y su medio ancho con contorno, en px."""
+    a = math.radians(ang)
+    L = 0.95 * R * esc
+    dx, dy = math.cos(a) * L, math.sin(a) * L
+    return (x - dx * 0.62, y - dy * 0.62), (x + dx * 0.72, y + dy * 0.72), (0.08 + 0.02) * R * esc
+
+
+def _dist_caja(p, caja):
+    dx = max(caja[0] - p[0], 0.0, p[0] - caja[2])
+    dy = max(caja[1] - p[1], 0.0, p[1] - caja[3])
+    return math.hypot(dx, dy)
+
+
+def _despeje(x, y, esc, ang, R, caja):
+    """Distancia (px) del lápiz a una caja (x0, y0, x1, y1); 0 si la toca."""
+    g, p, m = _eje_lapiz(x, y, esc, ang, R)
+    return max(0.0, min(_dist_caja((lerp(g[0], p[0], i / 12), lerp(g[1], p[1], i / 12)), caja) for i in range(13)) - m)
+
+
+def geometria_firma(portada, atrapa="tan", subir=0.0):
+    """Puntos del vuelo a partir de las medidas de la portada del video.
+
+    portada: {"R", "x_tan", "x_tin", "suelo", "texto": caja, "objeto": caja, "cara_tan": caja, "cara_tin": caja}
+    (cajas x0, y0, x1, y1 medidas en el fotograma 0; Tan de perfil con `mira=1` y sin espejo). subir: px que sube el
+    lazo (S y los puntos de control; la mano no) si el pasillo lo pide (±40 como mucho, §5.1).
+    Devuelve {"H", "S", "B1", "B2", "R", "s_max", "zona_util", "paso_libre", "portada"}. Falla con FirmaError si en
+    algún fotograma del vuelo el lápiz queda a menos de 30 px del texto o del objeto, o toca una cara."""
+    if atrapa != "tan":
+        raise FirmaError("Solo está escrita la variante de partida (atrapa Tan); atrapa='tin' es la §4.3, sin programar.")
+    R, k = float(portada["R"]), float(portada["R"]) / _R_PRUEBA
+
+    def pt(q, mueve=True):
+        return (portada["x_tan"] + (q[0] - _X_PRUEBA) * k, portada["suelo"] + (q[1] - _SUELO_PRUEBA) * k - (subir if mueve else 0.0))
+    H = pt(_B1_PRUEBA[0], False)
+    B1 = (H, pt(_B1_PRUEBA[1]), pt(_B1_PRUEBA[2]), pt(_B1_PRUEBA[3]))
+    B2 = (B1[3], pt(_B2_PRUEBA[1]), pt(_B2_PRUEBA[2]), H)
+    geo = {"H": H, "S": B1[3], "B1": B1, "B2": B2, "R": R, "s_max": 1.7, "zona_util": (60, 380, 960, 1440),
+           "suelo": float(portada["suelo"]), "portada": dict(portada)}
+    geo["paso_libre"] = (portada["cara_tan"][2], portada["objeto"][3], portada["cara_tin"][0], portada["cara_tan"][3])
+    inf = _despejes(geo)
+    if inf["texto_min"] < 30 or inf["objeto_min"] < 30 or inf["caras_min"] <= 0:
+        raise FirmaError(f"La portada no deja pasillo para el lápiz: {inf}")
+    return geo
+
+
+def _despejes(geo):
+    por = geo["portada"]
+    d = {"texto_min": 1e9, "objeto_min": 1e9, "caras_min": 1e9, "centro_en_zona_util": True}
+    zu = geo["zona_util"]
+    for c in range(F_SUELTA, F_ATRAPA + 1):
+        x, y, s, a = _vuelo(c, geo)
+        d["texto_min"] = min(d["texto_min"], _despeje(x, y, s, a, geo["R"], por["texto"]))
+        d["objeto_min"] = min(d["objeto_min"], _despeje(x, y, s, a, geo["R"], por["objeto"]))
+        d["caras_min"] = min(d["caras_min"], _despeje(x, y, s, a, geo["R"], por["cara_tan"]) if F_SUELTA + 2 < c < F_ATRAPA - 2 else 1e9,   # junto a la mano no se mide: la mano está al lado de la cara
+                             _despeje(x, y, s, a, geo["R"], por["cara_tin"]))
+        d["centro_en_zona_util"] &= zu[0] <= x <= zu[2] and zu[1] <= y <= zu[3]
+    return {k: (round(v, 1) if isinstance(v, float) else v) for k, v in d.items()}
+
+
+def _cuerpo_tan(c):
+    """(bd, dx, giro_objeto, cabeza_giro) de Tan en el fotograma c (decimales permitidos)."""
+    if c < 0:
+        if c < F_ANTICIPA:
+            return BD_SALUDA, 0.0, 0.0, 25.0
+        if c <= F_IMPULSO:
+            p = eo((c - F_ANTICIPA) / 5.0)
+            return (lerp(BD_SALUDA[0], BD_ATRAS[0], p), lerp(BD_SALUDA[1], BD_ATRAS[1], p)), -8 * p, -40 * p, 25 * (1 - p)
+        if c < F_SUELTA:
+            p = ((c - F_IMPULSO) / 4.0) ** 3
+            return (lerp(BD_ATRAS[0], BD_SALUDA[0], p), lerp(BD_ATRAS[1], BD_SALUDA[1], p)), lerp(-8, 10, p), lerp(-40, 30, p), 0.0
+        t = (c - F_SUELTA) / 30.0
+        im = impulso_muelle(t, POP)
+        return (BD_SALUDA[0] + 12 * im, BD_SALUDA[1] + 13 * im), 10 * (1 - muelle(t, SLIDE)), 0.0, 25 * eio((c - F_SUELTA) / 15.0)
+    if c < F_ATRAPA:
+        return BD_SALUDA, 0.0, 0.0, 25 * (1 - eio((c - 2) / 8.0)) if c > 2 else 25.0
+    t = (c - F_ATRAPA) / 30.0
+    im = impulso_muelle(t, POP)
+    cab = 25 * eio((c - 14) / 8.0)
+    return (BD_SALUDA[0] - 10 * im, BD_SALUDA[1] - 10 * im), -6 * (1 - muelle(t, SLIDE)), 14 * (1 - muelle(t, MUELLE_LAPIZ)), cab
+
+
+def lapiz_bumeran(c, geo, variante="bucle"):
+    """Estado de la firma en el fotograma `c` (función pura, no dibuja). c < 0: cierre (reposo desde -30, anticipación
+    -24 a -19, impulso -19 a -15, suelta en -15, vuelo de ida hasta 0); c >= 0: apertura (vuelo de vuelta 0 a 10,
+    contacto en 10, asentado hacia 25). Devuelve:
+      {"c", "fase", "lapiz": {"visible", "en_mano", "x", "y", "esc", "angulo", "v", "omega"},
+       "tan": {"pose": dict para `palitos.dibujar`, "dx": px, "expresion": str o None (None = la de la portada),
+               "cabeza_giro", "giro_objeto", "objeto": "lapiz" o False, "viento"},
+       "tin": {"dy": px, "objeto": False, "cabeza_giro": 25.0}}
+    El lápiz «en_mano» lo dibuja `palitos.dibujar` (objeto="lapiz"); en vuelo, `pintar_lapiz_volador`."""
+    if variante != "bucle":
+        raise FirmaError("Solo está escrita la variante «bucle»; «sin retorno» (§4.2) no está programada.")
+    bd, dx, giro, cab = _cuerpo_tan(c)
+    dx_antes = _cuerpo_tan(c - 1)[1]
+    volando = F_SUELTA <= c < F_ATRAPA
+    if c < F_ANTICIPA:
+        fase = "reposo"
+    elif c <= F_IMPULSO and c < 0:
+        fase = "anticipacion"
+    elif c < F_SUELTA:
+        fase = "impulso"
+    elif c < 0:
+        fase = "vuelo de ida"
+    elif c < F_ATRAPA:
+        fase = "vuelo de vuelta"
+    else:
+        fase = "atrapada" if c < 25 else "reposo"
+    if volando:
+        x, y, esc, ang = _vuelo(c, geo)
+        x2, y2, _, ang2 = _vuelo(min(c + 1, F_ATRAPA) if c + 1 <= F_ATRAPA else c, geo)
+        v, om = math.hypot(x2 - x, y2 - y), ang2 - ang
+    else:
+        (x, y), esc, ang, v, om = geo["H"], 1.0, -60.0 + giro, 0.0, 0.0
+    pose = dict(palitos.POSES["saluda"], bd=bd, objeto_arriba=True)
+    return {"c": c, "fase": fase,
+            "lapiz": {"visible": True, "en_mano": not volando, "x": x, "y": y, "esc": esc, "angulo": ang, "v": v, "omega": om},
+            "tan": {"pose": pose, "dx": dx, "expresion": "concentrado" if F_ANTICIPA <= c <= -16 else None,
+                    "cabeza_giro": cab, "giro_objeto": giro, "objeto": False if volando else "lapiz",
+                    "viento": clamp(-0.06 * (dx - dx_antes), -0.8, 0.8)},
+            "tin": {"dy": -5 * impulso_muelle((c - F_ATRAPA) / 30.0, POP) if c >= F_ATRAPA else 0.0, "objeto": False,
+                    "cabeza_giro": 25.0}}
+
+
+def pintar_lapiz_volador(est, geo, fps=FPS, obturador=0.5):
+    """Las `Capa` del lápiz en vuelo para `componer`: la sombra de suelo y el lápiz (con su sombra proyectada). El
+    desenfoque de movimiento es de obturador: el lápiz se pinta en n subpasos dentro de medio fotograma y se promedian
+    con alfa premultiplicado (n = 1 + v/10, de 1 a 6). Devuelve [] si el lápiz está en la mano."""
+    lp = est["lapiz"]
+    if lp["en_mano"] or not lp["visible"]:
+        return []
+    c, R = est["c"], geo["R"]
+    n = int(clamp(round(1 + lp["v"] / 10.0), 1, 6))
+    pasos = [_vuelo(clamp(c + obturador * ((i + 0.5) / n - 0.5), F_SUELTA, F_ATRAPA), geo) for i in range(n)]
+    m = 1.0 * R * geo["s_max"] + 8
+    x0, y0 = int(min(q[0] for q in pasos) - m), int(min(q[1] for q in pasos) - m)
+    w, h = int(max(q[0] for q in pasos) + m) - x0, int(max(q[1] for q in pasos) + m) - y0
+    suma = np.zeros((h, w, 4), dtype=np.float32)
+    for x, y, s, a in pasos:
+        lz = LienzoCapa(w, h)
+        palitos.lapiz(palitos.Pluma(lz, x - x0, y - y0, R * s), 0, 0, angulo=a)
+        suma += np.asarray(lz.resultado().convert("RGBa"), dtype=np.float32)
+    img = Image.fromarray(np.clip(suma / n + 0.5, 0, 255).astype(np.uint8), "RGBa").convert("RGBA")
+    s = lp["esc"]
+    k = (s - 1) / (geo["s_max"] - 1)
+    capa = Capa(img, z=1000.0 / s - 1000.0, x=x0, y=y0, niebla=0.0, desenfoque=0.0, nombre="lápiz bumerán",
+                sombra=dict(dx=14 * s, dy=10 * s, radio=10 * s, opacidad=0.22 - 0.07 * k))
+    suelo = capa_sombra_contacto(lp["x"], geo["suelo"], 90 + 50 * k, z=0.0, opacidad=0.26 - 0.12 * k)
+    suelo.niebla, suelo.desenfoque = 0.0, 0.0
+    return [suelo, capa]
+
+
+def golpes_firma(N, voz_entra=14):
+    """Sonidos de la firma (§7): lista de (fotograma, nombre, pico en dBFS, duración en fotogramas). N = fotogramas
+    del video. El whoosh es uno solo que atraviesa el empalme (ida y vuelta al mismo nivel, -34 dBFS, en c = 0)."""
+    if voz_entra < 14:
+        raise FirmaError("La voz de Tan entra en el fotograma 14 como mínimo (§5.2).")
+    return [(N - 17, "chasquido de brazo y suelta", -20.0, 3), (N - 15, "whoosh de ida", -20.0, 15),
+            (0, "whoosh de regreso", -18.0, 10), (F_ATRAPA, "golpe de atrapada", -12.0, 4)]
+
+
+def comprobar_firma(geo, N=None):
+    """Mide las condiciones de la firma (§4.1, §8.2 y §11 punto 2): continuidad en el empalme, velocidades máximas y
+    despejes. Devuelve un dict con las medidas y "pasa"."""
+    def paso(c):
+        a, b = _vuelo(c, geo), _vuelo(c + 1, geo)
+        return math.hypot(b[0] - a[0], b[1] - a[1]), b[3] - a[3], math.degrees(math.atan2(b[1] - a[1], b[0] - a[0]))
+    antes, despues = paso(-1), paso(0)
+    # dirección en el empalme: la tangente de cada curva en S (la cuerda de un fotograma la tuerce la curvatura)
+    tg = [math.degrees(math.atan2(q[1] - p[1], q[0] - p[0])) for p, q in ((geo["B1"][2], geo["B1"][3]), (geo["B2"][0], geo["B2"][1]))]
+    antes, despues = antes[:2] + (tg[0],), despues[:2] + (tg[1],)
+    pasos = [paso(c) for c in range(F_SUELTA, F_ATRAPA)]
+    final = lapiz_bumeran(-1, geo)["tan"]
+    inf = {"empalme_v_px_f": (round(antes[0], 2), round(despues[0], 2)),
+           "empalme_omega_grados_f": (round(antes[1], 2), round(despues[1], 2)),
+           "empalme_direccion_grados": (round(antes[2], 1), round(despues[2], 1)),
+           "v_max_px_f": round(max(p[0] for p in pasos), 1), "omega_max_grados_f": round(max(p[1] for p in pasos), 1),
+           "giro_total_grados": round(_vuelo(F_ATRAPA, geo)[3] - _vuelo(F_SUELTA, geo)[3], 1),
+           "escala_max": round(max(_vuelo(c, geo)[2] for c in range(F_SUELTA, F_ATRAPA + 1)), 3),
+           "brazo_en_c_-1": tuple(round(v, 2) for v in final["pose"]["bd"]), "cuerpo_dx_en_c_-1": round(final["dx"], 2),
+           "cabeza_en_c_-1": round(final["cabeza_giro"], 2), "despejes_px": _despejes(geo)}
+    d = inf["despejes_px"]
+    inf["pasa"] = (abs(antes[0] - despues[0]) <= 1.0 and abs(antes[1] - despues[1]) <= 0.5 and abs(antes[2] - despues[2]) <= 3.0
+                   and inf["v_max_px_f"] <= 90 and inf["omega_max_grados_f"] <= 40 and min(p[1] for p in pasos) > 0
+                   and abs(final["pose"]["bd"][0] - 100) <= 2 and abs(final["pose"]["bd"][1] - 155) <= 2
+                   and abs(final["dx"]) <= 1 and d["texto_min"] >= 30 and d["objeto_min"] >= 30 and d["caras_min"] > 0
+                   and d["centro_en_zona_util"])
+    return inf
 
 
 # ---------------------------------------------------------------- seguridad

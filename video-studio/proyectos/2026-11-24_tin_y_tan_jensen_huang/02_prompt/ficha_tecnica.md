@@ -1,6 +1,6 @@
 # Ficha técnica — Jensen Huang Is Back as Nvidia CEO After 11 Days
 
-Resumen de una página del video. El detalle de cada bloque está en el archivo que se cita. Escrita el 2026-11-24 con el prompt versión 2: **la voz no está generada, los tiempos son estimados y el video no está renderizado.** Sustituye a la ficha de la tarjeta de 1999 (descartada).
+Resumen de una página del video. El detalle de cada bloque está en el archivo que se cita. Escrita el 2026-11-24 con el prompt versión 2: **actualizada el 2026-11-24 con la voz real y el render (vuelta 1): los tiempos de las secciones 2, 5 y 6 son los reales; el resto del contenido no cambió.** La apertura y el cierre siguen la firma del canal (`canales/nostalgia-tin-y-tan/FIRMA_LAPIZ_BUMERAN.md`): Tan lanza el lápiz al final y lo atrapa al principio; la voz entra en el fotograma 14. Sustituye a la ficha de la tarjeta de 1999 (descartada).
 
 ## 1. Identificación
 
@@ -38,7 +38,7 @@ Resumen de una página del video. El detalle de cada bloque está en el archivo 
 | Campo | Valor |
 |---|---|
 | Aspecto y tamaño | 9:16, 1080×1920 |
-| Duración | 30,5 s estimados (915 fotogramas a 30 por segundo), en bucle (el vuelo del lápiz) |
+| Duración | 31,0 s reales (930 fotogramas a 30 por segundo), en bucle (el vuelo del lápiz); pico en 22,07 s (71,2 %) |
 | Cómo se hizo | Dibujado por código (`palitos.py` 1.3, `efectos.py` y gráficos propios); sin generador de imagen ni de video. Render estimado: 5 a 6 minutos |
 | Archivo | `06_final/tin_y_tan_short03_v1.mp4` (por renderizar) |
 | Portada | El fotograma 0: `06_final/portada_short03.png` (por guardar con `miniatura.py`) |
@@ -71,21 +71,21 @@ Jensen Huang, Sam Altman y Steve Jobs no aparecen dibujados ni imitados ni se le
 
 No se dice: el motivo de la renuncia más allá de «after a scandal» (una sola vez), detalles de la vida privada, terceros, investigaciones o comparecencias, el papel del gobierno, el motivo de la junta, cifras de bolsa o fortuna, citas, que «fue despedido», que sea «el regreso más corto», superlativos ni predicciones. Del fabricante solo se dice el nombre: sin logotipo, letra de marca ni su verde.
 
-## 5. Guion de voz (tiempos estimados)
+## 5. Guion de voz (tiempos reales, 05_audio/linea_de_tiempo_voz.md)
 
 | N.º | Quién | De–a (s) | Texto |
 |---|---|---|---|
-| 1 | Tan | 0,00–2,31 | Was Jensen Huang's comeback in eleven days fast? |
-| 2 | Tin | 2,54–6,45 | He resigned from Nvidia on November twelfth after a scandal. |
-| 3 | Tin | 6,68–9,72 | On the seventeenth the board said it would not bring him back. |
-| 4 | Tin | 9,95–13,00 | Six days later it reinstated him as C E O. |
-| 5 | Tin | 13,23–15,77 | Before that: more than thirty-three years in charge. |
-| 6 | Tan | 16,00–16,96 | Fast compared to who? |
-| 7 | Tin | 17,19–19,30 | Sam Altman at OpenAI: five days. |
-| 8 | Tin | 19,53–23,24 | Steve Jobs at Apple: four thousand, three hundred eighty-two days. |
-| 9 | Tan | 23,47–24,43 | That is twelve years? |
-| 10 | Tin | 24,66–26,55 | Faster than Jobs. Slower than Altman. |
-| 11 | Tan | 26,78–29,09 | Who else came back? Subscribe for the next count. |
+| 1 | Tan | 0,47–3,46 | Was Jensen Huang's comeback in eleven days fast? |
+| 2 | Tin | 3,69–6,55 | He resigned from Nvidia on November twelfth after a scandal. |
+| 3 | Tin | 6,78–9,10 | On the seventeenth the board said it would not bring him back. |
+| 4 | Tin | 9,33–11,74 | Six days later it reinstated him as C E O. |
+| 5 | Tin | 11,97–14,23 | Before that: more than thirty-three years in charge. |
+| 6 | Tan | 14,46–16,12 | Fast compared to who? |
+| 7 | Tin | 16,35–18,77 | Sam Altman at OpenAI: five days. |
+| 8 | Tin | 19,00–22,48 | Steve Jobs at Apple: four thousand, three hundred eighty-two days. |
+| 9 | Tan | 22,71–24,49 | That is twelve years? |
+| 10 | Tin | 24,72–26,73 | Faster than Jobs. Slower than Altman. |
+| 11 | Tan | 26,96–30,05 | Who else came back? Subscribe for the next count. |
 
 Pregunta de apertura: línea 1. Pregunta de cierre: línea 11. Respuesta a la de apertura: línea 10.
 
@@ -93,20 +93,20 @@ Pregunta de apertura: línea 1. Pregunta de cierre: línea 11. Respuesta a la de
 
 | N.º | Segundos | Qué se ve | Rótulo en inglés |
 |---|---|---|---|
-| 1 | 0,0–1,0 | Portada: silla de director vacía; el lápiz vuelve girando y Tin lo atrapa (f 15) | Back In / 11 Days? |
-| 2 | 1,0–2,5 | Tan pregunta; la silla, lejos | 11 days? |
-| 3 | 2,5–6,5 | Los dos con el calendario de noviembre; círculo en el 12 | Nov 12 |
-| 4 | 6,5–10,0 | Mesa de junta (revelado) con la silla a la cabecera | Nov 17 |
-| 5 | 10,0–13,0 | Flecha del 17 al 23; círculo en el 23; 11 cruces | +6 days, Nov 23 |
-| 6 | 13,0–14,0 | Las 11 cruces; Tan asiente | 11 days |
-| 7 | 14,0–16,0 | Barra de 12.274 días con una marca de 11 | 12,274 days |
-| 8 | 16,0–17,0 | Tan: «¿rápido comparado con quién?» | — |
-| 9 | 17,0–19,5 | Barras: Huang 11 y Altman 5 | 5 days |
-| 10 | 19,5–23,5 | Pico: barra de Jobs, contador hasta 4.382, tomate y zoom | 4,382 days |
-| 11 | 23,5–24,5 | Tan se asombra; la cifra queda quieta | 4,382 days |
-| 12 | 24,5–26,5 | Remate: más rápido que Jobs, más lento que Altman | 11 days |
-| 13 | 26,5–29,0 | Pregunta final, invitación; el lápiz pasa a Tan | Who else? / Subscribe |
-| 14 | 29,0–30,5 | Tan lanza el lápiz; vuelve el fotograma 0 | Back In / 11 Days? |
+| 1 | 0,0–1,0 | Portada: silla de director vacía; el lápiz vuelve girando y Tan lo atrapa (f 10; firma del canal) | Back In / 11 Days? |
+| 2 | 1,0–3,5 | Tan pregunta; la silla, lejos | 11 days? |
+| 3 | 3,5–6,5 | Los dos con el calendario de noviembre; círculo en el 12 | Nov 12 |
+| 4 | 6,5–9,0 | Mesa de junta (revelado) con la silla a la cabecera | Nov 17 |
+| 5 | 9,0–12,0 | Flecha del 17 al 23; círculo en el 23; 11 cruces | +6 days, Nov 23 |
+| 6 | 12,0–13,0 | Las 11 cruces; Tan asiente | 11 days |
+| 7 | 13,0–14,5 | Barra de 12.274 días con una marca de 11 | 12,274 days |
+| 8 | 14,5–16,0 | Tan: «¿rápido comparado con quién?» | — |
+| 9 | 16,0–19,0 | Barras: Huang 11 y Altman 5 | 5 days |
+| 10 | 19,0–22,5 | Pico: barra de Jobs, contador hasta 4.382, tomate y zoom | 4,382 days |
+| 11 | 22,5–24,5 | Tan se asombra; la cifra queda quieta | 4,382 days |
+| 12 | 24,5–27,0 | Remate: más rápido que Jobs, más lento que Altman | 11 days |
+| 13 | 27,0–30,0 | Pregunta final, invitación; el lápiz pasa a Tan | Who else? / Subscribe |
+| 14 | 30,0–31,0 | Tan lanza el lápiz; vuelve el fotograma 0 | Back In / 11 Days? |
 
 ## 7. Perfil de colores
 

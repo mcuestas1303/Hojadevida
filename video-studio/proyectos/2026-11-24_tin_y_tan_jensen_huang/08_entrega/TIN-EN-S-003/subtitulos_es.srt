@@ -1,0 +1,43 @@
+1
+00:00:00,467 --> 00:00:03,506
+¿Fue rápido el regreso de Jensen Huang en 11 días?
+
+2
+00:00:03,686 --> 00:00:06,604
+Renunció a Nvidia el 12 de noviembre tras un escándalo.
+
+3
+00:00:06,784 --> 00:00:09,150
+El 17, la junta dijo que no lo repondría.
+
+4
+00:00:09,330 --> 00:00:11,791
+Seis días después, lo repuso como CEO.
+
+5
+00:00:11,971 --> 00:00:14,278
+Antes: más de 33 años al mando.
+
+6
+00:00:14,458 --> 00:00:16,168
+¿Rápido comparado con quién?
+
+7
+00:00:16,348 --> 00:00:18,818
+Sam Altman, OpenAI: 5 días.
+
+8
+00:00:18,998 --> 00:00:22,535
+Steve Jobs, Apple: 4.382 días.
+
+9
+00:00:22,715 --> 00:00:24,543
+¿Son 12 años?
+
+10
+00:00:24,723 --> 00:00:26,777
+Más rápido que Jobs. Más lento que Altman.
+
+11
+00:00:26,957 --> 00:00:30,098
+¿Quién más volvió? Suscríbete al próximo conteo.

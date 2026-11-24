@@ -1,0 +1,254 @@
+{
+ "voz_entra": 0.4667,
+ "fps": 30,
+ "tempo": 1.1,
+ "silencio_entre_lineas": 0.23,
+ "duracion_dialogo": 29.582,
+ "lineas": [
+  {
+   "linea": 1,
+   "quien": "Tan",
+   "texto": "Was Jensen Huang's comeback in eleven days fast?",
+   "archivo": "voz_tan_zelda.wav",
+   "empieza": 0.467,
+   "termina": 3.456,
+   "dura": 2.989,
+   "tramos": [
+    0.467
+   ],
+   "origen": [
+    [
+     0.467,
+     3.676,
+     "Was Jensen Huang's comeback in eleven days fast?"
+    ]
+   ]
+  },
+  {
+   "linea": 2,
+   "quien": "Tin",
+   "texto": "He resigned from Nvidia on November twelfth after a scandal.",
+   "archivo": "voz_tin_kevin.wav",
+   "empieza": 3.686,
+   "termina": 6.554,
+   "dura": 2.868,
+   "tramos": [
+    3.686,
+    4.96
+   ],
+   "origen": [
+    [
+     0.265,
+     1.472,
+     "He resigned from Nvidia"
+    ],
+    [
+     1.977,
+     3.696,
+     "on November twelfth after a scandal."
+    ]
+   ]
+  },
+  {
+   "linea": 3,
+   "quien": "Tin",
+   "texto": "On the seventeenth the board said it would not bring him back.",
+   "archivo": "voz_tin_kevin.wav",
+   "empieza": 6.784,
+   "termina": 9.1,
+   "dura": 2.316,
+   "tramos": [
+    6.784
+   ],
+   "origen": [
+    [
+     4.069,
+     6.545,
+     "On the seventeenth the board said it would not bring him back."
+    ]
+   ]
+  },
+  {
+   "linea": 4,
+   "quien": "Tin",
+   "texto": "Six days later it reinstated him as C E O.",
+   "archivo": "voz_tin_kevin.wav",
+   "empieza": 9.33,
+   "termina": 11.741,
+   "dura": 2.411,
+   "tramos": [
+    9.33
+   ],
+   "origen": [
+    [
+     6.864,
+     9.448,
+     "Six days later it reinstated him as C E O."
+    ]
+   ]
+  },
+  {
+   "linea": 5,
+   "quien": "Tin",
+   "texto": "Before that: more than thirty-three years in charge.",
+   "archivo": "voz_tin_kevin.wav",
+   "empieza": 11.971,
+   "termina": 14.228,
+   "dura": 2.257,
+   "tramos": [
+    11.971
+   ],
+   "origen": [
+    [
+     9.735,
+     12.139,
+     "Before that: more than thirty-three years in charge."
+    ]
+   ]
+  },
+  {
+   "linea": 6,
+   "quien": "Tan",
+   "texto": "Fast compared to who?",
+   "archivo": "voz_tan_zelda.wav",
+   "empieza": 14.458,
+   "termina": 16.118,
+   "dura": 1.66,
+   "tramos": [
+    14.458
+   ],
+   "origen": [
+    [
+     4.764,
+     6.518,
+     "Fast compared to who?"
+    ]
+   ]
+  },
+  {
+   "linea": 7,
+   "quien": "Tin",
+   "texto": "Sam Altman at OpenAI: five days.",
+   "archivo": "voz_tin_kevin.wav",
+   "empieza": 16.348,
+   "termina": 18.768,
+   "dura": 2.42,
+   "tramos": [
+    16.348,
+    18.038
+   ],
+   "origen": [
+    [
+     12.524,
+     14.133,
+     "Sam Altman at OpenAI:"
+    ],
+    [
+     14.355,
+     15.112,
+     "five days."
+    ]
+   ]
+  },
+  {
+   "linea": 8,
+   "quien": "Tin",
+   "texto": "Steve Jobs at Apple: four thousand, three hundred eighty-two days.",
+   "archivo": "voz_tin_kevin.wav",
+   "empieza": 18.998,
+   "termina": 22.485,
+   "dura": 3.487,
+   "tramos": [
+    18.998,
+    20.634
+   ],
+   "origen": [
+    [
+     15.644,
+     16.919,
+     "Steve Jobs at Apple:"
+    ],
+    [
+     17.061,
+     19.069,
+     "four thousand, three hundred eighty-two days."
+    ]
+   ]
+  },
+  {
+   "linea": 9,
+   "quien": "Tan",
+   "texto": "That is twelve years?",
+   "archivo": "voz_tan_zelda.wav",
+   "empieza": 22.715,
+   "termina": 24.493,
+   "dura": 1.779,
+   "tramos": [
+    22.715,
+    23.45
+   ],
+   "origen": [
+    [
+     7.756,
+     8.37,
+     "That is"
+    ],
+    [
+     9.041,
+     10.146,
+     "twelve years?"
+    ]
+   ]
+  },
+  {
+   "linea": 10,
+   "quien": "Tin",
+   "texto": "Faster than Jobs. Slower than Altman.",
+   "archivo": "voz_tin_kevin.wav",
+   "empieza": 24.723,
+   "termina": 26.727,
+   "dura": 2.003,
+   "tramos": [
+    24.723,
+    25.903
+   ],
+   "origen": [
+    [
+     19.426,
+     20.474,
+     "Faster than Jobs."
+    ],
+    [
+     20.727,
+     21.609,
+     "Slower than Altman."
+    ]
+   ]
+  },
+  {
+   "linea": 11,
+   "quien": "Tan",
+   "texto": "Who else came back? Subscribe for the next count.",
+   "archivo": "voz_tan_zelda.wav",
+   "empieza": 26.957,
+   "termina": 30.048,
+   "dura": 3.092,
+   "tramos": [
+    26.957,
+    28.286
+   ],
+   "origen": [
+    [
+     11.048,
+     12.205,
+     "Who else came back?"
+    ],
+    [
+     13.063,
+     14.96,
+     "Subscribe for the next count."
+    ]
+   ]
+  }
+ ]
+}

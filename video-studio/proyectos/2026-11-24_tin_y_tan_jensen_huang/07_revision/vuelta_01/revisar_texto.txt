@@ -1,0 +1,16 @@
+== textos de pantalla (inglés)
+Control de texto · 39 textos · idioma en
+
+PASA: 0 errores.
+== subtítulos quemados (español)
+Control de texto · 12 textos · idioma es
+
+PASA: 0 errores.
+== subtitulos.srt
+Control de texto · 11 textos · idioma en
+
+PASA: 0 errores.
+== subtitulos_es.srt
+Control de texto · 11 textos · idioma es
+
+PASA: 0 errores.

@@ -37,7 +37,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
-VERSION = "1.3"  # 1.0: diseño aprobado (2026-11-21) · 1.1: espejo · 1.2: objetos de mano · 1.3: inclinación de cabeza
+VERSION = "1.4"  # 1.0: diseño aprobado (2026-11-21) · 1.1: espejo · 1.2: objetos de mano · 1.3: inclinación de cabeza · 1.4: pose como dict y pose_entre (firma del lápiz bumerán)
 SS = 3  # supermuestreo: se dibuja 3 veces más grande y se reduce (Pillow no suaviza las líneas)
 
 # ---------------------------------------------------------------- paleta del canal (años 70, papel crema)
@@ -96,6 +96,27 @@ POSES = {
     "pregunta": {"bi": (18, 8),    "bd": (40, 150),  "pi": (9, 4),    "pd": (12, 6)},
     "camina":   {"bi": (-14, -20), "bd": (24, 34),   "pi": (-18, -6), "pd": (24, 10)},
 }
+
+def pose_entre(a, b, p):
+    """Pose intermedia (dict) entre dos poses (nombre de `POSES` o dict): interpola cada ángulo, así las manos y los
+    pies describen arcos. p de 0 (a) a 1 (b); quien llama pone la curva (nada lineal en lo vivo)."""
+    pa = a if isinstance(a, dict) else POSES[a]
+    pb = b if isinstance(b, dict) else POSES[b]
+    return {k: tuple(pa[k][i] + (pb[k][i] - pa[k][i]) * p for i in (0, 1)) for k in ("bi", "bd", "pi", "pd")}
+
+
+def mano_de(x, suelo, alto, pose="parado", vista="frente", mira=1, espejo=False):
+    """Dónde cae la mano que gesticula (brazo `bd`) y el radio de cabeza R, en px: ((mx, my), R). Las mismas cuentas
+    que `dibujar`. Sirve para soltar o atrapar un objeto justo en la mano."""
+    ps = pose if isinstance(pose, dict) else POSES[pose]
+    R = alto / (2 + CUELLO + TORSO + MUSLO + PIERNA + 0.25)
+    hombro = (0, -(MUSLO + PIERNA) - TORSO + 0.22)
+    lado = mira if vista == "perfil" else 1
+    codo = segmento(hombro, ps["bd"][0], BRAZO, lado)
+    mano = segmento(codo, ps["bd"][1], ANTEBRAZO, lado)
+    sx = -1 if espejo else 1
+    return (x + sx * mano[0] * R, suelo + mano[1] * R), R
+
 
 # ---------------------------------------------------------------- expresiones
 # ojos: punto | grandes | felices (arcos) | arriba | entrecerrados | cerrados_suave
@@ -443,7 +464,10 @@ def calendario_de_mano(lz, cx, cy, ancho, alto, angulo=0.0, numero="17", cabecer
 
 def objeto_de_mano(lz, pl, nombre, mano, pose, giro=0.0):
     """Dibuja el objeto `nombre` en la mano que gesticula. mano: (x, y) en R, sin reflejar. giro: grados extra."""
-    arriba = pose in ("saluda", "celebra", "pregunta")          # la misma regla de ángulo que el lápiz
+    if isinstance(pose, dict):                                  # pose libre (1.4): lo dice la pose; si no, por el antebrazo
+        arriba = bool(pose.get("objeto_arriba", pose["bd"][1] >= 120))
+    else:
+        arriba = pose in ("saluda", "celebra", "pregunta")      # la misma regla de ángulo que el lápiz
     if nombre == "lapiz":
         lapiz(pl, mano[0] + 0.05, mano[1] - 0.25, angulo=(-60 if arriba else -35) + giro)
         return
@@ -511,12 +535,15 @@ def dibujar(lz, pid, x, suelo, alto, pose="parado", expresion="feliz", vista="fr
     objeto: True = el objeto icónico del personaje (el lápiz de Tin; Tan no tiene); False o None = ninguno; o el
     nombre de un objeto de mano ("lapiz", "control", "calendario"), que vale para los dos personajes.
     giro_objeto: grados que se suman al ángulo del objeto (movimiento secundario).
+    pose: nombre de `POSES` o, desde la 1.4, un dict {"bi": (a1, a2), "bd": (a1, a2), "pi": ..., "pd": ...} con los
+    ángulos de una pose intermedia (ver `pose_entre`); la clave opcional "objeto_arriba" dice si el objeto de la mano va
+    en el ángulo de brazo levantado. Con un nombre se dibuja exactamente como siempre.
     cabeza_giro: inclinación de la cabeza en grados (hasta ±25: variación permitida en las fichas); positivo = levanta
     la cara para mirar hacia arriba. La bufanda y el cuerpo no giran. Con 0, todo igual que siempre.
     """
     if pid not in PERSONAJES:
         sys.exit(f"Personaje desconocido: {pid}. Hay: {', '.join(PERSONAJES)}")
-    pj, ps = PERSONAJES[pid], POSES[pose]
+    pj, ps = PERSONAJES[pid], (pose if isinstance(pose, dict) else POSES[pose])
     R = alto / (2 + CUELLO + TORSO + MUSLO + PIERNA + 0.25)     # la gorra y el rodete suman ~0.25 R
     s = mira
     cabeza_y = -(MUSLO + PIERNA + TORSO + CUELLO + 1.0)

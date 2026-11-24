@@ -1,0 +1,51 @@
+Audio: efectos, música y mezcla
+  voz (dialogo_110.wav, desde el fotograma 14, sin tocar): -14.8 LUFS, pico real -4.5 dBTP
+  efectos.wav: -26.0 LUFS, pico real -4.9 dBTP
+  efectos bajo la voz: -26.0 LUFS, pico real -4.9 dBTP
+  musica.wav: -24.2 LUFS, pico real -10.3 dBTP
+  mezcla_sin_musica.wav (sin ganancia final): -14.8 LUFS, pico real -2.7 dBTP
+  mezcla antes de la ganancia final: -14.6 LUFS, pico real -1.6 dBTP
+  mezcla.wav (final): -14.0 LUFS, pico real -1.0 dBTP
+  pico de efectos y música en el silencio antes del número (dBFS): -180.0
+  picos de la firma (dBFS): chasquido, whoosh de ida, whoosh de vuelta, atrapada: [-16.8, -16.8, -18.0, -12.0]
+  whoosh a los dos lados del empalme (dBFS, últimos y primeros 20 ms): [-33.8, -33.6]
+  limitador en la mezcla final: False
+    0.47 s  pop_suave      inicio medido   0.4671  bien  (golpe de la clave «11» de la portada (fotograma 14))
+    1.00 s  clic           inicio medido   1.0001  bien  (corte a la toma 2)
+    3.50 s  clic           inicio medido   3.5001  bien  (corte a la toma 3)
+    5.51 s  raspado_40     inicio medido   5.5174  bien  (círculo del 12 (toma 3))
+    6.50 s  clic           inicio medido   6.5001  bien  (corte a la toma 4)
+    6.50 s  revelado       inicio medido   6.5001  bien  (revelado de la mesa desde el desenfoque (toma 4))
+    9.00 s  clic           inicio medido   9.0001  bien  (corte a la toma 5)
+    9.30 s  raspado_50     inicio medido   9.3095  bien  (flecha del 17 al 23 (toma 5))
+   10.30 s  raspado_40     inicio medido  10.3079  bien  (círculo del 23 (toma 5))
+   10.90 s  cruz_0         inicio medido  10.9001  bien  (cruz del calendario (toma 5))
+   11.00 s  cruz_1         inicio medido  11.0001  bien  (cruz del calendario (toma 5))
+   11.10 s  cruz_2         inicio medido  11.1001  bien  (cruz del calendario (toma 5))
+   11.20 s  cruz_3         inicio medido  11.2001  bien  (cruz del calendario (toma 5))
+   11.30 s  cruz_4         inicio medido  11.3001  bien  (cruz del calendario (toma 5))
+   11.40 s  cruz_5         inicio medido  11.4001  bien  (cruz del calendario (toma 5))
+   11.50 s  cruz_6         inicio medido  11.5001  bien  (cruz del calendario (toma 5))
+   11.60 s  cruz_7         inicio medido  11.6001  bien  (cruz del calendario (toma 5))
+   11.70 s  cruz_8         inicio medido  11.7001  bien  (cruz del calendario (toma 5))
+   11.80 s  cruz_9         inicio medido  11.8001  bien  (cruz del calendario (toma 5))
+   11.90 s  cruz_10        inicio medido  11.9001  bien  (cruz del calendario (toma 5))
+   12.00 s  clic           inicio medido  12.0001  bien  (corte a la toma 6)
+   13.00 s  clic           inicio medido  13.0001  bien  (corte a la toma 7)
+   13.10 s  deslizar       inicio medido  13.1028  bien  (barra de tenencia que crece (toma 7))
+   14.50 s  clic           inicio medido  14.5001  bien  (corte a la toma 8)
+   16.00 s  clic           inicio medido  16.0001  bien  (corte a la toma 9)
+   16.30 s  pop            inicio medido  16.3004  bien  (marca de Huang (toma 9))
+   17.80 s  pop            inicio medido  17.8004  bien  (marca de Altman en mostaza (toma 9))
+   19.00 s  clic           inicio medido  19.0001  bien  (corte a la toma 10)
+   19.43 s  subida         inicio medido  19.4592  bien  (subida antes del pico (toma 10))
+   20.88 s  tictac         inicio medido  20.8841  bien  (contador de 0 a 4,382 (calla al llegar))
+   22.07 s  ding           inicio medido  22.0672  bien  (llegada de 4,382: ding grave, acorde de mi mayor y golpe del zoom)
+   22.50 s  clic           inicio medido  22.5004  bien  (corte a la toma 11)
+   24.50 s  clic           inicio medido  24.5001  bien  (corte a la toma 12)
+   27.00 s  clic           inicio medido  27.0001  bien  (corte a la toma 13)
+   28.59 s  whoosh_corto   inicio medido  28.6073  bien  (pase del lápiz de Tin a Tan (toma 13))
+   30.00 s  clic_borron    inicio medido  30.0002  bien  (corte con borrón al plano de cierre (toma 14))
+   30.43 s  chasquido      inicio medido  30.4626  bien  (firma del lápiz bumerán)
+    0.33 s  atrapada       inicio medido   0.3335  bien  (firma del lápiz bumerán)
+  golpes: 38; fuera de su tiempo: 0

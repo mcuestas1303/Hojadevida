@@ -1,0 +1,43 @@
+1
+00:00:00,467 --> 00:00:03,506
+Was Jensen Huang's comeback in eleven days fast?
+
+2
+00:00:03,686 --> 00:00:06,604
+He resigned from Nvidia on November twelfth after a scandal.
+
+3
+00:00:06,784 --> 00:00:09,150
+On the seventeenth the board said it would not bring him back.
+
+4
+00:00:09,330 --> 00:00:11,791
+Six days later it reinstated him as CEO.
+
+5
+00:00:11,971 --> 00:00:14,278
+Before that: more than thirty-three years in charge.
+
+6
+00:00:14,458 --> 00:00:16,168
+Fast compared to who?
+
+7
+00:00:16,348 --> 00:00:18,818
+Sam Altman at OpenAI: five days.
+
+8
+00:00:18,998 --> 00:00:22,535
+Steve Jobs at Apple: four thousand, three hundred eighty-two days.
+
+9
+00:00:22,715 --> 00:00:24,543
+That is twelve years?
+
+10
+00:00:24,723 --> 00:00:26,777
+Faster than Jobs. Slower than Altman.
+
+11
+00:00:26,957 --> 00:00:30,098
+Who else came back? Subscribe for the next count.
