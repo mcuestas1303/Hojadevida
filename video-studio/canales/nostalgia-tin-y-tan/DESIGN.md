@@ -58,7 +58,13 @@ que sigue sin hacerse es el degradado de fondo «por defecto», sin nada que com
 - Un efecto no tapa la cara de Tin ni de Tan ni cambia sus colores.
 - La marca del canal (banner) usa solo sombras de contacto: tiene que leerse a 320 px de ancho.
 
-### Control de color en videos con profundidad · **pendiente de firma del director de fotografía**
+### Control de color en videos con profundidad · firmado en parte por el director de fotografía (2026-11-24)
+
+> Firma (`proyectos/2026-11-24_tin_y_tan_jensen_huang/07_revision/vuelta_03/firma_fotografia.md`): el piso sigue en
+> **85 %** dentro de paleta, sin rebaja por la profundidad (el short 3 midió ≈ 93 %). Entre 75 % y 85 % solo pasa si el
+> fotograma de control (efectos apagados) da ≥ 85 % y él lo firma. El criterio de «ningún dominante a ΔE ≥ 12» queda
+> como aviso, no bloqueo, hasta medirlo. Mostaza y tomate nunca comparten plano **como acento**: la bufanda y el cuerpo
+> del lápiz son identidad y la goma tomate del lápiz no cuenta.
 
 El problema (COORDINACION, 2026-11-23): con desenfoques y sombras `revisar_color.py` da ≈ 82 % dentro de la paleta
 (umbral: 85 %) sin que entre ningún tono nuevo, porque los bordes suaves crean mezclas entre papel y tinta.
@@ -83,7 +89,11 @@ Hasta la firma, un video con profundidad que dé menos de 85 % se entrega con la
 - **Excepción obligatoria: los nombres propios llevan mayúscula inicial** (regla del dueño, 2026-11-21): «Tin & Tan»,
   «Tin y Tan», «Tin», «Tan». El banner salió como «tin & tan» y el dueño lo rechazó; desde entonces el supervisor de
   continuidad revisa cada nombre letra por letra antes de entregar.
-- **Portada de los Shorts: mayúscula inicial en cada palabra** («How Many / Pencil Turns?»), máximo 4 palabras en
+- **La portada nombra al sujeto del video** (regla del dueño, 2026-11-24: «back in 11 days no hace referencia a nada…
+  deja algo que nombre jensen y nvidia»): persona, marca u objeto con las palabras que la gente busca; la cifra o la
+  pregunta sola no basta. Para que quepa se permiten hasta 3 renglones (92 px) en y 400–700, como «Jensen Huang / Back at
+  Nvidia / in 11 Days?».
+- **Portada de los Shorts: mayúscula inicial en cada palabra** («How Many / Pencil Turns?»), de partida 4 palabras en
   2 líneas, con la palabra clave en el acento del video (de partida, mostaza) (regla del dueño, 2026-11-21; `ENTREGA_YOUTUBE.md`). Es la única pieza
   del canal con esa capitalización; el resto sigue en minúsculas, salvo los nombres.
 - **Cifras con decimales o fracciones: aproximadas y con «≈»** («≈ 422 ft», «≈ 1.9 in/s»), regla del dueño del
@@ -127,7 +137,7 @@ Hasta la firma, un video con profundidad que dé menos de 85 % se entrega con la
 - En la marca del canal: la pregunta que se vuelve respuesta comprobada («?» → visto bueno). Ningún objeto de un
   tema concreto es símbolo del canal.
 
-## Firma del canal: el lápiz bumerán (borrador del 2026-11-24, pendiente de firmas y de prueba técnica)
+## Firma del canal: el lápiz bumerán (en uso desde el short 3, 2026-11-24; firmada por animación y supervisor)
 
 Pedido del dueño: en todos los videos, al final Tan lanza el lápiz y al principio vuelve a sus manos (bucle). Dura 34 f
 (1,13 s); el lápiz es identidad, no acento; cámara fija, sin destellos. Valores, fotogramas, sonido, seguridad y
