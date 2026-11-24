@@ -431,3 +431,5 @@ Banner v2.1, descripción y 13 palabras clave cargados y comprobados en `@Tinand
   El dueño aprobó el audio sobre el render 1 (`07_revision/escucha_del_dueno.md`).
 - Falta: firma final del supervisor sobre el render 3, firma del director de fotografía (sección 3b de `direccion.md`)
   y el sí del dueño para publicar. Costo: 3,7 créditos de voz.
+- 2026-11-24: el dueño aprobó publicar el short 3 («Si publicalo con keter»). Carpeta subida a Drive, «Canal YouTube -
+  Entregas» → `TIN-EN-S-003`, y aviso enviado a Keter. Falta su respuesta con el enlace público.
