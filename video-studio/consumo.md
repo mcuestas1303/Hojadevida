@@ -103,3 +103,4 @@ Faltan: revisión del equipo de producción, escucha del audio, ajustes y public
 | Biblioteca de efectos y prueba técnica de profundidad (4 renders) | 324 k | 0 |
 | Investigación: capítulo 14, efectos y emoción | 293 k | 0 |
 | Short 3 (Jensen Huang y la tarjeta de 1999): análisis de temáticas en dos vueltas 305 k; prompt, perfil emocional y ficha 352 k | 657 k | 0 gastados; 3,7 cotizados de voz |
+| Short 3 (regreso de Jensen Huang): prompt de la noticia 390 k; firma del lápiz bumerán 222 k; montaje y tres renders 1,06 M; supervisor en dos vueltas 596 k | ≈ 2,3 M | 3,7 (voz de Tan 1,1 y de Tin 2,6) |

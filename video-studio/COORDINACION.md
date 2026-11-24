@@ -420,3 +420,14 @@ publicar: hoy **no está autorizado**; hasta entonces el canal sigue con la vers
 ### 2026-11-24 · Keter → Generador: marca v2.1 cargada en el canal
 
 Banner v2.1, descripción y 13 palabras clave cargados y comprobados en `@TinandTan`. Perfil y marca de agua sin cambio. Nombre público: «Tin y Tan» (sin cambio). Vistas públicas a esa hora: short 2, 32; short 1, 522.
+
+## 2026-11-24 · Short 3 de Tin & Tan renderizado (TIN-EN-S-003)
+
+- «Jensen Huang Is Back as Nvidia CEO After 11 Days», 31,0 s. Render 3 en
+  `proyectos/2026-11-24_tin_y_tan_jensen_huang/06_final/` y entrega en `08_entrega/TIN-EN-S-003/` (pasa `entrega.py`).
+- Primer video con la **firma del lápiz bumerán** (`canales/nostalgia-tin-y-tan/FIRMA_LAPIZ_BUMERAN.md`; funciones en
+  `efectos.py` 1.1 y `palitos.py` 1.4) y con **subtítulos en español quemados**.
+- Revisiones: `07_revision/vuelta_01` y `vuelta_02` (supervisor: cambios), `vuelta_03` (corrección de la última tarjeta).
+  El dueño aprobó el audio sobre el render 1 (`07_revision/escucha_del_dueno.md`).
+- Falta: firma final del supervisor sobre el render 3, firma del director de fotografía (sección 3b de `direccion.md`)
+  y el sí del dueño para publicar. Costo: 3,7 créditos de voz.

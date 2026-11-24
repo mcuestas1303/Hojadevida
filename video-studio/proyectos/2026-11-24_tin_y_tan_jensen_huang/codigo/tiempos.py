@@ -118,8 +118,11 @@ SUBTITULOS = [
     (6, max(L(6), C(8)), min(E(6) + 0.05, C(9) - _m), ("¿Rápido comparado", "con quién?"), None),
     (7, max(L(7), C(9)), min(E(7) + 0.05, C(10) - _m), ("Sam Altman, OpenAI:", "5 días."), (None, T9_ALTMAN)),
     # la cifra en español («4.382», con punto) aparece cuando el contador llega: no se adelanta al pico
+    # Supervisor, vuelta 2: «4.382 días.» duraba 9 fotogramas nítidos; la tarjeta 8 cruza el corte hasta 23,10 s
     (8, max(L(8), C(10)), C(11) - _m, ("Steve Jobs, Apple:", "4.382 días."), (None, LLEGA)),
-    (9, max(L(9), C(11)), min(E(9) + 0.05, C(12) - _m), ("¿Casi 12 años?",), None),
+    # tras el corte la barra baja a la banda: la cifra sigue en un solo renglón para no taparla
+    (8, C(11), C(11) + 1.0, ("4.382 días.",), None),
+    (9, C(11) + 1.0, C(12), ("¿Casi 12 años?",), None),
     (10, max(L(10), C(12)), min(E(10) + 0.05, C(13) - _m), ("Más rápido que Jobs.", "Más lento que Altman."), None),
     (11, max(L(11), C(13)), P(11) - 0.08, ("¿Quién más volvió?",), None),
     (12, P(11), min(E(11) + 0.05, C(14) - _m), ("Suscríbete al próximo", "conteo."), None),
