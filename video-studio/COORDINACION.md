@@ -440,3 +440,6 @@ Banner v2.1, descripción y 13 palabras clave cargados y comprobados en `@Tinand
   público («sii»). Render 4 en Drive (carpeta `TIN-EN-S-003`: «video v2…», «miniatura v2…», «ficha v2…») y aviso a Keter
   para subirlo y retirar https://youtube.com/shorts/7iSCEsd04Qs. Falta su respuesta con el enlace nuevo. Detalle:
   `cambios/2026-11-24_portada_short3_nombra_jensen_y_nvidia.md`.
+- 2026-11-24: Keter cargó la v2 del short 3 en privado (https://youtube.com/shorts/jB695mJFsGY); el viejo sigue público.
+  Frenó por la miniatura: YouTube exige **verificar la cuenta** (lo hace el dueño) para subir miniaturas propias; quedó el
+  cuadro «Nov 23». El dueño decide en la conversación de Keter si se publica así. Pendiente fijo del canal: verificar la cuenta.
