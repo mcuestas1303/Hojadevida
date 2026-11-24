@@ -158,3 +158,7 @@
 - **Subtítulos en español en el video (dueño, 2026-11-24):** «te pido colocar subtítulos en español… en el video».
   Voz en inglés y traducción al español quemada en pantalla, en todos los videos de Tin & Tan.
 - **Marca nueva autorizada (dueño, 2026-11-24):** «Sí, carga lo nuevo con Keter»: banner y descripción v2.
+
+- **Portada de los Shorts nombra al sujeto (dueño, 2026-11-24):** «back in 11 days no hace referencia a nada… deja algo
+  que nombre jensen y nvidia». El texto de la portada dice de quién o de qué trata el video (persona, marca u objeto),
+  con las palabras que la gente busca; la cifra o la pregunta sola no basta.

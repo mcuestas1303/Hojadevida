@@ -57,8 +57,8 @@ BANDA_Y0, BANDA_Y1 = 905, 1085   # banda de subtítulos en español
 ALTO_PORTADA = 487.0             # R = 88 px
 X_PORTADA = (0.24 * W, 0.75 * W)    # Tin en 75 %: con 76 % la gorra salía 2 px de la zona útil (x 960)
 SILLA_PORTADA = dict(cx=540.0, base=1100.0, alto=380.0)      # y 720-1100
-TAM_PORTADA = 0.07 * H           # 134 px: dos renglones entre y = 400 y 700 (a 12 % no caben dos renglones)
-Y_PORTADA = (414.0, 566.0)       # tope de las letras altas de cada renglón
+TAM_PORTADA = 92.0               # dueño (2026-11-24): la portada nombra de quién se habla; a 105 px el renglón largo cabe con su golpe de escala
+Y_PORTADA = (408.0, 512.0, 616.0)   # tres renglones: el dueño pidió nombrar a Jensen y a Nvidia       # tope de las letras altas de cada renglón
 DX_CUERPO = 0.5                  # el desplazamiento del cuerpo de Tan de la firma, a la mitad (-4/+5 px): que no patine
 PORTADA_GEO = dict(R=ALTO_PORTADA / 5.53, x_tan=X_PORTADA[0], x_tin=X_PORTADA[1], suelo=SUELO,
                    texto=(108, 400, 700, 700), objeto=(540 - 181, 720, 540 + 181, 1100),
@@ -579,7 +579,7 @@ def toma_de(f):
 TEXTO_X = 0.10 * W
 TAM_ROTULO = 0.07 * H            # 134 px
 Y_ROTULO = 0.14 * H              # 269 px: tope de las letras altas
-PORTADA_SEGS = ((T("Back In"),), (K("11"), T(" Days?")))
+PORTADA_SEGS = ((T("Jensen Huang"),), (T("Back at Nvidia"),), (T("in "), K("11"), T(" Days?")))
 FIJOS = {
     "11 days?": (K("11"), T(" days?")), "Nov 12": (T("Nov "), K("12")), "Nov 17": (T("Nov "), K("17")),
     "+6 days": (T("+"), K("6"), T(" days")), "Nov 23": (T("Nov "), K("23")), "11 days": (K("11"), T(" days")),
@@ -609,8 +609,9 @@ def capa_rotulos(base, f):
         if que == "portada":                                    # entero y quieto desde el fotograma 0 (es la portada)
             alfa = 1.0 if f < fs - 3 else 1 - ((f - (fs - 3) + 1) / 4) ** 2
             g = 1 + 0.12 * max(0.0, fx.impulso_muelle((f - GOLPE_CLAVE) / FPS, POP))
-            _pegar_texto(base, PORTADA_SEGS[0], TEXTO_X, Y_PORTADA[0], TAM_PORTADA, alfa=alfa)
-            _pegar_texto(base, PORTADA_SEGS[1], TEXTO_X, Y_PORTADA[1], TAM_PORTADA, esc=g, alfa=alfa)
+            for segs_p, y_p in zip(PORTADA_SEGS[:-1], Y_PORTADA[:-1]):
+                _pegar_texto(base, segs_p, TEXTO_X, y_p, TAM_PORTADA, alfa=alfa)
+            _pegar_texto(base, PORTADA_SEGS[-1], TEXTO_X, Y_PORTADA[-1], TAM_PORTADA, esc=g, alfa=alfa)
             continue
         if que == "portada_cierre":                             # entra con pop en c = -30 y llega a escala 1 exacta
             esc = 0.85 + 0.15 * muelle_exacto(t - entra, POP, sale - entra)
@@ -747,7 +748,7 @@ def _lum(f):
 
 def todos_los_textos():
     """Todo lo que se escribe en pantalla (para `revisar_texto.py` y la comprobación de glifos)."""
-    ingles = ["Back In", "11 Days?"] + list(FIJOS) + ["4,382 days"] + list(NOMBRES)
+    ingles = ["Jensen Huang", "Back at Nvidia", "in 11 Days?"] + list(FIJOS) + ["4,382 days"] + list(NOMBRES)
     espanol = [" ".join(r[3]) for r in tm.SUBTITULOS]
     return ingles, espanol
 
@@ -761,11 +762,11 @@ def comprobaciones():
     v = [tm.contador(f / FPS) for f in range(N)]
     assert all(b >= a for a, b in zip(v, v[1:])) and max(v) == tm.VALOR_JOBS and min(v) == 0, "contador mal"
     for que, segs in list(FIJOS.items()) + [("contador", (R("4,382"), T(" days"))), ("portada 1", PORTADA_SEGS[0]),
-                                            ("portada 2", PORTADA_SEGS[1])]:
+                                            ("portada 2", PORTADA_SEGS[1]), ("portada 3", PORTADA_SEGS[2])]:
         tam = TAM_PORTADA if que.startswith("portada") else TAM_ROTULO
         ancho = fx.ancho_texto(tuple(segs), tam) * 1.12
         assert TEXTO_X + ancho <= SEG_X1, f"rótulo fuera de la zona segura: {que} ({TEXTO_X + ancho:.0f} px)"
-        assert len("".join(s for s, _ in segs).split()) <= 3, f"rótulo de más de 3 palabras: {que}"
+        assert len("".join(s for s, _ in segs).split()) <= (4 if que.startswith("portada") else 3), f"rótulo de demasiadas palabras: {que}"
     medidas = []
     for nombre in NOMBRES:
         assert SEG_X0 + 2 + fx.ancho_texto(((nombre, TINTA),), TAM_NOMBRE) * 1.02 <= SEG_X1 and len(nombre.split()) <= 3

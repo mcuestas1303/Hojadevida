@@ -1,0 +1,14 @@
+palitos.py 1.4, efectos.py 1.1. Glifos comprobados en Inter Display Medium: +,.0123456789:?ABCDEFHIJMNOQRSTWabcdeghijklmnopqrstuvxy¿áéíñó
+930 fotogramas (31.0 s). Cortes: [0.0, 1.0, 3.5, 6.5, 9.0, 11.5, 12.5, 14.5, 16.0, 19.0, 22.5, 24.5, 27.0, 30.0, 31.0]. Pico en 22.07 s (71.2 %).
+Subtítulos (px por renglón, máximo 856): 1: 845, 1: 665, 2: 686, 2: 695, 3: 629, 3: 756, 4: 706, 4: 803, 5: 667, 5: 576, 6: 770, 6: 422, 7: 816, 7: 247, 8: 708, 8: 420, 8: 420, 9: 570, 10: 817, 10: 854, 11: 747, 12: 827, 12: 285
+Firma del lápiz bumerán: {'empalme_v_px_f': (5.17, 4.73), 'empalme_omega_grados_f': (4.4, 3.97), 'empalme_direccion_grados': (77.9, 77.7), 'v_max_px_f': 58.0, 'omega_max_grados_f': 24.9, 'giro_total_grados': 330.0, 'escala_max': 1.7, 'brazo_en_c_-1': (94.7, 107.67), 'cuerpo_dx_en_c_-1': -0.31, 'cabeza_en_c_-1': 24.97, 'despejes_px': {'texto_min': 461.0, 'objeto_min': 61.0, 'cabeza_tan_min': 28.8, 'cabeza_tin_min': 46.2, 'centro_en_zona_util': True, 'caras_min': 28.8, 'cabeza_tan_en_c': -14, 'cabeza_tin_en_c': 0}, 'pasa': True}
+  fotograma 0/930  (4 s)
+  fotograma 150/930  (25 s)
+  fotograma 300/930  (49 s)
+  fotograma 450/930  (70 s)
+  fotograma 600/930  (92 s)
+  fotograma 750/930  (112 s)
+  fotograma 900/930  (136 s)
+Destellos: 0 cambios bruscos (fotogramas []), máximo 0 en 1 s, mayor salto de luminosidad 6.1 de 255: PASA
+Bucle: último fotograma frente al 0: diferencia media 0.271 de 255 (un paso del vuelo del lápiz)
+Video -> /home/user/Hojadevida/video-studio/proyectos/2026-11-24_tin_y_tan_jensen_huang/06_final/tin_y_tan_short03_v1.mp4  (145 s en total)

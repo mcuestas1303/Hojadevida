@@ -99,7 +99,7 @@ sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes
 - **Personajes:** @tan, @tin
 - **Método:** edición
 - **Escenario:** papel_crema
-- **Encuadre:** la portada: texto «Back In / 11 Days?» arriba (y 400–700), la silla_director en el centro (y 720–1100), Tan y Tin debajo de perfil mirando la silla
+- **Encuadre:** la portada: texto «Jensen Huang / Back at Nvidia / in 11 Days?» arriba (y 400–700), la silla_director en el centro (y 720–1100), Tan y Tin debajo de perfil mirando la silla
 - **Cámara:** fija, escala 100 %
 - **Acción:** el lápiz de Tin ya viene girando de vuelta desde el fotograma 0 (estela plana), baja por el lado derecho, se frena y **Tin lo atrapa en el fotograma 15**; la silla crece de 0,82 a 1,0 en 12 fotogramas; Tan, con el brazo aún extendido del lanzamiento, pregunta.
 - **Audio:** línea 1, Tan (primera parte): "Was Jensen Huang's comeback in eleven days fast?" (la línea va de 0,00 a 2,31 s). Vuelo del lápiz con vibrato de 0,0 a 0,5 s y golpe al atrapar en 0,5 s (sección 13).
@@ -110,7 +110,7 @@ sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes
 
 - Fotograma 0: lápiz libre con centro en (930, 790) a ángulo 35 grados y escala 1,4, estela de dos copias; **el último fotograma del video (el 914) es esta misma imagen con el lápiz saliendo** (toma 14). El lápiz puede pasar de x = 960 (solo es objeto, no cara ni texto); se mide que no toque el texto ni la silla (≥ 40 px).
 - Recorrido de llegada (15 fotogramas, ease-out): (930, 790) → (975, 1050) → mano de Tin (≈ 860, 1380; se mide en el render), giro de 2,5 vueltas que se frena, escala de 1,4 a 1,0. En el fotograma 15, `pop` pequeño de 4 px hacia abajo en la mano de Tin y sonido.
-- Texto «Back In / 11 Days?» entero y quieto desde el fotograma 0 (es la portada; sin `pop` de entrada), tamaño 12 % del alto, tope de las letras en y = 26 % (medida a repetir: x 116–848, y 492–682); clave «11» en mostaza con contorno de tinta; golpe de la clave en el fotograma 6 (escala 1,0 a 1,18 en 5 fotogramas y asiento en 7). Sale a los 0,9 s.
+- Texto «Jensen Huang / Back at Nvidia / in 11 Days?» entero y quieto desde el fotograma 0 (es la portada; sin `pop` de entrada), tamaño 12 % del alto, tope de las letras en y = 26 % (medida a repetir: x 116–848, y 492–682); clave «11» en mostaza con contorno de tinta; golpe de la clave en el fotograma 6 (escala 1,0 a 1,18 en 5 fotogramas y asiento en 7). Sale a los 0,9 s.
 - Tan: pose `pregunta`, expresión `curiosidad`, vista `perfil`, `mira=1`, `cabeza_giro=25`, x = 24 %, pies a 86 %, `alto` 487 px (el plano de portada es más grande que el resto), `espejo=True`. Tin: pose `parado`, expresión `sorpresa`, vista `perfil`, `mira=-1`, `cabeza_giro=25`, x = 76 %, `objeto=False` hasta el fotograma 15 y `objeto="lapiz"` desde entonces. Las caras quedan dentro de la zona útil de portada (x 60–960, y 380–1440). Con suelo.
 - **Sin subtítulo en español** (portada). **Color:** acento mostaza = la clave «11» + el lápiz; la silla es neutra (papel sombra y marrón). Cabezas, gorra y bufanda son identidad, no acento.
 
@@ -356,7 +356,7 @@ sobre la voz ESTIMADA. Cada corte cae en un pulso de 0,5 s, a 0,0–0,25 s antes
 **Especificación de dibujo:**
 
 - De 29,0 a 29,6 plano fijo con los dos de frente, respirando (acción secundaria). A 29,63 se pasan, sin corte, a la composición de la portada (personajes de perfil con la cabeza a 25 grados) en 6 fotogramas de `slide`; **el último fotograma debe ser igual al fotograma 0** (diferencia media menor de 3 de 255, como en el short 2). Lápiz libre con estela, z de 0 a −420, escala de 1,0 a 1,4, giro de 3 vueltas con aceleración (ease-in), trayectoria de la mano de Tan (≈ 280, 1380) a (930, 790).
-- Texto «Back In / 11 Days?» entra con `pop` en 30,0 y está a escala 1 en 30,5 (igual que el fotograma 0). Sin subtítulo en español en 29,6–30,5 (cuadro de portada limpio). **Color:** acento mostaza = la clave «11» + el lápiz. Con suelo.
+- Texto «Jensen Huang / Back at Nvidia / in 11 Days?» entra con `pop` en 30,0 y está a escala 1 en 30,5 (igual que el fotograma 0). Sin subtítulo en español en 29,6–30,5 (cuadro de portada limpio). **Color:** acento mostaza = la clave «11» + el lápiz. Con suelo.
 
 ## 7. Audio
 
@@ -427,7 +427,7 @@ That's all, folks.
 - **Orden:** Toma 1 → Toma 2 → … → Toma 14 (y vuelve a la toma 1). Las tomas 1 y 14 comparten el fotograma de empalme.
 - **Transiciones (todas motivadas):** corte en el movimiento (1 a 2), revelado desde desenfoque de la mesa (3 a 4, una vez), corte seco en el resto. Sin barridos, sin destellos, sin negativo, sin «atravesar la escena», sin congelado.
 - **Texto en pantalla:** se dibuja en el mismo render: los rótulos en inglés de la sección 12 y la banda de subtítulos en español. El texto nunca contradice lo que se oye.
-- **Portada:** el fotograma 0 cumple los 6 puntos de la regla del dueño (`ENTREGA_YOUTUBE.md`, «Portada de los Shorts»): «Back In / 11 Days?» (4 palabras en 2 líneas, mayúscula inicial en cada una, clave «11» en mostaza) entre y 400 y 700; **el objeto del centro es la silla de director vacía** (y 720–1100), que es el que cuenta la noticia (esa regla habla de «objeto nostálgico»; aquí manda `PARAMETROS.md`: el objeto es el del tema); las caras de Tan y Tin, de perfil y con la cabeza a 25 grados, mirándola, dentro de la zona útil (x 60–960, y 380–1440). **Excepción a «sin la respuesta ni el número»:** la cifra «11» va a la vista por decisión del equipo (`PARAMETROS.md`: «La cifra en el título o en la portada: se decide por video»); no es la respuesta del video. El video cumple lo que promete la portada. `codigo/miniatura.py` guarda el fotograma 0 como `06_final/portada_short03.png` (1080x1920) y mide las cajas.
+- **Portada:** el fotograma 0 cumple los 6 puntos de la regla del dueño (`ENTREGA_YOUTUBE.md`, «Portada de los Shorts»): «Jensen Huang / Back at Nvidia / in 11 Days?» (4 palabras en 2 líneas, mayúscula inicial en cada una, clave «11» en mostaza) entre y 400 y 700; **el objeto del centro es la silla de director vacía** (y 720–1100), que es el que cuenta la noticia (esa regla habla de «objeto nostálgico»; aquí manda `PARAMETROS.md`: el objeto es el del tema); las caras de Tan y Tin, de perfil y con la cabeza a 25 grados, mirándola, dentro de la zona útil (x 60–960, y 380–1440). **Excepción a «sin la respuesta ni el número»:** la cifra «11» va a la vista por decisión del equipo (`PARAMETROS.md`: «La cifra en el título o en la portada: se decide por video»); no es la respuesta del video. El video cumple lo que promete la portada. `codigo/miniatura.py` guarda el fotograma 0 como `06_final/portada_short03.png` (1080x1920) y mide las cajas.
 - **Formato de salida:** 1080x1920, 30 fps, H.264, yuv420p, AAC a 48 kHz. Archivo `06_final/tin_y_tan_short03_v1.mp4`. Pesa unos 3 MB: se recomprime a CRF 22 si pasa de 3,1 MB.
 - **Título de la publicación (inglés):** Jensen Huang Is Back as Nvidia CEO After 11 Days
 - **Descripción de la publicación (en inglés, obligatoria; con una línea de suscripción):**
@@ -508,7 +508,7 @@ CRITICAL: no flashes: at most 2 sudden brightness changes in any second (hard li
 
 - **Regla formal de la pieza:** hechos en orden con fecha, una cifra por plano y una comparación honesta; la cifra solo sube; todo corte cae en un pulso de 0,5 s.
 - **Rejilla de tiempo:** pulso de 0,5 s; 61 pulsos = 30,5 s. La voz entra en el pulso 0 (fotograma 0). Los 13 cortes caen en 1,0; 2,5; 6,5; 10,0; 13,0; 14,0; 16,0; 17,0; 19,5; 23,5; 24,5; 26,5 y 29,0 (más el bucle en 30,5). Inicios estimados de la voz: 0,00; 2,54; 6,68; 9,95; 13,23; 16,00; 17,19; 19,53; 23,47; 24,66 y 26,78. Cada corte cae de 0,0 a 0,25 s antes de la línea que le toca; los de 13,0 y 14,0 caen dentro de la línea 5 a propósito («Before that:» / el número). Se revisan al oído con la voz real.
-- **Gancho (0 a 2,5 s):** el fotograma 0 es la portada: la silla de director vacía, el lápiz de Tin ya girando de vuelta (con estela), «Back In / 11 Days?» entero, Tan y Tin de perfil mirando la silla, y la voz de Tan ya preguntando «Was Jensen Huang's comeback…» desde el fotograma 0. Tin atrapa el lápiz en el fotograma 15. En 1,0 el corte en el movimiento pasa a Tan sola. Sin logo, sin título, sin segundo mudo. **Una sola incógnita abierta:** ¿rápido comparado con quién?
+- **Gancho (0 a 2,5 s):** el fotograma 0 es la portada: la silla de director vacía, el lápiz de Tin ya girando de vuelta (con estela), «Jensen Huang / Back at Nvidia / in 11 Days?» entero, Tan y Tin de perfil mirando la silla, y la voz de Tan ya preguntando «Was Jensen Huang's comeback…» desde el fotograma 0. Tin atrapa el lápiz en el fotograma 15. En 1,0 el corte en el movimiento pasa a Tan sola. Sin logo, sin título, sin segundo mudo. **Una sola incógnita abierta:** ¿rápido comparado con quién?
 - **Empieza en movimiento:** sí: el lápiz gira y se acerca desde el fotograma 0, la silla crece y Tan y Tin rebotan.
 - **Motivo visual que vuelve (con las mismas formas y colores):** la silla_director vacía (tomas 1, 2, 3, 4, 8, 13 y 14), el calendario de noviembre (tomas 3, 5 y 6), las barras (tomas 7 y 9 a 12) y el lápiz de Tin (tomas 1, 3 a 7, 9, 12, 13 y 14).
 - **Cierre:** decidido con la tabla de la sección 4b del manual 14 (resumida en 4b.3): **respuesta con remate** (toma 12), **una pregunta abierta, nueva y respondible** (toma 13: «Who else came back?») **que es la razón de la única invitación** («Subscribe for the next count.») y el lápiz lanzado (toma 14) que empalma con el fotograma 0. La pregunta final no es de suspenso sobre la persona. La voz termina en 29,09; silencio de voz en el empalme: 1,41 s.
@@ -616,7 +616,7 @@ Cada efecto sale de `manual/14_efectos_y_emocion.md` (secciones 2, 3, 4, 4b y 6)
 
 | Texto | Entra (s) | Sale (s) | Posición (% del cuadro) | Tamaño (% del alto) |
 |---|---|---|---|---|
-| Back In / 11 Days? (clave: 11; entero en el fotograma 0, sin pop; es la portada; dos renglones) | 0,00 | 0,90 | 10, 22 | 7 |
+| Jensen Huang / Back at Nvidia / in 11 Days? (clave: 11; entero en el fotograma 0, sin pop; es la portada; dos renglones) | 0,00 | 0,90 | 10, 22 | 7 |
 | 11 days? (clave: 11) | 1,10 | 3,40 | 10, 14 | 7 |
 | Nov 12 (clave: 12) | 5,36 | 6,40 | 10, 14 | 7 |
 | Nov 17 (clave: 17) | 7,00 | 8,90 | 10, 14 | 7 |
@@ -629,7 +629,7 @@ Cada efecto sale de `manual/14_efectos_y_emocion.md` (secciones 2, 3, 4, 4b y 6)
 | 11 days (clave: 11) | 24,60 | 26,90 | 10, 14 | 7 |
 | Who else? (clave: else) | 27,05 | 28,19 | 10, 14 | 7 |
 | Subscribe (clave) | 28,34 | 29,90 | 10, 14 | 7 |
-| Back In / 11 Days? (entra con pop; sigue sin corte en la toma 1) | 30,00 | 31,00 | 10, 22 | 7 |
+| Jensen Huang / Back at Nvidia / in 11 Days? (entra con pop; sigue sin corte en la toma 1) | 30,00 | 31,00 | 10, 22 | 7 |
 | Huang 11 (nombre de la barra de 11 días; en tinta, sobre su marca) | 16,30 | 27,00 | 9, 27 | 2,9 |
 | Altman 5 (nombre de la barra de 5 días; en tinta, sobre su marca) | 17,80 | 27,00 | 9, 34 | 2,9 |
 | Jobs 4,382 (nombre de la barra de 4.382 días; en tinta, sobre su barra; entra cuando el contador llega) | 22,07 | 27,00 | 9, 40 | 2,9 |
