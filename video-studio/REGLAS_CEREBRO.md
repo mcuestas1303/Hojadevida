@@ -146,3 +146,8 @@
   parámetros sean flexibles; con este cambio considera cambios en todo lo demás si es necesario, incluso en banner e
   imagen de perfil». Tin & Tan deja de ser «canal de nostalgia»: hacen la cuenta de lo que la gente está mirando.
   `canales/nostalgia-tin-y-tan/PARAMETROS.md` separa lo fijo de lo flexible (cada parámetro con métrica y rango).
+
+- **La nostalgia se elimina como criterio (dueño, 2026-11-24):** «Esto es lo que manda para mí porque lo sacaste de una
+  investigación… me seguís colocando nostalgia aun cuando me dijiste que es una limitante; no es lógico. Haz los
+  cambios con respecto a la investigación». Las seis limitantes halladas (nostalgia, cuenta obligatoria, público de
+  45 a 70, evitar toda palabra de la polémica, filtro de títulos por opinión, no repetir forma) quedan sin efecto.

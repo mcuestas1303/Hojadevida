@@ -22,8 +22,9 @@ El sitio de la hoja de vida vive en `Evaluacion Fundamentos html/`.
 - **Parámetros flexibles (regla del dueño, 2026-11-24):** «Cambia esas limitantes y define nuevos parámetros; podría
   ser que los parámetros sean flexibles». Cada canal tiene su `PARAMETROS.md`: lo poco que no se mueve (identidad,
   veracidad, seguridad, línea editorial, el sí del dueño) y lo demás como hipótesis con métrica, rango y revisión
-  cada 5 videos. Tin & Tan: `video-studio/canales/nostalgia-tin-y-tan/PARAMETROS.md`; ya no es «canal de nostalgia»:
-  Tin y Tan hacen la cuenta de lo que la gente está mirando. Ese archivo manda sobre el diseño, los títulos y el radar.
+  cada 5 videos. Tin & Tan: `video-studio/canales/nostalgia-tin-y-tan/PARAMETROS.md`; **la nostalgia quedó eliminada como
+  criterio** (corrección del dueño: «me seguís colocando nostalgia aun cuando me dijiste que es una limitante»): Tin y
+  Tan explican con hechos lo que la gente ya está mirando; el tema lo pone la demanda y la cuenta es opcional. Ese archivo manda sobre el diseño, los títulos y el radar.
 - Solo actúan los personajes de `video-studio/personajes/REGISTRO.md` (Tiky, Lumi, Spike, Tin, Tan). Tin & Tan son
   los muñecos de palitos del canal Tin & Tan y se dibujan con `video-studio/herramientas/palitos.py`. Sus carpetas terminadas
   están en Google Drive, `Personajes/`.
