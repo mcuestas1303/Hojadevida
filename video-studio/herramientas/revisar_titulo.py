@@ -18,6 +18,11 @@ Versión 1.1 (2026-11-24) · parámetros flexibles de Tin & Tan
     nombres propios mal escritos, título idéntico a uno ya usado, marca ajena sin descargo en la descripción,
     términos de la línea editorial, promesas engañosas evidentes (leaked, leak, official, exclusive, not clickbait,
     guaranteed, 100%) y el formato de las cifras (decimal con «≈», separador de miles: regla del dueño, manual 12).
+  - Hecho polémico (PARAMETROS.md, sección 3): se nombra con las palabras que la gente busca y que usan los medios
+    serios («scandal», «resigns», «returns», «fired», «lawsuit»…). Eso NO da error ni aviso: esas palabras no están
+    en ninguna lista. Lo que bloquea es el juicio o el insulto sobre una persona (lista JUICIO: liar, crook,
+    scammer…); el resto de la difamación (afirmar algo no comprobado de alguien) no lo ve una máquina: lo firma una
+    persona (titulos.md, 6.b).
   - Canal `tiky-lumi`: NO cambia nada. Ese perfil no se flexibiliza: manda `infantil/guia_1_a_3.md`.
   - Opción nueva `--estricto`: devuelve el comportamiento de la 1.0 en `tin-y-tan`.
   - Las palabras de una marca autorizada con `--marca` pueden ir en mayúsculas (son su grafía, p. ej. «NVIDIA»).
@@ -77,6 +82,16 @@ DURAS = {
     "en": {"gender", "woke", "leaked", "leak", "official", "exclusive", "not clickbait", "guaranteed", "100%"},
     "es": {"género", "ideología", "oficial", "garantizado", "100 %"},
     "pt-BR": {"gênero", "ideologia", "oficial", "garantido", "100%"},
+}
+
+# Juicio o insulto sobre una persona: bloquea siempre en tin-y-tan (PARAMETROS.md, sección 2: personas reales, solo
+# hechos públicos verificables, sin burla). No incluye las palabras de la noticia (scandal, resigns, fired…).
+JUICIO = {
+    "en": ["liar", "crook", "scammer", "fraudster", "thief", "pervert", "predator", "creep", "disgraced", "evil",
+           "idiot", "loser", "clown"],
+    "es": ["mentiroso", "mentirosa", "estafador", "estafadora", "ladrón", "ladrona", "pervertido", "depredador",
+           "idiota", "payaso"],
+    "pt-BR": ["mentiroso", "mentirosa", "golpista", "ladrão", "ladra", "pervertido", "predador", "idiota", "palhaço"],
 }
 
 PROHIBIDAS = {
@@ -240,6 +255,11 @@ def revisar(titulo, canal, idioma, formato, frase, marcas=(), respuestas=(), des
                 E(f"M8 término bloqueado (línea editorial o promesa engañosa): «{v}»")
             else:
                 E(f"M8 palabra o frase prohibida: «{v}»")
+
+    if canal == "tin-y-tan":
+        for v in JUICIO[base]:
+            if re.search(r"(?<![\wáéíóúñçãõâêô])" + re.escape(v) + r"s?(?![\wáéíóúñçãõâêô])", bajo):
+                E(f"M8 juicio o insulto sobre una persona: «{v}» (solo hechos públicos verificables, sin burla)")
 
     # M9 repeticiones
     cuenta = {}

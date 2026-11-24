@@ -10,8 +10,9 @@ Genera:
 
 Versión 2 (2026-11-24), por el cambio de parámetros del canal (`../PARAMETROS.md`): el banner ya no dice
 «she remembers. he does the math.» ni lleva el casete (el canal dejó de definirse por la nostalgia). Lema nuevo:
-«she asks. he does the math.» (Tan pregunta; Tin cuenta: cierto con cualquier tema). Motivo neutro: una pregunta que
-se vuelve cifra («?» → 1 2 3) sobre una regla. Sombras de contacto de `herramientas/efectos.py` (DESIGN.md,
+«she asks. he brings the facts.» (Tan pregunta; Tin responde con datos: cierto con cualquier tema, haya cuenta o no).
+Motivo neutro: una pregunta que se vuelve respuesta comprobada («?» → «✓», las dos dibujadas con código). Sin objetos
+de época ni símbolos de un tema. Sombras de contacto de `herramientas/efectos.py` (DESIGN.md,
 «Profundidad y efectos»). La foto de perfil y la marca de agua NO cambian: son solo las dos cabezas.
 Ya no importa código del short 1: los textos salen de `efectos.py` (dígitos `ss01`, contorno de 0,045 em).
 Las versiones del 2026-11-21 están en `anterior_2026-11-21/`.
@@ -27,7 +28,7 @@ import efectos as E  # noqa: E402
 import palitos  # noqa: E402
 from palitos import PALETA, SS, Lienzo  # noqa: E402
 
-LEMA = (E.T("she asks. he does the "), E.K("math"), E.T("."))     # minúsculas: estilo del canal; sin nombres propios
+LEMA = (E.T("she asks. he brings the "), E.K("facts"), E.T("."))     # minúsculas: estilo del canal; sin nombres propios
 NOMBRE = (E.T("Tin "), E.K("&"), E.T(" Tan"))                       # nombres propios con mayúscula (regla del dueño)
 SEGURA = (507, 508, 2053, 931)                                      # zona segura del banner: 1546x423 centrada
 
@@ -84,28 +85,29 @@ def banner(ruta):
     suelo = 1040
     lz = Lienzo(W, H)
     d = lz.d
-    # regla de medir que cruza el banner (motivo neutro: aquí se cuenta), fuera de la zona segura
+    # suelo liso (neutro: no es símbolo de ningún tema), fuera de la zona segura
     d.rectangle([0, suelo * SS, W * SS, (suelo + 64) * SS], fill=PALETA["papel_sombra"])
     d.line([(0, suelo * SS), (W * SS, suelo * SS)], fill=PALETA["tinta"], width=5 * SS)
-    for i, x in enumerate(range(40, W, 40)):
-        largo = 34 if i % 5 == 4 else 18
-        d.line([(x * SS, suelo * SS), (x * SS, (suelo + largo) * SS)], fill=PALETA["tinta"], width=3 * SS)
-    # la pregunta que se vuelve cifra: «?» → 1 2 3 (fichas de contador apoyadas en la regla; adorno)
-    lado, paso = 104, 118
-    fichas = [(1016, "?", "mostaza"), (1280, "1", "blanco"), (1280 + paso, "2", "blanco"), (1280 + 2 * paso, "3", "blanco")]
-    for cx, _, relleno in fichas:
+    # la pregunta que se vuelve respuesta comprobada: «?» → «✓» (dos fichas apoyadas en el suelo; adorno)
+    lado = 124
+    xq, xr = 1280 - 150, 1280 + 150
+    for cx in (xq, xr):
         sombra(lz, cx, suelo + 4, lado * 1.25, 0.26)
     sombra(lz, 720, suelo + 4, 250)
     sombra(lz, 1840, suelo + 4, 250)
-    for cx, _, relleno in fichas:
-        ficha(lz, cx, suelo - 3, lado, relleno)
-    flecha(lz, 1016 + lado / 2 + 26, 1280 - lado / 2 - 26, suelo - 3 - lado / 2)
+    ficha(lz, xq, suelo - 3, lado, "mostaza")
+    ficha(lz, xr, suelo - 3, lado, "blanco")
+    flecha(lz, xq + lado / 2 + 30, xr - lado / 2 - 30, suelo - 3 - lado / 2)
+    cy = suelo - 3 - lado / 2                                   # visto bueno, en verde azulado (el color de Tan)
+    palomita = [(xr - 34, cy + 2), (xr - 10, cy + 26), (xr + 36, cy - 28)]
+    d.line([(x * SS, y * SS) for x, y in palomita], fill=PALETA["tinta"], width=17 * SS, joint="curve")
+    for x, y in palomita:
+        d.ellipse([(x - 8.5) * SS, (y - 8.5) * SS, (x + 8.5) * SS, (y + 8.5) * SS], fill=PALETA["tinta"])
     # zona segura: 1546x423 centrada → x 507–2053, y 508–931
     palitos.dibujar(lz, "tan", 720, suelo, 520, pose="pregunta", expresion="curiosidad", viento=0.4, espejo=True)
     palitos.dibujar(lz, "tin", 1840, suelo, 520, pose="saluda", expresion="eureka")
     img = lz.resultado()
-    for cx, s, _ in fichas:
-        texto(img, (E.T(s),), 78, cx, suelo - 3 - lado + 6, centrado=True)
+    texto(img, (E.T("?"),), 92, xq, suelo - 3 - lado + 8, centrado=True)
     # nombre y lema dentro de la zona segura (y 508–931), centrados
     cajas = [texto(img, NOMBRE, 170, 1280, 548, centrado=True), texto(img, LEMA, 60, 1280, 778, centrado=True)]
     for c in cajas:
@@ -130,7 +132,7 @@ def marca_de_agua(ruta):
 def main():
     salida = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).resolve().parent
     salida.mkdir(parents=True, exist_ok=True)
-    E.comprobar_glifos(["".join(s for s, _ in NOMBRE + LEMA), "?123"])
+    E.comprobar_glifos(["".join(s for s, _ in NOMBRE + LEMA), "?"])
     perfil(salida / "perfil.png")
     banner(salida / "banner.png")
     marca_de_agua(salida / "marca_de_agua.png")
