@@ -6,7 +6,246 @@
 - **Canal:** Tin & Tan (`@TinandTan`), Shorts verticales en inglés para EE. UU. Formato: pregunta nostálgica + cuenta sencilla + cifra que sorprende. **Objetivo del dueño (2026-11-23):** entrar al Programa de socios de YouTube lo antes posible.
 - **Lo que este documento no hace:** no hay guion ni prompt. Lo que aquí se propone para dentro del video es propuesta; las ideas y lo emocional las decide el dueño.
 - **Marcas de fiabilidad.** «Leído» = abrí la página y leí el texto. «Resumen de buscador» = lo vi solo en el resumen que devuelve la herramienta de búsqueda, sin abrir la página. «Sin confirmar» = una sola fuente o fuentes que se contradicen. «Sin dato» = no lo conseguí.
-- **Aviso de lectura rápida (lo más importante):** Jensen Huang está **hoy** en medio de una noticia sobre su vida privada y su cargo (sección 1.4). Eso cambia qué conviene hacer con él en este canal. La recomendación (sección 5) es **no apoyar el video en la persona ni en la noticia**, y sí en los objetos y las fechas de su empresa.
+- **Aviso de lectura rápida (lo más importante):** Jensen Huang está **hoy** en medio de una noticia sobre su vida privada y su cargo (sección 1.4). Eso cambia qué conviene hacer con él en este canal. **Actualización del mismo día:** el dueño decidió que el regreso es el motivo del video; la recomendación «no apoyar el video en la persona» de las secciones 1 a 5 **queda sin efecto** y la reemplaza la sección «Segunda vuelta» de abajo. Los hechos y las cifras de las secciones 1 a 3 siguen vigentes.
+
+---
+
+## Segunda vuelta: el regreso como director ejecutivo (perspectiva del dueño)
+
+- **Fecha de lectura de todo lo de esta sección:** 2026-11-24.
+- **Corrección del dueño (2026-11-24), textual:** «Te propuse un video de Jensen porque este día retornó como CEO de Nvidia después del escándalo; revisa las noticias y filtra las propuestas bajo esa perspectiva». El tema es idea suya y lo decide él.
+- **Qué cambia en este documento:** la recomendación «mejor no la persona» de la primera vuelta **queda sin efecto** como criterio de elección. Lo que sigue vigente de la primera vuelta son los **hechos** (secciones 1 a 3) y las **líneas que no se cruzan** (sección 4), que aquí se vuelven más concretas (punto 4 de esta sección). Los ángulos de la sección 3 siguen siendo válidos como cuentas; el ángulo 1 (GeForce 256) se reabre abajo con la noticia como gancho.
+- **Marcas de fiabilidad:** igual que arriba. «Leído» = abrí la página. «Resumen de buscador» = solo el resumen de la herramienta de búsqueda. «Títulos de YouTube» = leí el título, el canal, las vistas y la hora en el listado de resultados, no el contenido del video. «Sin dato» y «sin confirmar», como arriba.
+- **Vida privada:** no se detalla y no se nombra a terceros en esta sección. Se nombran los cargos de la empresa (la directora financiera que quedó interina, el presidente de la junta) porque son hechos corporativos.
+
+### S1. Las noticias del regreso, verificadas
+
+**Cómo se verificó.** Tres vías cruzadas: (1) Wikipedia en inglés (`Jensen_Huang`, `Jensen_Huang_scandal`, `Nvidia`, abiertas con `curl` el 2026-11-24; el texto de la polémica está protegido contra vandalismo y se editó hasta el 2026-11-23 22:21 UTC); (2) títulos, canales, vistas y horas de los videos de cadenas de noticias en la búsqueda de YouTube (`/results?search_query=…`, ordenada por fecha de subida); (3) resúmenes de la herramienta de búsqueda (WebSearch), cuyo índice **llega solo hasta ≈ 2026-11-17**: no ve la reposición. **No pude abrir ningún comunicado de Nvidia** (`nvidianews.nvidia.com` e `investor.nvidia.com` devuelven 403 desde `curl`). Por eso la reposición queda como «confirmada por varias cadenas en YouTube y por Wikipedia, sin comunicado abierto».
+
+| Fecha | Hecho corporativo público | Fuente | Estado |
+|---|---|---|---|
+| 2026-10-29 | The New York Times publica los primeros informes sobre una relación personal de Huang con una ejecutiva de un cliente de Nvidia y sobre sospechas de agencias de EE. UU. acerca de esa persona. La sospecha de espionaje **no está probada** (el Departamento de Justicia y CNN lo dijeron el 2026-11-12) | Wikipedia, «Jensen Huang scandal» | Leído en Wikipedia; artículos del NYT sin abrir |
+| 2026-11-08 | La junta de Nvidia abre una investigación independiente y dice que «no reason to believe» que la seguridad nacional o los secretos de la empresa se hayan comprometido; expresa confianza en Huang. Huang escribe un mensaje interno a los empleados | Resumen de buscador del comunicado «Statement from NVIDIA Board of Directors» (`investor.nvidia.com`) y Wikipedia | Resumen de buscador y Wikipedia; comunicado sin abrir |
+| 2026-11-10 | La junta anuncia que un despacho de abogados externo conducirá la investigación | Wikipedia | Sin confirmar con fuente primaria |
+| 2026-11-11 | El WSJ informa que la junta se prepara para sustituirlo; la junta acepta su renuncia | Wikipedia (cita al WSJ) | Sin confirmar con fuente primaria |
+| **2026-11-12** | **Nvidia anuncia que Huang renunció como presidente, director ejecutivo y miembro de la junta, con efecto inmediato. Colette Kress (directora financiera) queda como directora ejecutiva interina. Harvey C. Jones, primer presidente de la junta. Se abre la búsqueda de un sucesor** | Resumen de buscador de los comunicados de `nvidianews.nvidia.com` e `investor.nvidia.com` («NVIDIA Announces CEO Transition»); Wikipedia; títulos de CNN, CBS News, Fox Business, CBC, Sky News y FRANCE 24 en YouTube | Corroborado por tres vías; comunicado sin abrir |
+| 2026-11-13 | La junta dice que contrata una firma de búsqueda de ejecutivos | Wikipedia | Sin confirmar con fuente primaria |
+| 2026-11-15 / 16 | El Financial Times informa que Huang considera volver. CNBC, WSJ y BBC informan que la junta **no** considera reponerlo. El presidente de EE. UU. dice públicamente que no le molestaría su regreso | Wikipedia; resumen de buscador (CNBC y otros) | Resumen de buscador y Wikipedia |
+| 2026-11-17 | Huang publica en X un mensaje en el que reconoce «serious mistakes» en su vida personal (sus palabras, según Wikipedia y el resumen de BNN Bloomberg y CP24) y dice que se sentiría honrado de volver si la junta lo decide. Ese día, en la llamada de resultados del tercer trimestre, el presidente de la junta dice que la junta «does not intend to reinstate» a Huang | Wikipedia; resúmenes de buscador | Resumen de buscador y Wikipedia |
+| 2026-11-18 | Reunión con empleados: el presidente de la junta dice que la renuncia se aceptó por su conducta personal y «lack of candor» (motivo declarado por la junta, según Wikipedia) | Wikipedia | Sin confirmar con fuente primaria |
+| 2026-11-20 | El presidente de EE. UU. dice que le gustaría que Huang tuviera «una segunda oportunidad» | Wikipedia | Sin confirmar con fuente primaria |
+| 2026-11-22 | Bloomberg (citado por Wikipedia) informa que la junta tomó la decisión esa tarde, tras presión pública y privada del gobierno de EE. UU.; la directora interina y el equipo directivo se enteraron minutos antes del anuncio | Wikipedia | **Una sola fuente (Wikipedia citando a Bloomberg)** |
+| **2026-11-23** | **La junta anuncia que Huang es repuesto como presidente y director ejecutivo, «effective immediately» (retoma el cargo ese mismo día).** Texto citado por Wikipedia: tras recibir información «from senior levels of the United States government», la junta está segura de que su reposición «poses no national security risk». Cubierto por Fox News, CNN, BBC, NBC, CBS, ABC, Al Jazeera, CNBC, Channel 4 y otros, con videos subidos 3 a 10 horas antes de mi lectura | Wikipedia (cita al WSJ del 2026-11-23); títulos de YouTube | Confirmado por varias cadenas en títulos; sin comunicado abierto |
+| 2026-11-23 y 24 | Primer día de regreso: videos de empleados que lo reciben en la sede (CNN, 31 s) y una entrevista breve de CNBC. Está pendiente una comparecencia ante el Congreso (ABC News: «Reinstated Nvidia CEO Jensen Huang to testify in Congress»); **fecha sin dato** | Títulos de YouTube | Títulos; contenido sin ver |
+
+**Reacción del mercado.** Wikipedia dice que la acción subió casi un 30 % el 2026-11-23, «el mayor salto en más de dos décadas». Los títulos de YouTube dicen 30 %, 31 % y 33 %: **las cifras no coinciden y no hay fuente primaria abierta**. **No se usa ninguna cifra de bolsa en el video**, ni como dato ni como consejo (ver S4).
+
+**Qué días cuentan.** Renuncia anunciada el 2026-11-12; reposición anunciada el 2026-11-23: **11 días** (así lo titulan CNBC-TV18 y PIX11). Wikipedia, en la página de la polémica, dice «12 días», contando desde el 11 de noviembre, cuando la junta aceptó la renuncia. **Se usa 11, con la fecha de anuncio, y el video lo dice.**
+
+**Lo que no se usa de las noticias, aunque sea verdad:** los detalles de su vida privada, los nombres de terceras personas, las investigaciones en curso sobre otras empresas, el papel del gobierno en la decisión y cualquier cifra de bolsa. Son noticias de otro género.
+
+### S2. Qué está haciendo YouTube con la noticia hoy
+
+Lectura de los listados de búsqueda ordenados por fecha de subida (consultas: «jensen huang reinstated nvidia ceo», «jensen huang returns nvidia», «jensen huang back meme funny shorts», «jensen huang 11 days», «jensen huang steve jobs return comparison», «jensen huang comeback sam altman», «jensen huang back geforce 256 1999»). Vistas y horas son las del listado el 2026-11-24. **El listado de Shorts no muestra el canal: «sin dato»** donde no lo pongo.
+
+| Ángulo | Título exacto | Canal | Vistas | Subido hace |
+|---|---|---|---|---|
+| Noticia | JUST IN: Jensen Huang REINSTATED as Nvidia CEO | Fox News | 556.781 | 10 h |
+| Noticia | Jensen Huang reinstated as Nvidia CEO: What to know | CNN | 597.230 | 9 h |
+| Noticia | Jensen Huang reinstated as the CEO and president of Nvidia | BBC News | 154.495 | 9 h |
+| Noticia (Short) | Jensen Huang Is Back After Trump Told NVIDIA Board to Reinstate CEO | sin dato | ≈ 165.000 | sin dato |
+| Noticia (Short) | Jensen Huang says he is ‘honored’ to return as Nvidia CEO | sin dato | ≈ 69.000 | sin dato |
+| Noticia (Short) | Employees cheer as Jensen Huang returns to Nvidia | sin dato | ≈ 56.000 | sin dato |
+| Declaración | Jensen Huang returns to Nvidia: 'I'm going to be a better CEO the second time around' | CNBC Television | 268.648 | 5 h |
+| Opinión | Jensen Huang Returns to Nvidia. Kara Swisher Calls It “A Sick Oligarchic Takeover” | Pivot with Kara Swisher and Scott Galloway | 86.074 | 3 h |
+| Opinión | BREAKING: Jensen Huang Makes SHOCK Return as CEO of Nvidia | Megyn Kelly | 63.036 | 4 h |
+| Reacción | Elon Musk’s Perfect Reaction to NVIDIA CEO’s Return Goes Viral Fast | The Rubin Report | 158.331 | transmitido hace 7 h |
+| Mercado | Altimeter's Brad Gerstner reacts to Jensen Huang's reinstatement as Nvidia CEO | CNBC Television | 81.457 | 6 h |
+| Mercado | Jensen Huang reinstated as Nvidia CEO, stocks soar 30% | ABC News (Australia) | 9.015 | 5 h |
+| Parodia (Short) | Jensen Huang Is Back as NVIDIA CEO 🔥 His First Day Back \| AI Parody #nvidia #jensenhuang | sin dato | ≈ 961.000 | sin dato |
+| Parodia (Short) | Jensen Huang Returns to NVIDIA After a Long Break 💀😂 | sin dato | ≈ 338.000 | sin dato |
+| Meme (Short) | JENSEN HUANG IS BACK!!! 🔥💚 NVIDIA IS NOT READY! 💀😂 #shorts #trending #fyp #ai #nivdia | sin dato | ≈ 23.000 | sin dato |
+| Comparación (Short) | Kara Swisher: Stop Comparing Jensen Huang to Steve Jobs | sin dato | ≈ 23.000 | 6 días |
+| Comparación (Short) | Steve Jobs Came Back. Can Jensen Huang? #shorts | sin dato | 427 | 11 h |
+| Comparación (Short) | CEO Comeback Speedrun: Jobs vs Huang vs Altman 🏆 #shorts | sin dato | 10 | 9 h |
+| Comparación (Short) | Why Jobs Took 12 Years to Return — And Jensen Took 11 Days #Shorts | sin dato | 5 | 6 h |
+| Comparación (video) | Jensen Huang Came Back Faster Than Steve Jobs. Here's Why | Megamundo Clips | 1 | 35 min |
+| «11 días» (video) | The Wildest 11 Days in Tech | Nate Herk \| AI Automation | 5.513 | 4 h |
+| «11 días» (Short) | Why NVIDIA Brought Jensen Huang Back Just 11 Days After He Resigned | sin dato | 632 | sin dato |
+
+**Qué domina:** la **noticia** de las cadenas (cientos de miles de vistas en horas), seguida de **opinión y reacción** y de **parodia y memes**, que son los de mayor alcance entre los Shorts (≈ 961.000 una parodia hecha con IA de su cara y voz: **justo lo que este canal no hace**). El **mercado** (la subida de la acción) aparece en varios títulos.
+
+**Lo que ya está empezando:** la **comparación con Jobs y Altman** y los «**11 días**». Hay ocho o más piezas de esa familia en las últimas 12 horas, todas con muy pocas vistas todavía, más un Short de opinión con ≈ 23.000. Es decir: **el ángulo de los ángulos (a) y (b) se está llenando hoy**; en 24 a 48 horas habrá más.
+
+**Lo que no encontré:** ninguna pieza que una el regreso con **objetos de época** ni con una **cuenta de nostalgia** (consultas «jensen huang back geforce 256 1999» y «jensen huang returns first gpu geforce»: el único resultado con «GeForce 256» es ajeno al regreso). «No encontré» significa solo eso: revisé la primera página de cada consulta.
+
+**Frases de búsqueda que aparecen en los títulos de estas listas** (no son volúmenes; son lo que los títulos dicen): «Jensen Huang reinstated», «Jensen Huang returns to Nvidia», «Jensen Huang is back», «11 days», «second chance», «Jensen Huang Steve Jobs», «Sam Altman». **Volúmenes: sin dato.**
+
+### S3. Ángulos desde el regreso, para el formato de Tin & Tan
+
+**Los dos shorts anteriores, para comparar:** short 1 (casete y lápiz) = distancia y velocidad → minutos; remate «casi 10 minutos». Short 2 (GTA 6) = días entre dos fechas; remate «quien nació ese día tiene 13 años»; usó además un calendario en la mano de Tin (toma 12).
+
+**Cuentas hechas con Python el 2026-11-24** (`cuentas2.py`, resultados abajo).
+
+```python
+from datetime import date
+d = lambda a, b: (b - a).days
+mando = d(date(1993,4,5), date(2026,11,12))     # 12274 días al mando (constitución -> renuncia)
+fuera = d(date(2026,11,12), date(2026,11,23))   # 11 días fuera
+mando / fuera                                   # 1115.8  -> 1 día fuera por cada ≈ 1.116 al mando (≈ 3,06 años)
+fuera / mando * 100                             # 0.0896 % del tiempo al mando
+fuera * 24                                      # 264 horas
+d(date(1985,9,17), date(1997,9,16))             # 4382  Jobs: carta de renuncia -> nombrado director interino
+d(date(1985,9,17), date(1997,2,1)), d(date(1985,9,17), date(1997,2,28))  # 4155 a 4182 (vuelta a Apple, febrero de 1997)
+4382 / 11                                       # 398.4 veces los 11 días
+d(date(2023,11,17), date(2023,11,22))           # 5  Altman: destitución -> «cinco días después»
+d(date(2026,11,17), date(2026,11,23))           # 6  de «no pensamos reponerlo» a la reposición
+d(date(2004,3,4), date(2007,1,31))              # 1063 Dell: deja de ser director ejecutivo -> vuelve
+d(date(2000,6,1), date(2008,1,7))               # 2776 Schultz (Starbucks)
+92.2e9 / 17e6                                   # 5423.5 (o 4008.7 con 23 millones)
+```
+
+**Fechas de otros regresos, verificadas en Wikipedia en inglés el 2026-11-24:**
+
+| Persona y empresa | Salida | Regreso | Días fuera del puesto | Matiz que hay que decir |
+|---|---|---|---|---|
+| Sam Altman, OpenAI | 2023-11-17 (destituido por la junta) | «cinco días después» (Wikipedia no da el día en el texto que leí) | **5** | La destitución fue por la junta, no renuncia |
+| **Jensen Huang, Nvidia** | **2026-11-12** | **2026-11-23** | **11** | Renunció también como miembro de la junta |
+| Michael Dell, Dell | 2004-03-04 (deja de ser director ejecutivo; sigue de presidente de la junta) | 2007-01-31 | 1.063 | **No salió de la empresa** |
+| Howard Schultz, Starbucks | 2000-06-01 (pasa a otro cargo; sigue en la empresa) | 2008-01-07 | 2.776 | **No salió de la empresa** |
+| Jack Dorsey, Twitter | 2008-10-16 (deja de ser director ejecutivo; sigue de presidente) | julio de 2015 (director interino; **día sin dato**) | ≈ 2.449 como cota | **No salió de la empresa**; la cifra es aproximada |
+| Steve Jobs, Apple | 1985-09-17 (carta de renuncia a la junta) | Febrero de 1997 (cierre de la compra de NeXT; día sin dato) y **1997-09-16** (nombrado director interino) | **4.382** hasta el nombramiento | Salió de verdad; el «regreso» tiene dos fechas |
+
+**Consecuencia honesta:** «el regreso más corto de la historia» es **falso** (Altman volvió en 5 días). Lo que sí es cierto con estas fuentes: Huang volvió antes que Jobs (11 días contra 4.382) y, entre quienes salieron del todo, solo Altman tardó menos. Dell, Schultz y Dorsey siguieron en la empresa: compararlos con Huang sería engañoso.
+
+**Lectura de las columnas siguientes.** «Gancho» = fuerza del gancho frente a lo ya publicado (S2). «Vigencia» = cuántos días aguanta la noticia como motivo para buscar el video: **no tengo la curva; es estimación mía** y la marco como tal. «Nostalgia» = encaje con el canal.
+
+| # | Ángulo | Pregunta nostálgica | Cuenta | Cifra que sorprende | Objeto que se usa con las manos | Gancho | Vigencia | Nostalgia | Riesgo principal |
+|---|---|---|---|---|---|---|---|---|---|
+| a | **«Estuvo fuera 11 días»** | «¿Cuánto tarda en volver alguien que lleva toda la vida?» | 12.274 días al mando; 11 fuera; 11 ÷ 12.274 | **0,09 %**; o «1 día fuera por cada ≈ 1.116 al mando (≈ 3 años)» | Una hoja de calendario que se arranca | Medio: «11 days» ya está en 4 títulos de hoy, pero ninguno hace la proporción | Corta (días) | Baja: no hay objeto de época | **Mismo tipo y objeto que el short 2** (días entre dos fechas y calendario). Es lo que el plan del canal pide no encadenar |
+| b | **Regresos comparados: Jobs, Altman, Huang** | «¿Recuerdas cuando Jobs volvió a Apple en 1997?» | 4.382 días (Jobs) frente a 5 (Altman) y 11 (Huang); 4.382 ÷ 11 | **≈ 398 veces**; «Jobs tardó 12 años» | Una hoja de calendario o un fechador de goma | **Alto el primer día, se llena en 24 a 48 h**: ya hay 8 piezas pequeñas y una de ≈ 23.000 vistas | Corta (días) | Media: Jobs y 1997 sirven a los de 49 a 64 años (aritmética: 20 a 35 años en 1997) | Tipo «días»; **Altman es una persona viva**: solo fechas; «destituido» es un hecho reportado pero hay que citar la fuente; la comparación tiene dos matices que hay que decir (4.1) |
+| c | **«El que volvió lanzó esto en 1999»** | «¿Recuerdas abrir la torre beige y meter una tarjeta nueva?» | 92,2 mil millones ÷ 17 millones = 5.423,5 (o 4.008,7 si fueran 23 millones) | **≈ 5.400 tarjetas** | La tarjeta GeForce 256 (11-oct-1999), que se presiona en la ranura y se atornilla | **Medio-alto**: no encontré ninguna pieza que una regreso y tarjeta; el hueco es real | **Mixta**: el gancho muere en días, pero la cuenta sigue viva si se publica tarde | **Alta**: objeto de época y público de 45 a 62 años | Transistores no son rendimiento (se dice en voz); cifra de 1999 contradictoria (17 contra 23 millones, **sin resolver**); la promesa del título no puede ser que él diseñó la tarjeta |
+| d | **De lavaplatos a 11 días fuera: tres números** | «¿Cuál fue tu primer empleo?» | 15 años (de los 15 a los 30) + 12.274 días al mando + 11 días fuera | 15 → ≈ 33,6 años → 11 días | Un plato o una bandeja | Bajo: el relato del Denny's tiene Shorts de hasta 3,5 millones y es lo más trillado (sección 2.3) | Corta | Media | **Su primer empleo es una sola fuente (Wikipedia)**; sin objeto de época; es perfil de persona, no cuenta; tres números es «una cuenta» solo en apariencia |
+| e1 | **6 días: de «no pensamos reponerlo» a «lo repusimos»** | — | 2026-11-17 → 2026-11-23 = 6 | 6 días | Una hoja de calendario | Bajo-medio: ya existe «Nvidia Said It Wouldn't Rehire Jensen Huang. 6 Days Later, It Did» | Corta | Nula | Pone a la junta como protagonista de un cambio de opinión: **juicio sobre terceros**; lo ve como «la junta cedió», que ata el video a la presión política |
+| e2 | **Su Apple II de 1977** | «¿Programaste algo en una Apple II?» | Wikipedia: la escuela compró una Apple II en 1977 y Huang programó su propia versión de «Snake» en BASIC. Años hasta hoy: 49 | **49 años** | El teclado de la Apple II, con las manos | Alto como hueco: no vi nada | Larga, **no depende de la noticia** | **Alta** (y el radar tiene la Apple II como aniversario de 50 años en 2027-04-16) | **Una sola fuente (Wikipedia)**; la cuenta es una resta sin sorpresa; sin dato de qué hizo realmente. Se retoma si hay segunda fuente |
+
+### S4. Las líneas que no se cruzan, concretas
+
+**Qué páginas de YouTube abrí el 2026-11-24 para esto:**
+
+- Contenido apto para anunciantes: https://support.google.com/youtube/answer/6162278?hl=en
+- Acoso y ciberacoso: https://support.google.com/youtube/answer/2802268?hl=en
+- Suplantación: https://support.google.com/youtube/answer/2801947?hl=en
+- IA y contenido alterado o sintético: https://support.google.com/youtube/answer/14328491?hl=en
+
+**Lo que dicen, con cita:**
+
+| Tema | Qué dice la página | Qué implica aquí |
+|---|---|---|
+| Contenido que avergüenza o insulta a una persona | «Content that focuses on shaming or insulting an individual or group», «Content that singles out someone for abuse or harassment» y «Malicious personal attacks, slander, and defamation» aparecen en la columna «Limited ad earnings or no ad earnings» de «Incendiary and demeaning» (6162278) | Una parodia o un título de burla sobre su regreso cae aquí. Un hecho con fecha, no |
+| Temas controvertidos | La lista de «Controversial issues» es: abuso infantil, abuso sexual de adultos, acoso sexual, autolesiones, suicidio, trastornos alimentarios, abuso doméstico y aborto. **La infidelidad y el espionaje no figuran** (6162278) | El tema, mencionado de pasada, no cae en esa lista. **Sin dato** de qué hace el sistema automático con un video que lleve su nombre ahora |
+| Eventos sensibles | Ejemplos: emergencias civiles, desastres naturales, emergencias de salud pública, terrorismo, conflicto, actos de violencia masiva (6162278) | Un cambio de director ejecutivo no es un evento sensible |
+| Contenido para adultos | «Romance or kissing; discussions of romantic relationships or sexuality without reference to intercourse» **sí puede ganar ingresos**; lo que se limita es el contenido «highly sexualized» en título o miniatura (6162278) | Nombrar una relación en términos neutros no limita anuncios, pero **no hace falta nombrarla** |
+| Personas reales | La política de suplantación no permite «Using AI to make it look like a famous person is willfully participating in your video or endorsing a product» (2801947). La de IA exige declarar contenido que «Makes a real person appear to say or do something they didn't do» (14328491) | Una parodia con su cara o su voz hecha con IA, como el Short de ≈ 961.000 vistas, es justo lo que estas dos páginas describen. **Este canal no lo hace** |
+| Acoso | «We don’t allow content that targets someone with prolonged insults or slurs based on their physical traits or protected group status» (2802268) | No aplica a un video de hechos; sí a la burla |
+| Difamación (parte legal) | **No abrí una página específica de YouTube sobre difamación: sin verificar** | Regla práctica del equipo: solo hechos con fuente y fecha, sin adjetivos |
+
+**Palabras que se pueden usar (decisión del equipo):**
+
+- En título, voz, texto en pantalla y descripción: «returned», «is back», «reinstated», «stepped down» (es el término de la empresa) o «resigned», «interim CEO», «the board», «Nov 12», «Nov 23», «11 days». Todo es hecho corporativo público con fecha.
+- **¿Conviene nombrar «scandal»? No, ni en el título ni en la voz ni en la descripción ni en las etiquetas.** Razones: (1) el hecho del regreso basta para el gancho: los títulos de Fox News, CNN, BBC, NBC, CBS y ABC que leí hoy no usan la palabra (algunos medios sí, por ejemplo Forbes y un Short de Al Jazeera, con «Affairs Scandal» e «intelligence scandal»); (2) «scandal» convierte el video en un video **sobre** la polémica, que es el género que ya saturan las cadenas y las parodias, y lo acerca a «shaming» (6162278); (3) obliga a decir cuál fue, y eso es vida privada o espionaje, que no se detalla; (4) el canal es de nostalgia. Si el dueño decide decir el motivo de la salida, ver S5, decisión D2.
+- «Fired» y «ousted» no: la empresa dijo que **renunció**. «Spy», «affair», «cheating» y «infidelity», nunca.
+
+**Lo que no se hace, concreto:**
+
+1. Ningún detalle de su vida privada ni de las acusaciones. Ningún nombre de terceros.
+2. Ningún juicio moral (ni a favor ni en contra): ni «merecía volver» ni «no debió volver». Ni «patriot», ni «hero», ni «disgrace».
+3. Ninguna burla ni parodia, ni de él ni de la junta ni del presidente de EE. UU.
+4. Ninguna palabra puesta en su boca: ni siquiera una cita real dicha por la voz de Tin o de Tan, incluida la de CNBC («better CEO the second time around»). El texto en pantalla con comillas y su fuente es otra decisión del dueño.
+5. Ni su voz ni su cara, imitadas o dibujadas. Solo actúan Tin y Tan.
+6. Ninguna cifra de bolsa («+30 %»), ningún «si compraste ayer…», ninguna recomendación de comprar o vender. Tampoco su fortuna.
+7. Nada de política: ni el papel del gobierno ni el del presidente en la decisión. Es un asunto polémico que no sirve al arco del video.
+8. No decir que el regreso fue «el más rápido de la historia»: Altman volvió en 5 días.
+9. No decir que él «diseñó» la GeForce 256: Nvidia la lanzó cuando él era director ejecutivo (dato verificable: constitución en 1993; lanzamiento 1999-10-11).
+
+**Casilla de contenido alterado o sintético:** no aplica por este motivo, porque no hay imagen, voz ni fragmento de una persona real (14328491: se declara lo que «Makes a real person appear to say or do something they didn't do»). Si se añadiera una foto, un clip de noticia o una voz, cambia todo, y además entra la política de contenido reutilizado.
+
+**¿Puede el video llevar anuncios limitados por tocar la noticia, y importa hoy?** Las páginas leídas dicen que el límite de anuncios se aplica a contenido que avergüenza, insulta o acosa, o a temas de la lista de controvertidos; un video de hechos y objetos no entra en esas listas. **No puedo asegurarlo**: la propia página dice que «our systems don't always get it right» y ofrece revisión humana, y no hay dato de cómo trata el sistema un video con su nombre este mes. **Hoy no importa por dinero** (el canal aún no monetiza). Lo que sí importa: (a) no recibir un aviso de Normas de la Comunidad (requisito de entrada: cero avisos activos; plan del canal §1.2); (b) que el canal quede clasificado por la revisión del Programa como un canal de nostalgia y no de comentario sobre un escándalo (la revisión mira el canal completo: plan §1.2); (c) que un historial de videos con anuncios limitados pese o no en la revisión de entrada: **sin dato**.
+
+### S5. Recomendación dentro de la perspectiva del dueño
+
+**Ángulo principal: (c) «El que volvió lanzó esto en 1999».** La noticia abre el video; la nostalgia lo sostiene.
+
+| Por qué | Evidencia |
+|---|---|
+| **Hueco real** en la noticia más buscada de la semana | Las listas de hoy (S2) no traen ninguna pieza que una el regreso con una cuenta de objetos; la «comparación Jobs/Altman/11 días» ya se llena con pequeños canales y una voz de opinión |
+| **Aguanta más que la noticia** | La cuenta (≈ 5.400) y el objeto (la tarjeta de 1999) valen aunque el video salga cuando el regreso ya se enfrió; (a), (b) y (e1) mueren con la noticia |
+| **Cambia el tipo de cuenta** respecto del short 2 | Razón entre dos objetos, no días entre fechas; remate de tamaño, no de edad. Cumple la regla de variación del plan del canal (§4.3) |
+| **Encaja con la nostalgia y el objeto con las manos** | La tarjeta se presiona en la ranura y se atornilla; público de 45 a 62 años (aritmética), la franja de 45 a 70 del canal |
+| **Riesgo bajo de la noticia** | No toca vida privada ni política; solo usa «is back» como hecho |
+
+**Lo que hay que resolver antes de producir:** (1) los transistores de la GeForce 256 con fuente primaria (17 o 23 millones; sección 6.1); (2) la promesa del título: la cuenta es de **transistores** y el video lo dice.
+
+**Cuenta final:** 92.200.000.000 ÷ 17.000.000 = 5.423,5 → «unas 5.400» (con «≈»). **Objeto:** la tarjeta GeForce 256, dibujada por código sin logotipo ni el verde de la marca. **Remate:** de tamaño, no de tiempo: lo que cabía en un chip de 1999 cabe 5.400 veces en uno de hoy (la frase final, el guion y el cierre de firma son del equipo creativo y del dueño; no los escribo). **Gancho en el segundo 0 (propuesta de qué mostrar, no guion):** el texto «Jensen Huang Is Back» y la tarjeta de 1999 en el centro, con Tan y Tin mirándola.
+
+**Título provisional pasado por el filtro:**
+
+```
+python3 video-studio/herramientas/revisar_titulo.py "Jensen Huang Is Back: How Many GeForce 256?" \
+  --canal tin-y-tan --idioma en --formato short --frase "jensen huang" \
+  --marca "GeForce 256" --respuesta 5424 --respuesta 4009 --descripcion <archivo con el descargo>
+
+Filtro de títulos v1.0 · «Jensen Huang Is Back: How Many GeForce 256?» · 43 caracteres · tin-y-tan · en · short
+PASA: 0 error(es), 0 aviso(s). Falta la revisión de una persona (el video cumple el título, no engaña, línea editorial).
+{ "caracteres": 43, "filtro": { "version": "1.0", "fecha": "2026-11-24", "resultado": "PASA", "errores": [], "avisos": [] } }
+```
+
+| Opción | Título | Caracteres | Filtro |
+|---|---|---|---|
+| **Recomendado** | Jensen Huang Is Back: How Many GeForce 256? | 43 | PASA, 0 errores, 0 avisos |
+| Alternativa 1 | Jensen Huang Is Back: GeForce 256 vs Today | 42 | PASA, 0 errores, 0 avisos |
+| Alternativa 2 | Jensen Huang's Return: GeForce 256 Math | 39 | PASA, 0 errores, 0 avisos |
+| **Reserva (ángulo b)** | Jensen Huang vs Steve Jobs: How Many Days Out? | 46 | PASA, 0 errores, 0 avisos (frase `jensen huang vs steve jobs`, sin marca) |
+
+**Siglas.** «CEO» **sí falla** el filtro: «Jensen Huang Is Back as CEO: How Many Days Out?» da `ERROR M5 «CEO» va toda en mayúsculas`. Por eso ningún título de arriba la lleva. «CEO» es la palabra que más aparece en los títulos de las noticias (S2); si el equipo la quiere en el título, hay que añadir «CEO» (y «RTX» y «GPU», que ya fallaron en la primera vuelta) a la lista de siglas de `revisar_titulo.py`. **No toqué el script.**
+
+**Reserva: ángulo (b), solo con Jobs y Altman como comparación**, con el título de arriba y la cuenta 4.382 ÷ 11 ≈ 398 (y los 5 días de Altman como segunda cifra, con el matiz «destituido por la junta»). Se usa **si el dueño prefiere la noticia pura y puede publicar dentro de 24 a 48 horas**; después se vuelve el ángulo más saturado. Su tipo de cuenta es el del short 2 (días): si sale, el cuarto video no puede ser de días.
+
+**Fecha límite para publicar (estimación mía; no tengo la curva de la noticia):**
+
+- Para el ángulo principal: **2026-12-01** como meta, para estar en la primera semana del regreso. La fecha dura no existe: el video no depende de un aniversario, pero el gancho «is back» pierde fuerza cada día.
+- Para el de reserva: **2026-11-26** (48 a 72 horas desde hoy).
+- Hay una segunda ola de noticias esperada, la comparecencia ante el Congreso, de fecha **sin dato**. Cuando haya fecha, se vuelve a mirar.
+- Competidores en el calendario del radar (`comercial/radar_de_tendencias.md` §5): Dunesday (empezar antes del 2026-12-08), Navidad de 2006 (2026-12-15) y iPhone (2026-12-30).
+
+**Decisiones emocionales y de idea que son del dueño** (se le presentan con una recomendación del equipo, no como lista de opciones):
+
+| # | Decisión | Recomendación del equipo y su porqué |
+|---|---|---|
+| D1 | **Tono del arco**: admiración, asombro o ironía suave | **Asombro tierno, sin ironía sobre la persona.** La ironía sobre alguien que vuelve de una polémica se lee como burla (6162278: «shaming») y como juicio. El asombro se pone en el objeto (la tarjeta tan chica) y no en él |
+| D2 | **¿Se dice por qué se fue, o solo que volvió?** | **Solo el regreso**, con la fecha de salida y de vuelta («Nov 12, Nov 23»). Es el hecho y es todo lo que el gancho necesita. Si el dueño quiere decir el motivo, la única frase que propongo es la de la propia empresa («stepped down»), sin decir por qué. Nombrar la causa es vida privada |
+| D3 | **¿El video lleva su nombre en el título y en la primera frase, aunque no actúe ni se dibuje?** | **Sí en el título y en el texto del segundo 0**: es lo que el dueño pidió y lo que busca el público de hoy. **No** en la voz como cita ni como personaje |
+| D4 | **¿Se menciona al presidente de EE. UU. o al gobierno?** | **No**, aunque la noticia lo incluye: política, y no ayuda al arco |
+
+**Lo que ya decidió el equipo (técnico):** ángulo principal y reserva; título y filtro; cuenta en transistores con «≈»; objeto dibujado por código; no usar bolsa ni vida privada ni política; fecha de corte en toda cifra; el descargo «Not affiliated with Nvidia Corporation» en la descripción.
+
+### S6. Lo que no pude confirmar (de esta segunda vuelta)
+
+| Qué | Por qué |
+|---|---|
+| El comunicado de Nvidia de la reposición, el de la renuncia y el de la junta del 8 de noviembre | `nvidianews.nvidia.com` e `investor.nvidia.com` devuelven 403; solo vi resúmenes de buscador (hasta ≈ 17-nov) y títulos de YouTube |
+| Los artículos del NYT, WSJ, Bloomberg, FT, Reuters y CNN | Solo a través de Wikipedia; el texto de la polémica está en disputa |
+| Que la decisión se tomó el 22-nov por la tarde y por presión del gobierno | Solo Wikipedia (citando a Bloomberg) |
+| La cifra de la subida de la acción | Títulos de YouTube dicen 30 %, 31 % y 33 %; Wikipedia, «casi 30 %». Sin fuente primaria |
+| Fecha de la comparecencia ante el Congreso | El título de ABC News la anuncia; la fecha no la leí |
+| El día exacto del regreso de Altman, de Jobs a Apple (febrero de 1997) y de Dorsey (julio de 2015) | Wikipedia da el mes o «cinco días después» |
+| Canal de la mayoría de los Shorts de S2 | El listado de Shorts no lo muestra y las páginas `/shorts/` recientes no traen metadatos |
+| Volúmenes de búsqueda de cualquier frase; curva de enfriamiento de la noticia | Google Trends «explore» devuelve 429; no hay fuente abierta |
+| Cómo trata el sistema de anuncios un video con su nombre | Sin dato |
+| Si hay una política de YouTube específica de difamación | No abrí ninguna página; sin verificar |
+| Transistores de la GeForce 256 (17 o 23 millones) | Igual que en la sección 6.1 |
+
+**Hosts bloqueados (se suman a los de 6.2):** ninguno nuevo. Siguen bloqueados `nvidianews.nvidia.com`, `investor.nvidia.com`, `www.nvidia.com`, `www.sec.gov` y las páginas `/watch?v=` de YouTube. Para cerrar la reposición y los transistores habría que permitir `nvidianews.nvidia.com`, `investor.nvidia.com`, `www.theregister.com`, `www.tomshardware.com` y `web.archive.org`.
 
 ---
 
