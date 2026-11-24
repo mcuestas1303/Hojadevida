@@ -436,3 +436,7 @@ Banner v2.1, descripción y 13 palabras clave cargados y comprobados en `@Tinand
 - 2026-11-23, 22:11 (El Salvador): **TIN-EN-S-003 público**, https://youtube.com/shorts/7iSCEsd04Qs. Keter verificó las
   fechas en fuentes externas y corrigió la frase de fuentes de la descripción (ahora cita el comunicado de Nvidia); la
   ficha del repositorio ya tiene el texto publicado. Compromiso del video: el siguiente conteo sale antes del 2026-11-30.
+- 2026-11-24: el dueño pidió que la portada del short 3 nombre a Jensen Huang y a Nvidia y aprobó reemplazar el video
+  público («sii»). Render 4 en Drive (carpeta `TIN-EN-S-003`: «video v2…», «miniatura v2…», «ficha v2…») y aviso a Keter
+  para subirlo y retirar https://youtube.com/shorts/7iSCEsd04Qs. Falta su respuesta con el enlace nuevo. Detalle:
+  `cambios/2026-11-24_portada_short3_nombra_jensen_y_nvidia.md`.
