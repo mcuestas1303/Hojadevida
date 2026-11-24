@@ -60,3 +60,17 @@ frases puestas en su boca; sin cifras de bolsa ni fortuna como consejo; marcas s
 
 - Los créditos de la voz.
 - Publicar.
+
+### Decisiones del equipo durante el render (2026-11-24)
+
+- **«That is twelve years?» se deja sin palabra de aproximación en la voz.** Son 12 años menos un día (4.382 días);
+  cambiarlo obligaría a regenerar la voz de Tan, que el dueño ya escuchó y aprobó. La tarjeta en español dice «¿Casi 12
+  años?» y la descripción «≈ 12 years». Lo decide la coordinación, como dirección creativa.
+- **Caras neutras en la renuncia y en la reposición.** Nadie sonríe ni festeja sobre un hecho polémico de una persona
+  real (`PARAMETROS.md`, sección 2: sin burla). La cara `neutra` de Tin se armó en `codigo/render.py` con piezas de su
+  ficha; queda pendiente llevarla a `palitos.py` y a su ficha para los siguientes videos.
+- **Tan lanza y Tan atrapa el lápiz** (`FIRMA_LAPIZ_BUMERAN.md`); se le dijo al dueño que la variante «atrapa Tin»
+  está prevista si la prefiere.
+- **Tarjetas en español cortas, con las cifras**, en lugar del texto literal del `.srt`: a 86 px el texto completo no
+  cabe en dos renglones; el `.srt` completo se sube como pista.
+

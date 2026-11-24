@@ -40,7 +40,7 @@ Resumen de una página del video. El detalle de cada bloque está en el archivo 
 | Aspecto y tamaño | 9:16, 1080×1920 |
 | Duración | 31,0 s reales (930 fotogramas a 30 por segundo), en bucle (el vuelo del lápiz); pico en 22,07 s (71,2 %) |
 | Cómo se hizo | Dibujado por código (`palitos.py` 1.4, `efectos.py` 1.1 y gráficos propios); sin generador de imagen ni de video. Render real: ≈ 160 s |
-| Archivo | `06_final/tin_y_tan_short03_v1.mp4` (por renderizar) |
+| Archivo | `06_final/tin_y_tan_short03_v1.mp4` (render 3, 2026-11-24; aprobado por el supervisor con salvedades) |
 | Portada | El fotograma 0: `06_final/portada_short03.png` (por guardar con `miniatura.py`) |
 | Subtítulos | `02_prompt/subtitulos.srt` (inglés, 11 líneas) y `02_prompt/subtitulos_es.srt` (español, 11 líneas); además, 12 tarjetas en español quemadas en el video (banda de y 905 a 1085) |
 

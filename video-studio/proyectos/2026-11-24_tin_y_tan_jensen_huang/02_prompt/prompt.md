@@ -650,8 +650,8 @@ Cada efecto sale de `manual/14_efectos_y_emocion.md` (secciones 2, 3, 4, 4b y 6)
 | 5 | 12,50 | 14,28 | 5 | Antes: más de 33 / años al mando. |
 | 6 | 14,50 | 15,97 | 6 | ¿Rápido comparado / con quién? |
 | 7 | 16,35 | 18,82 | 7 | Sam Altman, OpenAI: / 5 días. (el segundo renglón entra en 17,80 s) |
-| 8 | 19,00 | 22,47 | 8 | Steve Jobs, Apple: / 4.382 días. (el segundo renglón entra en 22,07 s) |
-| 9 | 22,71 | 24,47 | 9 | ¿Casi 12 años? |
+| 8 | 19,00 | 23,50 | 8 | Steve Jobs, Apple: / 4.382 días. (el segundo renglón entra en 22,07 s; desde el corte de 22,5 s queda solo «4.382 días.» en un renglón) |
+| 9 | 23,50 | 24,50 | 9 | ¿Casi 12 años? |
 | 10 | 24,72 | 26,78 | 10 | Más rápido que Jobs. / Más lento que Altman. |
 | 11 | 27,00 | 28,21 | 11 | ¿Quién más volvió? |
 | 12 | 28,29 | 29,97 | 11 | Suscríbete al próximo / conteo. |
