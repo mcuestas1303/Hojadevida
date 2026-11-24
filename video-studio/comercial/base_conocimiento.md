@@ -449,7 +449,7 @@ Regla del dueño (2026-11-21): el título se estudia con datos de lo que penetra
 
 ## 15. Relectura del 2026-11-23 y plan del Programa de socios
 
-Pedido del dueño (2026-11-23): el objetivo del canal Tin & Tan es entrar al Programa de socios lo antes posible. El plan completo (cuentas, estrategia, riesgos, tablero) está en `video-studio/canales/nostalgia-tin-y-tan/plan_programa_de_socios.md`.
+Pedido del dueño (2026-11-23): el objetivo del canal Tin & Tan es entrar al Programa de socios lo antes posible. El plan completo (cuentas, estrategia, riesgos, tablero) está en `video-studio/canales/nostalgia-tin-y-tan/plan_programa_de_socios.md`. Desde el 2026-11-24 la definición del canal (qué es, lo fijo y los parámetros flexibles con su métrica) está en `video-studio/canales/nostalgia-tin-y-tan/PARAMETROS.md`, que manda sobre el plan, los títulos y el radar: el tema lo pone la demanda verificable, sin edad fija ni tipo de tema reservado.
 
 **Relectura de hoy** de las páginas 72851, 12843009, 13429240, 12504220, 1311392, 7101720, 14328491 y 15424877 (descargadas con `curl` el 2026-11-23): **los umbrales y las reglas de las secciones 1, 2, 3, 4, 7 y 12 siguen vigentes y no se corrige ninguna cifra** (4.000 h o 10 M de vistas de Shorts con 1.000 suscriptores hasta el 31-ene-2027; 8.000 h o 20 M desde el 1-feb-2027; intermedio 500 suscriptores y 3.000 h o 3 M, sin cambios; El Salvador sigue en la lista del YPP y del YPP ampliado). Lo que sí se añade, porque no estaba en la base:
 

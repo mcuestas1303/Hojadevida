@@ -10,7 +10,9 @@ carpeta; el manual es el procedimiento paso a paso y `casos/` guarda el ejemplo 
 ## Canales
 
 `canales/<canal>/` guarda las decisiones, pruebas y pendientes de cada canal. Hoy: `canales/nostalgia-tin-y-tan/`
-(formato nostalgia con Tin & Tan, dibujados con `herramientas/palitos.py`).
+(canal «Tin & Tan»: explican con hechos comprobados lo que la gente ya está mirando; dibujados con
+`herramientas/palitos.py`. Su definición es `canales/nostalgia-tin-y-tan/PARAMETROS.md`; el nombre de la carpeta se
+conserva solo para no romper rutas).
 
 ## Equipo de producción
 

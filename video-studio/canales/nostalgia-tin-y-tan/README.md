@@ -1,4 +1,10 @@
-# Canal de nostalgia · Tin & Tan
+# Canal Tin & Tan
+
+> **Qué es el canal, a quién le habla y qué forma tiene: `PARAMETROS.md` (regla del dueño, 2026-11-24). Ese archivo
+> manda sobre este cuando se contradigan.** En una línea: Tin & Tan explican, en menos de un minuto y con hechos
+> comprobados, lo que la gente ya está mirando. Tan pregunta lo que el público se pregunta; Tin responde con datos.
+> El tema lo pone la demanda verificable; no hay edad fija ni tipo de tema reservado, y la cuenta es una herramienta
+> opcional. La carpeta se sigue llamando `nostalgia-tin-y-tan` solo para no romper rutas: el canal ya no se define así.
 
 > Relevo recibido el 2026-11-20 desde la conversación «Keter: habilidades y crecimiento». Pedido del dueño, textual:
 > *«esto debe quedar archivado en equipo de producción audiovisual y recordá que equipo de producción audiovisual
@@ -12,8 +18,8 @@
 > Textual: *«Si creo que nos confundimos crea los nuevos personajes seria tin & tan es para los videos que parecen
 > palitos»*.
 
-- Los muñecos de palitos de este canal son **Tin** (`@tin`, el que hace la cuenta) y **Tan** (`@tan`, la que
-  recuerda). Fichas en `video-studio/personajes/tin/` y `tan/`; diseño en código en `herramientas/palitos.py`;
+- Los muñecos de palitos de este canal son **Tin** (`@tin`, el que responde con datos) y **Tan** (`@tan`, la que
+  pregunta). Fichas en `video-studio/personajes/tin/` y `tan/`; diseño en código en `herramientas/palitos.py`;
   bitácora en `creador-personajes/afinado/tin-y-tan.md`. **Versión 1 aprobada el 2026-11-21** («si me gustan»).
 - **Tiky y Lumi siguen siendo de la serie infantil** (`series/granja/`) y no aparecen en este canal.
 - Estilo visual del canal: `DESIGN.md`.
@@ -33,7 +39,7 @@ Plan, umbrales y cuentas: `plan_programa_de_socios.md`. Requisitos oficiales: `v
 |---|---|
 | Nombre | **Tin & Tan** (canal nuevo, aparte) |
 | Identificador | **@TinandTan** · https://www.youtube.com/channel/UCf4M-1YDL-_bwSOghElOZKw |
-| Estado | **activo** (2026-11-21). Marca cargada por Keter con el sí del dueño: banner, foto de perfil, marca de agua (al final del video) y descripción en inglés. **Palabras clave del canal: sin cargar** (están en `marca/descripcion_canal.txt`) |
+| Estado | **activo** (2026-11-21). Marca cargada por Keter con el sí del dueño: banner, foto de perfil, marca de agua (al final del video) y descripción en inglés. **Palabras clave del canal: sin cargar**. **Marca versión 2 (2026-11-24), por el cambio de parámetros: banner, descripción y palabras clave nuevos en `marca/`, sin cargar; esperan el sí del dueño.** La foto de perfil y la marca de agua no cambian. Lo cargado hoy en YouTube es la versión del 2026-11-21 (`marca/anterior_2026-11-21/`) |
 | Videos | TIN-EN-S-001, publicado el 2026-11-21: https://youtube.com/shorts/s9r5bmmNykY |
 | TikTok | lo abre el dueño con su mismo correo; perfil sin armar |
 
@@ -42,18 +48,24 @@ El canal **«Tiky & Lumi»** (@TikyAndLumi, https://www.youtube.com/channel/UCO6
 
 **Nada se publica sin la aprobación del dueño.**
 
-## Formato decidido
+## Formato (`PARAMETROS.md`, 2026-11-24)
 
-- **Nostalgia** con dos personajes propios, Tin y Tan.
-- Mecánica: una **pregunta nostálgica** con una **respuesta calculada de verdad**, contada con **dibujos simples
-  propios**.
+- Dos personajes propios, Tin y Tan, dibujados con código.
+- Mecánica: **la pregunta que el público ya se está haciendo** (la hace Tan) y **la respuesta con hechos comprobados**
+  (la da Tin), cada dato con su fuente y su fecha. La forma de explicar es libre: tres datos, línea de tiempo,
+  comparación, cuenta, ranking, antes y después.
+- Lo fijo (personajes, fuentes, personas reales, marcas, fotosensibilidad, línea editorial, controles, el sí del
+  dueño) está en la sección 2 de `PARAMETROS.md`; lo demás son parámetros con métrica (sección 3) que se revisan
+  cada 5 videos.
+- Los shorts 1 y 2 (`TIN-EN-S-001` y `TIN-EN-S-002`) se definieron con los parámetros anteriores (2026-11-21) y no se
+  cambian.
 - **No clonar** el canal de muñecos «Doodle Digest». Repetir la misma pregunta cambiando el objeto choca con la regla
   de contenido no auténtico de YouTube. Cada video tiene que aportar algo propio: pregunta, cálculo, guion y dibujo.
 
 ## Recomendación de los expertos (sin confirmar por el dueño)
 
-- Empezar en **inglés**, para público de **EE. UU. mayor de 50 años**.
-  **Confirmado por el dueño el 2026-11-21:** inglés para Estados Unidos, formato vertical y música hecha con código. La franja de edad sigue sin confirmar.
+- Empezar en **inglés**, para público de **EE. UU.**
+  **Confirmado por el dueño el 2026-11-21:** inglés para Estados Unidos, formato vertical y música hecha con código. **Edad: sin franja fija desde el 2026-11-24** (`PARAMETROS.md`: manda el dato de Studio; la recomendación inicial de «mayores de 50» quedó sin efecto).
 - Tope de gasto de unos **US$500 por 90 días**. **El dueño todavía no confirmó el presupuesto.**
 
 ## ⚠️ Por decidir con el dueño
@@ -82,7 +94,11 @@ El canal **«Tiky & Lumi»** (@TikyAndLumi, https://www.youtube.com/channel/UCO6
 | Archivo | Qué es |
 |---|---|
 | `pruebas/2026-11-20_prueba_30s.md` | Prueba técnica de 30 s: cálculo, guion, escenas, estilo, herramientas, resultado y lo que falta |
-| `voces.md` | Prueba de voces pendiente: candidatas y método a ciegas |
+| `PARAMETROS.md` | **La definición del canal**: lo fijo, los parámetros flexibles con su métrica y la bitácora de cambios |
+| `DESIGN.md` | Estilo visual: lo fijo y lo que cambia por video |
+| `plan_programa_de_socios.md` | Plan, umbrales y cuentas para entrar al Programa de socios |
+| `marca/` | Banner, foto de perfil, marca de agua y descripción (`marca.py` los genera); versión anterior en `marca/anterior_2026-11-21/` |
+| `voces.md` | Prueba de voces (cerrada el 2026-11-21): candidatas, método y resultado |
 
 **Dónde más está:** en el «Cerebro» del dueño (nodos `canal-de-munecos-de-palitos-con-rankings`,
 `reglas-de-produccion-de-video` y `prompts-para-replicar-videos`) y en su PC, en `Canal YouTube/conocimiento/` y

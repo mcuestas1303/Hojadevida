@@ -1,16 +1,18 @@
 # Tin
 
-> Creado el 2026-11-20 para el canal de nostalgia de videos de palitos. Pedido del dueño, textual: *«crea los nuevos
+> Creado el 2026-11-20 para el canal de videos de palitos (hoy «Tin & Tan»; su definición vigente está en
+> `video-studio/canales/nostalgia-tin-y-tan/PARAMETROS.md`, 2026-11-24). Pedido del dueño, textual: *«crea los nuevos
 > personajes seria tin & tan es para los videos que parecen palitos»*. **Versión 1 aprobada por el dueño el 2026-11-21** («si me gustan»).
 > El diseño vive en código: `video-studio/herramientas/palitos.py` (`PERSONAJES["tin"]`). Las hojas de `referencias/`
 > salen de ese archivo con `python3 video-studio/herramientas/palitos.py hojas <carpeta>`.
 
 - **ID:** `@tin`
 - **Nombre:** Tin
-- **Rol / arquetipo:** el que hace la cuenta. Toma la pregunta nostálgica de Tan y la resuelve con números de verdad.
+- **Rol / arquetipo:** el que responde con datos. Toma la pregunta de Tan y la contesta con hechos
+  comprobados, cada uno con su fuente; hace la cuenta cuando la cuenta es lo que mejor responde.
 - **Edad aparente:** adulto (sin edad marcada)
-- **Personalidad en una línea:** preciso y entusiasta con los números; se emociona con el resultado («eureka»).
-- **Público / canal:** adultos, canal de nostalgia (inglés, EE. UU. mayores de 50 según la recomendación sin confirmar).
+- **Personalidad en una línea:** preciso y entusiasta con los datos; se emociona cuando la respuesta cierra («eureka»).
+- **Público / canal:** adultos, sin edad fija (el que tenga la demanda del tema); canal «Tin & Tan» (inglés, EE. UU.).
   **Nunca** en contenido infantil.
 - **Voz:** **Kevin** de Higgsfield (`seed_audio`, voz predefinida `f1373f24-3b96-433f-9a68-e595810ef608`), elegida por el dueño el 2026-11-21 («tiene una energía más encendida al hablar»). En edición se acelera un 10 % sin cambiar el tono (`atempo=1.10`), velocidad elegida por el dueño el 2026-11-21.
 
@@ -57,6 +59,8 @@ en un plano de los dos se dibujan con el mismo `alto`.
 
 - Sin lápiz cuando la acción necesita las dos manos (`objeto=False`).
 - Expresiones: `feliz`, `nostalgia`, `curiosidad`, `pensando`, `concentrado`, `sorpresa`, `risa`, `eureka`.
+  (`nostalgia` es el nombre técnico de una cara en `palitos.py`: ojos cerrados suaves y boca suave. No es un rasgo
+  del personaje ni un criterio del canal; se usa como cara de calma o ternura.)
 - Poses: `parado`, `saluda`, `senala`, `piensa`, `pregunta`, `explica`, `encoge`, `celebra`, `camina`.
 - **Objetos de mano por video (añadido el 2026-11-21, pedido del dueño: «agrega variaciones al sheet si es necesario»):**
   cada prompt puede darle al personaje un objeto de utilería en la mano que gesticula, dibujado con el mismo trazo

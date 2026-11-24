@@ -1,4 +1,4 @@
-# Prueba de voces · canal de nostalgia (Tin & Tan)
+# Prueba de voces · canal Tin & Tan
 
 > **En curso desde el 2026-11-21.** Decide el dueño. Instalar o pagar cualquier cosa necesita su sí.
 

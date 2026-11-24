@@ -4,7 +4,7 @@
 - **Primera edición:** 2026-11-21 (todas las consultas de este documento son de ese día; «consulta» = 2026-11-21)
 - **Origen:** regla del dueño (2026-11-21), textual: «El comercial debe estar capacitado para identificar esas oportunidades de temporada; debe haber alguna forma en que se esté enterando de temáticas que van a entrar en tendencia o que son tendencia». Nació de GTA 6 (salió el 2026-11-19): el dueño tuvo que pedir el video y el equipo no lo vio venir.
 - **Qué es:** (1) el método semanal, para repetirlo igual cualquier semana; (2) el primer radar, con calendario de 6 meses y tendencias de hoy.
-- **Para quién:** canal Tin & Tan (adultos, EE. UU., inglés; muñecos de palitos; pregunta nostálgica + cuenta + cifra) y serie Tiky y Lumi (1 a 3 años; el que decide es el adulto; español, inglés y portugués de Brasil). Nunca se mezclan: a Tiky y Lumi no llega ninguna tendencia de adultos.
+- **Para quién:** canal Tin & Tan (adultos sin edad fija, EE. UU., inglés; muñecos de palitos; la pregunta que el público ya se hace + la respuesta con hechos comprobados; `canales/nostalgia-tin-y-tan/PARAMETROS.md`) y serie Tiky y Lumi (1 a 3 años; el que decide es el adulto; español, inglés y portugués de Brasil). Nunca se mezclan: a Tiky y Lumi no llega ninguna tendencia de adultos.
 - **Cómo se leen las fuentes.** Esta sesión **no pudo abrir páginas** de casi ninguna fuente de tendencias (sección 1.2). Todo lo de este documento viene de la **búsqueda web de la sesión, que devuelve un resumen** y no la página. Por eso cada dato lleva una marca:
   - **resumen:** lo vi solo en el resumen del buscador; la página no se abrió. Es la marca por defecto de este radar.
   - **sin confirmar:** las fuentes se contradicen, hay una sola, o lo deduje.
@@ -13,6 +13,7 @@
 - Sin volúmenes. No cito cifras de búsquedas, vistas ni pedidos previos: no pude leerlas en una fuente abierta.
 
 ---
+- **Actualización del 2026-11-24 (parámetros de Tin & Tan):** por regla del dueño, el criterio de Tin & Tan pasa a ser **demanda verificable + se puede explicar con hechos comprobados + da tiempo**. Ya no se exige ni se busca una época, un objeto ni una cuenta: el tema lo pone la demanda y **no se reserva cupo para ningún tipo de tema**. Cambian el método (paso nuevo 1.1b) y el filtro (criterios 1 y 5). **No se agregó ninguna tendencia ni se cambió ninguna fecha**; lo de Tiky y Lumi no se tocó. Las filas de Tin & Tan de las secciones 3.3, 4 y 5 son del 2026-11-21, definidas con los parámetros anteriores: siguen como registro y cada una entra solo si en su semana pasa el filtro nuevo.
 
 ## 1. Método semanal (20 minutos)
 
@@ -32,6 +33,19 @@ Se hace cada lunes, o el día que el equipo lo fije. Los minutos son mi estimaci
 | 8 | 1 | **Fiestas por país** (EE. UU., Brasil, Hispanoamérica): las de fecha móvil se recalculan cada año. | búsqueda web «<fiesta> <año> date» | Fecha con fuente |
 | 9 | 0 | Pasar cada hallazgo por el **filtro** (sección 2). Lo que pasa va al calendario o a la sección 4. | sección 2 | Fila nueva |
 | 10 | 0 | **Cerrar:** escribir la entrada en la bitácora (sección 6), y llevar al dueño solo lo que pasó el filtro y vence pronto (sección 5). | sección 6 | Entrada de bitácora |
+
+#### 1.1b Tendencias de actualidad (paso nuevo para Tin & Tan, 2026-11-24)
+
+Va después del paso 5 y **manda sobre el calendario**: de aquí sale el tema de cada video. El paso semanal deja la lista; el día que se abre un video se repite en 5 minutos, porque la demanda es de ese día.
+
+| # | Qué se hace | Qué se anota |
+|---|---|---|
+| a | Listar las noticias y los temas del día que aparezcan en **2 o más** fuentes de los pasos 2 a 6 (búsquedas por país, video, TikTok, estrenos) o en el dato de Studio del dueño. Cualquier área con demanda: noticia, tendencia, estreno, tecnología, dinero, deporte, cultura, pregunta que mucha gente busca | Tema, las fuentes donde apareció y la fecha de cada una |
+| b | **Demanda verificable:** dejar a la vista la señal medida (vistas y antigüedad de los videos sobre el tema abiertos ese día, posición en las listas de tendencia). Sin señal medida se escribe «sin dato» y el tema no entra | La señal, con enlace y fecha |
+| c | **¿Se puede explicar con hechos comprobados?** Escribir la pregunta que el público se hace y los 2 o 3 datos que la responden, cada uno con fuente primaria o dos independientes. Si hay una cuenta que responde mejor, se escribe; **la cuenta es opcional** | Pregunta, datos y fuentes |
+| d | Límites fijos (`PARAMETROS.md`, sección 2): personas reales, solo hechos públicos verificables, sin vida privada, burla, cara ni voz; marcas, solo el nombre. Un hecho polémico se nombra con las palabras que usan los medios serios, sin detalles íntimos ni juicio. Y la línea editorial (criterio 2) | Qué se nombra y qué queda fuera |
+| e | **¿Da tiempo?** Regla de anticipación: lo que ya pasó se hace **ya** (72 horas) | Fecha límite |
+| f | Ordenar por demanda. **El de mayor demanda que pase c, d y e es el siguiente video.** Todos los temas compiten igual: no hay cupo para ningún tipo | El elegido y por qué; los descartados y su razón |
 
 Cada semana también: revisar si cambió algo de lo ya anotado (una fecha de estreno que se mueve es lo más común). Si cambia, se corrige la fila y se escribe en la bitácora.
 
@@ -100,15 +114,15 @@ Nota de ruta: el rol del comercial dice `video-studio/datos/`; `CLAUDE.md` dice 
 
 ## 2. Filtro de oportunidad
 
-Algo entra al calendario o a las oportunidades solo si cumple los 5. Si falla el 1, 2 o 3, se descarta; si falla solo el 4 o el 5, se anota como «no da tiempo» o «sin cuenta verificada».
+Algo entra al calendario o a las oportunidades solo si cumple los 5. Si falla el 1, 2 o 3, se descarta; si falla solo el 4 o el 5, se anota como «no da tiempo» o «sin hechos verificados».
 
 | # | Criterio | Pregunta | Si falla |
 |---|---|---|---|
-| 1 | **Encaje** | Sirve a **un** canal. Tin & Tan: tiene una pregunta nostálgica con cuenta y cifra verificables, y interesa a un adulto de EE. UU. Tiky y Lumi: es una temporada propia de la primera infancia o de la granja, o una fiesta familiar; **nunca** una tendencia de adultos | Descartado |
+| 1 | **Encaje** | Sirve a **un** canal. Tin & Tan (desde el 2026-11-24): tiene **demanda verificable** (aparece en 2 o más fuentes de tendencia o en el dato de Studio del dueño, con la señal a la vista; 1.1b) y **se puede explicar con hechos comprobados**. No se exige época, objeto, cuenta ni franja de edad. Tiky y Lumi: es una temporada propia de la primera infancia o de la granja, o una fiesta familiar; **nunca** una tendencia de adultos | Descartado |
 | 2 | **Línea editorial** | Nada de identidad ni ideología de género (decisión del dueño, 2026-11-20); sin política partidista, violencia, armas ni salud; en Tiky y Lumi, nada promocional (los principios de calidad infantil penalizan lo «muy promocional», `base_conocimiento.md` §6) | Descartado |
 | 3 | **Sin material de terceros** | Se puede hacer **nombrando** y dibujando lo propio, sin logotipos, arte, personajes, música, metraje ni capturas ajenos. El nombre de una marca o deporte se usa solo como nombre, con el descargo «Not affiliated with…» en la descripción (como en el short de GTA 6). No es garantía legal | Descartado, o se cambia el ángulo |
 | 4 | **Da tiempo** | Hoy ≤ fecha límite de la regla de anticipación (abajo) | «No da tiempo»; se anota por si el tema dura |
-| 5 | **Cuenta verificada** (solo Tin & Tan) | La fecha de origen está confirmada en una fuente y el cálculo está escrito. Sin esto no hay video: el formato del canal es una cifra cierta | «Sin cuenta verificada»: se busca la fecha de origen antes de proponer |
+| 5 | **Hechos verificados** (solo Tin & Tan) | Cada dato que el video afirmará tiene fuente y fecha (primaria, o dos independientes), y está escrito qué se afirma y qué no. Si el video lleva una cuenta, la fecha de origen está confirmada y el cálculo está escrito; la cuenta es opcional. Sin esto no hay video: la promesa del canal son hechos comprobados | «Sin hechos verificados»: se buscan las fuentes antes de proponer |
 
 Pendiente de decidir por el dueño, no por el comercial: ideas y temas, ajustes a las ideas y todo lo psicológico y emocional. El radar **propone**; no produce ni publica.
 
@@ -164,6 +178,8 @@ Estrenos con fecha **fuera de la ventana**, pero cuyo límite cae dentro (solo p
 
 ### 3.3 Aniversarios redondos (cuenta para Tin & Tan)
 
+> Nota (2026-11-24): lista del 2026-11-21, definida con los parámetros anteriores. Un aniversario ya no entra por ser aniversario: entra solo si en su semana tiene demanda verificable y pasa el filtro de la sección 2, compitiendo con los temas del día (1.1b).
+
 Cada año de origen se verificó el 2026-11-21 en la fuente que se indica; los días son cálculo **derivado** (años × 365 más los 29 de febrero en medio).
 
 | Fecha | Qué es | País | Canal | Ángulo (cuenta) | Empezar antes de | Fuente del año de origen |
@@ -201,6 +217,8 @@ Lectura: este radar **no encontró nada de primera infancia en tendencia**. Para
 
 ## 5. Las tres oportunidades más cercanas
 
+> Nota (2026-11-24): estas tres se eligieron el 2026-11-21 con los parámetros anteriores (por eso su ángulo habla de «pregunta nostálgica»). Fechas y datos no se tocaron. Con el criterio nuevo cada una se vuelve a pasar por 1.1b en su semana: se hace si entonces es lo de mayor demanda, y su pregunta se escribe como la que el público se esté haciendo, sin ese ángulo.
+
 Son **ideas para llevarle al dueño**. Ninguna se produce sin su decisión. Todas son de Tin & Tan: para Tiky y Lumi no hay ninguna oportunidad alcanzable antes de 2027-02-03.
 
 GTA VI no entra en esta lista porque ya tiene proyecto: lo que decide el dueño allí es cuándo publicar (sección 4).
@@ -211,7 +229,7 @@ GTA VI no entra en esta lista porque ya tiene proyecto: lo que decide el dueño 
 | 2 | **Navidad de 2006: 20 años de la Wii y la PS3** | «¿Cuántos días hace de la Navidad de 2006?»: **7.305** (derivado). Pregunta nostálgica: el regalo que querían los adultos de 30 a 50 años | Tin & Tan | **2026-12-15** | La fecha de la Wii se ve en varios resúmenes; la de la PS3 viene de un solo resumen (dos días de diferencia). Se nombran las dos consolas, sin su arte ni su música. Hace pareja con GTA 6 por el público de juegos |
 | 3 | **iPhone, 20 años (2027-01-09)** | «20 años = **7.305** días»; con remate «quien nació ese día tiene 20 años» | Tin & Tan | **2026-12-30** | Cae entre fiestas: el margen de aprobación del dueño es el que más se acorta. Apple es marca; solo se nombra. Más fácil de verificar (comunicado de Apple) |
 
-Nota: las oportunidades 2 y 3 usan la misma cuenta, 7.305. Si salen las dos, hay que variar el cálculo y el dibujo: repetir la misma pieza con otro objeto choca con la política de contenido no auténtico de YouTube (`canales/nostalgia-tin-y-tan/README.md`). Esto lo ve el dueño.
+Nota: las oportunidades 2 y 3 usan la misma cuenta, 7.305. Si salen las dos, hay que variar el cálculo y el dibujo: repetir la misma pieza con otro objeto choca con la política de contenido no auténtico de YouTube (`canales/nostalgia-tin-y-tan/README.md`). Esto lo ve el dueño. (2026-11-24: repetir la **forma** está permitido hasta 3 seguidas; repetir el **contenido**, nunca.)
 
 ---
 

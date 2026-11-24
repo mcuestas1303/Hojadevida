@@ -382,6 +382,9 @@ invitación (`infantil/guia_1_a_3.md` §3) y no hay gancho ni bucle.
 
 ### 5.2 Adultos de 45 a 70 años en Shorts
 
+> Nota (2026-11-24): esta franja ya **no es el público fijo de Tin & Tan** (`PARAMETROS.md`: sin edad fija, de 18 a
+> 70; manda el dato de Studio). Estas normas se aplican cuando el público real o el del tema sea este; si no, 5.1.
+
 Lo respaldado: baja la sensibilidad al contraste en el detalle fino, baja la velocidad de procesamiento visual,
 cuesta más ignorar distracciones y la vista cercana empeora (R45). Lo que el estudio deduce de ahí es norma de
 partida, **[hipótesis del equipo]**, y se mide con la retención en los tramos con texto:
@@ -440,6 +443,17 @@ Se comprueban antes de entregar; si uno falla, el video no sale. Firma el superv
 | Infantil | lista de prohibidos de la sección 5.3 | guía infantil; R46 | psicóloga |
 
 ## 7. Aplicación a Tin & Tan (para el tercer video)
+
+> **Nota (2026-11-24): sección escrita con los parámetros anteriores del canal; no se reescribe la investigación.**
+> Desde ese día (`canales/nostalgia-tin-y-tan/PARAMETROS.md`, regla del dueño): (1) **el público ya no es fijo**: donde
+> esta sección dice «el público es de 45 a 70», léase «el público que tenga la demanda del tema», y la norma se toma
+> de 5.1 o 5.2 según quién mire de verdad; (2) **la nostalgia quedó eliminada como criterio del canal**: no elige
+> tema, emoción, objeto, público ni título. Las filas de este capítulo sobre la nostalgia (R29 a R31, la fila
+> «Nostalgia» de la sección 3, el macro del objeto) son investigación general del estudio y siguen ahí como tal, pero
+> no son un punto de partida para Tin & Tan; la emoción de partida es asombro o sorpresa, con curiosidad en el gancho;
+> (3) donde 7.2 dice que el canal «promete papel, tinta y años 70» y que `DESIGN.md` prohíbe degradados, eso ya no
+> rige: los efectos se eligen por lo que comunican y solo los frenan los límites de seguridad de la sección 6.
+> Los datos del primer Short y los límites de seguridad no cambian.
 
 **Dato real** del primer Short (`TIN-EN-S-001`, 48 h, `estadisticas/datos/2026-11-23_TIN-EN-S-001_48h.md`): 533
 vistas, 92 % desde el feed de Shorts; **20,7 % se quedó a mirar**; duración media vista 0:19 de 0:31 (**63 %**);

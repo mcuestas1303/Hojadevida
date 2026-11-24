@@ -1,4 +1,7 @@
-# Caso: Tin y Tan, canal de nostalgia
+# Caso: Tin & Tan
+
+> El canal nació el 2026-11-20 como «canal de nostalgia». Desde el 2026-11-24 ya no se define así: ver «Cambio de
+> parámetros» más abajo y `canales/nostalgia-tin-y-tan/PARAMETROS.md`. Lo que sigue hasta esa sección es la historia tal como fue.
 
 Registro de cómo se montó el segundo par de personajes. Es el ejemplo de un video **dibujado con
 código**, sin generador de video. Sigue las fases de `MANUAL.md` y se actualiza cuando avanza.
@@ -8,7 +11,7 @@ El otro ejemplo, con generador de video, es `tiky_y_lumi.md`.
 
 | Decisión | Respuesta | Quién | Fecha |
 |---|---|---|---|
-| Personajes | Tin (hace la cuenta) y Tan (recuerda y pregunta), muñecos de palitos | Dueño | 2026-11-21 |
+| Personajes | Tin (hace la cuenta) y Tan (recuerda y pregunta), muñecos de palitos. **Desde el 2026-11-24:** Tan pregunta; Tin responde con datos | Dueño | 2026-11-21 |
 | Canal | «Tin & Tan», nuevo y aparte del infantil; por crear | Dueño | 2026-11-21 |
 | Formato | Short vertical 9:16 | Dueño | 2026-11-21 |
 | Idioma y país | Inglés, Estados Unidos | Dueño | 2026-11-21 |
@@ -16,7 +19,7 @@ El otro ejemplo, con generador de video, es `tiky_y_lumi.md`.
 | Voces | Kevin para Tin, Zelda para Tan, aceleradas un 10 % | Dueño | 2026-11-21 |
 | Gancho | «how many turns?»; variante para probar: «1,170 turns?» | Equipo | 2026-11-21 |
 | Objetivo | Presencia y línea base de retención, sin llamado a la acción | Equipo | 2026-11-21 |
-| Edad del público | 45 a 70 años, núcleo en mayores de 50 | Equipo | 2026-11-21 |
+| Edad del público | 45 a 70 años, núcleo en mayores de 50. **Sin efecto desde el 2026-11-24:** sin edad fija | Equipo | 2026-11-21 |
 | Presupuesto del canal | Propuesta de US$500 en 90 días, sin confirmar | — | — |
 
 ## Fase 1 — Los personajes
@@ -75,6 +78,31 @@ Este canal no usa `series/`: no es infantil y no pasa por la pedagoga ni la psic
 - Hallazgos después de entregar, que se dejaron así por decisión del dueño: «421 ft» debía ser «≈ 422 ft», y las
   cifras con fracción no llevan «≈»; el tomate funciona como segundo acento. Detalle en `07_revision/controles.md`.
 
+## Cambio de parámetros (2026-11-24)
+
+- **Regla del dueño, textual:** «Cambia esas limitantes y define nuevos parámetros; podría ser que los parámetros sean
+  flexibles; con este cambio de parámetros considera cambios en todo lo demás si es necesario, incluso en banner e
+  imagen de perfil, etc.»
+- **Motivo:** el equipo trataba como reglas fijas cosas que nadie midió (canal de nostalgia, público de 45 a 70,
+  «pregunta + cuenta + cifra», no repetir tipo de cuenta, filtro de títulos por opinión). Dato del short 1 a las
+  48 h: 20,7 % se quedó a mirar, 0 compartidos, 0 suscriptores. Un solo video medido: punto de partida, no prueba.
+  El objetivo es entrar al Programa de socios lo antes posible.
+- **Corrección del dueño el mismo día:** la primera versión dejaba la nostalgia como «un sabor posible» y la rechazó
+  («me seguís colocando nostalgia aun cuando me dijiste que es una limitante; no es lógico»). Quedó **eliminada** como
+  criterio: no elige tema, emoción, objeto, público ni título. La cuenta pasó a ser opcional.
+- **Qué quedó:** `canales/nostalgia-tin-y-tan/PARAMETROS.md` (lo fijo, los parámetros flexibles con su métrica y la
+  bitácora). Tin & Tan explican con hechos comprobados lo que la gente ya está mirando; Tan pregunta, Tin responde
+  con datos; el tema lo pone la demanda verificable; revisión cada 5 videos.
+- **Qué se cambió con eso** (todo gratis, texto y código): `README.md` y `DESIGN.md` del canal, el plan del Programa
+  de socios (secciones 4 y 5), las fichas de Tin y Tan y el registro, `comercial/titulos.md` y `revisar_titulo.py`
+  1.1 (lo que era opinión pasó de bloqueo a aviso; `--estricto` devuelve lo anterior), el radar (criterio de encaje y
+  paso de actualidad), notas en `manual/13` y `manual/14`, y la marca: banner, descripción y palabras clave nuevos
+  (`marca/`, versión anterior en `marca/anterior_2026-11-21/`). La foto de perfil y la marca de agua no cambiaron.
+- **Qué no se tocó:** los shorts 1 y 2 (definidos con los parámetros anteriores), los rasgos, colores y voces de Tin
+  y Tan, los umbrales y las fuentes del plan.
+- **Pendiente:** cargar la marca nueva en YouTube (necesita el sí del dueño; lo hace Keter) y la firma del director
+  de fotografía al umbral de `revisar_color.py` para videos con profundidad (`DESIGN.md`).
+
 ## Qué enseña este caso (ya está en el manual)
 
 1. En un video hablado, la voz se hace primero y la imagen se ajusta a ella.
@@ -89,10 +117,17 @@ Este canal no usa `series/`: no es infantil y no pasa por la pedagoga ni la psic
 10. Un Short lleva su portada dentro del video y una miniatura vertical; la horizontal se recorta.
 11. Cada video escribe por qué eligió cada color y cómo ayuda al objetivo (2 neutros + 1 acento).
 12. Los controles de calidad bloquean: texto, cifras, voz, imagen, video, color, entrega y marca (`manual/12`).
+13. Una regla que nadie midió es una hipótesis: se escribe como parámetro, con su métrica y la señal que lo cambia, y
+    se separa de lo que de verdad es fijo (2026-11-24). Lo que el dueño elimina no se deja como «opción».
+
+Nota: el punto 6 («el gancho no entrega la respuesta») era regla hasta el 2026-11-24; ahora la cifra en el título o
+en la portada se decide por video y se mide.
 
 ## Pendiente
 
 - Revisión de resultados del director creativo cuando el dueño exporte las estadísticas: primera el 2026-11-24
   (visto frente a deslizado, 3 días), luego el 2026-11-28 y el 2026-12-19.
 - Versión en español: espera el veredicto del dueño sobre la prueba de Zelda con MiniMax.
-- Temas y calendario del canal: los define el dueño con el Generador de prompts.
+- Temas del canal: los pone la demanda verificable (radar y análisis de temáticas); el equipo decide y le informa al
+  dueño, que acompaña con ideas y ajustes (`PARAMETROS.md`).
+- Cargar en YouTube la marca versión 2 (banner, descripción, palabras clave): espera el sí del dueño.

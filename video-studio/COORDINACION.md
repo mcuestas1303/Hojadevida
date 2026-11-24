@@ -348,3 +348,58 @@ Keter pasó también las cifras de TIN-EN-S-001 a las 48 h; quedan en `estadisti
   subtítulos. Título: «Jensen Huang Is Back: GeForce 256 vs RTX 5090» (pasa el filtro).
 - Límites: solo el hecho del regreso; sin la palabra «scandal», sin vida privada, sin su cara ni su voz, sin bolsa.
 - Voz cotizada en 3,7 créditos (Tan 1,2 + Tin 2,5): espera el sí del dueño. El montaje por código lo hace el Generador.
+
+### 2026-11-24 · Generador → Equipo y Keter: parámetros flexibles de Tin & Tan
+
+**Qué cambió.** Regla del dueño, textual: «Cambia esas limitantes y define nuevos parámetros; podría ser que los
+parámetros sean flexibles; con este cambio de parámetros considera cambios en todo lo demás si es necesario, incluso
+en banner e imagen de perfil, etc.» La definición del canal es ahora `canales/nostalgia-tin-y-tan/PARAMETROS.md`
+(manda sobre README, DESIGN, títulos y radar):
+
+- **Qué es el canal:** Tin & Tan explican, en menos de un minuto y con hechos comprobados, lo que la gente ya está
+  mirando. Tan pregunta; Tin responde con datos. El tema lo pone la demanda verificable, sin cupo para ningún tipo de
+  tema; sin edad fija (18 a 70; manda Studio); la cuenta es opcional.
+- **La nostalgia quedó eliminada como criterio** (corrección del dueño el mismo día): no elige tema, emoción,
+  objeto, público ni título. No se propone como opción.
+- **Lo fijo** (sección 2 de PARAMETROS): Tin y Tan, sus rasgos y voces; cada dato con fuente y fecha; personas
+  reales, solo hechos públicos; marcas, solo el nombre; fotosensibilidad; línea editorial; controles con firma; el sí
+  del dueño para créditos, instalar, rehacer y publicar.
+- **Lo flexible** se revisa cada 5 videos publicados, con un cambio grande por video.
+- Los shorts 1 y 2 no se tocan: quedaron definidos con los parámetros anteriores.
+
+**Archivos que cambiaron** (todo gratis, texto y código):
+
+| Archivo | Qué |
+|---|---|
+| `canales/nostalgia-tin-y-tan/README.md` | Qué es el canal, público y formato: remite a PARAMETROS; estado de la marca |
+| `canales/nostalgia-tin-y-tan/DESIGN.md` | Profundidad y efectos por `manual/14` y `efectos.py`; neutros fijos y acento que puede cambiar por video con su porqué; lo que sigue fijo; criterio de `revisar_color.py` para videos con profundidad, **pendiente de firma del director de fotografía** |
+| `canales/nostalgia-tin-y-tan/plan_programa_de_socios.md` | 4.1, 4.3 y P2, P3, P4, P6, P8, P9, P11: tema por demanda, se puede repetir una forma que funcionó (hasta 3), cifra en título decidible, revisión cada 5 videos. Umbrales y fuentes, intactos |
+| `canales/nostalgia-tin-y-tan/voces.md` | Solo el título |
+| `personajes/tan/ficha.md`, `personajes/tin/ficha.md`, `personajes/REGISTRO.md` | Tan, la que pregunta; Tin, el que responde con datos; adultos sin edad fija. Rasgos, colores, voces y lista de comprobación, intactos |
+| `comercial/titulos.md` | Sección nueva «Parámetros flexibles (2026-11-24)»: qué pasa de bloqueo a aviso y por qué |
+| `herramientas/revisar_titulo.py` | **Versión 1.1**: en `tin-y-tan` lo que era opinión es aviso; `--estricto` devuelve la 1.0; el perfil infantil no cambia; las palabras de la noticia («scandal», «resigns», «returns») no dan error ni aviso; el insulto sobre una persona bloquea |
+| `comercial/radar_de_tendencias.md` | Criterio de Tin & Tan: demanda verificable + se explica con hechos comprobados + da tiempo; paso nuevo 1.1b «Tendencias de actualidad». Sin tendencias nuevas ni fechas cambiadas; Tiky y Lumi, intacto |
+| `manual/13_color_con_intencion.md`, `manual/14_efectos_y_emocion.md` | Notas: el público ya no es fijo y la nostalgia no es criterio del canal; la investigación no se reescribió |
+| `casos/tin_y_tan.md`, `README.md`, `comercial/base_conocimiento.md` | El cambio, con fecha y motivo; remisión a PARAMETROS |
+| `canales/nostalgia-tin-y-tan/marca/` | Banner, descripción y palabras clave nuevos; `marca.py` versión 2 (ya no depende del código del short 1); versión anterior en `marca/anterior_2026-11-21/` |
+
+**Para el director de fotografía y el supervisor:** firmar o corregir el criterio propuesto en `DESIGN.md` («Control
+de color en videos con profundidad»): fotograma nítido de control ≥ 85 % y fotograma final ≥ 75 % sin colores
+dominantes fuera de las mezclas de la paleta.
+
+**Para el director de prompts y el comercial:** el título del short 3 se vuelve a pasar por `revisar_titulo.py` 1.1
+cuando se cierre; los avisos se explican en la ficha.
+
+**Para Keter: qué cargar en el canal `@TinandTan` CUANDO EL DUEÑO DÉ EL SÍ** (cambiar la marca en YouTube es
+publicar: hoy **no está autorizado**; hasta entonces el canal sigue con la versión del 2026-11-21):
+
+1. **Banner:** `canales/nostalgia-tin-y-tan/marca/banner.png` (2560x1440; lema «she asks. he brings the facts.»).
+   Studio → Personalización → Perfil (o Marca) → Imagen del banner.
+2. **Descripción del canal:** el bloque en inglés de `canales/nostalgia-tin-y-tan/marca/descripcion_canal.txt`, tal
+   cual. Studio → Personalización → Perfil → Descripción.
+3. **Palabras clave del canal:** la línea de ese mismo archivo. Studio → Configuración → Canal → Palabras clave.
+   (Nunca se cargaron las anteriores: estas son las primeras.)
+4. **Foto de perfil y marca de agua: NO se cargan de nuevo.** No cambiaron (son las dos cabezas de Tin y Tan, sin
+   ningún símbolo de tema); los archivos son idénticos píxel a píxel a los del 2026-11-21.
+5. Al terminar: anotar la fecha en el `README.md` del canal (fila «Estado») y avisar aquí.
+

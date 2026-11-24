@@ -97,6 +97,11 @@ Y en `ficha.json` de la entrega, el campo `color` con lo mismo en corto (`entreg
 
 ## 7. Ejemplo: Tin & Tan (escrito después del primer Short)
 
+> Nota (2026-11-24): este ejemplo se escribió con los parámetros anteriores del canal. Los neutros y la medición
+> siguen valiendo; el porqué «para la nostalgia de un público de 45 o más» quedó sin efecto (el canal ya no tiene
+> edad fija ni se define por una época) y el acento puede cambiar por video. Vigente:
+> `canales/nostalgia-tin-y-tan/PARAMETROS.md` y `DESIGN.md`.
+
 - **Neutros:** papel `#F3E9D2` (fondo) y tinta `#2B2420` (líneas y texto), contraste 12,6:1.
 - **Acento:** mostaza `#E8B33B`, solo en la palabra clave y en el lápiz; con contorno de tinta, porque sola sobre papel
   da 1,6:1.

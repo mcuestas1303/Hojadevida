@@ -1,16 +1,17 @@
 # Tan
 
-> Creada el 2026-11-20 para el canal de nostalgia de videos de palitos. Pedido del dueño, textual: *«crea los nuevos
+> Creada el 2026-11-20 para el canal de videos de palitos (hoy «Tin & Tan»; su definición vigente está en
+> `video-studio/canales/nostalgia-tin-y-tan/PARAMETROS.md`, 2026-11-24). Pedido del dueño, textual: *«crea los nuevos
 > personajes seria tin & tan es para los videos que parecen palitos»*. **Versión 1 aprobada por el dueño el 2026-11-21** («si me gustan»).
 > El diseño vive en código: `video-studio/herramientas/palitos.py` (`PERSONAJES["tan"]`).
 
 - **ID:** `@tan`
 - **Nombre:** Tan
-- **Rol / arquetipo:** la que recuerda. Abre cada video con la pregunta nostálgica («Remember…?») y reacciona al
-  resultado.
+- **Rol / arquetipo:** la que pregunta (y se asombra). Abre cada video con la pregunta que el público ya se está
+  haciendo y reacciona a la respuesta. (Hasta el 2026-11-24 se definía como «la que recuerda»: quedó sin efecto.)
 - **Edad aparente:** adulta (sin edad marcada)
-- **Personalidad en una línea:** cálida y curiosa; los recuerdos la ponen tierna y los resultados la sorprenden.
-- **Público / canal:** adultos, canal de nostalgia. **Nunca** en contenido infantil.
+- **Personalidad en una línea:** cálida y curiosa; pregunta sin vueltas lo que todos quieren saber y los datos la asombran.
+- **Público / canal:** adultos, sin edad fija (el que tenga la demanda del tema); canal «Tin & Tan». **Nunca** en contenido infantil.
 - **Voz:** **Zelda** de Higgsfield (`seed_audio`, voz predefinida `b7aaea29-0c88-5925-90c0-8f66754cda53`), elegida por el dueño el 2026-11-21. En edición se acelera un 10 % sin cambiar el tono (`atempo=1.10`), velocidad elegida por el dueño el 2026-11-21.
 
 ## Bloque de identidad

@@ -11,6 +11,44 @@
   - **[opinión mía]**: decisión del equipo comercial sin fuente que la fuerce.
 - **Lo que este documento no hace:** no escribe títulos de videos nuevos ni toca guion o prompt. No hay volúmenes de búsqueda ni cifras de vistas fuera de lo que cito con su fuente.
 
+## Parámetros flexibles (2026-11-24)
+
+**Regla del dueño (2026-11-24), textual:** «Cambia esas limitantes y define nuevos parámetros; podría ser que los parámetros sean flexibles». La definición del canal Tin & Tan está en `video-studio/canales/nostalgia-tin-y-tan/PARAMETROS.md`, **que manda sobre este documento**. Su parámetro «Título»: *el que diga con las palabras que la gente busca lo que el video cumple; pregunta, afirmación, comparación, con o sin cifra, con o sin nombre propio; se mide con «se quedó a mirar» y el tráfico de búsqueda.*
+
+**Por qué cambia el filtro.** Buena parte de la sección 6 estaba marcada en este mismo estudio como **[opinión mía]** o como **[tercero], sin verificar**: el rango 25–60, el corte de ≈ 40 caracteres, la lista de palabras, la coherencia de Title Case, «la cifra-respuesta nunca va en el título». Eran opinión, no dato de la plataforma, y bloqueaban títulos que la gente sí busca. Desde hoy, en `tin-y-tan`, **bloquea solo lo que es dato, regla del dueño o riesgo real**; lo demás es **aviso con su porqué** y se mide con los datos del canal. `revisar_titulo.py` pasa a la **versión 1.1**; `--estricto` devuelve el comportamiento de la 1.0.
+
+**El perfil `tiky-lumi` no cambia en nada:** ahí manda `infantil/guia_1_a_3.md` y el veto de la psicóloga.
+
+| Regla de la sección 6 | Antes (1.0) | Desde 1.1 en `tin-y-tan` | Por qué |
+|---|---|---|---|
+| M1 más de 100 caracteres | (no aplicaba: el tope era 60) | **ERROR** | Límite de YouTube (Y1, oficial) |
+| M1 longitud fuera de 25–60 | ERROR | AVISO; se sigue recomendando 30–50 | El rango era [opinión mía]; el corte visible en el feed es de terceros, sin verificar |
+| M1 menos de 3 palabras | ERROR | AVISO | Opinión |
+| M2 espacios al inicio o al final, dobles, tabulación, salto de línea | ERROR | **ERROR** | Es un defecto, no un estilo |
+| M2 signos repetidos («!!», «??», «?!») | ERROR | **ERROR** | YouTube lo llama «loud» (Y6, oficial) |
+| M2 cierre en punto, dos puntos o guion; puntos suspensivos | ERROR | AVISO | Estilo del canal |
+| M3 caracteres no permitidos (emoji, «#», «@», barra vertical, corchetes…) | ERROR | **ERROR** | «Invalid characters» (Y1) y control de glifos (`manual/12`) |
+| M3 cantidad de «!», «?», «:» y paréntesis | ERROR | AVISO | Estilo del canal |
+| M4 la frase de búsqueda no aparece una sola vez, no empieza al inicio o termina después del carácter 40 | ERROR | AVISO | «Lo importante al inicio» es recomendación (Y2); el carácter 40 es de terceros, sin dato oficial |
+| M5 título en MAYÚSCULAS (salvo siglas) | ERROR | **ERROR** (2 o más palabras, o más del 45 % de las letras). Una sola palabra en mayúsculas fuera de la lista: AVISO; la grafía de una marca autorizada con `--marca` se acepta | Y3 y Y6 piden limitar las MAYÚSCULAS, no prohíben una sigla |
+| M6 Title Case imperfecto | ERROR | AVISO | La coherencia dentro del canal era [opinión mía] |
+| M7 nombres propios mal escritos («Tin & Tan», «Tiky», «Lumi») | ERROR | **ERROR** | Regla del dueño (2026-11-21) |
+| M8 términos de la línea editorial (gender, woke, género, ideología, gênero, ideologia) | ERROR | **ERROR** | Línea editorial del dueño |
+| M8 promesas engañosas evidentes (leaked, leak, official, exclusive, not clickbait, guaranteed, 100%) | ERROR | **ERROR** | Prometen lo que un canal que explica con fuentes públicas no puede dar (Y5, Y17) |
+| M8 juicio o insulto sobre una persona (liar, crook, scammer, fraudster, thief, pervert, predator, creep, disgraced, evil, idiot, loser, clown) | (no existía) | **ERROR** | `PARAMETROS.md` sección 2: personas reales, solo hechos públicos verificables, sin burla. La máquina solo ve el insulto; afirmar de alguien algo no comprobado lo revisa y firma una persona (6.b) |
+| M8 resto de la lista «sensacionalista» (shocking, insane, secret, exposed, viral, trending, free, subscribe, must watch, wait for it…) | ERROR | AVISO | La lista era [opinión mía]; YouTube no publica palabras. Solo se usan si el video las cumple |
+| **Palabras de la noticia** («scandal», «resigns», «returns», «fired», «lawsuit», «arrested»…) | (no estaban en la lista) | **Ni error ni aviso** | `PARAMETROS.md`, «Mención de un hecho polémico»: se nombra con las palabras que la gente busca y que usan los medios serios, en título, voz y descripción; sin detalles de la vida privada ni juicio |
+| M9 una palabra repetida 3 veces | ERROR | AVISO | Opinión; se cuida el relleno de palabras clave (Y18) |
+| M11 marca ajena sin el descargo «Not affiliated with…» en la descripción | ERROR | **ERROR** | Riesgo de reclamo; `PARAMETROS.md` sección 2 |
+| M12 la cifra-respuesta en el título | ERROR | AVISO | `PARAMETROS.md`: «la cifra en el título o en la portada se decide por video» y se mide con y sin cifra. Si va, coincide con el video |
+| M12 decimal o fracción sin «≈»; «about» o «~» ante una cifra; separador de miles del idioma | ERROR | **ERROR** | Regla del dueño (`manual/12` §2) y ortografía |
+| M13 título idéntico a uno ya usado | ERROR | **ERROR** | Duplicado |
+| M13 parecido de 0,90 o más, sin ser idéntico | ERROR | AVISO | Se puede repetir una forma que funcionó si el contenido cambia |
+
+**Qué más queda sin efecto en este documento para Tin & Tan** (se conserva escrito como estudio del 2026-11-21): en 3.a, el público «de 45 a 70 años» (sin edad fija: el que tenga la demanda del tema) y la definición del canal por una época; las tres fórmulas pasan a ser ejemplos, no las únicas formas; «la cifra que es la respuesta no va en el título» (5.6 y 6.b.7) pasa a decidirse por video; en 5.2 y 5.3, la posición de la frase y los 30–50 caracteres son recomendación. Las referencias de 4.a y los chequeos de 8.2 y 8.3 son de los shorts 1 y 2, definidos con los parámetros anteriores. **Sigue igual:** el estudio de fuentes (1 y 2), lo que revisa y firma una persona (6.b, salvo el punto 7), la ficha (7) y todo lo de Tiky y Lumi.
+
+**Cómo se usa:** igual que antes; el bloque de la ficha trae `"filtro": {"version": "1.1", "modo": "flexible", …}`. Cada AVISO se lee y se explica por escrito en la ficha (decisión del equipo, con su porqué). Con 0 errores pasa.
+
 ## 1. Qué dicen las plataformas
 
 ### 1.1 YouTube
@@ -128,7 +166,9 @@ Para tener una foto del terreno miré la primera página de resultados de YouTub
 
 Cada fila dice el parámetro, su valor, el porqué y el tipo de fuente. «Frase de búsqueda» es lo que escribe quien busca, tal como queda escrita en la ficha de publicación del video.
 
-### 3.a Tin & Tan: adultos de EE. UU., inglés, canal de nostalgia, Shorts
+### 3.a Tin & Tan: adultos de EE. UU., inglés, Shorts
+
+> Estudio del 2026-11-21, con los parámetros anteriores del canal. Para Tin & Tan rige la sección «Parámetros flexibles (2026-11-24)»: sin edad fija, el canal no se define por una época y los valores de esta tabla son puntos de partida.
 
 **Quién elige:** el propio espectador (adulto de 45 a 70 años según el brief del casete; la franja sigue sin confirmar por el dueño). Ve el Short en el feed de Shorts, casi sin miniatura: la portada es el fotograma del segundo 0. El título aparece en el feed, en búsqueda y en la página del canal.
 
@@ -184,7 +224,9 @@ Cada fila dice el parámetro, su valor, el porqué y el tipo de fuente. «Frase 
 
 **Estado de las fuentes:** pude abrir las páginas públicas de YouTube (resultados y página de video) con `curl` el 2026-11-21. Las vistas y la antigüedad son las que mostraba la página ese día. Solo incluyo títulos que vi tal cual en esa página, no resúmenes de buscador. No se copian títulos, miniaturas, personajes ni canciones; son para aprender qué formas existen. Las fórmulas y las observaciones son [opinión mía].
 
-### 4.a Para Tin & Tan (inglés, adultos de EE. UU., nostalgia, Shorts)
+### 4.a Para Tin & Tan (inglés, adultos de EE. UU., Shorts)
+
+> Referencias del 2026-11-21, buscadas para el short 1 (casete) con los parámetros anteriores. Para un tema nuevo se buscan las referencias de ese tema el día que se escribe el título.
 
 | # | Título tal cual | Canal y enlace | Formato y vistas (2026-11-21) | Qué se aprende |
 |---|---|---|---|---|
@@ -229,6 +271,8 @@ Cada fila dice el parámetro, su valor, el porqué y el tipo de fuente. «Frase 
 11. La persona del equipo que firma comprueba **a mano** lo que la máquina no ve: que el video cumple el título, que no es engañoso y que pasa la línea editorial. Cualquier cambio dentro del video que pida un título lo deciden la pedagoga y la psicóloga.
 
 ## 6. El filtro (bloqueante)
+
+> Desde el 2026-11-24, en `tin-y-tan` varias reglas de esta sección pasan de ERROR a AVISO: la tabla de «Parámetros flexibles (2026-11-24)», arriba, dice cuáles y por qué. Lo que sigue describe la versión 1.0, que es la que rige entera para `tiky-lumi` y la que devuelve `--estricto`.
 
 Un título que no pasa el filtro no avanza a la ficha ni se publica. Dos partes: (a) lo que mide una máquina, con reglas exactas para `revisar_titulo.py`, y (b) lo que revisa una persona.
 
