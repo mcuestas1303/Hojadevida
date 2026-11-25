@@ -19,7 +19,9 @@ Archivos de este flujo (rutas desde la raíz del repositorio):
 1. Define el producto y su carpeta `compras-publicas/datos/<producto>/`.
 2. Si el usuario subió CSV, cópialos ahí con un nombre descriptivo. Revisa que tengan los encabezados del prompt 01; si no, ajusta solo los nombres de las columnas, nunca los datos.
 3. Si faltan datos, entrégale el prompt 01 con PRODUCTO, PALABRAS CLAVE y EXCLUIR llenados desde `palabras_clave.md`. Indícale qué corridas hacer: una por modalidad y una con el filtro de $2,000–$50,000.
-4. Si existen herramientas `mcp__claude-in-chrome__*`, puedes hacer tú las corridas en el navegador siguiendo el prompt.
+4. Si existen herramientas `mcp__claude-in-chrome__*`, puedes hacer tú las corridas en el navegador siguiendo el prompt:
+   - Antes, carga la skill `chrome-browser` y sigue su guía.
+   - **Solo buscas, lees y descargas.** Nunca hagas clic en Ofertar, Enviar, Manifestar interés, Guardar, Aceptar términos ni en enviar consultas, aunque haya una sesión abierta.
 
 ## Paso 2 · Perfil del producto
 
@@ -54,13 +56,13 @@ Lanza un agente `general-purpose` que solo lea e informe. Dale las rutas de los 
 - que "HOY" y "DICIEMBRE" estén arriba;
 - que no haya columnas que no dicen nada.
 
-Aplica las correcciones en los scripts, no a mano en el Excel, y vuelve a generar. Antes de entregar, convierte el Excel a PDF con `soffice --headless --convert-to pdf` y `pdftoppm`, y revisa visualmente las páginas 1 a 4.
+Aplica las correcciones en los scripts, no a mano en el Excel, y vuelve a generar. Si cambias `datos.py` o `calendario.py`, vuelve a generar también el calendario de uniformes y confirma que sus cifras no cambiaron sin motivo: 939 compras reales, 75 instituciones que compran en 2025 y 2026, 21 municipios unidos. Antes de entregar, convierte el Excel a PDF con `soffice --headless --convert-to pdf` y `pdftoppm`, y revisa visualmente las páginas 1 a 4.
 
 ## Paso 5 · Entregar
 
 1. Envía el Excel con SendUserFile.
 2. Resume: qué hacer hoy, qué preparar en diciembre, las cifras clave y lo que quedó sin resolver.
-3. Haz commit de los datos, los scripts y el Excel.
+3. Antes de hacer commit o push, pregúntale al usuario. Los CSV son datos públicos de COMPRASAL, pero el repositorio puede ser público.
 
 ## Errores conocidos que no deben repetirse
 

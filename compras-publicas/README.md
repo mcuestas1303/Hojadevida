@@ -7,7 +7,7 @@ Kit para encontrar oportunidades de compras públicas en COMPRASAL y preparar of
 | Quiero… | Pego en la extensión de Chrome | Guardo la respuesta en | En Claude Code escribo |
 |---|---|---|---|
 | Saber quién compra un producto, cuándo y por cuánto | `prompts/01_buscar_procesos.md` | `datos/<producto>/*.csv` | `/compras-calendario <producto>` |
-| Preparar una oferta para un proceso concreto | `prompts/02_extraer_bases_y_requisitos.md` | `procesos/<CÓDIGO>/respuesta.md` (y los PDF en `procesos/<CÓDIGO>/pdf/`) | `/compras-revisar-proceso <CÓDIGO>` |
+| Preparar una oferta para un proceso concreto | `prompts/02_extraer_bases_y_requisitos.md` (partes A, B y C, una tras otra) | `procesos/<CÓDIGO>/respuesta.md`, las 3 respuestas una debajo de otra (y los PDF en `procesos/<CÓDIGO>/pdf/`) | `/compras-revisar-proceso <CÓDIGO>` |
 
 Claude Code arma el Excel, pone a agentes a revisarlo y, si falta algo, te da el **prompt 03** con solo las preguntas pendientes.
 
@@ -15,7 +15,7 @@ Claude Code arma el Excel, pone a agentes a revisarlo y, si falta algo, te da el
 
 - **`prompts/`**: los textos para pegar en la extensión. Solo cambias las líneas entre corchetes.
 - **`catalogo/palabras_clave.md`**: palabras de búsqueda probadas por producto: uniformes, zapatos, chalecos y promocionales.
-- **`catalogo/requisitos_comunes.csv`**: requisitos que las bases suelen pedir. Sirve de red de seguridad: si la respuesta no menciona alguno, la lista de verificación avisa para confirmarlo. No significa que el proceso lo exija.
+- **`catalogo/temas.csv`**: los temas que la extensión debe confirmar uno por uno: si las bases hablan de él (Sí o No) y en qué tabla quedó. Si un tema no se confirmó, la lista de verificación avisa. Debe coincidir con las listas de temas del prompt 02.
 - **`scripts/`**:
   - `datos.py`: carga y limpieza de los CSV.
   - `calendario.py`: arma el calendario de oportunidades.
@@ -47,3 +47,5 @@ python3 compras-publicas/scripts/checklist.py compras-publicas/procesos/<CÓDIGO
 ```
 
 Necesitan Python 3 con `pandas` y `openpyxl`.
+
+**Privacidad:** el `.gitignore` de esta carpeta deja fuera del repositorio los PDF y las listas de verificación en Excel, porque ahí van tus costos y precios.
