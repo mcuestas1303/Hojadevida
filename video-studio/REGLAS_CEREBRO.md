@@ -241,3 +241,13 @@
 - **Gancho de «la pregunta siguiente» (idea del dueño, 2026-11-26):** «la pregunta de si va a haber GTA 7 y explicamos qué
   es GTA e incluís qué es GTA 6 […] Si el análisis es correcto, deja este hook como ejemplo para que afines los armados de
   los hooks». Trends lo confirmó en YouTube. Método y banco de ganchos: `video-studio/metodo/ganchos.md`.
+
+## El método no se salta: puerta de presentación (regla del dueño, 2026-11-26)
+
+Textual: «La idea de definir un método es que no te lo saltes, que no vuelva a pasar». Motivo: la versión 2 del short 4
+se le presentó al dueño sin que animación, fotografía, sonido, edición ni continuidad la hubieran visto, y él encontró
+lo que el oficio habría encontrado («intentan correr y casi no se mueven»). Desde hoy una pieza terminada solo se
+presenta si `herramientas/puerta_de_presentacion.py <proyecto> <pieza>` dice PASA: los cinco oficios firman en
+`07_revision/firmas.md` sobre el sha256 de esa pieza. Si no pasa, se dice qué falta y de quién depende; no se presenta
+«con reservas». Método 2, paso A10b.
+
