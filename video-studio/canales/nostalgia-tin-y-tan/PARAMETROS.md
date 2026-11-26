@@ -64,10 +64,10 @@ cambia. Lo decide el equipo con datos; se anota en la bitácora del final.
 | **Profundidad y efectos** | Los de `manual/14` que sirvan a la emoción de cada plano | Todo lo que pase los límites de seguridad | La métrica que el manual asigna a cada efecto |
 | **Paleta** | Papel y tinta como neutros; un acento por video | El acento puede cambiar por video si el tema lo pide; los colores de Tin y Tan no cambian | Reconocimiento del canal (espectadores que regresan) frente a rendimiento del video |
 | **Texto en pantalla** | El necesario para seguirlo sin sonido | De casi ninguno a subtítulo completo | Retención sin sonido no se puede medir directo: comentarios y porcentaje visto |
-| **Pedir la suscripción** | Una vez, al final, con voz | Voz, texto, descripción, comentario fijado; en cualquier punto | Suscriptores por mil vistas |
+| **Pedir la suscripción** | **A prueba desde el 2026-11-26:** una vez, con voz, antes del final (dentro de la primera mitad del video, pegado al dato fuerte), no en el cierre | Voz, texto, descripción, comentario fijado; en cualquier punto | Suscriptores por mil vistas |
 | **Idioma y mercado** | Inglés, EE. UU. | Otros idiomas si el tema y los datos lo piden | País y tráfico en Studio |
 | **Cadencia** | 3 por semana | 1 a 7 | Capacidad del estudio y vistas por video (más videos no debe bajar el promedio) |
-| **Título** | El que diga con las palabras que la gente busca lo que el video cumple | Pregunta, afirmación, comparación, con o sin cifra, con o sin nombre propio | Se quedó a mirar; tráfico de búsqueda |
+| **Título** | El que diga con las palabras que la gente busca lo que el video cumple | Pregunta, afirmación, comparación, con o sin cifra, con o sin nombre propio | **A prueba desde el 2026-11-26:** se quedó a mirar (comparando títulos entre videos); el tráfico de búsqueda deja de ser criterio mientras sea marginal |
 
 ## 4. Cómo se mueven
 
@@ -102,4 +102,7 @@ cambia. Lo decide el equipo con datos; se anota en la bitácora del final.
 | 2026-11-26 | Tema | Sigue «el de mayor demanda», con una precisión a prueba: lanzamientos y cultura que ese público ya sigue (juegos, entretenimiento) antes que objetos de época o noticias de empresa | El short de GTA 6 más que duplicó al del casete en vistas y en «se quedó a mirar»; el short 3 (noticia de un director ejecutivo, resubido) no recibió distribución |
 | 2026-11-26 | Forma de explicar | El dato fuerte entra antes del segundo 5; la cuenta paso a paso deja de ser la forma de partida | En los dos shorts medidos la mayor caída de retención está entre los segundos 5 y 10, justo donde Tin empieza la cuenta |
 | 2026-11-26 | Resubir un video | No se reemplaza un Short ya público por otro casi igual: se corrige en el siguiente | La v2 del short 3, resubida a los 44 minutos, quedó sin distribución. Causa no confirmada (hipótesis: duplicado, o tema); se anota como riesgo |
+| 2026-11-26 | Pedir la suscripción | «Una vez, al final, con voz» → una vez, con voz, antes del final (a prueba; sí del dueño: «Sí, anótalos a prueba») | Lectura de Studio del 2026-11-26 (Keter): ninguna suscripción con todo el público nuevo, y a los últimos segundos llega menos de la mitad de quienes miran. Es el único cambio grande que se mide en el video donde se estrene |
+| 2026-11-26 | Título (métrica) | «Se quedó a mirar; tráfico de búsqueda» → solo se quedó a mirar (a prueba; sí del dueño) | Misma lectura: casi todo el tráfico llega del feed de Shorts; la búsqueda es marginal y sus términos no guardan relación con los videos |
+| 2026-11-26 | Short 3 (nota) | Sin cambio de parámetro | Segunda y tercera lectura de Keter: sin avisos, público y como Short, pero sin ninguna vista desde el feed de Shorts. No sirve para juzgar el tema, la firma del lápiz bumerán ni los subtítulos en español. Causa sin confirmar |
 
