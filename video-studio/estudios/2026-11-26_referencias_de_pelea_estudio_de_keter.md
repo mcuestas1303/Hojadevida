@@ -10,7 +10,7 @@
 - **Qué es este archivo:** el resumen de lo medido y lo que se toma para Tin & Tan. Se estudia la forma; no se reutiliza
   metraje, música ni personajes de nadie.
 - **Lo que Keter no pudo:** no escuchó ningún audio (solo midió picos y silencios); de «Weapon Master» revisó a fondo
-  de 60 a 80 s; de Alan Becker no hay ninguna pelea desglosada.
+  de 60 a 80 s; de Alan Becker, la segunda entrega (sección 7) sí trae dos golpes desglosados.
 
 ## 1. Lo que cambia lo que creíamos
 
@@ -78,8 +78,8 @@ alternativa 4. Queda así el reparto:
   sword»). Encaja con el lápiz de Tin y con un mundo de papel. Hoy la ficha del rival y la firma dicen «sin armas» y «el
   lápiz no es un arma». Se le pregunta si quiere armas dibujadas con tinta (bastón, espada), manteniendo fuera las armas
   de fuego y la sangre.
-- **Del dueño (permiso a Keter):** falta una pelea de Alan Becker; Keter necesita su visto bueno para una descarga más
-  («Animator vs. Animation» original, 122 s). Sirve sobre todo para estudiar la interacción con el mundo.
+- **Alan Becker:** el dueño autorizó a Keter más descargas; el estudio llegó el mismo día (sección 7).
+- **Armas dibujadas:** aprobadas por el dueño el 2026-11-26 (`PARAMETROS.md`, A12).
 
 ## 6. Tarjeta gráfica de la PC (pendiente del dueño, resuelto)
 
@@ -87,3 +87,27 @@ NVIDIA GeForce 940MX, 4 GB de memoria de video, controlador de 2021; procesador 
 torch, sin ComfyUI ni otro generador local. **Con esa tarjeta no es realista generar video con IA en la PC** (los
 generadores actuales piden en general de 8 a 12 GB o más). Es lectura de especificaciones, no una prueba. La PC sí sirve
 para animación por código y montaje con ffmpeg. La generación sigue siendo con Higgsfield (créditos) o por código (0).
+
+## 7. Alan Becker (segunda entrega de Keter, 2026-11-26)
+
+Informe completo en el Drive: «03_Alan_Becker_v2.md» y 5 hojas nuevas. Videos: «Hacker – Animator vs. Animation 12»
+(https://www.youtube.com/watch?v=kXtvcYDR1us, 33,7 M de vistas; tres tramos) y «Animator vs. Animation (original)»
+(https://www.youtube.com/watch?v=npTC6b5-yvM, 90 M de vistas; completo). Sin sangre ni muertes en lo revisado. Keter no
+revisó la hoja del tramo 476–500 s ni 5 de las 7 hojas del original, y no escuchó el audio.
+
+**Es la referencia de lo que pide el dueño:** muñecos 2D planos puestos sobre fotos o renders 3D de un pasillo real,
+respetando la perspectiva, con fuego, humo, explosiones y daños que se quedan.
+
+| Qué | Medido | Qué se toma |
+|---|---|---|
+| Disparo a la puerta (AvA 12, ≈ 24 f/s) | 4 cuadros de apuntar → **4 totalmente quietos** → 3 de disparo con fondo de trama de puntos → 3 de trayecto (el proyectil se achica al alejarse) → 2 de contacto lejano con grietas en estrella → **corte** a 2 cuadros de impacto invertidos en blanco y negro → 5 de líneas radiales → 8 casi en blanco → 5 de segundo estallido → 12 o más de humo dibujado solo con contorno negro | La pausa antes del golpe, otra vez. El impacto son varios cuadros distintos y muy cortos, con un corte de cámara en medio. El humo se dibuja con contorno, no con manchas borrosas |
+| Explosión (AvA original, 30 f/s, cada dibujo dura 2 cuadros) | 13 cuadros de mecha → 2 de ignición → 11 de bola de fuego plana (naranja `#FC6C0C`, rojo `#E40C0C`, amarillo `#FCB40C` y `#FCFC6C`, anillo amarillo de onda y escombros) → 11 de enfriamiento (rojo oscuro, marrón) → 8 de humo gris | Fuego **plano y de pocos colores**, por fases, no bolitas difusas. El sonido cae en la expansión, no en la ignición |
+| Daño al mundo | La explosión rompe la interfaz del programa (queda partida e inclinada) y sigue así el resto del video | Confirma A8: el daño se queda |
+| Cámara | Sigue al proyectil; corte triple en el impacto; acercamiento lento de plano general a primer plano (≈ 4 s). Sin temblor | Cortes en el impacto en vez de temblor |
+| Profundidad | El proyectil y los personajes se achican al alejarse dentro del pasillo | Confirma A3 |
+
+**Lo que mi prueba del 2026-11-26 tiene mal frente a esto:** el fuego y el humo son partículas borrosas (el género los
+dibuja planos, con contorno y por fases); el impacto es una estrella y una pausa (el género usa 2 cuadros invertidos,
+líneas radiales y un casi blanco muy breve, con corte de cámara); la cámara tiembla (la referencia corta). Ojo con el
+«casi en blanco» de 8 cuadros: el límite del estudio es no usar blanco puro a pantalla completa y como máximo 3 destellos
+por segundo; se hará con el color claro de la paleta y se pasa por `comprobar_destellos`.
