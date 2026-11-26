@@ -165,6 +165,8 @@ Alternativas de producción, con lo que cada una cumple y lo que cuesta:
 | Formato de acción y peleas como en los videos de stickman | 2026-11-26 | **Sin hacer.** La prueba del 2026-11-26 no lo cumple: sin mundo, sin cambios de velocidad, sin fuego ni humo, sin sonido | requisitos A1 y A2 |
 | Fuego, humo, choques, explosiones, implosiones, daños en el mundo | 2026-11-26 | **Sin hacer.** `efectos.py` no tiene ninguna de esas funciones | requisitos A4 a A8 |
 | Sonidos de golpes | 2026-11-26 | **Sin hacer.** Hay audio por código para la firma, no golpes | requisito A7 |
-| Tercer personaje con cuerpo, manos y pies | 2026-11-26 | Hoja v2 en borrador, pendiente de su sí | `personajes/duda/` |
+| Tercer personaje con cuerpo, manos y pies | 2026-11-26 | Hecho: hoja v2 aprobada por el dueño | `personajes/duda/` |
+| Probar la alternativa 4 (mundo y efectos por código; golpes difíciles generados) | 2026-11-26 | **En prueba.** Parte por código hecha (6 s, 0 créditos); parte generada cotizada y sin generar | `pruebas/2026-11-26_accion_mundo_3d/informe.md` |
+| Validar si con la tarjeta gráfica del dueño se pueden generar los videos | 2026-11-26 | **Pendiente** (hay que mirarlo desde su PC) | mismo informe, «Pendientes» |
 | Ningún prompt sin estadísticas | 2026-11-26 | Vigente; lectura de Studio del 2026-11-26 guardada | `estadisticas/datos/` (no se sube) |
 | Ver los videos de stickman de referencia | 2026-11-26 | **Sin hacer:** solo hay el enlace y un resumen de Keter; nadie del equipo los vio plano por plano | — |

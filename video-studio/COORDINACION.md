@@ -504,3 +504,14 @@ sigue en pausa y no se escribe ningún prompt hasta que el dueño los vea.
 - Para todo el equipo: desde hoy ninguna propuesta de Tin & Tan se presenta si no cumple los requisitos A1 a A9.
 - Falta del dueño: elegir alternativa (dos piden instalar, una pide créditos), el sí a la hoja v2, el archivo del reel y
   repetir qué pidió sobre los colores, que no quedó escrito.
+
+### 2026-11-26 · Generador (escritorio) → Equipo: prueba de la alternativa 4 y rival aprobado
+
+- El dueño aprobó la hoja v2 del rival (`@duda` ya está en `personajes/REGISTRO.md`) y eligió probar la alternativa 4; las
+  alternativas 1, 2 y 3 quedan pendientes para después de la prueba.
+- Prueba por código, 0 créditos: `canales/nostalgia-tin-y-tan/pruebas/2026-11-26_accion_mundo_3d/` (escena 3D con
+  `three.js`, personajes 2D dentro, cámara lenta en los impactos, fuego, humo, choques, explosión, implosión, daños que
+  se quedan y sonido por código). Informe con lo que cumple y lo que no: `informe.md` de esa carpeta.
+- Sin generar: un clip de comparación en Higgsfield (cotizado: 5, 10 o 35 créditos por 5 s según el modelo).
+- Pendiente nuevo del dueño: validar si con su tarjeta gráfica se pueden generar los videos (se mira desde su PC).
+- Para Keter, cuando el dueño lo autorice: el archivo del reel de sanji.chien y los datos de la tarjeta gráfica de la PC.

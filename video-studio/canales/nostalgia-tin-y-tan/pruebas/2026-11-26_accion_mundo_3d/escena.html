@@ -1,0 +1,400 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Prueba de acción: mundo 3D</title>
+<style>html,body{margin:0;background:#F3E9D2;overflow:hidden}canvas{display:block}</style>
+</head>
+<body>
+<script type="module">
+// Prueba técnica (0 créditos): Tin y Tan pelean contra el rival dentro de un mundo 3D.
+// Personajes 2D (dibujo de tinta en un lienzo, cabezas oficiales exportadas de palitos.py) puestos de pie en la escena.
+// Requisitos de PARAMETROS.md 2.0, sección 7: A1 pelea, A2 aceleración y desaceleración, A3 mundo con profundidad,
+// A4 fuego y humo, A5 choques, A6 explosión e implosión, A7 sonido (los eventos salen en window.EVENTOS), A8 daños.
+import * as THREE from './node_modules/three/build/three.module.js';
+
+const W = 1080, H = 1920, FPS = 30;
+const C = { papel: '#F3E9D2', sombra: '#E6D8B8', tinta: '#2B2420', naranja: '#E07A2E', mostaza: '#E8B33B',
+  tomate: '#C8553D', marron: '#7A4B2A', marronClaro: '#9C6A44', blanco: '#FFF8EC', verde: '#2F7F7A' };
+
+// ---------------------------------------------------------------- utilidades
+let semilla = 20261126;
+function azar() { semilla = (semilla * 1664525 + 1013904223) >>> 0; return semilla / 4294967296; }
+const ra = (a, b) => a + (b - a) * azar();
+const clamp = (u, a = 0, b = 1) => Math.max(a, Math.min(b, u));
+const EASE = {
+  lin: u => u, in: u => u * u * u, out: u => 1 - Math.pow(1 - u, 3), io: u => u * u * (3 - 2 * u),
+  back: u => { const c = 1.9; return 1 + (c + 1) * Math.pow(u - 1, 3) + c * Math.pow(u - 1, 2); },
+};
+function mezcla(a, b, p) {
+  if (typeof a === 'number') return a + (b - a) * p;
+  if (Array.isArray(a)) return a.map((v, i) => mezcla(v, b[i], p));
+  if (typeof a === 'object') { const o = {}; for (const k in a) o[k] = mezcla(a[k], b[k] === undefined ? a[k] : b[k], p); return o; }
+  return p < 0.5 ? a : b;
+}
+// pista: [[S, valor, curva], ...]; devuelve el valor en S
+function pista(claves, S) {
+  if (S <= claves[0][0]) return claves[0][1];
+  for (let i = 1; i < claves.length; i++) {
+    if (S <= claves[i][0]) {
+      const [s0, v0] = claves[i - 1], [s1, v1, e] = claves[i];
+      return mezcla(v0, v1, EASE[e || 'io'](clamp((S - s0) / (s1 - s0))));
+    }
+  }
+  return claves[claves.length - 1][1];
+}
+function escalon(claves, S) { let v = claves[0][1]; for (const c of claves) if (S >= c[0]) v = c[1]; return v; }
+
+// ---------------------------------------------------------------- poses (grados desde la vertical hacia abajo; + = hacia donde mira)
+const P = {
+  quieto:   { t: 0,   aF: [10, 5],     aB: [-10, -5],    lF: [8, 4],     lB: [-8, -4],    c: 0 },
+  guardia:  { t: 12,  aF: [55, 150],   aB: [25, 140],    lF: [28, 6],    lB: [-26, -8],   c: 0 },
+  carga:    { t: -14, aF: [-55, 55],   aB: [60, 150],    lF: [18, 0],    lB: [-34, -12],  c: -6 },
+  golpe:    { t: 30,  aF: [90, 90],    aB: [-25, 80],    lF: [44, 0],    lB: [-44, -24],  c: 6 },
+  embiste:  { t: 42,  aF: [-40, -80],  aB: [-60, -100],  lF: [62, -10],  lB: [-55, -70],  c: 10 },
+  patada:   { t: -22, aF: [-60, -110], aB: [50, 140],    lF: [95, 92],   lB: [-25, -70],  c: 0 },
+  recogido: { t: 22,  aF: [100, 150],  aB: [-80, -120],  lF: [72, -30],  lB: [40, -60],   c: 0 },
+  recibe:   { t: -32, aF: [-100, -140], aB: [-60, -20],  lF: [18, 40],   lB: [-30, -8],   c: -18 },
+  vuela:    { t: -72, aF: [-140, -160], aB: [-120, -150], lF: [60, 80],  lB: [40, 70],    c: -20 },
+  caido:    { t: -88, aF: [-150, -175], aB: [-70, -95],  lF: [80, 96],   lB: [86, 62],    c: 0 },
+  agachado: { t: 30,  aF: [40, 90],    aB: [-20, 40],    lF: [70, -40],  lB: [-50, -100], c: 0 },
+  poder:    { t: -8,  aF: [150, 175],  aB: [-150, -175], lF: [30, 4],    lB: [-30, -4],   c: -12 },
+  pisoton:  { t: 36,  aF: [60, 30],    aB: [-40, -10],   lF: [50, -20],  lB: [-45, -60],  c: 12 },
+  festeja:  { t: 0,   aF: [140, 165],  aB: [-140, -165], lF: [14, 4],    lB: [-14, -4],   c: -8 },
+  corre1:   { t: 30,  aF: [70, 120],   aB: [-60, -10],   lF: [55, 10],   lB: [-40, -95],  c: 4 },
+  corre2:   { t: 30,  aF: [-60, -10],  aB: [70, 120],    lF: [-40, -95], lB: [55, 10],    c: 4 },
+  resbala:  { t: -26, aF: [30, 100],   aB: [60, 120],    lF: [36, 10],   lB: [-10, 10],   c: -8 },
+};
+
+// ---------------------------------------------------------------- personajes 2D
+const U = 56, LIENZO = 1024, CAD = [512, 600], MUNDO_R = 0.36;      // px por R, lienzo, cadera en el lienzo, R en el mundo
+const PROP = {
+  tin:  { cabeza: 1.0, cuello: 0.18, torso: 1.45, brazo: 0.78, ante: 0.72, muslo: 0.85, pierna: 0.80, g: 0.15, mano: 0.12, pie: [0.22, 0.10], sprite: 256, sube: 0.9 },
+  tan:  { cabeza: 1.0, cuello: 0.18, torso: 1.45, brazo: 0.78, ante: 0.72, muslo: 0.85, pierna: 0.80, g: 0.15, mano: 0.12, pie: [0.22, 0.10], sprite: 256, sube: 0.9 },
+  duda: { cabeza: 1.35, cuello: 0.15, torso: 1.9, brazo: 0.95, ante: 0.9, muslo: 1.05, pierna: 1.0, g: 0.19, mano: 0.21, pie: [0.34, 0.15], sprite: 322, sube: 0.82 },
+};
+const IMG = {};
+async function cargar(nombre) {
+  const im = new Image(); im.src = `sprites/${nombre}.png`; await im.decode(); IMG[nombre] = im;
+}
+function esqueleto(pr, pose, mira) {
+  const pt = (o, ang, l) => { const a = ang * Math.PI / 180; return [o[0] + mira * Math.sin(a) * l, o[1] + Math.cos(a) * l]; };
+  const cadera = [0, 0];
+  const cuello = pt(cadera, 180 - pose.t, pr.torso), hombro = pt(cadera, 180 - pose.t, pr.torso - 0.22);
+  const cabeza = pt(cuello, 180 - pose.t, pr.cuello + pr.cabeza * pr.sube);
+  const lado = k => { const a = pt(k[0] === 'a' ? hombro : cadera, pose[k][0], k[0] === 'a' ? pr.brazo : pr.muslo); return [a, pt(a, pose[k][1], k[0] === 'a' ? pr.ante : pr.pierna)]; };
+  const e = { cadera, cuello, hombro, cabeza, aF: lado('aF'), aB: lado('aB'), lF: lado('lF'), lB: lado('lB') };
+  e.bajo = Math.max(e.lF[1][1] + pr.pie[1], e.lB[1][1] + pr.pie[1], e.aF[1][1] + pr.mano, e.aB[1][1] + pr.mano, cabeza[1] + pr.cabeza * 0.75);
+  return e;
+}
+class Personaje {
+  constructor(id) {
+    this.id = id; this.pr = PROP[id];
+    this.cv = document.createElement('canvas'); this.cv.width = this.cv.height = LIENZO;
+    this.cx = this.cv.getContext('2d');
+    this.tex = new THREE.CanvasTexture(this.cv); this.tex.colorSpace = THREE.SRGBColorSpace; this.tex.anisotropy = 4;
+    const mat = new THREE.MeshBasicMaterial({ map: this.tex, transparent: true, alphaTest: 0.3, side: THREE.DoubleSide });
+    this.malla = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), mat);
+    this.malla.castShadow = true;
+    this.malla.customDepthMaterial = new THREE.MeshDepthMaterial({ depthPacking: THREE.RGBADepthPacking, map: this.tex, alphaTest: 0.3 });
+    this.previa = null;
+  }
+  dibujar(pose, mira, cabeza, borron, opaco = 1) {
+    const g = this.cx, pr = this.pr, e = esqueleto(pr, pose, mira);
+    g.clearRect(0, 0, LIENZO, LIENZO);
+    const px = p => [CAD[0] + p[0] * U, CAD[1] + p[1] * U];
+    const traza = (pts, alfa) => {
+      g.globalAlpha = alfa; g.strokeStyle = C.tinta; g.fillStyle = C.tinta; g.lineWidth = pr.g * U; g.lineCap = 'round'; g.lineJoin = 'round';
+      g.beginPath(); pts.forEach((p, i) => { const q = px(p); i ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1]); }); g.stroke();
+    };
+    const parte = (es, alfa) => {
+      for (const k of ['lB', 'aB']) this.miembro(es, k, alfa, px, traza, mira);
+      traza([es.cadera, es.cuello], alfa);
+    };
+    if (borron && this.previa) { parte(this.previa, 0.22); for (const k of ['lF', 'aF']) this.miembro(this.previa, k, 0.22, px, traza, mira); }
+    parte(e, opaco);
+    // cabeza (sprite oficial), gira con el torso
+    const im = IMG[cabeza], q = px(e.cabeza), s = pr.sprite;
+    g.save(); g.globalAlpha = opaco; g.translate(q[0], q[1]); g.scale(mira, 1); g.rotate((pose.t * 0.6 + (pose.c || 0)) * Math.PI / 180);
+    g.drawImage(im, -s / 2, -s / 2, s, s); g.restore();
+    for (const k of ['lF', 'aF']) this.miembro(e, k, opaco, px, traza, mira);
+    g.globalAlpha = 1;
+    this.tex.needsUpdate = true; this.previa = e;
+    return e;
+  }
+  miembro(e, k, alfa, px, traza, mira) {
+    const g = this.cx, pr = this.pr, base = k[0] === 'a' ? e.hombro : e.cadera;
+    traza([base, e[k][0], e[k][1]], alfa);
+    const q = px(e[k][1]);
+    g.beginPath();
+    if (k[0] === 'a') g.arc(q[0], q[1], pr.mano * U, 0, 7);
+    else g.ellipse(q[0] + mira * pr.pie[0] * 0.6 * U, q[1], pr.pie[0] * U, pr.pie[1] * U, 0, 0, 7);
+    g.fill();
+  }
+  colocar(e, x, y, z, escala) {
+    const lado = LIENZO / U * MUNDO_R * escala;
+    const caderaY = e.bajo * MUNDO_R * escala + y;
+    this.malla.scale.set(lado, lado, 1);
+    this.malla.position.set(x, caderaY + (CAD[1] - LIENZO / 2) / LIENZO * lado, z);
+    this.cabezaMundo = new THREE.Vector3(x + e.cabeza[0] * MUNDO_R * escala, caderaY - e.cabeza[1] * MUNDO_R * escala, z);
+    this.manoMundo = new THREE.Vector3(x + e.aF[1][0] * MUNDO_R * escala, caderaY - e.aF[1][1] * MUNDO_R * escala, z);
+    this.pieMundo = new THREE.Vector3(x + e.lF[1][0] * MUNDO_R * escala, caderaY - e.lF[1][1] * MUNDO_R * escala, z);
+  }
+}
+
+// ---------------------------------------------------------------- escena
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setSize(W, H); renderer.setClearColor(C.papel);
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+document.body.appendChild(renderer.domElement);
+const escena = new THREE.Scene();
+escena.fog = new THREE.Fog(C.papel, 16, 42);
+const camara = new THREE.PerspectiveCamera(36, W / H, 0.1, 100);
+escena.add(new THREE.HemisphereLight(0xffffff, 0xe6d8b8, 1.9));
+const sol = new THREE.DirectionalLight(0xfff4dd, 1.5);
+sol.position.set(-7, 13, 9); sol.castShadow = true; sol.shadow.mapSize.set(2048, 2048);
+Object.assign(sol.shadow.camera, { left: -11, right: 11, top: 11, bottom: -11, near: 1, far: 40 }); sol.shadow.bias = -0.0015;
+escena.add(sol);
+
+function lienzo(w, h, pinta) { const c = document.createElement('canvas'); c.width = w; c.height = h; pinta(c.getContext('2d'), w, h); return c; }
+// suelo: papel con cuadrícula de tinta (da la perspectiva)
+const texSuelo = new THREE.CanvasTexture(lienzo(1024, 1024, (g, w, h) => {
+  g.fillStyle = C.papel; g.fillRect(0, 0, w, h); g.strokeStyle = 'rgba(43,36,32,0.20)'; g.lineWidth = 3;
+  for (let i = 0; i <= 8; i++) { g.beginPath(); g.moveTo(i * w / 8, 0); g.lineTo(i * w / 8, h); g.stroke(); g.beginPath(); g.moveTo(0, i * h / 8); g.lineTo(w, i * h / 8); g.stroke(); }
+}));
+texSuelo.wrapS = texSuelo.wrapT = THREE.RepeatWrapping; texSuelo.repeat.set(8, 8); texSuelo.colorSpace = THREE.SRGBColorSpace; texSuelo.anisotropy = 8;
+const suelo = new THREE.Mesh(new THREE.PlaneGeometry(64, 64), new THREE.MeshLambertMaterial({ map: texSuelo }));
+suelo.rotation.x = -Math.PI / 2; suelo.receiveShadow = true; escena.add(suelo);
+// daños que se quedan: calcomanías sobre el suelo (mundo de -8 a 8 en x y z)
+const cvDano = lienzo(2048, 2048, () => {}), gDano = cvDano.getContext('2d');
+const texDano = new THREE.CanvasTexture(cvDano); texDano.colorSpace = THREE.SRGBColorSpace;
+const dano = new THREE.Mesh(new THREE.PlaneGeometry(16, 16), new THREE.MeshBasicMaterial({ map: texDano, transparent: true, depthWrite: false }));
+dano.rotation.x = -Math.PI / 2; dano.position.y = 0.012; escena.add(dano);
+const aDano = (x, z) => [(x + 8) / 16 * 2048, (z + 8) / 16 * 2048];
+function grieta(x, z, tam, ramas = 9) {
+  const [cx, cy] = aDano(x, z); gDano.strokeStyle = C.tinta; gDano.lineCap = 'round';
+  for (let i = 0; i < ramas; i++) {
+    let a = i / ramas * 6.283 + ra(-0.3, 0.3), px = cx, py = cy, l = tam * 128 * ra(0.5, 1.1);
+    gDano.lineWidth = ra(5, 10); gDano.beginPath(); gDano.moveTo(px, py);
+    for (let k = 0; k < 5; k++) { a += ra(-0.5, 0.5); px += Math.cos(a) * l / 5; py += Math.sin(a) * l / 5; gDano.lineTo(px, py); }
+    gDano.stroke();
+  }
+  texDano.needsUpdate = true;
+}
+function quemadura(x, z, r) {
+  const [cx, cy] = aDano(x, z), R = r * 128, gr = gDano.createRadialGradient(cx, cy, R * 0.1, cx, cy, R);
+  gr.addColorStop(0, 'rgba(43,36,32,0.85)'); gr.addColorStop(0.6, 'rgba(43,36,32,0.45)'); gr.addColorStop(1, 'rgba(43,36,32,0)');
+  gDano.fillStyle = gr; gDano.beginPath(); gDano.arc(cx, cy, R, 0, 7); gDano.fill(); texDano.needsUpdate = true;
+}
+function garabatoResto(x, z) {
+  const [cx, cy] = aDano(x, z); gDano.strokeStyle = C.tinta; gDano.lineWidth = 9; gDano.lineCap = 'round'; gDano.beginPath();
+  for (let i = 0; i < 60; i++) { const t = i / 59 * 9; const px = cx + Math.sin(t * 1.7) * 60 + Math.sin(t * 3.1) * 25, py = cy + Math.cos(t * 1.3) * 34; i ? gDano.lineTo(px, py) : gDano.moveTo(px, py); }
+  gDano.stroke(); texDano.needsUpdate = true;
+}
+// cajas con contorno de tinta (casco invertido), para que el mundo 3D se lea como dibujo
+const matTinta = new THREE.MeshBasicMaterial({ color: C.tinta, side: THREE.BackSide });
+function caja(w, h, d, color, borde = 0.05) {
+  const grupo = new THREE.Group(), geo = new THREE.BoxGeometry(w, h, d);
+  const m = new THREE.Mesh(geo, new THREE.MeshLambertMaterial({ color })); m.castShadow = true; m.receiveShadow = true; grupo.add(m);
+  const c = new THREE.Mesh(geo, matTinta); c.scale.set(1 + borde / w, 1 + borde / h, 1 + borde / d); grupo.add(c);
+  return grupo;
+}
+// fondo en profundidad: bloques de cartón a distintas distancias
+for (const [x, z, w, h] of [[-9, -9, 3, 7], [-5.2, -11, 2.4, 10], [-1.5, -13, 3.2, 6], [2.6, -10.5, 2.6, 9], [6.5, -9, 3, 5.5], [10, -12, 3, 11], [-12, -13, 3, 8], [0.5, -17, 4, 13]]) {
+  const b = caja(w, h, w, z < -12 ? C.sombra : C.blanco, 0.08); b.position.set(x, h / 2, z); escena.add(b);
+}
+// utilería que se rompe
+const cajones = [];
+for (const [x, y, z] of [[-3.5, 0.45, -1.9], [-2.6, 0.45, -1.9], [-3.05, 1.35, -1.9]]) { const c = caja(0.9, 0.9, 0.9, C.marronClaro); c.position.set(x, y, z); escena.add(c); cajones.push(c); }
+const pilar = new THREE.Group(); { const c = caja(0.7, 4.4, 0.7, C.sombra); c.position.y = 2.2; pilar.add(c); } pilar.position.set(3.7, 0, -2.3); escena.add(pilar);
+const trozos = [];
+function romperCajones(dir) {
+  for (const c of cajones) {
+    escena.remove(c);
+    for (let i = 0; i < 8; i++) {
+      const t = caja(0.45, 0.45, 0.45, C.marronClaro, 0.04);
+      t.position.set(c.position.x + ((i & 1) - 0.5) * 0.45, c.position.y + (((i >> 1) & 1) - 0.5) * 0.45, c.position.z + (((i >> 2) & 1) - 0.5) * 0.45);
+      t.userData = { v: new THREE.Vector3(dir * ra(1.5, 6), ra(2.5, 8), ra(-3, 2.2)), w: new THREE.Vector3(ra(-9, 9), ra(-9, 9), ra(-9, 9)), quieto: false };
+      escena.add(t); trozos.push(t);
+    }
+  }
+}
+function empujarTrozos(x, z, fuerza) {
+  for (const t of trozos) { const d = t.position.clone().sub(new THREE.Vector3(x, 0, z)); const l = Math.max(0.6, d.length()); if (l < 5) { t.userData.v.add(d.normalize().multiplyScalar(fuerza / l)).setY(ra(3, 6)); t.userData.quieto = false; } }
+}
+
+// ---------------------------------------------------------------- partículas: fuego, humo, polvo, chispas
+const texSuave = new THREE.CanvasTexture(lienzo(128, 128, (g) => { const gr = g.createRadialGradient(64, 64, 4, 64, 64, 62); gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(0.55, 'rgba(255,255,255,0.75)'); gr.addColorStop(1, 'rgba(255,255,255,0)'); g.fillStyle = gr; g.fillRect(0, 0, 128, 128); }));
+const texEstrella = new THREE.CanvasTexture(lienzo(256, 256, (g) => {
+  g.translate(128, 128); g.beginPath(); for (let i = 0; i < 16; i++) { const r = i % 2 ? 56 : 118, a = i * Math.PI / 8; g.lineTo(Math.cos(a) * r, Math.sin(a) * r); } g.closePath();
+  g.fillStyle = C.mostaza; g.fill(); g.lineWidth = 9; g.strokeStyle = C.tinta; g.lineJoin = 'round'; g.stroke();
+})); texEstrella.colorSpace = THREE.SRGBColorSpace;
+const particulas = [];
+const TIPOS = {
+  humo:   { col: [C.tinta, C.marron], op: [0.42, 0], tam: [0.45, 1.9], vida: [0.7, 1.3], g: 1.6, freno: 1.2 },
+  polvo:  { col: [C.sombra, C.sombra], op: [0.9, 0], tam: [0.35, 1.5], vida: [0.5, 1.0], g: 0.5, freno: 2.5 },
+  fuego:  { col: [C.mostaza, C.tomate], op: [0.95, 0], tam: [0.7, 0.15], vida: [0.3, 0.65], g: 3.2, freno: 1.0 },
+  chispa: { col: [C.mostaza, C.naranja], op: [1, 0], tam: [0.16, 0.05], vida: [0.25, 0.6], g: -9, freno: 0.4 },
+  tinta:  { col: [C.tinta, C.tinta], op: [1, 0.9], tam: [0.14, 0.05], vida: [0.5, 0.9], g: -12, freno: 0.2 },
+};
+function soltar(tipo, pos, vel, dispersion = 1, n = 1, hacia = null) {
+  const T = TIPOS[tipo];
+  for (let i = 0; i < n; i++) {
+    const m = new THREE.SpriteMaterial({ map: texSuave, color: T.col[0], transparent: true, depthWrite: false });
+    const s = new THREE.Sprite(m);
+    s.position.copy(pos).add(new THREE.Vector3(ra(-1, 1), ra(-1, 1), ra(-1, 1)).multiplyScalar(0.15 * dispersion));
+    escena.add(s);
+    particulas.push({ s, T, v: new THREE.Vector3(vel.x + ra(-1, 1) * dispersion, vel.y + ra(-1, 1) * dispersion, vel.z + ra(-1, 1) * dispersion), edad: 0, vida: ra(T.vida[0], T.vida[1]), k: ra(0.8, 1.25), hacia });
+  }
+}
+const c0 = new THREE.Color(), c1 = new THREE.Color();
+function pasoParticulas(dS) {
+  for (let i = particulas.length - 1; i >= 0; i--) {
+    const p = particulas[i]; p.edad += dS; const u = p.edad / p.vida;
+    if (u >= 1) { escena.remove(p.s); p.s.material.dispose(); particulas.splice(i, 1); continue; }
+    if (p.hacia) { p.s.position.lerp(p.hacia, clamp(dS * 7 * (0.4 + u * 2))); }
+    else { p.v.y += p.T.g * dS; p.v.multiplyScalar(Math.max(0, 1 - p.T.freno * dS)); p.s.position.addScaledVector(p.v, dS); if (p.s.position.y < 0.05) { p.s.position.y = 0.05; p.v.y *= -0.3; } }
+    const t = (p.T.tam[0] + (p.T.tam[1] - p.T.tam[0]) * u) * p.k; p.s.scale.set(t, t, 1);
+    p.s.material.opacity = p.T.op[0] + (p.T.op[1] - p.T.op[0]) * u * u;
+    p.s.material.color.copy(c0.set(p.T.col[0])).lerp(c1.set(p.T.col[1]), u);
+  }
+}
+// ondas de choque en el suelo (hacia afuera) e implosión (hacia adentro)
+const ondas = [];
+function onda(x, z, r0, r1, vida, y = 0.03) {
+  const m = new THREE.Mesh(new THREE.RingGeometry(0.88, 1, 64), new THREE.MeshBasicMaterial({ color: C.tinta, transparent: true, side: THREE.DoubleSide, depthWrite: false }));
+  m.rotation.x = -Math.PI / 2; m.position.set(x, y, z); escena.add(m); ondas.push({ m, r0, r1, vida, edad: 0 });
+}
+function pasoOndas(dS) {
+  for (let i = ondas.length - 1; i >= 0; i--) {
+    const o = ondas[i]; o.edad += dS; const u = o.edad / o.vida;
+    if (u >= 1) { escena.remove(o.m); ondas.splice(i, 1); continue; }
+    const r = o.r0 + (o.r1 - o.r0) * (o.r1 > o.r0 ? EASE.out(u) : EASE.in(u)); o.m.scale.set(r, r, 1); o.m.material.opacity = (o.r1 > o.r0 ? 1 - u : 0.3 + 0.7 * u) * 0.9;
+  }
+}
+const estrellas = [];
+function estrella(pos, tam) {
+  const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: texEstrella, transparent: true, depthTest: false })); s.position.copy(pos); s.renderOrder = 10; escena.add(s);
+  estrellas.push({ s, tam, edad: 0, vida: 0.14 });
+}
+function pasoEstrellas(dS) {
+  for (let i = estrellas.length - 1; i >= 0; i--) {
+    const e = estrellas[i]; e.edad += dS; const u = e.edad / e.vida;
+    if (u >= 1) { escena.remove(e.s); estrellas.splice(i, 1); continue; }
+    const t = e.tam * (0.6 + 0.6 * EASE.out(u)); e.s.scale.set(t, t, 1); e.s.material.rotation = u * 0.8;
+  }
+}
+const focos = [];   // emisores que siguen ardiendo o humeando: {pos|seguir, tipo, hasta, cada, acum}
+function pasoFocos(S, dS) {
+  for (const f of focos) {
+    if (S < f.desde || S > f.hasta) continue;
+    f.acum = (f.acum || 0) + dS;
+    while (f.acum > f.cada) { f.acum -= f.cada; const p = f.seguir ? f.seguir() : f.pos; if (!p) break; soltar(f.tipo, p, new THREE.Vector3(0, f.tipo === 'fuego' ? 1.6 : 0.9, 0), f.ancho || 0.5); }
+  }
+}
+function pasoTrozos(dS) {
+  for (const t of trozos) {
+    const d = t.userData; if (d.quieto) continue;
+    d.v.y -= 22 * dS; t.position.addScaledVector(d.v, dS);
+    t.rotation.x += d.w.x * dS; t.rotation.y += d.w.y * dS; t.rotation.z += d.w.z * dS;
+    if (t.position.y < 0.24) {
+      t.position.y = 0.24; if (Math.abs(d.v.y) < 1.4) { d.v.set(0, 0, 0); d.quieto = true; t.rotation.set(Math.round(t.rotation.x / 1.5708) * 1.5708, t.rotation.y, Math.round(t.rotation.z / 1.5708) * 1.5708); }
+      else { d.v.y *= -0.38; d.v.x *= 0.62; d.v.z *= 0.62; d.w.multiplyScalar(0.55); }
+    }
+  }
+}
+
+// ---------------------------------------------------------------- guion (S = tiempo de la historia, en segundos)
+const tin = new Personaje('tin'), tan = new Personaje('tan'), duda = new Personaje('duda');
+for (const p of [tin, tan, duda]) escena.add(p.malla);
+const GOLPE = 1.35, CHOQUE = 1.62, EXPLO = 2.62, PATADA = 3.55, FINAL = 4.25, IMPLO = 4.45, FIN = 5.6;
+const LENTO = [[GOLPE - 0.02, GOLPE + 0.075, 0.2], [EXPLO - 0.01, EXPLO + 0.14, 0.45], [PATADA - 0.03, PATADA + 0.07, 0.2], [FINAL - 0.02, FINAL + 0.07, 0.22]];
+function velocidad(S) { for (const [a, b, v] of LENTO) if (S >= a && S < b) return v; return 1.18; }   // cámara lenta en cada impacto; el resto, algo acelerado
+
+const G = {
+  tin: {
+    pos: [[0, [3.2, 0, 0.8]], [1.12, [3.3, 0, 0.8]], [1.33, [1.05, 0, 0.3], 'in'], [1.75, [1.5, 0, 0.5]], [EXPLO, [1.6, 0, 0.6]], [2.72, [3.0, 0.5, 0.9], 'out'], [3.05, [4.3, 0, 1.0], 'out'], [3.9, [4.2, 0, 1.0]], [4.22, [1.0, 0, 0.1], 'in'], [4.7, [1.4, 0, 0.6]], [FIN, [1.6, 0, 0.9]]],
+    pose: [[0, P.guardia], [0.45, P.guardia], [0.55, P.recibe, 'out'], [0.8, P.guardia], [0.95, P.guardia], [1.12, P.carga], [1.24, P.embiste, 'in'], [1.33, P.golpe, 'in'], [1.55, P.golpe], [1.8, P.guardia], [EXPLO, P.guardia], [2.7, P.vuela, 'out'], [3.0, P.resbala], [3.35, P.guardia], [3.88, P.carga], [4.05, P.embiste, 'in'], [4.22, P.golpe, 'in'], [4.5, P.golpe], [4.9, P.guardia], [5.2, P.festeja, 'back']],
+    mira: [[0, -1]], cara: [[0, 'sorpresa'], [0.8, 'concentrado'], [1.3, 'eureka'], [1.8, 'curiosidad'], [EXPLO, 'sorpresa'], [3.35, 'concentrado'], [4.2, 'eureka'], [5.05, 'risa']], escala: [[0, 1]],
+  },
+  tan: {
+    pos: [[0, [-3.5, 0, 1.2]], [EXPLO, [-3.5, 0, 1.2]], [2.72, [-4.3, 0.4, 1.4], 'out'], [2.98, [-4.9, 0, 1.5], 'out'], [3.34, [-2.6, 0, -0.5], 'lin'], [3.46, [-1.9, 1.5, -0.45], 'out'], [3.55, [-1.25, 1.25, -0.4], 'in'], [3.8, [-1.7, 0, -0.2], 'in'], [4.1, [-1.7, 0, -0.2]], [4.22, [-1.15, 0, -0.1], 'in'], [4.7, [-1.6, 0, 0.5]], [FIN, [-1.9, 0, 0.9]]],
+    pose: [[0, P.guardia], [0.45, P.guardia], [0.55, P.recibe, 'out'], [0.85, P.guardia], [EXPLO, P.guardia], [2.7, P.vuela, 'out'], [2.98, P.resbala], [3.08, P.corre1], [3.17, P.corre2, 'lin'], [3.26, P.corre1, 'lin'], [3.34, P.agachado, 'lin'], [3.46, P.recogido, 'out'], [3.54, P.patada, 'in'], [3.7, P.patada], [3.85, P.agachado], [4.05, P.carga], [4.22, P.golpe, 'in'], [4.5, P.golpe], [4.9, P.guardia], [5.2, P.festeja, 'back']],
+    mira: [[0, 1]], cara: [[0, 'sorpresa'], [0.85, 'curiosidad'], [EXPLO, 'sorpresa'], [3.05, 'concentrado'], [3.45, 'eureka'], [5.05, 'risa']], escala: [[0, 1]],
+  },
+  duda: {
+    pos: [[0, [0, 10, 0]], [0.45, [0, 0, 0], 'in'], [GOLPE, [0, 0, 0]], [1.5, [-1.8, 1.3, -1.2], 'out'], [CHOQUE, [-3.0, 0.5, -1.9], 'lin'], [1.75, [-3.0, 0, -1.7], 'in'], [2.75, [-3.0, 0, -1.7]], [2.95, [-1.6, 2.3, -1.1], 'out'], [3.15, [-0.2, 0, -0.4], 'in'], [PATADA, [-0.2, 0, -0.4]], [3.8, [0.25, 0, -0.3], 'out'], [FINAL, [0.2, 0, -0.3]], [FIN, [0.1, 0, -0.3]]],
+    pose: [[0, P.recogido], [0.4, P.recogido], [0.47, P.agachado, 'lin'], [0.8, P.guardia, 'back'], [GOLPE - 0.03, P.guardia], [GOLPE + 0.02, P.recibe, 'out'], [1.5, P.vuela], [CHOQUE, P.vuela], [1.75, P.caido], [1.95, P.caido], [2.2, P.agachado], [2.45, P.poder, 'back'], [2.56, P.poder], [EXPLO, P.pisoton, 'in'], [2.75, P.agachado], [2.95, P.recogido], [3.13, P.recogido], [3.2, P.agachado, 'lin'], [3.4, P.guardia], [PATADA - 0.02, P.guardia], [PATADA + 0.03, P.recibe, 'out'], [3.95, P.resbala], [FINAL - 0.02, P.guardia], [FINAL + 0.03, P.recibe, 'out'], [4.5, P.poder], [4.95, P.recogido, 'in']],
+    mira: [[0, 1], [1.4, 1], [1.9, 1], [3.15, -1], [3.85, 1], [FINAL, -1]], cara: [[0, 'duda']],
+    escala: [[0, 1.0], [2.15, 1.0], [2.5, 1.45, 'back'], [PATADA, 1.45], [3.75, 1.15, 'out'], [FINAL, 1.15], [IMPLO, 1.1], [4.98, 0.04, 'in'], [FIN, 0.04]],
+  },
+};
+const CAM = {
+  pos: [[0, [0.6, 6.2, 9.5]], [0.45, [0.4, 4.6, 10.5], 'in'], [0.9, [1.6, 2.3, 12.6]], [GOLPE, [2.0, 2.3, 11.8], 'in'], [1.75, [-1.9, 2.3, 11.6], 'out'], [2.45, [-2.6, 2.0, 10.6]], [2.9, [-0.6, 2.9, 14.2], 'out'], [PATADA, [-1.6, 2.2, 11.6], 'in'], [3.95, [0.2, 2.1, 11.0]], [FINAL, [0.5, 2.2, 11.4], 'in'], [4.6, [0.4, 2.2, 10.4]], [FIN, [3.2, 3.6, 12.8]]],
+  mira: [[0, [0, 0.6, 0]], [0.45, [0, 0.9, 0]], [0.9, [0, 1.5, 0]], [GOLPE, [0.6, 1.7, 0]], [1.75, [-2.4, 1.2, -1.4]], [2.45, [-2.8, 1.8, -1.6]], [2.9, [-0.8, 1.6, -0.6]], [PATADA, [-0.5, 2.0, -0.4]], [3.95, [0.1, 1.5, -0.3]], [FINAL, [0.2, 1.7, -0.3]], [4.6, [0.1, 1.3, -0.3]], [FIN, [-0.5, 1.2, -0.7]]],
+};
+let temblor = 0;
+const EVENTOS = []; window.EVENTOS = EVENTOS;
+let cuadroN = 0;
+const marca = nombre => EVENTOS.push({ nombre, cuadro: cuadroN });
+const V = (x, y, z) => new THREE.Vector3(x, y, z);
+const HECHOS = [
+  [0.02, () => marca('silbido_caida')],
+  [0.45, () => { marca('choque_suelo'); grieta(0, 0, 2.2); onda(0, 0, 0.3, 4.2, 0.55); soltar('polvo', V(0, 0.2, 0), V(0, 1.5, 0), 3.2, 26); temblor = 0.28; }],
+  [1.14, () => marca('silbido')],
+  [GOLPE, () => { marca('golpe'); estrella(V(0.25, 2.3, 0.4), 1.25); soltar('chispa', V(0.3, 2.0, 0.3), V(-3, 2, 0), 3, 12); soltar('tinta', V(0.2, 2.0, 0.2), V(-3.5, 2.5, 0), 2.2, 7); temblor = 0.1; }],
+  [CHOQUE, () => { marca('choque_madera'); romperCajones(-1); soltar('polvo', V(-3.0, 0.8, -1.8), V(0, 1.2, 0), 2.6, 22); soltar('humo', V(-3.0, 0.6, -1.8), V(0, 1, 0), 1.5, 6); grieta(-3.0, -1.7, 1.2, 6); temblor = 0.2; }],
+  [2.2, () => marca('fuego_enciende')],
+  [EXPLO, () => {
+    marca('explosion'); const p = V(-3.0, 0.3, -1.7);
+    soltar('fuego', p.clone().setY(1.0), V(0, 3.5, 0), 5.5, 60); soltar('humo', p.clone().setY(1.2), V(0, 2.6, 0), 3.6, 22); soltar('chispa', p.clone().setY(1.0), V(0, 6, 0), 8, 40);
+    onda(p.x, p.z, 0.4, 9.5, 0.6); onda(p.x, p.z, 0.2, 6.0, 0.75); quemadura(p.x, p.z, 2.3); grieta(p.x, p.z, 2.8, 12); empujarTrozos(p.x, p.z, 16); temblor = 0.42;
+    focos.push({ pos: V(-3.6, 0.2, -1.1), tipo: 'fuego', desde: EXPLO, hasta: 99, cada: 0.035, ancho: 0.35 }, { pos: V(-2.1, 0.2, -2.2), tipo: 'fuego', desde: EXPLO, hasta: 99, cada: 0.05, ancho: 0.3 },
+      { pos: V(-3.0, 0.6, -1.7), tipo: 'humo', desde: EXPLO, hasta: 99, cada: 0.22, ancho: 0.5 });
+  }],
+  [3.16, () => { marca('choque_suelo'); soltar('polvo', V(-0.2, 0.2, -0.4), V(0, 1.2, 0), 2.6, 16); onda(-0.2, -0.4, 0.3, 3.2, 0.45); grieta(-0.2, -0.4, 1.4, 6); temblor = 0.18; }],
+  [3.2, () => { marca('choque_pilar'); soltar('polvo', V(5.6, 0.3, -2.3), V(0, 1.4, 0), 3, 20); grieta(5.4, -2.3, 1.6, 7); temblor = Math.max(temblor, 0.16); }],
+  [3.3, () => marca('silbido')],
+  [PATADA, () => { marca('golpe'); estrella(V(-0.55, 2.9, -0.2), 1.35); soltar('chispa', V(-0.6, 2.6, -0.3), V(3, 2, 0), 3, 14); soltar('tinta', V(-0.5, 2.6, -0.3), V(3.5, 2.5, 0), 2.2, 8); temblor = 0.12; }],
+  [4.05, () => marca('silbido')],
+  [FINAL, () => { marca('golpe_doble'); estrella(V(0.6, 2.5, 0.1), 1.15); estrella(V(-0.35, 2.3, 0.1), 1.15); soltar('chispa', V(0.2, 2.1, 0), V(0, 4, 0), 5, 22); temblor = 0.16; }],
+  [IMPLO, () => { marca('implosion'); onda(0.15, -0.3, 6.5, 0.2, 0.5); onda(0.15, -0.3, 4.2, 0.2, 0.42, 1.4); }],
+  [4.98, () => { marca('estallido_final'); soltar('humo', V(0.15, 1.2, -0.3), V(0, 1.6, 0), 2.4, 18); soltar('chispa', V(0.15, 1.2, -0.3), V(0, 3, 0), 5, 18); garabatoResto(0.15, -0.3); onda(0.15, -0.3, 0.2, 3.0, 0.4); temblor = 0.12; }],
+];
+focos.push({ seguir: () => duda.cabezaMundo && duda.cabezaMundo.clone().add(V(0, 0.5, 0.05)), tipo: 'fuego', desde: 2.2, hasta: IMPLO, cada: 0.022, ancho: 0.6 },
+  { seguir: () => duda.cabezaMundo && duda.cabezaMundo.clone().add(V(0, 0.9, -0.05)), tipo: 'humo', desde: 2.3, hasta: IMPLO, cada: 0.07, ancho: 0.5 });
+
+let S = 0, hecho = 0;
+function actualizar(dS) {
+  while (hecho < HECHOS.length && S >= HECHOS[hecho][0]) { HECHOS[hecho][1](); hecho++; }
+  for (const [p, g] of [[tin, G.tin], [tan, G.tan], [duda, G.duda]]) {
+    const pos = pista(g.pos, S), pose = pista(g.pose, S), mira = escalon(g.mira, S), esc = pista(g.escala, S);
+    const cara = p.id === 'duda' ? `duda_${Math.floor(cuadroN / 3) % 4}` : `${p.id}_${escalon(g.cara, S)}`;
+    const antes = p.ultimaPos || pos, rapidez = Math.hypot(pos[0] - antes[0], pos[1] - antes[1], pos[2] - antes[2]) / Math.max(dS, 1e-4);
+    const e = p.dibujar(pose, mira, cara, rapidez > 7, 1);
+    p.colocar(e, pos[0], pos[1], pos[2], esc); p.ultimaPos = pos;
+  }
+  if (S > IMPLO && S < 4.98) soltar('tinta', duda.cabezaMundo.clone().add(V(ra(-2.4, 2.4), ra(-1.2, 2.2), ra(-1.4, 1.4))), V(0, 0, 0), 0.1, 3, duda.cabezaMundo.clone().setY(1.2));
+  duda.malla.visible = S < 4.98;
+  // el pilar cae con la explosión y se queda caído
+  pilar.rotation.z = -EASE.in(clamp((S - (EXPLO + 0.05)) / 0.5)) * Math.PI / 2 * 0.985;
+  pasoFocos(S, dS); pasoParticulas(dS); pasoOndas(dS); pasoEstrellas(dS); pasoTrozos(dS);
+  // cámara dentro del mundo, con temblor que se apaga (≤ 8 fotogramas fuertes)
+  const cp = pista(CAM.pos, S), cm = pista(CAM.mira, S);
+  temblor *= Math.pow(0.0009, dS / 0.35);
+  camara.position.set(cp[0] + Math.sin(cuadroN * 2.4) * temblor, cp[1] + Math.cos(cuadroN * 3.1) * temblor, cp[2]);
+  camara.lookAt(cm[0], cm[1], cm[2]);
+}
+window.cuadro = () => {
+  const dS = cuadroN === 0 ? 0 : velocidad(S) / FPS;
+  S += dS; actualizar(dS); renderer.render(escena, camara); cuadroN++;
+  return { S, fin: S >= FIN, cuadro: cuadroN, velocidad: velocidad(S) };
+};
+window.foto = () => renderer.domElement.toDataURL('image/jpeg', 0.93);
+const nombres = ['duda_0', 'duda_1', 'duda_2', 'duda_3'];
+for (const p of ['tin', 'tan']) for (const e of ['curiosidad', 'sorpresa', 'eureka', 'risa', 'concentrado']) nombres.push(`${p}_${e}`);
+await Promise.all(nombres.map(cargar));
+window.LISTO = true;
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+node_modules/
+salida/fotogramas/
+salida/*.mp4
+salida/*.wav

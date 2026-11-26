@@ -11,6 +11,7 @@ Ningún prompt puede usar un personaje que no esté aquí.
 | `@spike` | Spike | Tecladista excéntrico, humor absurdo | Jóvenes y adultos | `spike/ficha.md` | `Personajes/Spike` |
 | `@tan` | Tan | Muñeca de palitos que pregunta y se asombra (v1 aprobada) | Adultos, sin edad fija; canal Tin & Tan | `tan/ficha.md` | `Personajes/Tin & Tan (palitos)` |
 | `@tin` | Tin | Muñeco de palitos que responde con datos (v1 aprobada) | Adultos, sin edad fija; canal Tin & Tan | `tin/ficha.md` | `Personajes/Tin & Tan (palitos)` |
+| `@duda` | (sin nombre en pantalla; «la Duda» es nombre de trabajo) | Rival de Tin y Tan: cuerpo de palitos con manos y pies; la cabeza es una madeja de tinta con rizo de pregunta (hoja v2 aprobada el 2026-11-26) | Solo el canal Tin & Tan | `duda/ficha.md` | pendiente de subir |
 
 Cada carpeta de Drive tiene `01 Diseño aprobado` (referencia principal), `02 Hojas de personaje` (vueltas y
 emociones, cuando existen), `03 Pruebas descartadas` (no se usa nunca) y `bitacora.md`.
@@ -23,7 +24,6 @@ emociones, cuando existen), `03 Pruebas descartadas` (no se usa nunca) y `bitaco
 | Marvin (el creador) | es una persona real; sus fotos no van al repo público | el dueño decide si se carga con referencias guardadas solo en Higgsfield |
 | El científico, el afro verde | en reserva | nombre y aprobación del dueño |
 | Lumi Bravo | sin generar | diseño |
-| «La Duda» (`@duda`; rival de Tin y Tan, sin nombre en pantalla; dibujada con código) | borrador del 2026-11-26, idea del dueño | su sí a `duda/ficha.md` y a la hoja; pasar el dibujo a `palitos.py` |
 
 **Tin y Tan no se generan con IA:** se dibujan con código (`herramientas/palitos.py`), que es su diseño oficial.
 

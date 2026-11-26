@@ -1,7 +1,7 @@
 # La Duda (personaje sin nombre en pantalla)
 
-> **BORRADOR del 2026-11-26. Pendiente de la aprobación del dueño: todavía no está en el elenco y ningún prompt puede
-> usarla.** Idea del dueño, textual: «crear un tercero y bajo concepto sería la duda; considero que no hay necesidad de
+> **Hoja v2 aprobada por el dueño el 2026-11-26** («sí apruebo la hoja»). Está en el elenco (`REGISTRO.md`). Vale la
+> «Versión 2» de más abajo; la descripción de la versión 1 (solo la madeja) se conserva como historia. Idea del dueño, textual: «crear un tercero y bajo concepto sería la duda; considero que no hay necesidad de
 > mencionar nombre en el video; solo es un personaje que aparece y desaparece y tanto Tin y Tan pelean con él».
 > El dueño aprobó avanzar con la ficha, la solicitud de cambio y una prueba técnica («Sí, avanza así»). Solicitud:
 > `video-studio/cambios/2026-11-26_tercer_personaje_la_duda.md`.
