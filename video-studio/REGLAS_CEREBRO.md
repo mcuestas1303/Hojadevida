@@ -185,3 +185,11 @@
   elementos los vayas almacenando, por si caben o se quieren reutilizar en algún otro video; pero el entorno debe cambiar
   dependiendo del contexto y temática del video». Biblioteca: `video-studio/motor_de_accion/` con `catalogo.json`.
 - **Paletas (dueño, 2026-11-26):** «me gustan los A, B y C» (estudio de color del 2026-11-26). Se eligen por tema.
+
+- **Universo conectado de Tin & Tan (dueño, 2026-11-26):** «necesito que los videos vayan conectados de alguna manera; por
+  ejemplo, que aparezca algo que no tenga nada que ver con el video y en realidad es un adelanto del siguiente video, que
+  alguna animación se conecte con la del siguiente video, algo que permita después lanzar videos conspirativos del mismo
+  canal […] hay que generar un universo más pensado y universos alternos para Tin y Tan […] contrástalo con estadísticas;
+  bajo esta lógica debe haber por lo menos una producción de 15 días a un mes para que podamos conectar todo». El canal es
+  informativo con el atractivo de las peleas y admite casi cualquier temática. Solicitud:
+  `video-studio/cambios/2026-11-26_universo_conectado_de_tin_y_tan.md`.
