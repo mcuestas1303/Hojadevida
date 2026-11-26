@@ -15,6 +15,8 @@
 ---
 - **Actualización del 2026-11-24 (parámetros de Tin & Tan):** por regla del dueño, el criterio de Tin & Tan pasa a ser **demanda verificable + se puede explicar con hechos comprobados + da tiempo**. Ya no se exige ni se busca una época, un objeto ni una cuenta: el tema lo pone la demanda y **no se reserva cupo para ningún tipo de tema**. Cambian el método (paso nuevo 1.1b) y el filtro (criterios 1 y 5). **No se agregó ninguna tendencia ni se cambió ninguna fecha**; lo de Tiky y Lumi no se tocó. Las filas de Tin & Tan de las secciones 3.3, 4 y 5 son del 2026-11-21, definidas con los parámetros anteriores: siguen como registro y cada una entra solo si en su semana pasa el filtro nuevo.
 
+- **Actualización del 2026-11-26 (semana 2, para el short 4 de Tin & Tan):** primera vez que el radar se corre con páginas abiertas y no con resúmenes. Abrieron: listados de búsqueda de YouTube, páginas `/shorts/<id>`, el RSS de Google Trends (EE. UU., Brasil y México), Box Office Mojo, timeanddate y Wikipedia en inglés (detalle en 1.2b). Cambios: (1) el criterio de demanda ahora se mide con vistas y fecha de videos y Shorts reales, como en `estudios/2026-11-26_accion_stickman_y_tin_y_tan.md`, sección 2; (2) nueva sección 4b con la lectura de hoy; (3) nueva sección 5b con las tres oportunidades vigentes (las de 5 siguen como registro del 2026-11-21); (4) filas de The Game Awards y de Dunesday corregidas en 3.2. El tema propuesto para el short 4 está en `comercial/2026-11-26_tema_short4_tin_y_tan.md`. Marcas: «leído» = abrí la página; «resumen» = solo el resumen del buscador; «sin dato».
+
 ## 1. Método semanal (20 minutos)
 
 ### 1.1 Los pasos
@@ -88,6 +90,25 @@ Imprescindibles:
 - `www.officialcharts.com` (solo Reino Unido; prioridad baja)
 
 Nota: `support.google.com` sí abrió el 2026-11-20 según `base_conocimiento.md`; hoy no lo probé.
+
+### 1.2b Qué abrió y qué no el 2026-11-26 (con `curl -sS -m 40 -A "Mozilla/5.0"` desde Bash)
+
+| Fuente | Dirección | Resultado | Para qué sirvió |
+|---|---|---|---|
+| YouTube, listados de búsqueda | `https://www.youtube.com/results?search_query=…&hl=en&gl=US` | **Abrió** (HTML con `ytInitialData`: título, canal, vistas y antigüedad de videos; en Shorts, título y vistas) | Demanda medida de cada tema |
+| YouTube, página de un Short | `https://www.youtube.com/shorts/<id>` | **Abrió**: da la fecha de publicación y las vistas | Fecha de cada Short del listado |
+| YouTube, página de un video | `https://www.youtube.com/watch?v=<id>` | **No abrió** (redirige, 302, sin contenido) | Se usa el listado |
+| YouTube, página de juegos | `https://www.youtube.com/gaming` | **Abrió**; la página lista juegos y Shorts; el orden no está documentado como ranking | Contexto: «Grand Theft Auto VI» abre la lista de juegos |
+| Google Trends, RSS de tendencias diarias | `https://trends.google.com/trending/rss?geo=US` (también `BR` y `MX`) | **Abrió** (10 entradas por país, con tráfico aproximado) | Lectura por país (4b) |
+| Google Trends, página | `https://trends.google.com/trending?geo=US` | Responde 200 pero es una página dinámica: no la usé | — |
+| Box Office Mojo, calendario y títulos | `https://www.boxofficemojo.com/calendar/`, `https://www.boxofficemojo.com/title/tt4154796/` | **Abrió** | Estrenos de diciembre; recaudación de Avengers: Endgame |
+| timeanddate | `https://www.timeanddate.com/holidays/us/2026` | **Abrió** | Fiestas de EE. UU. |
+| Wikipedia en inglés, texto fuente | `https://en.wikipedia.org/w/index.php?title=<página>&action=raw` | **Abrió** | The Game Awards 2026, Grand Theft Auto VI, Avengers: Doomsday, Dune: Part Three, Avengers: Endgame |
+| Búsqueda web de la sesión (WebSearch) | — | Funciona; entrega resumen | Fuentes primarias que no abren (Take-Two, SEC, Variety) |
+| **No abrieron** | `www.sec.gov` (comunicado de Take-Two, Formulario 8-K), `www.take2games.com`, `www.gamesradar.com`, `www.cnn.com`, `www.metacritic.com`, `opencritic.com`, `www.fox5dc.com`, `gtaintel.com`, `variety.com`, `thegameawards.com`, `www.ign.com`, `www.theverge.com`, `www.gameinformer.com`, `www.polygon.com`, `www.videogameschronicle.com`, `www.the-numbers.com`, `ads.tiktok.com`, `virlo.ai` | Sin conexión (el proxy no deja salir a esos hosts) | Lo que dependía de ellos va como «resumen» o «sin confirmar» |
+| **No abrió (403 del proxy)** | `wikimedia.org` (visitas por artículo, `/api/rest_v1/metrics/pageviews/top/…`) | Rechazado por el proxy | Pendiente: pedir el permiso |
+
+Hosts que habría que permitir para cerrar lo que hoy va en resumen, por orden de utilidad: `www.sec.gov`, `www.take2games.com`, `variety.com`, `www.metacritic.com`, `thegameawards.com`, `www.gamesradar.com`, `www.cnn.com`, `wikimedia.org`.
 
 ### 1.3 Cambios de las propias herramientas de YouTube (importante para el método)
 
@@ -169,8 +190,9 @@ Consecuencia directa de la regla: con el capítulo 1 todavía sin generar, **nin
 | Fecha | Qué es | País | Canal | Ángulo posible | Empezar antes de | Fuente |
 |---|---|---|---|---|---|---|
 | 2026-12-03 | Dragon Quest Monsters: The Withered World; Xenoblade Chronicles 3 en Switch 2 | Mundial | Ninguno | Sin ángulo ni cuenta; sin confirmar (solo una fuente da fecha; otras dos guías dicen que diciembre no tiene lanzamientos grandes por la cola de GTA VI) | — | https://allthings.how/2026-video-game-release-dates-confirmed-launches-through-december/ |
-| 2026-12-10 | The Game Awards, Peacock Theater, Los Ángeles | Mundial | Tin & Tan | Mismo público que el short de GTA 6 (30 a 50). **Sin cuenta verificada**; solo tiene sentido si el dueño quiere seguir con el tema de juegos. Hay una fuente que dice 12-12: la mayoría dice 12-10 | 2026-11-30 | https://www.nintendolife.com/news/2026/08/geoff-keighley-confirms-the-game-awards-will-return-on-10th-december-2026 y https://gamingbolt.com/the-game-awards-2026-confirmed-for-december-10th/amp |
-| 2026-12-18 | **Avengers: Doomsday y Dune: Part Three, el mismo día** («Dunesday»). Dune 3 con ventana exclusiva de IMAX en EE. UU. | EE. UU. y mundial | Tin & Tan | «Dos estrenos, un solo día»: la cuenta debe salir de un origen verificado (por ejemplo, el primer estreno de cada saga: **sin dato**, hay que verificarlo). Riesgo: marcas de Disney/Marvel, Warner y Legendary; solo se nombran | **2026-12-08** | https://avclub.com/avengers-doomsday-dune-part-three-same-day-release-december-18 y https://comicbookmovie.com/avengers/avengers-doomsday/avengers-doomsday-and-dune-part-three-wont-move-from-december-18-as-dunesday-showdown-beckons-a226909 (dos páginas dicen 12-19 y 12-28: error probable) |
+| 2026-12-10 | The Game Awards, Peacock Theater, Los Ángeles | Mundial | Tin & Tan | **Actualizado 2026-11-26:** los nominados se anunciaron el 2026-11-17; GTA VI tiene 8 nominaciones (la cifra más alta) y entra en Juego del Año; la votación pública cierra el 2026-12-09 (Wikipedia en inglés, «The Game Awards 2026», leída el 2026-11-26). Demanda medida en 4b y candidato 3 de `2026-11-26_tema_short4_tin_y_tan.md`. La nota anterior («mismo público que el short de GTA 6, 30 a 50») quedó corregida por Studio: el público medido es menor de 45. Hay una fuente que dice 12-12: la mayoría y Wikipedia dicen 12-10 | 2026-11-30 (para publicar antes del 12-09) | https://www.nintendolife.com/news/2026/08/geoff-keighley-confirms-the-game-awards-will-return-on-10th-december-2026 y https://gamingbolt.com/the-game-awards-2026-confirmed-for-december-10th/amp |
+| 2026-12-18 | **Avengers: Doomsday y Dune: Part Three, el mismo día** («Dunesday»). Dune 3 con ventana exclusiva de IMAX en EE. UU. | EE. UU. y mundial | Tin & Tan | **Actualizado 2026-11-26:** ya no es una cuenta nostálgica sino una comparación con demanda medida (Shorts de «Dunesday» de hasta ≈ 205.000 vistas en 7 días; ver 4b). Hechos leídos en Wikipedia: ambas el 2026-12-18 en EE. UU.; *Dune: Part Three* tiene tres semanas de exclusividad en IMAX en EE. UU. sobre *Avengers: Doomsday*; las dos duran 150 minutos (la versión Infinity Vision de *Doomsday*, 151). Box Office Mojo (leído 2026-11-26) las pone las dos el viernes 12-18. Riesgo: marcas de Disney/Marvel, Warner y Legendary; solo se nombran; las cifras de preventa y de proyección cambian | **2026-12-08** | https://avclub.com/avengers-doomsday-dune-part-three-same-day-release-december-18 y https://comicbookmovie.com/avengers/avengers-doomsday/avengers-doomsday-and-dune-part-three-wont-move-from-december-18-as-dunesday-showdown-beckons-a226909 (dos páginas dicen 12-19 y 12-28: error probable) |
+| 2026-12-25 | *Jumanji: Open World* (Sony) | EE. UU. (en el Reino Unido, según un Short, «24 December») | Ninguno por ahora | Anotado 2026-11-26: Box Office Mojo (leído) lo lista el viernes 12-25; una fuente del resumen dice que antes estaba el 12-11 y que Sony lo movió a Navidad. Tráiler de 4K de Sony con ≈ 24.965.849 vistas, «hace 4 semanas» (listado de YouTube, 2026-11-26). Sin ángulo ni hechos todavía | 2026-12-15 | https://www.boxofficemojo.com/calendar/ (leído); https://bleedingcool.com/movies/jumanji-3-shifts-its-release-date-from-december-11th-to-christmas-day (resumen) |
 | 2027-02-23 | Fable (Playground Games) | Mundial | Ninguno por ahora | Sin ángulo con origen verificado. Fecha vista solo en una lista de lanzamientos 2027 | — | https://www.pcgamer.com/games/new-pc-games-2027/ (resumen; una lista contradice la fecha) |
 | 2027-05-28 | Star Wars: Starfighter (Disney, Ryan Gosling) | EE. UU. y mundial | Tin & Tan | Se une al aniversario de 05-25 (abajo) | 2027-05-18 | https://www.boxofficemojo.com/calendar/2027-05-21/ (resumen del buscador) |
 
@@ -213,6 +235,23 @@ Todo lo de esta tabla viene del resumen del buscador. Ninguna cifra de visualiza
 
 Lectura: este radar **no encontró nada de primera infancia en tendencia**. Para Tiky y Lumi las tendencias del día no cuentan; solo el calendario de la sección 3.1.
 
+### 4b. Tendencias en curso, lectura del 2026-11-26 (páginas abiertas, no resúmenes)
+
+Las vistas son las de la página o el listado de YouTube el 2026-11-26 (hora del servidor ≈ 18:00 UTC). El listado de Shorts no trae canal; la fecha sale de la página `/shorts/<id>`. Es una lectura por relevancia, no una muestra: los ceros reales no aparecen. Vistas totales públicas, no vistas calificadas.
+
+| Tema | Señal medida | Fecha de lectura y fuente |
+|---|---|---|
+| **GTA VI (salió el 2026-11-19), ventas y récords** | Short «GTA 6 IS THE BIGGEST LAUNCH EVER #shorts», ≈ 2 millones de vistas, publicado 2026-11-20. Video de CNN «$3.7B in day 1 sales…» con 1.446.341 vistas, «hace 5 días». Short «GTA 6 Sold 32 Million Copies», ≈ 150.000, 2026-11-23. En la página «Gaming» de YouTube, «Grand Theft Auto VI» abre la lista de juegos. En el RSS de Google Trends de Brasil aparece «grand theft auto» con «500+» | https://www.youtube.com/results?search_query=gta+6+biggest+launch+ever&hl=en&gl=US, https://www.youtube.com/gaming, https://trends.google.com/trending/rss?geo=BR (2026-11-26) |
+| **GTA VI contra Avengers: Endgame** | De 16 Shorts posteriores al lanzamiento con esa comparación, 2 pasan de 20.000 vistas (≈ 91.000 y ≈ 24.000, ambos del 2026-11-21); el resto va de 4 a 5.500 y la mediana es ≈ 1.100. Saturado, con techo alto | https://www.youtube.com/results?search_query=gta+6+vs+avengers+endgame&hl=en&gl=US (2026-11-26) |
+| **«Dunesday»** (*Avengers: Doomsday* y *Dune: Part Three* el 2026-12-18) | Shorts de 2026-11-19: ≈ 205.000 y ≈ 56.000; Short «Dunesday VS Barbenheimer Releases!» ≈ 54.000 con 12 horas de publicado (2026-11-25). Tráiler final de *Doomsday* (Marvel Entertainment): 59.057.993 vistas, «hace 3 días» | https://www.youtube.com/results?search_query=dunesday&hl=en&gl=US (2026-11-26) |
+| **The Game Awards 2026** (ceremonia 2026-12-10) | Transmisión de la revelación de nominados: 7.632.667 vistas, «hace 9 días». Short «Reacting to the 2026 Game Awards Nominees!» ≈ 357.000 (2026-11-17); «GOTY 2026 Is Cooked» ≈ 92.000 (2026-11-19) | https://www.youtube.com/results?search_query=game+awards+2026&hl=en&gl=US (2026-11-26) |
+| **Tráiler de *Avengers: Doomsday*** | El tráiler de julio llegó a ≈ 503 millones de vistas en 24 horas sumando plataformas, según Variety y otros (resumen); Short «second most-viewed movie trailer of all time», ≈ 22.000 (2026-11-25). Un video lleva «563M» en el título: **contradice las demás fuentes (503 M) y el listado de YouTube (59 M en 3 días en un solo canal)**; no se usa | YouTube (listado) y WebSearch, 2026-11-26 |
+| **GTA VI, reseñas de críticos contra reseñas de jugadores** | Muy alta demanda (un video sobre las reseñas de usuarios con 4.981.100 vistas, «hace 5 días»), pero la disputa de las reseñas mezcla política y debate de género: **fuera por la línea editorial del dueño** | https://www.youtube.com/results?search_query=gta+6+biggest+launch+ever&hl=en&gl=US; https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI (2026-11-26) |
+| Google Trends EE. UU., 2026-11-26 | Las 10 entradas son fútbol americano de Acción de Gracias, una de un servicio de TV por internet y una de un club portugués; **ninguna de juegos ni cine** | https://trends.google.com/trending/rss?geo=US |
+| Google Trends México, 2026-11-26 | Entradas de fútbol, Disney+ (≈ «1000+») y servicios de transmisión; nada de juegos ni cine | https://trends.google.com/trending/rss?geo=MX |
+
+Lectura: el RSS de Google Trends es de las últimas horas y está dominado por el día de Acción de Gracias; para juegos y cine la señal útil de hoy es la de YouTube.
+
 ---
 
 ## 5. Las tres oportunidades más cercanas
@@ -231,6 +270,16 @@ GTA VI no entra en esta lista porque ya tiene proyecto: lo que decide el dueño 
 
 Nota: las oportunidades 2 y 3 usan la misma cuenta, 7.305. Si salen las dos, hay que variar el cálculo y el dibujo: repetir la misma pieza con otro objeto choca con la política de contenido no auténtico de YouTube (`canales/nostalgia-tin-y-tan/README.md`). Esto lo ve el dueño. (2026-11-24: repetir la **forma** está permitido hasta 3 seguidas; repetir el **contenido**, nunca.)
 
+### 5b. Las tres oportunidades más cercanas, vigentes desde el 2026-11-26 (Tin & Tan)
+
+Sustituyen a las de arriba como lista de trabajo; las de arriba quedan como registro. Cada una se pasó por 1.1b con la demanda de 4b. Detalle, datos y fuentes en `comercial/2026-11-26_tema_short4_tin_y_tan.md`.
+
+| # | Oportunidad | Ángulo | Fecha límite | Riesgo |
+|---|---|---|---|---|
+| 1 | **GTA VI contra Avengers: Endgame** (short 4, elegido) | «¿De verdad ganó más en un día que Endgame en toda su carrera?»: la cifra es cierta, pero mide otra cosa (ventas al público contra taquilla) | **Publicar a más tardar el 2026-12-01** (estimación mía: el tema salió el 2026-11-19 y la demanda cae semana a semana) | Repite el juego del short 2; el total de Endgame puede subir mientras siga su reestreno; el comunicado de Take-Two se leyó solo en resumen |
+| 2 | **Dunesday** (reserva y siguiente) | Dos estrenos, un día y tres semanas de IMAX para una sola: qué se sabe y qué no | Empezar antes del **2026-12-08**; publicar entre 12-10 y 12-17 | Cifras de preventa y de proyección cambian; China puede mover una fecha (resumen); el ganador no se sabe antes del 12-18 |
+| 3 | **The Game Awards**: «¿cómo entra a Juego del Año un juego que nadie había jugado?» | Cómo se elige: jurado, fecha de elegibilidad, nominaciones | Publicar antes del 2026-12-09 (cierra la votación); empezar el 11-30 | «Sin hechos verificados»: el reparto 90 % jurado y 10 % público y el acceso anticipado del jurado salen de una sola fuente (Wikipedia); hay personas reales (presentador, jurado) y puede leerse como acusación |
+
 ---
 
 ## 6. Bitácora
@@ -238,7 +287,7 @@ Nota: las oportunidades 2 y 3 usan la misma cuenta, 7.305. Si salen las dos, hay
 | Fecha de revisión | Quién | Qué cambió |
 |---|---|---|
 | 2026-11-21 | comercial-inteligencia-digital | Primera edición. Método de 10 pasos, filtro y regla de anticipación (estimación mía). Prueba de fuentes: 8 hosts probados, ninguno abrió; el sustituto es la búsqueda web, con resumen. Calendario de 6 meses (2026-11-21 a 2027-05-31) con 25 filas y fuente. Tendencias de la semana: GTA VI (ya en producción) y Pattinson como Bond. Tres oportunidades: Dunesday, Navidad de 2006 y iPhone 20 años. Pedido del dueño (GTA 6) anotado como primera falla del radar: el lanzamiento tenía fecha pública desde antes (los resúmenes de mayo de 2026 hablan del retraso de mayo a noviembre) y el equipo no la tenía en un calendario. Causa: no existía este radar |
-|  |  |  |
+| 2026-11-26 | comercial-inteligencia-digital | Segunda corrida del método, la primera con páginas abiertas (1.2b). **Cambios:** (1) demanda medida con listados de YouTube y fechas de cada Short (4b); (2) The Game Awards: nominados del 2026-11-17, 8 nominaciones de GTA VI, votación pública hasta el 12-09 (fila 3.2 corregida; se retiró «30 a 50 años», que Studio contradijo); (3) Dunesday: hechos leídos y demanda en alza (fila 3.2 y 4b); (4) fila nueva del 12-25, *Jumanji: Open World*; (5) sección 5b con las oportunidades vigentes. **Tema elegido para el short 4:** GTA VI contra Avengers: Endgame; reserva: Dunesday (ver archivo del tema). **Descartado por la línea editorial:** reseñas de críticos contra reseñas de jugadores de GTA VI (mezcla política y debate de género). **Qué se aprendió sobre el radar:** el RSS de Google Trends refleja las últimas horas y hoy no trae juegos ni cine; para esos temas manda el listado de YouTube. **Falla anotada:** el tráiler de *Doomsday* con «563M» en un título contradice las demás fuentes (503 M): hay que desconfiar de cifras de títulos de videos de terceros |
 
 ---
 
@@ -260,6 +309,17 @@ Nota: las oportunidades 2 y 3 usan la misma cuenta, 7.305. Si salen las dos, hay
 | Cuántos días de calendario toma de verdad cada fase | El estudio solo mide tokens y créditos | Anotar la fecha de inicio y de publicación de cada video en `consumo.md`; con 3 videos se corrige la regla de anticipación |
 | Prueba de las fuentes que no probé (The Numbers, VGC, Wikimedia, USNO) | La herramienta indicó dejar de probar hosts | Probar de nuevo cuando se permitan |
 
+### 7b. Pendientes al 2026-11-26
+
+| Qué falta | Por qué | Qué lo resolvería |
+|---|---|---|
+| Comunicado de Take-Two del 2026-11-20 («Grand Theft Auto VI Shatters Entertainment Box Office Records with $3.79 Billion in Day One Retail Sales», Formulario 8-K, anexo 99.1) | El resumen del buscador lo localiza en `www.sec.gov`; esa página no abre | Permitir `www.sec.gov` y `www.take2games.com` |
+| Reglas oficiales de votación de The Game Awards (reparto jurado y público; acceso anticipado) | `thegameawards.com` no abre; la única fuente de ese dato es Wikipedia; WebSearch no lo confirma | Permitir `thegameawards.com` |
+| Visitas por artículo de Wikipedia (qué se lee más hoy) | `wikimedia.org` rechazado por el proxy | Permitir `wikimedia.org` |
+| TikTok: tendencias por país | `ads.tiktok.com` no abre | Permitir el host, o captura del dueño |
+| Fecha de la comparecencia ante el Congreso (tema de Jensen Huang) | No se miró en esta semana | Próxima revisión; el tema ya no es prioridad (ver `PARAMETROS.md`) |
+| Edad real del público para cada tema | Studio solo tiene dos Shorts con datos | Seguir leyendo Studio en cada video |
+
 ## Comprobaciones hechas por la conversación principal (2026-11-21)
 
 Abiertas y leídas con `curl` en Wikipedia en inglés. Sustituyen el «visto en resumen de buscador» de estas fechas:
@@ -277,6 +337,18 @@ Sin comprobar todavía: la fecha de lanzamiento de la PlayStation 3 en EE. UU.
 
 Sitios permitidos desde hoy y probados (responden): `trends.google.com`, `www.boxofficemojo.com`,
 `www.timeanddate.com`. Se abren con `curl` desde Bash; `WebFetch` no pasa por la red del entorno.
+
+## Comprobaciones del 2026-11-26 (páginas abiertas con `curl`)
+
+| Dato | Valor | Página | Estado |
+|---|---|---|---|
+| Avengers: Endgame, recaudación mundial, estreno original | $2.799.439.100 | https://www.boxofficemojo.com/title/tt4154796/ | leído |
+| Avengers: Endgame, recaudación mundial, todos los estrenos (incluye el reestreno de 2026) | $2.942.731.600 | misma página | leído |
+| Avengers: Endgame, fin de semana mundial de estreno | ≈ $1.2 mil millones | https://en.wikipedia.org/wiki/Avengers:_Endgame | leído en Wikipedia; Box Office Mojo no lo trae en la página abierta |
+| GTA VI, ventas del primer día | $3.79 mil millones, «Day One Retail Sales», comunicado de Take-Two del 2026-11-20 | https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI (cita el comunicado); resumen del buscador de la copia en `www.sec.gov` | **resumen** del comunicado; Wikipedia leída |
+| GTA V, ventas del primer día (2013) | $815.7 millones según Wikipedia; GamesRadar titula «$800 million» | Wikipedia (leída); GamesRadar (título visto en la nota de Wikipedia, sin abrir) | Dos cifras cercanas; se usa «≈ $800 millones» |
+| The Game Awards 2026 | Ceremonia 2026-12-10; nominados 2026-11-17; GTA VI 8 nominaciones; elegibles los lanzados hasta el 11-20 | https://en.wikipedia.org/wiki/The_Game_Awards_2026 | leído |
+| Avengers: Doomsday y Dune: Part Three | Las dos el 2026-12-18 en EE. UU. | https://www.boxofficemojo.com/calendar/ y las dos páginas de Wikipedia | leído (Box Office Mojo y Wikipedia) |
 
 **Actualización semanal automática:** el dueño la aprobó, pero la creación de la tarea programada fue bloqueada por
 los permisos de la sesión. Hasta que se resuelva, el radar se actualiza cuando el dueño o el equipo lo pidan.
