@@ -1,3 +1,5 @@
+> **Recomendación del equipo (2026-11-26, con la lectura de Studio): descartar.** El short 3, del mismo tema, no recibió distribución, y el público medido (13 a 44 años) respondió al lanzamiento de un juego, no a noticias de empresa. Decide el dueño.
+>
 > **EN PAUSA (2026-11-26), por decisión del dueño.** Este prompt se escribió siguiendo la línea del short 3 y su promesa
 > de cierre, sin basarse en estadísticas del canal. Regla nueva: ningún prompt sin estadísticas. No se cotiza ni se
 > genera. Además, la demanda medida el 2026-11-24 para esta familia («comparación de regresos», «días») era la más baja
