@@ -193,3 +193,11 @@
   bajo esta lógica debe haber por lo menos una producción de 15 días a un mes para que podamos conectar todo». El canal es
   informativo con el atractivo de las peleas y admite casi cualquier temática. Solicitud:
   `video-studio/cambios/2026-11-26_universo_conectado_de_tin_y_tan.md`.
+
+- **Temporadas por país, con históricos (dueño, 2026-11-26):** «Incluye a las consideraciones para contrastar con las
+  estadísticas las temporadas; por ejemplo, estamos a 5 días de comenzar diciembre, y así sucesivamente cada temporada
+  según los países que más estén viendo los videos; temporadas o feriados; revisa históricos para poder contrastar». El
+  calendario del radar se hace con los países que muestra Studio, no con los supuestos.
+- **Una pregunta solo vale si aparece en datos de búsqueda (lección del 2026-11-26):** el dueño preguntó si la pregunta
+  del short 4 estaba validada; no lo estaba. Que existan videos sobre algo es oferta, no demanda. Antes de fijar la
+  pregunta de un video se comprueba en autocompletado y en las consultas relacionadas de Google Trends.
