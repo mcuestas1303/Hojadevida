@@ -1,6 +1,6 @@
 # Parámetros del canal Tin & Tan
 
-> **Versión 2.2 · 2026-11-26.** Este archivo se versiona desde hoy por pedido del dueño: «Mejor versiona los parámetros
+> **Versión 2.3 · 2026-11-26.** Este archivo se versiona desde hoy por pedido del dueño: «Mejor versiona los parámetros
 > porque hay cosas que ya te había pedido que no están implementadas». Cada versión anterior queda entera en
 > `versiones/`. La sección 8 lleva la lista de lo pedido y si está hecho o no.
 
@@ -11,6 +11,7 @@
 | 2.0 | 2026-11-26 | **Formato de acción** (sección 7): peleas contra un rival, mundo con profundidad, efectos de acción y sonido. Lista de pedidos y su estado (sección 8) | este archivo |
 | 2.1 | 2026-11-26 | Color: paletas A, B y C aprobadas, elegidas por tema (A10). Entorno por tema y biblioteca de elementos reutilizables (A11) | este archivo |
 | 2.2 | 2026-11-26 | Universo conectado aprobado en lo principal (A13) y **regla de adaptación** (sección 9): las limitantes se resuelven con creatividad y el diseño se ajusta con cada lectura de estadísticas | este archivo |
+| 2.3 | 2026-11-26 | Escalas del universo (A14): el Short es una página y el video largo es el cuaderno abierto en doble página; más cuadernos. El método pasa a `video-studio/MOTOR_DE_CONTENIDO.md` para replicarlo con otros personajes o marcas | este archivo |
 
 > **Regla del dueño (2026-11-24), textual:** «Cambia esas limitantes y define nuevos parámetros; podría ser que los
 > parámetros sean flexibles; con este cambio de parámetros considera cambios en todo lo demás si es necesario, incluso
@@ -146,6 +147,7 @@ le presenta como si lo cumpliera. Lo que se mide y se ajusta es el cómo y la do
 | A11 | Entorno por tema, y biblioteca | «El entorno debe cambiar dependiendo del contexto y temática del video» y se genera a partir del prompt. Todo elemento creado (entorno, utilería, efecto, sonido, pose, paleta) se guarda en `video-studio/motor_de_accion/` con su entrada en `catalogo.json` para reutilizarlo | El brief nombra el entorno (nuevo o reutilizado) y el catálogo queda al día después de cada video |
 | A12 | Armas dibujadas | Los personajes pueden **dibujar sus armas con tinta** (bastón de luz, espada, lo que pida el tema), como en el reel de referencia. Siguen fuera las armas de fuego y la sangre; lo que salta es tinta (dueño, 2026-11-26: «Sí a los 3») | Ninguna arma de fuego ni sangre roja en el video |
 | A13 | Universo conectado | Cada video se entiende solo y además está conectado con los demás: algo que parece ajeno al video y es un adelanto del siguiente, animaciones que continúan de un video a otro, y pistas que permitan después videos de teorías sobre el propio canal. Universo con reglas y universos alternos de Tin y Tan. Producción planeada por tandas de 15 días a un mes (dueño, 2026-11-26) | Cada brief dice qué conexión cobra, cuál siembra y dónde; registro de pistas al día. **Aprobado en lo principal por el dueño el 2026-11-26** (cuaderno, tres hojas, rival que es una pregunta, primera tanda de cuatro semanas desde el short 4). El diseño completo no está en el repositorio público: vive en el Drive |
+| A14 | Escalas del universo | El Short es **una página** (vertical); el video largo es **el cuaderno abierto en doble página** (horizontal) y sirve para explicar el universo y para explicar con estadísticas escenarios actuales de la realidad; puede haber más cuadernos (líneas de contenido) y un estante de cuadernos de otros personajes o marcas (dueño, 2026-11-26). Un video largo nunca es un pegado de Shorts | El brief de un video largo dice qué páginas abre y qué muestra que los Shorts no. **Propuesta del equipo, sin producir** |
 
 **Lo que no se mueve aunque el formato sea de acción** (sección 2): ninguna persona real ni quien la represente recibe
 golpes; máximo 3 destellos por segundo; cada dato con su fuente; la firma del lápiz bumerán y los subtítulos en español.
@@ -172,6 +174,7 @@ Alternativas de producción, con lo que cada una cumple y lo que cuesta:
 | Entorno generado según el tema del video y motor que guarda los elementos para reutilizarlos | 2026-11-26 | **Empezado:** motor con paletas, entornos, personajes, sonidos y catálogo; solo hay un entorno de relleno | requisito A11; `motor_de_accion/README.md` |
 | Universo conectado, universos alternos y producción por tandas de 15 días a un mes | 2026-11-26 | Diseño 0.1 hecho y aprobado en lo principal («Sí a las 5»). **Falta:** capacidad de producción, construir las piezas del motor y cruzarlo con el calendario de temporadas | requisito A13; Drive «Canal YouTube - Entregas», archivos «Tin & Tan - Universo…» |
 | Resolver toda limitante con creatividad y ajustar el diseño con las estadísticas | 2026-11-26 | Vigente como regla | sección 9 |
+| Más cuadernos; cómo un Short se vuelve video largo; dejar el motor definido para otros personajes o marcas | 2026-11-26 | Propuesta escrita; sin producir | requisito A14; `video-studio/MOTOR_DE_CONTENIDO.md`; `plantillas/arranque_de_universo.md` |
 | Contrastar con temporadas y feriados de los países que más ven el canal, con históricos | 2026-11-26 | **En curso** (calendario por país; históricos de Trends pedidos a Keter) | `comercial/2026-11-26_calendario_de_temporadas_por_pais.md` |
 | Validar la pregunta de cada video en datos de búsqueda (Studio, autocompletado y Trends) | 2026-11-26 | Hecho para el short 4: se descartaron dos preguntas; propuesta con las consultas medidas | `comercial/2026-11-26_tema_short4_tin_y_tan.md` |
 | Ninguna prueba sin todos los cambios pedidos, incluidos los colores | 2026-11-26 | Vigente. La prueba del mundo 3D y el clip de comparación quedan **detenidos** hasta tener la paleta nueva y los demás pedidos dentro | `CLAUDE.md` |

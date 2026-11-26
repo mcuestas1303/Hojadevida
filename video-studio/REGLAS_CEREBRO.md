@@ -210,3 +210,10 @@
   es un cuaderno con tres hojas (una por paleta); el rival es una pregunta que se responde y nunca muere ni da miedo; las
   respuestas del misterio no van al repositorio público; de las teorías conspirativas como tema quedan fuera salud,
   elecciones, tragedias y las que señalan a grupos; la primera tanda dura cuatro semanas y empieza con el short 4.
+
+- **Más cuadernos, video largo y motor replicable (dueño, 2026-11-26):** «si el universo es un cuaderno, podrían haber más
+  cuadernos […] lo que generamos en Shorts, ¿cómo se transforma en un video más largo? […] explicar más el universo de Tin
+  y Tan y explicarlo con base a las estadísticas de escenarios actuales de la realidad […] dejando definido, en caso
+  tomemos otro caso de otros personajes o marcas […], qué es lo que tendríamos que definir al principio con otra marca o
+  personajes para aprovechar al máximo el motor». Método general: `video-studio/MOTOR_DE_CONTENIDO.md`; plantilla de
+  arranque: `video-studio/plantillas/arranque_de_universo.md`.

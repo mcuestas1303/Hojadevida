@@ -96,6 +96,12 @@ elementos psicológicos».
   se convierte en parte del universo o del plan, lo anota con el dato que lo motivó y sigue. No toca lo que no se mueve
   (fuentes, seguridad, línea editorial, el sí del dueño). Para Tin & Tan: `PARAMETROS.md`, sección 9.
 
+- **Motor de contenido replicable (regla del dueño, 2026-11-26):** lo que se define con Tin & Tan (conceptualización,
+  universo, formatos corto y largo, biblioteca de elementos, conexiones, adaptación) «se vuelve parte de cómo definimos
+  conceptualización, universo de los personajes y contexto para el motor» y debe poder replicarse «con otros personajes o
+  marcas comerciales». Método: `video-studio/MOTOR_DE_CONTENIDO.md`. Con cada personaje o marca nuevos se llena primero
+  `video-studio/plantillas/arranque_de_universo.md`. Los secretos de un universo no van al repositorio público.
+
 ## Qué se ve en cada conversación (regla del dueño, 2026-11-21)
 
 Textual: «siempre lo terminado preséntamelo en equipo de producción audiovisual; aquí quiero que veamos
