@@ -115,6 +115,14 @@ elementos psicológicos».
   en archivos se lee `video-studio/mapa/MAPA.md` (el estudio como grafo; se regenera con `herramientas/mapa.py` al cerrar
   cada video y cuando cambia una regla).
 
+- **Cada conversación, su oficio (regla del dueño, 2026-11-26):** «Bajo mi lógica vos solo generás el prompt y se lo
+  pasás a producción audiovisual; producción debe tener los métodos para generar el video, así que por tu parte solo te
+  quedás de ahora en adelante con generar el prompt, no tenés que generar el video; y mi lógica me dice que el video va
+  primero y después va el audio: que eso lo defina el equipo audiovisual». El **Generador de prompts** entrega el
+  paquete de prompt (método 1) y ahí termina: no construye, no renderiza, no genera voz ni video, no presenta piezas.
+  El **Equipo de producción audiovisual** produce con el método 2, que es suyo: decide el orden (el dueño propone
+  imagen primero y audio después) y lo deja escrito en `video-studio/metodo/2_produccion_audiovisual.md`.
+
 - **El método no se salta: puerta de presentación (regla del dueño, 2026-11-26):** «La idea de definir un método es que
   no te lo saltes, que no vuelva a pasar». Ninguna pieza terminada se le presenta al dueño, ni se le dice «listo para
   revisar», sin que `python3 video-studio/herramientas/puerta_de_presentacion.py <proyecto> <pieza>` diga PASA: animación,

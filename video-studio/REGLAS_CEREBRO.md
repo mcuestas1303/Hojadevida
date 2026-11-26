@@ -251,3 +251,13 @@ presenta si `herramientas/puerta_de_presentacion.py <proyecto> <pieza>` dice PAS
 `07_revision/firmas.md` sobre el sha256 de esa pieza. Si no pasa, se dice qué falta y de quién depende; no se presenta
 «con reservas». Método 2, paso A9b.
 
+## Cada conversación, su oficio: el Generador no produce (regla del dueño, 2026-11-26)
+
+Textual: «Bajo mi lógica vos solo generás el prompt y se lo pasás a producción audiovisual; producción debe tener los
+métodos para generar el video, así que por tu parte solo te quedás de ahora en adelante con generar el prompt, no tenés
+que generar el video; y mi lógica me dice que el video va primero y después va el audio: que eso lo defina el equipo
+audiovisual». Motivo: el short 4 lo construyó el Generador (voz, motor, render) y se lo presentó al dueño sin que
+producción lo viera. Desde hoy el Generador entrega el paquete de prompt y avisa; producción construye, revisa, pasa la
+puerta de presentación y presenta. El orden de producción (el dueño propone imagen primero, audio después) lo fija el
+Equipo de producción audiovisual en el método 2.
+
