@@ -578,3 +578,15 @@ se regenera con `codigo/tiempos.py`, `motor_de_accion/render.js` con el guion `t
 `codigo/componer.py --video`). Hojas de contacto y controles: `07_revision/` (`controles.md`). Reporte:
 `reporte_de_publicacion.md`. Falta: ojo y oído humanos, firma de cada oficio, sello de fecha del día de publicar y el sí
 del dueño. No publicado.
+
+### 2026-11-26 · Generador → Equipo: short 4, versión 2 (encuadre)
+
+- Video: `proyectos/2026-11-26_tin_y_tan_what_is_gta_6/06_final/tin_y_tan_short04_v2.mp4` (32.87 s; no se sube al
+  repositorio: se regenera con `codigo/tiempos.py`, `motor_de_accion/render.js`, `codigo/componer.py --video` y
+  `codigo/audio.py`). Hojas de contacto: `07_revision/hoja_v2_00.jpg` a `hoja_v2_08.jpg`. Controles: `07_revision/controles.md`, sección V2.
+- Qué cambia frente a la v1: cámaras más cerca y más bajas, techo con lámparas, acción secundaria en los tramos
+  quietos, Tan pasa por detrás de Tin, disco de papel tras la madeja, caja rota a la vista, sello dentro de la zona de
+  datos, anillo amarillo, calcos en todo el vuelo. Mismo guion, voz, tiempos y contactos. 0 créditos.
+- Sigue pendiente de una persona: ver el video, oír la voz («it» de más que oye el reconocedor en el video entero) y
+  los sonidos; el televisor sigue detrás del subtítulo en los generales.
+

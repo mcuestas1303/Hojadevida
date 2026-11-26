@@ -1,7 +1,7 @@
 # Reporte de publicación — TIN-EN-S-004 · What Is GTA 6, and Is a GTA 7 Coming?
 
 > Escrito el 2026-11-26, antes de pedir el sí para publicar. **Estado: listo para que el dueño lo revise; no publicado.**
-> Video: `06_final/tin_y_tan_short04_v1.mp4` (32.87 s). Controles: `07_revision/controles.md`.
+> Video: `06_final/tin_y_tan_short04_v2.mp4` (32.87 s; la v2 corrige el encuadre de la v1: cámaras más cerca, techo, acción secundaria; mismo guion, voz y tiempos). Controles: `07_revision/controles.md` (sección V2). Hojas: `07_revision/hoja_v2_*.jpg`.
 
 ## 1. Qué es
 

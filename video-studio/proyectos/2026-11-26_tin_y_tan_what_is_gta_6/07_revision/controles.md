@@ -1,4 +1,65 @@
-# Controles del short 4 (TIN-EN-S-004) — 2026-11-26
+# Controles del short 4 (TIN-EN-S-004) — versión 2 (2026-11-26)
+
+Video: `06_final/tin_y_tan_short04_v2.mp4` (1080×1920, 30 f/s, H.264 + AAC, 986 f = 32.87 s). Hojas de contacto de todo
+el video (1 de cada 6 fotogramas): `07_revision/hoja_v2_00.jpg` a `hoja_v2_08.jpg`. **Ninguna persona ha visto ni oído
+el video: esto son medidas y la revisión de las hojas por quien lo construyó.** Falta la firma del supervisor de
+continuidad y de cada oficio. La v1 y sus controles quedan más abajo, sin tocar, como historial.
+
+## V2 · Qué cambió frente a la v1
+
+No cambian el guion, la voz, la línea de tiempo ni los fotogramas de contacto (986 f; mismos K).
+
+| Pedido de la revisión | Qué se hizo | Estado |
+|---|---|---|
+| Encuadre: personajes pequeños y pared vacía arriba | Cámaras más cerca y más bajas (`codigo/tiempos.py`, `planos`). Tin y Tan (≈ 1,9 u) pasan de ≈ 385 px a: ≈ 400–425 px (21–22 %) mientras el rival mide 1,4–1,5 veces (f30–f300, generales), ≈ 530 px (27–28 %) en los planos de golpe 1 y 2, ≈ 475–520 px (25–27 %) del segundo 11 al 20, ≈ 550–600 px (29–31 %) en golpe 4, remate, golpe 6 y final, y ≈ 675 px (35 %) cuando Tan invita. (Tamaños calculados con la distancia de cada cámara y comprobados a ojo en las hojas; no medidos píxel a píxel.) Techo a 8,2 u con su línea, una viga y tres lámparas en tinta (sin texto ni marcas): llena la banda alta de los planos generales | **Hecho, con un límite:** en f30–f300 no se puede acercar más sin que la cabeza del rival (1,5 veces) quede detrás del subtítulo; en los planos cercanos del final el techo queda fuera de cuadro y la banda alta es pared lisa con el dato |
+| Subtítulos que tapan el televisor y la cabeza del rival | Franja intacta (y 905–1085). La cabeza del rival queda bajo el panel en los generales; el rival ya no se queda de pie sobre el mostrador (espera agachado) | **A medias: el televisor sigue detrás del panel en los generales** hasta que estalla. Con la cámara recta y la franja fija, un objeto a esa altura y distancia cae en la franja salvo con la cámara alta y lejos de la v1. La llama y la grieta se ven por encima del panel y en el cuadro de impacto (f562–f563). En los planos de golpe el rival cruza la franja mientras vuela |
+| Tramos casi quietos (f338–f430 y f442–f483; respiro f800–f834) | Empuje lento de cámara en 8 planos; Tan festeja y camina hasta su marca; Tin festeja; el rival amaga dos veces sobre el mostrador; en el respiro Tan retrocede, Tin amaga y el rival se infla. Ningún contacto se movió | Hecho (por las hojas; el ritmo lo juzga un ojo) |
+| Rival demasiado pequeño al final | P19, P20 y P21 más cerca (D 15 → 11–9,4): el rival de 0,8 veces mide ≈ 440–510 px de alto en el golpe 6 | Hecho |
+| Rojo de la llama a través de la madeja | Disco de papel detrás de la madeja mientras vuela hacia el televisor (f628–f716) | Hecho (ver f705–f712 en la hoja) |
+| Tan cruza por delante de Tin antes del mazo | Tan retrocede con el bloqueo y pasa **por detrás** de Tin (z −2,95 frente a −2,6), f570–f584 | Hecho |
+| Sello «as of…» fuera de la zona de datos | Bloque de la respuesta más compacto: y 394–700 | Hecho |
+| `caja_registradora_rota` y grieta tapadas en el plano final | Caja en (130; 1379), a la izquierda de Tan, entera a la vista. Grieta de salida en (901; 1396), a la derecha de Tin | **Caja: hecho** (el centro queda 5 px dentro del borde izquierdo de la zona 125–215; la pieza ocupa ≈ x 80–185). **Grieta: en zona, pero es pequeña y tiene cajas caídas al lado; no la distingo con seguridad en el último fotograma** |
+| Anillo amarillo en la explosión | Anillo de acento con contorno de tinta, 9 f desde f728 | Hecho; destellos siguen en 3 por segundo |
+| Calcos en los vuelos (A2) | Los tres calcos del rival duran todo el vuelo (K+2 a K+15), no solo el lanzamiento | Hecho; **sigue sin borrón de movimiento** |
+| «it» de más en la mezcla | Bajé el choque contra el mostrador (−14 → −18 dBFS) y el silbido de caída (−22 → −26). El reconocedor **sigue oyendo «GTA 6. It came out»** al transcribir el video entero; con el tramo 10,3–14,5 s de la misma mezcla aislado oye la frase exacta, y con voz + efectos y voz + percusión también | **No resuelto por medida**: parece cosa del reconocedor al partir la frase en la pausa, no de un sonido concreto; lo decide un oído |
+
+## V2 · Medidas
+
+| Control | Resultado |
+|---|---|
+| Voz del diálogo solo (`revisar_voz.py`, `dialogo_110.wav`) | 74 palabras, 0 diferencias (sin cambios) |
+| Voz en el video v2 | **0 palabras perdidas; 1 de más («it»)** (`voz_video_final_v2.md`); ver fila de arriba |
+| `revisar_fotogramas.py` sobre la v2 | Sin marcas: ni imagen congelada, ni fotogramas vacíos, ni destellos de más; 19 planos detectados, el más corto 0,3 s |
+| Destellos (`comprobar_destellos`, 986 f) | **PASA**: 10 cambios bruscos, máximo 3 en 1 s (tope 3) hacia 23,97 s; mayor salto 24,9 de 255 (tope 40); ninguno a pantalla completa |
+| Firma (`comprobar_firma`) | **PASA**, mismas cifras: texto 451,1 px, televisor 112,1 px, cabeza de Tan 27,1 px, cabeza de Tin 45,7 px. El techo nuevo queda fuera de cuadro en el plano de portada. Excepción D6 igual |
+| Color (`revisar_color.py`, 14 colores) | ≈ 91 % dentro de la paleta (umbral 85 %); saturación media ≈ 12 %; entre segundos ±3 % (`color_v2.txt`) |
+| Sonido (`codigo/audio.py`) | Mezcla −14,0 LUFS, pico −1,3 dBTP; silencio total f688–f693: pico 0,0; 53 eventos + 4 de la firma. **Nadie los ha oído** |
+| Datos | Todos quietos 36 f o más; todos dentro de y 380–700 (la respuesta: 394–700) |
+| Conexiones (plano final) | Mando (161; 770) en zona · caja rota (130; 1379) · asterisco (540; 1396) · grieta (901; 1396) |
+| `revisar_texto.py`, `puntuar_ficha.py`, filtro de políticas sobre el video | **No corridos** (igual que en la v1) |
+
+## V2 · Lista A1–A14 (solo lo que cambia frente a la tabla de la v1)
+
+- **A2:** sigue a medias: calcos en todo el vuelo, pero sin borrón de movimiento y el reloj lento solo frena humo y escombros.
+- **A3:** igual: la cámara corta y hace empujes lentos (ahora en 8 planos); no viaja dentro del mundo.
+- **A12:** resuelto lo del rojo a través de la madeja.
+- **A13:** caja rota a la vista; la grieta, con la reserva de arriba.
+- A1 (sin comparar plano por plano con la referencia) y A7 (nadie ha oído los sonidos): igual que en la v1.
+
+## V2 · Defectos que siguen (vistos en las hojas)
+
+1. f30–f85: Tin y Tan ≈ 21 % del alto y la franja entre el techo y el subtítulo es pared lisa (no hay dato todavía).
+2. El televisor queda detrás del subtítulo en los generales (fila de arriba).
+3. En los planos cercanos del final (f750–f955) la banda alta es pared lisa con el dato; el techo no entra.
+4. f240–f276: el rival queda pegado al borde derecho del cuadro.
+5. El cartel caído hace de primer término abajo a la derecha en f300–f430 y tapa parte del suelo.
+6. Tin y Tan miden 487 px en la firma y entre ≈ 400 y ≈ 600 px en la pelea: la diferencia es menor que en la v1, pero sigue habiendo salto en los dos cortes de firma.
+7. Sello «as of Nov 26, 2026»: hay que volver a componer con la fecha del día de publicar.
+
+---
+
+# Historial: controles de la versión 1
+
 
 Video: `06_final/tin_y_tan_short04_v1.mp4` (1080×1920, 30 f/s, H.264 + AAC, 986 f = 32.87 s). Hojas de contacto de todo
 el video (1 de cada 6 fotogramas): `07_revision/hoja_final_00.jpg` a `hoja_final_08.jpg`. **Ninguna persona ha visto ni

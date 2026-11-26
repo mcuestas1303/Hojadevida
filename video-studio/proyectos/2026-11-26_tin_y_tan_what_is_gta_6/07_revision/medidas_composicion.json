@@ -178,19 +178,20 @@
    "quieto_f": 56,
    "caja": [
     100,
-    414,
+    394,
     793,
-    720
+    700
    ]
   }
  ],
  "destellos": {
   "fotogramas": 986,
-  "cambios_bruscos": 9,
+  "cambios_bruscos": 10,
   "fotogramas_con_cambio": [
    100,
    336,
    338,
+   430,
    564,
    671,
    719,
@@ -200,8 +201,8 @@
   ],
   "max_cambios_en_1_s": 3,
   "segundo_del_maximo": 23.97,
-  "mayor_salto_de_luminosidad": 25.1,
-  "segundo_del_mayor_salto": 11.27,
+  "mayor_salto_de_luminosidad": 24.9,
+  "segundo_del_mayor_salto": 11.2,
   "saltos_a_pantalla_completa": [],
   "limites": {
    "umbral": 10.0,
