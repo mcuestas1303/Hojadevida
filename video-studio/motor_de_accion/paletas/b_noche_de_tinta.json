@@ -1,0 +1,27 @@
+{
+ "nombre": "B · Noche de tinta",
+ "para": "temas de noche, misterio, tecnología, espacio",
+ "colores": {
+  "fondo": "#141B33",
+  "suelo": "#27304F",
+  "cuadricula": "rgba(243,233,210,0.22)",
+  "linea": "#F3E9D2",
+  "rival": "#B79CFF",
+  "bloque_cerca": "#3A4570",
+  "bloque_lejos": "#1C2444",
+  "utileria": "#9A6A45",
+  "fuego_nucleo": "#FFE45C",
+  "fuego_borde": "#B81414",
+  "acento": "#4FE3FF",
+  "estrella": "#FFE45C",
+  "humo": "#9A6A45",
+  "polvo": "#5A6690",
+  "sombra": "#0B0F1F"
+ },
+ "personajes": {
+  "tinta": "#F3E9D2"
+ },
+ "estudio": "video-studio/estudios/2026-11-26_color_por_estadisticas_y_psicologia.md",
+ "aprobada_por_el_dueno": "2026-11-26: «me gustan los A, B y C»",
+ "id": "b_noche_de_tinta"
+}

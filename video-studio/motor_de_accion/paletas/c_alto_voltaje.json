@@ -1,0 +1,32 @@
+{
+ "nombre": "C · Alto voltaje",
+ "para": "temas de deporte, competencia, velocidad, estrenos",
+ "colores": {
+  "fondo": "#DCE6EE",
+  "suelo": "#F4F1EA",
+  "cuadricula": "rgba(27,27,34,0.20)",
+  "linea": "#1B1B22",
+  "rival": "#1B1B22",
+  "bloque_cerca": "#FFFFFF",
+  "bloque_lejos": "#B9C6D2",
+  "utileria": "#666B76",
+  "fuego_nucleo": "#FFF4B8",
+  "fuego_borde": "#B81414",
+  "acento": "#FFD21F",
+  "estrella": "#FFD21F",
+  "humo": "#666B76",
+  "polvo": "#C9D0D8",
+  "sombra": "#A7B0BC"
+ },
+ "personajes": {
+  "tinta": "#1B1B22"
+ },
+ "personajes_pendiente_del_dueno": {
+  "naranja": "#F26A1B",
+  "verde_azulado": "#1560D0",
+  "nota": "El estudio propone cambiar a Tin y a Tan en esta paleta. No se aplica hasta que el dueño diga si los personajes cambian de color con el entorno o se quedan fijos."
+ },
+ "estudio": "video-studio/estudios/2026-11-26_color_por_estadisticas_y_psicologia.md",
+ "aprobada_por_el_dueno": "2026-11-26: «me gustan los A, B y C»",
+ "id": "c_alto_voltaje"
+}

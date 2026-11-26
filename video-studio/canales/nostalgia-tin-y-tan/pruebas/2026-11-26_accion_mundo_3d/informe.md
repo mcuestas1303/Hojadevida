@@ -9,6 +9,9 @@
   instaló biblioteca de física: los trozos usan una física sencilla escrita en la escena.
 - **Dos pasadas de render** (la segunda corrige cámara, tamaño de las estrellas y cantidad de humo). Es código.
 
+> **2026-11-26, más tarde:** el código de esta prueba se mudó a `video-studio/motor_de_accion/` (ver su `README.md`),
+> donde las paletas y el entorno ya son piezas separadas. Aquí quedan el informe, la hoja de contacto y el clip sin generar.
+
 ## Cómo se rehace
 
 ```bash

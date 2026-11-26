@@ -527,3 +527,13 @@ sigue en pausa y no se escribe ningún prompt hasta que el dueño los vea.
 - Tarjeta gráfica: GeForce 940MX de 4 GB; no sirve para generar video con IA en local.
 - Estudio de color terminado: `estudios/2026-11-26_color_por_estadisticas_y_psicologia.md` (recomienda la alternativa A).
 - Detenido hasta la respuesta del dueño: la paleta, si hay armas dibujadas y la descarga extra de Alan Becker.
+
+### 2026-11-26 · Generador (escritorio) → Equipo: motor de acción, paletas por tema y entorno por tema
+
+- El dueño aprobó las tres paletas del estudio de color («me gustan los A, B y C») y pidió que el entorno se genere
+  según el tema de cada video y que todo elemento se guarde para reutilizarlo, «como un motor».
+- Hecho: `video-studio/motor_de_accion/` (README, `catalogo.json`, `paletas/`, `entornos/`, `personajes/`, `sonidos/`,
+  `escena.html`, `render.js`). El código de la prueba del mundo 3D se mudó ahí. `PARAMETROS.md` 2.1 (A10 y A11).
+- No se le presentó ninguna prueba nueva: falta el tema del short 4 (de ahí sale el entorno), los tiempos de golpe del
+  estudio de Keter, los defectos anotados y sus respuestas sobre armas dibujadas, color de Tin y Tan en la paleta C y
+  la descarga extra de Alan Becker.

@@ -1,6 +1,6 @@
 # Parámetros del canal Tin & Tan
 
-> **Versión 2.0 · 2026-11-26.** Este archivo se versiona desde hoy por pedido del dueño: «Mejor versiona los parámetros
+> **Versión 2.1 · 2026-11-26.** Este archivo se versiona desde hoy por pedido del dueño: «Mejor versiona los parámetros
 > porque hay cosas que ya te había pedido que no están implementadas». Cada versión anterior queda entera en
 > `versiones/`. La sección 8 lleva la lista de lo pedido y si está hecho o no.
 
@@ -9,6 +9,7 @@
 | 1.0 | 2026-11-24 | Parámetros flexibles; la nostalgia se elimina como criterio | historial de git |
 | 1.1 | 2026-11-26 | Ajustes «a prueba» por la primera lectura de Studio (público, tema, forma, resubir, suscripción, título) | `versiones/PARAMETROS_v1.1_2026-11-26.md` |
 | 2.0 | 2026-11-26 | **Formato de acción** (sección 7): peleas contra un rival, mundo con profundidad, efectos de acción y sonido. Lista de pedidos y su estado (sección 8) | este archivo |
+| 2.1 | 2026-11-26 | Color: paletas A, B y C aprobadas, elegidas por tema (A10). Entorno por tema y biblioteca de elementos reutilizables (A11) | este archivo |
 
 > **Regla del dueño (2026-11-24), textual:** «Cambia esas limitantes y define nuevos parámetros; podría ser que los
 > parámetros sean flexibles; con este cambio de parámetros considera cambios en todo lo demás si es necesario, incluso
@@ -140,7 +141,8 @@ le presenta como si lo cumpliera. Lo que se mide y se ajusta es el cómo y la do
 | A7 | Sonidos de golpes | Cada golpe, choque, explosión e implosión con su sonido pegado al fotograma | Línea de tiempo de audio; `revisar_voz.py` no debe perder la voz |
 | A8 | Daños en el mundo | Grietas, cosas rotas, marcas que **se quedan** hasta el final del video | El plano final muestra el daño acumulado |
 | A9 | Rival con cuerpo | Cuerpo de palitos, manos y pies; la madeja de tinta es la cabeza. Hoja de personaje propia | `personajes/duda/` |
-| A10 | Color | **Replantear los colores con base en las estadísticas y en el análisis psicológico** (dueño, 2026-11-26). Estudio en curso: `video-studio/estudios/2026-11-26_color_por_estadisticas_y_psicologia.md` | La paleta nueva, con su porqué y sus medidas, aplicada en la prueba |
+| A10 | Color | **Tres paletas aprobadas por el dueño** («me gustan los A, B y C»): A papel con fondo frío, B noche de tinta, C alto voltaje (`video-studio/motor_de_accion/paletas/`). La paleta se elige por el tema y el entorno de cada video | La paleta del video está en su brief con el porqué; pasa `revisar_color.py` |
+| A11 | Entorno por tema, y biblioteca | «El entorno debe cambiar dependiendo del contexto y temática del video» y se genera a partir del prompt. Todo elemento creado (entorno, utilería, efecto, sonido, pose, paleta) se guarda en `video-studio/motor_de_accion/` con su entrada en `catalogo.json` para reutilizarlo | El brief nombra el entorno (nuevo o reutilizado) y el catálogo queda al día después de cada video |
 
 **Lo que no se mueve aunque el formato sea de acción** (sección 2): ninguna persona real ni quien la represente recibe
 golpes; máximo 3 destellos por segundo; cada dato con su fuente; la firma del lápiz bumerán y los subtítulos en español.
@@ -161,7 +163,8 @@ Alternativas de producción, con lo que cada una cumple y lo que cuesta:
 | Portada que nombra al sujeto | 2026-11-24 | Hecho en el short 3 v2 | `DESIGN.md` |
 | Profundidad y más efectos de video | 2026-11-23 | **A medias.** El short 3 usa capas con paralaje, foco y sombras (`efectos.py`). No hay un mundo con el que los personajes interactúen | `cambios/2026-11-23_profundidad_y_efectos_tin_y_tan.md` |
 | Personajes 2D con interacción 3D con su mundo | reiterado el 2026-11-26 | **Sin hacer** | requisito A3 |
-| Replantear los colores con base en estadísticas y análisis psicológico | 2026-11-26 | **En curso** (estudio); sin aplicar | requisito A10 |
+| Replantear los colores con base en estadísticas y análisis psicológico | 2026-11-26 | Estudio hecho; el dueño aprobó las paletas A, B y C. Cargadas en el motor; **falta** decidir si en la C cambian los colores de Tin y Tan | requisito A10 |
+| Entorno generado según el tema del video y motor que guarda los elementos para reutilizarlos | 2026-11-26 | **Empezado:** motor con paletas, entornos, personajes, sonidos y catálogo; solo hay un entorno de relleno | requisito A11; `motor_de_accion/README.md` |
 | Ninguna prueba sin todos los cambios pedidos, incluidos los colores | 2026-11-26 | Vigente. La prueba del mundo 3D y el clip de comparación quedan **detenidos** hasta tener la paleta nueva y los demás pedidos dentro | `CLAUDE.md` |
 | Formato de acción y peleas como en los videos de stickman | 2026-11-26 | **Sin hacer.** La prueba del 2026-11-26 no lo cumple: sin mundo, sin cambios de velocidad, sin fuego ni humo, sin sonido | requisitos A1 y A2 |
 | Fuego, humo, choques, explosiones, implosiones, daños en el mundo | 2026-11-26 | **Sin hacer.** `efectos.py` no tiene ninguna de esas funciones | requisitos A4 a A8 |

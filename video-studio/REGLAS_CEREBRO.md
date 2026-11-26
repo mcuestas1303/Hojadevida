@@ -179,3 +179,9 @@
   solicitados, incluidos los colores». Una prueba o una pieza solo se presenta o se genera cuando lleva todos los pedidos
   vigentes del canal (`PARAMETROS.md`, secciones 7 y 8). Si falta uno, se dice cuál y de quién depende.
 - **Colores (dueño, 2026-11-26):** «Replantear los colores con base a estadísticas y análisis psicológico».
+
+- **Entorno por tema y motor de elementos (dueño, 2026-11-26):** «El entorno idealmente se debe generar con base al
+  prompt, es decir, el contexto y temática […] como un motor […] donde en la medida que vayamos generando videos todos los
+  elementos los vayas almacenando, por si caben o se quieren reutilizar en algún otro video; pero el entorno debe cambiar
+  dependiendo del contexto y temática del video». Biblioteca: `video-studio/motor_de_accion/` con `catalogo.json`.
+- **Paletas (dueño, 2026-11-26):** «me gustan los A, B y C» (estudio de color del 2026-11-26). Se eligen por tema.

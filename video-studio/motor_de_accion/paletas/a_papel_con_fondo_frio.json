@@ -1,0 +1,25 @@
+{
+ "nombre": "A · Papel con fondo frío",
+ "para": "temas de día, cotidianos, de datos; la de partida",
+ "colores": {
+  "fondo": "#C9D6DE",
+  "suelo": "#F3E9D2",
+  "cuadricula": "rgba(43,36,32,0.20)",
+  "linea": "#2B2420",
+  "rival": "#2B2420",
+  "bloque_cerca": "#FFF8EC",
+  "bloque_lejos": "#B4C3CD",
+  "utileria": "#9C6A44",
+  "fuego_nucleo": "#FFE45C",
+  "fuego_borde": "#B81414",
+  "acento": "#1B45C4",
+  "estrella": "#FFE45C",
+  "humo": "#664022",
+  "polvo": "#E6D8B8",
+  "sombra": "#A9A190"
+ },
+ "personajes": {},
+ "estudio": "video-studio/estudios/2026-11-26_color_por_estadisticas_y_psicologia.md",
+ "aprobada_por_el_dueno": "2026-11-26: «me gustan los A, B y C»",
+ "id": "a_papel_con_fondo_frio"
+}
