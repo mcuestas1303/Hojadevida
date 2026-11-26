@@ -103,9 +103,10 @@ class Personaje {
     this.malla.customDepthMaterial = new THREE.MeshDepthMaterial({ depthPacking: THREE.RGBADepthPacking, map: this.tex, alphaTest: 0.3 });
     this.previa = null;
   }
-  dibujar(pose, mira, cabeza, borron, opaco = 1) {
+  dibujar(pose, mira, cabeza, borron, opaco = 1, extra = null) {
     const g = this.cx, pr = this.pr, e = esqueleto(pr, pose, mira);
-    g.clearRect(0, 0, LIENZO, LIENZO);
+    g.setTransform(1, 0, 0, 1, 0, 0); g.clearRect(0, 0, LIENZO, LIENZO);
+    if (extra && extra.aplasta) { g.translate(CAD[0], CAD[1] + e.bajo * U); g.scale(1 + 0.5 * extra.aplasta, 1 - 0.6 * extra.aplasta); g.translate(-CAD[0], -(CAD[1] + e.bajo * U)); }
     const px = p => [CAD[0] + p[0] * U, CAD[1] + p[1] * U];
     const traza = (pts, alfa) => {
       g.globalAlpha = alfa; g.strokeStyle = C.linea; g.fillStyle = C.linea; g.lineWidth = pr.g * U; g.lineCap = 'round'; g.lineJoin = 'round';
@@ -121,10 +122,39 @@ class Personaje {
     const im = IMG[cabeza], q = px(e.cabeza), s = pr.sprite;
     g.save(); g.globalAlpha = opaco; g.translate(q[0], q[1]); g.scale(mira, 1); g.rotate((pose.t * 0.6 + (pose.c || 0)) * Math.PI / 180);
     g.drawImage(im, -s / 2, -s / 2, s, s); g.restore();
+    if (extra && extra.lapiz) this.lapiz(e, px, mira);
     for (const k of ['lF', 'aF']) this.miembro(e, k, opaco, px, traza, mira);
+    if (extra && extra.arma) this.arma(e, pose, px, mira, extra.arma);
     g.globalAlpha = 1;
+    if (extra && extra.revela !== undefined && extra.revela < 1) {            // se dibuja de un trazo: de los pies a la cabeza
+      const y0 = CAD[1] + e.bajo * U, alto = y0 - 40; g.clearRect(0, 0, LIENZO, y0 - alto * extra.revela);
+    }
     this.tex.needsUpdate = true; this.previa = e;
     return e;
+  }
+  lapiz(e, px, mira) {                                   // el lápiz mostaza de Tin, en la mano de atrás (dibuja, no golpea)
+    const g = this.cx, q = px(e.aB[1]), L = 0.95 * U, a = -0.9;
+    g.save(); g.translate(q[0], q[1]); g.scale(mira, 1); g.rotate(a); g.lineCap = 'butt';
+    g.strokeStyle = C.linea; g.lineWidth = 0.26 * U; g.beginPath(); g.moveTo(-0.5 * L, 0); g.lineTo(0.62 * L, 0); g.stroke();
+    g.strokeStyle = '#E8B33B'; g.lineWidth = 0.16 * U; g.beginPath(); g.moveTo(-0.42 * L, 0); g.lineTo(0.5 * L, 0); g.stroke();
+    g.strokeStyle = '#D9583B'; g.beginPath(); g.moveTo(-0.5 * L + 3, 0); g.lineTo(-0.36 * L, 0); g.stroke();
+    g.fillStyle = C.linea; g.beginPath(); g.moveTo(0.5 * L, -0.13 * U); g.lineTo(0.78 * L, 0); g.lineTo(0.5 * L, 0.13 * U); g.closePath(); g.fill();
+    g.restore();
+  }
+  arma(e, pose, px, mira, arma) {                        // armas dibujadas con tinta: bastón, mazo, espada (nunca armas de fuego)
+    const g = this.cx, ang = (pose.armaAng === undefined ? pose.aF[1] : pose.armaAng) * Math.PI / 180, p = arma.prog === undefined ? 1 : arma.prog;
+    const dir = [mira * Math.sin(ang), Math.cos(ang)], h = e.aF[1], en = s => px([h[0] + dir[0] * s, h[1] + dir[1] * s]);
+    g.strokeStyle = C.linea; g.fillStyle = C.linea; g.lineCap = 'round'; g.lineJoin = 'round';
+    const linea = (a, b, w) => { const A = en(a), B = en(a + (b - a) * p); g.lineWidth = w * U; g.beginPath(); g.moveTo(A[0], A[1]); g.lineTo(B[0], B[1]); g.stroke(); };
+    if (arma.tipo === 'baston' || arma.tipo === 'mazo') {
+      linea(-1.0, 2.5, 0.2);
+      if (arma.tipo === 'mazo') { const q = arma.bloque === undefined ? 1 : arma.bloque, c = en(2.5); g.save(); g.translate(c[0], c[1]); g.rotate(Math.atan2(dir[1], dir[0])); g.fillRect(-0.45 * U * q, -0.75 * U * q, 0.9 * U * q, 1.5 * U * q); g.restore(); }
+    } else if (arma.tipo === 'espada') {
+      const largo = arma.rota ? 1.35 : 2.9; linea(-0.35, largo, 0.17);
+      if (p > 0.3) { const c = en(0.25), n = [-dir[1], dir[0]]; g.lineWidth = 0.15 * U; g.beginPath(); g.moveTo(c[0] - n[0] * 0.38 * U, c[1] - n[1] * 0.38 * U); g.lineTo(c[0] + n[0] * 0.38 * U, c[1] + n[1] * 0.38 * U); g.stroke(); }
+      if (arma.rota) { const c = en(largo), n = [-dir[1], dir[0]]; g.lineWidth = 0.1 * U; g.beginPath(); g.moveTo(c[0] - n[0] * 0.14 * U, c[1] - n[1] * 0.14 * U); g.lineTo(c[0] + dir[0] * 0.2 * U, c[1] + dir[1] * 0.2 * U); g.lineTo(c[0] + n[0] * 0.14 * U, c[1] + n[1] * 0.14 * U); g.stroke(); }
+    }
+    this.armaPunta = [h[0] + dir[0] * 2.5, h[1] + dir[1] * 2.5];
   }
   miembro(e, k, alfa, px, traza, mira) {
     const g = this.cx, pr = this.pr, base = k[0] === 'a' ? e.hombro : e.cadera;
@@ -143,6 +173,8 @@ class Personaje {
     this.cabezaMundo = new THREE.Vector3(x + e.cabeza[0] * MUNDO_R * escala, caderaY - e.cabeza[1] * MUNDO_R * escala, z);
     this.manoMundo = new THREE.Vector3(x + e.aF[1][0] * MUNDO_R * escala, caderaY - e.aF[1][1] * MUNDO_R * escala, z);
     this.pieMundo = new THREE.Vector3(x + e.lF[1][0] * MUNDO_R * escala, caderaY - e.lF[1][1] * MUNDO_R * escala, z);
+    if (this.armaPunta) this.armaMundo = new THREE.Vector3(x + this.armaPunta[0] * MUNDO_R * escala, caderaY - this.armaPunta[1] * MUNDO_R * escala, z);
+    this.alto = e.bajo * MUNDO_R * escala + (-e.cabeza[1] + this.pr.cabeza) * MUNDO_R * escala;
   }
 }
 
@@ -152,7 +184,7 @@ renderer.setPixelRatio(1); renderer.setSize(W, H); renderer.setClearColor(C.fond
 renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 document.body.appendChild(renderer.domElement);
 const escena = new THREE.Scene();
-escena.fog = new THREE.Fog(C.fondo, 16, 42);
+escena.fog = new THREE.Fog(C.fondo, 30, 80);
 const camara = new THREE.PerspectiveCamera(36, W / H, 0.1, 100);
 escena.add(new THREE.HemisphereLight(0xffffff, 0xe6d8b8, 1.9));
 const sol = new THREE.DirectionalLight(0xfff4dd, 1.5);
@@ -189,6 +221,15 @@ function quemadura(x, z, r) {
   const [cx, cy] = aDano(x, z), R = r * 128, gr = gDano.createRadialGradient(cx, cy, R * 0.1, cx, cy, R);
   gr.addColorStop(0, 'rgba(43,36,32,0.85)'); gr.addColorStop(0.6, 'rgba(43,36,32,0.45)'); gr.addColorStop(1, 'rgba(43,36,32,0)');
   gDano.fillStyle = gr; gDano.beginPath(); gDano.arc(cx, cy, R, 0, 7); gDano.fill(); texDano.needsUpdate = true;
+}
+function mancha(x, z, r, alfa = 0.55, color = null) {           // quemadura plana, de borde irregular y sin degradado
+  const [cx, cy] = aDano(x, z); gDano.fillStyle = color || C.humo; gDano.globalAlpha = alfa; gDano.beginPath();
+  for (let i = 0; i <= 28; i++) { const a = i / 28 * 6.283, R = r * 128 * (0.72 + 0.28 * Math.abs(Math.sin(i * 2.7 + r * 5))); i ? gDano.lineTo(cx + Math.cos(a) * R, cy + Math.sin(a) * R) : gDano.moveTo(cx + Math.cos(a) * R, cy + Math.sin(a) * R); }
+  gDano.closePath(); gDano.fill(); gDano.globalAlpha = 1; texDano.needsUpdate = true;
+}
+function trazoSuelo(pts, grosor = 0.05) {                       // tinta sobre el suelo, en unidades del mundo
+  gDano.strokeStyle = C.linea; gDano.lineWidth = grosor * 128; gDano.lineCap = 'round'; gDano.lineJoin = 'round'; gDano.beginPath();
+  pts.forEach((p, i) => { const q = aDano(p[0], p[1]); i ? gDano.lineTo(q[0], q[1]) : gDano.moveTo(q[0], q[1]); }); gDano.stroke(); texDano.needsUpdate = true;
 }
 function garabatoResto(x, z) {
   const [cx, cy] = aDano(x, z); gDano.strokeStyle = C.linea; gDano.lineWidth = 9; gDano.lineCap = 'round'; gDano.beginPath();
@@ -229,6 +270,7 @@ const texEstrella = new THREE.CanvasTexture(lienzo(256, 256, (g) => {
   g.translate(128, 128); g.beginPath(); for (let i = 0; i < 16; i++) { const r = i % 2 ? 56 : 118, a = i * Math.PI / 8; g.lineTo(Math.cos(a) * r, Math.sin(a) * r); } g.closePath();
   g.fillStyle = C.estrella; g.fill(); g.lineWidth = 9; g.strokeStyle = '#2B2420'; g.lineJoin = 'round'; g.stroke();
 })); texEstrella.colorSpace = THREE.SRGBColorSpace;
+function disco(color, borde = 0.12) { const t = new THREE.CanvasTexture(lienzo(128, 128, (g) => { g.fillStyle = color; g.strokeStyle = C.linea; g.lineWidth = 128 * borde; g.beginPath(); g.arc(64, 64, 56, 0, 7); g.fill(); if (borde) g.stroke(); })); t.colorSpace = THREE.SRGBColorSpace; return t; }
 const particulas = [];
 const TIPOS = {
   humo:   { col: [C.humo, C.humo], op: [0.42, 0], tam: [0.45, 1.9], vida: [0.7, 1.3], g: 1.6, freno: 1.2 },
@@ -236,11 +278,16 @@ const TIPOS = {
   fuego:  { col: [C.fuego_nucleo, C.fuego_borde], op: [0.95, 0], tam: [0.7, 0.15], vida: [0.3, 0.65], g: 3.2, freno: 1.0 },
   chispa: { col: [C.fuego_nucleo, C.fuego_borde], op: [1, 0], tam: [0.16, 0.05], vida: [0.25, 0.6], g: -9, freno: 0.4 },
   tinta:  { col: [C.linea, C.linea], op: [1, 0.9], tam: [0.14, 0.05], vida: [0.5, 0.9], g: -12, freno: 0.2 },
+  // planos, sin degradado (formato de acción 2.x): humo y polvo con contorno de tinta, chispas y gotas de un solo color
+  humoC:  { tex: disco(C.humo), plano: true, tam: [0.35, 1.05], vida: [0.7, 1.2], g: 0.9, freno: 1.7 },
+  polvoC: { tex: disco(C.polvo, 0.09), plano: true, tam: [0.25, 0.9], vida: [0.45, 0.85], g: 0.4, freno: 2.6 },
+  chispaC: { tex: disco(C.fuego_nucleo, 0.2), plano: true, tam: [0.16, 0.06], vida: [0.25, 0.5], g: -9, freno: 0.4 },
+  gota:   { tex: disco(C.linea, 0), plano: true, tam: [0.15, 0.07], vida: [0.45, 0.8], g: -12, freno: 0.2 },
 };
 function soltar(tipo, pos, vel, dispersion = 1, n = 1, hacia = null) {
   const T = TIPOS[tipo];
   for (let i = 0; i < n; i++) {
-    const m = new THREE.SpriteMaterial({ map: texSuave, color: T.col[0], transparent: true, depthWrite: false });
+    const m = T.plano ? new THREE.SpriteMaterial({ map: T.tex, transparent: true, alphaTest: 0.5 }) : new THREE.SpriteMaterial({ map: texSuave, color: T.col[0], transparent: true, depthWrite: false });
     const s = new THREE.Sprite(m);
     s.position.copy(pos).add(new THREE.Vector3(ra(-1, 1), ra(-1, 1), ra(-1, 1)).multiplyScalar(0.15 * dispersion));
     escena.add(s);
@@ -254,7 +301,9 @@ function pasoParticulas(dS) {
     if (u >= 1) { escena.remove(p.s); p.s.material.dispose(); particulas.splice(i, 1); continue; }
     if (p.hacia) { p.s.position.lerp(p.hacia, clamp(dS * 7 * (0.4 + u * 2))); }
     else { p.v.y += p.T.g * dS; p.v.multiplyScalar(Math.max(0, 1 - p.T.freno * dS)); p.s.position.addScaledVector(p.v, dS); if (p.s.position.y < 0.05) { p.s.position.y = 0.05; p.v.y *= -0.3; } }
-    const t = (p.T.tam[0] + (p.T.tam[1] - p.T.tam[0]) * u) * p.k; p.s.scale.set(t, t, 1);
+    let t = (p.T.tam[0] + (p.T.tam[1] - p.T.tam[0]) * u) * p.k;
+    if (p.T.plano) { if (u > 0.7) t *= (1 - u) / 0.3; p.s.scale.set(t, t, 1); continue; }      // plano: no se desvanece, se encoge
+    p.s.scale.set(t, t, 1);
     p.s.material.opacity = p.T.op[0] + (p.T.op[1] - p.T.op[0]) * u * u;
     p.s.material.color.copy(c0.set(p.T.col[0])).lerp(c1.set(p.T.col[1]), u);
   }
@@ -297,8 +346,9 @@ function pasoTrozos(dS) {
     const d = t.userData; if (d.quieto) continue;
     d.v.y -= 22 * dS; t.position.addScaledVector(d.v, dS);
     t.rotation.x += d.w.x * dS; t.rotation.y += d.w.y * dS; t.rotation.z += d.w.z * dS;
-    if (t.position.y < 0.24) {
-      t.position.y = 0.24; if (Math.abs(d.v.y) < 1.4) { d.v.set(0, 0, 0); d.quieto = true; t.rotation.set(Math.round(t.rotation.x / 1.5708) * 1.5708, t.rotation.y, Math.round(t.rotation.z / 1.5708) * 1.5708); }
+    const piso = d.piso || 0.24;
+    if (t.position.y < piso) {
+      t.position.y = piso; if (Math.abs(d.v.y) < 1.4) { d.v.set(0, 0, 0); d.quieto = true; t.rotation.set(Math.round(t.rotation.x / 1.5708) * 1.5708, t.rotation.y, Math.round(t.rotation.z / 1.5708) * 1.5708); }
       else { d.v.y *= -0.38; d.v.x *= 0.62; d.v.z *= 0.62; d.w.multiplyScalar(0.55); }
     }
   }
@@ -313,7 +363,7 @@ let cuadroN = 0;
 const marca = nombre => EVENTOS.push({ nombre, cuadro: cuadroN });
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 const { guion } = await import(`./guiones/${GUION}.js`);
-const GU = guion({ THREE, P, V, C, EASE, clamp, ra, marca, grieta, quemadura, garabatoResto, onda, soltar, estrella, focos, romperCajones, empujarTrozos, estado, entorno: ENT, personajes: { tin, tan, duda }, escena, caja, camara, W, H, FPS });
+const GU = await guion({ THREE, P, V, C, EASE, clamp, ra, pista, escalon, mezcla, marca, grieta, quemadura, mancha, trazoSuelo, garabatoResto, onda, soltar, estrella, focos, romperCajones, empujarTrozos, trozos, estado, entorno: ENT, personajes: { tin, tan, duda }, escena, caja, camara, lienzo, disco, W, H, FPS });
 const { G, CAM, HECHOS, FIN } = GU, velocidad = GU.velocidad;
 
 let S = 0, hecho = 0;
@@ -323,23 +373,33 @@ function actualizar(dS) {
     const pos = pista(g.pos, S), pose = pista(g.pose, S), mira = escalon(g.mira, S), esc = pista(g.escala, S);
     const cara = p.id === 'duda' ? `duda_${Math.floor(cuadroN / 3) % 4}` : `${p.id}_${escalon(g.cara, S)}`;
     const antes = p.ultimaPos || pos, rapidez = Math.hypot(pos[0] - antes[0], pos[1] - antes[1], pos[2] - antes[2]) / Math.max(dS, 1e-4);
-    const e = p.dibujar(pose, mira, cara, rapidez > 7, 1);
+    const extra = GU.extra ? GU.extra(p.id, S) : null;
+    p.malla.visible = g.visible ? escalon(g.visible, S) : true;
+    const e = p.dibujar(pose, mira, cara, GU.porFotogramas ? false : rapidez > 7, 1, extra);
     p.colocar(e, pos[0], pos[1], pos[2], esc); p.ultimaPos = pos;
+    if (extra && extra.giro) p.malla.rotation.z = extra.giro; else p.malla.rotation.z = 0;
   }
   if (GU.cadaCuadro) GU.cadaCuadro(S, dS, cuadroN);
   pasoFocos(S, dS); pasoParticulas(dS); pasoOndas(dS); pasoEstrellas(dS); pasoTrozos(dS);
   // cámara dentro del mundo, con temblor que se apaga (≤ 8 fotogramas fuertes)
+  if (GU.camara) { GU.camara(S, camara); return; }
   const cp = pista(CAM.pos, S), cm = pista(CAM.mira, S);
   estado.temblor *= Math.pow(0.0009, dS / 0.35);
   camara.position.set(cp[0] + Math.sin(cuadroN * 2.4) * estado.temblor, cp[1] + Math.cos(cuadroN * 3.1) * estado.temblor, cp[2]);
   camara.lookAt(cm[0], cm[1], cm[2]);
 }
-window.cuadro = () => {
+window.cuadro = (pintar = true) => {
+  if (GU.porFotogramas) {                                  // S = número de fotograma; el reloj de la escena solo frena la física
+    S = cuadroN; const v = GU.reloj ? GU.reloj(S) : 1; actualizar(v / FPS); if (pintar) renderer.render(escena, camara); cuadroN++;
+    return { S, fin: cuadroN >= FIN, cuadro: cuadroN, velocidad: v };
+  }
   const dS = cuadroN === 0 ? 0 : velocidad(S) / FPS;
   S += dS; actualizar(dS); renderer.render(escena, camara); cuadroN++;
   return { S, fin: S >= FIN, cuadro: cuadroN, velocidad: velocidad(S) };
 };
-window.foto = () => renderer.domElement.toDataURL('image/jpeg', 0.93);
+window.foto = () => renderer.domElement.toDataURL('image/jpeg', 0.96);
+window.proyecta = (x, y, z) => { camara.updateMatrixWorld(); const v = new THREE.Vector3(x, y, z).project(camara); return [(v.x + 1) / 2 * W, (1 - v.y) / 2 * H]; };
+window.MEDIDAS = {};
 const nombres = GU.caras;
 await Promise.all(nombres.map(cargar));
 window.LISTO = true;

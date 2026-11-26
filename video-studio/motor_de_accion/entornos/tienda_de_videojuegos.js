@@ -2,7 +2,7 @@
 // Temas: juegos, compras, estrenos. Sin logotipos, sin texto, sin arte en las cajas, sin figuras humanas.
 // Especificación: proyectos/2026-11-26_tin_y_tan_what_is_gta_6/02_prompt/direccion.md, sección 7.1.
 // Ajuste de producción (2026-11-26): el cuadro vertical solo ve ≈ 5 u de ancho a la altura de los personajes y ≈ 8 u al
-// fondo, así que la tienda mide 9 u de ancho (no 14) y los estantes van en x = ±3,3 para que se vean fugar hacia el televisor.
+// fondo, así que la tienda mide 9 u de ancho (no 14) y los estantes van en x = ±2,8 para que se vean fugar hacia el televisor.
 // Contrato: construir({THREE, escena, caja, C, lienzo}) → { cajones, pilar, piezas }. «piezas» son las que el guion mueve o rompe.
 export const FICHA = {
   id: 'tienda_de_videojuegos', temas: ['juegos', 'compras', 'estrenos'], creado: '2026-11-26',
@@ -55,7 +55,7 @@ export function construir({ THREE, escena, caja, C, lienzo }) {
       const y = 0.25 + i * 0.78, b = en(caja(0.56, 0.07, 4.34, blanco, 0.03), 0, y, 0); g.add(b); baldas.push(b);
       for (let k = 0; k < 6; k++) { const c = cajaDeJuego(); c.rotation.y = Math.PI / 2; en(c, -lado * 0.12, y + 0.26, -1.8 + k * 0.72); g.add(c); cajas.push(c); }
     }
-    en(g, lado * 3.3, 0, -6.25); escena.add(g);
+    en(g, lado * 2.8, 0, -6.25); escena.add(g);
     return { grupo: g, baldas, cajas, lado };
   }
   piezas.estante_izquierdo = estante(-1); piezas.estante_derecho = estante(1);
@@ -63,18 +63,18 @@ export function construir({ THREE, escena, caja, C, lienzo }) {
   // pila de cajas: pirámide de 10 (4, 3, 2, 1)
   const pila = [];
   for (let fila = 0; fila < 4; fila++) for (let k = 0; k < 4 - fila; k++) {
-    const c = cajaDeJuego(0.42, 0.32, 0.3); en(c, -1.5 + (k - (3 - fila) / 2) * 0.45, 0.17 + fila * 0.33, -4.6); escena.add(c); pila.push(c);
+    const c = cajaDeJuego(0.42, 0.32, 0.3); en(c, 1.25 + (k - (3 - fila) / 2) * 0.45, 0.17 + fila * 0.33, -7.0); escena.add(c); pila.push(c);
   }
   piezas.pila_de_cajas = pila;
 
   // cartel de pie, en blanco, en dos mitades (el rival lo parte en zigzag)
-  const cartel = G(); const cAbajo = en(caja(1.0, 1.1, 0.06, blanco, 0.05), 0, 0.55, 0), cArriba = G(); cArriba.add(en(caja(1.0, 1.1, 0.06, blanco, 0.05), 0, 0.55, 0)); en(cArriba, 0, 1.1, 0);
-  cartel.add(cAbajo, cArriba); en(cartel, -2.3, 0, -2.6); cartel.rotation.y = 0.25; escena.add(cartel);
+  const cartel = G(); const cAbajo = en(caja(0.7, 0.85, 0.06, blanco, 0.05), 0, 0.425, 0), cArriba = G(); cArriba.add(en(caja(0.7, 0.85, 0.06, blanco, 0.05), 0, 0.425, 0)); en(cArriba, 0, 0.85, 0);
+  cartel.add(cAbajo, cArriba); en(cartel, 3.0, 0, -0.5); cartel.rotation.y = -0.2; escena.add(cartel);
   piezas.cartel_de_pie = { grupo: cartel, abajo: cAbajo, arriba: cArriba };
 
   // postes de fila (4, con cinta), a la derecha y delante
   const postes = [], cintas = [];
-  const px = [[1.5, 1.6], [2.5, 1.6], [3.5, 1.6], [3.5, 0.4]];
+  const px = [[1.9, 0.5], [2.6, 0.5], [3.3, 0.5], [3.3, -0.5]];
   for (const [x, z] of px) {
     const p = G(); const palo = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 1.0, 10), new THREE.MeshLambertMaterial({ color: gris })); palo.position.y = 0.5; palo.castShadow = true;
     const base = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.22, 0.06, 16), new THREE.MeshLambertMaterial({ color: gris })); base.position.y = 0.03;
@@ -89,15 +89,15 @@ export function construir({ THREE, escena, caja, C, lienzo }) {
 
   // mostrador en dos mitades (se agrieta y luego se parte), con tapa blanca, y la caja registradora encima
   const mostrador = G(), mitades = [];
-  for (const s of [-1, 1]) { const m = G(); m.add(en(caja(1.6, 0.94, 0.8, gris, 0.05), 0, 0.47, 0)); m.add(en(caja(1.66, 0.07, 0.86, blanco, 0.04), 0, 0.975, 0)); en(m, s * 0.8, 0, 0); mostrador.add(m); mitades.push(m); }
-  en(mostrador, 2.3, 0, -3.4); escena.add(mostrador);
+  for (const s of [-1, 1]) { const m = G(); m.add(en(caja(1.2, 0.94, 0.8, lejos, 0.05), 0, 0.47, 0)); m.add(en(caja(1.26, 0.07, 0.86, blanco, 0.04), 0, 0.975, 0)); en(m, s * 0.6, 0, 0); mostrador.add(m); mitades.push(m); }
+  en(mostrador, 3.0, 0, -3.4); escena.add(mostrador);
   const reg = G();
   reg.add(en(caja(0.6, 0.26, 0.45, gris, 0.04), 0, 0.13, 0));
   const gaveta = en(caja(0.5, 0.1, 0.4, blanco, 0.03), 0, 0.07, 0.03); reg.add(gaveta);
   const teclado = en(caja(0.5, 0.06, 0.24, blanco, 0.03), 0, 0.29, 0.08); teclado.rotation.x = 0.35; reg.add(teclado);
   const pantalla = G(); pantalla.add(en(caja(0.3, 0.2, 0.05, tinta, 0), 0, 0.16, 0)); pantalla.add(en(caja(0.05, 0.12, 0.05, gris, 0.02), 0, 0.03, 0)); en(pantalla, 0.1, 0.26, -0.14); reg.add(pantalla);
   const cinta = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.012, 0.5), new THREE.MeshBasicMaterial({ color: blanco })); en(cinta, -0.2, 0.3, 0.1); cinta.visible = false; reg.add(cinta);
-  en(reg, 2.0, 1.01, -3.4); escena.add(reg);
+  en(reg, 2.55, 1.01, -3.4); escena.add(reg);
   piezas.mostrador = { grupo: mostrador, mitades };
   piezas.caja_registradora = { grupo: reg, gaveta, pantalla, cinta, rota: false };   // al romperse pasa a llamarse caja_registradora_rota
 
@@ -111,30 +111,31 @@ export function construir({ THREE, escena, caja, C, lienzo }) {
   en(tele, 0, 2.3, 0); isla.add(tele); en(isla, 0, 0, -7.5); escena.add(isla);
   piezas.isla_televisor = { grupo: isla, tele, pantalla: pant, lienzo: cvTele, tex: texTele };
 
-  // banderines: 12 triángulos de pared a pared
-  const banderines = G(), tri = new THREE.Shape(); tri.moveTo(-0.26, 0); tri.lineTo(0.26, 0); tri.lineTo(0, -0.55); tri.closePath();
-  const geoTri = new THREE.ShapeGeometry(tri), lista = [];
+  // banderines: 12 triángulos en una cuerda corta, justo por encima del televisor y detrás de él. Con el origen en el
+  // extremo izquierdo, para que tras la explosión cuelguen de ese lado. A esta altura no entran nunca en la zona de datos.
+  const banderines = G(), tri = new THREE.Shape(); tri.moveTo(-0.13, 0); tri.lineTo(0.13, 0); tri.lineTo(0, -0.34); tri.closePath();
+  const geoTri = new THREE.ShapeGeometry(tri), lista = [], LARGO = 3.6;
   for (let i = 0; i < 12; i++) {
-    const u = (i + 0.5) / 12, x = -4.5 + 9 * u, y = -Math.sin(u * Math.PI) * 0.45;
-    const b = G(), borde = new THREE.Mesh(geoTri, new THREE.MeshBasicMaterial({ color: tinta, side: THREE.DoubleSide })); borde.scale.set(1.16, 1.12, 1); borde.position.set(0, 0.03, -0.005);
+    const u = (i + 0.5) / 12, x = LARGO * u, y = -Math.sin(u * Math.PI) * 0.2;
+    const b = G(), borde = new THREE.Mesh(geoTri, new THREE.MeshBasicMaterial({ color: tinta, side: THREE.DoubleSide })); borde.scale.set(1.2, 1.14, 1); borde.position.set(0, 0.02, -0.005);
     b.add(borde, new THREE.Mesh(geoTri, new THREE.MeshBasicMaterial({ color: i % 2 ? lejos : blanco, side: THREE.DoubleSide })));
     en(b, x, y, 0); banderines.add(b); lista.push(b);
   }
-  const pts = []; for (let i = 0; i <= 24; i++) { const u = i / 24; pts.push(new THREE.Vector3(-4.5 + 9 * u, -Math.sin(u * Math.PI) * 0.45 + 0.02, 0)); }
-  const cuerda = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 24, 0.018, 5), new THREE.MeshBasicMaterial({ color: tinta })); banderines.add(cuerda);
-  en(banderines, 0, 5.6, -6); escena.add(banderines);
+  const pts = []; for (let i = 0; i <= 24; i++) { const u = i / 24; pts.push(new THREE.Vector3(LARGO * u, -Math.sin(u * Math.PI) * 0.2 + 0.015, 0)); }
+  const cuerda = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 24, 0.014, 5), new THREE.MeshBasicMaterial({ color: tinta })); banderines.add(cuerda);
+  en(banderines, -1.8, 3.36, -8.4); escena.add(banderines);
   piezas.banderines = { grupo: banderines, lista, cuerda };
 
   // repisa del fondo con el mando mostaza (no se toca en todo el video)
-  const repisa = en(caja(1.2, 0.07, 0.4, blanco, 0.04), -3.0, 3.0, -9.78); escena.add(repisa);
+  const repisa = en(caja(1.0, 0.07, 0.4, blanco, 0.04), -2.36, 3.02, -9.78); escena.add(repisa);
   const texMando = new THREE.CanvasTexture(lienzo(440, 260, (g, w, h) => {
     g.lineJoin = 'round'; g.lineCap = 'round'; g.fillStyle = '#E8B33B'; g.strokeStyle = tinta; g.lineWidth = 16;
     g.beginPath(); g.moveTo(90, 60); g.lineTo(350, 60); g.quadraticCurveTo(420, 70, 415, 170); g.quadraticCurveTo(400, 235, 340, 205); g.lineTo(300, 160); g.lineTo(140, 160); g.lineTo(100, 205); g.quadraticCurveTo(40, 235, 25, 170); g.quadraticCurveTo(20, 70, 90, 60); g.closePath(); g.fill(); g.stroke();
     g.fillStyle = tinta; g.fillRect(100, 92, 16, 52); g.fillRect(82, 110, 52, 16);
     for (const [x, y] of [[315, 96], [345, 122], [285, 122], [315, 146]]) { g.beginPath(); g.arc(x, y, 11, 0, 7); g.fill(); }
   })); texMando.colorSpace = THREE.SRGBColorSpace;
-  const mando = new THREE.Mesh(new THREE.PlaneGeometry(0.62, 0.37), new THREE.MeshBasicMaterial({ map: texMando, transparent: true, alphaTest: 0.3 }));
-  en(mando, -3.0, 3.24, -9.72); escena.add(mando); piezas.mando_mostaza = mando;
+  const mando = new THREE.Mesh(new THREE.PlaneGeometry(0.5, 0.3), new THREE.MeshBasicMaterial({ map: texMando, transparent: true, alphaTest: 0.3 }));
+  en(mando, -2.36, 3.21, -9.72); escena.add(mando); piezas.mando_mostaza = mando;
 
   // compatibilidad con el contrato anterior: nada de «cajones» ni «pilar» en esta tienda
   return { cajones: [], pilar: new THREE.Group(), piezas, MEDIDAS };

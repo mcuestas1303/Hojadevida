@@ -1,0 +1,280 @@
+{
+ "mezcla_LUFS": -14.0,
+ "mezcla_pico_dBTP": -0.9,
+ "voz_LUFS": -17.0,
+ "musica_LUFS": -42.2,
+ "efectos_LUFS": -31.0,
+ "efectos_pico_dBFS": -8.0,
+ "silencio_total_f": [
+  688,
+  693
+ ],
+ "pico_en_el_silencio": 0.0,
+ "eventos": [
+  {
+   "f": 0,
+   "sonido": "firma_whoosh_regreso",
+   "pico_dBFS": -18
+  },
+  {
+   "f": 10,
+   "sonido": "firma_atrapada",
+   "pico_dBFS": -12
+  },
+  {
+   "f": 30,
+   "sonido": "trazo_de_tinta",
+   "pico_dBFS": -24
+  },
+  {
+   "f": 60,
+   "sonido": "cajas_caen",
+   "pico_dBFS": -20
+  },
+  {
+   "f": 60,
+   "sonido": "choque_suelo",
+   "pico_dBFS": -15
+  },
+  {
+   "f": 79,
+   "sonido": "silbido",
+   "pico_dBFS": -22
+  },
+  {
+   "f": 81,
+   "sonido": "golpe",
+   "pico_dBFS": -13
+  },
+  {
+   "f": 100,
+   "sonido": "cajas_caen",
+   "pico_dBFS": -20
+  },
+  {
+   "f": 100,
+   "sonido": "choque_madera",
+   "pico_dBFS": -15
+  },
+  {
+   "f": 168,
+   "sonido": "golpe_agudo",
+   "pico_dBFS": -13
+  },
+  {
+   "f": 175,
+   "sonido": "roce_suelo",
+   "pico_dBFS": -24
+  },
+  {
+   "f": 187,
+   "sonido": "postes_caen",
+   "pico_dBFS": -19
+  },
+  {
+   "f": 257,
+   "sonido": "choque_madera_agudo",
+   "pico_dBFS": -17
+  },
+  {
+   "f": 261,
+   "sonido": "silbido",
+   "pico_dBFS": -22
+  },
+  {
+   "f": 313,
+   "sonido": "golpe_grave",
+   "pico_dBFS": -13
+  },
+  {
+   "f": 313,
+   "sonido": "silbido_sube",
+   "pico_dBFS": -22
+  },
+  {
+   "f": 332,
+   "sonido": "silbido_caida",
+   "pico_dBFS": -22
+  },
+  {
+   "f": 336,
+   "sonido": "choque_pilar",
+   "pico_dBFS": -14
+  },
+  {
+   "f": 430,
+   "sonido": "trazo_de_tinta",
+   "pico_dBFS": -24
+  },
+  {
+   "f": 514,
+   "sonido": "trazo_de_tinta",
+   "pico_dBFS": -24
+  },
+  {
+   "f": 547,
+   "sonido": "bloqueo_tinta",
+   "pico_dBFS": -14
+  },
+  {
+   "f": 562,
+   "sonido": "vidrio_grieta",
+   "pico_dBFS": -17
+  },
+  {
+   "f": 564,
+   "sonido": "chispas",
+   "pico_dBFS": -22
+  },
+  {
+   "f": 573,
+   "sonido": "baston_golpe",
+   "pico_dBFS": -13
+  },
+  {
+   "f": 574,
+   "sonido": "fuego_enciende",
+   "pico_dBFS": -22
+  },
+  {
+   "f": 586,
+   "sonido": "trazo_de_tinta",
+   "pico_dBFS": -24
+  },
+  {
+   "f": 588,
+   "sonido": "cajas_caen",
+   "pico_dBFS": -20
+  },
+  {
+   "f": 588,
+   "sonido": "choque_madera",
+   "pico_dBFS": -15
+  },
+  {
+   "f": 598,
+   "sonido": "silbido",
+   "pico_dBFS": -22
+  },
+  {
+   "f": 611,
+   "sonido": "choque_madera",
+   "pico_dBFS": -15
+  },
+  {
+   "f": 611,
+   "sonido": "mazo_golpe",
+   "pico_dBFS": -11
+  },
+  {
+   "f": 614,
+   "sonido": "fuego_crece",
+   "pico_dBFS": -20
+  },
+  {
+   "f": 630,
+   "sonido": "campanilla_caja",
+   "pico_dBFS": -18
+  },
+  {
+   "f": 634,
+   "sonido": "trazo_de_tinta",
+   "pico_dBFS": -24
+  },
+  {
+   "f": 671,
+   "sonido": "subida",
+   "pico_dBFS": -18
+  },
+  {
+   "f": 693,
+   "sonido": "golpe_doble",
+   "pico_dBFS": -12
+  },
+  {
+   "f": 715,
+   "sonido": "vidrio_grieta",
+   "pico_dBFS": -17
+  },
+  {
+   "f": 724,
+   "sonido": "explosion",
+   "pico_dBFS": -8
+  },
+  {
+   "f": 739,
+   "sonido": "cola_explosion",
+   "pico_dBFS": -18
+  },
+  {
+   "f": 885,
+   "sonido": "baston_golpe_grave",
+   "pico_dBFS": -13
+  },
+  {
+   "f": 888,
+   "sonido": "implosion",
+   "pico_dBFS": -13
+  },
+  {
+   "f": 908,
+   "sonido": "gotas",
+   "pico_dBFS": -24
+  },
+  {
+   "f": 918,
+   "sonido": "asterisco_tic",
+   "pico_dBFS": -20
+  },
+  {
+   "f": 919,
+   "sonido": "asterisco_tic",
+   "pico_dBFS": -20
+  },
+  {
+   "f": 920,
+   "sonido": "asterisco_tic",
+   "pico_dBFS": -20
+  },
+  {
+   "f": 921,
+   "sonido": "asterisco_tic",
+   "pico_dBFS": -20
+  },
+  {
+   "f": 922,
+   "sonido": "asterisco_tic",
+   "pico_dBFS": -20
+  },
+  {
+   "f": 923,
+   "sonido": "asterisco_tic",
+   "pico_dBFS": -20
+  },
+  {
+   "f": 926,
+   "sonido": "escurre",
+   "pico_dBFS": -24
+  },
+  {
+   "f": 943,
+   "sonido": "silbido_corto",
+   "pico_dBFS": -24
+  },
+  {
+   "f": 949,
+   "sonido": "atrapa",
+   "pico_dBFS": -18
+  },
+  {
+   "f": 969,
+   "sonido": "firma_chasquido",
+   "pico_dBFS": -20
+  },
+  {
+   "f": 971,
+   "sonido": "firma_whoosh_ida",
+   "pico_dBFS": -20
+  }
+ ]
+}

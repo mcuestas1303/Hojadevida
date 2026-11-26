@@ -2,6 +2,7 @@
 // Uso: node render.js <carpeta> [max_cuadros] [paleta] [entorno] [cada] [guion]   (cada = guarda 1 de cada N fotogramas; para revisar)
 const { chromium } = require('playwright');
 const http = require('http'), fs = require('fs'), path = require('path');
+const desde = parseInt(process.env.DESDE || '0', 10), solo = (process.env.SOLO || '').split(',').filter(Boolean).map(Number);
 const salida = process.argv[2] || 'salida', maximo = parseInt(process.argv[3] || '230', 10);
 const paleta = process.argv[4] || 'a_papel_con_fondo_frio', entorno = process.argv[5] || 'ciudad_de_carton', cada = parseInt(process.argv[6] || '1', 10), guion = process.argv[7] || 'prueba_2026-11-26';
 const tipos = { '.html': 'text/html', '.js': 'text/javascript', '.png': 'image/png', '.json': 'application/json' };
@@ -20,16 +21,18 @@ const srv = http.createServer((q, r) => {
   await p.goto(url); await p.waitForFunction('window.LISTO === true', null, { timeout: 60000 });
   const t0 = Date.now(); let n = 0, velocidades = [];
   for (; n < maximo; n++) {
-    const r = await p.evaluate(() => window.cuadro());
+    const guarda = solo.length ? solo.includes(n) : (n >= desde && n % cada === 0);
+    const r = await p.evaluate((g) => window.cuadro(g), guarda);
     velocidades.push(+r.velocidad.toFixed(2));
-    if (n % cada === 0) {
+    if (guarda) {
     const d = await p.evaluate(() => window.foto());
+    if (n % 100 === 0) console.log('fotograma', n);
     fs.writeFileSync(path.join(salida, 'fotogramas', `f_${String(n).padStart(4, '0')}.jpg`), Buffer.from(d.split(',')[1], 'base64'));
     }
     if (r.fin) { n++; break; }
   }
-  const eventos = await p.evaluate(() => window.EVENTOS);
-  fs.writeFileSync(path.join(salida, 'eventos.json'), JSON.stringify({ fps: 30, cuadros: n, eventos, velocidades }, null, 1));
+  const eventos = await p.evaluate(() => window.EVENTOS), medidas = await p.evaluate(() => window.MEDIDAS || {});
+  fs.writeFileSync(path.join(salida, 'eventos.json'), JSON.stringify({ fps: 30, cuadros: n, eventos, medidas, velocidades }, null, 1));
   console.log(`${n} fotogramas en ${((Date.now() - t0) / 1000).toFixed(0)} s`);
   await b.close(); srv.close();
 })();

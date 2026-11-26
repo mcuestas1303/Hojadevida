@@ -1,0 +1,642 @@
+{
+ "planos": [
+  {
+   "f0": 0,
+   "nombre": "P1 portada",
+   "cx": 0.0,
+   "z": 0.0,
+   "D": 8.66,
+   "h": 2.03,
+   "D1": 8.66,
+   "tipo": "firma",
+   "sube": 0.0,
+   "f1": 30
+  },
+  {
+   "f0": 30,
+   "nombre": "P2 entra el rival",
+   "cx": 0.0,
+   "z": -2.0,
+   "D": 17.0,
+   "h": 4.3,
+   "D1": 16.0,
+   "tipo": "",
+   "sube": 0.0,
+   "f1": 70
+  },
+  {
+   "f0": 70,
+   "nombre": "P3 golpe 1",
+   "cx": 0.3,
+   "z": -2.0,
+   "D": 12.6,
+   "h": 3.05,
+   "D1": 12.6,
+   "tipo": "",
+   "sube": 0.0,
+   "f1": 100
+  },
+  {
+   "f0": 100,
+   "nombre": "P4 impacto estante",
+   "cx": -2.5,
+   "z": -6.0,
+   "D": 7.5,
+   "h": 2.8,
+   "D1": 7.5,
+   "tipo": "impacto",
+   "sube": 0.0,
+   "f1": 102
+  },
+  {
+   "f0": 102,
+   "nombre": "P5 general",
+   "cx": 0.0,
+   "z": -2.5,
+   "D": 17.0,
+   "h": 4.3,
+   "D1": 17.0,
+   "tipo": "",
+   "sube": 0.0,
+   "f1": 157
+  },
+  {
+   "f0": 157,
+   "nombre": "P6 golpe 2",
+   "cx": 0.3,
+   "z": -0.6,
+   "D": 13.6,
+   "h": 3.2,
+   "D1": 13.6,
+   "tipo": "",
+   "sube": 0.0,
+   "f1": 195
+  },
+  {
+   "f0": 195,
+   "nombre": "P7 general",
+   "cx": 0.6,
+   "z": -1.0,
+   "D": 17.0,
+   "h": 4.3,
+   "D1": 16.0,
+   "tipo": "",
+   "sube": 0.0,
+   "f1": 302
+  },
+  {
+   "f0": 302,
+   "nombre": "P8 gancho",
+   "cx": 2.1,
+   "z": -3.2,
+   "D": 14.0,
+   "h": 3.3,
+   "D1": 14.0,
+   "tipo": "",
+   "sube": 0.0,
+   "f1": 336
+  },
+  {
+   "f0": 336,
+   "nombre": "P9 impacto mostrador",
+   "cx": 3.35,
+   "z": -3.4,
+   "D": 5.6,
+   "h": 2.1,
+   "D1": 5.6,
+   "tipo": "impacto",
+   "sube": 0.0,
+   "f1": 338
+  },
+  {
+   "f0": 338,
+   "nombre": "P10 general",
+   "cx": 0.5,
+   "z": -2.5,
+   "D": 17.0,
+   "h": 4.3,
+   "D1": 17.0,
+   "tipo": "",
+   "sube": 0.0,
+   "f1": 430
+  },
+  {
+   "f0": 430,
+   "nombre": "P11 detalle del lápiz",
+   "cx": 0.95,
+   "z": -2.6,
+   "D": 5.6,
+   "h": 2.2,
+   "D1": 5.6,
+   "tipo": "",
+   "sube": 0.0,
+   "f1": 442
+  },
+  {
+   "f0": 442,
+   "nombre": "P12 general",
+   "cx": 0.5,
+   "z": -2.4,
+   "D": 16.0,
+   "h": 4.2,
+   "D1": 16.0,
+   "tipo": "",
+   "sube": 0.0,
+   "f1": 483
+  },
+  {
+   "f0": 483,
+   "nombre": "P12b Tan invita",
+   "cx": -0.7,
+   "z": -1.6,
+   "D": 9.5,
+   "h": 2.7,
+   "D1": 9.5,
+   "tipo": "",
+   "sube": 0.0,
+   "f1": 512
+  },
+  {
+   "f0": 512,
+   "nombre": "P12c general",
+   "cx": 0.6,
+   "z": -2.4,
+   "D": 15.0,
+   "h": 3.9,
+   "D1": 15.0,
+   "tipo": "",
+   "sube": 0.0,
+   "f1": 562
+  },
+  {
+   "f0": 562,
+   "nombre": "P13 impacto televisor",
+   "cx": 0.0,
+   "z": -7.4,
+   "D": 6.5,
+   "h": 3.2,
+   "D1": 6.5,
+   "tipo": "impacto",
+   "sube": 0.0,
+   "f1": 564
+  },
+  {
+   "f0": 564,
+   "nombre": "P14 golpe 4",
+   "cx": 1.1,
+   "z": -2.4,
+   "D": 12.8,
+   "h": 3.05,
+   "D1": 12.8,
+   "tipo": "",
+   "sube": 0.0,
+   "f1": 599
+  },
+  {
+   "f0": 599,
+   "nombre": "P15 mazo",
+   "cx": 0.9,
+   "z": -3.2,
+   "D": 14.8,
+   "h": 3.7,
+   "D1": 14.8,
+   "tipo": "",
+   "sube": 0.0,
+   "f1": 671
+  },
+  {
+   "f0": 671,
+   "nombre": "P16 remate",
+   "cx": 0.0,
+   "z": -6.2,
+   "D": 11.5,
+   "h": 3.05,
+   "D1": 11.5,
+   "tipo": "",
+   "sube": 0.0,
+   "f1": 719
+  },
+  {
+   "f0": 719,
+   "nombre": "P18 héroe",
+   "cx": 0.0,
+   "z": -6.5,
+   "D": 13.5,
+   "h": 0.7,
+   "D1": 13.5,
+   "tipo": "",
+   "sube": 3.1,
+   "f1": 738
+  },
+  {
+   "f0": 738,
+   "nombre": "P19 respiro",
+   "cx": 0.0,
+   "z": -4.0,
+   "D": 17.0,
+   "h": 4.3,
+   "D1": 17.0,
+   "tipo": "",
+   "sube": 0.0,
+   "f1": 874
+  },
+  {
+   "f0": 874,
+   "nombre": "P20 golpe 6",
+   "cx": 0.2,
+   "z": -5.1,
+   "D": 11.0,
+   "h": 2.85,
+   "D1": 11.0,
+   "tipo": "",
+   "sube": 0.0,
+   "f1": 906
+  },
+  {
+   "f0": 906,
+   "nombre": "P21 final",
+   "cx": 0.25,
+   "z": -5.1,
+   "D": 15.0,
+   "h": 3.3,
+   "D1": 15.0,
+   "tipo": "",
+   "sube": 0.0,
+   "f1": 956
+  },
+  {
+   "f0": 956,
+   "nombre": "P22 portada",
+   "cx": 0.0,
+   "z": 0.0,
+   "D": 8.66,
+   "h": 2.03,
+   "D1": 8.66,
+   "tipo": "firma",
+   "sube": 0.0,
+   "f1": 986
+  }
+ ],
+ "post": {
+  "impacto": [
+   100,
+   101,
+   336,
+   337,
+   562,
+   563
+  ],
+  "invertidos": [
+   717,
+   718
+  ],
+  "radiales": [
+   719,
+   720,
+   721,
+   722,
+   723
+  ],
+  "claro": [
+   724,
+   725,
+   726,
+   727
+  ]
+ },
+ "portada": {
+  "cx": 0.0,
+  "z": 0.0,
+  "D": 8.66,
+  "h": 2.03
+ },
+ "fps": 30,
+ "N": 986,
+ "duracion_s": 32.867,
+ "tempo": 1.1,
+ "respiro_f": 2,
+ "lineas": [
+  {
+   "id": "A",
+   "quien": "Tan",
+   "texto": "Will there be a GTA 7?",
+   "es": "¿Habrá un GTA 7?",
+   "f0": 14,
+   "f1": 60,
+   "dura_f": 46,
+   "tramos_f": [
+    14
+   ],
+   "archivo": "voz_tan_zelda.wav",
+   "origen": [
+    [
+     0.449,
+     2.061
+    ]
+   ]
+  },
+  {
+   "id": "T1",
+   "quien": "Tin",
+   "texto": "GTA is short for Grand Theft Auto:",
+   "es": "GTA es Grand Theft Auto:",
+   "f0": 84,
+   "f1": 169,
+   "dura_f": 85,
+   "tramos_f": [
+    84
+   ],
+   "archivo": "voz_tin_kevin.wav",
+   "origen": [
+    [
+     1.106,
+     4.121
+    ]
+   ]
+  },
+  {
+   "id": "T2",
+   "quien": "Tin",
+   "texto": "a game series that started in 1997,",
+   "es": "una serie de juegos que empezó en 1997",
+   "f0": 171,
+   "f1": 247,
+   "dura_f": 76,
+   "tramos_f": [
+    171
+   ],
+   "archivo": "voz_tin_kevin.wav",
+   "origen": [
+    [
+     4.668,
+     7.387
+    ]
+   ]
+  },
+  {
+   "id": "T3",
+   "quien": "Tin",
+   "texto": "made today by Rockstar Games.",
+   "es": "y que hoy hace Rockstar Games.",
+   "f0": 249,
+   "f1": 314,
+   "dura_f": 65,
+   "tramos_f": [
+    249,
+    275
+   ],
+   "archivo": "voz_tin_kevin.wav",
+   "origen": [
+    [
+     7.998,
+     8.83
+    ],
+    [
+     9.157,
+     10.52
+    ]
+   ]
+  },
+  {
+   "id": "T4",
+   "quien": "Tin",
+   "texto": "GTA 6 came out on November 19, 2026.",
+   "es": "GTA 6 salió el 19 de noviembre de 2026.",
+   "f0": 316,
+   "f1": 428,
+   "dura_f": 112,
+   "tramos_f": [
+    316,
+    352,
+    397
+   ],
+   "archivo": "voz_tin_kevin.wav",
+   "origen": [
+    [
+     11.448,
+     12.644
+    ],
+    [
+     13.086,
+     14.646
+    ],
+    [
+     15.01,
+     16.095
+    ]
+   ]
+  },
+  {
+   "id": "T5",
+   "quien": "Tin",
+   "texto": "It's the sixth numbered game.",
+   "es": "Es el sexto juego numerado.",
+   "f0": 430,
+   "f1": 481,
+   "dura_f": 51,
+   "tramos_f": [
+    430,
+    457
+   ],
+   "archivo": "voz_tin_kevin.wav",
+   "origen": [
+    [
+     16.573,
+     17.443
+    ],
+    [
+     17.807,
+     18.637
+    ]
+   ]
+  },
+  {
+   "id": "C",
+   "quien": "Tan",
+   "texto": "Subscribe. We check the facts.",
+   "es": "Suscríbete. Aquí comprobamos los datos.",
+   "f0": 483,
+   "f1": 548,
+   "dura_f": 65,
+   "tramos_f": [
+    483,
+    512
+   ],
+   "archivo": "voz_tan_zelda.wav",
+   "origen": [
+    [
+     5.416,
+     6.285
+    ],
+    [
+     7.031,
+     8.3
+    ]
+   ]
+  },
+  {
+   "id": "T6",
+   "quien": "Tin",
+   "texto": "Rated M: seventeen and over.",
+   "es": "Clasificación M: mayores de 17.",
+   "f0": 550,
+   "f1": 612,
+   "dura_f": 62,
+   "tramos_f": [
+    550,
+    576
+   ],
+   "archivo": "voz_tin_kevin.wav",
+   "origen": [
+    [
+     19.176,
+     19.92
+    ],
+    [
+     20.249,
+     21.513
+    ]
+   ]
+  },
+  {
+   "id": "T8",
+   "quien": "Tin",
+   "texto": "From GTA 5 to GTA 6:",
+   "es": "De GTA 5 a GTA 6:",
+   "f0": 614,
+   "f1": 679,
+   "dura_f": 65,
+   "tramos_f": [
+    614,
+    649
+   ],
+   "archivo": "voz_tin_kevin.wav",
+   "origen": [
+    [
+     25.107,
+     26.275
+    ],
+    [
+     26.558,
+     27.586
+    ]
+   ]
+  },
+  {
+   "id": "T9",
+   "quien": "Tin",
+   "texto": "thirteen years and sixty-three days.",
+   "es": "trece años y sesenta y tres días.",
+   "f0": 738,
+   "f1": 836,
+   "dura_f": 98,
+   "tramos_f": [
+    738,
+    776
+   ],
+   "archivo": "voz_tin_kevin.wav",
+   "origen": [
+    [
+     28.105,
+     29.324
+    ],
+    [
+     29.673,
+     31.822
+    ]
+   ]
+  },
+  {
+   "id": "B",
+   "quien": "Tan",
+   "texto": "So, GTA 7?",
+   "es": "¿Y GTA 7?",
+   "f0": 838,
+   "f1": 886,
+   "dura_f": 48,
+   "tramos_f": [
+    838,
+    856
+   ],
+   "archivo": "voz_tan_zelda.wav",
+   "origen": [
+    [
+     2.815,
+     3.286
+    ],
+    [
+     3.574,
+     4.612
+    ]
+   ]
+  },
+  {
+   "id": "T10",
+   "quien": "Tin",
+   "texto": "Rockstar hasn't announced one. As of today.",
+   "es": "Rockstar no ha anunciado ninguno. A hoy.",
+   "f0": 888,
+   "f1": 969,
+   "dura_f": 81,
+   "tramos_f": [
+    888,
+    944
+   ],
+   "archivo": "voz_tin_kevin.wav",
+   "origen": [
+    [
+     32.266,
+     34.05
+    ],
+    [
+     34.514,
+     35.393
+    ]
+   ]
+  }
+ ],
+ "K": {
+  "rival_entra": 30,
+  "rival_crece": 46,
+  "pisoton": 60,
+  "K1": 82,
+  "K2": 169,
+  "rival_ataca": 263,
+  "cartel": 257,
+  "salto_mostrador": 281,
+  "K3": 314,
+  "dibuja_baston": 430,
+  "dibuja_espada": 514,
+  "KB": 548,
+  "K4": 574,
+  "tele_punta": 562,
+  "K5": 612,
+  "mazo": 586,
+  "carrera": 671,
+  "KR": 694,
+  "tele_choque": 715,
+  "invertidos": 717,
+  "radiales": 719,
+  "claro": 724,
+  "bola": 728,
+  "enfria": 739,
+  "K6": 886,
+  "implosion": 888,
+  "implosion_fin": 905,
+  "armas_gotas": 908,
+  "asterisco": 918,
+  "escurre": 926,
+  "escurre_fin": 941,
+  "lapiz_a_tan": 943,
+  "N": 986,
+  "cierre": 956
+ },
+ "quitada": {
+  "id": "T7",
+  "texto": "Each numbered game tells a new story.",
+  "origen": [
+   22.46,
+   24.657
+  ]
+ }
+}
