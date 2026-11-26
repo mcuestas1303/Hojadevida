@@ -5,7 +5,7 @@
   pregunta de si va a haber GTA 7, y explicamos qué es GTA e incluís qué es GTA 6, es decir, qué parte de la historia, por
   si está conectada la historia. Si el análisis es correcto, deja este hook como ejemplo para que afines los armados de los
   hooks».
-- **Estado:** EN REVISIÓN (validado en el autocompletado; falta el peso relativo en Google Trends, pedido a Keter)
+- **Estado:** APROBADA Y EN APLICACIÓN (la propuso el dueño; el dato de Trends la confirma en lo principal; hechos nuevos en comprobación)
 
 ## Qué dice el dato hasta ahora
 
@@ -47,6 +47,21 @@ aficionados): el interés puede ser por ese contenido y no por la pregunta.
 |---|---|---|
 | Generador | La idea tiene apoyo en el autocompletado y abre una pregunta más grande que «qué es GTA 6», que el propio video paga por capas. Además deja al rival con asterisco de forma natural | Que Trends muestre que «gta 7» pesa; que el video diga claro que no está anunciado; un solo cambio grande sigue siendo la forma |
 
+## Resultado de Google Trends (Keter, 2026-11-26, 14:10–14:22)
+
+- **En la búsqueda de YouTube, «gta 7» pesa más que «what is gta 6»** (media de 7 días: 16 frente a 12; de 30 días: 8
+  frente a 5). En la búsqueda web es al revés (7 frente a 49).
+- Las consultas principales de «gta 7» en web son la pregunta misma («gta 7 when», «when is gta 7», «is gta 7 out», «what is
+  gta 7», «will there be gta 7»); en ascenso, «did rockstar announce gta 7».
+- «what is gta» es el puesto 3 de las consultas de «gta» en web.
+- **Lo que no confirma:** «gta timeline» e «is gta 6 the last gta» casi no tienen volumen. La conexión entre historias va
+  como un golpe breve, no como eje.
+- En YouTube la primera consulta de «gta 7» es «gta 7 trailer» (tráileres de aficionados), y el interés baja desde el 19
+  de noviembre.
+
+**Conclusión:** el análisis del dueño es correcto en lo principal. Se aplica: gancho «Will there be a GTA 7?», pago por
+capas y remate honesto. Queda como ejemplo en `video-studio/metodo/ganchos.md`.
+
 ## Decisión del dueño
 
-Propuso la idea el 2026-11-26. Pendiente del dato de Trends.
+Propuso la idea el 2026-11-26, con la condición «si el análisis es correcto». El dato la respalda; se aplica.

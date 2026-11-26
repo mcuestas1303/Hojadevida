@@ -237,3 +237,7 @@
   cómo se conecta al siguiente video. El calendario que generemos de momento para el mes necesito verlo en Calendar y
   necesito recibir alertas […] mientras te termino de configurar para que publique solo». Plantilla:
   `plantillas/reporte_de_publicacion.md`; calendario: `canales/nostalgia-tin-y-tan/calendario_de_publicacion_2026-12.md`.
+
+- **Gancho de «la pregunta siguiente» (idea del dueño, 2026-11-26):** «la pregunta de si va a haber GTA 7 y explicamos qué
+  es GTA e incluís qué es GTA 6 […] Si el análisis es correcto, deja este hook como ejemplo para que afines los armados de
+  los hooks». Trends lo confirmó en YouTube. Método y banco de ganchos: `video-studio/metodo/ganchos.md`.

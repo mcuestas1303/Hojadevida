@@ -182,6 +182,8 @@ que tiene Chrome con su sesión iniciada.
    Drive privado: la carpeta de datos de una sesión en la nube se pierde al cerrarla.
 6. **Lo que una sesión no puede abrir se le pide a la otra** y se anota qué no abrió; no se rellena.
 7. **Se cita el número que corresponde al tema**: no se presta la cifra de un video parecido.
+8. **El mismo término pesa distinto en la web y en YouTube.** Se comparan los dos; para un Short manda la búsqueda de
+   YouTube (caso del 2026-11-26: «gta 7» por encima de «what is gta 6» en YouTube y muy por debajo en la web).
 
 ## 7. Qué lleva la definición del tema
 
@@ -225,6 +227,8 @@ hasta entonces el director de prompts las revisa a mano y el supervisor de conti
 | **Generador de prompts** | El resultado del motor (tema validado, filtro de políticas, lugar en el universo) | El paquete de prompt: brief, dirección, fichas, prompt validado, publicación, lista de piezas y pedidos | `metodo/1_generador_de_prompts.md` |
 | **Equipo de producción audiovisual** | El paquete de prompt | El video revisado, la entrega, la biblioteca y los registros al día, y la medición | `metodo/2_produccion_audiovisual.md` |
 | **Creador de personajes** | Un pedido de personaje, cuando el prompt necesita uno que no existe | Ficha, hoja aprobada, fila en el elenco y dibujo en el motor | `metodo/3_creador_de_personajes.md` |
+
+Para los primeros tres segundos hay un método aparte, con su banco de ganchos medidos: `metodo/ganchos.md`.
 
 Cada método tiene su tabla de **bifurcaciones**: qué se hace cuando falta algo, a quién se le pide, qué se le entrega,
 qué devuelve y si bloquea. Regla común: lo que toca identidad, hechos o reglas del universo bloquea; lo que es
