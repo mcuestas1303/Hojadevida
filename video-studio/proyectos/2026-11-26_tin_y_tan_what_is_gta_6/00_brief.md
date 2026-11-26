@@ -4,8 +4,8 @@
 > tanda 01). Método: `video-studio/MOTOR_DE_CONTENIDO.md` y `video-studio/metodo/1_generador_de_prompts.md`.
 > **Estado:** brief cerrado por el Generador el 2026-11-26; faltan dirección, fichas y prompt, y el sí del dueño al paquete.
 
-- **Título (candidato, pasa `revisar_titulo.py` con 0 errores y 0 avisos):** What Is GTA 6? Date, Platforms and Price.
-  Reserva si el golpe del precio se cae: What Is GTA 6? Quick Facts, Checked.
+- **Título (candidato, pasa `revisar_titulo.py` con 0 errores y 0 avisos):** What Is GTA 6, and Is a GTA 7 Coming?
+  (versión 2 del brief; el anterior, «What Is GTA 6? Date, Platforms and Price», quedó sin efecto al cambiar el gancho).
 - **Modo:** C, desde cero. Dibujo por código con el motor de acción (`video-studio/motor_de_accion/`); 0 créditos de
   imagen y de video. Solo la voz se genera.
 - **Objetivo comercial (lo fijó el dueño el 2026-11-23):** entrar al Programa de socios de YouTube lo antes posible.
@@ -56,19 +56,34 @@ Lectura de Studio del 2026-11-26 (Keter, 09:50 a 10:25, -06:00; cifras en
 | Fecha límite | Cuanto antes: proyección del comercial, publicar a más tardar el 2026-11-30 y límite duro el 2026-12-03 (no es dato medido). En calendario: 2026-12-02 | mismo archivo, sección de fecha límite |
 | Riesgos | Juego para mayores de 17 ante público con muchos de 13 a 17; marcas; datos que cambian (precio, versión de PC); tema repetido respecto del short 2 | filtro de políticas |
 
-### Los golpes (hechos comprobados el 2026-11-26)
+### Gancho y golpes (versión 2, 2026-11-26: gancho «la pregunta siguiente», idea del dueño)
 
-| # | Responde a | Lo que dice Tin (inglés) | Subtítulo (español) | Estado |
+> El dueño propuso abrir con «¿habrá GTA 7?» y pagar por capas (qué es GTA, qué es GTA 6, si las historias se conectan).
+> Google Trends lo respalda: en la búsqueda de YouTube «gta 7» pesa más que «what is gta 6» (media de 7 días, 16 frente a
+> 12). Solicitud: `cambios/2026-11-26_gancho_gta7_short4.md`. Hechos: `comercial/2026-11-26_hechos_short4_gancho_gta7.md`.
+
+**Gancho (segundos 0 a 3):** Tan pregunta **«Will there be a GTA 7?»** y el rival aparece con esa pregunta.
+
+| # | Capa | Lo que dice Tin (inglés) | Subtítulo (español) | Estado |
 |---|---|---|---|---|
-| 1 | what is gta 6 | Rockstar's open-world game, set in the fictional state of Leonida. Rated M: seventeen and over. | El juego de mundo abierto de Rockstar, en el estado ficticio de Leonida. Para mayores de 17. | Comprobado (página oficial de Rockstar y Wikipedia) |
-| 2 | is gta 6 out · release date | It came out on November 19, 2026. | Salió el 19 de noviembre de 2026. | Comprobado |
-| 3 | gta 6 ps5 · xbox · pc | On PS5 and Xbox Series X and S. Not on PC: none announced, as of today. | En PS5 y Xbox Series X y S. En PC no: no hay ninguna anunciada, a hoy. | Consolas, oficial; «no hay PC» es una ausencia que puede cambiar: lleva la fecha |
-| 4 | how much is gta 6 | It lists at 79.99 dollars in the US. | Precio de lista en EE. UU.: 79,99 dólares. | **Comprobado el 2026-11-26** en la tienda oficial de PlayStation de EE. UU. (edición estándar 79,99 dólares; Ultimate 99,99), además de Wikipedia. Puede cambiar con ofertas: se dice «lists at» y lleva la fecha |
-| 5 | how many chapters | Rockstar tells the story in chapters. The exact count: not confirmed yet. | Rockstar cuenta la historia en capítulos. El número exacto: sin confirmar. | **Con asterisco:** no hay fuente abierta del número. Es el golpe que no borra del todo al rival |
-| R | (remate, atribuido) | Take-Two reports 3.79 billion dollars in day-one sales. | Take-Two informa 3.790 millones de dólares en ventas del primer día. | **Comprobado el 2026-11-26** en la sala de prensa de Take-Two: comunicado del 2026-11-20, «Grand Theft Auto VI Shatters Entertainment Box Office Records with $3.79 Billion in Day One Retail Sales». Se dice atribuido, como lo dice la empresa |
+| 1 | Qué es GTA | GTA is short for Grand Theft Auto: a game series that started in 1997, made today by Rockstar Games. | GTA es Grand Theft Auto: una serie de juegos que empezó en 1997 y que hoy hace Rockstar Games. | «1997» y la sigla: solo Wikipedia. «Rockstar la hace y la publica hoy»: comunicado de Take-Two. No se dice que Rockstar hiciera la primera |
+| 2 | Qué es GTA 6 | GTA 6 came out on November 19, 2026. It's the sixth numbered game. Rated M: seventeen and over. | GTA 6 salió el 19 de noviembre de 2026. Es el sexto juego numerado. Para mayores de 17. | Fecha y clasificación: comprobadas en fuentes oficiales. «Sexto numerado» es cuenta del equipo sobre la lista de Wikipedia (GTA, 2, III, IV, V, VI) |
+| 3 | Si se conectan | Each numbered game tells a new story. | Cada juego numerado cuenta una historia nueva. | **Con salvedad:** Wikipedia habla de «separate fictional universes»; no hay fuente primaria de Rockstar. Frase mínima, sin nombrar personajes ni decir en qué mundo está GTA 6. El director creativo puede quitarla |
+| 4 | La cuenta de Tin | From GTA 5 to GTA 6: thirteen years and sixty-three days. | De GTA 5 a GTA 6: trece años y sesenta y tres días. | Fechas con dos fuentes (2013-09-17 y 2026-11-19); cálculo a la vista: 4.811 días |
+| R | Remate | So, GTA 7? Rockstar hasn't announced one. As of today. | ¿Y GTA 7? Rockstar no ha anunciado ninguno. A hoy. | Es una ausencia y caduca: lleva la fecha. Revisado: comunicado de resultados de Take-Two del 2026-11-09 y su lista de comunicados; la página de juegos y el Newswire de Rockstar no se pudieron leer (se dibujan con scripts) |
 
-**Qué no se afirma:** ningún número de capítulos, misiones o finales; nada de la trama; ninguna cifra de copias; que haya
-o no una versión de PC en camino; que el juego sea bueno o malo; que alguien deba comprarlo.
+**Qué no se afirma:** que no vaya a haber GTA 7; ninguna fecha ni proyección («si la espera se repite…» queda fuera: las
+esperas anteriores no siguen un patrón y cualquier condicional suena a fecha); ningún rumor ni tráiler de aficionados; nada
+de la trama ni de los personajes; que el juego sea bueno o malo.
+
+**Condición del filtro F9 (clickbait) para este gancho:** el video dice «no anunciado» con todas las letras, fechado, y
+no insinúa tráiler ni fecha. A cambio entrega algo comprobable: la cuenta de la espera.
+
+**Títulos candidatos** (los tres pasan `revisar_titulo.py` con 0 errores y 0 avisos): «What Is GTA 6, and Is a GTA 7 Coming?»
+(recomendado por el comercial), «Will There Be a GTA 7? What We Know», «What Is GTA 6? Where It Fits in the Series».
+
+**Versión 1, sin efecto:** los golpes de plataformas, precio y capítulos y el remate de ventas (comprobados en
+`comercial/2026-11-26_hechos_short4_what_is_gta_6.md`) salen de la voz; pueden ir en la descripción.
 
 ## Filtro de políticas de YouTube (F1 a F13)
 
@@ -100,7 +115,7 @@ descripción; marcar «no creado para niños» al subir; confirmar en Studio que
 - **Conexión que cobra:** la firma del lápiz se atrapa por primera vez dentro del cuaderno; y, por ser un juego, el mando
   genérico mostaza del short 2 aparece como pieza del decorado.
 - **Conexión que siembra** (filas ya abiertas en el registro de pistas, privado): la marca final donde se borra el rival,
-  que aquí es **un asterisco** porque un golpe (los capítulos) queda con salvedad; la salida del rival por una grieta del suelo, lado
+  que aquí es **un asterisco** porque la pregunta del gancho (GTA 7) no tiene respuesta todavía; la salida del rival por una grieta del suelo, lado
   derecho, en los últimos 4 segundos; una pieza del entorno con forma propia que queda rota (se elige en la dirección y se
   anota su nombre de catálogo). Nada de esto lleva voz ni texto.
 - **Ajuste del repertorio que aplica:** YouTube no ofrece series de Shorts en este canal: la conexión va dentro del video.
