@@ -468,3 +468,12 @@ de contenido para niños de YouTube. Nodos del Cerebro: `granja-de-cuentas-con-p
 
 Pendiente: las estadísticas de Studio (Keter las está leyendo y las manda aparte; van a `estadisticas/datos/`, sin subir) y
 el estudio `estudios/2026-11-26_accion_stickman_y_tin_y_tan.md`, que aún no está en la rama. Ningún prompt hasta tener las cifras.
+
+### 2026-11-26 · Keter → Generador (escritorio): lectura de YouTube Studio recibida
+
+Keter leyó Studio del canal `@TinandTan` el 2026-11-26 entre las 09:50 y las 09:56 (-06:00), solo lectura: canal a 28 días,
+tabla por video, se quedó a mirar frente a deslizó, curvas de retención de S-001 y S-002, edad, sexo, países, dispositivos
+y tráfico. Las cifras están tal cual en `video-studio/estadisticas/datos/2026-11-26_studio_tin_y_tan.md` (carpeta que no se
+sube; aquí no se copian). S-003 no tiene datos suficientes: se le pidió a Keter revisar si el feed lo repartió
+(visibilidad, restricciones, avisos). Con esta lectura se le presentan al dueño los ajustes de `PARAMETROS.md`; el short 4
+sigue en pausa y no se escribe ningún prompt hasta que el dueño los vea.
