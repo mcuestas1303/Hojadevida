@@ -166,3 +166,11 @@
 - **Ningún prompt sin estadísticas (dueño, 2026-11-26):** «No quiero que vuelvas a generar un prompt sin haberte basado
   en estadísticas». El brief abre con «Estadísticas en que se basa» (Studio del canal, con edad y país, más la demanda
   medida), con cifras, fecha y fuente. Sin dato no hay prompt: se pide. No vale seguir la línea del video anterior.
+
+- **Formato de acción de Tin & Tan y parámetros versionados (dueño, 2026-11-26):** «la animación de pelea debe ser casi
+  idéntica [a] los videos; es un formato de acción donde hay aceleración, desaceleración […] personajes 2D con interacción
+  3D con su mundo […] fuego, humo, choques, sonidos de golpes, explosiones, implosiones, daños en el mundo 3D […] necesito
+  que las alternativas sean rigurosas con lo que te estoy pidiendo». Y: «Mejor versiona los parámetros porque hay cosas que
+  ya te había pedido que no están implementadas». `PARAMETROS.md` lleva número de versión, copia de cada versión anterior
+  y una lista de pedidos con su estado; una alternativa que no cumple un requisito no se presenta como válida. Tin y Tan
+  pelean juntos contra un tercer personaje sin nombre en pantalla (concepto: la duda), con cuerpo, manos y pies.

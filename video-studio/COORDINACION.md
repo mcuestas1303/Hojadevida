@@ -491,3 +491,16 @@ sigue en pausa y no se escribe ningún prompt hasta que el dueño los vea.
 - Para el director de animación, el director creativo, el supervisor y el `revisor-de-atencion`: revisar la ficha cuando
   el dueño la apruebe. Nada de esto está en el elenco todavía; ningún prompt puede usar `@duda`.
 - Falta: el sí del dueño a la ficha; el tema del short 4 (del radar: juegos o entretenimiento); el prompt, después.
+
+### 2026-11-26 · Generador (escritorio) → Equipo: `PARAMETROS.md` pasa a versión 2.0 (formato de acción)
+
+- El dueño no aprobó la versión 1 del rival ni la prueba de pelea. Pidió: rival con cuerpo, manos y pies (la madeja es la
+  cabeza) y hoja de personaje; pelea «casi idéntica» a la de los videos de referencia, con aceleración y desaceleración;
+  personajes 2D con interacción 3D con su mundo; fuego, humo, choques, explosiones, implosiones, daños en el mundo y
+  sonidos de golpes; y versionar los parámetros porque había pedidos sin implementar.
+- Hecho: `canales/nostalgia-tin-y-tan/PARAMETROS.md` 2.0 (sección 7, requisitos A1 a A10; sección 8, pedidos y estado;
+  copia de la 1.1 en `versiones/`); hoja v2 en `personajes/duda/referencias/`; alternativas en
+  `estudios/2026-11-26_formato_de_accion_alternativas.md` (mundo 3D por código en el navegador, Blender, Higgsfield, mixta).
+- Para todo el equipo: desde hoy ninguna propuesta de Tin & Tan se presenta si no cumple los requisitos A1 a A9.
+- Falta del dueño: elegir alternativa (dos piden instalar, una pide créditos), el sí a la hoja v2, el archivo del reel y
+  repetir qué pidió sobre los colores, que no quedó escrito.

@@ -46,4 +46,17 @@
 
 ## Decisión del dueño
 
-Idea aprobada el 2026-11-26 («Sí, avanza así»). Ficha del personaje: pendiente.
+Idea aprobada el 2026-11-26 («Sí, avanza así»). Ficha del personaje: **la versión 1 no fue aprobada.**
+
+**Corrección del dueño (2026-11-26), textual:** «No. Debe tener manos, pies y cuerpo; esa forma podría ser la cabeza; hacele
+un sheet de personaje. Y la animación de pelea debe ser casi idéntica [a] los videos; es un formato de acción donde hay
+aceleración, desaceleración. Ya te había dicho también de los colores y del entorno, que tenga profundidad, es decir, que
+sean personajes 2D con interacción 3D con su mundo. Mejor versiona los parámetros porque hay cosas que ya te había pedido
+que no están implementadas […]. Incluye fuego, humo, choques, sonidos de golpes, explosiones, implosiones, daños en el
+mundo 3D, etc.; revisa esos temas, pero necesito que las alternativas sean rigurosas con lo que te estoy pidiendo».
+
+Qué se hizo con la corrección: hoja v2 del personaje con cuerpo (`personajes/duda/referencias/hoja_v2_2026-11-26.png`);
+`PARAMETROS.md` versión 2.0 con el formato de acción (sección 7) y la lista de pedidos con su estado (sección 8);
+alternativas de producción en `estudios/2026-11-26_formato_de_accion_alternativas.md`. La prueba técnica del mismo día
+queda como descartada: no cumple el formato. Pendiente: su elección de alternativa, su sí a la hoja v2, el archivo del
+reel de referencia y qué pidió sobre los colores.

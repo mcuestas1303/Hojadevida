@@ -6,6 +6,21 @@
 > El dueño aprobó avanzar con la ficha, la solicitud de cambio y una prueba técnica («Sí, avanza así»). Solicitud:
 > `video-studio/cambios/2026-11-26_tercer_personaje_la_duda.md`.
 
+> **Versión 2 (2026-11-26), corrección del dueño, textual:** «No. Debe tener manos, pies y cuerpo; esa forma podría ser la
+> cabeza; hacele un sheet de personaje». **Lo que sigue abajo describe la versión 1 (solo la madeja) y queda sin efecto en
+> todo lo que contradiga esto:**
+>
+> - **Cuerpo:** de palitos, de tinta, con torso que se inclina, dos brazos con manos de punto y dos piernas con pies
+>   ovalados. La madeja con el rizo de pregunta y los dos huecos de papel es **la cabeza**.
+> - **Medidas** (R = radio de cabeza de Tin y Tan): cabeza 1,35 R de radio · torso 1,9 R · brazo 0,95 R + antebrazo 0,9 R ·
+>   muslo 1,05 R + pierna 1,0 R · grosor 0,19 R. Mide ≈ 1,25 veces lo que Tin y Tan; crecida, hasta ≈ 1,5 veces su tamaño.
+> - **Pelea con el cuerpo:** guardia, golpe, patada, recibe y caído. Ya no ataca con un mechón.
+> - **Se borra empezando por la cabeza.**
+> - **Hoja:** `referencias/hoja_v2_2026-11-26.png` (frente, perfil, espalda, guardia, crecida, golpe, patada, recibe, caído
+>   y borrándose, con Tin a la misma escala). Código: `canales/nostalgia-tin-y-tan/pruebas/2026-11-26_pelea_con_la_duda/duda_v2.py`.
+> - **Color:** por ahora solo tinta. Queda abierto hasta saber qué pidió el dueño sobre los colores.
+> - Siguen igual: sin nombre en pantalla, sin voz, sin boca, no representa a nadie, no aparece en el canal infantil.
+
 - **ID:** `@duda`
 - **Nombre:** «la Duda» es el nombre de trabajo del equipo. **En el video no se dice ni se escribe**: ni en la voz, ni en
   los subtítulos, ni en el título, ni en la portada. Se entiende por el dibujo.

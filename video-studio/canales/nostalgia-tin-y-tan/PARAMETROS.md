@@ -1,5 +1,15 @@
 # Parámetros del canal Tin & Tan
 
+> **Versión 2.0 · 2026-11-26.** Este archivo se versiona desde hoy por pedido del dueño: «Mejor versiona los parámetros
+> porque hay cosas que ya te había pedido que no están implementadas». Cada versión anterior queda entera en
+> `versiones/`. La sección 8 lleva la lista de lo pedido y si está hecho o no.
+
+| Versión | Fecha | Qué cambió | Copia |
+|---|---|---|---|
+| 1.0 | 2026-11-24 | Parámetros flexibles; la nostalgia se elimina como criterio | historial de git |
+| 1.1 | 2026-11-26 | Ajustes «a prueba» por la primera lectura de Studio (público, tema, forma, resubir, suscripción, título) | `versiones/PARAMETROS_v1.1_2026-11-26.md` |
+| 2.0 | 2026-11-26 | **Formato de acción** (sección 7): peleas contra un rival, mundo con profundidad, efectos de acción y sonido. Lista de pedidos y su estado (sección 8) | este archivo |
+
 > **Regla del dueño (2026-11-24), textual:** «Cambia esas limitantes y define nuevos parámetros; podría ser que los
 > parámetros sean flexibles; con este cambio de parámetros considera cambios en todo lo demás si es necesario, incluso
 > en banner e imagen de perfil, etc.»
@@ -106,3 +116,55 @@ cambia. Lo decide el equipo con datos; se anota en la bitácora del final.
 | 2026-11-26 | Título (métrica) | «Se quedó a mirar; tráfico de búsqueda» → solo se quedó a mirar (a prueba; sí del dueño) | Misma lectura: casi todo el tráfico llega del feed de Shorts; la búsqueda es marginal y sus términos no guardan relación con los videos |
 | 2026-11-26 | Short 3 (nota) | Sin cambio de parámetro | Segunda y tercera lectura de Keter: sin avisos, público y como Short, pero sin ninguna vista desde el feed de Shorts. No sirve para juzgar el tema, la firma del lápiz bumerán ni los subtítulos en español. Causa sin confirmar |
 
+
+## 7. Formato de acción (versión 2.0)
+
+> Pedido del dueño (2026-11-26), textual: «Debe tener manos, pies y cuerpo; esa forma podría ser la cabeza; hacele un sheet
+> de personaje. Y la animación de pelea debe ser casi idéntica [a] los videos; es un formato de acción donde hay
+> aceleración, desaceleración. Ya te había dicho también de los colores y del entorno, que tenga profundidad, es decir,
+> que sean personajes 2D con interacción 3D con su mundo. […] Incluye fuego, humo, choques, sonidos de golpes,
+> explosiones, implosiones, daños en el mundo 3D, etc. […] necesito que las alternativas sean rigurosas con lo que te
+> estoy pidiendo; por ahí entra mi aporte».
+
+Esto **no es una hipótesis del equipo: es la definición que pide el dueño**. Una alternativa que no cumpla un renglón no se
+le presenta como si lo cumpliera. Lo que se mide y se ajusta es el cómo y la dosis, no si va.
+
+| # | Requisito | Qué significa en pantalla | Cómo se comprueba |
+|---|---|---|---|
+| A1 | Pelea de acción, «casi idéntica» a la de los videos de referencia | La gramática del género: guardia, anticipación, golpe, pausa de impacto, reacción, caída, persecución, combos. Se copia la forma de moverse, no el metraje ni los personajes ajenos (regla 14 del estudio) | Comparación plano por plano con la referencia (pendiente de verla) |
+| A2 | Aceleración y desaceleración | Cambios de velocidad dentro del plano: arranque lento, golpe rápido, cámara lenta en el impacto, vuelta a velocidad normal; borrón de movimiento en lo rápido | Curva de velocidad por plano en la dirección; revisión a 2 fotogramas por segundo |
+| A3 | Personajes 2D en un mundo con profundidad, con el que interactúan en 3D | El mundo tiene suelo, fondo y objetos a distintas distancias; los personajes se acercan y se alejan de la cámara, pasan por delante y por detrás de las cosas, las empujan, las rompen y proyectan sombra sobre ellas; la cámara se mueve dentro de ese espacio | En cada plano de acción, al menos una interacción con el mundo y un movimiento en profundidad |
+| A4 | Fuego y humo | Llamas y humo que salen de los golpes, de los objetos y del rival | Presentes y legibles en un celular |
+| A5 | Choques | Cuerpos contra el mundo: contra el suelo, una pared, un objeto | Con reacción del mundo (A8) |
+| A6 | Explosiones e implosiones | Estallido hacia afuera y colapso hacia adentro, con onda, restos y luz dentro del límite de destellos | `comprobar_destellos` sin avisos |
+| A7 | Sonidos de golpes | Cada golpe, choque, explosión e implosión con su sonido pegado al fotograma | Línea de tiempo de audio; `revisar_voz.py` no debe perder la voz |
+| A8 | Daños en el mundo | Grietas, cosas rotas, marcas que **se quedan** hasta el final del video | El plano final muestra el daño acumulado |
+| A9 | Rival con cuerpo | Cuerpo de palitos, manos y pies; la madeja de tinta es la cabeza. Hoja de personaje propia | `personajes/duda/` |
+| A10 | Color | **Sin definir aquí:** no encontré escrito en el repositorio qué pidió el dueño sobre los colores, aparte de «color con intención» (2 neutros + 1 acento, 2026-11-21). Se le pregunta | — |
+
+**Lo que no se mueve aunque el formato sea de acción** (sección 2): ninguna persona real ni quien la represente recibe
+golpes; máximo 3 destellos por segundo; cada dato con su fuente; la firma del lápiz bumerán y los subtítulos en español.
+**Nivel de violencia:** golpes, choques, fuego, humo y explosiones de dibujo. La sangre roja y las armas de fuego siguen
+fuera mientras el tramo de 13 a 17 años sea de los mayores del canal (estudio del 2026-11-26, sección 9); el dueño no las
+pidió en esta versión.
+
+Alternativas de producción, con lo que cada una cumple y lo que cuesta:
+`video-studio/estudios/2026-11-26_formato_de_accion_alternativas.md`.
+
+## 8. Pedidos del dueño y estado (al 2026-11-26)
+
+| Pedido | Fecha | Estado | Dónde |
+|---|---|---|---|
+| Parámetros flexibles; quitar la nostalgia | 2026-11-24 | Hecho | secciones 1 a 5 |
+| Firma del lápiz bumerán en todos los videos | 2026-11-24 | Hecho en el short 3 | `FIRMA_LAPIZ_BUMERAN.md` |
+| Subtítulos en español dentro del video | 2026-11-24 | Hecho en el short 3 | — |
+| Portada que nombra al sujeto | 2026-11-24 | Hecho en el short 3 v2 | `DESIGN.md` |
+| Profundidad y más efectos de video | 2026-11-23 | **A medias.** El short 3 usa capas con paralaje, foco y sombras (`efectos.py`). No hay un mundo con el que los personajes interactúen | `cambios/2026-11-23_profundidad_y_efectos_tin_y_tan.md` |
+| Personajes 2D con interacción 3D con su mundo | reiterado el 2026-11-26 | **Sin hacer** | requisito A3 |
+| Lo que pidió sobre los colores | reiterado el 2026-11-26 | **Sin hacer y sin localizar:** no está escrito en el repositorio qué pidió | requisito A10 |
+| Formato de acción y peleas como en los videos de stickman | 2026-11-26 | **Sin hacer.** La prueba del 2026-11-26 no lo cumple: sin mundo, sin cambios de velocidad, sin fuego ni humo, sin sonido | requisitos A1 y A2 |
+| Fuego, humo, choques, explosiones, implosiones, daños en el mundo | 2026-11-26 | **Sin hacer.** `efectos.py` no tiene ninguna de esas funciones | requisitos A4 a A8 |
+| Sonidos de golpes | 2026-11-26 | **Sin hacer.** Hay audio por código para la firma, no golpes | requisito A7 |
+| Tercer personaje con cuerpo, manos y pies | 2026-11-26 | Hoja v2 en borrador, pendiente de su sí | `personajes/duda/` |
+| Ningún prompt sin estadísticas | 2026-11-26 | Vigente; lectura de Studio del 2026-11-26 guardada | `estadisticas/datos/` (no se sube) |
+| Ver los videos de stickman de referencia | 2026-11-26 | **Sin hacer:** solo hay el enlace y un resumen de Keter; nadie del equipo los vio plano por plano | — |
