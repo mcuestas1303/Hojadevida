@@ -23,6 +23,7 @@ emociones, cuando existen), `03 Pruebas descartadas` (no se usa nunca) y `bitaco
 | Marvin (el creador) | es una persona real; sus fotos no van al repo público | el dueño decide si se carga con referencias guardadas solo en Higgsfield |
 | El científico, el afro verde | en reserva | nombre y aprobación del dueño |
 | Lumi Bravo | sin generar | diseño |
+| «La Duda» (`@duda`; rival de Tin y Tan, sin nombre en pantalla; dibujada con código) | borrador del 2026-11-26, idea del dueño | su sí a `duda/ficha.md` y a la hoja; pasar el dibujo a `palitos.py` |
 
 **Tin y Tan no se generan con IA:** se dibujan con código (`herramientas/palitos.py`), que es su diseño oficial.
 

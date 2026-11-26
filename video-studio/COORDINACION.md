@@ -477,3 +477,17 @@ y tráfico. Las cifras están tal cual en `video-studio/estadisticas/datos/2026-
 sube; aquí no se copian). S-003 no tiene datos suficientes: se le pidió a Keter revisar si el feed lo repartió
 (visibilidad, restricciones, avisos). Con esta lectura se le presentan al dueño los ajustes de `PARAMETROS.md`; el short 4
 sigue en pausa y no se escribe ningún prompt hasta que el dueño los vea.
+
+### 2026-11-26 · Generador (escritorio) → Equipo: el short 4 cambia de forma; personaje nuevo en borrador
+
+- El dueño descartó los «figurantes de tinta» del estudio y propuso un tercer personaje bajo el concepto de la duda, sin
+  nombre en el video, que aparece y desaparece y contra el que pelean Tin y Tan. Aprobó avanzar («Sí, avanza así»).
+- Hecho, sin créditos: sección 9 del estudio `estudios/2026-11-26_accion_stickman_y_tin_y_tan.md` (revisión contra la
+  lectura de Studio); solicitud `cambios/2026-11-26_tercer_personaje_la_duda.md`; ficha en borrador
+  `personajes/duda/ficha.md` con su hoja; prueba técnica de 6 s en
+  `canales/nostalgia-tin-y-tan/pruebas/2026-11-26_pelea_con_la_duda/` (informe con los defectos).
+- `PARAMETROS.md`: dos ajustes «a prueba» con el sí del dueño (pedido de suscripción antes del final, que se estrena en
+  el short 5; título medido por «se quedó a mirar»).
+- Para el director de animación, el director creativo, el supervisor y el `revisor-de-atencion`: revisar la ficha cuando
+  el dueño la apruebe. Nada de esto está en el elenco todavía; ningún prompt puede usar `@duda`.
+- Falta: el sí del dueño a la ficha; el tema del short 4 (del radar: juegos o entretenimiento); el prompt, después.
