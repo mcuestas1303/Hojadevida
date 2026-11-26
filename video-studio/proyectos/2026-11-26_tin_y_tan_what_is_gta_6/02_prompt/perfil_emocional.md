@@ -1,59 +1,95 @@
-# Perfil emocional — [TÍTULO]
+# Perfil emocional — What Is GTA 6, and Is a GTA 7 Coming?
 
 <!--
-Regla del dueño (2026-11-23). Va en la ficha de cada video o contenido: por cada elemento, qué emoción buscamos
-provocar y cómo esa emoción nos acerca al objetivo. Lo escribe el director creativo (en series infantiles, la
-psicóloga infantil decide las filas que tocan al niño) con lo que aporten fotografía, animación, sonido y edición.
-Reglas para llenarlo:
-- «Qué hacemos» es algo que se puede medir o señalar en el video (hex, segundos, velocidad, nivel), no un adjetivo.
-- Cada emoción lleva su fundamento: fuente con fecha, capítulo del manual, dato propio del canal, o «hipótesis».
-- Cada fila termina en una métrica que dirá si funcionó. Sin métrica no hay fila.
-- El dueño acompaña justo esta parte (ideas y psicología): las dudas emocionales se le llevan a él.
-Los textos entre corchetes se reemplazan; validar_prompt.py no deja pasar corchetes sin llenar.
+Regla del dueño (2026-11-23). Va en la ficha de cada video: por cada elemento, qué emoción buscamos provocar y cómo
+esa emoción nos acerca al objetivo. Lo escribe el director creativo con lo que aporten fotografía, animación, sonido y
+edición. «Qué hacemos» se puede medir o señalar; cada emoción lleva su fundamento; cada fila termina en una métrica.
+validar_prompt.py no deja pasar corchetes sin llenar: por eso aquí los sellos de manual/14 van entre paréntesis.
 -->
 
-- **Objetivo comercial del brief:** [el que fijó el dueño, con sus palabras y la fecha; si no lo ha fijado, se le pregunta antes de seguir]
-- **Cómo se mide ese objetivo y con qué meta:** [métrica, meta o «línea base», plazo]
-- **Público:** [quién, dónde, edad]
-- **Qué queremos que haga al terminar:** [una sola acción principal]
-- **Arco emocional:** [segundo 1 → mitad → final]
+Escrito el 2026-11-26 por el director creativo y comercial, sobre `direccion.md` (plan de 945 fotogramas con la voz
+estimada: los fotogramas se recalculan con la voz real). Los códigos R1, R2… son los del banco de respaldos de
+`video-studio/manual/14_efectos_y_emocion.md`. Sellos: (investigación), (oficio) y (hipótesis del equipo); equivalen a
+los de la sección 0 de ese manual. «Referencia medida» es `estudios/2026-11-26_referencias_de_pelea_estudio_de_keter.md`.
+
+- **Objetivo comercial del brief:** «el objetivo inicial es entrar al programa de socios; todo debe girar en torno a lograr el objetivo a la mayor brevedad posible» (dueño, 2026-11-23, para todos los canales).
+- **Cómo se mide ese objetivo y con qué meta:** vistas calificadas de Shorts y suscriptores (los umbrales del Programa). En este video: «se quedó a mirar» a 48 horas al menos 5 puntos por encima del short 2 a la misma edad; 500 vistas o más a 48 horas; porcentaje medio visto no más de 5 puntos por debajo del short 2; fila «Feed de Shorts» presente; ningún aviso. Suscriptores por mil vistas, comentarios y regresos: meta inicial, sin datos propios. Lecturas a 48 horas, 7 días y 28 días.
+- **Público:** el que mide Studio (2026-11-26): casi todo menor de 45 años, mayoría hombres, con uno de los tramos mayores entre 13 y 17; EE. UU. primero, luego Filipinas e India; teléfono, y casi la mitad de las horas en televisor y tableta. Todo el público es nuevo.
+- **Qué queremos que haga al terminar:** quedarse hasta la respuesta y suscribirse (una sola invitación, al cierre).
+- **Arco emocional:** **curiosidad** del segundo 0 al ≈ 2,7 (la pregunta de Tan y el rival que se dibuja solo y crece) → **activación que sube** del ≈ 2,7 al ≈ 21,3 (cada golpe trae un dato y más fuerza: cuerpo, cuerpo, altura, arma, arma y fuego) → **asombro** del ≈ 21,3 al ≈ 25,9 (golpe doble, explosión y la cuenta: trece años y sesenta y tres días) → **alivio con humor** del ≈ 25,9 al final (el golpe que no borra, la respuesta honesta, el asterisco) y curiosidad que vuelve con el lápiz lanzado.
 
 ## Emoción buscada, elemento por elemento
 
 | Elemento | Qué hacemos (medible) | Emoción que busca provocar | Fundamento | Cómo nos acerca al objetivo | Métrica que lo dirá | Riesgo si se pasa de la raya |
 |---|---|---|---|---|---|---|
-| Contenido (tema e idea) | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Gancho (primer segundo y portada) | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Estructura y giro | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Personajes y actuación | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Perfil de colores | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Animaciones y movimiento | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Efectos de luz | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Velocidad del video (ritmo de cortes) | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Velocidad del audio (voz) | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Voces (timbre y trato) | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Música | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Efectos de sonido | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Texto en pantalla y tipografía | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Cierre y bucle | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Título y descripción | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Contenido (tema e idea) | La pregunta «Will there be a GTA 7?» pagada por capas con frases comprobadas: qué significa GTA y desde 1997; GTA 6 salió el 19 de noviembre de 2026, sexto numerado, rated M; cada juego numerado, una historia nueva; de GTA 5 a GTA 6, trece años y sesenta y tres días; Rockstar no ha anunciado ninguno, a la fecha | Curiosidad sostenida y, al final, la satisfacción de una respuesta clara aunque sea «todavía no» | R28 (investigación): brecha de información. Dato de búsqueda: en la búsqueda de YouTube «gta 7» pesa más que «what is gta 6» (Trends, EE. UU., 7 días; Keter, 2026-11-26). Dato del canal: el short de GTA 6 es el que más retuvo. Patrón «la pregunta siguiente» de `metodo/ganchos.md`: validado en búsqueda, sin medir en Studio (hipótesis del equipo) | Un tema que ese público ya mira y una pregunta que ya se hace traen vistas calificadas del feed | «Se quedó a mirar»; vistas calificadas a 48 horas y 7 días; retención al segundo 3 | Que se sienta engaño si la respuesta no se oye clara: por eso va con placa, sello de fecha y 69 fotogramas quieta. Que parezca una invitación a comprar un juego para mayores de 17: no se recomienda nada y se dice «rated M» |
+| Gancho (primer segundo y portada) | Fotograma 0: «GTA 7?» con subrayado amarillo y «Facts, Checked», televisor en blanco al centro, el lápiz en el aire que Tan atrapa en f10; voz de Tan desde f14; el rival se dibuja en f30 y en f69 mide vez y media lo que ellos | Curiosidad y orientación: se entiende de qué va antes de un segundo | R28 (investigación); R10 (investigación): lo nuevo dispara la orientación; R33 (investigación): el único elemento saturado se mira primero; movimiento desde el fotograma 0, cap. 11 regla 1 (hipótesis del equipo) | Es la palanca del KPI: sin quedarse no hay vista calificada | «Se quedó a mirar» frente a «descartado»; retención en los segundos 1 a 3 | Que la portada insinúe un tráiler o una fecha: no lleva ni imagen del juego ni cifra. Demasiados elementos: texto, televisor, dos caras y lápiz, nada más |
+| Estructura y giro | De lo general a lo particular; primer golpe con dato en ≈ 3,0 s; cuatro acciones entre los segundos 5 y 10; la mecha (fuego en f496) se paga con la explosión (f662); pico al 70–73 %; después, el giro: el último golpe no borra al rival | Anticipación que se cumple, sorpresa en el giro | R34 (investigación): pico y final pesan en el juicio; R35 (investigación): la sorpresa es la diferencia con lo esperado; dato del canal: la caída fuerte de los dos videos medidos está entre los segundos 5 y 10 | Sostiene la retención justo donde el canal la pierde, y deja un final distinto (política de contenido repetitivo) | Retención en los segundos 5 a 10 frente al short 2; pico en f662–f696; porcentaje medio visto | Que el final sepa a poco: se compensa con la implosión y con el asterisco como remate visual |
+| Personajes y actuación | Tin responde y golpea; Tan pregunta y golpea; pelean juntos y un solo golpe lo dan a la vez (f641). El rival es grande y terco pero falla sus dos ataques y mira su espada rota; nadie golpea a un caído | Simpatía por los dos; juego, no crueldad; el rival cae bien | R24 (investigación): la emoción se lee en el movimiento; R22 (oficio); R36 (investigación): violación benigna, el daño de dibujo parece inofensivo; ficha del rival: nunca da miedo | El apego a Tin y Tan es de lo que depende el suscriptor (hipótesis del equipo) | Suscriptores por mil vistas; comentarios que nombran a Tin, a Tan o al rival | Ensañamiento o miedo: en un canal con un tramo grande de 13 a 17 costaría la distribución |
+| Perfil de colores | Paleta C: papel claro frío (`#DCE6EE`, `#F4F1EA`) y tinta `#1B1B22`; un acento, amarillo `#FFD21F`, solo detrás del dato (subrayado en nombres de marca, placa en lo demás) y en la estrella de impacto; fuego en dos tonos planos; Tin y Tan con sus colores | Atención limpia; «lo subrayado es lo comprobado»; energía sin alarma | R33 y R27 (investigación); estudio de color del 2026-11-26, alternativa C; el significado del color depende del contexto, cap. 13 (hipótesis del equipo) | El primer cuadro se lee de un vistazo y el ojo aprende dónde está cada dato | «Se quedó a mirar»; retención en los fotogramas de dato (f91, f195, f236, f311, f390, f436, f501, f702, f804); `revisar_color.py` | Que amarillo y negro junto a «GTA» recuerden al logotipo de la editora; que el humo gris se confunda con la cabeza de Tan con daltonismo: los dos quedan por medir |
+| Animaciones y movimiento | Cada golpe con los tiempos medidos: 6 f de anticipación, 6 f de pausa, contacto de 2 f, lanzamiento de 4 f con calcos, vuelo de 8 a 15 f, recuperación de 6 f. Mundo con profundidad: los vuelos van hacia el fondo o hacia cámara; ocho piezas del entorno se rompen y se quedan rotas | Expectativa en la pausa, descarga en el contacto, suspenso en el aire | Referencia medida (oficio); R22 (oficio): anticipación y ritmo; R23 (investigación, resumen): los cambios de velocidad dan vida; R1, R2 y R3 (investigación): profundidad por paralaje, oclusión y sombra; R4 (investigación) en la caja que viene a cámara | Es el cambio grande que se mide: la forma de acción frente al diálogo de los shorts 1 a 3 | Retención en cada contacto; «se quedó a mirar» y porcentaje medio visto frente al short 2 | Pulso plano si todos los golpes duran igual: por eso cambian arma, dirección y destino. Mareo: la cámara corta, no persigue |
+| Efectos de luz | Sin temblor. Estrella pequeña de 2 a 4 f en los contactos. Una sola vez: 2 cuadros invertidos con máscara y 4 f de claro de paleta con máscara (55 % del cuadro como máximo, opacidad 0,6). Fuego plano por fases; humo con contorno; nunca blanco puro a pantalla completa | Sobresalto breve en el pico; el resto, claridad | R35 (investigación); R42 y R43 (investigación): límite de destellos; referencia medida (oficio): impacto en cuadros cortos con corte | Un pico que se nota sin riesgo de salud ni de aviso | `comprobar_destellos` en 0 avisos; retención en f662–f696; ningún comentario sobre luces | Más de 3 destellos por segundo o rojo que parpadea: no sale |
+| Velocidad del video (ritmo de cortes) | 21 cortes en ≈ 31,5 s, cinco de ellos de impacto (2 f); cámara lenta a 0,25 en los vuelos y a 0,3 en la carrera previa al remate; carreras a 1,3; un respiro de 80 f tras la explosión | Urgencia en las ráfagas, alivio y lectura en el respiro | R18 (oficio); R10 (investigación): lo repetido pierde efecto; picos y respiros, cap. 11 regla 14 (hipótesis del equipo); referencia medida: la desaceleración va en el aire | Mantiene la atención sin cansar y deja leer la cifra | Curva de retención por segundo; línea plana en f697–f776 | Que no dé tiempo a leer: cada dato queda quieto 37 f o más |
+| Velocidad del audio (voz) | Voz al 110 %, siempre igual: la cámara lenta no la toca. Tin empieza cada dato 2 f después del contacto. Pausa de voz de f629 a f696 para la explosión | Claridad y confianza; el silencio de voz hace más grande el pico | R27 (investigación); velocidad elegida por el dueño el 2026-11-21 | Se entiende a la primera (la repetición no es vista calificada) | Retención en las líneas con número (f146–f223, f284–f376, f697–f746) | Que la línea 1, larga, suene atropellada: se abre en sus dos pausas |
+| Voces (timbre y trato) | Tan con Zelda y Tin con Kevin (elegidas por el dueño), una generación cada una. Tan pregunta tres veces; Tin responde sin adjetivos | Familiaridad y confianza | R26 (investigación): lo ya oído gusta más | Reconocer al canal; que el dato se crea | Espectadores que regresan; suscriptores por mil vistas | Que «Grand Theft Auto», «Rockstar» o «sixty-three» suenen mal: se escucha antes de aprobar y no se regenera sin autorización |
+| Música | Solo percusión, por código, 120 pulsos por minuto, ≈ −26 LUFS, atenuada bajo la voz; sube una capa por golpe; calla del todo 6 f antes del golpe doble; vuelve en su capa más baja | Energía que crece; expectación en el silencio | R39 (oficio); R10 (investigación): el cambio brusco es novedad; que el pulso ayude a retener (hipótesis del equipo) | Empuja la subida hacia el pico sin tapar los datos | Retención en f618–f696; `revisar_voz.py` sin palabras perdidas | Que tape la voz o que recuerde a música ajena: sin melodía |
+| Efectos de sonido | Cada contacto con su golpe en K o K −1; madera, cajas, postes, vidrio, chispas; explosión en la expansión (f671); un «ding» de gaveta en f588; implosión con corte seco; seis toques de lápiz para el asterisco | Impacto; un punto de humor; cierre seco | R39 (oficio); R35 (investigación); R5 (investigación) en la subida previa al remate; referencia medida: el golpe suena en el contacto o un cuadro antes | El sonido es la mitad del golpe: sin él la pelea no retiene | Retención en cada contacto y en el pico | Sonidos sintéticos que suenen pobres o iguales: nadie del equipo los ha oído; hace falta la escucha de una persona |
+| Texto en pantalla y tipografía | Inter Display Medium, dígitos `ss01`, tinta sobre amarillo (≈ 11,8:1); dato de 86 px o más; entra en 5 f y queda quieto 37 f o más; un dato a la vez; sello de fecha junto a «not announced» | Claridad y confianza: se puede seguir sin sonido | R27 (investigación); R33 (investigación); dosis de la tabla 2.7 del manual 14 (hipótesis del equipo) | Retiene a quien mira sin sonido y en televisor | Retención en cada fotograma de dato | Tres capas de texto (dato, subtítulo, portada) a la vez: nunca coinciden las tres |
+| Subtítulos en español | Franja fija y 905–1085, tinta sobre panel claro al 0,82, hasta 2 renglones, siguen a la voz; sin subtítulo en los planos de portada; pista `subtitulos_es.srt` | Comprensión y cercanía | Pedido del dueño (2026-11-24); R27 (investigación); que amplíe el público (hipótesis del equipo) | Suma espectadores hispanohablantes sin otro video | Vistas y retención por país e idioma en Studio | Que tapen la acción: ningún contacto ocurre detrás de la franja |
+| Cierre y bucle | Golpe 6 con implosión; «Rockstar hasn't announced one. As of today.»; el resto se anuda en un asterisco y se escurre; Tan: «Subscribe. We check the facts.»; plano de portada con los daños y Tan lanza el lápiz; el vuelo empalma con el fotograma 0 | Alivio con humor; confianza en que aquí no se inventa; ganas de volver | R34 (investigación): el final pesa; R36 (investigación): incongruencia que se resuelve; manual 14, sección 4b: una sola invitación atada a una razón (hipótesis del equipo); YouTube permite pedir la suscripción | Suscriptores, uno de los dos umbrales; hoy el canal tiene cero | Suscriptores por mil vistas; porcentaje que llega al último segundo; comentarios | Que «no anunciado» decepcione: se mide la caída en f795–f872. Prometer algo: la invitación no promete tema |
+| Firma del canal: el lápiz bumerán | Apertura de 10 f con atrapada en f10 y cierre de 24 f, sin cambios; Tin sin lápiz en esos planos | Reconocimiento | R26 (investigación); que una firma repetida convierta (hipótesis del equipo) | Que el canal se reconozca de un video a otro | Espectadores que regresan; «se quedó a mirar» | La voz entra en f14: es el costo conocido de la firma |
+| Universo conectado | 22 f de eventos activos al final (asterisco y salida por la grieta) y tres elementos quietos (mando, caja rota, expediente); sin voz ni texto | Nada, para quien no lo nota; un guiño para quien vuelva | Biblia del universo (privada); R28 (investigación); todo lo demás (hipótesis del equipo) | Regresos y comentarios, que hoy están en cero | Público que regresa; comentarios que nombran una pista | Distraer del dato: nada activo antes del segundo 28 |
+| Título y descripción | Título candidato «What Is GTA 6, and Is a GTA 7 Coming?» (37 caracteres; pasa el filtro con 0 errores y 0 avisos según el comercial); descripción con la respuesta fechada en la primera línea, fuentes, descargo y «Rated M» | Curiosidad y confianza | `comercial/titulos.md`; R28 y R27 (investigación) | El título se mide por «se quedó a mirar»; la descripción evita el reclamo de marca y el de engaño | «Se quedó a mirar»; ningún aviso | Que «Is a GTA 7 Coming?» se lea como promesa de que sí: lo firma una persona |
 
 ## Emociones que NO queremos provocar
 
-- [emoción, por qué la evitamos y dónde hay riesgo de que aparezca]
+- **Miedo:** el rival crecido en f46–f69 y la explosión. Se evita con ojos de papel, sin dientes ni garras, ataques que fallan, y fuego plano de dibujo.
+- **Crueldad o morbo:** siete golpes a un mismo rival. Se evita porque se levanta solo y vuelve a plantarse, nadie golpea a un caído, no hay sangre ni rojo sobre su cuerpo, y al final no muere.
+- **Engaño:** que la pregunta del gancho parezca una promesa de noticia. La respuesta se dice entera, con fecha y con el mayor contraste del final.
+- **Deseo de comprar un juego para mayores de 17:** no se muestra nada del juego, no se dice que sea bueno, y «rated M» se dice y se escribe.
+- **Mareo o molestia visual:** cámara que corta en vez de perseguir, sin temblor, destellos dentro del límite.
+- **Súplica:** una sola invitación, de cinco palabras, sin promesa ni recompensa.
 
 ## Para la ficha de entrega (`ficha.json`, campo `emociones`)
 
 ```text
-[objetivo, arco, y una línea por elemento: «elemento: emoción → cómo ayuda → métrica»]
+Objetivo: entrar al Programa de socios lo antes posible (dueño, 2026-11-23). Arco: curiosidad (0-2,7 s) → activación que sube (2,7-21,3 s) → asombro (21,3-25,9 s) → alivio con humor y curiosidad que vuelve (25,9-31,5 s).
+contenido: curiosidad por la pregunta siguiente, pagada por capas → vistas calificadas → se quedó a mirar y retención al segundo 3
+gancho: curiosidad y orientación (GTA 7?, lápiz, rival que se dibuja) → baja los descartes → se quedó a mirar
+estructura y giro: anticipación cumplida y sorpresa (el último golpe no borra) → sostiene los segundos 5 a 10 → retención frente al short 2
+personajes y actuación: simpatía y juego, sin crueldad → apego → suscriptores por mil vistas
+colores: atención limpia; amarillo solo en el dato → el ojo sabe dónde mirar → retención en cada dato
+animaciones: expectativa, descarga y suspenso (tiempos medidos) → la forma de acción es lo que se mide → retención en cada contacto
+efectos de luz: sobresalto breve solo en el pico → pico visible sin riesgo → comprobar_destellos y retención en f662-f696
+velocidad del video: urgencia y respiro (21 cortes, cámara lenta en el aire) → atención sin cansancio → curva por segundo
+velocidad del audio: claridad (voz al 110 %, nunca frenada) → se entiende a la primera → retención en las líneas con número
+voces: familiaridad (Zelda y Kevin) → reconocer el canal → espectadores que regresan
+música: energía que crece y silencio antes del pico (solo percusión) → empuja al remate → retención en f618-f696
+efectos de sonido: impacto y un punto de humor → la mitad del golpe → retención en cada contacto
+texto: claridad y confianza (dato quieto, sello de fecha) → se sigue sin sonido → retención en cada dato
+subtítulos en español: comprensión → más público con el mismo video → vistas y retención por país
+cierre y bucle: alivio con humor y confianza (respuesta honesta, asterisco, una invitación) → suscriptores → suscriptores por mil vistas
+firma del canal: reconocimiento (lápiz bumerán) → regreso → espectadores que regresan
+universo: guiño que no cuesta atención → regresos y comentarios → comentarios que nombran una pista
+título y descripción: curiosidad y confianza → se quedó a mirar sin avisos → se quedó a mirar; avisos
 ```
 
 ## Preguntas para el dueño
 
-- [lo emocional o psicológico que el equipo no debe decidir solo]
+- **La frase de las historias.** «Each numbered game tells a new story» es parte de su idea y se conservó, pero es la de fuente más débil (solo Wikipedia, y es lectura del equipo). Quien conozca la serie puede discutirla en los comentarios. ¿La quiere dentro, sabiendo eso, o prefiere que salga?
+- **Terminar en «todavía no».** El video cierra con la respuesta honesta y un asterisco, no con un gran final. El equipo cree que eso da confianza y que el humor del rival que se escurre lo aligera; es una apuesta emocional y es suya la última palabra.
+- **El rival recibe siete golpes y no muere.** Está dentro de lo que aprobó (nunca muere, nunca da miedo). Si al ver la prueba le parece demasiado para el tramo de 13 a 17, se baja la cantidad de golpes, no la de datos.
 
 ## Después de publicar
 
 | Métrica | Meta | Resultado a 7 días | Resultado a 28 días | Qué elemento se ajusta |
 |---|---|---|---|---|
-| [ ] | [ ] | [ ] | [ ] | [ ] |
+| Se quedó a mirar (48 horas) | Short 2 a la misma edad, más 5 puntos | pendiente | pendiente | Gancho: pregunta, portada, entrada del rival, firma |
+| Vistas a 48 horas | 500 o más | pendiente | pendiente | Tema y título |
+| Retención en los segundos 5 a 10 | Menos caída que en el short 2 | pendiente | pendiente | Reparto de la línea 1 en tres golpes; contraataque del rival |
+| Retención en f662–f696 y en f697–f776 | Pico visible y línea plana después | pendiente | pendiente | Golpe doble, explosión, cuenta |
+| Retención en f795–f872 | Sin caída al oír la respuesta | pendiente | pendiente | Dónde y cuántas veces se dice «not announced» |
+| Porcentaje medio visto | No más de 5 puntos por debajo del short 2 | pendiente | pendiente | Duración; la frase de las historias |
+| Suscriptores por mil vistas | Línea base (hoy, cero) | pendiente | pendiente | Invitación y cierre |
+| Comentarios, y los que nombran una pista o dicen que no se respondió | Línea base (hoy, cero) | pendiente | pendiente | Universo; respuesta honesta |
+| Avisos y fila «Feed de Shorts» | Ningún aviso; fila presente | pendiente | pendiente | Si hay aviso, se detiene y se le lleva al dueño |
