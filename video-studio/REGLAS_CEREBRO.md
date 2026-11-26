@@ -222,3 +222,12 @@
   diferentes plataformas debe quedar en el método del motor para poder definir el tema y con ello el prompt que lleva
   todos los detalles y fichas técnicas, incluida la estrategia, y con ello el Short o el video, y todo lo anterior
   considerando el universo definido». Cadena y fuentes: `video-studio/MOTOR_DE_CONTENIDO.md`, secciones 5 a 8.
+
+- **Métodos del Generador, de producción y del Creador de personajes; filtro de políticas; mapa (dueño, 2026-11-26):** «todo
+  lo que mencionas queda como método y solo agrega el filtro de las políticas de YouTube. Ahora […] defíneme el método
+  [para] tomar el resultado del motor y generar el prompt y los elementos del entregable del Generador de prompts […] con
+  base al universo. Y luego el método que tendría el equipo de producción audiovisual para producir el prompt. Como
+  variables, por ejemplo, si el prompt según el universo estipula que hay algún personaje que no está creado, entonces
+  deberá darle todos los detalles al creador de personajes; por tanto el creador de personajes también debe definir el
+  método. Estaba viendo un video de cómo funciona Graphify; me gustó como método de organización; mira si aplica y lo
+  integramos». Archivos: `video-studio/metodo/`, `video-studio/MOTOR_DE_CONTENIDO.md` (5b, 9 y 10), `video-studio/mapa/`.

@@ -1,0 +1,710 @@
+{
+ "directed": true,
+ "multigraph": false,
+ "graph": {
+  "nombre": "Estudio de video · motor de contenido",
+  "actualizado": "2026-11-26",
+  "nota": "Formato de nodos y enlaces (node-link), el mismo que usa Graphify y que lee NetworkX. Hecho a mano; cubre lo principal."
+ },
+ "nodes": [
+  {
+   "id": "dueno",
+   "tipo": "persona",
+   "nombre": "El dueño",
+   "ruta": "",
+   "estado": "decide ideas, línea editorial, créditos, instalar, rehacer y publicar"
+  },
+  {
+   "id": "claude_md",
+   "tipo": "regla",
+   "nombre": "Reglas del dueño",
+   "ruta": "CLAUDE.md",
+   "estado": "vigente"
+  },
+  {
+   "id": "reglas_cerebro",
+   "tipo": "regla",
+   "nombre": "Reglas para el Cerebro",
+   "ruta": "video-studio/REGLAS_CEREBRO.md",
+   "estado": "vigente"
+  },
+  {
+   "id": "motor",
+   "tipo": "metodo",
+   "nombre": "Motor de contenido",
+   "ruta": "video-studio/MOTOR_DE_CONTENIDO.md",
+   "estado": "versión 0.3"
+  },
+  {
+   "id": "m_generador",
+   "tipo": "metodo",
+   "nombre": "Método del Generador de prompts",
+   "ruta": "video-studio/metodo/1_generador_de_prompts.md",
+   "estado": "versión 0.1"
+  },
+  {
+   "id": "m_produccion",
+   "tipo": "metodo",
+   "nombre": "Método de producción audiovisual",
+   "ruta": "video-studio/metodo/2_produccion_audiovisual.md",
+   "estado": "versión 0.1"
+  },
+  {
+   "id": "m_personajes",
+   "tipo": "metodo",
+   "nombre": "Método del Creador de personajes",
+   "ruta": "video-studio/metodo/3_creador_de_personajes.md",
+   "estado": "versión 0.1"
+  },
+  {
+   "id": "arranque",
+   "tipo": "plantilla",
+   "nombre": "Arranque de universo (otra marca o personajes)",
+   "ruta": "video-studio/plantillas/arranque_de_universo.md",
+   "estado": "plantilla"
+  },
+  {
+   "id": "pedido_pj",
+   "tipo": "plantilla",
+   "nombre": "Pedido de personaje",
+   "ruta": "video-studio/plantillas/pedido_de_personaje.md",
+   "estado": "plantilla"
+  },
+  {
+   "id": "brief",
+   "tipo": "plantilla",
+   "nombre": "Brief del proyecto",
+   "ruta": "video-studio/plantillas/proyecto/00_brief.md",
+   "estado": "actualizada el 2026-11-26"
+  },
+  {
+   "id": "c_generador",
+   "tipo": "conversacion",
+   "nombre": "Generador de prompts",
+   "ruta": "",
+   "estado": "prompts y fichas"
+  },
+  {
+   "id": "c_produccion",
+   "tipo": "conversacion",
+   "nombre": "Equipo de producción audiovisual",
+   "ruta": "",
+   "estado": "todo lo terminado"
+  },
+  {
+   "id": "c_personajes",
+   "tipo": "conversacion",
+   "nombre": "Creador de personajes",
+   "ruta": "",
+   "estado": "personajes"
+  },
+  {
+   "id": "c_keter",
+   "tipo": "conversacion",
+   "nombre": "Keter (PC del dueño)",
+   "ruta": "",
+   "estado": "Studio, Trends, descargas, publicación, Cerebro"
+  },
+  {
+   "id": "parametros",
+   "tipo": "canal",
+   "nombre": "Parámetros de Tin & Tan",
+   "ruta": "video-studio/canales/nostalgia-tin-y-tan/PARAMETROS.md",
+   "estado": "versión 2.3"
+  },
+  {
+   "id": "universo",
+   "tipo": "universo",
+   "nombre": "Universo de Tin & Tan (biblia, registro de pistas, plan de tanda, decisiones)",
+   "ruta": "Drive «Canal YouTube - Entregas» (privado)",
+   "estado": "versión 0.1, aprobado en lo principal"
+  },
+  {
+   "id": "tin",
+   "tipo": "personaje",
+   "nombre": "Tin",
+   "ruta": "video-studio/personajes/tin/ficha.md",
+   "estado": "en el elenco"
+  },
+  {
+   "id": "tan",
+   "tipo": "personaje",
+   "nombre": "Tan",
+   "ruta": "video-studio/personajes/tan/ficha.md",
+   "estado": "en el elenco"
+  },
+  {
+   "id": "duda",
+   "tipo": "personaje",
+   "nombre": "El rival (la duda)",
+   "ruta": "video-studio/personajes/duda/ficha.md",
+   "estado": "en el elenco; hoja v2 aprobada"
+  },
+  {
+   "id": "firma",
+   "tipo": "regla",
+   "nombre": "Firma del lápiz bumerán",
+   "ruta": "video-studio/canales/nostalgia-tin-y-tan/FIRMA_LAPIZ_BUMERAN.md",
+   "estado": "vigente"
+  },
+  {
+   "id": "motor_accion",
+   "tipo": "herramienta",
+   "nombre": "Motor de acción (escena 3D por código)",
+   "ruta": "video-studio/motor_de_accion/",
+   "estado": "funciona; guion aún dentro de la escena"
+  },
+  {
+   "id": "catalogo",
+   "tipo": "biblioteca",
+   "nombre": "Catálogo de elementos",
+   "ruta": "video-studio/motor_de_accion/catalogo.json",
+   "estado": "al día al 2026-11-26"
+  },
+  {
+   "id": "pal_a",
+   "tipo": "paleta",
+   "nombre": "A · Papel con fondo frío (hoja Día)",
+   "ruta": "video-studio/motor_de_accion/paletas/a_papel_con_fondo_frio.json",
+   "estado": "aprobada"
+  },
+  {
+   "id": "pal_b",
+   "tipo": "paleta",
+   "nombre": "B · Noche de tinta (hoja Noche)",
+   "ruta": "video-studio/motor_de_accion/paletas/b_noche_de_tinta.json",
+   "estado": "aprobada"
+  },
+  {
+   "id": "pal_c",
+   "tipo": "paleta",
+   "nombre": "C · Alto voltaje (hoja Voltaje)",
+   "ruta": "video-studio/motor_de_accion/paletas/c_alto_voltaje.json",
+   "estado": "aprobada"
+  },
+  {
+   "id": "ent_ciudad",
+   "tipo": "entorno",
+   "nombre": "Ciudad de cartón",
+   "ruta": "video-studio/motor_de_accion/entornos/ciudad_de_carton.js",
+   "estado": "de relleno"
+  },
+  {
+   "id": "stats",
+   "tipo": "dato",
+   "nombre": "Lectura de Studio del 2026-11-26",
+   "ruta": "video-studio/estadisticas/datos/ (no se sube)",
+   "estado": "dos videos medidos"
+  },
+  {
+   "id": "busqueda",
+   "tipo": "dato",
+   "nombre": "Datos de búsqueda del short 4 (Trends, autocompletado)",
+   "ruta": "video-studio/estadisticas/datos/ (no se sube)",
+   "estado": "leídos el 2026-11-26"
+  },
+  {
+   "id": "est_accion",
+   "tipo": "estudio",
+   "nombre": "Acción de palitos y políticas de YouTube",
+   "ruta": "video-studio/estudios/2026-11-26_accion_stickman_y_tin_y_tan.md",
+   "estado": "hecho"
+  },
+  {
+   "id": "est_ref",
+   "tipo": "estudio",
+   "nombre": "Referencias de pelea medidas cuadro a cuadro",
+   "ruta": "video-studio/estudios/2026-11-26_referencias_de_pelea_estudio_de_keter.md",
+   "estado": "hecho"
+  },
+  {
+   "id": "est_color",
+   "tipo": "estudio",
+   "nombre": "Color por estadísticas y psicología",
+   "ruta": "video-studio/estudios/2026-11-26_color_por_estadisticas_y_psicologia.md",
+   "estado": "hecho"
+  },
+  {
+   "id": "est_universo",
+   "tipo": "estudio",
+   "nombre": "Investigación del universo conectado",
+   "ruta": "video-studio/estudios/2026-11-26_universo_conectado_investigacion.md",
+   "estado": "hecho"
+  },
+  {
+   "id": "est_alt",
+   "tipo": "estudio",
+   "nombre": "Alternativas de producción",
+   "ruta": "video-studio/estudios/2026-11-26_formato_de_accion_alternativas.md",
+   "estado": "alternativa 4 en prueba"
+  },
+  {
+   "id": "radar",
+   "tipo": "comercial",
+   "nombre": "Radar de tendencias",
+   "ruta": "video-studio/comercial/radar_de_tendencias.md",
+   "estado": "actualizado el 2026-11-26"
+  },
+  {
+   "id": "calendario",
+   "tipo": "comercial",
+   "nombre": "Calendario de temporadas por país",
+   "ruta": "video-studio/comercial/2026-11-26_calendario_de_temporadas_por_pais.md",
+   "estado": "hecho; faltan históricos de Trends"
+  },
+  {
+   "id": "tema4",
+   "tipo": "comercial",
+   "nombre": "Tema del short 4",
+   "ruta": "video-studio/comercial/2026-11-26_tema_short4_tin_y_tan.md",
+   "estado": "propuesta «What is GTA 6?», sin el sí del dueño"
+  },
+  {
+   "id": "s1",
+   "tipo": "video",
+   "nombre": "Short 1 · casete",
+   "ruta": "video-studio/proyectos/2026-11-21_tin_y_tan_casete_y_lapiz",
+   "estado": "público"
+  },
+  {
+   "id": "s2",
+   "tipo": "video",
+   "nombre": "Short 2 · GTA 6",
+   "ruta": "video-studio/proyectos/2026-11-21_tin_y_tan_gta6",
+   "estado": "público; el mejor"
+  },
+  {
+   "id": "s3",
+   "tipo": "video",
+   "nombre": "Short 3 · Jensen Huang",
+   "ruta": "video-studio/proyectos/2026-11-24_tin_y_tan_jensen_huang",
+   "estado": "público; el feed no lo repartió"
+  },
+  {
+   "id": "s4",
+   "tipo": "video",
+   "nombre": "Short 4",
+   "ruta": "",
+   "estado": "sin tema cerrado; primera página de la tanda 01"
+  },
+  {
+   "id": "prueba3d",
+   "tipo": "prueba",
+   "nombre": "Prueba del mundo 3D (alternativa 4)",
+   "ruta": "video-studio/canales/nostalgia-tin-y-tan/pruebas/2026-11-26_accion_mundo_3d/informe.md",
+   "estado": "incompleta: le faltan pedidos; clip generado detenido"
+  },
+  {
+   "id": "pc_escritorio",
+   "tipo": "pendiente",
+   "nombre": "PC de escritorio con GTX 1070 Ti",
+   "ruta": "",
+   "estado": "sin conectar; por validar"
+  },
+  {
+   "id": "youtube",
+   "tipo": "plataforma",
+   "nombre": "Políticas y funciones de YouTube",
+   "ruta": "video-studio/MOTOR_DE_CONTENIDO.md sección 5b",
+   "estado": "filtro F1 a F13"
+  }
+ ],
+ "links": [
+  {
+   "source": "dueno",
+   "target": "claude_md",
+   "verbo": "fija",
+   "certeza": "hecho"
+  },
+  {
+   "source": "claude_md",
+   "target": "parametros",
+   "verbo": "manda sobre",
+   "certeza": "hecho"
+  },
+  {
+   "source": "claude_md",
+   "target": "motor",
+   "verbo": "manda sobre",
+   "certeza": "hecho"
+  },
+  {
+   "source": "reglas_cerebro",
+   "target": "c_keter",
+   "verbo": "copia las reglas para",
+   "certeza": "hecho"
+  },
+  {
+   "source": "motor",
+   "target": "m_generador",
+   "verbo": "entrega a",
+   "certeza": "hecho"
+  },
+  {
+   "source": "m_generador",
+   "target": "m_produccion",
+   "verbo": "entrega a",
+   "certeza": "hecho"
+  },
+  {
+   "source": "m_generador",
+   "target": "m_personajes",
+   "verbo": "pide personajes a",
+   "certeza": "hecho"
+  },
+  {
+   "source": "m_personajes",
+   "target": "m_generador",
+   "verbo": "entrega a",
+   "certeza": "hecho"
+  },
+  {
+   "source": "m_produccion",
+   "target": "motor",
+   "verbo": "devuelve mediciones a",
+   "certeza": "hecho"
+  },
+  {
+   "source": "c_generador",
+   "target": "m_generador",
+   "verbo": "sigue",
+   "certeza": "hecho"
+  },
+  {
+   "source": "c_produccion",
+   "target": "m_produccion",
+   "verbo": "sigue",
+   "certeza": "hecho"
+  },
+  {
+   "source": "c_personajes",
+   "target": "m_personajes",
+   "verbo": "sigue",
+   "certeza": "hecho"
+  },
+  {
+   "source": "c_keter",
+   "target": "stats",
+   "verbo": "lee para el motor",
+   "certeza": "hecho"
+  },
+  {
+   "source": "c_keter",
+   "target": "busqueda",
+   "verbo": "lee para el motor",
+   "certeza": "hecho"
+  },
+  {
+   "source": "c_keter",
+   "target": "est_ref",
+   "verbo": "midió",
+   "certeza": "hecho"
+  },
+  {
+   "source": "c_keter",
+   "target": "s4",
+   "verbo": "publica",
+   "certeza": "hecho"
+  },
+  {
+   "source": "motor",
+   "target": "stats",
+   "verbo": "usa",
+   "certeza": "hecho"
+  },
+  {
+   "source": "motor",
+   "target": "busqueda",
+   "verbo": "usa",
+   "certeza": "hecho"
+  },
+  {
+   "source": "motor",
+   "target": "radar",
+   "verbo": "usa",
+   "certeza": "hecho"
+  },
+  {
+   "source": "motor",
+   "target": "calendario",
+   "verbo": "usa",
+   "certeza": "hecho"
+  },
+  {
+   "source": "motor",
+   "target": "youtube",
+   "verbo": "filtra con",
+   "certeza": "hecho"
+  },
+  {
+   "source": "motor",
+   "target": "universo",
+   "verbo": "coloca cada video en",
+   "certeza": "hecho"
+  },
+  {
+   "source": "motor",
+   "target": "arranque",
+   "verbo": "se replica con",
+   "certeza": "hecho"
+  },
+  {
+   "source": "m_generador",
+   "target": "brief",
+   "verbo": "llena",
+   "certeza": "hecho"
+  },
+  {
+   "source": "m_generador",
+   "target": "pedido_pj",
+   "verbo": "usa",
+   "certeza": "hecho"
+  },
+  {
+   "source": "m_personajes",
+   "target": "pedido_pj",
+   "verbo": "recibe",
+   "certeza": "hecho"
+  },
+  {
+   "source": "parametros",
+   "target": "s4",
+   "verbo": "define el formato de",
+   "certeza": "hecho"
+  },
+  {
+   "source": "parametros",
+   "target": "est_accion",
+   "verbo": "se apoya en",
+   "certeza": "hecho"
+  },
+  {
+   "source": "parametros",
+   "target": "est_ref",
+   "verbo": "se apoya en",
+   "certeza": "hecho"
+  },
+  {
+   "source": "parametros",
+   "target": "est_color",
+   "verbo": "se apoya en",
+   "certeza": "hecho"
+  },
+  {
+   "source": "parametros",
+   "target": "est_universo",
+   "verbo": "se apoya en",
+   "certeza": "hecho"
+  },
+  {
+   "source": "parametros",
+   "target": "stats",
+   "verbo": "se ajusta con",
+   "certeza": "hecho"
+  },
+  {
+   "source": "universo",
+   "target": "tin",
+   "verbo": "contiene a",
+   "certeza": "hecho"
+  },
+  {
+   "source": "universo",
+   "target": "tan",
+   "verbo": "contiene a",
+   "certeza": "hecho"
+  },
+  {
+   "source": "universo",
+   "target": "duda",
+   "verbo": "contiene a",
+   "certeza": "hecho"
+  },
+  {
+   "source": "universo",
+   "target": "firma",
+   "verbo": "usa",
+   "certeza": "hecho"
+  },
+  {
+   "source": "universo",
+   "target": "pal_a",
+   "verbo": "tiene una hoja por",
+   "certeza": "hecho"
+  },
+  {
+   "source": "universo",
+   "target": "pal_b",
+   "verbo": "tiene una hoja por",
+   "certeza": "hecho"
+  },
+  {
+   "source": "universo",
+   "target": "pal_c",
+   "verbo": "tiene una hoja por",
+   "certeza": "hecho"
+  },
+  {
+   "source": "universo",
+   "target": "s1",
+   "verbo": "trata como antecedentes a",
+   "certeza": "hecho"
+  },
+  {
+   "source": "universo",
+   "target": "s2",
+   "verbo": "trata como antecedentes a",
+   "certeza": "hecho"
+  },
+  {
+   "source": "universo",
+   "target": "s3",
+   "verbo": "trata como antecedentes a",
+   "certeza": "hecho"
+  },
+  {
+   "source": "universo",
+   "target": "s4",
+   "verbo": "empieza su primera tanda con",
+   "certeza": "hecho"
+  },
+  {
+   "source": "motor_accion",
+   "target": "tin",
+   "verbo": "dibuja a",
+   "certeza": "hecho"
+  },
+  {
+   "source": "motor_accion",
+   "target": "tan",
+   "verbo": "dibuja a",
+   "certeza": "hecho"
+  },
+  {
+   "source": "motor_accion",
+   "target": "duda",
+   "verbo": "dibuja a",
+   "certeza": "hecho"
+  },
+  {
+   "source": "motor_accion",
+   "target": "catalogo",
+   "verbo": "guarda sus piezas en",
+   "certeza": "hecho"
+  },
+  {
+   "source": "catalogo",
+   "target": "pal_a",
+   "verbo": "lista",
+   "certeza": "hecho"
+  },
+  {
+   "source": "catalogo",
+   "target": "pal_b",
+   "verbo": "lista",
+   "certeza": "hecho"
+  },
+  {
+   "source": "catalogo",
+   "target": "pal_c",
+   "verbo": "lista",
+   "certeza": "hecho"
+  },
+  {
+   "source": "catalogo",
+   "target": "ent_ciudad",
+   "verbo": "lista",
+   "certeza": "hecho"
+  },
+  {
+   "source": "est_color",
+   "target": "pal_a",
+   "verbo": "propuso",
+   "certeza": "hecho"
+  },
+  {
+   "source": "est_color",
+   "target": "pal_b",
+   "verbo": "propuso",
+   "certeza": "hecho"
+  },
+  {
+   "source": "est_color",
+   "target": "pal_c",
+   "verbo": "propuso",
+   "certeza": "hecho"
+  },
+  {
+   "source": "est_alt",
+   "target": "prueba3d",
+   "verbo": "dio lugar a",
+   "certeza": "hecho"
+  },
+  {
+   "source": "prueba3d",
+   "target": "motor_accion",
+   "verbo": "usa",
+   "certeza": "hecho"
+  },
+  {
+   "source": "prueba3d",
+   "target": "est_ref",
+   "verbo": "necesita los tiempos de",
+   "certeza": "hecho"
+  },
+  {
+   "source": "tema4",
+   "target": "s4",
+   "verbo": "define",
+   "certeza": "hecho"
+  },
+  {
+   "source": "tema4",
+   "target": "busqueda",
+   "verbo": "se validó con",
+   "certeza": "hecho"
+  },
+  {
+   "source": "calendario",
+   "target": "s4",
+   "verbo": "ordena",
+   "certeza": "hecho"
+  },
+  {
+   "source": "s4",
+   "target": "motor_accion",
+   "verbo": "necesita un entorno nuevo en",
+   "certeza": "hecho"
+  },
+  {
+   "source": "s4",
+   "target": "dueno",
+   "verbo": "espera el sí de",
+   "certeza": "hecho"
+  },
+  {
+   "source": "stats",
+   "target": "s1",
+   "verbo": "midió",
+   "certeza": "hecho"
+  },
+  {
+   "source": "stats",
+   "target": "s2",
+   "verbo": "midió",
+   "certeza": "hecho"
+  },
+  {
+   "source": "stats",
+   "target": "s3",
+   "verbo": "midió",
+   "certeza": "hecho"
+  },
+  {
+   "source": "pc_escritorio",
+   "target": "motor_accion",
+   "verbo": "aceleraría",
+   "certeza": "hipótesis"
+  }
+ ]
+}

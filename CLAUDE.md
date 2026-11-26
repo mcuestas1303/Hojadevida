@@ -106,6 +106,15 @@ elementos psicológicos».
   incluida la estrategia […] considerando el universo definido»): estadísticas → calendario → interés por tema →
   preguntas reales → hechos → lugar en el universo → brief → fichas → prompt → prueba completa → medición (secciones 5 a 8).
 
+- **Tres métodos después del motor y mapa del estudio (regla del dueño, 2026-11-26):** el resultado del motor pasa por
+  `video-studio/metodo/1_generador_de_prompts.md` (paquete de prompt con sus fichas, estrategia y lugar en el universo),
+  `video-studio/metodo/2_produccion_audiovisual.md` (del paquete al video publicado y medido) y, cuando el prompt pide un
+  personaje que no existe, `video-studio/metodo/3_creador_de_personajes.md` (pedido en
+  `plantillas/pedido_de_personaje.md`). Cada método trae su tabla de bifurcaciones: qué se hace cuando falta algo, a quién
+  se le pide y si bloquea. El tema y el guion pasan el filtro de políticas de YouTube (motor, sección 5b). Antes de buscar
+  en archivos se lee `video-studio/mapa/MAPA.md` (el estudio como grafo; se regenera con `herramientas/mapa.py` al cerrar
+  cada video y cuando cambia una regla).
+
 ## Qué se ve en cada conversación (regla del dueño, 2026-11-21)
 
 Textual: «siempre lo terminado preséntamelo en equipo de producción audiovisual; aquí quiero que veamos

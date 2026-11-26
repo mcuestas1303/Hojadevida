@@ -13,7 +13,8 @@
 > la acción, en `motor_de_accion/`. El dueño tiene otra conversación llamada «Motor generador de contenido»: cuando
 > explique lo que falte, se integra aquí.
 >
-> **Estado:** versión 0.2 (2026-11-26: se añade el método de investigación completo, secciones 6 a 9, por pedido del
+> **Estado:** versión 0.3 (añade el filtro de políticas de YouTube, sección 5b; los tres métodos que siguen al motor,
+> sección 9; y el mapa en forma de grafo, sección 10). Antes: versión 0.2 (2026-11-26: se añade el método de investigación completo, secciones 6 a 9, por pedido del
 > dueño: «Todo lo que investigaste este día en las diferentes plataformas debe quedar en el método del motor para poder
 > definir el tema y con ello el prompt que lleva todos los detalles y fichas técnicas, incluida la estrategia, y con ello
 > el Short o el video, y todo lo anterior considerando el universo definido»). Lo que es método probado lo dice; lo demás es **[hipótesis del equipo]**: hay dos videos
@@ -114,6 +115,7 @@ Cada eslabón sale del anterior. Si falta uno, no se pasa al siguiente (reglas �
 | 5 | **Filtrar** | Lo que no se mueve del canal | Se quitan: lo que pide metraje ajeno, lo que no tiene fuente abierta, lo que choca con la línea editorial o con el tramo de 13 a 17 |
 | 6 | **Mirar la oferta** | Listados de YouTube y pestaña «Investigación» de Studio | Qué hay ya hecho y cuánto rinde. Es oferta, **no** prueba de demanda |
 | 7 | **Fijar tema y pregunta** | Pasos 3 a 6 | La pregunta del video, escrita como se busca, con su puesto en la lista |
+| 7b | **Filtro de políticas de YouTube** | Sección 5b | Cada renglón marcado «pasa», «pasa con condición» o «no pasa», con la cita |
 | 8 | **Comprobar los hechos** | Fuente primaria o dos independientes | Cada dato con URL y fecha; qué se afirma y qué no |
 | 9 | **Colocar el video en el universo** | Biblia, registro de pistas, plan de tanda, repertorio de ajustes | Hoja y paleta, entorno (nuevo o de la biblioteca), qué pista cobra y cuál siembra |
 | 10 | **Brief** | Plantilla del proyecto | Abre con «Estadísticas en que se basa»; objetivo comercial; decisiones del equipo |
@@ -122,6 +124,30 @@ Cada eslabón sale del anterior. Si falta uno, no se pasa al siguiente (reglas �
 | 13 | **Prueba completa** | Motor de acción | Lleva todos los pedidos vigentes; se le presenta al dueño |
 | 14 | **Producir, entregar, publicar** | Motor, `entrega.py`, publicador | Con el sí del dueño; en privado primero |
 | 15 | **Medir y ajustar** | Studio a 48 h, 7 y 28 días | Bitácora de parámetros; biblioteca y registro de pistas al día |
+
+## 5b. Filtro de políticas de YouTube (paso 7b; se repite sobre el guion final)
+
+Un tema o un guion solo sigue si pasa todos los renglones. La cita exacta de cada política, con su enlace y fecha de
+lectura, está en `estudios/2026-11-26_accion_stickman_y_tin_y_tan.md` (sección 1) y en
+`estudios/2026-11-26_universo_conectado_investigacion.md`; se vuelven a leer cuando cambie una regla de la plataforma.
+
+| # | Política | Qué se comprueba | No pasa si… |
+|---|---|---|---|
+| F1 | Contenido violento o gráfico | La violencia es de ficción animada, no gráfica | Hay tortura, desmembramiento, o intención de impactar o dar asco |
+| F2 | Restricción por edad | Nada que la provoque: perdería a quien no inició sesión y a los menores de 18 | El foco es la violencia; un dibujo de aspecto familiar con temas adultos |
+| F3 | Seguridad infantil y «creado para niños» | El canal y el video van «no creado para niños»; título y etiquetas no apuntan a niños | Aspecto infantil con violencia, muerte o armas realistas |
+| F4 | Apto para anunciantes | Golpes sin herida visible, sin sangre como foco | Heridas graves a la vista; violencia contra personas reales con nombre |
+| F5 | Armas de fuego | Solo armas dibujadas que no sean de fuego (decisión del canal) | Armas de fuego; instrucciones sobre armas |
+| F6 | Contenido repetitivo o de plantilla | Cada video tiene tema, guion y desenlace propios; algo cambia y se queda | La misma situación con el mismo desenlace video tras video |
+| F7 | Contenido reutilizado | Todo el dibujo, el sonido y la voz son propios o con licencia | Metraje, música o personajes ajenos; un video largo hecho pegando Shorts |
+| F8 | Desinformación y teorías conspirativas dañinas | Una teoría como tema se explica y se contrasta con fuentes, con el contexto dentro del video | Se promueve; es de salud, elecciones, tragedias o señala a grupos (decisión del dueño) |
+| F9 | Engañoso o clickbait | El video cumple lo que prometen el título y la portada; un adelanto no promete lo que no se va a cumplir | Promesa que el video no paga |
+| F10 | Personas reales y marcas | Solo hechos públicos verificables; marcas solo nombradas | Cara, voz o frases inventadas de una persona real; logotipos o colores de marca |
+| F11 | Contenido alterado o generado | Se declara lo que la plataforma pida declarar | Realismo generado sin declarar |
+| F12 | Derechos de autor | Licencia de cada recurso en `licencias.md` | Un recurso sin origen |
+| F13 | Requisitos del Programa de socios | Sin avisos activos; nada de vistas o suscriptores comprados | Cualquier atajo que cueste la admisión |
+
+Si un renglón no pasa, se aplica la regla de adaptación: se cambia el ángulo, no se fuerza el tema.
 
 ## 6. Las fuentes: qué da cada una, cómo se lee y qué no da
 
@@ -191,7 +217,37 @@ El prompt de un video es una carpeta, no un texto suelto. Mínimo, y todo con su
 requisitos del formato. **Pendiente:** que `validar_prompt.py` y la plantilla de la ficha técnica exijan esas secciones;
 hasta entonces el director de prompts las revisa a mano y el supervisor de continuidad las firma.
 
-## 9. Lo que no sé todavía
+## 9. Los tres métodos que siguen al motor
+
+| Método | Recibe | Entrega | Archivo |
+|---|---|---|---|
+| **Generador de prompts** | El resultado del motor (tema validado, filtro de políticas, lugar en el universo) | El paquete de prompt: brief, dirección, fichas, prompt validado, publicación, lista de piezas y pedidos | `metodo/1_generador_de_prompts.md` |
+| **Equipo de producción audiovisual** | El paquete de prompt | El video revisado, la entrega, la biblioteca y los registros al día, y la medición | `metodo/2_produccion_audiovisual.md` |
+| **Creador de personajes** | Un pedido de personaje, cuando el prompt necesita uno que no existe | Ficha, hoja aprobada, fila en el elenco y dibujo en el motor | `metodo/3_creador_de_personajes.md` |
+
+Cada método tiene su tabla de **bifurcaciones**: qué se hace cuando falta algo, a quién se le pide, qué se le entrega,
+qué devuelve y si bloquea. Regla común: lo que toca identidad, hechos o reglas del universo bloquea; lo que es
+construcción viaja como pedido.
+
+## 10. El mapa: el estudio como grafo
+
+Idea tomada de Graphify (herramienta que convierte una carpeta en un grafo de conocimiento con un informe que se lee
+primero; el dueño vio cómo funciona y le gustó como método de organización). Se adopta **el método**, sin instalar la
+herramienta:
+
+1. **Todo lo del motor es un nodo con tipo** (regla, método, personaje, paleta, entorno, efecto, estudio, video, fuente,
+   conversación) y **toda relación es una arista con verbo** (usa, sale de, entrega a, bloquea, aprueba, se mide en).
+2. **Hay un informe que se lee primero:** `mapa/MAPA.md`. Dice cuáles son los nodos centrales, qué depende de qué, qué
+   está pendiente y qué quedó suelto. Una sesión nueva lo lee antes de buscar en archivos.
+3. **El grafo se guarda en un archivo** (`mapa/grafo.json`, en formato de nodos y enlaces, el mismo que usa Graphify) y
+   el informe se genera con `herramientas/mapa.py`. Se actualiza al cerrar cada video y cuando cambia una regla.
+4. **Cada arista dice si es un hecho o una hipótesis**, igual que los sellos del estudio.
+
+Instalar Graphify de verdad (lee la carpeta sola y saca el grafo y el informe) es una opción que necesita el sí del
+dueño; el grafo de hoy está hecho a mano y cubre lo principal, no todo el repositorio.
+
+## 11. Lo que no sé todavía
+
 
 - Si las conexiones entre videos convierten en regresos y suscriptores: no hay ningún video conectado publicado.
 - Cuánto del método sirve para una marca comercial con productos reales (logotipos, precios, promesas de venta): el caso

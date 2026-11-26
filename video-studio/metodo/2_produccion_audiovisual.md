@@ -1,0 +1,55 @@
+# Método del Equipo de producción audiovisual — del paquete de prompt al video publicado
+
+> **Origen:** pedido del dueño (2026-11-26): «y luego el método que tendría el equipo de producción audiovisual para
+> producir el prompt». Recibe el paquete de `metodo/1_generador_de_prompts.md`. Versión 0.1. Lo ya probado en los shorts 1
+> a 3 se dice; lo del formato de acción y del universo todavía no se ha producido completo.
+
+## 1. Qué recibe y control de entrada
+
+El paquete P1 a P12. **No se empieza a producir si falta una pieza marcada «bloquea»**; se devuelve con la lista de lo que
+falta (regla «ninguna prueba a medias»).
+
+| Control de entrada | Quién |
+|---|---|
+| El paquete está completo y el prompt pasó `validar_prompt.py` | `jefe-de-produccion` |
+| Todo personaje del elenco está en `personajes/REGISTRO.md` con hoja aprobada | `supervisor-de-continuidad` |
+| La lista de piezas dice de dónde sale cada una | `jefe-de-produccion` |
+| Los pedidos que bloquean están cerrados | `jefe-de-produccion` |
+
+## 2. Los pasos
+
+| Paso | Qué hace | Quién | Con qué | Sale |
+|---|---|---|---|---|
+| A1 | **Plan de producción:** ruta de cada plano (código, generado o mixto), orden, máquina donde se produce, tiempo | `jefe-de-produccion` | `motor_de_accion/`, cotizaciones | Plan y `costos.md` previsto |
+| A2 | **Cotizar** lo que se genere con créditos y pedir el sí del dueño con el número a la vista | Conversación principal | `estimate_*_cost` | Su sí por pieza |
+| A3 | **Construir lo que falta** en el motor: entorno del tema, utilería que se rompe, efectos, poses, piezas del universo (pistas, cicatrices) | `director-de-animacion`, `editor-de-video` | `motor_de_accion/` | Piezas nuevas con entrada en `catalogo.json` |
+| A4 | **Voz:** generar las líneas (una sola vez), acelerar según el canal, línea de tiempo | `disenador-de-sonido` | `generate_audio`, `postpro.py` | `05_audio/` |
+| A5 | **Animar:** guion de la pelea con los tiempos de golpe medidos; cámara; cambios de velocidad | `director-de-animacion` | Motor; estudio de referencias | Guion del video en `guiones/` |
+| A6 | **Generar** los planos aprobados con créditos, **una sola vez por pieza** | Conversación principal | `generate_video`, definición cerrada | `04_clips/` |
+| A7 | **Sonido:** golpes, choques, explosiones, música si la hay; cada sonido en su fotograma | `disenador-de-sonido` | `sonidos/`, `postpro.py` | Mezcla a −14 LUFS |
+| A8 | **Montaje:** render, dato en pantalla, subtítulos quemados y `.srt`, firma, portada en el primer segundo | `editor-de-video` | `render.js`, `ensamblar.py`, `postpro.py` | `06_final/` |
+| A9 | **Revisión**, todo bloqueante: fotogramas a 2 f/s, destellos, voz contra guion, color, texto y nombres, continuidad con la hoja de personaje, universo (pista cobrada y sembrada donde dice el brief), «se entiende solo», requisitos del formato uno por uno | `supervisor-de-continuidad`, `director-de-fotografia` | `revisar_fotogramas.py`, `comprobar_destellos`, `revisar_voz.py`, `revisar_color.py`, `revisar_texto.py` | `07_revision/` con firmas; rúbrica puntuada con `puntuar_ficha.py` |
+| A10 | **Presentar la prueba completa al dueño** (en la conversación de producción) | Conversación principal | — | Su sí, o cambios por `cambios/` |
+| A11 | **Entrega al publicador:** carpeta con el código de trazabilidad en el Drive, video, miniatura, subtítulos, `ficha.json` | `editor-de-video` | `entrega.py`, `ENTREGA_YOUTUBE.md` | `08_entrega/` y Drive |
+| A12 | **Publicación** en privado; pública solo con el sí del dueño a ese video. Un Short público no se reemplaza | Publicador (Keter) | Studio | Enlace y hora en `registro_codigos.md` |
+| A13 | **Cierre:** catálogo al día (qué se usó y qué se creó), registro de pistas, `consumo.md`, caso del canal | `jefe-de-produccion`, `supervisor-de-continuidad` | — | Biblioteca y registros al día |
+| A14 | **Medición** a 48 horas, 7 y 28 días; vuelve al motor (paso 1) | `director-creativo`, Keter | Studio | Lectura en `estadisticas/datos/`; bitácora de parámetros |
+
+## 3. Bifurcaciones en producción
+
+| Si pasa esto… | Se hace esto | Quién decide |
+|---|---|---|
+| Una pieza generada sale mal | Se informa qué falló y cuánto cuesta rehacerla; **no se regenera** sin el sí del dueño para esa pieza. Antes se ve si se resuelve en edición o por código | Dueño |
+| El código no alcanza la calidad de un plano | Se cotiza ese plano por la ruta generada y se le lleva | Dueño |
+| El entorno o un efecto no está a tiempo | Se reutiliza uno de la biblioteca con ese tema y se anota como ajuste (regla de adaptación) | Equipo |
+| La revisión encuentra un error de texto, de dato o de identidad | No sale. Se corrige y se vuelve a revisar | Supervisor |
+| La revisión encuentra que falta un requisito del formato | No se presenta la prueba; se dice qué falta | Supervisor |
+| El tema caduca durante la producción | Regla de adaptación: el hueco hereda otro tema del radar; lo construido queda en la biblioteca | Equipo; se informa al dueño |
+| La máquina de producción no está disponible | Se produce por software en la nube (más lento) o se espera; se informa | Jefe de producción |
+| El video publicado no se reparte | No se resube. Regla de adaptación (página arrancada, remake con su costo) | Dueño para el remake |
+| Aparece un aviso o restricción de la plataforma | Se informa al dueño ese día; el siguiente video no depende de este | Dueño |
+
+## 4. Lo que el equipo de producción devuelve siempre
+
+El video en `06_final/`, la entrega, la revisión firmada, la rúbrica, los costos reales, las piezas nuevas en el
+catálogo, el registro de pistas al día y, después, la lectura de Studio.
