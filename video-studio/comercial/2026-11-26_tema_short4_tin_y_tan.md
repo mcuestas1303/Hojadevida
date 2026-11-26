@@ -244,3 +244,46 @@ Todo lo de esta sección es propuesta del comercial para que el director creativ
 ## 8. Medida de éxito (para leer a los 7 y a los 28 días)
 
 Se mide como indica `estudios/2026-11-26_accion_stickman_y_tin_y_tan.md`, sección 9.2, punto 5: comparación solo contra el short 2 a la misma edad del video, con estas señales: vistas, se quedó a mirar, porcentaje medio visto, **que el feed de Shorts lo reparta** (fila «Feed de Shorts» en Alcance), ausencia de avisos, y la retención entre los segundos 3 y 10. **Meta numérica: «establecer línea base»**: hay un solo video comparable con datos completos y no se inventan metas. Un video solo no decide nada (`PARAMETROS.md`, sección 4).
+
+---
+
+## Validación de la pregunta con datos de búsqueda (2026-11-26, pedido del dueño: «Valida con las 3»)
+
+El dueño preguntó si la pregunta «Did GTA 6 really make more money in one day than Avengers: Endgame in its whole run?»
+estaba validada en algún lugar. **No lo estaba:** la redactó el equipo a partir de títulos de otros Shorts. Se validó con
+tres fuentes; los datos tal cual están en `video-studio/estadisticas/datos/2026-11-26_autocompletado_youtube.md` y
+`2026-11-26_busqueda_short4_keter.md` (no se suben).
+
+| Fuente | Quién y cuándo | Qué dio | Qué no dio |
+|---|---|---|---|
+| YouTube Studio → «Investigación» | Keter, 12:38–12:42 (-06:00) | Hoy solo muestra una cuadrícula de videos por tema | **Ya no da** volumen de búsqueda, «búsquedas de tu público» ni «brecha de contenido» |
+| Autocompletado de YouTube y de Google | Generador (YouTube, 38 inicios) y Keter (YouTube y Google, 10 inicios) | Qué se escribe y cómo | Volumen |
+| Google Trends, EE. UU., 7 y 30 días | Keter, ≈ 12:31–12:36 | Interés relativo y consultas relacionadas (solo las 5 primeras de cada lista) | Las listas completas (pedidas a Keter) |
+
+**Lo que queda establecido:**
+
+1. **El tema es GTA 6, sin discusión.** En Trends, interés medio de 7 días: GTA 6 48; *Avengers: Doomsday* 1; *Dune: Part
+   Three* 0; Game Awards 0. Va bajando: en búsqueda de YouTube pasó de 100 el 19 de noviembre a 51 el 26.
+2. **La comparación con Endgame no es una búsqueda.** No aparece en el autocompletado de YouTube ni en el de Google ni
+   en Trends. «gta 6 endgame» sugiere el final del juego. **Se descarta como pregunta del video** (puede quedar como un
+   dato dentro).
+3. **Lo que más se busca de GTA 6 es el juego por dentro:** «gameplay», «Lucia», «ending», «how many chapters», códigos
+   y trucos. No es terreno del canal (pide metraje del juego y destripa la historia).
+4. **Preguntas que sí se escriben y se responden con hechos comprobables:**
+   - **Cuánto dinero hizo:** Google sugiere «gta 6 made how much money», «gta 6 made so far», «gta 6 made how much in pre
+     orders»; YouTube sugiere «gta 6 made 3 billion dollars», «gta 6 sales in 24 hours», «gta 6 first day sales», «gta 6 how
+     many copies sold».
+   - **Cuánto costó hacerlo:** YouTube sugiere «how much did gta 6 cost to make», «gta 6 cost 2 billion», «why is gta 6 so
+     expensive to make», y tres veces la comparación con el Burj Khalifa.
+   - **Por qué tardó tanto:** «why gta 6 took 13 years» (YouTube), «why gta 6 took so long» (Google).
+   - **Qué es y por qué importa:** «what is gta 6» está entre las principales de Trends; «why is gta 6 such a big deal».
+5. **Descartado por la línea editorial:** la consulta en ascenso sobre la identidad de un personaje del juego.
+
+**Límite:** ninguna de las tres fuentes da volumen. En Trends, las consultas de dinero no están entre las 5 primeras que
+se copiaron; «gta 6 money» sí está en YouTube, pero ahí «money» es sobre todo el dinero dentro del juego.
+
+**Propuesta corregida del equipo:** la pregunta del short 4 pasa a ser **«How much money did GTA 6 make?»** (redactada
+como la sugiere Google), con los golpes en este orden: el primer día según Take-Two; contra el primer día de GTA V;
+contra lo que costó hacerlo (cifra no oficial: la duda no se borra del todo y se dice); y la comparación que la gente sí
+busca, el Burj Khalifa. Endgame deja de ser el eje. El entorno de la sala de cine ya no corresponde: se replantea con el
+tema cerrado. Queda sujeta a las listas completas de Trends y al sí del dueño.
