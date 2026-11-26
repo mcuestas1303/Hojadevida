@@ -178,7 +178,8 @@ que tiene Chrome con su sesión iniciada.
 2. **Se pide la lista completa** (las 25 + 25), no las cinco primeras.
 3. **Ninguna fuente da volumen absoluto.** Se dice siempre. Lo que hay es orden, peso relativo y tendencia.
 4. **Un video sin la fila «Feed de Shorts» en Alcance no sirve para juzgar nada** de su tema ni de su forma.
-5. **Toda lectura lleva fecha, hora y quién la hizo**, y se guarda tal cual donde no se sube.
+5. **Toda lectura lleva fecha, hora y quién la hizo**, y se guarda tal cual donde no se sube. La copia que dura es la del
+   Drive privado: la carpeta de datos de una sesión en la nube se pierde al cerrarla.
 6. **Lo que una sesión no puede abrir se le pide a la otra** y se anota qué no abrió; no se rellena.
 7. **Se cita el número que corresponde al tema**: no se presta la cifra de un video parecido.
 

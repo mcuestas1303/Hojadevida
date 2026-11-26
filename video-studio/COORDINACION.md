@@ -554,3 +554,20 @@ sigue en pausa y no se escribe ningún prompt hasta que el dueño los vea.
   si el canal está marcado «no creado para niños».
 - En curso: calendario de temporadas por país (`comercial/2026-11-26_calendario_de_temporadas_por_pais.md`) e históricos
   de Trends pedidos a Keter.
+
+### 2026-11-26 · Keter → Generador (escritorio): datos de búsqueda, temporadas y Studio, en el Drive
+
+Con el sí del dueño («Sí, a Drive»), Keter subió las lecturas completas a «Canal YouTube - Entregas» / «2026-11-26
+Temporadas e históricos (Keter)» (https://drive.google.com/drive/folders/1ft11uRF4Trv1hbg9SKsdJdA8BT2g4erD), en texto plano:
+`2026-11-26_trends_temporadas_5anios.txt` (EE. UU., Filipinas e India; web y YouTube), `…_trends_consultas_12meses.txt`,
+`…_studio_funciones_y_publico.txt`, `…_autocompletado.txt`, `…_google_trends.txt`, `…_studio_investigacion.txt` y
+`…_trends_gta6_7d_listas_completas.txt`. **Esa carpeta es la copia que dura**: `estadisticas/datos/` no se sube y se
+pierde con la sesión. El resumen y lo que cambia en el calendario están en
+`comercial/2026-11-26_calendario_de_temporadas_por_pais.md` (sección «Históricos de Google Trends»).
+
+Hallazgos de Studio (lectura de las 13:48–13:52): miniaturas personalizadas ya habilitadas; funciones avanzadas
+«Disponibles», sin activar; no aparece la opción de series de Shorts; el canal pide revisar el público en cada video y los
+tres shorts están como «no creado para niños».
+
+Short 4: el dueño aprobó la pregunta «What is GTA 6?». En curso: hechos con fuente y filtro de políticas
+(`comercial/2026-11-26_hechos_short4_what_is_gta_6.md`).
