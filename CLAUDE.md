@@ -101,6 +101,10 @@ elementos psicológicos».
   conceptualización, universo de los personajes y contexto para el motor» y debe poder replicarse «con otros personajes o
   marcas comerciales». Método: `video-studio/MOTOR_DE_CONTENIDO.md`. Con cada personaje o marca nuevos se llena primero
   `video-studio/plantillas/arranque_de_universo.md`. Los secretos de un universo no van al repositorio público.
+  El mismo archivo fija la cadena de trabajo de cada video (dueño: «Todo lo que investigaste este día en las diferentes
+  plataformas debe quedar en el método del motor para poder definir el tema y con ello el prompt […] y fichas técnicas,
+  incluida la estrategia […] considerando el universo definido»): estadísticas → calendario → interés por tema →
+  preguntas reales → hechos → lugar en el universo → brief → fichas → prompt → prueba completa → medición (secciones 5 a 8).
 
 ## Qué se ve en cada conversación (regla del dueño, 2026-11-21)
 

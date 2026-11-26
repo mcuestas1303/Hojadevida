@@ -217,3 +217,8 @@
   tomemos otro caso de otros personajes o marcas […], qué es lo que tendríamos que definir al principio con otra marca o
   personajes para aprovechar al máximo el motor». Método general: `video-studio/MOTOR_DE_CONTENIDO.md`; plantilla de
   arranque: `video-studio/plantillas/arranque_de_universo.md`.
+
+- **La investigación queda en el método del motor (dueño, 2026-11-26):** «Todo lo que investigaste este día en las
+  diferentes plataformas debe quedar en el método del motor para poder definir el tema y con ello el prompt que lleva
+  todos los detalles y fichas técnicas, incluida la estrategia, y con ello el Short o el video, y todo lo anterior
+  considerando el universo definido». Cadena y fuentes: `video-studio/MOTOR_DE_CONTENIDO.md`, secciones 5 a 8.
