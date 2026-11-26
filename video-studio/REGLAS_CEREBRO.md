@@ -174,3 +174,8 @@
   ya te había pedido que no están implementadas». `PARAMETROS.md` lleva número de versión, copia de cada versión anterior
   y una lista de pedidos con su estado; una alternativa que no cumple un requisito no se presenta como válida. Tin y Tan
   pelean juntos contra un tercer personaje sin nombre en pantalla (concepto: la duda), con cuerpo, manos y pies.
+
+- **Ninguna prueba a medias (dueño, 2026-11-26):** «No quiero que las pruebas me las vaya[s] a sacar sin todos los cambios
+  solicitados, incluidos los colores». Una prueba o una pieza solo se presenta o se genera cuando lleva todos los pedidos
+  vigentes del canal (`PARAMETROS.md`, secciones 7 y 8). Si falta uno, se dice cuál y de quién depende.
+- **Colores (dueño, 2026-11-26):** «Replantear los colores con base a estadísticas y análisis psicológico».

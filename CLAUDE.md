@@ -82,6 +82,11 @@ elementos psicológicos».
   resultantes y a tu investigación»: público, tema y forma se corrigen con lo que arrojen (por ejemplo, la edad real).
   Esto rige hasta que exista el motor generador de contenido, que el dueño explicará.
 
+- **Ninguna prueba a medias (regla del dueño, 2026-11-26):** «No quiero que las pruebas me las vaya[s] a sacar sin todos los
+  cambios solicitados, incluidos los colores». Antes de presentar una prueba o de generar una pieza se repasa la lista de
+  pedidos del canal (`PARAMETROS.md`, secciones 7 y 8) y la prueba los lleva **todos**; si falta uno, no se presenta ni
+  se genera: se dice qué falta y de quién depende.
+
 ## Qué se ve en cada conversación (regla del dueño, 2026-11-21)
 
 Textual: «siempre lo terminado preséntamelo en equipo de producción audiovisual; aquí quiero que veamos
