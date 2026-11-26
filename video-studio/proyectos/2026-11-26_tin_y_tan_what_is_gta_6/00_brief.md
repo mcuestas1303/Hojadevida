@@ -63,9 +63,9 @@ Lectura de Studio del 2026-11-26 (Keter, 09:50 a 10:25, -06:00; cifras en
 | 1 | what is gta 6 | Rockstar's open-world game, set in the fictional state of Leonida. Rated M: seventeen and over. | El juego de mundo abierto de Rockstar, en el estado ficticio de Leonida. Para mayores de 17. | Comprobado (página oficial de Rockstar y Wikipedia) |
 | 2 | is gta 6 out · release date | It came out on November 19, 2026. | Salió el 19 de noviembre de 2026. | Comprobado |
 | 3 | gta 6 ps5 · xbox · pc | On PS5 and Xbox Series X and S. Not on PC: none announced, as of today. | En PS5 y Xbox Series X y S. En PC no: no hay ninguna anunciada, a hoy. | Consolas, oficial; «no hay PC» es una ausencia que puede cambiar: lleva la fecha |
-| 4 | how much is gta 6 | It lists at 79.99 dollars in the US. | Precio de lista en EE. UU.: 79,99 dólares. | **Con asterisco de fuente:** Wikipedia (cita a Reuters); las tiendas no abren desde la sesión. Si no se confirma en una tienda oficial antes de producir, el golpe se quita y se usa el título de reserva |
+| 4 | how much is gta 6 | It lists at 79.99 dollars in the US. | Precio de lista en EE. UU.: 79,99 dólares. | **Comprobado el 2026-11-26** en la tienda oficial de PlayStation de EE. UU. (edición estándar 79,99 dólares; Ultimate 99,99), además de Wikipedia. Puede cambiar con ofertas: se dice «lists at» y lleva la fecha |
 | 5 | how many chapters | Rockstar tells the story in chapters. The exact count: not confirmed yet. | Rockstar cuenta la historia en capítulos. El número exacto: sin confirmar. | **Con asterisco:** no hay fuente abierta del número. Es el golpe que no borra del todo al rival |
-| R | (remate, atribuido) | Take-Two reports 3.79 billion dollars in day-one sales. | Take-Two informa 3.790 millones de dólares en ventas del primer día. | Atribuido; el comunicado original no abre; cinco medios coinciden en el titular |
+| R | (remate, atribuido) | Take-Two reports 3.79 billion dollars in day-one sales. | Take-Two informa 3.790 millones de dólares en ventas del primer día. | **Comprobado el 2026-11-26** en la sala de prensa de Take-Two: comunicado del 2026-11-20, «Grand Theft Auto VI Shatters Entertainment Box Office Records with $3.79 Billion in Day One Retail Sales». Se dice atribuido, como lo dice la empresa |
 
 **Qué no se afirma:** ningún número de capítulos, misiones o finales; nada de la trama; ninguna cifra de copias; que haya
 o no una versión de PC en camino; que el juego sea bueno o malo; que alguien deba comprarlo.
@@ -100,7 +100,7 @@ descripción; marcar «no creado para niños» al subir; confirmar en Studio que
 - **Conexión que cobra:** la firma del lápiz se atrapa por primera vez dentro del cuaderno; y, por ser un juego, el mando
   genérico mostaza del short 2 aparece como pieza del decorado.
 - **Conexión que siembra** (filas ya abiertas en el registro de pistas, privado): la marca final donde se borra el rival,
-  que aquí es **un asterisco** porque dos golpes quedan con salvedad; la salida del rival por una grieta del suelo, lado
+  que aquí es **un asterisco** porque un golpe (los capítulos) queda con salvedad; la salida del rival por una grieta del suelo, lado
   derecho, en los últimos 4 segundos; una pieza del entorno con forma propia que queda rota (se elige en la dirección y se
   anota su nombre de catálogo). Nada de esto lleva voz ni texto.
 - **Ajuste del repertorio que aplica:** YouTube no ofrece series de Shorts en este canal: la conexión va dentro del video.

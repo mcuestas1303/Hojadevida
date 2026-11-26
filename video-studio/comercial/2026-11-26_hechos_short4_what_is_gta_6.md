@@ -219,3 +219,22 @@ Primera línea del bloque de descargo (el revisor exige la frase «not affiliate
 
 - `www.rockstargames.com` y `en.wikipedia.org` abren con `curl`; `www.rockstargames.com/VI` trae en el HTML el distintivo ESRB y los descriptores; sus entradas del Newswire solo dan título y descripción sin scripts.
 - YouTube corta con una página de verificación tras varias búsquedas seguidas desde `curl`; los listados de resultados dan títulos y fragmentos, no descripciones completas.
+
+
+---
+
+## Añadido el 2026-11-26 (Generador): fuentes oficiales abiertas después del informe
+
+El dueño aprobó abrir en la red de la sesión `store.rockstargames.com`, `www.playstation.com`, `www.xbox.com`,
+`www.esrb.org`, `www.sec.gov` y `www.take2games.com`. Leído con `curl` el 2026-11-26:
+
+| Dato | Qué se leyó | Dónde | Cambia |
+|---|---|---|---|
+| Precio | Edición estándar **$79.99**; Ultimate Edition **$99.99** (precio base igual al de oferta: sin descuento ese día) | https://www.playstation.com/en-us/games/grand-theft-auto-vi/ (datos de la propia página de la tienda de EE. UU.) | El golpe 4 deja de tener asterisco de fuente. Sigue diciéndose «lists at» y con fecha, porque el precio puede moverse |
+| Fecha de lanzamiento | 2026-11-19 | misma página | Confirma el golpe 2 con otra fuente primaria |
+| Clasificación | «Mature 17+» | https://www.esrb.org/search/?searchKeyword=grand+theft+auto+vi y la página de PlayStation | Confirma la línea «rated M, 17 and over» en la fuente de ESRB |
+| Ventas del primer día | Titular del comunicado del 2026-11-20: «Grand Theft Auto VI Shatters Entertainment Box Office Records with $3.79 Billion in Day One Retail Sales» | https://www.take2games.com/ir/press-releases (enlace `/ir/news/grand-theft-auto-vi-shatters-entertainment-box-office-records`) | El remate queda con fuente primaria; se sigue diciendo atribuido a Take-Two |
+
+No abrieron: la página de Xbox probada (404: la dirección no era la correcta) y `www.sec.gov` (403 propio del sitio). No se
+leyó el cuerpo del comunicado de Take-Two, solo el titular y la fecha. **Queda un solo golpe con asterisco: el número de
+capítulos.**
