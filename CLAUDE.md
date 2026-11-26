@@ -115,6 +115,14 @@ elementos psicológicos».
   en archivos se lee `video-studio/mapa/MAPA.md` (el estudio como grafo; se regenera con `herramientas/mapa.py` al cerrar
   cada video y cuando cambia una regla).
 
+- **Reporte de publicación y calendario con avisos (regla del dueño, 2026-11-26):** «Cada vez que se publique un video
+  necesito ver el detalle, a manera de reporte, de lo que se consideró para subir ese video, incluidos los objetivos y las
+  generales de cómo se conecta al siguiente video. El calendario que generemos […] necesito verlo en Calendar y necesito
+  recibir alertas para que no se nos vaya a pasar por alto que hay que publicar». Cada video lleva su reporte
+  (`video-studio/plantillas/reporte_de_publicacion.md`) antes de pedir el sí para publicar. El calendario de publicación
+  del canal (`video-studio/canales/nostalgia-tin-y-tan/calendario_de_publicacion_2026-12.md`) se copia al Google Calendar
+  del dueño con aviso un día antes y dos horas antes; si cambia una fecha, se cambia en los dos lados.
+
 ## Qué se ve en cada conversación (regla del dueño, 2026-11-21)
 
 Textual: «siempre lo terminado preséntamelo en equipo de producción audiovisual; aquí quiero que veamos

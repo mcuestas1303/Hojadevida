@@ -231,3 +231,9 @@
   deberá darle todos los detalles al creador de personajes; por tanto el creador de personajes también debe definir el
   método. Estaba viendo un video de cómo funciona Graphify; me gustó como método de organización; mira si aplica y lo
   integramos». Archivos: `video-studio/metodo/`, `video-studio/MOTOR_DE_CONTENIDO.md` (5b, 9 y 10), `video-studio/mapa/`.
+
+- **Reporte de publicación y calendario con avisos (dueño, 2026-11-26):** «Cada vez que se publique un video necesito ver
+  el detalle, a manera de reporte, de lo que se consideró para subir ese video, incluidos los objetivos y las generales de
+  cómo se conecta al siguiente video. El calendario que generemos de momento para el mes necesito verlo en Calendar y
+  necesito recibir alertas […] mientras te termino de configurar para que publique solo». Plantilla:
+  `plantillas/reporte_de_publicacion.md`; calendario: `canales/nostalgia-tin-y-tan/calendario_de_publicacion_2026-12.md`.
