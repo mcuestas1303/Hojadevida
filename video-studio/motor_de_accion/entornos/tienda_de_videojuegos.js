@@ -24,6 +24,23 @@ export function construir({ THREE, escena, caja, C, lienzo }) {
   const zocalo = en(caja(9, 0.16, 0.06, tinta, 0), 0, 0.08, -9.96); escena.add(zocalo);
   const pIzq = en(plano(22, 7, C.fondo), -4.5, 3.5, 1); pIzq.rotation.y = Math.PI / 2; escena.add(pIzq);
   const pDer = en(plano(22, 7, C.fondo), 4.5, 3.5, 1); pDer.rotation.y = -Math.PI / 2; escena.add(pDer);
+  // techo (v2): la línea del techo, una viga y tres lámparas colgantes en tinta; llena la banda alta de los planos generales
+  // El techo va a 8,2 u (la pared sube 1,2 u más, lisa): así su línea queda por encima de la zona de datos en todos los planos
+  // y fuera de cuadro en el plano de portada.
+  const TECHO = 8.2;
+  escena.add(en(plano(9, 1.2, C.fondo), 0, 7.6, -10));
+  for (const sx of [-1, 1]) { const w = en(plano(22, 1.2, C.fondo), sx * 4.5, 7.6, 1); w.rotation.y = -sx * Math.PI / 2; escena.add(w); }
+  const techo = en(plano(9, 24, lejos, THREE.DoubleSide), 0, TECHO, 2); techo.rotation.x = Math.PI / 2; escena.add(techo);
+  escena.add(en(caja(9, 0.12, 0.08, tinta, 0), 0, TECHO - 0.04, -9.95));
+  escena.add(en(caja(9, 0.28, 0.3, blanco, 0.05), 0, TECHO - 0.16, -4.2));
+  const lamparas = [];
+  for (const [x, z, largo] of [[-2.1, -5.6, 0.5], [2.1, -5.6, 0.5], [0, -8.6, 0.1]]) {
+    const l = G(); const cable = new THREE.Mesh(new THREE.BoxGeometry(0.03, largo, 0.03), new THREE.MeshBasicMaterial({ color: tinta })); cable.position.y = -largo / 2;
+    const pantalla = new THREE.Mesh(new THREE.ConeGeometry(0.34, 0.26, 20, 1, true), new THREE.MeshBasicMaterial({ color: tinta, side: THREE.DoubleSide })); pantalla.position.y = -largo - 0.13;
+    const foco = new THREE.Mesh(new THREE.SphereGeometry(0.1, 12, 8), new THREE.MeshBasicMaterial({ color: blanco })); foco.position.y = -largo - 0.27;
+    l.add(cable, pantalla, foco); en(l, x, TECHO, z); escena.add(l); lamparas.push(l);
+  }
+  piezas.lamparas = lamparas;
   // quemadura de la pared del fondo: capa que el guion pinta (no se agujerea)
   const cvPared = lienzo(1024, 800, () => {}), texPared = new THREE.CanvasTexture(cvPared); texPared.colorSpace = THREE.SRGBColorSpace;
   const hollin = new THREE.Mesh(new THREE.PlaneGeometry(9, 7), new THREE.MeshBasicMaterial({ map: texPared, transparent: true, depthWrite: false }));

@@ -141,28 +141,31 @@ def planos(L, K):
     queda en y = 960; con h entre 2,6 y 4,4 las cabezas caen por debajo de la franja de subtítulos y la pared lisa queda
     arriba para los datos. Sin temblor: se corta. D1 = empuje lento. «Laterales» de la dirección: de frente y bajos."""
     P = lambda f, n, cx, z, D, h, D1=None, tipo="", sube=0.0: dict(f0=f, nombre=n, cx=cx, z=z, D=D, h=h, D1=D1 or D, tipo=tipo, sube=sube)
+    # v2 (2026-11-26): cámaras más cerca y más bajas. Regla de encuadre: los pies del que está más cerca caen en y ≈ 1700
+    # (h ≈ 0,25 · D) y la cabeza del más alto queda bajo el panel del subtítulo (y ≈ 1035); por eso mientras el rival mide
+    # 1,5 veces la cámara no puede bajar de D ≈ 13 y, cuando se encoge, se acerca hasta D ≈ 9,5 (Tin y Tan ≈ 29 % del alto).
     p = [P(0, "P1 portada", **PORTADA, tipo="firma"),
-         P(30, "P2 entra el rival", 0.0, -2.0, 14.0, 3.45, 13.0),
-         P(K["K1"] - 12, "P3 golpe 1", 0.3, -2.0, 12.6, 3.05),
+         P(30, "P2 entra el rival", 0.0, -1.2, 14.0, 3.5, 13.5),
+         P(K["K1"] - 12, "P3 golpe 1", 0.3, -2.0, 10.6, 2.62),
          P(K["K1"] + 18, "P4 impacto estante", -2.5, -6.0, 7.5, 2.8, tipo="impacto"),
-         P(K["K1"] + 20, "P5 general", -0.3, -2.5, 14.5, 3.75),
-         P(K["K2"] - 12, "P6 golpe 2", 0.3, -0.6, 13.6, 3.2),
-         P(K["K2"] + 26, "P7 general", 0.9, -1.0, 14.5, 3.75, 13.8),
-         P(K["K3"] - 12, "P8 gancho", 2.1, -3.2, 14.0, 3.3),
+         P(K["K1"] + 20, "P5 general", -0.3, -2.0, 13.2, 3.3, 12.6),
+         P(K["K2"] - 12, "P6 golpe 2", 0.3, -0.8, 10.6, 2.62),
+         P(K["K2"] + 26, "P7 general", 0.7, -0.5, 12.8, 2.95, 11.4),
+         P(K["K3"] - 12, "P8 gancho", 2.2, -3.2, 12.0, 2.96),
          P(K["K3"] + 22, "P9 impacto mostrador", 3.35, -3.4, 5.6, 2.1, tipo="impacto"),
-         P(K["K3"] + 24, "P10 general", 0.9, -2.5, 14.5, 3.75),
+         P(K["K3"] + 24, "P10 general", 1.25, -2.4, 11.8, 2.85, 11.0),
          P(K["dibuja_baston"], "P11 detalle del lápiz", 0.95, -2.6, 5.6, 2.2),
-         P(K["dibuja_baston"] + 12, "P12 general", 0.9, -2.4, 14.5, 3.75),
-         P(L["C"], "P12b Tan invita", -0.7, -1.6, 9.5, 2.7),
-         P(K["dibuja_espada"] - 2, "P12c general", 0.5, -2.4, 13.5, 3.5),
+         P(K["dibuja_baston"] + 12, "P12 general", 1.15, -2.4, 11.2, 2.78, 10.8),
+         P(L["C"], "P12b Tan invita", -0.35, -2.0, 8.3, 2.28),
+         P(K["dibuja_espada"] - 2, "P12c general", 0.6, -2.6, 10.8, 2.7, 10.4),
          P(K["tele_punta"], "P13 impacto televisor", 0.0, -7.4, 6.5, 3.2, tipo="impacto"),
-         P(K["tele_punta"] + 2, "P14 golpe 4", 1.1, -2.4, 12.8, 3.05),
-         P(K["K5"] - 13, "P15 mazo", 0.9, -3.2, 14.8, 3.7),
-         P(K["carrera"], "P16 remate", 0.0, -6.2, 11.5, 3.05),
+         P(K["tele_punta"] + 2, "P14 golpe 4", 1.3, -2.6, 10.2, 2.55),
+         P(K["K5"] - 13, "P15 mazo", 0.8, -3.0, 12.6, 3.1, 12.2),
+         P(K["carrera"], "P16 remate", 0.0, -6.0, 9.8, 2.45),
          P(K["radiales"], "P18 héroe", 0.0, -6.5, 13.5, 0.7, sube=3.1),
-         P(K["radiales"] + 31, "P19 respiro", 0.0, -4.0, 15.0, 3.9),
-         P(K["K6"] - 12, "P20 golpe 6", 0.2, -5.1, 11.0, 2.85),
-         P(K["K6"] + 20, "P21 final", 0.25, -5.1, 15.0, 3.3),
+         P(K["radiales"] + 31, "P19 respiro", 0.1, -5.2, 12.0, 2.9, 11.0),
+         P(K["K6"] - 12, "P20 golpe 6", 0.1, -5.1, 9.4, 2.35),
+         P(K["K6"] + 20, "P21 final", 0.3, -5.0, 9.8, 2.45, 9.4),
          P(K["cierre"], "P22 portada", **PORTADA, tipo="firma")]
     for a, b in zip(p, p[1:] + [dict(f0=K["N"])]):
         a["f1"] = b["f0"]

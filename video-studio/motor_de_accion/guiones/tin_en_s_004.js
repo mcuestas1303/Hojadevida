@@ -45,12 +45,14 @@ export async function guion(m) {
   G.tan.mira.push([0, 1], [K5 + 16, -1], [RECOMPONE - 40, -1], [K.lapiz_a_tan - 6, -1]);
   G.tan.cara.push([0, 'sorpresa'], [K2 - 13, 'concentrado'], [K2, 'eureka'], [K2 + 26, 'curiosidad'], [L.C.f0, 'risa'], [L.C.f1 + 2, 'curiosidad'], [KB, 'sorpresa'], [K5 - 13, 'concentrado'], [K5, 'eureka'], [K5 + 20, 'concentrado'], [KR, 'eureka'], [K.invertidos, 'sorpresa'], [L.B.f0, 'curiosidad'], [K6, 'sorpresa'], [K.asterisco, 'curiosidad'], [K.lapiz_a_tan + 6, 'risa']);
   pos('tan', [30, [-1.5, 0, -0.6]], [46, [-1.5, 0, -0.6]], [66, [-1.95, 0, -0.4], 'out'], [K2 - 30, [-1.95, 0, -0.4]], [K2 - 13, [-1.45, 0, -1.0]], [K2 - 1, [-1.45, 0, -1.0]], [K2, [-1.2, 0, -1.0], 'salto'], [K2 + 11, [-1.4, 0, -1.0]], [K2 + 26, [-0.6, 0, -1.0]],
-    [K3 - 10, [-0.6, 0, -1.0]], [K3 + 30, [-0.8, 0, -1.6]], [K4 - 4, [-0.8, 0, -1.6]], [K4 + 10, [1.8, 0, -2.3], 'lin'], [K5 - 14, [1.8, 0, -2.7]], [K5 - 1, [1.8, 0, -2.7]], [K5, [2.05, 0, -2.7], 'salto'], [K5 + 14, [1.9, 0, -2.7]],
+    [K3 - 10, [-0.6, 0, -1.0]], [K3 + 30, [-0.8, 0, -1.6]], [K3 + 44, [-0.8, 0, -1.6]], [K3 + 72, [-0.6, 0, -2.0], 'lin'], [L.C.f1 + 2, [-0.6, 0, -2.0]], [KB + 6, [-0.7, 0, -2.4]], [K4 - 4, [-0.6, 0, -2.95]], [K4 + 10, [1.8, 0, -2.95], 'lin'], [K5 - 14, [1.8, 0, -2.7]], [K5 - 1, [1.8, 0, -2.7]], [K5, [2.05, 0, -2.7], 'salto'], [K5 + 14, [1.9, 0, -2.7]],
     [K5 + 18, [1.9, 0, -2.7]], [K5 + 44, [1.0, 0, -4.6], 'lin'], [K.carrera, [1.0, 0, -4.6]], [K.carrera + 11, [0.95, 0, -5.7], 'lin'], [KR - 1, [0.95, 0, -5.9]], [KR, [0.75, 0, -6.0], 'salto'], [KR + 12, [0.95, 0, -5.8]],
     [K.radiales - 1, [0.95, 0, -5.8]], [K.radiales, [1.15, 0, -5.4], 'salto'], [L.T9.f0 + 30, [1.15, 0, -5.4]], [L.T9.f0 + 62, [1.5, 0, -4.9]], [N, [1.5, 0, -4.9]]);
   pose('tan', [30, P.guardia], [46, P.guardia], [54, P.recibe, 'out'], [66, P.guardia], [K2 - 30, P.guardia]);
   ataque('tan', K2, P.guardia, P.carga, P.patada, P.guardia);
-  pose('tan', [K2 + 14, P.festeja, 'back'], [K2 + 20, P.festeja], [K2 + 28, P.guardia], [L.C.f0 - 6, P.guardia], [L.C.f0 + 2, P.invita, 'back'], [L.C.f1, P.invita], [L.C.f1 + 6, P.guardia], [K4 - 5, P.guardia]);
+  pose('tan', [K2 + 14, P.festeja, 'back'], [K2 + 20, P.festeja], [K2 + 28, P.guardia], [K3 + 14, P.guardia], [K3 + 22, P.festeja, 'back'], [K3 + 30, P.festeja], [K3 + 38, P.guardia], [K3 + 44, P.guardia]);
+  corre('tan', K3 + 45, K3 + 72);
+  pose('tan', [K3 + 73, P.guardia], [K.dibuja_baston + 18, P.guardia], [K.dibuja_baston + 26, P.pregunta, 'back'], [K.dibuja_baston + 40, P.pregunta], [L.C.f0 - 6, P.guardia], [L.C.f0 + 2, P.invita, 'back'], [L.C.f1, P.invita], [L.C.f1 + 6, P.guardia], [K4 - 5, P.guardia]);
   corre('tan', K4 - 4, K4 + 10); pose('tan', [K4 + 11, P.guardia]);
   pose('tan', [K5 - 15, P.atrapa], [K5 - 14, A(P.atrapa, 170)]);
   ataque('tan', K5, A(P.atrapa, 170), P.mazoArriba, P.mazoAbajo, A(P.guardia, 150), 9);
@@ -59,7 +61,7 @@ export async function guion(m) {
   ataque('tan', KR, A(P.corre1, 150), Cg, Gp, Gd);
   pose('tan', [K.radiales - 1, Gd], [K.radiales, A(P.agachado, 120), 'salto'], [L.T9.f0 + 4, A(P.agachado, 120)], [L.T9.f0 + 14, A(P.recibe, 150)], [L.T9.f0 + 30, A(P.recibe, 150)]);
   corre('tan', L.T9.f0 + 32, L.T9.f0 + 62, true);
-  pose('tan', [L.T9.f0 + 62, Gd], [L.B.f0 - 4, Gd], [L.B.f0 + 4, A(P.pregunta, 150), 'back'], [L.B.f1, A(P.pregunta, 150)], [K6 - 4, Gd], [K6, A(P.recibe, 150), 'out'], [K6 + 20, Gd], [K.armas_gotas + 10, P.guardia], [K.asterisco, P.quieto],
+  pose('tan', [L.T9.f0 + 62, Gd], [L.T9.f0 + 66, Gd], [L.T9.f0 + 72, A(P.recibe, 150), 'out'], [L.T9.f0 + 82, A(P.recibe, 150)], [L.T9.f0 + 90, Gd], [L.B.f0 - 4, Gd], [L.B.f0 + 4, A(P.pregunta, 150), 'back'], [L.B.f1, A(P.pregunta, 150)], [K6 - 4, Gd], [K6, A(P.recibe, 150), 'out'], [K6 + 20, Gd], [K.armas_gotas + 10, P.guardia], [K.asterisco, P.quieto],
     [K.lapiz_a_tan + 3, P.quieto], [K.lapiz_a_tan + 6, P.atrapa, 'out'], [N, P.atrapa]);
 
   // --- Tin
@@ -68,7 +70,7 @@ export async function guion(m) {
   G.tin.cara.push([0, 'curiosidad'], [K1 - 13, 'concentrado'], [K1 + 2, 'eureka'], [K1 + 40, 'curiosidad'], [K.rival_ataca - 6, 'sorpresa'], [K3 - 13, 'concentrado'], [K3 + 2, 'eureka'], [K3 + 60, 'curiosidad'], [K.dibuja_baston, 'concentrado'], [L.T5.f1, 'curiosidad'],
     [KB - 6, 'concentrado'], [K4 + 2, 'eureka'], [K4 + 30, 'concentrado'], [K5 + 2, 'curiosidad'], [K.carrera, 'concentrado'], [KR, 'eureka'], [K.invertidos, 'sorpresa'], [L.T9.f0 + 4, 'eureka'], [L.T9.f1, 'curiosidad'], [K6 - 13, 'concentrado'], [K6 + 2, 'curiosidad']);
   pos('tin', [30, [1.5, 0, -0.8]], [46, [1.5, 0, -0.8]], [66, [1.25, 0, -1.6]], [K1 - 13, [1.25, 0, -1.6]], [K1 - 7, [1.05, 0, -2.0]], [K1 - 1, [1.05, 0, -2.0]], [K1, [0.72, 0, -2.0], 'salto'], [K1 + 11, [1.0, 0, -2.0]],
-    [K2 + 30, [1.0, 0, -2.0]], [K.cartel - 4, [0.45, 0, 0.1]], [K.salto_mostrador + 2, [0.45, 0, 0.1]], [K3 - 14, [1.85, 0, -2.9], 'lin'], [K3 - 1, [1.85, 0, -2.9]], [K3, [2.05, 0.45, -2.9], 'salto'], [K3 + 6, [2.0, 0, -2.9], 'in'],
+    [K2 + 30, [1.0, 0, -2.0]], [K.cartel - 4, [0.3, 0, 0.1]], [K.salto_mostrador + 2, [0.3, 0, 0.1]], [K3 - 14, [1.85, 0, -2.9], 'lin'], [K3 - 1, [1.85, 0, -2.9]], [K3, [2.05, 0.45, -2.9], 'salto'], [K3 + 6, [2.0, 0, -2.9], 'in'],
     [K3 + 60, [2.0, 0, -2.9]], [K.dibuja_baston - 4, [0.55, 0, -2.6]], [KB - 1, [0.55, 0, -2.6]], [KB, [0.5, 0, -2.6], 'salto'], [K4 - 7, [0.6, 0, -2.6]], [K4 - 1, [0.6, 0, -2.6]], [K4, [0.95, 0, -2.6], 'salto'], [K4 + 11, [0.7, 0, -2.6]],
     [K.mazo - 2, [0.1, 0, -2.2]], [K5 + 20, [0.1, 0, -2.2]], [K5 + 44, [-1.2, 0, -4.6], 'lin'], [K.carrera, [-1.2, 0, -4.6]], [K.carrera + 11, [-1.15, 0, -5.7], 'lin'], [KR - 1, [-1.15, 0, -5.9]], [KR, [-0.95, 0, -6.0], 'salto'], [KR + 12, [-1.15, 0, -5.8]],
     [K.radiales - 1, [-1.15, 0, -5.8]], [K.radiales, [-1.25, 0, -5.4], 'salto'], [L.T9.f0 + 30, [-1.25, 0, -5.4]], [L.T9.f0 + 62, [-1.1, 0, -5.1]], [K6 - 1, [-1.1, 0, -5.1]], [K6, [-0.8, 0, -5.1], 'salto'], [K6 + 11, [-1.05, 0, -5.1]], [K.armas_gotas, [-1.05, 0, -5.1]], [K.asterisco - 2, [-1.0, 0, -4.3]], [N, [-1.0, 0, -4.3]]);
@@ -79,7 +81,7 @@ export async function guion(m) {
   pose('tin', [K.cartel - 4, P.guardia], [K.rival_ataca - 5, P.guardia], [K.rival_ataca - 2, P.agachado, 'out'], [K.rival_ataca + 6, P.agachado], [K.rival_ataca + 12, P.guardia], [K.salto_mostrador + 2, P.guardia]);
   corre('tin', K.salto_mostrador + 3, K3 - 14);
   ataque('tin', K3, P.guardia, P.agachado, P.gancho, P.guardia, 8);
-  pose('tin', [K3 + 60, P.guardia]);
+  pose('tin', [K3 + 30, P.guardia], [K3 + 38, P.festeja, 'back'], [K3 + 46, P.festeja], [K3 + 54, P.guardia], [K3 + 60, P.guardia]);
   corre('tin', K3 + 61, K.dibuja_baston - 5);
   pose('tin', [K.dibuja_baston - 4, P.dibuja], [K.dibuja_baston + 14, P.dibuja], [K.dibuja_baston + 20, Gd], [KB - 10, Gd], [KB - 3, P.bloqueo, 'out'], [KB + 6, P.bloqueo], [K4 - 14, Gd]);
   ataque('tin', K4, Gd, Cg, Gp, Gd);
@@ -89,7 +91,7 @@ export async function guion(m) {
   ataque('tin', KR, A(P.corre2, 150), Cg, Gp, Gd);
   pose('tin', [K.radiales - 1, Gd], [K.radiales, A(P.agachado, 120), 'salto'], [L.T9.f0 + 4, A(P.agachado, 120)], [L.T9.f0 + 14, A(P.recibe, 150)], [L.T9.f0 + 30, A(P.recibe, 150)]);
   corre('tin', L.T9.f0 + 32, L.T9.f0 + 62, true);
-  pose('tin', [L.T9.f0 + 62, Gd], [K6 - 14, Gd]);
+  pose('tin', [L.T9.f0 + 62, Gd], [L.T9.f0 + 72, Gd], [L.T9.f0 + 80, Cg, 'out'], [L.T9.f0 + 88, Cg], [L.T9.f0 + 96, Gd], [K6 - 14, Gd]);
   ataque('tin', K6, Gd, Cg, Gp, Gd);
   pose('tin', [K6 + 30, A(P.quieto, 60)], [K.armas_gotas + 10, P.quieto], [K.armas_gotas + 11, P.guardia]);
   corre('tin', K.armas_gotas + 1, K.asterisco - 3);
@@ -103,8 +105,8 @@ export async function guion(m) {
   D.escala.push([30, ESC.e125], [45, ESC.e125], [66, ESC.e15, 'back'], [K1 + 26, ESC.e15], [K1 + 42, ESC.e14], [K2 + 46, ESC.e14], [K2 + 66, ESC.e125], [K3 + 30, ESC.e125], [K3 + 50, ESC.e11], [K4 + 14, ESC.e11], [K4 + 24, ESC.e10],
     [K5, ESC.e10], [K5 + 14, ESC.e09], [KR + 20, ESC.e09], [RECOMPONE, ESC.e08], [K6 + 1, ESC.e08], [K.implosion_fin, 0.1, 'in'], [N, 0.1]);
   pos('duda', [30, [0, 0, -2.0]], [K1 - 1, [0, 0, -2.0]], [K1, [-0.25, 0.1, -2.1], 'salto'], [K1 + 5, [-0.9, 1.15, -3.0], 'out'], [K1 + 17, [-2.3, 1.4, -5.9], 'out'], [K1 + 19, [-2.35, 1.25, -6.0]], [K1 + 26, [-1.95, 0, -5.5], 'in'],
-    [K2 - 28, [-1.95, 0, -5.5]], [K2 - 14, [-0.35, 0, -1.0], 'lin'], [K2 - 1, [-0.35, 0, -1.0]], [K2, [-0.15, 0.05, -0.95], 'salto'], [K2 + 5, [0.55, 0.2, -0.6], 'out'], [K2 + 17, [1.9, 0, 0.15], 'out'], [K.salto_mostrador, [1.9, 0, 0.15]],
-    [K.salto_mostrador + 7, [2.4, 2.5, -1.8], 'out'], [K.salto_mostrador + 14, [2.85, 1.0, -3.4], 'in'], [K3 - 1, [2.85, 1.0, -3.4]], [K3, [2.85, 1.4, -3.4], 'salto'], [K3 + 5, [2.9, 3.5, -3.4], 'out'], [K3 + 11, [2.9, 4.9, -3.4], 'out'], [K3 + 17, [2.9, 5.0, -3.4]],
+    [K2 - 28, [-1.95, 0, -5.5]], [K2 - 14, [-0.35, 0, -1.0], 'lin'], [K2 - 1, [-0.35, 0, -1.0]], [K2, [-0.15, 0.05, -0.95], 'salto'], [K2 + 5, [0.55, 0.2, -0.6], 'out'], [K2 + 17, [2.3, 0, 0.15], 'out'], [K.salto_mostrador, [2.3, 0, 0.15]],
+    [K.salto_mostrador + 7, [2.4, 1.3, -1.8], 'out'], [K.salto_mostrador + 14, [2.85, 1.0, -3.4], 'in'], [K3 - 1, [2.85, 1.0, -3.4]], [K3, [2.85, 1.4, -3.4], 'salto'], [K3 + 5, [2.9, 3.5, -3.4], 'out'], [K3 + 11, [2.9, 4.9, -3.4], 'out'], [K3 + 17, [2.9, 5.0, -3.4]],
     [K3 + 21, [2.9, 1.7, -3.4], 'in'], [K3 + 23, [2.9, 1.0, -3.4]], [L.C.f0 + 18, [2.9, 1.0, -3.4]], [L.C.f0 + 24, [2.3, 1.5, -2.9], 'out'], [L.C.f0 + 30, [1.65, 0, -2.55], 'in'], [KB - 1, [1.65, 0, -2.55]], [KB, [1.42, 0, -2.55], 'salto'], [KB + 8, [1.6, 0, -2.55]],
     [K4 - 1, [1.6, 0, -2.55]], [K4, [1.85, 0.1, -2.6], 'salto'], [K4 + 5, [2.25, 1.3, -3.6], 'out'], [K4 + 13, [2.6, 1.5, -5.7], 'out'], [K4 + 15, [2.55, 1.4, -5.6]], [K4 + 22, [2.0, 0, -4.7], 'in'], [K4 + 24, [2.0, 0, -4.7]], [K4 + 30, [2.5, 2.0, -3.6], 'out'], [K4 + 36, [2.9, 0, -2.6], 'in'],
     [K5 + 16, [2.9, 0, -2.6]], [K5 + 26, [1.4, 2.3, -4.6], 'out'], [K5 + 36, [-0.15, 0, -6.3], 'in'], [KR - 1, [-0.15, 0, -6.3]], [KR, [-0.12, 0.2, -6.4], 'salto'], [KR + 5, [-0.1, 1.3, -6.7], 'out'], [KR + 20, [0, 2.3, -7.25], 'out'],
@@ -113,12 +115,12 @@ export async function guion(m) {
     [K2 - 36, P.poder, 'back'], [K2 - 29, P.poder]);
   corre('duda', K2 - 28, K2 - 14);
   pose('duda', [K2 - 13, P.guardia], [K2 - 7, P.carga], [K2 - 1, P.carga], [K2, P.recibe, 'salto'], [K2 + 5, P.resbala], [K2 + 17, P.resbala], [K2 + 22, P.caido], [K2 + 46, P.caido], [K2 + 58, P.agachado], [K2 + 70, P.guardia],
-    [K.cartel - 8, P.guardia], [K.cartel, P.carga, 'in'], [K.rival_ataca - 1, P.carga], [K.rival_ataca, P.golpe, 'salto'], [K.rival_ataca + 6, P.golpe], [K.rival_ataca + 12, P.guardia], [K.salto_mostrador - 3, P.agachado], [K.salto_mostrador + 4, P.recogido], [K.salto_mostrador + 12, P.recogido], [K.salto_mostrador + 15, P.agachado], [K.salto_mostrador + 22, P.guardia],
-    [K3 - 1, P.guardia], [K3, P.recibe, 'salto'], [K3 + 4, P.vuela], [K3 + 21, P.vuela], [K3 + 23, P.caido], [K3 + 44, P.caido], [K3 + 56, P.agachado], [L.C.f0 + 16, P.agachado], [L.C.f0 + 22, P.recogido], [L.C.f0 + 31, P.agachado], [K.dibuja_espada, A(P.poder, 185), 'back'], [K.dibuja_espada + 12, A(P.poder, 185)], [KB - 14, Gd]);
+    [K.cartel - 8, P.guardia], [K.cartel, P.carga, 'in'], [K.rival_ataca - 1, P.carga], [K.rival_ataca, P.golpe, 'salto'], [K.rival_ataca + 6, P.golpe], [K.rival_ataca + 12, P.guardia], [K.salto_mostrador - 3, P.agachado], [K.salto_mostrador + 4, P.recogido], [K.salto_mostrador + 12, P.recogido], [K.salto_mostrador + 15, P.agachado], [K.salto_mostrador + 22, P.agachado],
+    [K3 - 1, P.agachado], [K3, P.recibe, 'salto'], [K3 + 4, P.vuela], [K3 + 21, P.vuela], [K3 + 23, P.caido], [K3 + 44, P.caido], [K3 + 56, P.agachado], [K3 + 66, P.agachado], [K3 + 74, P.pisoton, 'back'], [K3 + 84, P.pisoton], [K3 + 92, P.recogido], [K3 + 102, P.agachado], [K.dibuja_baston + 14, P.agachado], [K.dibuja_baston + 22, P.pisoton, 'back'], [K.dibuja_baston + 32, P.recogido], [K.dibuja_baston + 42, P.agachado], [L.C.f0 + 16, P.agachado], [L.C.f0 + 22, P.recogido], [L.C.f0 + 31, P.agachado], [K.dibuja_espada, A(P.poder, 185), 'back'], [K.dibuja_espada + 12, A(P.poder, 185)], [KB - 14, Gd]);
   ataque('duda', KB, Gd, Cg, Gp, P.miraEspada, 3);
   pose('duda', [K4 - 1, P.miraEspada], [K4, P.recibe, 'salto'], [K4 + 4, P.vuela], [K4 + 15, P.vuela], [K4 + 22, P.agachado], [K4 + 24, P.agachado], [K4 + 28, P.recogido], [K4 + 34, P.recogido], [K4 + 37, P.agachado], [K5 - 6, P.guardia], [K5 - 1, P.recibe],
     [K5, P.agachado, 'salto'], [K5 + 14, P.agachado], [K5 + 18, P.recogido], [K5 + 34, P.recogido], [K5 + 37, P.agachado], [K5 + 46, P.guardia], [KR - 8, P.guardia], [KR - 1, P.recibe], [KR + 3, P.vuela], [KR + 22, P.vuela],
-    [RECOMPONE, P.agachado, 'salto'], [RECOMPONE + 22, P.agachado], [RECOMPONE + 32, P.guardia], [K6 - 3, P.guardia], [K6, P.recibe, 'salto'], [K6 + 3, P.recogido], [N, P.recogido]);
+    [RECOMPONE, P.agachado, 'salto'], [RECOMPONE + 22, P.agachado], [RECOMPONE + 32, P.guardia], [RECOMPONE + 40, P.guardia], [RECOMPONE + 48, P.poder, 'back'], [RECOMPONE + 56, P.poder], [RECOMPONE + 64, P.guardia], [K6 - 3, P.guardia], [K6, P.recibe, 'salto'], [K6 + 3, P.recogido], [N, P.recogido]);
 
   for (const q of ['tin', 'tan', 'duda']) for (const k of ['pos', 'pose', 'mira', 'cara', 'escala', 'visible']) { G[q][k].sort((a, b) => a[0] - b[0]); if (!G[q][k].length) G[q][k].push([0, k === 'escala' ? 1 : k === 'visible' ? true : null]); }
   G.tin.escala = [[0, 1]]; G.tan.escala = [[0, 1]];
@@ -142,6 +144,7 @@ export async function guion(m) {
     if (f >= RECOMPONE && f < RECOMPONE + 22) x.revela = entre(f, RECOMPONE, RECOMPONE + 20);
     if (f >= K.dibuja_espada && f < K4) x.arma = { tipo: 'espada', prog: entre(f, K.dibuja_espada, K.dibuja_espada + 11), rota: f >= KB };
     for (const [a, b, n] of vueltas) if (f >= a && f < b) x.giro = n * EASE.out(entre(f, a, b));
+    if (f >= K5 + 16 && f < K.invertidos) x.papel = true;                                              // el rojo de la llama no se ve a través del rival
     if (f >= K5 && f < K5 + 16) x.aplasta = f < K5 + 10 ? 0.85 : 0.85 * (1 - entre(f, K5 + 10, K5 + 16));
     if (f > K.implosion_fin && f < K.asterisco) x.giro = Math.sin(f * 2.1) * 0.25;                     // el mechón tiembla
     return x;
@@ -170,6 +173,7 @@ export async function guion(m) {
   const resto = (a) => f => (f >= K.enfria && f < K.implosion + a ? 0.55 * (1 - 0.5 * entre(f, K.enfria, K.implosion)) * (1 - entre(f, K.implosion + a - 6, K.implosion + a)) : 0);
   llama(-0.9, 0.0, -7.0, resto(8)); llama(0.75, 0.0, -6.7, resto(12)); llama(0.1, 0.0, -7.6, resto(10));
   const bola = plano(texEstallido[0], 1, 1); bola.renderOrder = 5;
+  const anillo = plano(texDibujo(512, 512, (g) => { g.strokeStyle = C.acento; g.lineWidth = 34; g.beginPath(); g.arc(256, 256, 226, 0, 7); g.stroke(); g.strokeStyle = C.linea; g.lineWidth = 6; g.beginPath(); g.arc(256, 256, 244, 0, 7); g.stroke(); g.beginPath(); g.arc(256, 256, 208, 0, 7); g.stroke(); }), 1, 1); anillo.renderOrder = 4;
 
   // objetos de tinta que vuelan: la punta de la espada, el mazo que Tin le lanza a Tan y el lápiz
   const punta = plano(texDibujo(96, 32, (g) => { g.fillStyle = C.linea; g.beginPath(); g.moveTo(4, 6); g.lineTo(92, 16); g.lineTo(4, 26); g.lineTo(16, 16); g.closePath(); g.fill(); }), 0.6, 0.2);
@@ -178,12 +182,12 @@ export async function guion(m) {
   const vuelo = (o, f, f0, f1, a, b, alto, giros) => { if (f < f0 || f > f1) return false; const u = entre(f, f0, f1); o.visible = true; o.position.set(lerp(a.x, b.x, u), lerp(a.y, b.y, u) + alto * Math.sin(Math.PI * u), lerp(a.z, b.z, u) + 0.05); o.rotation.z = giros * u * 6.2832; return true; };
   // calcos del rival en los lanzamientos (K+2 a K+5): tres copias que se quedan atrás
   const calcos = [0.34, 0.22, 0.12].map(op => { const o = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: duda.tex, transparent: true, opacity: op, depthWrite: false })); o.visible = false; escena.add(o); return o; });
-  const historia = [], LANZA = [K1, K2, K3, K4, KR].map(k => [k + 2, k + 7]);
+  const historia = [], LANZA = [K1, K2, K3, K4, KR].map(k => [k + 2, k + 15]);
   // grieta del mostrador (golpe 3) y marca final
   const texGrieta = texDibujo(640, 190, (g) => { g.strokeStyle = C.linea; g.lineWidth = 9; g.lineJoin = 'round'; g.lineCap = 'round'; g.beginPath(); g.moveTo(300, 0); for (const [x, y] of [[322, 40], [296, 78], [330, 120], [306, 150], [318, 190]]) g.lineTo(x, y); g.stroke(); g.lineWidth = 5; g.beginPath(); g.moveTo(322, 40); g.lineTo(370, 58); g.moveTo(296, 78); g.lineTo(250, 96); g.stroke(); });
   const grietaMostrador = plano(texGrieta, 2.4, 0.95); grietaMostrador.position.set(3.0, 0.48, -2.98);
   const gotaSuelo = new THREE.Mesh(new THREE.PlaneGeometry(1, 0.07), new THREE.MeshBasicMaterial({ color: C.linea })); gotaSuelo.rotation.x = -Math.PI / 2; gotaSuelo.visible = false; escena.add(gotaSuelo);
-  const AST = [0, -5.1], GRIETA_SALIDA = [1.8, -5.1], CAJA_ROTA = [-1.64, -4.24];
+  const AST = [0, -5.1], GRIETA_SALIDA = [1.68, -5.1], CAJA_ROTA = [-1.79, -4.24];
 
   // ------------------------------------------------------------ roturas con nombre (A8: el daño se queda)
   const suelta = (obj, v, w, piso) => { escena.attach(obj); obj.userData = { v: V(...v), w: V(...w), quieto: false, piso }; trozos.push(obj); };
@@ -253,7 +257,7 @@ export async function guion(m) {
     }],
     [K.bola, () => {
       for (const c of restos) { c.visible = true; c.userData = { v: V(ra(-5, 5), ra(3, 9), ra(0.5, 6)), w: V(ra(-9, 9), ra(-9, 9), ra(-9, 9)), quieto: false, piso: 0.1 }; trozos.push(c); }
-      mancha(0, -7.4, 1.5, 0.5); mancha(0.2, -7.3, 0.85, 0.55, C.linea); grieta(0.1, -6.6, 1.6, 9); grieta(GRIETA_SALIDA[0], GRIETA_SALIDA[1], 0.45, 5); trazoSuelo([[1.55, -5.2], [1.72, -5.05], [1.86, -5.16], [2.05, -5.0]], 0.05);
+      mancha(0, -7.4, 1.5, 0.5); mancha(0.2, -7.3, 0.85, 0.55, C.linea); grieta(0.1, -6.6, 1.6, 9); grieta(GRIETA_SALIDA[0], GRIETA_SALIDA[1], 0.34, 5); trazoSuelo([[1.5, -5.18], [1.62, -5.05], [1.74, -5.15], [1.9, -5.02]], 0.05);
       const g = Z.pared_fondo.lienzo.getContext('2d'); g.fillStyle = C.humo; g.globalAlpha = 0.5; g.beginPath(); const borron = (cx, cy, R0, n) => { g.beginPath(); for (let i = 0; i <= n; i++) { const a = i / n * 6.283, R = R0 * (0.62 + 0.38 * az()) * (1 + 0.5 * Math.max(0, -Math.sin(a))); g.lineTo(cx + Math.cos(a) * R * 1.25, cy + Math.sin(a) * R); } g.closePath(); g.fill(); }; borron(512, 560, 150, 40); g.globalAlpha = 0.55; borron(520, 590, 80, 30); Z.pared_fondo.tex.needsUpdate = true;
       for (const [i, b] of Z.banderines.lista.entries()) if (i > 3 && i < 9) for (const hijo of b.children) hijo.material = new THREE.MeshBasicMaterial({ color: hijo === b.children[0] ? C.linea : C.humo, side: THREE.DoubleSide });
       tirarCajas(Z.estante_izquierdo.cajas, 4, 1); tirarCajas(Z.estante_derecho.cajas, 4, -1); onda(0, -7.0, 0.5, 7.5, 0.55);
@@ -280,7 +284,7 @@ export async function guion(m) {
   anima(K2 + 18, K2 + 26, u => { Z.postes_de_fila.postes.forEach((p, i) => { p.rotation.z = -1.52 * EASE.in(clamp(u * 1.4 - i * 0.12)); p.rotation.y = 0.3 * i; }); });
   anima(K.invertidos, K.invertidos + 12, u => { const g = Z.isla_televisor.grupo; g.rotation.z = 1.42 * EASE.in(u); g.position.y = 0.25 * EASE.in(u); });
   anima(K.bola, K.bola + 16, u => { Z.banderines.grupo.rotation.z = -0.95 * EASE.back(u); });
-  anima(K5 + 2, K5 + 18, u => { reg.grupo.position.set(lerp(regDesde.x, regHasta.x, u), lerp(regDesde.y, regHasta.y, u) + 2.6 * Math.sin(Math.PI * u), lerp(regDesde.z, regHasta.z, u)); reg.grupo.rotation.set(u * 5.2, 0.6 * u, u * 6.2832); if (u >= 1) { reg.grupo.rotation.set(0, 0.35, 0); reg.grupo.scale.setScalar(0.72); } });
+  anima(K5 + 2, K5 + 18, u => { reg.grupo.position.set(lerp(regDesde.x, regHasta.x, u), lerp(regDesde.y, regHasta.y, u) + 2.6 * Math.sin(Math.PI * u), lerp(regDesde.z, regHasta.z, u)); reg.grupo.rotation.set(u * 5.2, 0.6 * u, u * 6.2832); if (u >= 1) { reg.grupo.rotation.set(0, 0.35, 0); reg.grupo.scale.setScalar(0.62); } });
   let corridos = null;
   anima(K.implosion, K.implosion_fin, u => {                        // la implosión arrastra cajas y papeles ≈ 0,5 u hacia el centro
     if (!corridos) corridos = trozos.filter(t => t.userData.quieto && Math.hypot(t.position.x - AST[0], t.position.z - AST[1]) < 4.5 && Math.hypot(t.position.x - AST[0], t.position.z - AST[1]) > 1.7).map(t => ({ t, de: t.position.clone() }));
@@ -309,10 +313,12 @@ export async function guion(m) {
     const ub = entre(f, K.bola, K.enfria), ue = entre(f, K.enfria, K.enfria + 8);
     bola.visible = f >= K.bola && f < K.enfria + 8;
     if (bola.visible) { const t = lerp(2.2, 5.6, EASE.out(ub)) * (1 - 0.85 * EASE.in(ue)); bola.material.map = texEstallido[Math.floor(f / 2) % 3]; bola.scale.set(t, t, 1); bola.position.set(0, 3.1, -7.0); }
+    anillo.visible = f >= K.bola && f < K.bola + 9;
+    if (anillo.visible) { const t = lerp(3.0, 9.5, EASE.out(entre(f, K.bola, K.bola + 9))); anillo.scale.set(t, t, 1); anillo.position.set(0, 3.1, -7.05); }
     // objetos que vuelan
     punta.visible = false; mazoV.visible = false; lapizV.visible = false;
     if (!vuelo(punta, f, KB + 2, KB + 13, V(0.98, 2.05, -2.5), V(TV[0] + 0.28, TV[1] + 0.25, TV[2] + 0.1), 0.9, 2.5) && f > KB + 13 && f < K.invertidos) { punta.visible = true; punta.position.set(TV[0] + 0.28, TV[1] + 0.25, TV[2] + 0.13); punta.rotation.z = 2.4; }
-    vuelo(mazoV, f, K.mazo + 12, K.mazo + 17, V(0.5, 1.9, -2.3), V(lerp(-1.2, 1.2, entre(K.mazo + 17, K4 - 4, K5 - 14)) - 0.1, 1.9, -2.6), 0.7, 1);
+    vuelo(mazoV, f, K.mazo + 12, K.mazo + 17, V(0.5, 1.9, -2.3), V(1.45, 1.9, -2.75), 0.7, 1);
     vuelo(lapizV, f, K.lapiz_a_tan, K.lapiz_a_tan + 6, V(-0.75, 1.5, -4.3), V(1.22, 1.55, -4.9), 0.8, 1.5);
     // calcos del rival
     historia.unshift({ p: duda.malla.position.clone(), s: duda.malla.scale.clone(), r: duda.malla.rotation.z }); historia.length = Math.min(historia.length, 8);

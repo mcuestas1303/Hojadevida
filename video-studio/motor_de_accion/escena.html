@@ -121,6 +121,7 @@ class Personaje {
     // cabeza (sprite oficial), gira con el torso
     const im = IMG[cabeza], q = px(e.cabeza), s = pr.sprite;
     g.save(); g.globalAlpha = opaco; g.translate(q[0], q[1]); g.scale(mira, 1); g.rotate((pose.t * 0.6 + (pose.c || 0)) * Math.PI / 180);
+    if (extra && extra.papel) { g.fillStyle = C.fondo; g.beginPath(); g.arc(0, s * 0.06, s * 0.31, 0, 7); g.fill(); }   // hueco de papel tras la madeja: nada de lo de atrás se ve a través
     g.drawImage(im, -s / 2, -s / 2, s, s); g.restore();
     if (extra && extra.lapiz) this.lapiz(e, px, mira);
     for (const k of ['lF', 'aF']) this.miembro(e, k, opaco, px, traza, mira);
