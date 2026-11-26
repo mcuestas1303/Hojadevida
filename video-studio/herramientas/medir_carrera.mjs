@@ -6,6 +6,7 @@
 // Criterio de la v3 (director de animación): avance_vs_paso entre 0,8 y 1,2; corre_hacia = adelante; ≥ 0,6 cuerpos/s.
 // Uso: node --no-warnings medir_carrera.mjs <carpeta motor_de_accion> [guion=tin_en_s_004]
 //      node --no-warnings medir_carrera.mjs <motor> <guion> cabezas <salida.json> "45-70,195-300"   (cabezas previstas)
+//      node --no-warnings medir_carrera.mjs <motor> <guion> desliza                                 (avanza sin pasos)
 import fs from 'fs'; import path from 'path'; import { pathToFileURL } from 'url';
 const MOTOR = process.argv[2], GUION = process.argv[3] || 'tin_en_s_004';
 const T = JSON.parse(fs.readFileSync(path.join(MOTOR, `guiones/${GUION}.tiempos.json`)));
@@ -108,4 +109,16 @@ if (process.argv[4] === 'cabezas') {
     for (const q of ['tin', 'tan']) { const p = pista(G[q].pos, f); const s = proyecta(f, [p[0], 1.75, p[2]]); o[q] = [Math.round(s[0]), Math.round(s[1])]; o[q + '_corre'] = esCarrera(pista(G[q].pose, f)); }
     pred.push(o); }
   fs.writeFileSync(process.argv[5], JSON.stringify(pred));
+}
+// ---- deslizamientos: el cuerpo avanza por el suelo sin pose de carrera (pies quietos que se mueven)
+if (process.argv[4] === 'desliza') {
+  const res = [];
+  for (const q of ['tin', 'tan', 'duda']) { const g = G[q]; let tr = null;
+    for (let f = 30; f < T.N - 1; f++) {
+      const a = pista(g.pos, f), b = pista(g.pos, f + 1), v = Math.hypot(b[0] - a[0], b[2] - a[2]) * 30;
+      const ok = escalon(g.visible, f) !== false && a[1] < 0.02 && b[1] < 0.02 && !esCarrera(pista(g.pose, f)) && v > 0.5 && v < 20;
+      if (ok && !tr) tr = { q, f0: f, u: 0 }; if (tr && ok) { tr.f1 = f; tr.u += v / 30; }
+      if (tr && !ok) { if (tr.f1 - tr.f0 >= 3) res.push({ q: tr.q, f0: tr.f0, f1: tr.f1 + 1, s: `${(tr.f0 / 30).toFixed(2)}–${((tr.f1 + 1) / 30).toFixed(2)}`, recorre_u: +tr.u.toFixed(2), u_s: +(tr.u / ((tr.f1 + 1 - tr.f0) / 30)).toFixed(2), pose: Object.keys(P).find(k => JSON.stringify(P[k]) === JSON.stringify(pista(g.pose, tr.f0))) || 'mezcla', plano: plano(tr.f0).nombre }); tr = null; }
+    } }
+  console.log(JSON.stringify(res, null, 0).replace(/\},/g, '},\n'));
 }

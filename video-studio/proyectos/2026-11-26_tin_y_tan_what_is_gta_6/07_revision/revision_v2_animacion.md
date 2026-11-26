@@ -12,8 +12,8 @@
   coincide con lo que midió continuidad sobre el video. Ejemplo: en f671–f681 la cabeza de Tin avanza ≈ 59 px según el
   guion y 44 px en su medición, y lo mismo pasa con el vaivén de f236–f282.
 - **Límite:** esta sesión no vio el MP4. El archivo está solo en el PC del dueño y esta sesión corre en la nube. Se
-  le pidió a Keter el sha256 y las posiciones de las cabezas por fotograma, para confirmar con el video; cuando
-  lleguen se agregan al final. Sin esa confirmación, **los controles 5 (video) y 3 (voz) quedan sin firmar**.
+  le pidieron a Keter el sha256 y las posiciones de las cabezas por fotograma, y ya llegaron: el archivo coincide y
+  las medidas confirman lo calculado (sección 4). La voz (control 3) sigue sin firmar.
 
 ## 1. Diagnóstico: por qué «intentan correr y casi no se mueven»
 
@@ -111,7 +111,8 @@ horizonte desplazado y carriles):
    <motor_de_accion> tin_en_s_004`. Pasa si en todos los tramos de carrera de 6 f o más se cumple: avance / paso entre
    0,8 y 1,2, «adelante» en el sentido de avance y ≥ 0,6 cuerpos/s en pantalla, o el tramo está declarado como cámara
    lenta y el reloj frena también al personaje. Esto atiende el pedido de fotografía de «un control automático nuevo»
-   para lo que hoy no se mide.
+   para lo que hoy no se mide. Además, con `… tin_en_s_004 desliza`: ningún tramo de 0,3 u o más se desliza sin
+   pasos, salvo el rebote de 0,2–0,3 u justo después de un contacto.
 2. Después del render, en el video: posiciones de las cabezas por fotograma, como hizo continuidad en la v2.
    Comprobar que el pie apoyado no se mueve más de ≈ 10 px mientras está en el suelo (en las hojas a todos los
    fotogramas de cada carrera).
@@ -139,11 +140,53 @@ horizonte desplazado y carriles):
 | 2 · Cifras | PASA | Recalculado: del 17-09-2013 al 19-11-2026 = 4.811 días = 13 años y 63 días. Son enteros: no llevan «≈». |
 | 3 · Voz | **Sin firmar** | Nadie la ha oído (el reconocedor oye un «it» de más). Necesita una escucha humana |
 | 4 · Imagen / portada | PASA, con nota | `miniatura.png` de 1080×1920 y 339 KB. «GTA 7?» y «Facts, Checked» (3 palabras con mayúscula inicial y sin la respuesta) entre y ≈ 440 y ≈ 700; caras de Tin y Tan en x ≈ 220 y ≈ 860, y ≈ 1280, dentro de la zona útil; televisor en el centro (y ≈ 780–1040). Nota: Tin y Tan se miran entre ellos, no al objeto (regla 29.5). |
-| 5 · Video | **NO PASA** | Las carreras de la sección 1, más lo que ya marcaron continuidad (CORREGIR) y fotografía (B1–B6). Falta confirmar con el MP4 (Keter) |
+| 5 · Video | **NO PASA** | Las carreras de la sección 1 y los deslizamientos de la sección 4, confirmados en el MP4, más lo que ya marcaron continuidad (CORREGIR) y fotografía (B1–B6) |
 | 8 · Color | PASA la medida; queda una decisión | Miniatura ≈ 91 % dentro de la paleta del motor (`c_alto_voltaje`); el video, ≈ 91 % (`color_v2.txt`). Contrastes: tinta sobre amarillo 11,8:1, sobre fondo 13,5:1 y sobre suelo 15,2:1; todo ≥ 7:1. Pendiente M6 de fotografía: el anillo amarillo de la explosión contradice la sección 3b (lo decide el director creativo) |
+
+## 4. Confirmado con el video (medidas de Keter, 2026-11-26)
+
+Keter midió el MP4 en el PC del dueño, en solo lectura y sin subirlo a ningún lado. **Archivo verificado:** 20.794.162
+bytes, sha256 `9d6d9048…5c35e7dc` (coincide), 1080×1920, 30 f/s, 986 f. Midió el centro de la cabeza de Tin y de Tan
+en 356 fotogramas de los tramos de carrera (copia en el PC: `Canal YouTube/mediciones/2026-11-26_short04_v2_cabezas.json`;
+no va al repositorio).
+
+| Tramo | Guion (px/s en pantalla) | Video (px/s, cabeza) | Lectura |
+|---|---|---|---|
+| Tin f50–f62 | ≈ 137 | ≈ 125 (774 → 724) | Coincide |
+| Tin f200–f248 | ≈ 137 | ≈ 110 (x 634 → 482, y 1314 → 1397) | Coincide: ≈ 0,25 cuerpos/s |
+| Tin f284–f296 | ≈ 673 | ≈ 628 (499 → 750) | Coincide: la única carrera que avanza |
+| Tan f359–f383 | ≈ 64 | ≈ 64 (146 → 197) | Coincide: corre en el lugar |
+| Tin f375–f423 | ≈ 224 | ≈ 222 (861 → 505) | Coincide: retrocede hacia la izquierda |
+| Tan f630–f654 | ≈ 274 | ≈ 250 (700 → 500) | Coincide |
+| Remate f671–f681 | — | Tin ≈ 132 (263 → 307), Tan ≈ 102 (732 → 698), cabezas que se achican ≈ 20 % | Peor de lo previsto: ≈ 0,2 cuerpos/s |
+| Tin f770–f798 (respiro) | ≈ 41 | ≈ 31 (306 → 335 en 28 f) | Coincide: corre en el lugar |
+
+- **La cadencia se ve en el video:** la altura de la cabeza oscila con un ciclo de 4 fotogramas, de ≈ 15–20 px (por
+  ejemplo, Tin en f200, f204, f208, f212: y 1314, 1317, 1321, 1326 en los picos). Son los ≈ 7,5 pasos/s del motor.
+- **Lo que pasa en el remate (C5 de continuidad), explicado:** después de 10 f de carrera que casi no avanza, en
+  f682–f686 las cabezas se **alejan** ≈ 200 px cada una (Tin 307 → 113 y Tan 698 → 901). No es la cámara: es la pose
+  `carga`, que echa el torso ≈ 44° hacia atrás justo después de la carrera (torso de +30° a −14°; la cabeza retrocede
+  ≈ 0,67 u, ≈ 200 px a esa distancia). Quedan quietos 7 f y en f694 vuelven de golpe ≈ 240 px en 1 fotograma (Tin
+  118 → 354, Tan 897 → 633). Corrección: después de una carrera, la anticipación es **recogerse** (cadera abajo y
+  torso adelante), no echarse atrás; el contacto lleva 1–2 f intermedios o borrón, no un salto de 240 px.
+- **Deslizamientos sin pasos** (control nuevo `medir_carrera.mjs … desliza`, confirmado en el video donde se midió):
+  - **Tin, f632–f649 (P15): 1,93 u «patinando» de pie mientras dibuja el bastón.** En el video, la cabeza va de x 394 a
+    221 a ≈ 11 px por fotograma con la pose quieta.
+  - **Tin, f573–f584 (P14): 1,29 u tras el golpe 4 sin dar un paso.** En el video, de x 548 a 220.
+  - Tan se desliza en guardia ≈ 0,8 u en f140–f155 (P5) y en f181–f194 (P6), y ≈ 1 u en f550–f569 (P12c).
+  - El rival, ≈ 0,5 u en guardia en f812–f824 (P19).
+
+  Corrección: todo cambio de lugar de 0,3 u o más lleva pasos (ciclo por distancia), o se hace fuera de cuadro y se
+  corta. Los retrocesos de 0,2–0,3 u justo después de un golpe pueden quedarse (son el rebote del contacto).
+- **Medidas no confiables:** donde Keter avisó (f562–f563, f650, f676, f682 de Tan, saltos de área), la mancha más
+  grande no era la cabeza. La cabeza de Tan en P19 (f765–f805, área 20–43 mil px en y ≈ 1130) tampoco cuadra con el
+  guion: no se usó.
+
+Con esto se firma el diagnóstico de la sección 1 contra el video. El control 5 sigue en **NO PASA**, y el 3 (voz) sigue
+sin firmar hasta que alguien oiga el audio.
 
 **Veredicto: CAMBIOS.** La v3 se arma con la sección 2 de este documento más la opción «media» de fotografía y la
 lista de continuidad. Costo: 0 créditos. No se generó ni se gastó nada.
 
 Firmas: director de animación (diagnóstico y ciclo), director de fotografía (cámara en las carreras) y supervisor de
-continuidad (control nuevo). Pendiente de confirmar con el MP4.
+continuidad (control nuevo). Confirmado con el MP4 el 2026-11-26 (sección 4).
