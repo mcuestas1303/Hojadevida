@@ -29,3 +29,6 @@ video-studio/canales/nostalgia-tin-y-tan/universo/
 # Graphify: el grafo se regenera con «graphify update video-studio»; solo se sube el informe
 video-studio/graphify-out/*
 !video-studio/graphify-out/GRAPH_REPORT.md
+
+# Fotogramas de trabajo del render final (se regeneran con codigo/componer.py)
+video-studio/proyectos/*/06_final/fotogramas/

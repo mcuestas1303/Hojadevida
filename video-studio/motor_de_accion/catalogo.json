@@ -34,7 +34,9 @@
     "velocidad",
     "estreno"
    ],
-   "usada_en": []
+   "usada_en": [
+    "TIN-EN-S-004"
+   ]
   }
  ],
  "entornos": [
@@ -79,8 +81,10 @@
     "escaparate",
     "mando_mostaza"
    ],
-   "usada_en": [],
-   "nota": "Hecho para TIN-EN-S-004. Ancho ajustado a 9 u (el cuadro vertical no ve más). Falta: la versión rota de cada pieza la mueve el guion del video."
+   "usada_en": [
+    "TIN-EN-S-004"
+   ],
+   "nota": "Hecho para TIN-EN-S-004. 9 u de ancho; mostrador claro a la derecha; banderines cortos sobre el televisor. Las versiones rotas las mueve el guion (caja_registradora_rota incluida)."
   }
  ],
  "personajes": [
@@ -101,7 +105,7 @@
   }
  ],
  "poses": {
-  "archivo": "escena.html (objeto P)",
+  "archivo": "escena.html (objeto P) y las nuevas en guiones/tin_en_s_004.js",
   "lista": [
    "quieto",
    "guardia",
@@ -119,7 +123,16 @@
    "festeja",
    "corre1",
    "corre2",
-   "resbala"
+   "resbala",
+   "gancho",
+   "bloqueo",
+   "dibuja",
+   "pregunta",
+   "invita",
+   "mazoArriba",
+   "mazoAbajo",
+   "miraEspada",
+   "atrapa"
   ]
  },
  "efectos": {
@@ -176,11 +189,43 @@
    {
     "id": "velocidad(S)",
     "tipo": "cámara lenta y acelerones"
+   },
+   {
+    "id": "humoC, polvoC, chispaC, gota",
+    "tipo": "partículas planas con contorno (sin degradado)"
+   },
+   {
+    "id": "mancha, trazoSuelo",
+    "tipo": "daño que se queda"
+   },
+   {
+    "id": "llama plana (2 tonos, 3 dibujos de 2 f)",
+    "tipo": "fuego por fases; en el guion"
+   },
+   {
+    "id": "bola de fuego plana",
+    "tipo": "explosión; en el guion"
+   },
+   {
+    "id": "calcos",
+    "tipo": "3 copias en los lanzamientos; en el guion"
+   },
+   {
+    "id": "armas de tinta: baston, mazo, espada",
+    "tipo": "Personaje.arma()"
+   },
+   {
+    "id": "asterisco y salida por la grieta",
+    "tipo": "marca final; en el guion"
+   },
+   {
+    "id": "cuadros de impacto, invertidos con máscara, radiales, claro",
+    "tipo": "postproducción 2D (codigo/componer.py del proyecto)"
    }
   ]
  },
  "sonidos": {
-  "archivo": "sonidos/sonido.py",
+  "archivo": "sonidos/sonido.py (prueba) y proyectos/2026-11-26_tin_y_tan_what_is_gta_6/codigo/audio.py (short 4)",
   "hechos_con": "numpy, 0 créditos",
   "lista": [
    "silbido_caida",
@@ -193,8 +238,26 @@
    "choque_pilar",
    "golpe_doble",
    "implosion",
-   "estallido_final"
-  ]
+   "estallido_final",
+   "trazo_de_tinta",
+   "cajas_caen",
+   "roce_suelo",
+   "postes_caen",
+   "bloqueo_tinta",
+   "vidrio_grieta",
+   "chispas",
+   "baston_golpe",
+   "mazo_golpe",
+   "campanilla_caja",
+   "subida",
+   "cola_explosion",
+   "asterisco_tic",
+   "escurre",
+   "gotas",
+   "atrapa",
+   "percusión a 120 pulsos"
+  ],
+  "nota": "Nadie los ha oído todavía."
  },
  "guiones": [
   {
@@ -206,6 +269,12 @@
    "id": "vista_tienda",
    "archivo": "guiones/vista_tienda.js",
    "nota": "No es un video: enseña el entorno con las cámaras del short 4"
+  },
+  {
+   "id": "tin_en_s_004",
+   "archivo": "guiones/tin_en_s_004.js",
+   "tiempos": "guiones/tin_en_s_004.tiempos.json (lo escribe codigo/tiempos.py del proyecto)",
+   "nota": "Primer video del formato de acción. Reloj por fotogramas, cámara por planos, 7 golpes."
   }
  ]
 }

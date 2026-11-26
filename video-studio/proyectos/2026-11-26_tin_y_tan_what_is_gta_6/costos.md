@@ -28,3 +28,11 @@ habladas del brief.
 | Voz de Tin (Kevin), 5 bloques | `b0e934d1-3bd9-406a-8429-8cb87519b979` | 2,6 créditos | Una generación; no se regenera |
 | Voz de Tan (Zelda), 3 líneas | `d9413cb4-1120-4735-979a-368b9d87dbbd` | 0,5 créditos | Una generación; no se regenera |
 | **Total** | | **3,1 créditos** (autorizados: ≈ 3,4) | |
+
+## Cierre de producción (2026-11-26)
+
+| Pieza | Costo |
+|---|---|
+| Voz (2 generaciones, sin segundos intentos) | 3,1 créditos |
+| Grabación del motor (2 pasadas completas de 986 f y varias parciales), composición, sonido | 0 créditos |
+| **Total del video** | **3,1 créditos** |

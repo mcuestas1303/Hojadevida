@@ -145,7 +145,7 @@ def datos():
     d.append((L["T5"]["f0"] + 2, L["C"]["f0"] - 2, 430, (R(74, "the ", ("sixth", "placa"), " numbered game"),), "sexto"))
     d.append((L["T6"]["f0"] + 2, K["mazo"] + 10, 430, (R(88, "rated M · ", ("17 and over", "placa")),), "rated M"))
     d.append((L["T8"]["f0"] + 2, K["carrera"] - 2, 440, (R(60, "from GTA 5 to GTA 6"),), "de 5 a 6"))
-    d.append((L["T9"]["f0"] + 4, L["B"]["f1"] - 6, 400, (R(106, ("13 years, 63 days", "placa")), R(50, "GTA 5: Sep 17, 2013"), R(50, "GTA 6: Nov 19, 2026")), "la cuenta"))
+    d.append((K["radiales"] + 31, L["B"]["f1"] - 6, 400, (R(106, ("13 years, 63 days", "placa")), R(50, "GTA 5: Sep 17, 2013"), R(50, "GTA 6: Nov 19, 2026")), "la cuenta"))
     d.append((L["T10"]["f0"] + 2, K["cierre"] - 2, 392, (R(96, ("GTA 7", "subr"), ":"), R(110, ("not announced", "placa")), R(48, " "), R(48, (f"as of {FECHA_SELLO}", "sello"))), "respuesta"))
     return d
 

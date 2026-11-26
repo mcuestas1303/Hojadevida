@@ -1,0 +1,217 @@
+{
+ "firma": {
+  "empalme_v_px_f": [
+   5.17,
+   4.73
+  ],
+  "empalme_omega_grados_f": [
+   4.4,
+   3.97
+  ],
+  "empalme_direccion_grados": [
+   77.9,
+   77.7
+  ],
+  "v_max_px_f": 58.9,
+  "omega_max_grados_f": 24.9,
+  "giro_total_grados": 330.0,
+  "escala_max": 1.7,
+  "brazo_en_c_-1": [
+   94.7,
+   107.67
+  ],
+  "cuerpo_dx_en_c_-1": -0.31,
+  "cabeza_en_c_-1": 24.97,
+  "despejes_px": {
+   "texto_min": 451.1,
+   "objeto_min": 112.1,
+   "cabeza_tan_min": 27.1,
+   "cabeza_tin_min": 45.7,
+   "centro_en_zona_util": true,
+   "caras_min": 27.1,
+   "cabeza_tan_en_c": -14,
+   "cabeza_tin_en_c": 0
+  },
+  "pasa": true
+ },
+ "portada": {
+  "R": 88.06509945750452,
+  "x_tan": 259.2,
+  "x_tin": 810.0,
+  "suelo": 1651.0,
+  "texto": [
+   100,
+   400,
+   760,
+   700
+  ],
+  "objeto": [
+   320,
+   782,
+   760,
+   1039
+  ],
+  "cara_tan": [
+   121,
+   1201,
+   303,
+   1364
+  ],
+  "cara_tin": [
+   741,
+   1163,
+   944,
+   1364
+  ]
+ },
+ "fecha_sello": "Nov 26, 2026",
+ "datos": [
+  {
+   "dato": "tarjeta 1",
+   "entra": 86,
+   "quieto_desde": 91,
+   "sale": 306,
+   "quieto_f": 212,
+   "caja": [
+    100,
+    421,
+    782,
+    494
+   ]
+  },
+  {
+   "dato": "tarjeta 2",
+   "entra": 218,
+   "quieto_desde": 223,
+   "sale": 306,
+   "quieto_f": 80,
+   "caja": [
+    100,
+    511,
+    764,
+    577
+   ]
+  },
+  {
+   "dato": "tarjeta 3",
+   "entra": 251,
+   "quieto_desde": 256,
+   "sale": 306,
+   "quieto_f": 47,
+   "caja": [
+    100,
+    593,
+    919,
+    659
+   ]
+  },
+  {
+   "dato": "GTA 6",
+   "entra": 338,
+   "quieto_desde": 343,
+   "sale": 428,
+   "quieto_f": 82,
+   "caja": [
+    100,
+    446,
+    717,
+    685
+   ]
+  },
+  {
+   "dato": "sexto",
+   "entra": 432,
+   "quieto_desde": 437,
+   "sale": 481,
+   "quieto_f": 41,
+   "caja": [
+    100,
+    450,
+    938,
+    535
+   ]
+  },
+  {
+   "dato": "rated M",
+   "entra": 552,
+   "quieto_desde": 557,
+   "sale": 596,
+   "quieto_f": 36,
+   "caja": [
+    100,
+    453,
+    899,
+    554
+   ]
+  },
+  {
+   "dato": "de 5 a 6",
+   "entra": 616,
+   "quieto_desde": 621,
+   "sale": 669,
+   "quieto_f": 45,
+   "caja": [
+    100,
+    456,
+    646,
+    525
+   ]
+  },
+  {
+   "dato": "la cuenta",
+   "entra": 750,
+   "quieto_desde": 755,
+   "sale": 880,
+   "quieto_f": 122,
+   "caja": [
+    100,
+    429,
+    904,
+    692
+   ]
+  },
+  {
+   "dato": "respuesta",
+   "entra": 890,
+   "quieto_desde": 895,
+   "sale": 954,
+   "quieto_f": 56,
+   "caja": [
+    100,
+    417,
+    833,
+    820
+   ]
+  }
+ ],
+ "destellos": {
+  "fotogramas": 986,
+  "cambios_bruscos": 13,
+  "fotogramas_con_cambio": [
+   100,
+   102,
+   336,
+   338,
+   430,
+   442,
+   562,
+   564,
+   671,
+   719,
+   724,
+   728,
+   874
+  ],
+  "max_cambios_en_1_s": 3,
+  "segundo_del_maximo": 23.97,
+  "mayor_salto_de_luminosidad": 30.9,
+  "segundo_del_mayor_salto": 11.27,
+  "saltos_a_pantalla_completa": [],
+  "limites": {
+   "umbral": 10.0,
+   "max_por_segundo": 3,
+   "salto_max": 40.0
+  },
+  "pasa": true
+ }
+}

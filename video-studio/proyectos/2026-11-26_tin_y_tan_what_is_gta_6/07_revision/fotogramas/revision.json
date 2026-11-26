@@ -1,0 +1,21 @@
+{
+  "video": "tin_y_tan_short04_v1.mp4",
+  "duracion_s": 32.9,
+  "cortes_s": [
+    3.3,
+    11.2,
+    14.3,
+    14.7,
+    18.7,
+    22.4,
+    24.0,
+    24.8
+  ],
+  "planos": 9,
+  "plano_mas_corto_s": 0.4,
+  "congelados": [],
+  "vacios": [],
+  "destellos_s": [],
+  "segundos_con_exceso_de_destellos": [],
+  "marcas": []
+}

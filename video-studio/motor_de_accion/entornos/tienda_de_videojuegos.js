@@ -69,7 +69,7 @@ export function construir({ THREE, escena, caja, C, lienzo }) {
 
   // cartel de pie, en blanco, en dos mitades (el rival lo parte en zigzag)
   const cartel = G(); const cAbajo = en(caja(0.7, 0.85, 0.06, blanco, 0.05), 0, 0.425, 0), cArriba = G(); cArriba.add(en(caja(0.7, 0.85, 0.06, blanco, 0.05), 0, 0.425, 0)); en(cArriba, 0, 0.85, 0);
-  cartel.add(cAbajo, cArriba); en(cartel, 3.0, 0, -0.5); cartel.rotation.y = -0.2; escena.add(cartel);
+  cartel.add(cAbajo, cArriba); en(cartel, 2.75, 0, -0.5); cartel.rotation.y = -0.2; escena.add(cartel);
   piezas.cartel_de_pie = { grupo: cartel, abajo: cAbajo, arriba: cArriba };
 
   // postes de fila (4, con cinta), a la derecha y delante
@@ -123,7 +123,7 @@ export function construir({ THREE, escena, caja, C, lienzo }) {
   }
   const pts = []; for (let i = 0; i <= 24; i++) { const u = i / 24; pts.push(new THREE.Vector3(LARGO * u, -Math.sin(u * Math.PI) * 0.2 + 0.015, 0)); }
   const cuerda = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 24, 0.014, 5), new THREE.MeshBasicMaterial({ color: tinta })); banderines.add(cuerda);
-  en(banderines, -1.8, 3.36, -8.4); escena.add(banderines);
+  en(banderines, -1.8, 3.3, -8.4); escena.add(banderines);
   piezas.banderines = { grupo: banderines, lista, cuerda };
 
   // repisa del fondo con el mando mostaza (no se toca en todo el video)

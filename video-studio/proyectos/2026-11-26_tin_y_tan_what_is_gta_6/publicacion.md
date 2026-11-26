@@ -1,6 +1,6 @@
 # Publicación — What Is GTA 6, and Is a GTA 7 Coming?
 
-> Short 4 de Tin & Tan (`TIN-EN-S-004`), YouTube Shorts, 9:16, ≈ 31,5 s. Escrita el 2026-11-26 por el director de prompts con
+> Short 4 de Tin & Tan (`TIN-EN-S-004`), YouTube Shorts, 9:16, 32,9 s. Escrita el 2026-11-26 por el director de prompts con
 > `comercial/2026-11-26_hechos_short4_what_is_gta_6.md` (sección 8, descargo), `comercial/2026-11-26_hechos_short4_gancho_gta7.md`
 > (hechos del gancho) y `02_prompt/direccion.md` (sección 8). **Estado: borrador para el sí del dueño; no se publica sin él.**
 > Calendario: miércoles 2026-12-02, 16:00 (hora de El Salvador; la hora es hipótesis); el comercial pidió no pasar del
@@ -53,12 +53,11 @@ reglas: `video-studio/comercial/titulos.md`.
 La fecha de «Facts as of» es la de la última lectura (2026-11-26) y se cambia por la de la relectura del día de publicar.
 
 ```text
-Is there a GTA 7? Tin and Tan check what is known: what GTA is, where GTA 6 fits, whether the stories connect and how long the wait between games has been. Facts as of November 26, 2026.
+Is there a GTA 7? Tin and Tan check what is known: what GTA is, where GTA 6 fits and how long the wait between games has been. Facts as of November 26, 2026.
 
 What the video says:
 - GTA is short for Grand Theft Auto, a game series that started in 1997. Rockstar Games makes and publishes it today.
 - GTA 6 came out on November 19, 2026. It is the sixth numbered game in the series. It is rated M (Mature 17+) by the ESRB: seventeen and over.
-- Each numbered game tells a new story. This is the channel's summary of Wikipedia, which says the series is split into separate fictional universes. It is not a statement from Rockstar.
 - From GTA 5 (September 17, 2013) to GTA 6 (November 19, 2026): 4,811 days, which is 13 years and 63 days.
 - Rockstar hasn't announced a GTA 7, as of November 26, 2026. That is an absence, not a prediction: it does not mean there will not be one.
 

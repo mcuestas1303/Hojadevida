@@ -44,14 +44,14 @@ export async function guion(m) {
   G.tan.visible.push([0, false], [30, true], [CIERRE, false]);
   G.tan.mira.push([0, 1], [K5 + 16, -1], [RECOMPONE - 40, -1], [K.lapiz_a_tan - 6, -1]);
   G.tan.cara.push([0, 'sorpresa'], [K2 - 13, 'concentrado'], [K2, 'eureka'], [K2 + 26, 'curiosidad'], [L.C.f0, 'risa'], [L.C.f1 + 2, 'curiosidad'], [KB, 'sorpresa'], [K5 - 13, 'concentrado'], [K5, 'eureka'], [K5 + 20, 'concentrado'], [KR, 'eureka'], [K.invertidos, 'sorpresa'], [L.B.f0, 'curiosidad'], [K6, 'sorpresa'], [K.asterisco, 'curiosidad'], [K.lapiz_a_tan + 6, 'risa']);
-  pos('tan', [30, [-1.5, 0, -0.6]], [46, [-1.5, 0, -0.6]], [66, [-1.95, 0, -0.4], 'out'], [K2 - 30, [-1.95, 0, -0.4]], [K2 - 13, [-1.45, 0, -1.0]], [K2 - 1, [-1.45, 0, -1.0]], [K2, [-1.2, 0, -1.0], 'salto'], [K2 + 11, [-1.4, 0, -1.0]],
-    [K3 - 10, [-1.4, 0, -1.0]], [K3 + 30, [-1.2, 0, -1.6]], [K4 - 4, [-1.2, 0, -1.6]], [K5 - 14, [1.8, 0, -2.7], 'lin'], [K5 - 1, [1.8, 0, -2.7]], [K5, [2.05, 0, -2.7], 'salto'], [K5 + 14, [1.9, 0, -2.7]],
+  pos('tan', [30, [-1.5, 0, -0.6]], [46, [-1.5, 0, -0.6]], [66, [-1.95, 0, -0.4], 'out'], [K2 - 30, [-1.95, 0, -0.4]], [K2 - 13, [-1.45, 0, -1.0]], [K2 - 1, [-1.45, 0, -1.0]], [K2, [-1.2, 0, -1.0], 'salto'], [K2 + 11, [-1.4, 0, -1.0]], [K2 + 26, [-0.6, 0, -1.0]],
+    [K3 - 10, [-0.6, 0, -1.0]], [K3 + 30, [-0.8, 0, -1.6]], [K4 - 4, [-0.8, 0, -1.6]], [K4 + 10, [1.8, 0, -2.3], 'lin'], [K5 - 14, [1.8, 0, -2.7]], [K5 - 1, [1.8, 0, -2.7]], [K5, [2.05, 0, -2.7], 'salto'], [K5 + 14, [1.9, 0, -2.7]],
     [K5 + 18, [1.9, 0, -2.7]], [K5 + 44, [1.0, 0, -4.6], 'lin'], [K.carrera, [1.0, 0, -4.6]], [K.carrera + 11, [0.95, 0, -5.7], 'lin'], [KR - 1, [0.95, 0, -5.9]], [KR, [0.75, 0, -6.0], 'salto'], [KR + 12, [0.95, 0, -5.8]],
     [K.radiales - 1, [0.95, 0, -5.8]], [K.radiales, [1.15, 0, -5.4], 'salto'], [L.T9.f0 + 30, [1.15, 0, -5.4]], [L.T9.f0 + 62, [1.5, 0, -4.9]], [N, [1.5, 0, -4.9]]);
   pose('tan', [30, P.guardia], [46, P.guardia], [54, P.recibe, 'out'], [66, P.guardia], [K2 - 30, P.guardia]);
   ataque('tan', K2, P.guardia, P.carga, P.patada, P.guardia);
   pose('tan', [K2 + 14, P.festeja, 'back'], [K2 + 20, P.festeja], [K2 + 28, P.guardia], [L.C.f0 - 6, P.guardia], [L.C.f0 + 2, P.invita, 'back'], [L.C.f1, P.invita], [L.C.f1 + 6, P.guardia], [K4 - 5, P.guardia]);
-  corre('tan', K4 - 4, K5 - 15);
+  corre('tan', K4 - 4, K4 + 10); pose('tan', [K4 + 11, P.guardia]);
   pose('tan', [K5 - 15, P.atrapa], [K5 - 14, A(P.atrapa, 170)]);
   ataque('tan', K5, A(P.atrapa, 170), P.mazoArriba, P.mazoAbajo, A(P.guardia, 150), 9);
   corre('tan', K5 + 18, K5 + 44, true);
@@ -68,7 +68,7 @@ export async function guion(m) {
   G.tin.cara.push([0, 'curiosidad'], [K1 - 13, 'concentrado'], [K1 + 2, 'eureka'], [K1 + 40, 'curiosidad'], [K.rival_ataca - 6, 'sorpresa'], [K3 - 13, 'concentrado'], [K3 + 2, 'eureka'], [K3 + 60, 'curiosidad'], [K.dibuja_baston, 'concentrado'], [L.T5.f1, 'curiosidad'],
     [KB - 6, 'concentrado'], [K4 + 2, 'eureka'], [K4 + 30, 'concentrado'], [K5 + 2, 'curiosidad'], [K.carrera, 'concentrado'], [KR, 'eureka'], [K.invertidos, 'sorpresa'], [L.T9.f0 + 4, 'eureka'], [L.T9.f1, 'curiosidad'], [K6 - 13, 'concentrado'], [K6 + 2, 'curiosidad']);
   pos('tin', [30, [1.5, 0, -0.8]], [46, [1.5, 0, -0.8]], [66, [1.25, 0, -1.6]], [K1 - 13, [1.25, 0, -1.6]], [K1 - 7, [1.05, 0, -2.0]], [K1 - 1, [1.05, 0, -2.0]], [K1, [0.72, 0, -2.0], 'salto'], [K1 + 11, [1.0, 0, -2.0]],
-    [K2 + 30, [1.0, 0, -2.0]], [K.cartel - 4, [0.8, 0, 0.1]], [K.salto_mostrador + 2, [0.8, 0, 0.1]], [K3 - 14, [1.85, 0, -2.9], 'lin'], [K3 - 1, [1.85, 0, -2.9]], [K3, [2.05, 0.45, -2.9], 'salto'], [K3 + 6, [2.0, 0, -2.9], 'in'],
+    [K2 + 30, [1.0, 0, -2.0]], [K.cartel - 4, [0.45, 0, 0.1]], [K.salto_mostrador + 2, [0.45, 0, 0.1]], [K3 - 14, [1.85, 0, -2.9], 'lin'], [K3 - 1, [1.85, 0, -2.9]], [K3, [2.05, 0.45, -2.9], 'salto'], [K3 + 6, [2.0, 0, -2.9], 'in'],
     [K3 + 60, [2.0, 0, -2.9]], [K.dibuja_baston - 4, [0.55, 0, -2.6]], [KB - 1, [0.55, 0, -2.6]], [KB, [0.5, 0, -2.6], 'salto'], [K4 - 7, [0.6, 0, -2.6]], [K4 - 1, [0.6, 0, -2.6]], [K4, [0.95, 0, -2.6], 'salto'], [K4 + 11, [0.7, 0, -2.6]],
     [K.mazo - 2, [0.1, 0, -2.2]], [K5 + 20, [0.1, 0, -2.2]], [K5 + 44, [-1.2, 0, -4.6], 'lin'], [K.carrera, [-1.2, 0, -4.6]], [K.carrera + 11, [-1.15, 0, -5.7], 'lin'], [KR - 1, [-1.15, 0, -5.9]], [KR, [-0.95, 0, -6.0], 'salto'], [KR + 12, [-1.15, 0, -5.8]],
     [K.radiales - 1, [-1.15, 0, -5.8]], [K.radiales, [-1.25, 0, -5.4], 'salto'], [L.T9.f0 + 30, [-1.25, 0, -5.4]], [L.T9.f0 + 62, [-1.1, 0, -5.1]], [K6 - 1, [-1.1, 0, -5.1]], [K6, [-0.8, 0, -5.1], 'salto'], [K6 + 11, [-1.05, 0, -5.1]], [K.armas_gotas, [-1.05, 0, -5.1]], [K.asterisco - 2, [-1.0, 0, -4.3]], [N, [-1.0, 0, -4.3]]);
@@ -183,7 +183,7 @@ export async function guion(m) {
   const texGrieta = texDibujo(640, 190, (g) => { g.strokeStyle = C.linea; g.lineWidth = 9; g.lineJoin = 'round'; g.lineCap = 'round'; g.beginPath(); g.moveTo(300, 0); for (const [x, y] of [[322, 40], [296, 78], [330, 120], [306, 150], [318, 190]]) g.lineTo(x, y); g.stroke(); g.lineWidth = 5; g.beginPath(); g.moveTo(322, 40); g.lineTo(370, 58); g.moveTo(296, 78); g.lineTo(250, 96); g.stroke(); });
   const grietaMostrador = plano(texGrieta, 2.4, 0.95); grietaMostrador.position.set(3.0, 0.48, -2.98);
   const gotaSuelo = new THREE.Mesh(new THREE.PlaneGeometry(1, 0.07), new THREE.MeshBasicMaterial({ color: C.linea })); gotaSuelo.rotation.x = -Math.PI / 2; gotaSuelo.visible = false; escena.add(gotaSuelo);
-  const AST = [0, -5.1], GRIETA_SALIDA = [1.8, -5.1], CAJA_ROTA = [-1.74, -5.22];
+  const AST = [0, -5.1], GRIETA_SALIDA = [1.8, -5.1], CAJA_ROTA = [-1.64, -4.24];
 
   // ------------------------------------------------------------ roturas con nombre (A8: el daño se queda)
   const suelta = (obj, v, w, piso) => { escena.attach(obj); obj.userData = { v: V(...v), w: V(...w), quieto: false, piso }; trozos.push(obj); };
@@ -206,7 +206,7 @@ export async function guion(m) {
     [K2, () => { estrella(V(-0.5, 1.2, -0.95), 0.6); gotas(-0.4, 1.3, -1.0, 3.2, 6); }],
     [K2 + 6, () => marca('roce_suelo')],
     [K2 + 18, () => { marca('postes_caen'); polvo(2.1, 0.2, 0.3, 8); for (const c of Z.postes_de_fila.cintas) c.visible = false; }],
-    [K.cartel, () => { marca('choque_madera_agudo'); polvo(3.0, 1.0, -0.5, 6); const a = Z.cartel_de_pie.arriba; suelta(a, [1.2, 2.6, 0.8], [0.4, 1.2, -4.5], 0.06);  }],
+    [K.cartel, () => { marca('choque_madera_agudo'); polvo(2.75, 1.0, -0.5, 6); const a = Z.cartel_de_pie.arriba; suelta(a, [1.2, 2.6, 0.8], [0.4, 1.2, -4.5], 0.06);  }],
     [K.rival_ataca - 2, () => marca('silbido')],
     // golpe 3 · Tin, gancho · mostrador
     [K3 - 1, () => { marca('golpe_grave'); marca('silbido_sube'); }],
@@ -253,7 +253,7 @@ export async function guion(m) {
     }],
     [K.bola, () => {
       for (const c of restos) { c.visible = true; c.userData = { v: V(ra(-5, 5), ra(3, 9), ra(0.5, 6)), w: V(ra(-9, 9), ra(-9, 9), ra(-9, 9)), quieto: false, piso: 0.1 }; trozos.push(c); }
-      mancha(0, -7.1, 2.3, 0.5); mancha(0.3, -6.9, 1.3, 0.55, C.linea); grieta(0.1, -6.6, 1.6, 9); grieta(GRIETA_SALIDA[0], GRIETA_SALIDA[1], 0.45, 5); trazoSuelo([[1.55, -5.2], [1.72, -5.05], [1.86, -5.16], [2.05, -5.0]], 0.05);
+      mancha(0, -7.4, 1.5, 0.5); mancha(0.2, -7.3, 0.85, 0.55, C.linea); grieta(0.1, -6.6, 1.6, 9); grieta(GRIETA_SALIDA[0], GRIETA_SALIDA[1], 0.45, 5); trazoSuelo([[1.55, -5.2], [1.72, -5.05], [1.86, -5.16], [2.05, -5.0]], 0.05);
       const g = Z.pared_fondo.lienzo.getContext('2d'); g.fillStyle = C.humo; g.globalAlpha = 0.5; g.beginPath(); const borron = (cx, cy, R0, n) => { g.beginPath(); for (let i = 0; i <= n; i++) { const a = i / n * 6.283, R = R0 * (0.62 + 0.38 * az()) * (1 + 0.5 * Math.max(0, -Math.sin(a))); g.lineTo(cx + Math.cos(a) * R * 1.25, cy + Math.sin(a) * R); } g.closePath(); g.fill(); }; borron(512, 560, 150, 40); g.globalAlpha = 0.55; borron(520, 590, 80, 30); Z.pared_fondo.tex.needsUpdate = true;
       for (const [i, b] of Z.banderines.lista.entries()) if (i > 3 && i < 9) for (const hijo of b.children) hijo.material = new THREE.MeshBasicMaterial({ color: hijo === b.children[0] ? C.linea : C.humo, side: THREE.DoubleSide });
       tirarCajas(Z.estante_izquierdo.cajas, 4, 1); tirarCajas(Z.estante_derecho.cajas, 4, -1); onda(0, -7.0, 0.5, 7.5, 0.55);
@@ -266,7 +266,7 @@ export async function guion(m) {
     [K.implosion + 5, () => onda(AST[0], AST[1], 2.8, 0.15, 0.42, 0.6)],
     [K.implosion + 10, () => onda(AST[0], AST[1], 2.0, 0.15, 0.3, 1.1)],
     [K.armas_gotas, () => { marca('gotas'); soltar('gota', tin.manoMundo.clone().add(V(0.4, 0.3, 0)), V(0, 0.5, 0), 1.0, 6); soltar('gota', tan.manoMundo.clone().add(V(-0.4, 0.5, 0)), V(0, 0.5, 0), 1.2, 7); despeja(); }],
-    ...[0, 1, 2, 3, 4, 5].map(i => [K.asterisco + i, () => { marca('asterisco_tic'); const a = i * Math.PI / 3 + 0.26, r = 0.115; trazoSuelo([[AST[0], AST[1]], [AST[0] + Math.cos(a) * r, AST[1] + Math.sin(a) * r * 1.6]], 0.042); }]),
+    ...[0, 1, 2, 3, 4, 5].map(i => [K.asterisco + i, () => { marca('asterisco_tic'); const a = i * Math.PI / 3 + 0.26, r = 0.125; trazoSuelo([[AST[0], AST[1]], [AST[0] + Math.cos(a) * r, AST[1] + Math.sin(a) * r * 1.6]], 0.042); }]),
     [K.escurre, () => marca('escurre')],
     [K.lapiz_a_tan, () => marca('silbido_corto')],
     [K.lapiz_a_tan + 6, () => marca('atrapa')],
@@ -280,7 +280,7 @@ export async function guion(m) {
   anima(K2 + 18, K2 + 26, u => { Z.postes_de_fila.postes.forEach((p, i) => { p.rotation.z = -1.52 * EASE.in(clamp(u * 1.4 - i * 0.12)); p.rotation.y = 0.3 * i; }); });
   anima(K.invertidos, K.invertidos + 12, u => { const g = Z.isla_televisor.grupo; g.rotation.z = 1.42 * EASE.in(u); g.position.y = 0.25 * EASE.in(u); });
   anima(K.bola, K.bola + 16, u => { Z.banderines.grupo.rotation.z = -0.95 * EASE.back(u); });
-  anima(K5 + 2, K5 + 18, u => { reg.grupo.position.set(lerp(regDesde.x, regHasta.x, u), lerp(regDesde.y, regHasta.y, u) + 2.6 * Math.sin(Math.PI * u), lerp(regDesde.z, regHasta.z, u)); reg.grupo.rotation.set(u * 5.2, 0.6 * u, u * 6.2832); if (u >= 1) reg.grupo.rotation.set(0, 0.6, 0); });
+  anima(K5 + 2, K5 + 18, u => { reg.grupo.position.set(lerp(regDesde.x, regHasta.x, u), lerp(regDesde.y, regHasta.y, u) + 2.6 * Math.sin(Math.PI * u), lerp(regDesde.z, regHasta.z, u)); reg.grupo.rotation.set(u * 5.2, 0.6 * u, u * 6.2832); if (u >= 1) { reg.grupo.rotation.set(0, 0.35, 0); reg.grupo.scale.setScalar(0.72); } });
   let corridos = null;
   anima(K.implosion, K.implosion_fin, u => {                        // la implosión arrastra cajas y papeles ≈ 0,5 u hacia el centro
     if (!corridos) corridos = trozos.filter(t => t.userData.quieto && Math.hypot(t.position.x - AST[0], t.position.z - AST[1]) < 4.5 && Math.hypot(t.position.x - AST[0], t.position.z - AST[1]) > 1.7).map(t => ({ t, de: t.position.clone() }));
@@ -294,7 +294,7 @@ export async function guion(m) {
       if (t === reg.grupo) continue; const p = t.position;
       const d = Math.hypot(p.x - AST[0], p.z - AST[1]); if (d < 1.0) { const a = d > 0.01 ? Math.atan2(p.z - AST[1], p.x - AST[0]) : 2.2; p.x = AST[0] + Math.cos(a) * 1.05; p.z = AST[1] + Math.sin(a) * 1.05; }
       if (p.x > -0.2 && p.x < 2.3 && Math.abs(p.z - AST[1]) < 0.4) p.z = AST[1] + (p.z < AST[1] ? -0.5 : 0.5);
-      const c = Math.hypot(p.x - CAJA_ROTA[0], p.z - CAJA_ROTA[1]); if (c < 0.75) { p.x = CAJA_ROTA[0] + 0.85; }
+      const c = Math.hypot(p.x - CAJA_ROTA[0], p.z - CAJA_ROTA[1]); if (c < 0.95) { p.x = CAJA_ROTA[0] + 1.05; p.z = CAJA_ROTA[1] - 0.5; }
     }
   }
   let hechoAnim = new Set();

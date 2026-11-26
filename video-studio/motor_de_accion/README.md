@@ -55,3 +55,20 @@ python3 sonidos/sonido.py salida/eventos.json salida/sonido.wav
   diga si los personajes cambian con el entorno o se quedan fijos.
 - El dueño tiene otra conversación llamada «Motor generador de contenido» y avisó de que explicará ese motor
   (`CLAUDE.md`). Este motor es solo el de la acción en pantalla; cuando explique el otro se ve cómo se unen.
+
+## Primer video hecho con el motor: TIN-EN-S-004 (2026-11-26)
+
+```bash
+python3 ../proyectos/2026-11-26_tin_y_tan_what_is_gta_6/codigo/tiempos.py        # voz real → fotogramas (y guiones/tin_en_s_004.tiempos.json)
+node render.js <carpeta> 1000 c_alto_voltaje tienda_de_videojuegos 1 tin_en_s_004   # ≈ 7 min; SOLO=0,82,... graba solo esos fotogramas (≈ 30 s)
+python3 ../proyectos/2026-11-26_tin_y_tan_what_is_gta_6/codigo/audio.py <carpeta>/eventos.json
+python3 ../proyectos/2026-11-26_tin_y_tan_what_is_gta_6/codigo/componer.py <carpeta>/fotogramas --video
+```
+
+- **Reloj por fotogramas** (`porFotogramas`): el guion escribe en fotogramas; `reloj(f)` solo frena la física.
+- **Cámara sin inclinación** (`planos` del JSON de tiempos): mira recto desde (cx, h, z + D); el horizonte queda en y = 960,
+  las cabezas bajo la franja de subtítulos y la pared lisa arriba para el dato. Se corta, no tiembla.
+- **Los planos de firma se graban sin personajes**: Tin, Tan y el lápiz bumerán los pone la composición con `palitos.py`
+  y `efectos.py` (la firma del canal, sin cambios). Datos, subtítulos y cuadros de impacto también son 2D.
+- Límites vistos: los personajes son planos de perfil (no hay espaldas ni vistas laterales reales); los vuelos no llevan
+  borrón de movimiento; las poses son de esqueleto simple. Detalle en `07_revision/controles.md` del proyecto.

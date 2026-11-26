@@ -571,3 +571,10 @@ tres shorts están como «no creado para niños».
 
 Short 4: el dueño aprobó la pregunta «What is GTA 6?». En curso: hechos con fuente y filtro de políticas
 (`comercial/2026-11-26_hechos_short4_what_is_gta_6.md`).
+
+**2026-11-26 · Short 4 terminado para revisión (para el Equipo de producción audiovisual).** Video:
+`proyectos/2026-11-26_tin_y_tan_what_is_gta_6/06_final/tin_y_tan_short04_v1.mp4` (32.87 s; no se sube al repositorio:
+se regenera con `codigo/tiempos.py`, `motor_de_accion/render.js` con el guion `tin_en_s_004`, `codigo/audio.py` y
+`codigo/componer.py --video`). Hojas de contacto y controles: `07_revision/` (`controles.md`). Reporte:
+`reporte_de_publicacion.md`. Falta: ojo y oído humanos, firma de cada oficio, sello de fecha del día de publicar y el sí
+del dueño. No publicado.

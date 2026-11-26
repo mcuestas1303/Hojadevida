@@ -1,0 +1,247 @@
+{
+ "medidas": {
+  "inicio": {
+   "mando_mostaza": [
+    160.63113047746174,
+    770.3155652387309
+   ],
+   "televisor_izq_arriba": [
+    319.783140694044,
+    781.9913720610189
+   ],
+   "televisor_der_abajo": [
+    760.216859305956,
+    1038.911041251301
+   ],
+   "suelo_z0": [
+    540,
+    1652.5854130770363
+   ],
+   "banderines_bajo": [
+    540,
+    395.44166304855696
+   ]
+  },
+  "final": {
+   "mando_mostaza": [
+    160.63113047746174,
+    770.3155652387309
+   ],
+   "caja_registradora_rota": [
+    164.3794603931225,
+    1379.1375533418206
+   ],
+   "asterisco": [
+    540,
+    1395.8858777069138
+   ],
+   "grieta_salida": [
+    926.4997930406132,
+    1395.8858777069138
+   ],
+   "televisor": [
+    540,
+    910.4512066561599
+   ],
+   "px_por_u_en_asterisco": 214.7221072447851
+  }
+ },
+ "eventos": [
+  {
+   "nombre": "trazo_de_tinta",
+   "cuadro": 30
+  },
+  {
+   "nombre": "choque_suelo",
+   "cuadro": 60
+  },
+  {
+   "nombre": "cajas_caen",
+   "cuadro": 60
+  },
+  {
+   "nombre": "silbido",
+   "cuadro": 79
+  },
+  {
+   "nombre": "golpe",
+   "cuadro": 81
+  },
+  {
+   "nombre": "choque_madera",
+   "cuadro": 100
+  },
+  {
+   "nombre": "cajas_caen",
+   "cuadro": 100
+  },
+  {
+   "nombre": "golpe_agudo",
+   "cuadro": 168
+  },
+  {
+   "nombre": "roce_suelo",
+   "cuadro": 175
+  },
+  {
+   "nombre": "postes_caen",
+   "cuadro": 187
+  },
+  {
+   "nombre": "choque_madera_agudo",
+   "cuadro": 257
+  },
+  {
+   "nombre": "silbido",
+   "cuadro": 261
+  },
+  {
+   "nombre": "golpe_grave",
+   "cuadro": 313
+  },
+  {
+   "nombre": "silbido_sube",
+   "cuadro": 313
+  },
+  {
+   "nombre": "silbido_caida",
+   "cuadro": 332
+  },
+  {
+   "nombre": "choque_pilar",
+   "cuadro": 336
+  },
+  {
+   "nombre": "trazo_de_tinta",
+   "cuadro": 430
+  },
+  {
+   "nombre": "trazo_de_tinta",
+   "cuadro": 514
+  },
+  {
+   "nombre": "bloqueo_tinta",
+   "cuadro": 547
+  },
+  {
+   "nombre": "vidrio_grieta",
+   "cuadro": 562
+  },
+  {
+   "nombre": "chispas",
+   "cuadro": 564
+  },
+  {
+   "nombre": "baston_golpe",
+   "cuadro": 573
+  },
+  {
+   "nombre": "fuego_enciende",
+   "cuadro": 574
+  },
+  {
+   "nombre": "trazo_de_tinta",
+   "cuadro": 586
+  },
+  {
+   "nombre": "choque_madera",
+   "cuadro": 588
+  },
+  {
+   "nombre": "cajas_caen",
+   "cuadro": 588
+  },
+  {
+   "nombre": "silbido",
+   "cuadro": 598
+  },
+  {
+   "nombre": "mazo_golpe",
+   "cuadro": 611
+  },
+  {
+   "nombre": "choque_madera",
+   "cuadro": 611
+  },
+  {
+   "nombre": "fuego_crece",
+   "cuadro": 614
+  },
+  {
+   "nombre": "campanilla_caja",
+   "cuadro": 630
+  },
+  {
+   "nombre": "trazo_de_tinta",
+   "cuadro": 634
+  },
+  {
+   "nombre": "subida",
+   "cuadro": 671
+  },
+  {
+   "nombre": "golpe_doble",
+   "cuadro": 693
+  },
+  {
+   "nombre": "vidrio_grieta",
+   "cuadro": 715
+  },
+  {
+   "nombre": "explosion",
+   "cuadro": 724
+  },
+  {
+   "nombre": "cola_explosion",
+   "cuadro": 739
+  },
+  {
+   "nombre": "baston_golpe_grave",
+   "cuadro": 885
+  },
+  {
+   "nombre": "implosion",
+   "cuadro": 888
+  },
+  {
+   "nombre": "gotas",
+   "cuadro": 908
+  },
+  {
+   "nombre": "asterisco_tic",
+   "cuadro": 918
+  },
+  {
+   "nombre": "asterisco_tic",
+   "cuadro": 919
+  },
+  {
+   "nombre": "asterisco_tic",
+   "cuadro": 920
+  },
+  {
+   "nombre": "asterisco_tic",
+   "cuadro": 921
+  },
+  {
+   "nombre": "asterisco_tic",
+   "cuadro": 922
+  },
+  {
+   "nombre": "asterisco_tic",
+   "cuadro": 923
+  },
+  {
+   "nombre": "escurre",
+   "cuadro": 926
+  },
+  {
+   "nombre": "silbido_corto",
+   "cuadro": 943
+  },
+  {
+   "nombre": "atrapa",
+   "cuadro": 949
+  }
+ ]
+}

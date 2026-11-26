@@ -1,8 +1,8 @@
 {
  "mezcla_LUFS": -14.0,
- "mezcla_pico_dBTP": -0.9,
+ "mezcla_pico_dBTP": -1.3,
  "voz_LUFS": -17.0,
- "musica_LUFS": -42.2,
+ "musica_LUFS": -30.2,
  "efectos_LUFS": -31.0,
  "efectos_pico_dBFS": -8.0,
  "silencio_total_f": [
