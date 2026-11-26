@@ -87,6 +87,15 @@ elementos psicológicos».
   pedidos del canal (`PARAMETROS.md`, secciones 7 y 8) y la prueba los lleva **todos**; si falta uno, no se presenta ni
   se genera: se dice qué falta y de quién depende.
 
+- **Las limitantes se resuelven con creatividad; el motor se ajusta (regla del dueño, 2026-11-26):** «todas las limitantes
+  que se presenten se resuelvan con creatividad; por ejemplo, si se quedó un video no publicado, se trata de hacer un
+  remake o se rompe la línea de tiempo. Necesito que el equipo tenga la habilidad de generar e irse ajustando dependiendo
+  del contexto dado por las estadísticas […] y limitantes dadas por el tema o la plataforma, incluso las circunstancias
+  […] es parte de la naturaleza del motor: al trabajar con estadísticas debe saber ajustarse». Ante una limitante (de
+  las estadísticas, del tema, de la plataforma o de las circunstancias) el equipo no responde «no se puede»: propone cómo
+  se convierte en parte del universo o del plan, lo anota con el dato que lo motivó y sigue. No toca lo que no se mueve
+  (fuentes, seguridad, línea editorial, el sí del dueño). Para Tin & Tan: `PARAMETROS.md`, sección 9.
+
 ## Qué se ve en cada conversación (regla del dueño, 2026-11-21)
 
 Textual: «siempre lo terminado preséntamelo en equipo de producción audiovisual; aquí quiero que veamos

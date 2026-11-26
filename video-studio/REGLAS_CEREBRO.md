@@ -201,3 +201,12 @@
 - **Una pregunta solo vale si aparece en datos de búsqueda (lección del 2026-11-26):** el dueño preguntó si la pregunta
   del short 4 estaba validada; no lo estaba. Que existan videos sobre algo es oferta, no demanda. Antes de fijar la
   pregunta de un video se comprueba en autocompletado y en las consultas relacionadas de Google Trends.
+
+- **Las limitantes se resuelven con creatividad; el motor se ajusta (dueño, 2026-11-26):** «todas las limitantes que se
+  presenten se resuelvan con creatividad; por ejemplo, si se quedó un video no publicado, se trata de hacer un remake o se
+  rompe la línea de tiempo […] el equipo [debe tener] la habilidad de generar e irse ajustando dependiendo del contexto
+  dado por las estadísticas, circunstancias […] y limitantes dadas por el tema o la plataforma […] es parte de la
+  naturaleza del motor: al trabajar con estadísticas debe saber ajustarse». Y aprobó («Sí a las 5»): el mundo de Tin & Tan
+  es un cuaderno con tres hojas (una por paleta); el rival es una pregunta que se responde y nunca muere ni da miedo; las
+  respuestas del misterio no van al repositorio público; de las teorías conspirativas como tema quedan fuera salud,
+  elecciones, tragedias y las que señalan a grupos; la primera tanda dura cuatro semanas y empieza con el short 4.

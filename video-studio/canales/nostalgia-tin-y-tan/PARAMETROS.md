@@ -1,6 +1,6 @@
 # Parámetros del canal Tin & Tan
 
-> **Versión 2.1 · 2026-11-26.** Este archivo se versiona desde hoy por pedido del dueño: «Mejor versiona los parámetros
+> **Versión 2.2 · 2026-11-26.** Este archivo se versiona desde hoy por pedido del dueño: «Mejor versiona los parámetros
 > porque hay cosas que ya te había pedido que no están implementadas». Cada versión anterior queda entera en
 > `versiones/`. La sección 8 lleva la lista de lo pedido y si está hecho o no.
 
@@ -10,6 +10,7 @@
 | 1.1 | 2026-11-26 | Ajustes «a prueba» por la primera lectura de Studio (público, tema, forma, resubir, suscripción, título) | `versiones/PARAMETROS_v1.1_2026-11-26.md` |
 | 2.0 | 2026-11-26 | **Formato de acción** (sección 7): peleas contra un rival, mundo con profundidad, efectos de acción y sonido. Lista de pedidos y su estado (sección 8) | este archivo |
 | 2.1 | 2026-11-26 | Color: paletas A, B y C aprobadas, elegidas por tema (A10). Entorno por tema y biblioteca de elementos reutilizables (A11) | este archivo |
+| 2.2 | 2026-11-26 | Universo conectado aprobado en lo principal (A13) y **regla de adaptación** (sección 9): las limitantes se resuelven con creatividad y el diseño se ajusta con cada lectura de estadísticas | este archivo |
 
 > **Regla del dueño (2026-11-24), textual:** «Cambia esas limitantes y define nuevos parámetros; podría ser que los
 > parámetros sean flexibles; con este cambio de parámetros considera cambios en todo lo demás si es necesario, incluso
@@ -144,7 +145,7 @@ le presenta como si lo cumpliera. Lo que se mide y se ajusta es el cómo y la do
 | A10 | Color | **Tres paletas aprobadas por el dueño** («me gustan los A, B y C»): A papel con fondo frío, B noche de tinta, C alto voltaje (`video-studio/motor_de_accion/paletas/`). La paleta se elige por el tema y el entorno de cada video | La paleta del video está en su brief con el porqué; pasa `revisar_color.py` |
 | A11 | Entorno por tema, y biblioteca | «El entorno debe cambiar dependiendo del contexto y temática del video» y se genera a partir del prompt. Todo elemento creado (entorno, utilería, efecto, sonido, pose, paleta) se guarda en `video-studio/motor_de_accion/` con su entrada en `catalogo.json` para reutilizarlo | El brief nombra el entorno (nuevo o reutilizado) y el catálogo queda al día después de cada video |
 | A12 | Armas dibujadas | Los personajes pueden **dibujar sus armas con tinta** (bastón de luz, espada, lo que pida el tema), como en el reel de referencia. Siguen fuera las armas de fuego y la sangre; lo que salta es tinta (dueño, 2026-11-26: «Sí a los 3») | Ninguna arma de fuego ni sangre roja en el video |
-| A13 | Universo conectado | Cada video se entiende solo y además está conectado con los demás: algo que parece ajeno al video y es un adelanto del siguiente, animaciones que continúan de un video a otro, y pistas que permitan después videos de teorías sobre el propio canal. Universo con reglas y universos alternos de Tin y Tan. Producción planeada por tandas de 15 días a un mes (dueño, 2026-11-26) | Cada brief dice qué conexión cobra, cuál siembra y dónde; registro de pistas al día. **En diseño** |
+| A13 | Universo conectado | Cada video se entiende solo y además está conectado con los demás: algo que parece ajeno al video y es un adelanto del siguiente, animaciones que continúan de un video a otro, y pistas que permitan después videos de teorías sobre el propio canal. Universo con reglas y universos alternos de Tin y Tan. Producción planeada por tandas de 15 días a un mes (dueño, 2026-11-26) | Cada brief dice qué conexión cobra, cuál siembra y dónde; registro de pistas al día. **Aprobado en lo principal por el dueño el 2026-11-26** (cuaderno, tres hojas, rival que es una pregunta, primera tanda de cuatro semanas desde el short 4). El diseño completo no está en el repositorio público: vive en el Drive |
 
 **Lo que no se mueve aunque el formato sea de acción** (sección 2): ninguna persona real ni quien la represente recibe
 golpes; máximo 3 destellos por segundo; cada dato con su fuente; la firma del lápiz bumerán y los subtítulos en español.
@@ -169,7 +170,8 @@ Alternativas de producción, con lo que cada una cumple y lo que cuesta:
 | Armas dibujadas con tinta, sin armas de fuego ni sangre | 2026-11-26 | Aprobado; sin aplicar todavía en una prueba | requisito A12 |
 | Validar si la PC de escritorio del dueño (GeForce GTX 1070 Ti) sirve para producir y si esta sesión se puede conectar a ella | 2026-11-26 | **Pendiente:** esa PC no está conectada a Claude; hay que abrir Remote Control en ella y probar | `motor_de_accion/README.md` |
 | Entorno generado según el tema del video y motor que guarda los elementos para reutilizarlos | 2026-11-26 | **Empezado:** motor con paletas, entornos, personajes, sonidos y catálogo; solo hay un entorno de relleno | requisito A11; `motor_de_accion/README.md` |
-| Universo conectado, universos alternos y producción por tandas de 15 días a un mes | 2026-11-26 | **En diseño** (investigación, biblia y plan) | requisito A13; `cambios/2026-11-26_universo_conectado_de_tin_y_tan.md` |
+| Universo conectado, universos alternos y producción por tandas de 15 días a un mes | 2026-11-26 | Diseño 0.1 hecho y aprobado en lo principal («Sí a las 5»). **Falta:** capacidad de producción, construir las piezas del motor y cruzarlo con el calendario de temporadas | requisito A13; Drive «Canal YouTube - Entregas», archivos «Tin & Tan - Universo…» |
+| Resolver toda limitante con creatividad y ajustar el diseño con las estadísticas | 2026-11-26 | Vigente como regla | sección 9 |
 | Contrastar con temporadas y feriados de los países que más ven el canal, con históricos | 2026-11-26 | **En curso** (calendario por país; históricos de Trends pedidos a Keter) | `comercial/2026-11-26_calendario_de_temporadas_por_pais.md` |
 | Validar la pregunta de cada video en datos de búsqueda (Studio, autocompletado y Trends) | 2026-11-26 | Hecho para el short 4: se descartaron dos preguntas; propuesta con las consultas medidas | `comercial/2026-11-26_tema_short4_tin_y_tan.md` |
 | Ninguna prueba sin todos los cambios pedidos, incluidos los colores | 2026-11-26 | Vigente. La prueba del mundo 3D y el clip de comparación quedan **detenidos** hasta tener la paleta nueva y los demás pedidos dentro | `CLAUDE.md` |
@@ -181,3 +183,23 @@ Alternativas de producción, con lo que cada una cumple y lo que cuesta:
 | Validar si con la tarjeta gráfica del dueño se pueden generar los videos | 2026-11-26 | **Resuelto: no.** GeForce 940MX de 4 GB, sin CUDA ni generador local (lectura de Keter; es lectura de especificaciones, no prueba) | `estudios/2026-11-26_referencias_de_pelea_estudio_de_keter.md`, sección 6 |
 | Ningún prompt sin estadísticas | 2026-11-26 | Vigente; lectura de Studio del 2026-11-26 guardada | `estadisticas/datos/` (no se sube) |
 | Ver los videos de stickman de referencia | 2026-11-26 | **Hecho en parte.** Keter midió cuadro a cuadro el reel de sanji.chien, un Short de PIERCE y un video de Hyun's Dojo. Falta una pelea de Alan Becker (el dueño ya le dio la orden a Keter el 2026-11-26). Hallazgo: la pelea del reel está generada con Higgsfield | `estudios/2026-11-26_referencias_de_pelea_estudio_de_keter.md` |
+
+## 9. Regla de adaptación (versión 2.2)
+
+> Dueño (2026-11-26), textual: «todas las limitantes que se presenten se resuelvan con creatividad; por ejemplo, si se
+> quedó un video no publicado, se trata de hacer un remake o se rompe la línea de tiempo. Necesito que el equipo tenga la
+> habilidad de generar e irse ajustando dependiendo del contexto dado por las estadísticas, circunstancias dadas por las
+> estadísticas y limitantes dadas por el tema o la plataforma, incluso las circunstancias. Esto grábalo bien, porque es
+> parte de la naturaleza del motor: al trabajar con estadísticas debe saber ajustarse».
+
+1. **Una limitante no se anota como «no se puede».** Venga de las estadísticas, del tema, de la plataforma o de las
+   circunstancias, el equipo propone cómo se vuelve parte del universo o del plan (un remake, una ruptura de la línea de
+   tiempo, una pista que cambia de video, un mecanismo que se encoge o se muda).
+2. **El diseño nunca está cerrado.** Cada lectura de Studio puede cambiar el universo, el formato y el plan de la tanda;
+   el cambio se anota en la bitácora (sección 6) con el dato que lo motivó.
+3. **Antes de proponer el video siguiente** se recorre el repertorio de ajustes del universo (en el Drive, archivo
+   «Tin & Tan - Universo - DECISIONES Y REGLA DE ADAPTACIÓN») y el brief dice qué ajuste aplica y por qué.
+4. **Lo que no se mueve ni con creatividad** es la sección 2: fuentes, seguridad, línea editorial y el sí del dueño
+   (un remake es rehacer una pieza: se le presenta con su costo).
+5. Esto corrige una lectura del equipo: «ningún video depende del anterior» (criterio de la investigación) no es un
+   límite a la conexión, es un caso más que el universo sabe resolver cuando un eslabón falla.

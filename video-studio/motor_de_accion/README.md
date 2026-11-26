@@ -21,6 +21,13 @@ en la biblioteca** y se puede volver a usar. 0 créditos.
 | Guion (quién hace qué y cuándo) | hoy dentro de `escena.html`; pasará a `guiones/` | Uno por video |
 | Catálogo | `catalogo.json` | Una entrada por cada elemento, con sus temas y los videos donde se usó |
 
+## Naturaleza del motor: se ajusta
+
+Regla del dueño (2026-11-26): el motor trabaja con estadísticas y «debe saber ajustarse». Paletas, entornos, mecanismos
+de conexión y guiones son piezas que se cambian, se encogen o se retiran según lo que digan Studio, el tema, la
+plataforma y las circunstancias; una limitante se resuelve con creatividad dentro del universo, no se anota como «no se
+puede». Detalle: `canales/nostalgia-tin-y-tan/PARAMETROS.md`, sección 9.
+
 ## Cómo se usa
 
 ```bash
