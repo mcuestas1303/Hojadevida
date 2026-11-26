@@ -178,33 +178,29 @@
    "quieto_f": 56,
    "caja": [
     100,
-    417,
-    833,
-    820
+    414,
+    793,
+    720
    ]
   }
  ],
  "destellos": {
   "fotogramas": 986,
-  "cambios_bruscos": 13,
+  "cambios_bruscos": 9,
   "fotogramas_con_cambio": [
    100,
-   102,
    336,
    338,
-   430,
-   442,
-   562,
    564,
    671,
    719,
    724,
    728,
-   874
+   750
   ],
   "max_cambios_en_1_s": 3,
   "segundo_del_maximo": 23.97,
-  "mayor_salto_de_luminosidad": 30.9,
+  "mayor_salto_de_luminosidad": 25.1,
   "segundo_del_mayor_salto": 11.27,
   "saltos_a_pantalla_completa": [],
   "limites": {
