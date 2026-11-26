@@ -287,3 +287,30 @@ como la sugiere Google), con los golpes en este orden: el primer día según Tak
 contra lo que costó hacerlo (cifra no oficial: la duda no se borra del todo y se dice); y la comparación que la gente sí
 busca, el Burj Khalifa. Endgame deja de ser el eje. El entorno de la sala de cine ya no corresponde: se replantea con el
 tema cerrado. Queda sujeta a las listas completas de Trends y al sí del dueño.
+
+### Segunda corrección (2026-11-26, listas completas de Trends)
+
+Keter copió las 100 consultas relacionadas de «gta 6» (EE. UU., 7 días; web y YouTube; principales y en ascenso).
+**Ninguna consulta de dinero real aparece en las 100**: ni ventas, ni «made», ni presupuesto, ni Burj Khalifa, ni «3
+billion», ni «why gta 6 took so long». La «propuesta corregida» de arriba («How much money did GTA 6 make?») **tampoco se
+sostiene**: existe en el autocompletado, pero no pesa lo bastante para entrar en la lista.
+
+Lo que sí está en la lista de búsqueda web y se responde con hechos, sin metraje del juego ni destripar la historia:
+
+| Puesto | Consulta | Valor relativo | Se responde con |
+|---|---|---|---|
+| 2 | what is gta 6 | 75 | qué es, en una frase |
+| 4, 5, 7, 18, 22 | gta 6 xbox · ps5 gta 6 · gta 6 pc · gta 6 on pc · gta 6 xbox one | 61 · 55 · 46 · 20 · 15 | en qué consolas está y en cuáles no |
+| 12, 13, 15 | gta 6 chapters · gta 6 how many chapters · how many chapters in gta 6 | 35 · 32 · 28 | un número |
+| 14 | gta 6 missions | 30 | un número |
+| 16, 17, 25 | is gta 6 out · gta 6 release date · when does gta 6 come out | 22 · 21 · 13 | una fecha |
+| 19 | how much is gta 6 | 19 | un precio |
+
+El resto de la lista son personajes, misiones, códigos, autos y finales (el juego por dentro) y la consulta descartada
+por la línea editorial.
+
+**Propuesta del equipo con este dato:** la pregunta del short 4 es **«What is GTA 6?»** (puesto 2 de la lista), y los
+golpes son las otras preguntas de la misma lista, en orden: ¿ya salió y cuándo?, ¿en qué consolas está (y en PC)?,
+¿cuánto cuesta?, ¿cuántos capítulos tiene? Cada golpe responde una búsqueda medida. La cifra de ventas del primer día,
+si entra, va como remate y atribuida, no como eje. **Pendiente:** fuentes abiertas para el precio, las plataformas y el
+número de capítulos (la página de Rockstar y las guías no se han abierto desde esta sesión) y el sí del dueño.
