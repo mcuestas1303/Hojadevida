@@ -2,26 +2,210 @@
  "que_es": "Biblioteca del motor de acción de Tin & Tan. Cada elemento que se hace para un video se guarda aquí con su ficha para poder reutilizarlo. Se añade una entrada cada vez que se crea algo; no se borra: si algo deja de servir se marca \"retirado\".",
  "actualizado": "2026-11-26",
  "paletas": [
-  {"id": "a_papel_con_fondo_frio", "archivo": "paletas/a_papel_con_fondo_frio.json", "temas": ["día", "cotidiano", "datos"], "usada_en": ["prueba 2026-11-26"]},
-  {"id": "b_noche_de_tinta", "archivo": "paletas/b_noche_de_tinta.json", "temas": ["noche", "misterio", "tecnología", "espacio"], "usada_en": []},
-  {"id": "c_alto_voltaje", "archivo": "paletas/c_alto_voltaje.json", "temas": ["deporte", "competencia", "velocidad", "estreno"], "usada_en": []}
+  {
+   "id": "a_papel_con_fondo_frio",
+   "archivo": "paletas/a_papel_con_fondo_frio.json",
+   "temas": [
+    "día",
+    "cotidiano",
+    "datos"
+   ],
+   "usada_en": [
+    "prueba 2026-11-26"
+   ]
+  },
+  {
+   "id": "b_noche_de_tinta",
+   "archivo": "paletas/b_noche_de_tinta.json",
+   "temas": [
+    "noche",
+    "misterio",
+    "tecnología",
+    "espacio"
+   ],
+   "usada_en": []
+  },
+  {
+   "id": "c_alto_voltaje",
+   "archivo": "paletas/c_alto_voltaje.json",
+   "temas": [
+    "deporte",
+    "competencia",
+    "velocidad",
+    "estreno"
+   ],
+   "usada_en": []
+  }
  ],
  "entornos": [
-  {"id": "ciudad_de_carton", "archivo": "entornos/ciudad_de_carton.js", "temas": ["ciudad", "calle", "genérico"], "rompibles": ["cajones", "pilar"], "usada_en": ["prueba 2026-11-26"], "nota": "Hecho para la prueba técnica, sin tema. Es de relleno: cada video tendrá el suyo."}
+  {
+   "id": "ciudad_de_carton",
+   "archivo": "entornos/ciudad_de_carton.js",
+   "temas": [
+    "ciudad",
+    "calle",
+    "genérico"
+   ],
+   "rompibles": [
+    "cajones",
+    "pilar"
+   ],
+   "usada_en": [
+    "prueba 2026-11-26"
+   ],
+   "nota": "Hecho para la prueba técnica, sin tema. Es de relleno: cada video tendrá el suyo."
+  },
+  {
+   "id": "tienda_de_videojuegos",
+   "archivo": "entornos/tienda_de_videojuegos.js",
+   "temas": [
+    "juegos",
+    "compras",
+    "estrenos"
+   ],
+   "rompibles": [
+    "estante_izquierdo",
+    "estante_derecho",
+    "caja_de_juego",
+    "pila_de_cajas",
+    "cartel_de_pie",
+    "postes_de_fila",
+    "mostrador",
+    "caja_registradora",
+    "televisor_de_exhibicion",
+    "banderines"
+   ],
+   "no_se_toca": [
+    "escaparate",
+    "mando_mostaza"
+   ],
+   "usada_en": [],
+   "nota": "Hecho para TIN-EN-S-004. Ancho ajustado a 9 u (el cuadro vertical no ve más). Falta: la versión rota de cada pieza la mueve el guion del video."
+  }
  ],
  "personajes": [
-  {"id": "tin", "fuente": "herramientas/palitos.py", "en_el_motor": "cabeza exportada por personajes/exportar_sprites.py; cuerpo por esqueleto en escena.html"},
-  {"id": "tan", "fuente": "herramientas/palitos.py", "en_el_motor": "igual que Tin; la bufanda va con la cabeza"},
-  {"id": "duda", "fuente": "canales/nostalgia-tin-y-tan/pruebas/2026-11-26_pelea_con_la_duda/duda_v2.py", "en_el_motor": "madeja como cabeza, cuerpo por esqueleto"}
+  {
+   "id": "tin",
+   "fuente": "herramientas/palitos.py",
+   "en_el_motor": "cabeza exportada por personajes/exportar_sprites.py; cuerpo por esqueleto en escena.html"
+  },
+  {
+   "id": "tan",
+   "fuente": "herramientas/palitos.py",
+   "en_el_motor": "igual que Tin; la bufanda va con la cabeza"
+  },
+  {
+   "id": "duda",
+   "fuente": "canales/nostalgia-tin-y-tan/pruebas/2026-11-26_pelea_con_la_duda/duda_v2.py",
+   "en_el_motor": "madeja como cabeza, cuerpo por esqueleto"
+  }
  ],
- "poses": {"archivo": "escena.html (objeto P)", "lista": ["quieto", "guardia", "carga", "golpe", "embiste", "patada", "recogido", "recibe", "vuela", "caido", "agachado", "poder", "pisoton", "festeja", "corre1", "corre2", "resbala"]},
- "efectos": {"archivo": "escena.html", "lista": [
-  {"id": "humo", "tipo": "partícula"}, {"id": "polvo", "tipo": "partícula"}, {"id": "fuego", "tipo": "partícula"}, {"id": "chispa", "tipo": "partícula"}, {"id": "tinta", "tipo": "partícula"},
-  {"id": "onda", "tipo": "onda de choque o de implosión en el suelo"}, {"id": "estrella", "tipo": "estrella de impacto"},
-  {"id": "grieta", "tipo": "daño que se queda"}, {"id": "quemadura", "tipo": "daño que se queda"}, {"id": "garabatoResto", "tipo": "daño que se queda"},
-  {"id": "romperCajones", "tipo": "rotura con trozos"}, {"id": "temblor", "tipo": "cámara"}, {"id": "velocidad(S)", "tipo": "cámara lenta y acelerones"}]},
- "sonidos": {"archivo": "sonidos/sonido.py", "hechos_con": "numpy, 0 créditos", "lista": ["silbido_caida", "choque_suelo", "silbido", "golpe", "choque_madera", "fuego_enciende", "explosion", "choque_pilar", "golpe_doble", "implosion", "estallido_final"]},
+ "poses": {
+  "archivo": "escena.html (objeto P)",
+  "lista": [
+   "quieto",
+   "guardia",
+   "carga",
+   "golpe",
+   "embiste",
+   "patada",
+   "recogido",
+   "recibe",
+   "vuela",
+   "caido",
+   "agachado",
+   "poder",
+   "pisoton",
+   "festeja",
+   "corre1",
+   "corre2",
+   "resbala"
+  ]
+ },
+ "efectos": {
+  "archivo": "escena.html",
+  "lista": [
+   {
+    "id": "humo",
+    "tipo": "partícula"
+   },
+   {
+    "id": "polvo",
+    "tipo": "partícula"
+   },
+   {
+    "id": "fuego",
+    "tipo": "partícula"
+   },
+   {
+    "id": "chispa",
+    "tipo": "partícula"
+   },
+   {
+    "id": "tinta",
+    "tipo": "partícula"
+   },
+   {
+    "id": "onda",
+    "tipo": "onda de choque o de implosión en el suelo"
+   },
+   {
+    "id": "estrella",
+    "tipo": "estrella de impacto"
+   },
+   {
+    "id": "grieta",
+    "tipo": "daño que se queda"
+   },
+   {
+    "id": "quemadura",
+    "tipo": "daño que se queda"
+   },
+   {
+    "id": "garabatoResto",
+    "tipo": "daño que se queda"
+   },
+   {
+    "id": "romperCajones",
+    "tipo": "rotura con trozos"
+   },
+   {
+    "id": "temblor",
+    "tipo": "cámara"
+   },
+   {
+    "id": "velocidad(S)",
+    "tipo": "cámara lenta y acelerones"
+   }
+  ]
+ },
+ "sonidos": {
+  "archivo": "sonidos/sonido.py",
+  "hechos_con": "numpy, 0 créditos",
+  "lista": [
+   "silbido_caida",
+   "choque_suelo",
+   "silbido",
+   "golpe",
+   "choque_madera",
+   "fuego_enciende",
+   "explosion",
+   "choque_pilar",
+   "golpe_doble",
+   "implosion",
+   "estallido_final"
+  ]
+ },
  "guiones": [
-  {"id": "prueba_2026-11-26", "archivo": "escena.html (objetos G, CAM y HECHOS)", "nota": "Todavía vive dentro de la escena; el paso siguiente es sacarlo a guiones/ para que cada video tenga el suyo"}
+  {
+   "id": "prueba_2026-11-26",
+   "archivo": "guiones/prueba_2026-11-26.js",
+   "nota": "Prueba técnica; ya vive fuera de escena.html"
+  },
+  {
+   "id": "vista_tienda",
+   "archivo": "guiones/vista_tienda.js",
+   "nota": "No es un video: enseña el entorno con las cámaras del short 4"
+  }
  ]
 }

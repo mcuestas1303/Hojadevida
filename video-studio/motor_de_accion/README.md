@@ -18,7 +18,7 @@ en la biblioteca** y se puede volver a usar. 0 créditos.
 | Personajes | `personajes/exportar_sprites.py` (cabezas oficiales) y el esqueleto de `escena.html` | No cambian; solo la línea de tinta se aclara en fondos oscuros |
 | Poses, efectos, cámara | `escena.html` | Se reutilizan; lo nuevo se añade al catálogo |
 | Sonidos | `sonidos/sonido.py` | Se reutilizan; lo nuevo se añade |
-| Guion (quién hace qué y cuándo) | hoy dentro de `escena.html`; pasará a `guiones/` | Uno por video |
+| Guion (quién hace qué y cuándo) | `guiones/*.js` (contrato: `guion(m)` devuelve `FIN`, `velocidad`, `G`, `CAM`, `HECHOS`, `caras`, `cadaCuadro`) | Uno por video |
 | Catálogo | `catalogo.json` | Una entrada por cada elemento, con sus temas y los videos donde se usó |
 
 ## Naturaleza del motor: se ajusta
@@ -33,7 +33,7 @@ puede». Detalle: `canales/nostalgia-tin-y-tan/PARAMETROS.md`, sección 9.
 ```bash
 npm install                                           # three.js (autorizado por el dueño el 2026-11-26)
 python3 personajes/exportar_sprites.py sprites        # cabezas de los tres, una carpeta por paleta
-node render.js salida 230 b_noche_de_tinta ciudad_de_carton      # carpeta, tope de fotogramas, paleta, entorno
+node render.js salida 230 b_noche_de_tinta ciudad_de_carton 1 prueba_2026-11-26   # carpeta, tope, paleta, entorno, 1 de cada N, guion
 python3 sonidos/sonido.py salida/eventos.json salida/sonido.wav
 ```
 
@@ -49,7 +49,8 @@ python3 sonidos/sonido.py salida/eventos.json salida/sonido.wav
 - Comprobado: corre con las tres paletas y el entorno de relleno. **No es una prueba para el dueño**: falta el entorno
   hecho para un tema real, los tiempos de golpe medidos por Keter, los defectos anotados en
   `canales/nostalgia-tin-y-tan/pruebas/2026-11-26_accion_mundo_3d/informe.md` y la voz con los datos.
-- El guion de la pelea todavía está dentro de `escena.html`; hay que sacarlo para que cada video tenga el suyo.
+- El guion ya vive en `guiones/` (2026-11-26). Entorno `tienda_de_videojuegos` construido para el short 4; su guion de pelea todavía no existe.
+- Las cámaras «laterales» de la dirección del short 4 (x = ±7) verían a los personajes de canto, porque son dibujos planos que pelean a lo largo de x: el perfil se filma de frente y bajo (≈ (±1,6; 1,3; 8,5)). Corrección de producción.
 - En la paleta C el estudio propone cambiar los colores de Tin y de Tan. No se aplica: está pendiente de que el dueño
   diga si los personajes cambian con el entorno o se quedan fijos.
 - El dueño tiene otra conversación llamada «Motor generador de contenido» y avisó de que explicará ese motor

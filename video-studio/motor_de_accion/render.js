@@ -1,9 +1,9 @@
 // Graba la escena fotograma a fotograma con el Chromium de la sesión.
-// Uso: node render.js <carpeta> [max_cuadros] [paleta] [entorno] [cada]   (cada = guarda 1 de cada N fotogramas; para revisar)
+// Uso: node render.js <carpeta> [max_cuadros] [paleta] [entorno] [cada] [guion]   (cada = guarda 1 de cada N fotogramas; para revisar)
 const { chromium } = require('playwright');
 const http = require('http'), fs = require('fs'), path = require('path');
 const salida = process.argv[2] || 'salida', maximo = parseInt(process.argv[3] || '230', 10);
-const paleta = process.argv[4] || 'a_papel_con_fondo_frio', entorno = process.argv[5] || 'ciudad_de_carton', cada = parseInt(process.argv[6] || '1', 10);
+const paleta = process.argv[4] || 'a_papel_con_fondo_frio', entorno = process.argv[5] || 'ciudad_de_carton', cada = parseInt(process.argv[6] || '1', 10), guion = process.argv[7] || 'prueba_2026-11-26';
 const tipos = { '.html': 'text/html', '.js': 'text/javascript', '.png': 'image/png', '.json': 'application/json' };
 const srv = http.createServer((q, r) => {
   const f = path.join(__dirname, decodeURIComponent(q.url.split('?')[0]));
@@ -11,7 +11,7 @@ const srv = http.createServer((q, r) => {
 });
 (async () => {
   await new Promise(ok => srv.listen(0, '127.0.0.1', ok));
-  const url = `http://127.0.0.1:${srv.address().port}/escena.html?paleta=${paleta}&entorno=${entorno}`;
+  const url = `http://127.0.0.1:${srv.address().port}/escena.html?paleta=${paleta}&entorno=${entorno}&guion=${guion}`;
   fs.mkdirSync(path.join(salida, 'fotogramas'), { recursive: true });
   const b = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
   const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
