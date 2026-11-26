@@ -22,3 +22,6 @@ video-studio/herramientas/diccionarios/
 
 # modelo de reconocimiento de voz (1,3 GB; se descarga con instalar_oido.sh)
 video-studio/herramientas/modelos_voz/
+
+# Universo de Tin & Tan: no se sube mientras el dueño decide (tiene las respuestas del misterio; el repo es público). Copia en Drive.
+video-studio/canales/nostalgia-tin-y-tan/universo/

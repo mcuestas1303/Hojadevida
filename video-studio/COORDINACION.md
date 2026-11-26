@@ -537,3 +537,20 @@ sigue en pausa y no se escribe ningún prompt hasta que el dueño los vea.
 - No se le presentó ninguna prueba nueva: falta el tema del short 4 (de ahí sale el entorno), los tiempos de golpe del
   estudio de Keter, los defectos anotados y sus respuestas sobre armas dibujadas, color de Tin y Tan en la paleta C y
   la descarga extra de Alan Becker.
+
+### 2026-11-26 · Generador (escritorio) → Equipo: universo de Tin & Tan, versión 0.1, e investigación
+
+- Pedido del dueño: videos conectados, universo con reglas y universos alternos, producción por tandas de 15 días a un mes
+  (`cambios/2026-11-26_universo_conectado_de_tin_y_tan.md`; `PARAMETROS.md`, A13).
+- Investigación (pública): `estudios/2026-11-26_universo_conectado_investigacion.md` (23 criterios de diseño, funciones de
+  YouTube para conectar Shorts, casos y políticas).
+- Diseño del director creativo, versión 0.1: `canales/nostalgia-tin-y-tan/universo/` (`BIBLIA.md`,
+  `REGISTRO_DE_PISTAS.md`, `PLAN_DE_TANDA_01.md`). **Esa carpeta no se sube por ahora**: trae las respuestas del misterio
+  y el repositorio es público. Copia en el Drive «Canal YouTube - Entregas»: «Tin & Tan - Universo - BIBLIA v0.1
+  (2026-11-26).md», «… REGISTRO DE PISTAS v0.1 …» y «… PLAN DE TANDA 01 v0.1 …». El dueño decide dónde vive.
+- Pendiente del equipo: jefe de producción (capacidad de 12 videos en 4 semanas), director de animación (empalme del
+  bucle con daños acumulados), editor (franja de subtítulos en el formato de acción), supervisor (registro de pistas).
+- Pendiente de Studio (solo lectura): si el canal tiene funciones avanzadas, si aparece la opción de series de Shorts y
+  si el canal está marcado «no creado para niños».
+- En curso: calendario de temporadas por país (`comercial/2026-11-26_calendario_de_temporadas_por_pais.md`) e históricos
+  de Trends pedidos a Keter.
