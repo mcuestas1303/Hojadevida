@@ -603,7 +603,8 @@ del dueño. No publicado.
   - **La v2 no está aprobada.** Dueño: «intentan correr y casi no se mueven […] hablamos de producir algo de alta
     calidad». Solicitud: `cambios/2026-11-26_short4_v2_animacion_en_el_espacio.md`. Revisiones con la lista de defectos y
     correcciones: `07_revision/revision_v2_fotografia.md`, `revision_v2_continuidad.md` (CORREGIR) y
-    `revision_v2_animacion.md` (en curso al escribir esto).
+    `revision_v2_animacion.md` (entregada: B1 a B10 bloquean la v3; causa raíz: todas las cámaras miran de frente y `corre()` no mira la distancia recorrida).
+  - Nota para sonido y edición: la suscripción está en f483–f548 (decisión del Generador, por el ajuste «a prueba» de `PARAMETROS.md`), no en f878–f928 como dice la dirección; animación señala que deja 65 f de Tan con el rival congelado y un cierre sin llamado. Producción decide dónde queda.
   - **Lo que le toca a producción:** versión 3, firmas de los cinco oficios, `puerta_de_presentacion.py` en PASA,
     presentar al dueño, reporte de publicación, releer el remate y el sello de fecha el día de publicar.
 - El Generador deja de construir el video desde este punto.
