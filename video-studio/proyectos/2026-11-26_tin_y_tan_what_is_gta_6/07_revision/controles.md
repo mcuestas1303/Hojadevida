@@ -43,7 +43,7 @@ queda bajo la zona de datos 380–700, sobre la pared, sin tocar la franja de su
 | Pieza | Objetivo | Medido | ¿Cumple? |
 |---|---|---|---|
 | `mando_mostaza` | x 110–200, y 740–800 | centro (161; 770); 80 × 48 px | Sí |
-| `caja_registradora_rota` | x 125–215, y 1362–1422 | centro (164; 1379) | En zona, **pero en el plano de cierre la tapa en parte la bufanda y el brazo de Tan** (se ve entera en el plano anterior, P21) |
+| `caja_registradora_rota` | x 125–215, y 1362–1422 | centro (164; 1379) | En zona, **pero en el plano de cierre la tapa en parte la bufanda y el brazo de Tan** (no comprobé si en el plano anterior, P21, se ve entera) |
 | Asterisco | x 516–564, y 1372–1420, ≈ 48 px | centro (540; 1396); ≈ 54 px de ancho | Sí; se dibuja en f918–f923 (6 f) |
 | Salida por la grieta | de x 540 a x 890–960, y 1372–1420 | grieta en (926; 1396); f926–f941 (16 f) | Sí en coordenadas; **en el plano de cierre la grieta queda detrás de las piernas de Tin** |
 
