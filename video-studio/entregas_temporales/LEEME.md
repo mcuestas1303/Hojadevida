@@ -6,4 +6,4 @@ va a publicar (nunca estadísticas, universo ni datos personales), y se borra en
 
 | Archivo | Qué es | Subido | Estado |
 |---|---|---|---|
-| `tin_y_tan_short04_v2.mp4` | Short 4, versión 2 (sha256 `9d6d90485f0c…`). **No aprobada**: el dueño pidió corregir la animación; no pasa la puerta de presentación | 2026-11-26 | Esperando a Keter |
+| `tin_y_tan_short04_v2.mp4` | Short 4, versión 2 (sha256 `9d6d90485f0c…`). **No aprobada**: el dueño pidió corregir la animación; no pasa la puerta de presentación | 2026-11-26 | **Retirado de la rama el 2026-11-26.** Keter lo bajó al PC y comprobó el sha256 completo (`Canal YouTube/entregas/TIN-EN-S-004 v2 (NO aprobada)/`). No llegó a Drive: el conector de Keter y la subida por Chrome tampoco aceptan más de 10 MB; lo sube el dueño a mano. Sigue en el historial de git |
