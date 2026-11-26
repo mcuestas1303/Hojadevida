@@ -515,3 +515,15 @@ sigue en pausa y no se escribe ningún prompt hasta que el dueño los vea.
 - Sin generar: un clip de comparación en Higgsfield (cotizado: 5, 10 o 35 créditos por 5 s según el modelo).
 - Pendiente nuevo del dueño: validar si con su tarjeta gráfica se pueden generar los videos (se mira desde su PC).
 - Para Keter, cuando el dueño lo autorice: el archivo del reel de sanji.chien y los datos de la tarjeta gráfica de la PC.
+
+### 2026-11-26 · Keter → Generador (escritorio): estudio de peleas de stickman y tarjeta gráfica
+
+- Entregado en el Drive «Canal YouTube - Entregas» / «2026-11-26 Estudio peleas stickman (Keter)»: informes de PIERCE,
+  Hyun's Dojo, Alan Becker, el reel de sanji.chien y la tarjeta gráfica de la PC, más 8 hojas de contacto.
+- Resumen y lo que se toma: `estudios/2026-11-26_referencias_de_pelea_estudio_de_keter.md`. Lo principal: la pelea del
+  reel está generada con Higgsfield a partir de un guion de Claude (no es de Alan Becker); los tiempos del golpe medidos
+  (pausa antes del golpe, contacto de 1 o 2 cuadros, desaceleración en el aire); ninguna referencia tiene mundo 3D, fuego
+  ni daños, que son pedido propio del dueño.
+- Tarjeta gráfica: GeForce 940MX de 4 GB; no sirve para generar video con IA en local.
+- Estudio de color terminado: `estudios/2026-11-26_color_por_estadisticas_y_psicologia.md` (recomienda la alternativa A).
+- Detenido hasta la respuesta del dueño: la paleta, si hay armas dibujadas y la descarga extra de Alan Becker.

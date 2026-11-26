@@ -168,6 +168,6 @@ Alternativas de producción, con lo que cada una cumple y lo que cuesta:
 | Sonidos de golpes | 2026-11-26 | **Sin hacer.** Hay audio por código para la firma, no golpes | requisito A7 |
 | Tercer personaje con cuerpo, manos y pies | 2026-11-26 | Hecho: hoja v2 aprobada por el dueño | `personajes/duda/` |
 | Probar la alternativa 4 (mundo y efectos por código; golpes difíciles generados) | 2026-11-26 | **En prueba.** Parte por código hecha (6 s, 0 créditos); parte generada cotizada y sin generar | `pruebas/2026-11-26_accion_mundo_3d/informe.md` |
-| Validar si con la tarjeta gráfica del dueño se pueden generar los videos | 2026-11-26 | **Pendiente** (hay que mirarlo desde su PC) | mismo informe, «Pendientes» |
+| Validar si con la tarjeta gráfica del dueño se pueden generar los videos | 2026-11-26 | **Resuelto: no.** GeForce 940MX de 4 GB, sin CUDA ni generador local (lectura de Keter; es lectura de especificaciones, no prueba) | `estudios/2026-11-26_referencias_de_pelea_estudio_de_keter.md`, sección 6 |
 | Ningún prompt sin estadísticas | 2026-11-26 | Vigente; lectura de Studio del 2026-11-26 guardada | `estadisticas/datos/` (no se sube) |
-| Ver los videos de stickman de referencia | 2026-11-26 | **Sin hacer:** solo hay el enlace y un resumen de Keter; nadie del equipo los vio plano por plano | — |
+| Ver los videos de stickman de referencia | 2026-11-26 | **Hecho en parte.** Keter midió cuadro a cuadro el reel de sanji.chien, un Short de PIERCE y un video de Hyun's Dojo. Falta una pelea de Alan Becker (pide el sí del dueño para una descarga más). Hallazgo: la pelea del reel está generada con Higgsfield | `estudios/2026-11-26_referencias_de_pelea_estudio_de_keter.md` |
