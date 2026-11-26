@@ -19,6 +19,8 @@
 > - **Hoja:** `referencias/hoja_v2_2026-11-26.png` (frente, perfil, espalda, guardia, crecida, golpe, patada, recibe, caído
 >   y borrándose, con Tin a la misma escala). Código: `canales/nostalgia-tin-y-tan/pruebas/2026-11-26_pelea_con_la_duda/duda_v2.py`.
 > - **Color:** por ahora solo tinta. Queda abierto hasta saber qué pidió el dueño sobre los colores.
+> - **Armas (dueño, 2026-11-26):** puede pelear con armas **dibujadas con tinta** (bastón, espada), igual que Tin y Tan.
+>   Nunca armas de fuego ni sangre. Esto deja sin efecto «no lleva armas» y «ataca solo con el cuerpo» de más abajo.
 > - Siguen igual: sin nombre en pantalla, sin voz, sin boca, no representa a nadie, no aparece en el canal infantil.
 
 - **ID:** `@duda`

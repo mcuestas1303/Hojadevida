@@ -21,12 +21,8 @@
  "personajes": {
   "tinta": "#1B1B22"
  },
- "personajes_pendiente_del_dueno": {
-  "naranja": "#F26A1B",
-  "verde_azulado": "#1560D0",
-  "nota": "El estudio propone cambiar a Tin y a Tan en esta paleta. No se aplica hasta que el dueño diga si los personajes cambian de color con el entorno o se quedan fijos."
- },
  "estudio": "video-studio/estudios/2026-11-26_color_por_estadisticas_y_psicologia.md",
  "aprobada_por_el_dueno": "2026-11-26: «me gustan los A, B y C»",
- "id": "c_alto_voltaje"
+ "id": "c_alto_voltaje",
+ "nota_personajes": "Tin y Tan conservan sus colores en todas las paletas (decisión del dueño, 2026-11-26: «Sí a los 3»). El cambio de color que proponía el estudio para esta paleta no se aplica."
 }
