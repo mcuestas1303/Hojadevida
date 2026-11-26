@@ -652,3 +652,60 @@ Nada de esto gasta créditos. La voz del 4.º video se cotiza cuando haya guion,
 9. **Si el canal está marcado «not made for kids» en Studio.** Lo ve el dueño.
 10. **Los artículos primarios** (Zillmann, Zuckerman, Berger y Milkman, Bushman, Weaver): ninguno se abrió. Lo que
     hay es Wikipedia y resúmenes.
+
+---
+
+## 9. Revisión contra las estadísticas de Studio (2026-11-26, sesión «Generador de prompts (escritorio)»)
+
+Este estudio se escribió antes de tener la lectura de Studio. Aquí se contrasta con ella. Las cifras están en
+`video-studio/estadisticas/datos/2026-11-26_studio_tin_y_tan.md` (lectura de Keter del 2026-11-26, 09:50 a 10:25, -06:00;
+no se sube) y aquí solo se describen. Dos videos con datos y poco público: todo es señal, no prueba.
+
+### 9.1 Qué de «lo que falta» (6.2 y sección 8) ya se sabe
+
+| Faltaba | Ahora |
+|---|---|
+| Edad y sexo del canal | Leídos. Casi todo el público tiene menos de 45 años; mayoría hombres; nadie de 55 o más. El tramo de 13 a 17 es uno de los tres mayores del canal y el mayor en el short de GTA 6 |
+| Shorts 2 y 3 | Short 2: leído completo; es el mejor en todo y pasa a ser la **única línea de base**. Short 3: el feed de Shorts no lo repartió (sus pocas vistas vienen de la página del canal), sin avisos; **no sirve de línea de base** |
+| «Not made for kids» | Confirmado por Keter para el short 3 v2 («Se configuró como no creado para niños»). El ajuste del canal y de los shorts 1 y 2: sin leer |
+| Los videos de stickman del dueño | El dueño confirmó que es el reel de sanji.chien (https://www.instagram.com/p/Df8lwn8gCE7/, 88 s), que tiene Keter solo como enlace y ficha resumida: dos palitos (negro contra rojo, al estilo de *Animator vs. Animation*) peleando ≈ 10 s, generados con Higgsfield a partir de un guion por segundos. **Sigue sin verse plano por plano** (armas, sangre, fondos y sonido sin anotar): desde esta sesión Instagram pide iniciar sesión y no hay herramienta para bajarlo |
+
+### 9.2 Qué confirma, qué corrige y qué añade el dato
+
+1. **Se cumple la condición de 3.4 (3): hay una parte grande de 13 a 17.** El estudio decía que en ese caso se le lleva
+   al dueño antes de seguir. Se le lleva con esta lectura: el dato **refuerza** el nivel 0–1 y lo vuelve condición, no
+   preferencia. Una restricción por edad dejaría fuera justo a uno de los tramos mayores del canal (1.b), y un dibujo de
+   aspecto amable que de hecho ven menores, con casi la mitad de las horas en televisor y tableta, es el caso que 1.d
+   describe. **Corrección a 5.2:** la prueba posterior de sangre roja breve (nivel 2) queda cerrada mientras el tramo de
+   13 a 17 siga entre los mayores; no basta con que el duelo rinda.
+2. **El público medido es el que 3.4 deducía para el género** (más joven y más masculino). La hipótesis «este formato
+   le habla al público que ya mira» gana apoyo. Sigue siendo deducción sobre el género: no hay dato de audiencia de
+   canales ajenos.
+3. **La caída entre los segundos 5 y 10 pide que el primer dato llegue antes del segundo 5.** El arco de 4.3 pone los
+   asaltos entre 3 y 18 s: se precisa que **el primer golpe con su dato cae entre los segundos 3 y 5**, y que la
+   pregunta de Tan no pasa del segundo 3. El duelo sustituye justo el tramo donde hoy se pierde público (Tin empezando
+   la cuenta).
+4. **El tema encaja con lo medido:** el parámetro «a prueba» pide lanzamientos y cultura que ese público sigue (juegos,
+   entretenimiento), y la variante de mayor demanda de 2.2 es «dos nombres que la gente ya compara». El duelo se hace
+   con una comparación de ese terreno, entre dos cosas, con datos de los dos lados. El tema concreto sale del radar.
+5. **Línea de base de 6.1, corregida:** las cifras de los shorts 1 y 3 que cita 6.1 quedan sin efecto. Se compara solo
+   contra el short 2, a la misma edad del video. Lo confirma «a prueba»: 500 vistas o más a 48 h, se quedó a mirar
+   al menos 5 puntos por encima del short 2, porcentaje medio visto no más de 5 puntos por debajo, vistas desde el
+   feed de Shorts presentes y ningún aviso. Se añade una métrica: **que el feed lo reparta** (fila «Feed de Shorts» en
+   Alcance), porque el short 3 mostró que no está garantizado.
+6. **Un solo cambio grande: la forma.** El pedido de suscripción antes del final (parámetro «a prueba» del mismo día)
+   **no se estrena en el 4.º video**: va en el 5.º, para poder leer cada dato. En el duelo el pedido queda al cierre,
+   como en 4.3.
+7. **No se reemplaza el Short una vez público** (parámetro del mismo día): la portada y el título del duelo se cierran
+   antes de subir; lo que salga mal se corrige en el siguiente.
+8. **Ruta de producción:** el reel de referencia genera la pelea con Higgsfield (créditos). Este estudio la dibuja con
+   `palitos.py` (0 créditos, mismos Tin y Tan en cada video). Se mantiene el código: decisión del equipo. Si la prueba
+   técnica de 6 s muestra que el código no alcanza una pelea legible, se cotiza la otra ruta y se le lleva al dueño.
+
+### 9.3 Decisión que se le presenta al dueño
+
+**Sí al duelo de datos (vía A) en el 4.º video, nivel 0–1, sin sangre roja ni armas de fuego, con el primer dato antes
+del segundo 5 y un tema de juegos o entretenimiento que sea una comparación entre dos cosas.** Antes de escribir el
+prompt hace falta: su sí a los «figurantes de tinta» (4.4); el tema, del radar; la solicitud de cambio en
+`video-studio/cambios/`; y la prueba técnica de 6 s sin créditos. Ver el reel plano por plano afina la coreografía, pero
+no cambia el nivel de violencia, que lo fijan la política y la edad medida.
