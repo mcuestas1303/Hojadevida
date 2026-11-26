@@ -162,3 +162,7 @@
 - **Portada de los Shorts nombra al sujeto (dueño, 2026-11-24):** «back in 11 days no hace referencia a nada… deja algo
   que nombre jensen y nvidia». El texto de la portada dice de quién o de qué trata el video (persona, marca u objeto),
   con las palabras que la gente busca; la cifra o la pregunta sola no basta.
+
+- **Ningún prompt sin estadísticas (dueño, 2026-11-26):** «No quiero que vuelvas a generar un prompt sin haberte basado
+  en estadísticas». El brief abre con «Estadísticas en que se basa» (Studio del canal, con edad y país, más la demanda
+  medida), con cifras, fecha y fuente. Sin dato no hay prompt: se pide. No vale seguir la línea del video anterior.

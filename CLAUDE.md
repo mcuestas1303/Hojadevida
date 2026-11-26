@@ -73,6 +73,15 @@ elementos psicológicos».
   para lo que sigue necesitando su sí (créditos o dinero, instalar, rehacer una pieza, publicar) y para lo que solo él
   puede hacer.
 
+- **Ningún prompt sin estadísticas (regla del dueño, 2026-11-26):** «No quiero que vuelvas a generar un prompt sin
+  haberte basado en estadísticas; en este caso solo seguiste la línea del video anterior». Antes de escribir un prompt
+  se leen las estadísticas del canal (Studio: vistas, se quedó a mirar, retención, suscriptores, tráfico, **edad** y
+  país; las pasa el dueño o Keter y van en `video-studio/estadisticas/datos/`) y la demanda medida de la investigación;
+  el brief abre con una sección «Estadísticas en que se basa» con cifras, fecha y fuente. Si no hay dato, se pide; no
+  se sigue «la línea del video anterior» ni la promesa de un cierre. «Hay que irnos ajustando a las estadísticas
+  resultantes y a tu investigación»: público, tema y forma se corrigen con lo que arrojen (por ejemplo, la edad real).
+  Esto rige hasta que exista el motor generador de contenido, que el dueño explicará.
+
 ## Qué se ve en cada conversación (regla del dueño, 2026-11-21)
 
 Textual: «siempre lo terminado preséntamelo en equipo de producción audiovisual; aquí quiero que veamos

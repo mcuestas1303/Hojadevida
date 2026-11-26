@@ -1,3 +1,8 @@
+> **EN PAUSA (2026-11-26), por decisión del dueño.** Este prompt se escribió siguiendo la línea del short 3 y su promesa
+> de cierre, sin basarse en estadísticas del canal. Regla nueva: ningún prompt sin estadísticas. No se cotiza ni se
+> genera. Además, la demanda medida el 2026-11-24 para esta familia («comparación de regresos», «días») era la más baja
+> de la lista: 427, 10, 5 y 1 vistas en los Shorts de ese ángulo. Se retoma, se cambia o se descarta con los datos de Studio.
+
 # Brief — Tin & Tan, short 4: «CEO Comebacks Ranked: Jensen Huang vs. Steve Jobs»
 
 > Cumple la promesa con la que cerró el short 3 («Who else came back? Subscribe for the next count.»): el siguiente
