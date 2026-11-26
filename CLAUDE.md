@@ -119,7 +119,7 @@ elementos psicológicos».
   no te lo saltes, que no vuelva a pasar». Ninguna pieza terminada se le presenta al dueño, ni se le dice «listo para
   revisar», sin que `python3 video-studio/herramientas/puerta_de_presentacion.py <proyecto> <pieza>` diga PASA: animación,
   fotografía, sonido, edición y continuidad firman en `07_revision/firmas.md` sobre el sha256 de esa pieza (método 2,
-  paso A10b). Si no pasa, se dice qué falta y de quién depende; no se presenta «con reservas».
+  paso A9b). Si no pasa, se dice qué falta y de quién depende; no se presenta «con reservas».
 
 - **Reporte de publicación y calendario con avisos (regla del dueño, 2026-11-26):** «Cada vez que se publique un video
   necesito ver el detalle, a manera de reporte, de lo que se consideró para subir ese video, incluidos los objetivos y las

@@ -249,5 +249,5 @@ se le presentó al dueño sin que animación, fotografía, sonido, edición ni c
 lo que el oficio habría encontrado («intentan correr y casi no se mueven»). Desde hoy una pieza terminada solo se
 presenta si `herramientas/puerta_de_presentacion.py <proyecto> <pieza>` dice PASA: los cinco oficios firman en
 `07_revision/firmas.md` sobre el sha256 de esa pieza. Si no pasa, se dice qué falta y de quién depende; no se presenta
-«con reservas». Método 2, paso A10b.
+«con reservas». Método 2, paso A9b.
 
