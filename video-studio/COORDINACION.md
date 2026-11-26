@@ -446,3 +446,25 @@ Banner v2.1, descripción y 13 palabras clave cargados y comprobados en `@Tinand
 - 2026-11-23, ≈ 22:55 (El Salvador): **v2 del short 3 pública**, https://youtube.com/shorts/jB695mJFsGY; la v1 quedó en
   privado. Pendientes: el dueño verifica la cuenta de YouTube para subir la miniatura propia; siguiente conteo antes del
   2026-11-30; revisiones el 2026-11-26, 11-30 y 12-21.
+
+### 2026-11-26 · Keter → Generador (escritorio): referencias de stickman y estado de las estadísticas
+
+La sesión «Generador de prompts (escritorio)» corre en la nube, sin Chrome: no pudo leer YouTube Studio. Se le pidieron a
+Keter las referencias de stickman y la lectura de Studio (últimos 28 días). El dueño, textual: «Esos se los pasé a Keter;
+era un video de cómo generar dinero lazy y él hablaba de cómo esos videos faceless podían funcionar; está bien para que
+veas el formato».
+
+Respuesta de Keter sobre las referencias (solo enlaces y fichas resumidas; no hay archivos ni ficha segundo a segundo;
+las palabras «lazy» y «faceless» no figuran en su registro, así que podría haber un tercer video que no tiene):
+
+| Reel (recibido el 2026-11-20) | Qué muestra | Cifras y avisos de Keter |
+|---|---|---|
+| sanji.chien, https://www.instagram.com/p/Df8lwn8gCE7/ (88 s), **el de acción** | Una skill de animación de palitos en Claude: guion por segundos y pedido a Higgsfield de 6 imágenes y 3 clips, ≈ 10 s de dos palitos peleando. Imita *Animator vs. Animation* de Alan Becker (palito negro contra rojo) | Promete «US$500.000 al mes» y «gratis»: la cifra es una estimación de vidIQ del canal de Alan Becker (34,5 M de suscriptores, 15 años de videos largos; vidIQ hoy ≈ US$170.000; otras fuentes, US$19.000–62.000). El canal del autor: US$1.915 estimados. No es gratis (créditos de Higgsfield). Sin anotar: armas, sangre, fondos, sonido |
+| maximobrunosen6, https://www.instagram.com/p/Df-5WlaDUmd/, **el informativo** | Canal Doodle Digest: un palito, voz que narra, música y una pregunta respondida con ranking del 10 al 1 | Medido con yt-dlp el 2026-11-20: 212 mil suscriptores, 81 videos, 64 M de vistas desde feb-2025, mediana 6,5 min; 24 de sus 30 más vistos son rankings. En caída: de 1,5 M por video (fines de 2025) a 26–99 mil (jul–ago 2026). Conclusión del Cerebro: no clonar (contenido no auténtico; riesgo de trato como contenido para niños) |
+
+Aviso de Keter, sin verificar: en peleas, los personajes ajenos, la sangre y las armas pueden tocar las reglas de violencia y
+de contenido para niños de YouTube. Nodos del Cerebro: `granja-de-cuentas-con-personajes-de-ia`, `cifras-de-reels-de-negocio`,
+`canal-de-munecos-de-palitos-con-rankings`.
+
+Pendiente: las estadísticas de Studio (Keter las está leyendo y las manda aparte; van a `estadisticas/datos/`, sin subir) y
+el estudio `estudios/2026-11-26_accion_stickman_y_tin_y_tan.md`, que aún no está en la rama. Ningún prompt hasta tener las cifras.
