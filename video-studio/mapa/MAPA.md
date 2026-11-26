@@ -1,6 +1,6 @@
 # Mapa del estudio
 
-> Generado por `herramientas/mapa.py` desde `mapa/grafo.json` · actualizado: 2026-11-26 · 43 nodos, 66 relaciones.
+> Generado por `herramientas/mapa.py` desde `mapa/grafo.json` · actualizado: 2026-11-26 · 44 nodos, 67 relaciones.
 > **Léelo antes de buscar en archivos.** Para cambiarlo se edita `grafo.json` y se vuelve a generar.
 
 ## 1. Nodos centrales (los más conectados)
@@ -8,10 +8,10 @@
 | Nodo | Tipo | Relaciones | Dónde está | Estado |
 |---|---|---|---|---|
 | Universo de Tin & Tan (biblia, registro de pistas, plan de tanda, decisiones) | universo | 12 | `Drive «Canal YouTube - Entregas» (privado)` | versión 0.1, aprobado en lo principal |
-| Motor de contenido | metodo | 10 | `video-studio/MOTOR_DE_CONTENIDO.md` | versión 0.3 |
+| Motor de contenido | metodo | 11 | `video-studio/MOTOR_DE_CONTENIDO.md` | versión 0.3 |
 | Parámetros de Tin & Tan | canal | 7 | `video-studio/canales/nostalgia-tin-y-tan/PARAMETROS.md` | versión 2.3 |
 | Método del Generador de prompts | metodo | 7 | `video-studio/metodo/1_generador_de_prompts.md` | versión 0.1 |
-| Short 4 | video | 7 | — | sin tema cerrado; primera página de la tanda 01 |
+| Short 4 | video | 7 | — | pregunta aprobada; sin brief ni prompt; primera página de la tanda 01 |
 | Motor de acción (escena 3D por código) | herramienta | 7 | `video-studio/motor_de_accion/` | funciona; guion aún dentro de la escena |
 | Lectura de Studio del 2026-11-26 | dato | 6 | `video-studio/estadisticas/datos/ (no se sube)` | dos videos medidos |
 | Keter (PC del dueño) | conversacion | 5 | — | Studio, Trends, descargas, publicación, Cerebro |
@@ -31,11 +31,11 @@
 |---|---|---|
 | Ciudad de cartón | de relleno | — |
 | Alternativas de producción | alternativa 4 en prueba | dio lugar a Prueba del mundo 3D (alternativa 4) |
-| Calendario de temporadas por país | hecho; faltan históricos de Trends | ordena Short 4 |
-| Tema del short 4 | propuesta «What is GTA 6?», sin el sí del dueño | define Short 4; se validó con Datos de búsqueda del short 4 (Trends, autocompletado) |
-| Short 4 | sin tema cerrado; primera página de la tanda 01 | necesita un entorno nuevo en Motor de acción (escena 3D por código); espera el sí de El dueño |
+| Tema del short 4 | aprobado por el dueño: «What is GTA 6?»; faltan los hechos con fuente | define Short 4; se validó con Datos de búsqueda del short 4 (Trends, autocompletado) |
+| Short 4 | pregunta aprobada; sin brief ni prompt; primera página de la tanda 01 | necesita un entorno nuevo en Motor de acción (escena 3D por código); espera el sí de El dueño |
 | Prueba del mundo 3D (alternativa 4) | incompleta: le faltan pedidos; clip generado detenido | usa Motor de acción (escena 3D por código); necesita los tiempos de Referencias de pelea medidas cuadro a cuadro |
 | PC de escritorio con GTX 1070 Ti | sin conectar; por validar | aceleraría Motor de acción (escena 3D por código) |
+| Graphify (mapa estructural) | instalado el 2026-11-26; pasada de significado sin hacer | da el mapa estructural a Motor de contenido |
 
 ## 4. Por tipo
 
@@ -46,7 +46,7 @@
 - **dato:** Lectura de Studio del 2026-11-26 (`video-studio/estadisticas/datos/ (no se sube)`); Datos de búsqueda del short 4 (Trends, autocompletado) (`video-studio/estadisticas/datos/ (no se sube)`)
 - **entorno:** Ciudad de cartón (`video-studio/motor_de_accion/entornos/ciudad_de_carton.js`)
 - **estudio:** Acción de palitos y políticas de YouTube (`video-studio/estudios/2026-11-26_accion_stickman_y_tin_y_tan.md`); Referencias de pelea medidas cuadro a cuadro (`video-studio/estudios/2026-11-26_referencias_de_pelea_estudio_de_keter.md`); Color por estadísticas y psicología (`video-studio/estudios/2026-11-26_color_por_estadisticas_y_psicologia.md`); Investigación del universo conectado (`video-studio/estudios/2026-11-26_universo_conectado_investigacion.md`); Alternativas de producción (`video-studio/estudios/2026-11-26_formato_de_accion_alternativas.md`)
-- **herramienta:** Motor de acción (escena 3D por código) (`video-studio/motor_de_accion/`)
+- **herramienta:** Motor de acción (escena 3D por código) (`video-studio/motor_de_accion/`); Graphify (mapa estructural) (`video-studio/graphify-out/GRAPH_REPORT.md`)
 - **metodo:** Motor de contenido (`video-studio/MOTOR_DE_CONTENIDO.md`); Método del Generador de prompts (`video-studio/metodo/1_generador_de_prompts.md`); Método de producción audiovisual (`video-studio/metodo/2_produccion_audiovisual.md`); Método del Creador de personajes (`video-studio/metodo/3_creador_de_personajes.md`)
 - **paleta:** A · Papel con fondo frío (hoja Día) (`video-studio/motor_de_accion/paletas/a_papel_con_fondo_frio.json`); B · Noche de tinta (hoja Noche) (`video-studio/motor_de_accion/paletas/b_noche_de_tinta.json`); C · Alto voltaje (hoja Voltaje) (`video-studio/motor_de_accion/paletas/c_alto_voltaje.json`)
 - **pendiente:** PC de escritorio con GTX 1070 Ti

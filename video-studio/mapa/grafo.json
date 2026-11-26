@@ -250,14 +250,14 @@
    "tipo": "comercial",
    "nombre": "Calendario de temporadas por país",
    "ruta": "video-studio/comercial/2026-11-26_calendario_de_temporadas_por_pais.md",
-   "estado": "hecho; faltan históricos de Trends"
+   "estado": "hecho, con históricos de Trends de EE. UU., Filipinas e India"
   },
   {
    "id": "tema4",
    "tipo": "comercial",
    "nombre": "Tema del short 4",
    "ruta": "video-studio/comercial/2026-11-26_tema_short4_tin_y_tan.md",
-   "estado": "propuesta «What is GTA 6?», sin el sí del dueño"
+   "estado": "aprobado por el dueño: «What is GTA 6?»; faltan los hechos con fuente"
   },
   {
    "id": "s1",
@@ -285,7 +285,7 @@
    "tipo": "video",
    "nombre": "Short 4",
    "ruta": "",
-   "estado": "sin tema cerrado; primera página de la tanda 01"
+   "estado": "pregunta aprobada; sin brief ni prompt; primera página de la tanda 01"
   },
   {
    "id": "prueba3d",
@@ -307,6 +307,13 @@
    "nombre": "Políticas y funciones de YouTube",
    "ruta": "video-studio/MOTOR_DE_CONTENIDO.md sección 5b",
    "estado": "filtro F1 a F13"
+  },
+  {
+   "id": "graphify",
+   "tipo": "herramienta",
+   "nombre": "Graphify (mapa estructural)",
+   "ruta": "video-studio/graphify-out/GRAPH_REPORT.md",
+   "estado": "instalado el 2026-11-26; pasada de significado sin hacer"
   }
  ],
  "links": [
@@ -705,6 +712,12 @@
    "target": "motor_accion",
    "verbo": "aceleraría",
    "certeza": "hipótesis"
+  },
+  {
+   "source": "graphify",
+   "target": "motor",
+   "verbo": "da el mapa estructural a",
+   "certeza": "hecho"
   }
  ]
 }

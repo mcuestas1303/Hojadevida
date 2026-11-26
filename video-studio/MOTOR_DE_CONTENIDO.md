@@ -243,8 +243,16 @@ herramienta:
    el informe se genera con `herramientas/mapa.py`. Se actualiza al cerrar cada video y cuando cambia una regla.
 4. **Cada arista dice si es un hecho o una hipótesis**, igual que los sellos del estudio.
 
-Instalar Graphify de verdad (lee la carpeta sola y saca el grafo y el informe) es una opción que necesita el sí del
-dueño; el grafo de hoy está hecho a mano y cubre lo principal, no todo el repositorio.
+**Graphify instalado el 2026-11-26** (el dueño: «Sí, instala Graphify»; paquete `graphifyy` 0.9.121; queda en el guion de
+inicio del entorno de la nube, sin probar todavía en una sesión nueva). Hay dos mapas y se usan juntos:
+
+| Mapa | Cómo se hace | Qué da | Qué no da |
+|---|---|---|---|
+| **Estructural** (`graphify-out/GRAPH_REPORT.md`) | `graphify update video-studio`, ≈ 9 s, sin modelo externo ni costo | Todos los archivos, funciones y encabezados y cómo se enlazan (3.455 nodos y 5.713 relaciones en la primera pasada); consultas con `graphify query`, `explain`, `path`, `affected` | El significado: no sabe que un estudio respalda una regla. Respeta `.gitignore`, así que no ve estadísticas ni el universo |
+| **De significado** (`mapa/MAPA.md`) | A mano en `mapa/grafo.json`, se genera con `herramientas/mapa.py` | Las relaciones que importan para decidir: quién entrega a quién, qué bloquea, qué está pendiente | No cubre todo el repositorio |
+
+La pasada de significado de Graphify (leer los documentos con un modelo) pide una clave de API o correrlo como habilidad
+dentro de una sesión; no se ha hecho. Solo se sube el informe; el grafo pesa ≈ 14 MB y se regenera.
 
 ## 11. Lo que no sé todavía
 

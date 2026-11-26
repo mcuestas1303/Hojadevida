@@ -362,3 +362,29 @@ Todas leídas o consultadas el 2026-11-26. «Leído» = abierto con `curl -sS -m
 | F-radar | Radar de tendencias | `video-studio/comercial/radar_de_tendencias.md` (secciones 3, 4b, 5b) y `comercial/2026-11-26_tema_short4_tin_y_tan.md` | leído |
 
 **Fuentes que intenté abrir y no abrieron** (host exacto, para que la conversación principal pida permiso si hace falta): `www.opm.gov` (feriados federales de EE. UU.), `www.officialgazette.gov.ph` (Proclamación 1427), `setneg.go.id` y `kemenkopmk.go.id` (SKB de Indonesia 2027), `www.cbse.gov.in` y `newsonair.gov.in` (exámenes CBSE), `goldenglobes.com` (Golden Globes), `www.iihf.com` (Mundial Juvenil), `www.nba.com` (All-Star), `www.ces.tech` (CES), `www.canada.ca` (feriados de Canadá), `www.iplt20.com` (IPL). Además: `trends.google.com` (429 desde esta sesión, lo lee Keter), `thegameawards.com`, `www.sec.gov` y los de la lista de 7b del radar.
+
+
+---
+
+## Históricos de Google Trends (añadido el 2026-11-26, lectura de Keter)
+
+Keter leyó cinco años de Trends para EE. UU., Filipinas e India (web y YouTube). Faltan Indonesia y Canadá. El resumen
+está en `video-studio/estadisticas/datos/2026-11-26_temporadas_trends_y_studio_keter_resumen.md` (no se sube) y las cifras
+completas en la PC del dueño. Lo que cambia o confirma de este calendario:
+
+1. **Las ventanas son más cortas de lo que parecía.** Casi todos los eventos con fecha (Game Awards, Año Nuevo, Super
+   Bowl, Óscar, Black Friday) superan el umbral y llegan al pico **la misma semana**. Publicar una semana antes es llegar
+   antes de que nadie busque; la regla de «7 a 2 días antes» se estrecha a **«la misma semana, de 3 a 1 días antes»** para
+   esos eventos.
+2. **Navidad es la excepción larga:** en EE. UU. empieza a subir en la segunda semana de noviembre y llega al pico en la
+   semana del 21 de diciembre; en Filipinas empieza a fines de noviembre; en India solo pesa la semana misma.
+3. **Lo que sube a la vez en los tres países:** Game Awards (semana del 7 de diciembre), Navidad (semana del 21) y Año
+   Nuevo (semana del 28). Son las tres fechas de la primera tanda.
+4. **Preguntas con respuesta exacta que sí están en las listas de Trends** (EE. UU., 12 meses): «how many days until
+   christmas», «when is christmas 2026», «how many days until 2026», «countdown 2027» (YouTube) y «when is chinese new
+   year 2027». Son cuentas: encajan con Tin.
+5. **«New year 2027» en la búsqueda web de EE. UU. lo domina el Año Nuevo lunar**, no el 1 de enero: el Año Nuevo Lunar
+   (6 de febrero de 2027) sube de categoría en el calendario.
+6. Filipinas: Simbang Gabi (semana del 14 de diciembre), Sinulog (primera a tercera semana de enero) y Semana Santa tienen
+   interés alto y propio; el regreso a clases pasó de agosto a junio. India: la IPL dura de fines de marzo a principios de
+   junio.

@@ -314,3 +314,10 @@ golpes son las otras preguntas de la misma lista, en orden: ¿ya salió y cuánd
 ¿cuánto cuesta?, ¿cuántos capítulos tiene? Cada golpe responde una búsqueda medida. La cifra de ventas del primer día,
 si entra, va como remate y atribuida, no como eje. **Pendiente:** fuentes abiertas para el precio, las plataformas y el
 número de capítulos (la página de Rockstar y las guías no se han abierto desde esta sesión) y el sí del dueño.
+
+
+### Decisión del dueño (2026-11-26)
+
+**«Sí a What is GTA 6».** La pregunta del short 4 es «What is GTA 6?». Sigue la cadena del método
+(`video-studio/metodo/1_generador_de_prompts.md`): comprobar los hechos de cada golpe con fuente abierta, filtro de
+políticas, lugar en el universo (primera página de la tanda 01), brief, fichas y prompt.
