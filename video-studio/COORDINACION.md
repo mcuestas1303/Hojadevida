@@ -661,3 +661,17 @@ del dueño. No publicado.
   en la web y su pico del año pasado fue la semana del 30 de noviembre. Lectura completa en `estadisticas/datos/`
   (no se sube). **El short 5 vuelve a estar sin tema**; lección: los listados y el autocompletado no bastan, la
   comparación en Trends va antes de decidir. En curso: preguntas de demanda estable para los seis huecos sin tema.
+- **Segunda ronda de demanda (22:47–23:03, -06:00), con Google Trends leído por el Generador:** de las 14 preguntas de
+  demanda estable del comercial (`comercial/2026-11-27_preguntas_de_demanda_estable.md`), en YouTube (EE. UU., 12 meses)
+  solo «how big is the universe» se busca todas las semanas; las frases largas marcan 0. Los temas cortos sí registran
+  todo el año (por mediana: iphone > ps5 = marvel > xbox > universe); hoy «gta 6» los supera a todos. Lo que se busca de
+  GTA VI es el juego mismo (partidas, misiones, final), que el canal no usa; el ángulo explicable más fuerte es
+  «gta 6 pc». Lecturas completas en `estadisticas/datos/` (no se suben).
+- **Temas PROPUESTOS para los huecos sin tema (ninguno con hechos comprobados; falta el sí del dueño a los temas):**
+  short 5 (12-04) «Is GTA 6 coming to PC?»; short 6 (12-06) «When is Spotify Wrapped 2026?»; short 9 (12-13) «How big is
+  the universe?»; short 10 (12-15) «PS5 Pro vs PS5»; short 12 (12-19) «iPhone 18 vs iPhone 17»; short 14 (12-23, reserva)
+  «What is the Xbox Ally?»; short 15 (12-26) «What is Marvel Rivals?». Tablero del mes (privado): copia local en
+  `canales/nostalgia-tin-y-tan/universo/tablero_tanda_01.html` (no se sube).
+- **Lección de método para el motor:** en YouTube se escribe el tema, no la pregunta. Orden correcto: (1) tema corto
+  medido en Trends; (2) sus 25 consultas principales; (3) la pregunta se redacta sobre el ángulo medido y se comprueba en
+  autocompletado. Listados y autocompletado solos no bastan (así se cayó el tema de la RAM).
