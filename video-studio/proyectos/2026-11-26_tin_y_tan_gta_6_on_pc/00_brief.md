@@ -184,6 +184,15 @@ nadie queda clavado, y el rival no tapa la cara de Tin ni de Tan.
 | Hoja Noche y entorno exterior | El plan de tanda pide un entorno distinto del short 4; el tema es de tecnología |
 | P-006 es de grado ancla: un telescopio | El dueño cerró el tema del short 6 («How big is the universe?») el 2026-11-27 |
 | La marca final es un asterisco | La pregunta queda sin respuesta oficial |
+| **Director creativo (2026-11-27; detalle en `02_prompt/direccion.md`, sección 10):** la respuesta va delante («Not announced.», ≈ 3,0 s) y el final la repite como «No official PC date. As of today.» | El brief pide la respuesta antes del segundo 5; además invierte la estructura del short 4, que la guardaba para el final (F6) |
+| La forma de explicar es medir: regla de tinta y dos barras sueltas, cada una con sus dos fechas; ninguna barra, eje ni hueco para GTA 6 | Línea de tiempo con dos precedentes sin proyectar fecha, ni siquiera con el dibujo (F8 y F9) |
+| El pico no es un golpe: el rival dibuja un paquete liso de tinta, Tin frena la mano de Tan y el paquete revienta sin que nadie lo abra | El aviso contra archivos falsos se enseña con un gesto que se puede copiar; nada se parece a un archivo ni a una descarga; no repite el golpe doble con explosión del short 4 |
+| Invitación a suscribirse en ≈ 14,6 a ≈ 15,7 s, tras el dato de los 574 días: «Subscribe for facts, checked.» | Parámetro «a prueba»; sin promesa de tema. Termina ≈ 0,2 s pasada la mitad en el plan: se ajusta con la voz real |
+| El objeto cae en ≈ 19,2 s (62 % de la duración), en un respiro sin voz, 23 f después de la última cifra dicha y ≈ 3,5 s después de la invitación | Los dos estrenos del video se tienen que leer por separado en la curva de retención |
+| «Rated M» y los 212 GB (golpe 5) no van en la voz: van a la descripción | El brief deja el primero a «si cabe sin frenar» y el segundo como opcional; el tiempo se usa en el aviso de seguridad. Queda como punto abierto del filtro de políticas |
+| Red Dead Redemption 2 se escribe «≈ 1 year», sin número de días; «as of today» se dice una vez y la fecha exacta va en un sello de pantalla | La primera tiene dos fechas posibles (375 y 405 días); el sello es código y se actualiza con la relectura del 12-04 sin regenerar la voz |
+| El consejo «Don't download them.» lo dice Tan | Tin da hechos; el consejo no es un hecho |
+| Duración ≈ 31 s (930 f en el plan) | Lo que piden las doce líneas al ritmo medido de las voces del short 4 |
 
 ## Lo que necesita el sí del dueño
 
