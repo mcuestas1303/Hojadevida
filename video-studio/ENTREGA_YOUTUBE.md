@@ -21,7 +21,7 @@ trazabilidad** del video como nombre.
 |---|---|
 | `video.mp4` | el video terminado |
 | `miniatura.png` o `.jpg` | menos de 2 MB, texto puesto en edición (no dentro de la imagen generada); **1280×720** si el video es horizontal, **1080×1920** si es un Short (ver «Portada de los Shorts») |
-| `subtitulos.srt` | opcional |
+| `subtitulos.srt` | **no se entrega** (regla del dueño, 2026-11-26: nunca se suben subtítulos; el video los lleva grabados) |
 | `ficha.json` | campos de abajo; si el proyecto ya tiene otros campos, se mantienen y se agregan estos |
 
 ```json

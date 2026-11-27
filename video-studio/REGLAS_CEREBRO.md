@@ -276,6 +276,10 @@ se mide pocos días antes, el mes adelantado se arma con temas de fecha conocida
 (medidas a 12 meses), y cada paquete lleva una revalidación de la pregunta la semana de publicar; una noticia urgente
 hereda el hueco (biblia, 5.4) y el paquete desplazado no se pierde.
 
+- **Nunca se suben subtítulos a YouTube (dueño, 2026-11-26):** el video ya los lleva grabados en la imagen. Las pistas
+  `.srt` no van en la entrega ni se cargan en Studio (error de publicación en TIN-EN-S-003). Confirmado por el dueño en la
+  conversación de producción; lo trajo el Manager de redes sociales y YouTube, que desde hoy publica en lugar de Keter.
+
 ## El tema también se elige por potencial de pago del nicho (regla del dueño, 2026-11-26)
 
 Textual: «Considero que la selección de tema también debe estar basada en nichos con potencial de monetización de medio

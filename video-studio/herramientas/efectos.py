@@ -110,7 +110,9 @@ from palitos import PALETA, SS  # noqa: E402
 VERSION = "1.1"
 W, H, FPS = 1080, 1920, 30
 SEG_X0, SEG_X1, SEG_Y0, SEG_Y1 = 100, 980, 250, 1670          # zona segura de los Shorts (formatos.md)
-FUENTE = "/usr/share/fonts/opentype/inter/InterDisplay-Medium.otf"   # Inter Display Medium, SIL OFL 1.1
+# Inter Display Medium, SIL OFL 1.1. En Windows no viene con el sistema: se deja en herramientas/fuentes/ (no se sube al repositorio).
+_FUENTE_LOCAL = __import__("pathlib").Path(__file__).resolve().parent / "fuentes" / "InterDisplay-Medium.otf"
+FUENTE = str(_FUENTE_LOCAL) if _FUENTE_LOCAL.is_file() else "/usr/share/fonts/opentype/inter/InterDisplay-Medium.otf"
 
 
 def _rgb(h):

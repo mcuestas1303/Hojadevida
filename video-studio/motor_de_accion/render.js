@@ -1,7 +1,7 @@
 // Graba la escena fotograma a fotograma con el Chromium de la sesión.
 // Uso: node render.js <carpeta> [max_cuadros] [paleta] [entorno] [cada] [guion]   (cada = guarda 1 de cada N fotogramas; para revisar)
 // Variables: SOLO=0,82 graba solo esos fotogramas; DESDE=300 empieza a grabar ahí; SECO=1 no graba ninguno (solo eventos y pistas: ≈ 1 min).
-const { chromium } = require('playwright');
+const { chromium } = (() => { try { return require('playwright'); } catch (e) { return require('playwright-core'); } })();   // NAVEGADOR=chrome|msedge usa el navegador instalado (playwright-core no trae uno)
 const http = require('http'), fs = require('fs'), path = require('path');
 const desde = parseInt(process.env.DESDE || '0', 10), solo = (process.env.SOLO || '').split(',').filter(Boolean).map(Number);
 const salida = process.argv[2] || 'salida', maximo = parseInt(process.argv[3] || '230', 10);
@@ -15,7 +15,7 @@ const srv = http.createServer((q, r) => {
   await new Promise(ok => srv.listen(0, '127.0.0.1', ok));
   const url = `http://127.0.0.1:${srv.address().port}/escena.html?paleta=${paleta}&entorno=${entorno}&guion=${guion}`;
   fs.mkdirSync(path.join(salida, 'fotogramas'), { recursive: true });
-  const b = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
+  const b = await chromium.launch({ channel: process.env.NAVEGADOR || undefined, args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
   const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
   p.on('console', m => { if (m.type() === 'error') console.log('consola:', m.text()); });
   p.on('pageerror', e => console.log('error de página:', e.message));

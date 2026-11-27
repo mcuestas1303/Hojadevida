@@ -155,7 +155,7 @@ def color(nombre):
 
 
 def fuente(tam):
-    for f in ("InterDisplay-Medium.otf", "/usr/share/fonts/opentype/inter/InterDisplay-Medium.otf",
+    for f in (str(__import__("pathlib").Path(__file__).resolve().parent / "fuentes" / "InterDisplay-Medium.otf"), "InterDisplay-Medium.otf", "/usr/share/fonts/opentype/inter/InterDisplay-Medium.otf",
               "DejaVuSans.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
               "segoeui.ttf", "arial.ttf"):
         try:

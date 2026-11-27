@@ -675,3 +675,40 @@ del dueño. No publicado.
 - **Lección de método para el motor:** en YouTube se escribe el tema, no la pregunta. Orden correcto: (1) tema corto
   medido en Trends; (2) sus 25 consultas principales; (3) la pregunta se redacta sobre el ángulo medido y se comprueba en
   autocompletado. Listados y autocompletado solos no bastan (así se cayó el tema de la RAM).
+| 2026-11-26 | Keter → Equipo | Short 4 «What Is GTA 6» (TIN-EN-S-004) v2 NO aprobada: el dueño pidió corregir la animación 3D («intentan correr y casi no se mueven»); habrá v3. El MP4 está solo en el PC del dueño; se retiró de la rama del Generador pero sigue en el historial git (commit 84d4263). El dueño pidió pasar esta conversación al escritorio para revisar los archivos del Generador: se propuso una sesión local con el traspaso |
+| 2026-11-26 | Equipo → Generador y Keter | Revisión de animación de la v2: `proyectos/2026-11-26_tin_y_tan_what_is_gta_6/07_revision/revision_v2_animacion_produccion.md` (CAMBIOS). Causa de «casi no se mueven»: el paso de las piernas va por reloj (≈ 7,5 pasos/s) y no por la distancia; 8 de 11 carreras avanzan menos de la mitad de lo que piden las piernas, tres corren de espaldas, no hay fase de vuelo y la cámara lenta del remate solo frena la física. Control nuevo `herramientas/medir_carrera.mjs`. A Keter: sha256 y posiciones de las cabezas del MP4 (el video no llega a la nube). 0 créditos |
+| 2026-11-26 | Keter → Equipo | MP4 de la v2 verificado (tamaño y sha256 coinciden) y posiciones de las cabezas en 356 fotogramas (copia solo en el PC: `Canal YouTube/mediciones/`). Confirman el diagnóstico; agregado en la sección 4 de `revision_v2_animacion.md`, con los deslizamientos sin pasos (Tin f632–f649 y f573–f584) y la anticipación del remate que echa a los dos ≈ 200 px hacia atrás |
+| 2026-11-27 | Equipo → Generador | Revisión de la v2 cerrada con el archivo real (sección 5 de `revision_v2_animacion.md`): copia del historial idéntica a la del PC; diagnóstico confirmado con una medición propia de las cabezas; color y destellos PASAN; voz sin firmar. El equipo pasa a **una sola conversación en el PC del dueño**: `video-studio/TRASPASO_EQUIPO_PC.md` |
+
+## 2026-11-26 — Producción (PC del dueño): short 4, versión 4, y primera vuelta de firmas
+
+> El Equipo de producción audiovisual trabaja desde hoy en una sola conversación en el PC del dueño. Las filas de tabla
+> de arriba (2026-11-26 y 2026-11-27, Keter y Equipo) vienen de la rama antigua del equipo, unida a esta.
+
+- **Quién hace la segunda vuelta:** producción, con el sí del dueño («Sí, hazla»). 0 créditos; la voz no se tocó.
+- **Pieza:** `proyectos/2026-11-26_tin_y_tan_what_is_gta_6/06_final/tin_y_tan_short04_v4.mp4`, sha256 `f4c8224b3707`
+  (no se sube; se rehace con `bash codigo/hacer.sh <carpeta fuera del repo> v4`, con `NAVEGADOR=chrome` en Windows).
+- **Qué cambió:** guion (`motor_de_accion/guiones/tin_en_s_004.js`, comentarios «v4»): Tin para antes del mostrador y el
+  rival se le lanza desde arriba (N1); patada, caída, carga y salto del rival (N2 a N6, N13, N15); Tin espera el remate en
+  el pasillo del fondo. Motor: «reposo vivo» (`vivo`, ciclo de 22 f). Audio: mazazo −16 dBFS y más corto, línea C de
+  Tan +3 dB, cola de la explosión −23, 6 f de silencio total. `control_encuadre.py`: pruebas E4 y M5.
+- **Controles sobre la pieza:** encuadre PASA (0 fallos, 6 avisos); destellos PASA (mayor salto 34,3); texto 0 errores en
+  los dos idiomas (al glosario: «theft», «games»); color ≈ 90 % en paleta; −14,0 LUFS, −1,4 dBTP; el reconocedor sigue
+  oyendo un «it» de más (por medida, artefacto; falta la escucha del dueño).
+- **Firmas (cada oficio por separado), `07_revision/firmas.md`: la puerta NO PASA.** Animación, edición y sonido:
+  APROBADO. Fotografía: CAMBIOS (A2 héroe al 19 %; N1 borde del decorado en f108–f156). Continuidad: CAMBIOS (V1
+  f644–f661, V2 f694–f698 y V3 f292–f301: el rival toca la visera o la gorra de Tin; pide ampliar E4 a madeja contra
+  cabeza con visera, rodete y arma). Informes: `07_revision/revision_v4_<oficio>.md`. No se le presentó la pieza al dueño.
+- **Pendiente:** versión 5 (necesita el sí del dueño por ser rehacer la pieza); actualizar la sección 6 de `direccion.md`
+  (sigue con datos de la v2: edición, A); escucha del dueño de la frase de T4 y de la línea C.
+- **Decisión de producción sobre el orden imagen/audio:** `metodo/2_produccion_audiovisual.md`, sección 0 (animática
+  muda → voz → render → mezcla, desde el video siguiente).
+- **Reglas del dueño de hoy:** nunca se suben subtítulos a YouTube (`CLAUDE.md`, `REGLAS_CEREBRO.md`,
+  `ENTREGA_YOUTUBE.md`); «Hasta hoy.» en el subtítulo de T10.
+- **Entorno del PC:** `SETUP_ENTORNO.md` de «Proyectos Claude» y `requirements.txt` (Node.js, `playwright-core`, corrector,
+  «oído», tipografía Inter en `herramientas/fuentes/`, FriBiDi para Pillow).
+- **Keter → Equipo (2026-11-26):** hojas de la v2 a 2 f/s, cortes y metadatos en el Drive «Canal YouTube - Entregas» /
+  TIN-EN-S-004 / `revision_v2`; regla fija: por cada video nuevo en `Canal YouTube\entregas\` sube hojas, cortes y
+  metadatos a `<código>/revision_<versión>` y avisa.
+- **Manager de redes sociales y YouTube → Equipo (2026-11-26):** desde hoy publica esa conversación, no Keter; método de
+  título, descripción, hashtags y etiquetas aprobado por el dueño en `Canal YouTube/conocimiento/metadatos.md` (PC).

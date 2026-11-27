@@ -1,0 +1,6 @@
+# Estudio de video (video-studio/). Python 3.12. Instalar con: pip install -r requirements.txt
+# No son de Python y van en SETUP_ENTORNO.md: ffmpeg, Node.js LTS, Chrome, FriBiDi (DLL), la tipografía Inter y los modelos de voz.
+numpy==2.5.4
+pillow==12.3.0
+spylls==0.1.7          # corrector ortográfico (herramientas/instalar_corrector.sh baja los diccionarios)
+sherpa-onnx==2.0.3     # «oído»: reconocedor de voz sin conexión (herramientas/instalar_oido.sh baja el modelo)

@@ -5,9 +5,27 @@
 > a 3 se dice; lo del formato de acción y del universo todavía no se ha producido completo.
 
 > **De quién es este método (dueño, 2026-11-26):** del Equipo de producción audiovisual. El Generador de prompts entrega
-> el paquete y no produce. **Pendiente de que producción lo decida y lo escriba aquí:** el orden entre imagen y audio.
-> El dueño propone: «el video va primero y después va el audio». En el short 4 se hizo al revés (voz primero y los
-> tiempos de la pelea ajustados a la voz) y lo hizo el Generador; producción revisa si los pasos de abajo cambian de orden.
+> el paquete y no produce.
+
+## 0. Orden entre imagen y audio (decisión de producción, 2026-11-26)
+
+El dueño propuso: «el video va primero y después va el audio». **Producción lo adopta desde el video siguiente al short 4,
+con una precisión:** lo primero es la imagen *en borrador*, no la imagen terminada.
+
+1. **Animática muda** (pasada en seco del motor, 0 créditos, ≈ 1 min): coreografía, cámaras y tiempos de cada golpe,
+   medidos con `codigo/control_encuadre.py` hasta que dé PASA. Aquí se decide cuánto dura cada tramo.
+2. **Voz**, generada una sola vez, con la duración de cada línea ya conocida por la animática. Si una línea sale más
+   larga o más corta, se absorbe en edición (velocidad del canal ±10 %) y en los tramos de reposo de la imagen, que
+   están para eso; no se regenera.
+3. **Render de la imagen** con los tiempos finales, y después **efectos, música y mezcla**, cada sonido en su fotograma.
+
+- **Por qué:** con la voz primero (short 4) los golpes quedaron atados a las pausas de la voz y la pelea se corrigió tres
+  veces; la imagen por código es gratis y se puede rehacer, la voz cuesta créditos y tiene un solo intento. Lo caro se
+  genera cuando ya se sabe qué tiene que durar.
+- **Cómo se mide si fue buena decisión:** número de versiones de imagen hasta pasar la puerta (short 4: cuatro) y
+  retención en los golpes en la lectura de Studio a 48 horas.
+- **Excepción:** el short 4 conserva su voz ya generada y sus tiempos (no se regenera sin el sí del dueño).
+- En la tabla de abajo esto cambia el orden de trabajo a **A3 → A5 (en borrador) → A4 → A5 (final) → A6 → A8 → A7 → A9**.
 
 ## 1. Qué recibe y control de entrada
 
