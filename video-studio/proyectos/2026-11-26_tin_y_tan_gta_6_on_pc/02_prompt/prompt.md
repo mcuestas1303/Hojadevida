@@ -1,4 +1,4 @@
-# Prompt de video para redes — Is GTA 6 Coming to PC? Here's What's Official
+# Prompt de video para redes — Is GTA 6 Coming to PC? Here's What's Announced
 
 > **ESTADO (2026-11-27, versión 1):** especificación de producción del short 5 de Tin & Tan (`TIN-EN-S-005`, hueco H02 de la tanda 01, «primer pago»), escrita por el director de prompts sobre `00_brief.md` (cerrado), `02_prompt/direccion.md` (secciones 1 a 11, ya unidas) y `perfil_emocional.md`. **Manda la dirección y, donde un oficio contradice a otro, su sección 11 («Reconciliación entre oficios»).** Cada toma de abajo es un plano (P1 a P25) de su sección 3.2, con los cortes ajustados de 11.2 l, los fotogramas y la coreografía de la sección 4, el sonido de la 5, la voz y los textos de la 2.2. **La voz no está generada** (estimada en ≈ 2,6 a 3,0 créditos, sin cotizar ni aprobar) y **los fotogramas son un plan con la voz estimada**: se recalculan con la voz real, sin mover los desfases dentro de cada golpe ni las reglas de 2.1 de la dirección. El video no está renderizado.
 
@@ -97,7 +97,7 @@ Cada toma trae su frase de cámara en inglés (la de la dirección) y su frase d
 - **Cámara:** fija. Frase de cámara: static locked-off shot, eye level, night loading yard, dark monitor on stacked towers at center
 - **Acción:** el lápiz ya viene girando en f0, entero y nítido, en el pasillo; vuelve en 10 f y Tan lo atrapa en f10 con el brazo de firma (95°, 108°); retroceso de brazo y cuerpo. Tin sin lápiz, con su saltito de −5 px. El rival no aparece hasta f30. Frase de actuación: Tan catches the spinning pencil with a small recoil of the arm and lifts her chin to ask the question
 - **Audio:** sonidos de la firma `firma_whoosh_regreso` y `firma_atrapada` (f10), los de siempre. Tan empieza en f14: «Is GTA 6 coming to PC?» (termina en f82, dentro de la toma 3)
-- **Texto en pantalla:** portada «GTA 6 on PC?» y debajo «Facts, Checked», quieta f0–f29, a la derecha de la pestaña. Sin subtítulo
+- **Texto en pantalla:** portada «GTA 6 PC?» y debajo «Facts, Checked», quieta f0–f29, a la derecha de la pestaña. Sin subtítulo
 - **Referencia:** firma del canal (`canales/nostalgia-tin-y-tan/FIRMA_LAPIZ_BUMERAN.md`) y portada del short 4
 
 ### Toma 2 — El rival sale de la grieta (P2)
@@ -409,7 +409,7 @@ Cada toma trae su frase de cámara en inglés (la de la dirección) y su frase d
 - **Cámara:** fija. Frase de cámara: static locked-off shot, same framing as the first frame, eye level, night loading yard
 - **Acción:** el texto de portada entra en f900 (c −30); anticipación c −24 a c −19 (f906–f911), impulso hasta c −15, suelta en f915 y vuelo de 15 f del lápiz. Tin sin lápiz, cabeza a 25°. Nada más se mueve: el fuego y el humo se acabaron en f831 y el rival salió en f869. El fotograma 930 sería el fotograma 0 salvo el fondo. Frase de actuación: Tan swings her arm back and down, snaps it forward and releases the pencil
 - **Audio:** la voz terminó en f888 (c −42); sonidos S1 y S2 de la firma (`firma_chasquido`, `firma_whoosh_ida`) en c −17 a c −1; música ya a cero
-- **Texto en pantalla:** portada «GTA 6 on PC?» y «Facts, Checked» (como en f0). Sin subtítulo
+- **Texto en pantalla:** portada «GTA 6 PC?» y «Facts, Checked» (como en f0). Sin subtítulo
 - **Referencia:** toma 1 de esta versión; el vuelo del lápiz cierra el bucle
 
 ## 7. Audio
@@ -477,7 +477,7 @@ No official PC date. As of today.
 - **Orden:** Toma 1 → Toma 2 → … → Toma 25 (y vuelve a la toma 1: el fotograma 930 es el fotograma 0, salvo el fondo).
 - **Transiciones:** corte directo. 24 cortes en f30, f46, f76, f100, f118, f148, f198, f230, f296, f330, f344, f374, f438, f472, f502, f554, f600, f652, f678, f700, f733, f800, f837 y f900. Corte de impacto: uno solo, el de f700, con los dos cuadros invertidos con máscara de f702–f703. Cortes en el movimiento: tomas 4, 6, 8, 11, 12, 15 y 23; el resto, secos. Borrón de 3 f solo en la entrada de la toma 25 si el editor conserva el de la firma, y solo sobre la escena, nunca sobre el texto. **Sin zoom, sin barridos, sin cámara lenta de edición, sin reencuadre y sin temblor de cámara.**
 - **Texto en pantalla:** se dibuja en el mismo render (capa de datos, subtítulos quemados y portada), nunca dentro del mundo 3D. Detalle en la sección 12. Un dato a la vez; el texto nunca contradice lo que se oye. Sin dato ni subtítulo en f554–f599 y f695–f727.
-- **Portada:** el fotograma 0, en 1080x1920 (`miniatura.png`). Texto «GTA 6 on PC?» / «Facts, Checked» (cinco palabras y una cifra en dos renglones, mayúscula inicial en cada una), a la derecha de la pestaña (x 360–960, y 400–640); el objeto del centro es el monitor apagado sobre la pila de torres; las caras de Tan y Tin, de perfil, dentro de la zona útil. No da la respuesta ni insinúa fecha o descarga; no usa la tipografía ni los colores del juego.
+- **Portada:** el fotograma 0, en 1080x1920 (`miniatura.png`). Texto «GTA 6 PC?» / «Facts, Checked» (cinco palabras y una cifra en dos renglones, mayúscula inicial en cada una), a la derecha de la pestaña (x 360–960, y 400–640); el objeto del centro es el monitor apagado sobre la pila de torres; las caras de Tan y Tin, de perfil, dentro de la zona útil. No da la respuesta ni insinúa fecha o descarga; no usa la tipografía ni los colores del juego.
 - **Formato de salida:** 1080x1920, 30 f/s, H.264, audio AAC a 48 kHz; archivo `06_final/tin_y_tan_short05_v1.mp4`. Sin pista `.srt`.
 
 ## 9. Presupuesto
@@ -527,10 +527,10 @@ CRITICAL: the answer is always «not announced», never «won't» and never «wi
 
 - **Regla formal de la pieza:** una pregunta que sale del suelo y se mide con una regla: dos barras sueltas, cada una con sus dos fechas, y un paquete que nadie abre; el último golpe no borra la pregunta.
 - **Rejilla de tiempo:** pulso de 20 f (0,67 s, 90 por minuto) de la música; 46,5 pulsos suman los 31 s (930 f). **Los cortes los fija la acción** (pausa, contacto, vuelo y choque, según la dirección) y no todos caen sobre un pulso.
-- **Gancho (0 a 1 s):** movimiento y contraste — el lápiz ya girando en f0 y atrapado en f10, «GTA 6 on PC?» y «Facts, Checked» sobre una noche azul de tinta con un monitor apagado al centro, y la voz de Tan desde f14; el rival sale de la grieta en f30 y en f69 mide vez y media lo que ellos; el primer golpe cae en f88 y la respuesta oficial se oye desde f90 («Not announced.») y se lee quieta desde f97, en el segundo 3,2.
+- **Gancho (0 a 1 s):** movimiento y contraste — el lápiz ya girando en f0 y atrapado en f10, «GTA 6 PC?» y «Facts, Checked» sobre una noche azul de tinta con un monitor apagado al centro, y la voz de Tan desde f14; el rival sale de la grieta en f30 y en f69 mide vez y media lo que ellos; el primer golpe cae en f88 y la respuesta oficial se oye desde f90 («Not announced.») y se lee quieta desde f97, en el segundo 3,2.
 - **Empieza en movimiento:** sí: sin intro ni logo; el lápiz gira desde el fotograma 0.
 - **Motivo visual que vuelve:** la regla de tinta hecha con el lápiz (nace en f296, es el arma de las tomas 11, 14, 15, 19, 20 y 23, se deshace en gotas al final) y el monitor apagado sobre la pila de torres, al centro (portada, tomas 1, 5, 13, 21, 22, 24 y 25). Se repiten con las mismas formas y colores.
-- **Cierre:** el último plano es el de portada (misma cámara, mismo texto, mismas poses) con Tan lanzando el lápiz; el fotograma 0 es el paso siguiente de ese vuelo. **Excepción declarada (D6 del short 4):** el fondo del cierre conserva los daños y el del inicio está entero. El bucle devuelve la pregunta: termina con «GTA 6 on PC?» en pantalla y vuelve a empezar con ella.
+- **Cierre:** el último plano es el de portada (misma cámara, mismo texto, mismas poses) con Tan lanzando el lápiz; el fotograma 0 es el paso siguiente de ese vuelo. **Excepción declarada (D6 del short 4):** el fondo del cierre conserva los daños y el del inicio está entero. El bucle devuelve la pregunta: termina con «GTA 6 PC?» en pantalla y vuelve a empezar con ella.
 - **Llamado a la acción:** uno solo, de Tan: «Subscribe for facts, checked.» (f438–f471), sin promesa de tema futuro; no hay otro pedido en la voz ni en pantalla.
 
 Mapa de ritmo (los tiempos al décimo de segundo; cortes por segundo = cortes que empiezan dentro del tramo, divididos por su duración):
@@ -648,7 +648,7 @@ Control «se entiende solo»: quitando todo lo de esta tabla no se pierde ni una
 
 | Texto | Entra (s) | Sale (s) | Posición (% del cuadro) | Tamaño (% del alto) |
 |---|---|---|---|---|
-| GTA 6 on PC? / Facts, Checked | 0,00 | 1,00 | x 33,3–88,9; y 20,8–33,3 | 4,2–4,5 |
+| GTA 6 PC? / Facts, Checked | 0,00 | 1,00 | x 33,3–88,9; y 20,8–33,3 | 4,2–4,5 |
 | GTA 6 on PC: / not announced, con sello as of y la fecha de la relectura | 3,07 | 6,90 | x 5,6–88,9; y 34,9–44,5 | 4,5 (dato), 2,5 (encabezado) y 2,3 (sello) |
 | out on: / PlayStation 5 · Xbox Series X\|S | 7,20 | 10,00 | x 5,6–88,9; y 34,9–44,5 | 4,5 y 2,5 |
 | GTA 5 → PC / 574 days / about a year and a half · Sep 17, 2013 → Apr 14, 2015 (renglón 1 de la tarjeta de medidas, con su barra) | 12,47 | 19,07 | x 5,6–88,9; y 33,1–44,5 (1 renglón) | 4,5 y 2,5 |
@@ -656,7 +656,7 @@ Control «se entiende solo»: quitando todo lo de esta tabla no se pierde ni una
 | 'GTA 6 for PC' files: / not from Rockstar | 21,80 | 23,30 | x 5,6–88,9; y 34,9–44,5 | 4,5 y 2,5 |
 | some carry malware / Malwarebytes, Aug 24, 2026 · Huntress, Sep 9, 2026 | 24,33 | 26,70 | x 5,6–88,9; y 34,9–44,5 | 4,5 y 2,5 |
 | GTA 6 on PC: / no official date, con sello as of y la fecha de la relectura | 27,20 | 29,77 | x 5,6–88,9; y 34,9–44,5 | 4,5 (dato), 2,5 y 2,3 |
-| GTA 6 on PC? / Facts, Checked (portada de cierre) | 30,00 | 31,00 | x 33,3–88,9; y 20,8–33,3 | 4,2–4,5 |
+| GTA 6 PC? / Facts, Checked (portada de cierre) | 30,00 | 31,00 | x 33,3–88,9; y 20,8–33,3 | 4,2–4,5 |
 
 Las entradas y las quietudes son las de la dirección (sección 2.2) y las de 4.12; las salidas son las de 4.12 o se derivan de la regla «sale en 3 f» y las confirma el editor. **El sello de fecha («as of» más la fecha) se escribe el día de publicar con la fecha de la relectura del hecho que caduca**; es código y se actualiza sin tocar la voz.
 

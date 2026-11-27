@@ -7,7 +7,7 @@
 > tema lo aprobó el dueño el 2026-11-27 («Sí, así»). El Generador entrega el paquete y ahí termina; produce el Equipo de
 > producción audiovisual.
 
-- **Título (candidato, todavía sin pasar `revisar_titulo.py`):** Is GTA 6 Coming to PC? Here's What's Official
+- **Título (pasa `revisar_titulo.py` con 0 errores y 0 avisos; «…What's Official» daba 1 error por la palabra «official»):** Is GTA 6 Coming to PC? Here's What's Announced
 - **Modo:** C, desde cero. Dibujo por código con el motor de acción (`video-studio/motor_de_accion/`); 0 créditos de imagen
   y de video. Solo la voz se genera, y la cotiza y la pide producción.
 - **Objetivo comercial (lo fijó el dueño el 2026-11-23):** entrar al Programa de socios de YouTube lo antes posible.

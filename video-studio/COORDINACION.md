@@ -804,3 +804,31 @@ del dueño. No publicado.
 - **Para el Manager de redes:** sin subtítulos; hashtags sin #Shorts; la primera línea de la descripción repite el tema;
   `para_ninos` y `contenido_sintetico_realista` en `false` como propuesta. No se copió nada a `Canal YouTube\entregas\`
   ni al Drive: se hace cuando exista el archivo con el sello del día.
+
+## 2026-11-27 — Generador → Equipo de producción: paquete de prompt del short 5 (TIN-EN-S-005), listo; falta el sí del dueño
+
+- **Proyecto:** `proyectos/2026-11-26_tin_y_tan_gta_6_on_pc/`. «Is GTA 6 Coming to PC? Here's What's Announced». Hueco H02,
+  viernes 2026-12-04, 16:00 (-06:00). 25 tomas, 30,98 s, 0 s generados; solo la voz se genera.
+- **Qué trae:** `00_brief.md` (estadísticas, tema validado en Trends, filtro de políticas, universo, piezas);
+  `02_prompt/direccion.md` (secciones 1 a 11: creativa, fotografía, color, animación, sonido, montaje, ruta, publicación,
+  universo y reconciliación entre oficios); `ficha_tecnica.md`; `perfil_emocional.md`; `prompt.md` validado («Listo para
+  generar») y archivado en `personajes/tan/prompts/shorts/`; `publicacion.md` (título por el filtro con 0 errores,
+  descripción con fuentes, metas, filtro de políticas sobre el guion final); `licencias.md` y `costos.md`.
+- **Hechos:** `comercial/2026-11-27_hechos_short5_gta_6_on_pc.md`. No hay versión de PC anunciada; no se proyecta fecha; no
+  se nombra ni se muestra el port no oficial ni la filtración. El día de publicar se relee la página de Rockstar.
+- **Universo:** hoja Noche (paleta B), entorno nuevo «patio de carga de una tienda de computadoras». Paga P-001, P-002 y
+  P-003 del short 4; siembra P-004, P-005, P-007 y P-006 (cae un telescopio de cartón, adelanto del short 6). Si el
+  short 4 no está público el 12-04, los pagos se mantienen (línea de tiempo rota; lo anota el supervisor).
+- **Lo que les toca construir** (tabla única en la sección 7 de la dirección): el entorno, la entrada del rival por la
+  grieta y su salida goteando, `objeto_caido` y el telescopio, `pestana(marcas)`, las dos armas de tinta, poses nuevas,
+  piezas rotas y once sonidos por código. La voz: estimación de sonido ≈ 2,6–3,0 créditos (no es cotización).
+- **Pendientes que viajan con el paquete:** tamaño de Tin y Tan en pantalla (director creativo); lado del farol (animación
+  y fotografía; manda fotografía provisionalmente); cian del acento frente a las marcas nombradas y todas las medidas
+  (supervisor, en el render); escucha humana (sonido); portada corregida a «GTA 6 PC? / Facts, Checked» por la regla de
+  4 palabras con mayúscula (la valida el director creativo).
+- **Avisos de herramientas:** `validar_prompt.py` y `revisar_titulo.py` fallan en Windows sin `PYTHONUTF8=1`; el corrector
+  Hunspell no está instalado en este PC (instalar pide el sí del dueño): la ortografía quedó SIN COMPROBAR.
+- **Discrepancia para el dueño:** el método de metadatos del Manager de redes recomienda no declarar la voz sintética como
+  IA; el short 4 sí la declara. En este paquete se siguió la práctica del short 4.
+- **Short 6:** hechos de «How big is the universe?» en `comercial/2026-11-27_hechos_short6_how_big_is_the_universe.md`
+  (dos fuentes por cifra; ninguna de NASA o ESA para la del diámetro).

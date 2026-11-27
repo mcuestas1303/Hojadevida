@@ -61,7 +61,7 @@
 - **Emoción dominante:** **tensión que sube** (suspenso), con curiosidad en el gancho, un pico de **sorpresa** (el
   paquete revienta) y cierre de **alivio con humor seco**.
 - **Gancho A (0 a ≈ 3,9 s):** el lápiz ya viene girando en el fotograma 0 y Tan lo atrapa en f10 (firma); en pantalla,
-  «GTA 6 on PC?» con la letra del canal y debajo «Facts, Checked»; Tan pregunta desde f14 «Is GTA 6 coming to PC?»; en
+  «GTA 6 PC?» con la letra del canal y debajo «Facts, Checked»; Tan pregunta desde f14 «Is GTA 6 coming to PC?»; en
   f30 el rival **sale de una grieta del suelo, por la derecha**, y en f69 ya mide vez y media lo que ellos; primer
   golpe en f88 y Tin responde desde f90: «Not announced.»
 - **Gancho B (para otro video; este no se resube):** misma firma y misma pregunta; portada «Is GTA 6 on PC?» (segunda
@@ -129,7 +129,7 @@ de datos; «quieto» cuenta los fotogramas en que no se mueve ni cambia. Cada l�
 
 | # | f | s (≈) | Quién | Voz (inglés, exacta) | Subtítulo (español) | Dato en pantalla · quieto |
 |---|---|---|---|---|---|---|
-| 1 | 14–82 | 0,5–2,7 | Tan | «Is GTA 6 coming to PC?» | «¿GTA 6 va a salir en PC?» (desde f30; sin subtítulo en la portada) | Portada: «GTA 6 on PC?» / «Facts, Checked» · f0–f29 |
+| 1 | 14–82 | 0,5–2,7 | Tan | «Is GTA 6 coming to PC?» | «¿GTA 6 va a salir en PC?» (desde f30; sin subtítulo en la portada) | Portada: «GTA 6 PC?» / «Facts, Checked» · f0–f29 |
 | 2 | 90–117 | 3,0–3,9 | Tin | «Not announced.» | «No está anunciado.» | «GTA 6 on PC:» / «not announced» + sello «as of (fecha de la relectura)» · entra f92, quieto f97–f204 (108 f) |
 | 3 | 132–206 | 4,4–6,9 | Tin | «Rockstar hasn't announced a PC version.» | «Rockstar no ha anunciado ninguna versión de PC.» | (sigue el dato de la línea 2) |
 | 4 | 214–295 | 7,1–9,8 | Tin | «It's on PlayStation 5 and Xbox Series X and S.» | «Está en PlayStation 5 y Xbox Series X\|S.» | «out on:» / «PlayStation 5 · Xbox Series X\|S» · entra f216, quieto f221–f296 (76 f) |
@@ -143,7 +143,7 @@ de datos; «quieto» cuenta los fotogramas en que no se mueve ni cambia. Cada l�
 | 10 | 728–761 | 24,3–25,4 | Tin | «Some carry malware.» | «Algunos traen programas maliciosos.» | «some carry malware» / apoyo «Malwarebytes, Aug 24, 2026 · Huntress, Sep 9, 2026» · entra f730, quieto f735–f800 (66 f) |
 | 11 | 768–794 | 25,6–26,5 | Tan | «Don't download them.» | «No los descargues.» | (sigue el dato de la línea 10) |
 | 12 | 814–888 | 27,1–29,6 | Tin | «No official PC date. As of today.» | «No hay fecha oficial para PC. A hoy.» | «GTA 6 on PC:» / «no official date» + sello «as of (fecha de la relectura)» · entra f816, quieto f821–f890 (70 f); sale f891–f893 |
-| — | 900–929 | 30,0–31,0 | — | (cierre de la firma; la voz terminó en f888 = c −42) | (sin subtítulo) | Portada: «GTA 6 on PC?» / «Facts, Checked» |
+| — | 900–929 | 30,0–31,0 | — | (cierre de la firma; la voz terminó en f888 = c −42) | (sin subtítulo) | Portada: «GTA 6 PC?» / «Facts, Checked» |
 
 Cuenta: 104 sílabas (Tin 81, Tan 23), ≈ 707 f de voz. Cifras dichas en voz: «about a year and a half» (f372–f412) y
 «about a year» (f527–f553). «5», «6», «2» y «X» son parte de nombres propios, no cifras.
@@ -434,7 +434,7 @@ No aplica: todo se dibuja por código y nadie graba.
 |---|---|
 | Animación | Rasgadura no antes de f573 (la tarjeta de medidas sale en f570–f572); la caída por x ≈ 850; ningún vuelo con cara dentro de la franja; el golpe de f336 contra el poste, no la lámpara; el hollín del rival sin rojo; las máscaras del pico (≤ 30 % del cuadro) |
 | Producción | Entorno `patio_tienda_de_computadoras`: pila de torres con monitor, poste y lámpara del farol (pozo de luz como óvalo 2D, no luz real: así los personajes no cambian de color), persiana, cajas, pestaña con marcas en `#F3E9D2`, grieta de entrada, caja registradora rota. Plantilla de la interfaz de Shorts para comprobar los pies (y ≈ 1650). `comprobar_destellos` sobre la paleta oscura; `geometria_firma` y `comprobar_firma` sobre el fotograma 0 |
-| Editor | Panel de subtítulos y tarjeta opacos; sin subtítulo ni dato en f554–f599 y f695–f727; el texto de portada va en x 360–960, y 400–640, a la derecha de la pestaña (dos renglones de 80 a 86 px: **medir** que «GTA 6 on PC?» quepa en 600 px; si no, tres renglones de 92 px como permite `DESIGN.md`) |
+| Editor | Panel de subtítulos y tarjeta opacos; sin subtítulo ni dato en f554–f599 y f695–f727; el texto de portada va en x 360–960, y 400–640, a la derecha de la pestaña (dos renglones de 80 a 86 px: **medir** que «GTA 6 PC?» quepa en 600 px; si no, tres renglones de 92 px como permite `DESIGN.md`) |
 | Supervisor de continuidad | Medir en el render: todas las coordenadas de 3.0; el par humo–Tan; `revisar_color.py`; destellos; la franja de subtítulos libre de caras |
 | Director creativo | Aviso de geometría de 3.0 (personajes ≈ 18–19 %; rival por profundidad); el ajuste del poste del farol; la tarjeta de medidas tapando la pestaña |
 
@@ -1473,7 +1473,7 @@ publicación sin ella.
   2.1 ni los desfases dentro de cada golpe. Si la voz real pide más de 32 s, se recorta en el orden de la sección 2.
 - **Salida:** 1080×1920, 30 f/s, H.264, audio AAC a 48 kHz, voz a −14 LUFS (±1) y pico real ≤ −1 dBTP; archivo
   `06_final/tin_y_tan_short05_v1.mp4`. Sin pista `.srt` aparte.
-- **Miniatura:** el fotograma 0 (1080×1920), con «GTA 6 on PC?» y «Facts, Checked».
+- **Miniatura:** el fotograma 0 (1080×1920), con «GTA 6 PC?» y «Facts, Checked».
 - **Cierre:** corte seco de f899 a f900; el plano de cierre es el de portada; el fotograma 0 es el paso siguiente del vuelo del
   lápiz (excepción de fondo declarada, 9.1).
 
@@ -1517,7 +1517,7 @@ publicación sin ella.
 ## 8. Publicación y medición — director-creativo
 
 - **Plataforma y hora:** YouTube Shorts; viernes 2026-12-04, 16:00, hora de El Salvador (brief).
-- **Título:** candidato del brief, `Is GTA 6 Coming to PC? Here's What's Official`. **Pendiente:** `revisar_titulo.py`
+- **Título:** candidato del brief, `Is GTA 6 Coming to PC? Here's What's Announced`. **Pendiente:** `revisar_titulo.py`
   (comercial). El título no promete fecha ni descarga.
 - **Descripción, etiquetas y paquete de publicación:** en `publicacion.md` (comercial). Lo que esta dirección le pide:
   la respuesta fechada en la primera línea; las fuentes de cada frase; lo que salió de la voz (2.2); el descargo del
@@ -1553,7 +1553,7 @@ publicación sin ella.
 
 ### 9.2 Portada (primer segundo)
 
-- **Texto:** renglón 1 «GTA 6 on PC?»; renglón 2 «Facts, Checked». Letra del canal, mayúscula inicial en cada palabra.
+- **Texto:** renglón 1 «GTA 6 PC?»; renglón 2 «Facts, Checked». Letra del canal, mayúscula inicial en cada palabra.
   Cinco palabras y una cifra en dos renglones; nombra al sujeto con la consulta medida; no copia el título; no da la
   respuesta ni insinúa fecha o descarga. Nunca la tipografía ni los colores del juego; ningún logotipo.
 - **Objeto del centro:** un monitor apagado sobre una pila de torres genéricas. Tan a la izquierda y Tin a la derecha,
