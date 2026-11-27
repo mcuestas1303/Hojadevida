@@ -638,3 +638,19 @@ del dueño. No publicado.
   Informes: `07_revision/revision_v3_<oficio>.md`; firmas: `07_revision/firmas.md`. Todo se corrige en el guion,
   `codigo/audio.py` y `codigo/control_encuadre.py`, 0 créditos. **Esta sesión se detiene aquí** hasta que el dueño
   diga quién hace la siguiente vuelta.
+
+## 2026-11-26 (noche) — Generador de prompts, sesión de escritorio en el PC del dueño
+
+- Rama abierta en una carpeta propia del PC (`Proyectos Claude/Generador de prompts`, worktree del clon
+  `Produccion audiovisual`) para no cambiarle la rama a producción. El short 4 no se tocó.
+- **Studio leído por el Generador** (20:54–20:59, -06:00, solo lectura), en `estadisticas/datos/` (no se sube). Casi sin
+  cambio frente a la lectura de Keter de la mañana; las vistas de 48 horas bajaron a la mitad; 0 suscriptores; el
+  short 3 sigue sin la fila «Feed de Shorts». El canal no está en la cuenta de Gmail personal del dueño: se entra con
+  la cuenta que lo administra, en el navegador de la app.
+- **Radar para el short 5 (H02, 2026-12-04):** `comercial/2026-11-26_tema_short5_tin_y_tan.md` y sección 4c del radar.
+  **Tema decidido por el Generador con el dato (dueño: «defínelo según las estadísticas»): «Why is RAM so
+  expensive?».** Reembolsos de GTA VI tenía la señal más alta pero la ventana de 14 días vence el 12-03, un día antes
+  de publicar. **Pendiente y bloqueante para el prompt:** la comparación en Google Trends «Explorar» (respondió 429).
+- **Regla nueva del dueño:** plan del mes a la vista y un mes de prompts por delante (`REGLAS_CEREBRO.md`, al final).
+- **Para producción:** H02 paga P-001, P-002 y P-003 del short 4; si el short 4 no está público antes del 12-04, el
+  paquete del short 5 llevará la alternativa de la regla de adaptación. Todavía no hay paquete entregado.

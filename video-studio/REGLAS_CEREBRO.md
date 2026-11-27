@@ -261,3 +261,17 @@ producción lo viera. Desde hoy el Generador entrega el paquete de prompt y avis
 puerta de presentación y presenta. El orden de producción (el dueño propone imagen primero, audio después) lo fija el
 Equipo de producción audiovisual en el método 2.
 
+
+## Un mes de prompts por delante y plan del mes a la vista (regla del dueño, 2026-11-26)
+
+Textual: «La duda que me queda es si estás considerando lo que ya habíamos hablado del universo Tin y Tan y cómo los
+videos se conectan, aparte de esto de poder visualizar el plan por lo menos para un mes de videos, y tendríamos que
+llevar un mes adelantado por lo menos de prompts listos para producir los videos». Y sobre el tema de cada video:
+«defínelo según las estadísticas» (el equipo decide el tema con el dato y lo informa; no se le devuelve la elección).
+
+Qué significa (interpretación del Generador, pendiente de que el dueño la confirme): (1) el plan de la tanda se ve
+entero, hueco por hueco, con su papel en el universo, lo que paga y lo que siembra, su tema o su tipo de tema y el
+estado de su paquete; (2) el Generador mantiene paquetes de prompt listos para un mes de publicaciones. Como la demanda
+se mide pocos días antes, el mes adelantado se arma con temas de fecha conocida y con preguntas de demanda estable
+(medidas a 12 meses), y cada paquete lleva una revalidación de la pregunta la semana de publicar; una noticia urgente
+hereda el hueco (biblia, 5.4) y el paquete desplazado no se pierde.
