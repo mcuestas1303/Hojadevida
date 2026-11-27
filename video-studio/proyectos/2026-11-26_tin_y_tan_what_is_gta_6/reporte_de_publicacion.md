@@ -1,9 +1,11 @@
 # Reporte de publicación — TIN-EN-S-004 · What Is GTA 6, and Is a GTA 7 Coming?
 
 > Escrito el 2026-11-26; **puesto al día el 2026-11-27 con la versión 5.** Estado: **la pieza pasó la puerta de
-> presentación** (los cinco oficios aprobaron, `07_revision/firmas.md`) y el dueño dio el sí a preparar la entrega. **No
-> publicado.** Publicación prevista: miércoles 2026-12-02, 16:00 (hora de El Salvador), hueco H01.
-> Video: `06_final/tin_y_tan_short04_v5.mp4` (32,87 s, 1080×1920, sha256 `df6b8a638e86`). Entrega:
+> presentación** (los cinco oficios aprobaron, `07_revision/firmas.md`) y el dueño dio el sí a preparar la entrega. **Subido
+> y programado el 2026-11-27 por el Manager de redes:** https://youtube.com/shorts/HflgnxBPA68 (id `HflgnxBPA68`), privado
+> hasta el viernes 2026-11-27, 16:00 (hora de El Salvador), hueco H01 adelantado. Se subió una copia liviana (9,42 MB,
+> SSIM del peor cuadro 0,988) hecha desde `video.mp4`; sin subtítulos de YouTube. Primera medición: 2026-11-29.
+> Video: `06_final/tin_y_tan_short04_v5_sello.mp4` (32,87 s, 1080×1920, sha256 `361070e14263`; la v5 `df6b8a638e86` con el sello «as of Nov 27, 2026»). Entrega:
 > `08_entrega/TIN-EN-S-004/` (`video.mp4`, `miniatura.png`, `ficha.json`; `entrega.py`: lista para entregar, 0 errores).
 > Versiones: v1 sin revisar; v2 no aprobada por el dueño («intentan correr y casi no se mueven»); v3 y v4 frenadas en
 > la puerta; v5 aprobada por los cinco oficios. Qué falló en cada una: `metodo/registro_de_fallos.md`.

@@ -871,3 +871,6 @@ del dueño. No publicado.
   `miniatura.png` (`a66020542f23…`) y `ficha.json` (`7c126f781ea2…`); huellas iguales en origen y copia. Sin `.srt`
   (regla: nunca se suben subtítulos). Avisado el Manager de redes. Falta: que el Manager lo suba y programe para hoy
   16:00 con el sí del dueño para publicar, la escucha del dueño, y enlace y hora en el registro y el reporte.
+- **2026-11-27: Short 4 subido y programado por el Manager de redes:** https://youtube.com/shorts/HflgnxBPA68, sale hoy
+  a las 16:00 (-06:00); privado hasta entonces. Enlace y hora anotados en `registro_codigos.md` y en el reporte de
+  publicación. Primera medición: 2026-11-29. Sigue faltando la escucha del dueño antes de las 16:00.
