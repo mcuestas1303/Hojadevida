@@ -70,39 +70,13 @@
    "dato": "tarjeta 1",
    "entra": 86,
    "quieto_desde": 91,
-   "sale": 306,
-   "quieto_f": 212,
+   "sale": 218,
+   "quieto_f": 124,
    "caja": [
     100,
     421,
     782,
     494
-   ]
-  },
-  {
-   "dato": "tarjeta 2",
-   "entra": 218,
-   "quieto_desde": 223,
-   "sale": 306,
-   "quieto_f": 80,
-   "caja": [
-    100,
-    511,
-    764,
-    577
-   ]
-  },
-  {
-   "dato": "tarjeta 3",
-   "entra": 251,
-   "quieto_desde": 256,
-   "sale": 306,
-   "quieto_f": 47,
-   "caja": [
-    100,
-    593,
-    919,
-    659
    ]
   },
   {
@@ -167,7 +141,7 @@
     100,
     429,
     904,
-    692
+    702
    ]
   },
   {
@@ -180,29 +154,27 @@
     100,
     394,
     793,
-    700
+    709
    ]
   }
  ],
  "destellos": {
   "fotogramas": 986,
-  "cambios_bruscos": 10,
+  "cambios_bruscos": 8,
   "fotogramas_con_cambio": [
    100,
+   102,
    336,
    338,
    430,
+   442,
    564,
-   671,
-   719,
-   724,
-   728,
-   750
+   728
   ],
-  "max_cambios_en_1_s": 3,
-  "segundo_del_maximo": 23.97,
-  "mayor_salto_de_luminosidad": 24.9,
-  "segundo_del_mayor_salto": 11.2,
+  "max_cambios_en_1_s": 2,
+  "segundo_del_maximo": 3.33,
+  "mayor_salto_de_luminosidad": 37.8,
+  "segundo_del_mayor_salto": 3.4,
   "saltos_a_pantalla_completa": [],
   "limites": {
    "umbral": 10.0,
