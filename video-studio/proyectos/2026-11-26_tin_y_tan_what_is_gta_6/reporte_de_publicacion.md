@@ -1,7 +1,12 @@
 # Reporte de publicación — TIN-EN-S-004 · What Is GTA 6, and Is a GTA 7 Coming?
 
-> Escrito el 2026-11-26, antes de pedir el sí para publicar. **Estado: listo para que el dueño lo revise; no publicado.**
-> Video: `06_final/tin_y_tan_short04_v2.mp4` (32.87 s; la v2 corrige el encuadre de la v1: cámaras más cerca, techo, acción secundaria; mismo guion, voz y tiempos). Controles: `07_revision/controles.md` (sección V2). Hojas: `07_revision/hoja_v2_*.jpg`.
+> Escrito el 2026-11-26; **puesto al día el 2026-11-27 con la versión 5.** Estado: **la pieza pasó la puerta de
+> presentación** (los cinco oficios aprobaron, `07_revision/firmas.md`) y el dueño dio el sí a preparar la entrega. **No
+> publicado.** Publicación prevista: miércoles 2026-12-02, 16:00 (hora de El Salvador), hueco H01.
+> Video: `06_final/tin_y_tan_short04_v5.mp4` (32,87 s, 1080×1920, sha256 `df6b8a638e86`). Entrega:
+> `08_entrega/TIN-EN-S-004/` (`video.mp4`, `miniatura.png`, `ficha.json`; `entrega.py`: lista para entregar, 0 errores).
+> Versiones: v1 sin revisar; v2 no aprobada por el dueño («intentan correr y casi no se mueven»); v3 y v4 frenadas en
+> la puerta; v5 aprobada por los cinco oficios. Qué falló en cada una: `metodo/registro_de_fallos.md`.
 
 ## 1. Qué es
 
@@ -49,12 +54,25 @@ clasificación, cuánto se esperó, y la respuesta honesta: Rockstar no ha anunc
 segundo 3; segundos 5 a 10; retención en 16.1 s (la suscripción: ¿se van ahí?); pico en 23.1 s–24.6 s; caída o no
 en 29.5 s (la respuesta honesta); suscriptores por mil vistas; comentarios; avisos.
 
-## 7. Lo que quedó pendiente o con asterisco
+## 7. Lo que queda antes de publicar (al 2026-11-27)
 
-1. **Nadie ha visto ni oído el video**: falta la escucha de la voz («to GTA 6» puede sonar a pregunta; cola de «facts») y de los sonidos, y la revisión del supervisor y de cada oficio.
-2. **El sello «as of Nov 26, 2026»** y la relectura del remate se rehacen el día de publicar (recomponer cuesta ≈ 10 min y 0 créditos).
-3. Leer la página de juegos y el Newswire de Rockstar en un navegador completo (Keter).
-4. Filtro de políticas sobre el video terminado; ortografía por máquina (Hunspell sin instalar).
-5. Defectos listados en `07_revision/controles.md`, sección 5.
-6. Al subir: «no creado para niños»; descripción y etiquetas de `publicacion.md` (ya sin la línea de las historias).
-7. Medición confundida: cambian a la vez la forma, el gancho, la paleta, el universo y el lugar de la suscripción.
+1. **Escucha del dueño.** Nadie del equipo puede oír. Por medida todo pasa (−14,0 LUFS, −1,4 dBTP, cada golpe un
+   fotograma antes del contacto), pero falta oír: «GTA 6 came out on November 19, 2026» (el reconocedor oye un «it» de
+   más; por medida, artefacto), «Subscribe. We check the facts.» (puede sonar áspera en los picos), «over» junto al mazazo
+   y el silencio antes del remate. Si se oye el «it», regenerar esa línea cuesta créditos y necesita su sí.
+2. **El día de publicar (2026-12-02): relectura del remate y sello de fecha.** Se releen las fuentes de «Rockstar hasn't
+   announced one» (`publicacion.md`, «Antes de publicar»). Si sigue siendo cierto, se recompone el sello «as of» con la
+   fecha de ese día (≈ 10 min, 0 créditos; cambia el archivo, así que edición y continuidad firman ese tramo) y se cambian
+   las tres fechas «November 26, 2026» de la descripción. Si alguna fuente ya nombra la entrega siguiente, **no se publica**.
+3. **Sin subtítulos subidos** (regla del dueño, 2026-11-26): el video los lleva grabados en español.
+4. **Roces medios que continuidad dejó anotados y no frenaron:** segundo 21,5 (los pies del rival pasan por el borde de
+   la cabeza de Tan, 2 fotogramas), 2,2 (el puño del rival en la punta de la visera de Tin), 17,1 (un fotograma) y 29,8
+   (una gota de tinta cruza la cara de Tin). Un disco gris fuera de paleta 2 o 3 fotogramas en la explosión (edición).
+5. **Empaque:** título, descripción y etiquetas en `08_entrega/TIN-EN-S-004/ficha.json`, ajustados al método de metadatos
+   aprobado por el dueño (sin #Shorts, 3 hashtags, la primera línea repite el tema). El Manager de redes los revisa con la
+   búsqueda del día. «No creado para niños» y «sin contenido sintético realista»: propuesta del equipo, los decide el dueño.
+6. **Filtro de políticas sobre el video terminado** (F8 y F9): continuidad comprobó las reglas duras (sin sangre ni armas
+   de fuego, nada del juego ni marcas como objeto, descargo en la descripción). No se releyeron las fuentes de los datos
+   ni se auditaron las licencias en esta vuelta.
+7. **Medición confundida** (sigue igual): cambian a la vez la forma, el gancho, la paleta, el universo y el lugar de la
+   suscripción; lo que salga no se podrá atribuir a una sola cosa.

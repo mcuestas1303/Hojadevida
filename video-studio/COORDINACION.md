@@ -793,3 +793,14 @@ del dueño. No publicado.
   (H06) queda sin tema hasta el siguiente análisis puntuado. Por eso el objeto que cae en el short 5 (P-006) es de grado
   ancla: **un telescopio de cartón**. Brief del short 5 cerrado en `proyectos/2026-11-26_tin_y_tan_gta_6_on_pc/00_brief.md`;
   hechos en `comercial/2026-11-27_hechos_short5_gta_6_on_pc.md`. Dirección y fichas, en curso; todavía no hay paquete.
+
+## 2026-11-27 — Producción: entrega del short 4 armada (con el sí del dueño: «Sí, prepara entrega»)
+
+- `proyectos/2026-11-26_tin_y_tan_what_is_gta_6/08_entrega/TIN-EN-S-004/`: `video.mp4` (la v5, sha256 `df6b8a638e86`; no
+  se sube al repositorio), `miniatura.png` (1080×1920) y `ficha.json`. `entrega.py`: lista para entregar, 0 errores. Al
+  glosario: «esrb». Reporte de publicación al día: `reporte_de_publicacion.md` del proyecto.
+- **No es todavía el archivo que se publica:** el día de publicar (2026-12-02, 16:00, hueco H01) se relee el remate y se
+  recompone el sello de fecha; eso cambia el video. Antes, el dueño tiene que oír la voz.
+- **Para el Manager de redes:** sin subtítulos; hashtags sin #Shorts; la primera línea de la descripción repite el tema;
+  `para_ninos` y `contenido_sintetico_realista` en `false` como propuesta. No se copió nada a `Canal YouTube\entregas\`
+  ni al Drive: se hace cuando exista el archivo con el sello del día.

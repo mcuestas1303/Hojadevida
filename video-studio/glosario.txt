@@ -58,3 +58,5 @@ jack
 # nombres propios en inglés que aparecen en los subtítulos en español del short 4 de Tin & Tan: «Grand Theft Auto» (la serie) y «Rockstar Games» (su editora). No se traducen.
 theft
 games
+# sigla del organismo que clasifica los videojuegos en EE. UU. (Entertainment Software Rating Board); va en la descripción del short 4 de Tin & Tan con la clasificación del juego
+esrb
