@@ -874,3 +874,11 @@ del dueño. No publicado.
 - **2026-11-27: Short 4 subido y programado por el Manager de redes:** https://youtube.com/shorts/HflgnxBPA68, sale hoy
   a las 16:00 (-06:00); privado hasta entonces. Enlace y hora anotados en `registro_codigos.md` y en el reporte de
   publicación. Primera medición: 2026-11-29. Sigue faltando la escucha del dueño antes de las 16:00.
+- **2026-11-27: Short 5 (TIN-EN-S-005), arranque con el sí del dueño** («Sí, empieza pero no produzcas aún el video»;
+  pidió cuidar el límite de uso). **Control de entrada:** paquete completo (brief, dirección, prompt, ficha técnica,
+  perfil emocional, publicación, licencias, costos), `validar_prompt.py` sin errores, elenco `@tin`, `@tan` y `@duda` en
+  el registro. **No bloquea pero está abierto:** el lila del rival `#B79CFF` y la enmienda de la ficha de `@duda`
+  (dirección 11.1 k: lo decide el dueño), la cotización de la voz y la relectura del hecho que caduca el día de publicar.
+  **Banco de jugadas hecho:** `motor_de_accion/jugadas.js`, en el catálogo. **Falta, en este orden:** entorno
+  `patio_tienda_de_computadoras`, guion de la pelea, animática muda hasta que el control dé PASA, voz (con cotización y
+  sí del dueño), render. Nada de eso se ha empezado.

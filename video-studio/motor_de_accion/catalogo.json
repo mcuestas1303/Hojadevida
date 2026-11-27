@@ -1,339 +1,392 @@
 {
- "que_es": "Biblioteca del motor de acción de Tin & Tan. Cada elemento que se hace para un video se guarda aquí con su ficha para poder reutilizarlo. Se añade una entrada cada vez que se crea algo; no se borra: si algo deja de servir se marca \"retirado\".",
- "actualizado": "2026-11-27",
- "paletas": [
-  {
-   "id": "a_papel_con_fondo_frio",
-   "archivo": "paletas/a_papel_con_fondo_frio.json",
-   "temas": [
-    "día",
-    "cotidiano",
-    "datos"
-   ],
-   "usada_en": [
-    "prueba 2026-11-26"
-   ]
-  },
-  {
-   "id": "b_noche_de_tinta",
-   "archivo": "paletas/b_noche_de_tinta.json",
-   "temas": [
-    "noche",
-    "misterio",
-    "tecnología",
-    "espacio"
-   ],
-   "usada_en": []
-  },
-  {
-   "id": "c_alto_voltaje",
-   "archivo": "paletas/c_alto_voltaje.json",
-   "temas": [
-    "deporte",
-    "competencia",
-    "velocidad",
-    "estreno"
-   ],
-   "usada_en": [
-    "TIN-EN-S-004"
-   ]
-  }
- ],
- "entornos": [
-  {
-   "id": "ciudad_de_carton",
-   "archivo": "entornos/ciudad_de_carton.js",
-   "temas": [
-    "ciudad",
-    "calle",
-    "genérico"
-   ],
-   "rompibles": [
-    "cajones",
-    "pilar"
-   ],
-   "usada_en": [
-    "prueba 2026-11-26"
-   ],
-   "nota": "Hecho para la prueba técnica, sin tema. Es de relleno: cada video tendrá el suyo."
-  },
-  {
-   "id": "tienda_de_videojuegos",
-   "archivo": "entornos/tienda_de_videojuegos.js",
-   "temas": [
-    "juegos",
-    "compras",
-    "estrenos"
-   ],
-   "rompibles": [
-    "estante_izquierdo",
-    "estante_derecho",
-    "caja_de_juego",
-    "pila_de_cajas",
-    "cartel_de_pie",
-    "postes_de_fila",
-    "mostrador",
-    "caja_registradora",
-    "televisor_de_exhibicion",
-    "banderines"
-   ],
-   "no_se_toca": [
-    "escaparate",
-    "mando_mostaza"
-   ],
-   "usada_en": [
-    "TIN-EN-S-004"
-   ],
-   "nota": "Hecho para TIN-EN-S-004. 9 u de ancho; mostrador claro a la derecha; banderines cortos sobre el televisor. Las versiones rotas las mueve el guion (caja_registradora_rota incluida). v2 (2026-11-26): techo a 8,2 u con viga y tres lámparas en tinta (piezas.lamparas)."
-  }
- ],
- "personajes": [
-  {
-   "id": "tin",
-   "fuente": "herramientas/palitos.py",
-   "en_el_motor": "cabeza exportada por personajes/exportar_sprites.py; cuerpo por esqueleto en escena.html"
-  },
-  {
-   "id": "tan",
-   "fuente": "herramientas/palitos.py",
-   "en_el_motor": "igual que Tin; la bufanda va con la cabeza"
-  },
-  {
-   "id": "duda",
-   "fuente": "canales/nostalgia-tin-y-tan/pruebas/2026-11-26_pelea_con_la_duda/duda_v2.py",
-   "en_el_motor": "madeja como cabeza, cuerpo por esqueleto"
-  }
- ],
- "poses": {
-  "archivo": "escena.html (objeto P) y las nuevas en guiones/tin_en_s_004.js",
-  "lista": [
-   "quieto",
-   "guardia",
-   "carga",
-   "golpe",
-   "embiste",
-   "patada",
-   "recogido",
-   "recibe",
-   "vuela",
-   "caido",
-   "agachado",
-   "poder",
-   "pisoton",
-   "festeja",
-   "corre1",
-   "corre2",
-   "resbala",
-   "gancho",
-   "bloqueo",
-   "dibuja",
-   "pregunta",
-   "invita",
-   "mazoArriba",
-   "mazoAbajo",
-   "miraEspada",
-   "atrapa",
-   "esquiva",
-   "susto",
-   "sentado",
-   "explica"
+  "que_es": "Biblioteca del motor de acción de Tin & Tan. Cada elemento que se hace para un video se guarda aquí con su ficha para poder reutilizarlo. Se añade una entrada cada vez que se crea algo; no se borra: si algo deja de servir se marca \"retirado\".",
+  "actualizado": "2026-11-27",
+  "paletas": [
+    {
+      "id": "a_papel_con_fondo_frio",
+      "archivo": "paletas/a_papel_con_fondo_frio.json",
+      "temas": [
+        "día",
+        "cotidiano",
+        "datos"
+      ],
+      "usada_en": [
+        "prueba 2026-11-26"
+      ]
+    },
+    {
+      "id": "b_noche_de_tinta",
+      "archivo": "paletas/b_noche_de_tinta.json",
+      "temas": [
+        "noche",
+        "misterio",
+        "tecnología",
+        "espacio"
+      ],
+      "usada_en": []
+    },
+    {
+      "id": "c_alto_voltaje",
+      "archivo": "paletas/c_alto_voltaje.json",
+      "temas": [
+        "deporte",
+        "competencia",
+        "velocidad",
+        "estreno"
+      ],
+      "usada_en": [
+        "TIN-EN-S-004"
+      ]
+    }
   ],
-  "retiradas": [
-   "corre1",
-   "corre2 (las sustituye el ciclo «corre» ligado a la distancia)"
-  ]
- },
- "efectos": {
-  "archivo": "escena.html",
-  "lista": [
-   {
-    "id": "humo",
-    "tipo": "partícula"
-   },
-   {
-    "id": "polvo",
-    "tipo": "partícula"
-   },
-   {
-    "id": "fuego",
-    "tipo": "partícula"
-   },
-   {
-    "id": "chispa",
-    "tipo": "partícula"
-   },
-   {
-    "id": "tinta",
-    "tipo": "partícula"
-   },
-   {
-    "id": "onda",
-    "tipo": "onda de choque o de implosión en el suelo"
-   },
-   {
-    "id": "estrella",
-    "tipo": "estrella de impacto"
-   },
-   {
-    "id": "grieta",
-    "tipo": "daño que se queda"
-   },
-   {
-    "id": "quemadura",
-    "tipo": "daño que se queda"
-   },
-   {
-    "id": "garabatoResto",
-    "tipo": "daño que se queda"
-   },
-   {
-    "id": "romperCajones",
-    "tipo": "rotura con trozos"
-   },
-   {
-    "id": "temblor",
-    "tipo": "cámara"
-   },
-   {
-    "id": "velocidad(S)",
-    "tipo": "cámara lenta y acelerones"
-   },
-   {
-    "id": "humoC, polvoC, chispaC, gota",
-    "tipo": "partículas planas con contorno (sin degradado)"
-   },
-   {
-    "id": "mancha, trazoSuelo",
-    "tipo": "daño que se queda"
-   },
-   {
-    "id": "llama plana (2 tonos, 3 dibujos de 2 f)",
-    "tipo": "fuego por fases; en el guion"
-   },
-   {
-    "id": "bola de fuego plana",
-    "tipo": "explosión; en el guion"
-   },
-   {
-    "id": "calcos",
-    "tipo": "3 copias en los lanzamientos; en el guion"
-   },
-   {
-    "id": "armas de tinta: baston, mazo, espada",
-    "tipo": "Personaje.arma()"
-   },
-   {
-    "id": "asterisco y salida por la grieta",
-    "tipo": "marca final; en el guion"
-   },
-   {
-    "id": "cuadros de impacto, invertidos con máscara, radiales, claro",
-    "tipo": "postproducción 2D (codigo/componer.py del proyecto)"
-   },
-   {
-    "id": "contacto(nombre, quién, parte, dónde)",
-    "tipo": "estrella y gotas en el punto real del golpe de ese fotograma, con su medida; en el guion"
-   },
-   {
-    "id": "respira",
-    "tipo": "vaivén leve de Tin y Tan para que ninguna pausa sea un congelado; en el motor"
-   },
-   {
-    "id": "tarjeta del dato y estallido claro plano",
-    "tipo": "postproducción 2D (codigo/componer.py del proyecto, v3)"
-   }
-  ]
- },
- "sonidos": {
-  "archivo": "sonidos/sonido.py (prueba) y proyectos/2026-11-26_tin_y_tan_what_is_gta_6/codigo/audio.py (short 4)",
-  "hechos_con": "numpy, 0 créditos",
-  "lista": [
-   "silbido_caida",
-   "choque_suelo",
-   "silbido",
-   "golpe",
-   "choque_madera",
-   "fuego_enciende",
-   "explosion",
-   "choque_pilar",
-   "golpe_doble",
-   "implosion",
-   "estallido_final",
-   "trazo_de_tinta",
-   "cajas_caen",
-   "roce_suelo",
-   "postes_caen",
-   "bloqueo_tinta",
-   "vidrio_grieta",
-   "chispas",
-   "baston_golpe",
-   "mazo_golpe",
-   "campanilla_caja",
-   "subida",
-   "cola_explosion",
-   "asterisco_tic",
-   "escurre",
-   "gotas",
-   "atrapa",
-   "percusión a 120 pulsos"
+  "entornos": [
+    {
+      "id": "ciudad_de_carton",
+      "archivo": "entornos/ciudad_de_carton.js",
+      "temas": [
+        "ciudad",
+        "calle",
+        "genérico"
+      ],
+      "rompibles": [
+        "cajones",
+        "pilar"
+      ],
+      "usada_en": [
+        "prueba 2026-11-26"
+      ],
+      "nota": "Hecho para la prueba técnica, sin tema. Es de relleno: cada video tendrá el suyo."
+    },
+    {
+      "id": "tienda_de_videojuegos",
+      "archivo": "entornos/tienda_de_videojuegos.js",
+      "temas": [
+        "juegos",
+        "compras",
+        "estrenos"
+      ],
+      "rompibles": [
+        "estante_izquierdo",
+        "estante_derecho",
+        "caja_de_juego",
+        "pila_de_cajas",
+        "cartel_de_pie",
+        "postes_de_fila",
+        "mostrador",
+        "caja_registradora",
+        "televisor_de_exhibicion",
+        "banderines"
+      ],
+      "no_se_toca": [
+        "escaparate",
+        "mando_mostaza"
+      ],
+      "usada_en": [
+        "TIN-EN-S-004"
+      ],
+      "nota": "Hecho para TIN-EN-S-004. 9 u de ancho; mostrador claro a la derecha; banderines cortos sobre el televisor. Las versiones rotas las mueve el guion (caja_registradora_rota incluida). v2 (2026-11-26): techo a 8,2 u con viga y tres lámparas en tinta (piezas.lamparas)."
+    }
   ],
-  "nota": "Nadie los ha oído todavía."
- },
- "guiones": [
-  {
-   "id": "prueba_2026-11-26",
-   "archivo": "guiones/prueba_2026-11-26.js",
-   "nota": "Prueba técnica; ya vive fuera de escena.html"
-  },
-  {
-   "id": "vista_tienda",
-   "archivo": "guiones/vista_tienda.js",
-   "nota": "No es un video: enseña el entorno con las cámaras del short 4 (usa las cámaras de la v2; no se actualizó a la v3)"
-  },
-  {
-   "id": "tin_en_s_004",
-   "archivo": "guiones/tin_en_s_004.js",
-   "tiempos": "guiones/tin_en_s_004.tiempos.json (lo escribe codigo/tiempos.py del proyecto)",
-   "nota": "Primer video del formato de acción. Versión 3: coreografía por carriles, carreras por distancia, contactos medidos, cámara alta y en diagonal que acompaña. 7 golpes."
-  }
- ],
- "locomocion": {
-  "archivo": "escena.html (CICLOS, poseCiclo) y la pista `modo` de cada personaje en el guion",
-  "que_es": "Ciclos de carrera y de caminata cuya fase sale de lo que el personaje recorre a lo ancho del cuadro (no del reloj): si no avanza, no corre en el sitio, y el pie de apoyo no resbala. En el guion: `trayecto(quién, f0, f1, puntos, modo)` da la posición a velocidad pareja con arranque y frenada y marca el modo.",
-  "lista": [
-   {
-    "id": "corre",
-    "largo_u": 1.9,
-    "claves": "vuelo, contacto, empuje (y su espejo)"
-   },
-   {
-    "id": "corre_arma",
-    "nota": "como corre, con el brazo del arma en guardia"
-   },
-   {
-    "id": "camina",
-    "largo_u": 0.9
-   }
+  "personajes": [
+    {
+      "id": "tin",
+      "fuente": "herramientas/palitos.py",
+      "en_el_motor": "cabeza exportada por personajes/exportar_sprites.py; cuerpo por esqueleto en escena.html"
+    },
+    {
+      "id": "tan",
+      "fuente": "herramientas/palitos.py",
+      "en_el_motor": "igual que Tin; la bufanda va con la cabeza"
+    },
+    {
+      "id": "duda",
+      "fuente": "canales/nostalgia-tin-y-tan/pruebas/2026-11-26_pelea_con_la_duda/duda_v2.py",
+      "en_el_motor": "madeja como cabeza, cuerpo por esqueleto"
+    }
   ],
-  "usada_en": [
-   "TIN-EN-S-004 v3"
-  ]
- },
- "camara": {
-  "archivo": "guiones/tin_en_s_004.js (PLANOS, camaraDe)",
-  "que_es": "Cámara por planos dentro del mundo: punto del suelo al que mira, distancia, altura, diagonal y en qué y del cuadro cae ese punto; puede acompañar una carrera o un vuelo con claves; entre planos corta. Los dibujos giran hacia la cámara (`encara`).",
-  "usada_en": [
-   "TIN-EN-S-004 v3"
-  ]
- },
- "controles": [
-  {
-   "id": "control_encuadre",
-   "archivo": "proyectos/2026-11-26_tin_y_tan_what_is_gta_6/codigo/control_encuadre.py",
-   "que_es": "Lee `pistas.json` y `eventos.json` de la grabación y comprueba sin mirar imágenes: nadie cortado por un borde, cabezas y pies en la zona de acción, cabezas encimadas, cada carrera (u, u/s, px, fotogramas por paso, pie de apoyo), saltos de posición, cada contacto sobre el rival y en su carril, quietud y claves cruzadas.",
-   "usada_en": [
-    "TIN-EN-S-004 v3"
-   ]
+  "poses": {
+    "archivo": "escena.html (objeto P) y las nuevas en guiones/tin_en_s_004.js",
+    "lista": [
+      "quieto",
+      "guardia",
+      "carga",
+      "golpe",
+      "embiste",
+      "patada",
+      "recogido",
+      "recibe",
+      "vuela",
+      "caido",
+      "agachado",
+      "poder",
+      "pisoton",
+      "festeja",
+      "corre1",
+      "corre2",
+      "resbala",
+      "gancho",
+      "bloqueo",
+      "dibuja",
+      "pregunta",
+      "invita",
+      "mazoArriba",
+      "mazoAbajo",
+      "miraEspada",
+      "atrapa",
+      "esquiva",
+      "susto",
+      "sentado",
+      "explica"
+    ],
+    "retiradas": [
+      "corre1",
+      "corre2 (las sustituye el ciclo «corre» ligado a la distancia)"
+    ]
+  },
+  "efectos": {
+    "archivo": "escena.html",
+    "lista": [
+      {
+        "id": "humo",
+        "tipo": "partícula"
+      },
+      {
+        "id": "polvo",
+        "tipo": "partícula"
+      },
+      {
+        "id": "fuego",
+        "tipo": "partícula"
+      },
+      {
+        "id": "chispa",
+        "tipo": "partícula"
+      },
+      {
+        "id": "tinta",
+        "tipo": "partícula"
+      },
+      {
+        "id": "onda",
+        "tipo": "onda de choque o de implosión en el suelo"
+      },
+      {
+        "id": "estrella",
+        "tipo": "estrella de impacto"
+      },
+      {
+        "id": "grieta",
+        "tipo": "daño que se queda"
+      },
+      {
+        "id": "quemadura",
+        "tipo": "daño que se queda"
+      },
+      {
+        "id": "garabatoResto",
+        "tipo": "daño que se queda"
+      },
+      {
+        "id": "romperCajones",
+        "tipo": "rotura con trozos"
+      },
+      {
+        "id": "temblor",
+        "tipo": "cámara"
+      },
+      {
+        "id": "velocidad(S)",
+        "tipo": "cámara lenta y acelerones"
+      },
+      {
+        "id": "humoC, polvoC, chispaC, gota",
+        "tipo": "partículas planas con contorno (sin degradado)"
+      },
+      {
+        "id": "mancha, trazoSuelo",
+        "tipo": "daño que se queda"
+      },
+      {
+        "id": "llama plana (2 tonos, 3 dibujos de 2 f)",
+        "tipo": "fuego por fases; en el guion"
+      },
+      {
+        "id": "bola de fuego plana",
+        "tipo": "explosión; en el guion"
+      },
+      {
+        "id": "calcos",
+        "tipo": "3 copias en los lanzamientos; en el guion"
+      },
+      {
+        "id": "armas de tinta: baston, mazo, espada",
+        "tipo": "Personaje.arma()"
+      },
+      {
+        "id": "asterisco y salida por la grieta",
+        "tipo": "marca final; en el guion"
+      },
+      {
+        "id": "cuadros de impacto, invertidos con máscara, radiales, claro",
+        "tipo": "postproducción 2D (codigo/componer.py del proyecto)"
+      },
+      {
+        "id": "contacto(nombre, quién, parte, dónde)",
+        "tipo": "estrella y gotas en el punto real del golpe de ese fotograma, con su medida; en el guion"
+      },
+      {
+        "id": "respira",
+        "tipo": "vaivén leve de Tin y Tan para que ninguna pausa sea un congelado; en el motor"
+      },
+      {
+        "id": "tarjeta del dato y estallido claro plano",
+        "tipo": "postproducción 2D (codigo/componer.py del proyecto, v3)"
+      }
+    ]
+  },
+  "sonidos": {
+    "archivo": "sonidos/sonido.py (prueba) y proyectos/2026-11-26_tin_y_tan_what_is_gta_6/codigo/audio.py (short 4)",
+    "hechos_con": "numpy, 0 créditos",
+    "lista": [
+      "silbido_caida",
+      "choque_suelo",
+      "silbido",
+      "golpe",
+      "choque_madera",
+      "fuego_enciende",
+      "explosion",
+      "choque_pilar",
+      "golpe_doble",
+      "implosion",
+      "estallido_final",
+      "trazo_de_tinta",
+      "cajas_caen",
+      "roce_suelo",
+      "postes_caen",
+      "bloqueo_tinta",
+      "vidrio_grieta",
+      "chispas",
+      "baston_golpe",
+      "mazo_golpe",
+      "campanilla_caja",
+      "subida",
+      "cola_explosion",
+      "asterisco_tic",
+      "escurre",
+      "gotas",
+      "atrapa",
+      "percusión a 120 pulsos"
+    ],
+    "nota": "Nadie los ha oído todavía."
+  },
+  "guiones": [
+    {
+      "id": "prueba_2026-11-26",
+      "archivo": "guiones/prueba_2026-11-26.js",
+      "nota": "Prueba técnica; ya vive fuera de escena.html"
+    },
+    {
+      "id": "vista_tienda",
+      "archivo": "guiones/vista_tienda.js",
+      "nota": "No es un video: enseña el entorno con las cámaras del short 4 (usa las cámaras de la v2; no se actualizó a la v3)"
+    },
+    {
+      "id": "tin_en_s_004",
+      "archivo": "guiones/tin_en_s_004.js",
+      "tiempos": "guiones/tin_en_s_004.tiempos.json (lo escribe codigo/tiempos.py del proyecto)",
+      "nota": "Primer video del formato de acción. Versión 3: coreografía por carriles, carreras por distancia, contactos medidos, cámara alta y en diagonal que acompaña. 7 golpes."
+    }
+  ],
+  "locomocion": {
+    "archivo": "escena.html (CICLOS, poseCiclo) y la pista `modo` de cada personaje en el guion",
+    "que_es": "Ciclos de carrera y de caminata cuya fase sale de lo que el personaje recorre a lo ancho del cuadro (no del reloj): si no avanza, no corre en el sitio, y el pie de apoyo no resbala. En el guion: `trayecto(quién, f0, f1, puntos, modo)` da la posición a velocidad pareja con arranque y frenada y marca el modo.",
+    "lista": [
+      {
+        "id": "corre",
+        "largo_u": 1.9,
+        "claves": "vuelo, contacto, empuje (y su espejo)"
+      },
+      {
+        "id": "corre_arma",
+        "nota": "como corre, con el brazo del arma en guardia"
+      },
+      {
+        "id": "camina",
+        "largo_u": 0.9
+      }
+    ],
+    "usada_en": [
+      "TIN-EN-S-004 v3"
+    ]
+  },
+  "camara": {
+    "archivo": "guiones/tin_en_s_004.js (PLANOS, camaraDe)",
+    "que_es": "Cámara por planos dentro del mundo: punto del suelo al que mira, distancia, altura, diagonal y en qué y del cuadro cae ese punto; puede acompañar una carrera o un vuelo con claves; entre planos corta. Los dibujos giran hacia la cámara (`encara`).",
+    "usada_en": [
+      "TIN-EN-S-004 v3"
+    ]
+  },
+  "controles": [
+    {
+      "id": "control_encuadre",
+      "archivo": "proyectos/2026-11-26_tin_y_tan_what_is_gta_6/codigo/control_encuadre.py",
+      "que_es": "Lee `pistas.json` y `eventos.json` de la grabación y comprueba sin mirar imágenes: nadie cortado por un borde, cabezas y pies en la zona de acción, cabezas encimadas, cada carrera (u, u/s, px, fotogramas por paso, pie de apoyo), saltos de posición, cada contacto sobre el rival y en su carril, quietud y claves cruzadas.",
+      "usada_en": [
+        "TIN-EN-S-004 v3"
+      ]
+    }
+  ],
+  "jugadas": {
+    "archivo": "jugadas.js",
+    "que_es": "Banco de jugadas: poses probadas, gestos con su gramática de tiempo (`trayecto`, `ataque`), intercambios entre dos personajes con las distancias medidas y una comprobación previa sin render (`comprobar`). Una jugada solo entra cuando pasó la puerta en un video real.",
+    "lista": [
+      {
+        "id": "golpeDeFrente",
+        "de": "TIN-EN-S-004 v5, golpe 1",
+        "medidas": "retroceso 0,09 u; contacto a 0,6 u; queda a 1,1 u"
+      },
+      {
+        "id": "patadaPorDetras",
+        "de": "TIN-EN-S-004 v5, golpe 2",
+        "medidas": "la carga del rival acaba a ≥ 0,6 u; recibe con `pateado`"
+      },
+      {
+        "id": "ganchoAlQueSalta",
+        "de": "TIN-EN-S-004 v5, golpe 3",
+        "medidas": "espera erguido a 0,9 u; el rival baja con `acecha`"
+      },
+      {
+        "id": "golpeDoble",
+        "de": "TIN-EN-S-004 v5, remate",
+        "medidas": "1,4 a 1,5 u de cada uno al rival; el del lado de la cámara, erguido"
+      },
+      {
+        "id": "despedido",
+        "de": "TIN-EN-S-004 v5",
+        "medidas": "vuelo por puntos; se da la vuelta al salir"
+      },
+      {
+        "id": "levantada",
+        "de": "TIN-EN-S-004 v5",
+        "medidas": "caído → sentado → de pie → guardia, sin `agachado`"
+      },
+      {
+        "id": "saltito",
+        "de": "TIN-EN-S-004 v5",
+        "medidas": "ajuste de 6 f con bote de 0,12 u"
+      },
+      {
+        "id": "puntoDeBloqueo",
+        "de": "TIN-EN-S-004 v5, bloqueo",
+        "medidas": "punto medio entre las manos, 0,3 u arriba"
+      },
+      {
+        "id": "reposoVivo",
+        "de": "TIN-EN-S-004 v4",
+        "medidas": "apagado de K − 14 a K + 8"
+      }
+    ],
+    "probado": "2026-11-27: reproduce las claves del golpe 1 del short 4 (69→1,73; 75→1,82; 82→0,70; 93→1,20) y avisa de un tercero en el carril, cuerpos encimados y carrera corta. Sin usar todavía en un video.",
+    "usada_en": []
   }
- ]
 }
