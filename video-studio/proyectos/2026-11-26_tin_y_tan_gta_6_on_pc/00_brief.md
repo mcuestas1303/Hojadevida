@@ -139,9 +139,10 @@ Pendiente: releer la política de YouTube sobre promoción de piratería antes d
   últimos 4 segundos; P-007, una pieza de este entorno queda rota con nombre propio (propuesta: `torre_de_pc_rota`);
   P-006, **el caído**: entre el 40 % y el 70 % del video, después del segundo 10 y lejos de cualquier cifra dicha, cae por
   una rasgadura un objeto ajeno al tema, rebota y queda quieto; Tan lo mira 6 cuadros sin cambiar la cara.
-- **Ajuste del repertorio que aplica (regla de adaptación):** (1) el tema del short 6 no está cerrado, así que P-006 no
-  puede ser de grado ancla: **se convierte en comodín**, y el objeto es **una linterna** (el paraguas queda reservado para
-  P-008); el short 6 la usa en un golpe sea cual sea su tema. (2) Si el short 4 no está público el 2026-12-04, los tres
+- **El objeto que cae (P-006) es de grado ancla: un telescopio pequeño de cartón.** El dueño cerró el 2026-11-27 el tema
+  del short 6, «How big is the universe?», así que el caído es un adelanto de verdad: en el short 6 el telescopio está
+  desde el primer cuadro y se usa en un golpe.
+- **Ajuste del repertorio que aplica (regla de adaptación):** si el short 4 no está público el 2026-12-04, los tres
   pagos se mantienen tal cual: son piezas del decorado que no piden haber visto nada, y cuando el short 4 salga pasan a
   ser adelantos en vez de recuerdos; el supervisor de continuidad lo anota en el registro como línea de tiempo rota.
 - **Control «se entiende solo»:** quien no haya visto ningún otro video tiene que entender pregunta, respuestas y remate.
@@ -157,7 +158,7 @@ Pendiente: releer la política de YouTube sobre promoción de piratería antes d
 | `pestana(marcas)` con marcas de asterisco y de punto | **No existe** (prioridad 2 del plan de tanda) | Producción |
 | Entrada del rival por la grieta (inversa de la salida del short 4) y salida goteando por el borde | **No existe** | Director de animación y producción |
 | `objeto_caido` con rasgadura, rebote, sombra y sonido; mirada de Tan de 6 cuadros | **No existe** (prioridad 2) | Producción |
-| Comodín «linterna» y su versión rota | **No existe** | Producción |
+| Telescopio de cartón y su versión rota (lo reutiliza el short 6) | **No existe** | Producción |
 | Fuego, humo, impactos, armas de tinta, dato en pantalla, subtítulos y firma en el motor | Existen desde el short 4, con las correcciones de su versión 4 | — |
 | Sonidos nuevos: `papel_rasga`, `caida_objeto` | **No existen** | Diseñador de sonido |
 | Voz | Por generar, una vez | Producción, con el sí del dueño |
@@ -181,7 +182,7 @@ nadie queda clavado, y el rival no tapa la cara de Tin ni de Tan.
 | Ángulo: lo oficial y los dos precedentes; nada del port ni de la filtración | Es lo único que se puede afirmar con fuente; lo otro no pasa F7, F8 ni F10 |
 | No se proyecta una fecha para GTA 6 | Dos precedentes no hacen una regla; sería prometer lo que nadie anunció |
 | Hoja Noche y entorno exterior | El plan de tanda pide un entorno distinto del short 4; el tema es de tecnología |
-| P-006 pasa a comodín (linterna) | El tema del short 6 no está cerrado |
+| P-006 es de grado ancla: un telescopio | El dueño cerró el tema del short 6 («How big is the universe?») el 2026-11-27 |
 | La marca final es un asterisco | La pregunta queda sin respuesta oficial |
 
 ## Lo que necesita el sí del dueño
