@@ -757,3 +757,15 @@ del dueño. No publicado.
   `estadisticas/datos/` de la carpeta del Generador en el PC; con ellas se puntúan D y E. Trends «Explorar» no abre por
   código desde esta sesión (error 429): una lectura nueva se le pide al dueño o a Keter. El dueño revisa primero el método.
 - **Pendiente de esta sesión:** regenerar `mapa/MAPA.md` con el nodo de la puntuación.
+
+## 2026-11-27 — Motor generador de contenido → Generador de prompts: temas de diciembre ya puntuados
+
+- **Entrega:** `comercial/2026-11-27_puntuacion_de_nichos_tanda_01.md` (15 temas, puntuación en Short y en video largo, «hoy»
+  y «techo», por qué cada número, y el autocompletado de YouTube en EE. UU., Filipinas e India leído el 2026-11-26, 23:34).
+- **Lo principal:** se proponen «Is GTA 6 coming to PC?» y «How big is the universe?»; «PS5 Pro vs PS5», «iPhone 18 vs
+  iPhone 17» y «What is Marvel Rivals?» pasan a «se propone» si se comprueban sus hechos; «What is the Xbox Ally?» no se
+  escribe así en ningún país y hay que reformularla; Spotify Wrapped y la RAM no se entregan.
+- **No cambia lo aprobado por el dueño.** «What is GTA 6?» queda en 65 (reserva) bajo el método, pero ya está en producción.
+- **Se pide:** comprobación de hechos de cinco temas; Trends «Explorar» de Game Awards, del estreno doble y de las preguntas
+  nuevas de Xbox Ally (dueño o quien tenga el navegador); Trends en Filipinas e India.
+- La sección 7b del motor se ajustó con lo que enseñó esta pasada. Sigue pendiente regenerar `mapa/MAPA.md`.

@@ -232,11 +232,17 @@ intermedio ni con la cifra de un tema parecido.
 
 | Criterio | 3 | 2 | 1 | 0 |
 |---|---|---|---|---|
-| **D · Demanda medida** | El tema corto lidera su tablero de Trends (YouTube, país principal) o está dentro del doble del líder, y la pregunta sale en las 25 consultas y en autocompletado | Tema estable a 12 meses y la pregunta sale en autocompletado | Solo autocompletado, o solo fecha conocida por revalidar | La pregunta marca cero o no hay lectura |
+| **D · Demanda medida** | El tema corto lidera su tablero de Trends (YouTube, país principal) o está dentro del doble del líder, y la pregunta sale en las 25 consultas y en autocompletado | Tema líder, o estable a 12 meses con al menos una décima parte del líder hoy, y la pregunta sale en autocompletado | Tema por debajo de eso, solo autocompletado, o solo fecha conocida por revalidar | La pregunta marca cero o no hay lectura |
 | **M · Potencial de pago documentado** | Nicho ALTO | Nicho MEDIO | Nicho BAJO | Nicho sin clasificar por el experto en monetización |
 | **H · Hechos comprobables** | Fuente primaria abierta y dato que no cambia | Dos fuentes independientes | El dato cambia antes de publicar, o la fuente solo abre en la PC | (lo saca la puerta P3) |
 | **P · Políticas** | Los 13 renglones en «pasa» | Una condición | Dos o más condiciones, o riesgo de marca o de persona real | (lo saca la puerta P2) |
-| **E · Encaje con el público medido** | Los países y la edad medidos en Studio coinciden con quien busca el tema (el autocompletado en esos países lo confirma) y sirve para el tramo de 13 a 17 | Coincide con el país principal | Es una hipótesis: no hay dato del canal para ese público | Choca con el público medido |
+| **E · Encaje con el público medido** | El autocompletado lo confirma en los tres países principales del canal, sirve para el tramo de 13 a 17 y el nicho ya se midió en el canal con buen «se quedó a mirar» | El autocompletado lo confirma en los tres países, pero el canal no ha medido ese nicho | Solo el país principal, o es una hipótesis sin dato del canal | Choca con el público medido |
+
+Regla de H: si nadie ha comprobado los hechos, H vale 0 «sin comprobar» y la puntuación se da dos veces: «hoy» y «techo»
+(lo que alcanzaría con los hechos comprobados). La puerta P3 queda «pendiente», no «no pasa».
+
+Primera aplicación, con las tres correcciones a la escala que salieron de ella (corte de tamaño en D, nicho medido en E,
+par «hoy» y «techo» en H): `comercial/2026-11-27_puntuacion_de_nichos_tanda_01.md`.
 
 Reglas de M: el nivel sale de la tabla del experto, con su fila citada y su marca de solidez copiada tal cual
 («provisional», «evidencia débil»). Las estimaciones de terceros no suben un nivel. Si el nivel es provisional, se
