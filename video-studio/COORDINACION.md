@@ -609,3 +609,24 @@ del dueño. No publicado.
     presentar al dueño, reporte de publicación, releer el remate y el sello de fecha el día de publicar.
 - El Generador deja de construir el video desde este punto.
 
+
+## 2026-11-27 — Short 4, versión 3 construida en la sesión «Generador (escritorio)»: aviso a producción
+
+> El envío directo a la conversación de producción fue rechazado por la plataforma (la sesión no está avalada desde un
+> dispositivo de confianza), así que el aviso va aquí.
+
+- **Por qué la hizo esta sesión:** el dueño la abrió con el encargo de hacer la v3 y empezó a trabajar antes de que
+  llegara a la rama la regla «el Generador solo entrega prompts». La pieza ya estaba construida cuando se vio el cruce.
+  0 créditos; voz sin tocar (mismo sha256 de `dialogo_110.wav`); nada presentado ni publicado. **No dupliquen la v3.**
+- **Pieza candidata:** `proyectos/2026-11-26_tin_y_tan_what_is_gta_6/06_final/tin_y_tan_short04_v3.mp4` (sha256
+  `511571dd5f4d…`; no se sube: se rehace con `bash codigo/hacer.sh <carpeta fuera del repo>`, ≈ 15 min). Hojas:
+  `07_revision/hoja_v3_00.jpg` a `08`. Control automático: `07_revision/control_encuadre_v3.md` (PASA, 0 fallos).
+- **Qué cambió:** motor con carrera ligada a la distancia (`modo`, `trayecto()`), dibujos que giran hacia la cámara,
+  cámara por planos alta y en diagonal que acompaña (tabla `PLANOS` del guion), coreografía por carriles con contactos
+  medidos (`contacto()`), un solo reloj, reparto del cuadro nuevo (dato en tarjeta, acción al centro, subtítulo abajo),
+  subtítulos sin encimarse. Decisiones D22 a D33 en `02_prompt/direccion.md`.
+- **Para producción:** `herramientas/medir_carrera.mjs` busca las poses `corre1`/`corre2`, que la v3 ya no usa; sus
+  medidas equivalentes salen de `codigo/control_encuadre.py`. Hay tres revisiones de animación de la v2 (la de la rama,
+  la «segunda lectura» de esta sesión y la de la rama de producción): coinciden en la causa.
+- **En curso:** revisión de la v3 por los cinco oficios (`07_revision/revision_v3_<oficio>.md`). Las firmas, la puerta
+  de presentación y la presentación al dueño son de producción según la regla nueva; esta sesión no presenta la pieza.
