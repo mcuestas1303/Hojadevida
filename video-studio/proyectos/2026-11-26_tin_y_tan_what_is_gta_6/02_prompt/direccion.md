@@ -577,6 +577,30 @@ del video queda sin respuesta comprobada: GTA 7 no está anunciado.**
 | D20 | **Sin subtítulo en los dos planos de portada** | Como en el short 3: es el plano del bucle | No |
 | D21 | **En pantalla la cuenta lleva sus dos fechas** («GTA 5: Sep 17, 2013 · GTA 6: Nov 19, 2026») | El número se puede comprobar a simple vista: es lo que el canal vende | No |
 
+### Decisiones de la versión 3 (2026-11-26 y 27)
+
+> El dueño vio la v2 y dijo: «La animación pierde un poco de sentido cuando quieren interactuar en el espacio 3D, por
+> ejemplo intentan correr y casi no se mueven […] hablamos de producir algo de alta calidad». Las tres revisiones de la
+> v2 (`07_revision/revision_v2_animacion.md`, `…_fotografia.md`, `…_continuidad.md`) dan la causa y la corrección. Estas
+> decisiones **sustituyen** lo que dicen las secciones 3 (regla de cámara, reparto del cuadro, tabla de planos) y 4.5
+> (reloj de la escena) donde se contradigan; el guion, la voz, los datos, los tiempos de contacto (K), la paleta, las
+> reglas 2.1 y la firma no cambian.
+
+| # | Decisión | Porqué |
+|---|---|---|
+| D22 | **Reparto del cuadro nuevo:** dato arriba (y 380–700) sobre una tarjeta de papel opaca con borde de tinta; **acción en el centro (y 705–1376)**; **subtítulo abajo (y 1376–1552)**, opaco | En la v2 la acción iba en y 1105–1700: una ranura de 600 px, la mitad bajo los botones y el rótulo de Shorts, y el subtítulo cortaba el cuadro por el medio y tapaba el televisor (fotografía B1, B3, M10). Con el subtítulo abajo la cámara puede subir: es lo que deja ver la profundidad. La tarjeta da ≈ 15:1 al dato sobre cualquier fondo (B5, A5) |
+| D23 | **Cámara alta, con diagonal y lente más abierta (46°), dentro del mundo; acompaña carreras y vuelos.** Sin temblor; entre planos se corta. Los dibujos giran hacia la cámara | Con la cámara frontal a la altura de la cabeza y lente larga, dos personajes separados 1,6 u en profundidad se veían a 25 px: «detrás» y «al lado» eran lo mismo (fotografía, sección 1). La regla «no persigue» era contra el temblor y se mantiene para eso |
+| D24 | **Carriles:** cada golpe ocurre con quien pega y el rival en el mismo z; el tercero queda fuera de la línea. El rival nunca pasa por encima de Tin o de Tan: lo esquivan (Tin lo salta cuando resbala; esquiva el brazo hacia atrás) o lo bloquean | Continuidad C1–C4, C8 y la regla dura 2.1.3; animación AN6 |
+| D25 | **Las carreras recorren distancia de verdad** (≥ 1,8 u a 4,6–6,2 u/s) y el ciclo de piernas sale de esa distancia. Los ajustes cortos son saltitos de guardia. Se quitaron las cinco «carreras» que no avanzaban y la carrera a cámara lenta antes del remate; en su lugar Tin y Tan cargan de verdad desde el mostrador hasta el pasillo del televisor | La queja del dueño; animación AN1–AN5; continuidad C5–C7 |
+| D26 | **Un solo cruce de Tan por delante de Tin**, corriendo y en plano general, después del golpe 4 (va a recibir el mazo). Queda como único cambio de lado: desde ahí Tin va a la izquierda y Tan a la derecha hasta el corte de la firma | Fotografía B2 y eje: el cruce ya no funde las cabezas (1,2 u de separación en profundidad) |
+| D27 | **La estrella y las gotas salen del punto real del golpe** (puño, pie o arma contra el cuerpo del rival en ese fotograma), con su medida | Continuidad C1 (estrellas sobre la cara de quien pega); animación AN6 |
+| D28 | **Un solo reloj:** personajes y física van al mismo paso; la cámara lenta de los vuelos está en la curva del propio vuelo (sale rápido, se cuelga arriba, cae acelerando) | Animación AN10 y «un solo reloj»; sustituye la tabla 4.5 |
+| D29 | **El anillo de la explosión es de tinta, no amarillo**, y el claro es un estallido plano `#FFF4B8` con borde de tinta | 3b: «el acento no va en el fuego ni el humo» (fotografía M6) y color fuera de paleta (M5) |
+| D30 | **El humo de la explosión sube por la pared**; las llamas que quedan no están detrás del rival | Continuidad C13 y la regla «ningún rojo sobre el rival» |
+| D31 | **Los subtítulos no se enciman** (cada uno sale cuando entra el siguiente) y **el borrón del cierre no toca el texto** | Continuidad T1 y T2; fotografía M8 |
+| D32 | **Tan se acomoda fuera de cuadro** una vez (f303, durante el plano del mostrador) y **el plano de Tan invitando no muestra al rival dibujar su espada**: el corte vuelve cuando él ya saltó del mostrador | Economía de planos; se declara para que continuidad lo juzgue |
+| D33 | **Control automático de encuadre y movimiento** (`codigo/control_encuadre.py`) antes de grabar | Lo pidieron fotografía y animación: los controles de la v2 medían firma, color y destellos, pero no el encuadre ni si los golpes caían |
+
 ### Sin resolver (con de quién depende)
 
 1. **Relectura del remate el día de publicar** (caduca) y lectura de la página de juegos y del Newswire de Rockstar en
@@ -584,7 +608,7 @@ del video queda sin respuesta comprobada: GTA 7 no está anunciado.**
 2. **Filtro de políticas sobre el guion final** (sobre todo F8 y F9): lo repite el comercial con esta dirección.
 3. **Ortografía sin comprobar por máquina:** falta Hunspell en la sesión (instalar pide el sí del dueño).
 4. **Empalme con daños (D6):** firma del director de animación y, si hace falta, solicitud de cambio.
-5. **Franja de subtítulos del formato de acción:** se usó la del short 3 (y 905–1085); la confirma el editor.
+5. **Franja de subtítulos del formato de acción:** en la v3 pasa a y 1376–1552 (D22); la confirma el editor.
 6. **Acento frente al amarillo de la editora, y humo frente a la cabeza de Tan:** los mide fotografía (3b).
 7. **Tiempos:** todos los fotogramas se recalculan con la voz real.
 8. **Sonidos:** nadie los ha oído; hace falta la escucha de una persona.

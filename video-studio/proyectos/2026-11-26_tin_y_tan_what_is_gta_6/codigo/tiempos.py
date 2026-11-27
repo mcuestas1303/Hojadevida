@@ -137,42 +137,13 @@ PORTADA = dict(cx=0.0, z=0.0, D=8.66, h=2.03)       # suelo de z = 0 en y = 1651
 
 
 def planos(L, K):
-    """Cámaras sin inclinación (verticales rectas, como una hoja): mira a (cx, h, z) desde (cx, h, z + D). El horizonte
-    queda en y = 960; con h entre 2,6 y 4,4 las cabezas caen por debajo de la franja de subtítulos y la pared lisa queda
-    arriba para los datos. Sin temblor: se corta. D1 = empuje lento. «Laterales» de la dirección: de frente y bajos."""
-    P = lambda f, n, cx, z, D, h, D1=None, tipo="", sube=0.0: dict(f0=f, nombre=n, cx=cx, z=z, D=D, h=h, D1=D1 or D, tipo=tipo, sube=sube)
-    # v2 (2026-11-26): cámaras más cerca y más bajas. Regla de encuadre: los pies del que está más cerca caen en y ≈ 1700
-    # (h ≈ 0,25 · D) y la cabeza del más alto queda bajo el panel del subtítulo (y ≈ 1035); por eso mientras el rival mide
-    # 1,5 veces la cámara no puede bajar de D ≈ 13 y, cuando se encoge, se acerca hasta D ≈ 9,5 (Tin y Tan ≈ 29 % del alto).
-    p = [P(0, "P1 portada", **PORTADA, tipo="firma"),
-         P(30, "P2 entra el rival", 0.0, -1.2, 14.0, 3.5, 13.5),
-         P(K["K1"] - 12, "P3 golpe 1", 0.3, -2.0, 10.6, 2.62),
-         P(K["K1"] + 18, "P4 impacto estante", -2.5, -6.0, 7.5, 2.8, tipo="impacto"),
-         P(K["K1"] + 20, "P5 general", -0.3, -2.0, 13.2, 3.3, 12.6),
-         P(K["K2"] - 12, "P6 golpe 2", 0.3, -0.8, 10.6, 2.62),
-         P(K["K2"] + 26, "P7 general", 0.95, -0.5, 12.8, 2.95, 11.4),
-         P(K["K3"] - 12, "P8 gancho", 2.2, -3.2, 12.0, 2.96),
-         P(K["K3"] + 22, "P9 impacto mostrador", 3.35, -3.4, 5.6, 2.1, tipo="impacto"),
-         P(K["K3"] + 24, "P10 general", 1.1, -2.4, 11.8, 2.85, 11.0),
-         P(K["dibuja_baston"], "P11 detalle del lápiz", 0.95, -2.6, 5.6, 2.2),
-         P(K["dibuja_baston"] + 12, "P12 general", 1.15, -2.4, 11.2, 2.78, 10.8),
-         P(L["C"], "P12b Tan invita", -0.35, -2.0, 8.3, 2.28),
-         P(K["dibuja_espada"] - 2, "P12c general", 0.6, -2.6, 10.8, 2.7, 10.4),
-         P(K["tele_punta"], "P13 impacto televisor", 0.0, -7.4, 6.5, 3.2, tipo="impacto"),
-         P(K["tele_punta"] + 2, "P14 golpe 4", 1.3, -2.6, 10.2, 2.55),
-         P(K["K5"] - 13, "P15 mazo", 0.8, -3.0, 12.6, 3.1, 12.2),
-         P(K["carrera"], "P16 remate", 0.0, -6.0, 9.8, 2.45),
-         P(K["radiales"], "P18 héroe", 0.0, -6.5, 13.5, 0.7, sube=3.1),
-         P(K["radiales"] + 31, "P19 respiro", 0.1, -5.2, 12.0, 2.9, 11.0),
-         P(K["K6"] - 12, "P20 golpe 6", 0.1, -5.1, 9.4, 2.35),
-         P(K["K6"] + 20, "P21 final", 0.3, -5.0, 9.8, 2.45, 9.4),
-         P(K["cierre"], "P22 portada", **PORTADA, tipo="firma")]
-    for a, b in zip(p, p[1:] + [dict(f0=K["N"])]):
-        a["f1"] = b["f0"]
+    """Versión 3: las cámaras de la pelea ya no salen de aquí; viven en el guion del motor
+    (`motor_de_accion/guiones/tin_en_s_004.js`, tabla PLANOS), porque ahora acompañan carreras y vuelos y dependen de la
+    coreografía. Aquí queda solo el plano de portada de la firma y los fotogramas de los efectos de composición."""
     post = {"impacto": [K["K1"] + 18, K["K1"] + 19, K["K3"] + 22, K["K3"] + 23, K["tele_punta"], K["tele_punta"] + 1],
             "invertidos": [K["invertidos"], K["invertidos"] + 1], "radiales": list(range(K["radiales"], K["radiales"] + 5)),
             "claro": list(range(K["claro"], K["claro"] + 4))}
-    return p, post
+    return [dict(f0=0, nombre="P1 portada", **PORTADA, tipo="firma"), dict(f0=K["cierre"], nombre="P22 portada", **PORTADA, tipo="firma")], post
 
 
 def srt(filas, campo):
@@ -206,7 +177,8 @@ def main():
     (AUDIO / "linea_de_tiempo.json").write_text(txt, encoding="utf-8")
     (MOTOR / "tin_en_s_004.tiempos.json").write_text(txt, encoding="utf-8")
     # subtítulos: sin subtítulo en los planos de portada (f0–f29 y cierre)
-    sub = [dict(f, f0=max(f["f0"], 30), f1=min(f["f1"] + 4, K["cierre"])) for f in filas]
+    # cada subtítulo sale cuando entra el siguiente (antes se pisaban 67 ms: dos textos encimados 2 o 3 fotogramas)
+    sub = [dict(f, f0=max(f["f0"], 30), f1=min(f["f1"] + 4, K["cierre"], filas[i + 1]["f0"] if i + 1 < len(filas) else N)) for i, f in enumerate(filas)]
     (PROY / "02_prompt" / "subtitulos_es.srt").write_text(srt(sub, "es"), encoding="utf-8")
     (PROY / "02_prompt" / "subtitulos.srt").write_text(srt(sub, "texto"), encoding="utf-8")
     sus = next(f for f in filas if f["id"] == "C")

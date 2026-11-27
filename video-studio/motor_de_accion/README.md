@@ -66,9 +66,22 @@ python3 ../proyectos/2026-11-26_tin_y_tan_what_is_gta_6/codigo/componer.py <carp
 ```
 
 - **Reloj por fotogramas** (`porFotogramas`): el guion escribe en fotogramas; `reloj(f)` solo frena la física.
-- **Cámara sin inclinación** (`planos` del JSON de tiempos): mira recto desde (cx, h, z + D); el horizonte queda en y = 960,
-  las cabezas bajo la franja de subtítulos y la pared lisa arriba para el dato. Se corta, no tiembla.
+- **Cámara sin inclinación** (v1 y v2; sustituida en la v3, ver abajo): miraba recto desde (cx, h, z + D), con el
+  horizonte en y = 960. Se corta, no tiembla.
 - **Los planos de firma se graban sin personajes**: Tin, Tan y el lápiz bumerán los pone la composición con `palitos.py`
   y `efectos.py` (la firma del canal, sin cambios). Datos, subtítulos y cuadros de impacto también son 2D.
+- **Versión 3 (2026-11-26/27), por la observación del dueño («intentan correr y casi no se mueven») y las revisiones de
+  animación, fotografía y continuidad:**
+  - **Locomoción por distancia** (`CICLOS`, `poseCiclo`, pista `modo`): la fase del ciclo de carrera sale de lo que el
+    personaje recorre a lo ancho del cuadro; el guion usa `trayecto()` para moverlo a velocidad pareja. Ya no existe
+    «correr en el sitio».
+  - **Los dibujos miran a la cámara** (`encara`): la cámara puede subir y ponerse en diagonal sin verlos de canto.
+  - **Cámara por planos en el guion** (`PLANOS`): alta, mirando hacia abajo, con diagonal; acompaña carreras y vuelos.
+    Las cámaras ya no están en `codigo/tiempos.py`.
+  - **Los hechos van después de colocar a los personajes**: `contacto()` pone la estrella en el punto real del golpe.
+  - **Pistas** (`pistas.json`, lo escribe `render.js`): dónde cae cada personaje en el cuadro y en el mundo, fotograma a
+    fotograma. `SECO=1 node render.js …` las saca en ≈ 5 s sin grabar ninguna imagen; con ellas trabaja
+    `codigo/control_encuadre.py` del proyecto.
+  - Todo el video se hace con `bash codigo/hacer.sh <carpeta de trabajo>` desde el proyecto.
 - Límites vistos: los personajes son planos de perfil (no hay espaldas ni vistas laterales reales); los vuelos no llevan
   borrón de movimiento; las poses son de esqueleto simple. Detalle en `07_revision/controles.md` del proyecto.

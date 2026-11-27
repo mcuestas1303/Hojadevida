@@ -1,6 +1,6 @@
 {
  "que_es": "Biblioteca del motor de acción de Tin & Tan. Cada elemento que se hace para un video se guarda aquí con su ficha para poder reutilizarlo. Se añade una entrada cada vez que se crea algo; no se borra: si algo deja de servir se marca \"retirado\".",
- "actualizado": "2026-11-26",
+ "actualizado": "2026-11-27",
  "paletas": [
   {
    "id": "a_papel_con_fondo_frio",
@@ -132,7 +132,15 @@
    "mazoArriba",
    "mazoAbajo",
    "miraEspada",
-   "atrapa"
+   "atrapa",
+   "esquiva",
+   "susto",
+   "sentado",
+   "explica"
+  ],
+  "retiradas": [
+   "corre1",
+   "corre2 (las sustituye el ciclo «corre» ligado a la distancia)"
   ]
  },
  "efectos": {
@@ -221,6 +229,18 @@
    {
     "id": "cuadros de impacto, invertidos con máscara, radiales, claro",
     "tipo": "postproducción 2D (codigo/componer.py del proyecto)"
+   },
+   {
+    "id": "contacto(nombre, quién, parte, dónde)",
+    "tipo": "estrella y gotas en el punto real del golpe de ese fotograma, con su medida; en el guion"
+   },
+   {
+    "id": "respira",
+    "tipo": "vaivén leve de Tin y Tan para que ninguna pausa sea un congelado; en el motor"
+   },
+   {
+    "id": "tarjeta del dato y estallido claro plano",
+    "tipo": "postproducción 2D (codigo/componer.py del proyecto, v3)"
    }
   ]
  },
@@ -268,13 +288,52 @@
   {
    "id": "vista_tienda",
    "archivo": "guiones/vista_tienda.js",
-   "nota": "No es un video: enseña el entorno con las cámaras del short 4"
+   "nota": "No es un video: enseña el entorno con las cámaras del short 4 (usa las cámaras de la v2; no se actualizó a la v3)"
   },
   {
    "id": "tin_en_s_004",
    "archivo": "guiones/tin_en_s_004.js",
    "tiempos": "guiones/tin_en_s_004.tiempos.json (lo escribe codigo/tiempos.py del proyecto)",
-   "nota": "Primer video del formato de acción. Reloj por fotogramas, cámara por planos, 7 golpes."
+   "nota": "Primer video del formato de acción. Versión 3: coreografía por carriles, carreras por distancia, contactos medidos, cámara alta y en diagonal que acompaña. 7 golpes."
+  }
+ ],
+ "locomocion": {
+  "archivo": "escena.html (CICLOS, poseCiclo) y la pista `modo` de cada personaje en el guion",
+  "que_es": "Ciclos de carrera y de caminata cuya fase sale de lo que el personaje recorre a lo ancho del cuadro (no del reloj): si no avanza, no corre en el sitio, y el pie de apoyo no resbala. En el guion: `trayecto(quién, f0, f1, puntos, modo)` da la posición a velocidad pareja con arranque y frenada y marca el modo.",
+  "lista": [
+   {
+    "id": "corre",
+    "largo_u": 1.9,
+    "claves": "vuelo, contacto, empuje (y su espejo)"
+   },
+   {
+    "id": "corre_arma",
+    "nota": "como corre, con el brazo del arma en guardia"
+   },
+   {
+    "id": "camina",
+    "largo_u": 0.9
+   }
+  ],
+  "usada_en": [
+   "TIN-EN-S-004 v3"
+  ]
+ },
+ "camara": {
+  "archivo": "guiones/tin_en_s_004.js (PLANOS, camaraDe)",
+  "que_es": "Cámara por planos dentro del mundo: punto del suelo al que mira, distancia, altura, diagonal y en qué y del cuadro cae ese punto; puede acompañar una carrera o un vuelo con claves; entre planos corta. Los dibujos giran hacia la cámara (`encara`).",
+  "usada_en": [
+   "TIN-EN-S-004 v3"
+  ]
+ },
+ "controles": [
+  {
+   "id": "control_encuadre",
+   "archivo": "proyectos/2026-11-26_tin_y_tan_what_is_gta_6/codigo/control_encuadre.py",
+   "que_es": "Lee `pistas.json` y `eventos.json` de la grabación y comprueba sin mirar imágenes: nadie cortado por un borde, cabezas y pies en la zona de acción, cabezas encimadas, cada carrera (u, u/s, px, fotogramas por paso, pie de apoyo), saltos de posición, cada contacto sobre el rival y en su carril, quietud y claves cruzadas.",
+   "usada_en": [
+    "TIN-EN-S-004 v3"
+   ]
   }
  ]
 }

@@ -1,5 +1,6 @@
 // Graba la escena fotograma a fotograma con el Chromium de la sesión.
 // Uso: node render.js <carpeta> [max_cuadros] [paleta] [entorno] [cada] [guion]   (cada = guarda 1 de cada N fotogramas; para revisar)
+// Variables: SOLO=0,82 graba solo esos fotogramas; DESDE=300 empieza a grabar ahí; SECO=1 no graba ninguno (solo eventos y pistas: ≈ 1 min).
 const { chromium } = require('playwright');
 const http = require('http'), fs = require('fs'), path = require('path');
 const desde = parseInt(process.env.DESDE || '0', 10), solo = (process.env.SOLO || '').split(',').filter(Boolean).map(Number);
@@ -21,7 +22,7 @@ const srv = http.createServer((q, r) => {
   await p.goto(url); await p.waitForFunction('window.LISTO === true', null, { timeout: 60000 });
   const t0 = Date.now(); let n = 0, velocidades = [];
   for (; n < maximo; n++) {
-    const guarda = solo.length ? solo.includes(n) : (n >= desde && n % cada === 0);
+    const guarda = process.env.SECO === '1' ? false : solo.length ? solo.includes(n) : (n >= desde && n % cada === 0);
     const r = await p.evaluate((g) => window.cuadro(g), guarda);
     velocidades.push(+r.velocidad.toFixed(2));
     if (guarda) {
@@ -33,6 +34,8 @@ const srv = http.createServer((q, r) => {
   }
   const eventos = await p.evaluate(() => window.EVENTOS), medidas = await p.evaluate(() => window.MEDIDAS || {});
   fs.writeFileSync(path.join(salida, 'eventos.json'), JSON.stringify({ fps: 30, cuadros: n, eventos, medidas, velocidades }, null, 1));
+  const pistas = await p.evaluate(() => window.PISTAS || []);
+  if (pistas.length) fs.writeFileSync(path.join(salida, 'pistas.json'), JSON.stringify(pistas));
   console.log(`${n} fotogramas en ${((Date.now() - t0) / 1000).toFixed(0)} s`);
   await b.close(); srv.close();
 })();
