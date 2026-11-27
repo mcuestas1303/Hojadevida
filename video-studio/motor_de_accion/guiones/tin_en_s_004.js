@@ -23,6 +23,8 @@ export async function guion(m) {
     gancho: { t: 20, aF: [122, 148], aB: [40, 120], lF: [30, 0], lB: [-36, -14], c: -14 },
     bloqueo: { t: -8, aF: [84, 120], aB: [44, 132], lF: [28, 4], lB: [-30, -10], c: 0, armaAng: 140 },
     dibuja: { t: 6, aF: [58, 112], aB: [84, 96], lF: [14, 4], lB: [-14, -4], c: 8, armaAng: 150 },
+    guardiaBaja: { t: 10, aF: [30, 105], aB: [12, 95], lF: [28, 6], lB: [-26, -8], c: 0 },
+    acecha: { t: 22, aF: [-30, -70], aB: [-50, -30], lF: [70, -40], lB: [-50, -100], c: 0 },
     cargaGancho: { t: -6, aF: [18, 62], aB: [50, 140], lF: [42, -30], lB: [-30, -62], c: -10 },
     pateado: { t: 16, aF: [70, 40], aB: [-50, -20], lF: [40, 30], lB: [-30, -40], c: 14 },
     senala: { t: 6, aF: [82, 96], aB: [-22, -8], lF: [10, 4], lB: [-10, -4], c: 6 },
@@ -33,7 +35,7 @@ export async function guion(m) {
     miraEspada: { t: -4, aF: [84, 166], aB: [20, 60], lF: [14, 4], lB: [-14, -4], c: 22, armaAng: 178 },
     atrapa: { t: 0, aF: [96, 150], aB: [-12, -6], lF: [10, 4], lB: [-10, -4], c: -6 },
   });
-  const Gd = A(P.guardia, 150), Cg = A(P.carga, 244), Gp = A(P.golpe, 98), Gr = A(P.golpe, 78);
+  const Gd = A(P.guardia, 150), Cg = A(P.carga, 244), Gp = A(P.golpe, 98), Gr = A(P.golpe, 78), GrTin = { ...P.golpe, t: 14, c: -2, armaAng: 84 };   // v5 (V2): en el remate Tin pega erguido; su cabeza no entra en la madeja
 
   // ------------------------------------------------------------ pistas de cada personaje (versión 3: coreografía rehecha)
   // Reglas de puesta en escena de la v3 (revisiones de animación, fotografía y continuidad de la v2):
@@ -66,13 +68,13 @@ export async function guion(m) {
   G.tan.visible.push([0, false], [30, true], [CIERRE, false]);
   G.tan.mira.push([0, 1], [CARGA[1], -1]);
   G.tan.cara.push([0, 'sorpresa'], [K2 - 13, 'concentrado'], [K2, 'eureka'], [K2 + 26, 'curiosidad'], [L.C.f0, 'risa'], [L.C.f0 + 10, 'curiosidad'], [L.C.f0 + 20, 'risa'], [L.C.f1 + 2, 'curiosidad'], [KB, 'sorpresa'], [K4 + 3, 'concentrado'], [K5, 'eureka'], [K5 + 20, 'concentrado'], [KR, 'eureka'], [K.invertidos, 'sorpresa'], [K.radiales + 44, 'curiosidad'], [RECOMPONE + 4, 'sorpresa'], [RECOMPONE + 16, 'concentrado'], [L.B.f0, 'curiosidad'], [K6, 'sorpresa'], [K.asterisco, 'curiosidad'], [K.lapiz_a_tan + 6, 'risa']);
-  pos('tan', [30, [-1.7, 0, ZN]], [54, [-1.7, 0, ZN]], [60, [-1.8, 0.14, ZN], 'out'], [66, [-1.9, 0, ZN], 'in'], [K2 - 22, [-1.9, 0, ZN]], [K2 - 18, [-1.7, 0.12, ZN], 'out'], [K2 - 14, [-1.5, 0, ZN], 'in'], [K2 - 1, [-1.5, 0, ZN]], [K2, [-1.32, 0, ZN], 'salto'], [K2 + 11, [-1.4, 0, ZN]],
+  pos('tan', [30, [-1.7, 0, ZN]], [54, [-1.7, 0, ZN]], [60, [-1.8, 0.14, ZN], 'out'], [66, [-1.9, 0, ZN], 'in'], [K2 - 22, [-1.9, 0, ZN]], [K2 - 18, [-1.85, 0.12, ZN], 'out'], [K2 - 14, [-1.8, 0, ZN], 'in'], [K2 - 1, [-1.8, 0, ZN]], [K2, [-1.25, 0, ZN], 'salto'], [K2 + 11, [-1.4, 0, ZN]], [K2 + 14, [-1.4, 0, ZN]], [K2 + 15, [-2.6, 0, ZN], 'salto'], [K3 - 13, [-2.6, 0, ZN]],
     [K3 - 12, [-1.4, 0, ZN]], [K3 - 11, [-1.3, 0, -1.5], 'salto'],                                  // fuera de cuadro (plano del mostrador): se acomoda
     [K5 - 7, [0.84, 0, -2.5], 'out'], [K5 - 1, [0.84, 0, -2.5]], [K5, [1.02, 0, -2.5], 'salto'], [K5 + 14, [0.9, 0, -2.5]],
-    [KR - 7, [1.57, 0, ZF], 'out'], [KR - 1, [1.57, 0, ZF]], [KR, [1.42, 0, ZF], 'salto'], [KR + 12, [1.5, 0, ZF]],
-    [K.radiales - 1, [1.5, 0, ZF]], [K.radiales + 12, [1.55, 0, -4.7], 'out'], [N, [1.55, 0, -4.7]]);
+    [KR - 7, [1.62, 0, ZF], 'out'], [KR - 1, [1.62, 0, ZF]], [KR, [1.5, 0, ZF], 'salto'], [KR + 12, [1.58, 0, ZF]],
+    [K.radiales - 1, [1.58, 0, ZF]], [K.radiales + 12, [1.55, 0, -4.7], 'out'], [N, [1.55, 0, -4.7]]);
   trayecto('tan', CORRE_TAN[0], CORRE_TAN[1], [[-1.3, 0, -1.5], [-0.3, 0, -1.2], [0.45, 0, -1.4], [0.9, 0, -2.5]]);
-  trayecto('tan', CARGA[0], CARGA[1], [[0.9, 0, -2.5], [1.45, 0, ZF]], 'corre_arma');
+  trayecto('tan', CARGA[0], CARGA[1], [[0.9, 0, -2.5], [1.48, 0, ZF]], 'corre_arma');
   pose('tan', [30, P.guardia], [52, P.guardia], [58, P.susto, 'out'], [70, P.guardia], [K2 - 30, P.guardia]);
   ataque('tan', K2, P.guardia, P.carga, P.patada, P.guardia);
   pose('tan', [K2 + 14, P.festeja, 'back'], [K2 + 22, P.festeja], [K2 + 30, P.guardia], [K3 + 26, P.guardia], [K3 + 34, P.festeja, 'back'], [K3 + 44, P.festeja], [K3 + 52, P.guardia],
@@ -86,26 +88,26 @@ export async function guion(m) {
     [K.lapiz_a_tan + 1, P.quieto], [K.lapiz_a_tan + 5, P.atrapa, 'out'], [N, P.atrapa]);
 
   // --- Tin
-  G.tin.visible.push([0, false], [30, true], [CIERRE, false]);
+  G.tin.visible.push([0, false], [30, true], [K1 + 18, false], [K1 + 20, true], [CIERRE, false]);
   G.tin.mira.push([0, -1], [K2 + 10, 1], [CARGA[1], 1]);
   G.tin.cara.push([0, 'curiosidad'], [K1 - 13, 'concentrado'], [K1 + 2, 'eureka'], [K1 + 40, 'curiosidad'], [K2 + 2, 'sorpresa'], [K2 + 20, 'curiosidad'], [K.rival_ataca - 6, 'sorpresa'], [K3 - 13, 'concentrado'], [K3 + 2, 'eureka'], [K3 + 60, 'curiosidad'], [K.dibuja_baston, 'concentrado'], [L.T5.f1, 'curiosidad'],
     [KB - 6, 'concentrado'], [K4 + 2, 'eureka'], [K4 + 30, 'concentrado'], [K5 + 2, 'curiosidad'], [K5 + 6, 'sorpresa'], [K5 + 20, 'concentrado'], [KR, 'eureka'], [K.invertidos, 'sorpresa'], [L.T9.f0 + 4, 'eureka'], [RECOMPONE + 4, 'sorpresa'], [RECOMPONE + 14, 'eureka'], [L.T9.f1, 'curiosidad'], [K6 - 13, 'concentrado'], [K6 + 2, 'curiosidad']);
-  pos('tin', [30, [1.75, 0, ZN]], [52, [1.75, 0, ZN]], [55, [1.72, 0.16, ZN], 'out'], [58, [1.68, 0, ZN], 'in'], [60, [1.68, 0, ZN]], [63, [1.64, 0.14, ZN], 'out'], [66, [1.6, 0, ZN], 'in'], [K1 - 13, [1.6, 0, ZN]], [K1 - 7, [1.7, 0, ZN], 'out'], [K1 - 1, [1.7, 0, ZN]], [K1, [0.65, 0, ZN], 'salto'], [K1 + 11, [1.2, 0, ZN]],   // v4 (N6): Tin se queda a 1,5 u del rival tras el pisotón
-    [K2 + 4, [1.2, 0, ZN]], [K2 + 9, [0.95, 0.72, ZN], 'out'], [K2 + 14, [0.7, 0, ZN], 'in'],                                 // salta por encima del rival que resbala
-    [K.cartel - 9, [0.7, 0, ZN]], [K.cartel - 5, [0.65, 0.1, ZN], 'out'], [K.cartel - 1, [0.6, 0, ZN], 'in'], [K.rival_ataca - 3, [0.6, 0, ZN]], [K.rival_ataca, [0.3, 0, ZN], 'out'], [K.rival_ataca + 12, [0.3, 0, ZN]], [K.salto_mostrador + 1, [0.3, 0, ZN]],
+  pos('tin', [30, [1.8, 0, ZN]], [52, [1.8, 0, ZN]], [55, [1.79, 0.16, ZN], 'out'], [58, [1.77, 0, ZN], 'in'], [60, [1.77, 0, ZN]], [63, [1.75, 0.14, ZN], 'out'], [66, [1.73, 0, ZN], 'in'], [K1 - 13, [1.73, 0, ZN]], [K1 - 7, [1.82, 0, ZN], 'out'], [K1 - 1, [1.82, 0, ZN]], [K1, [0.7, 0, ZN], 'salto'], [K1 + 11, [1.2, 0, ZN]], [K1 + 19, [1.2, 0, ZN]], [K1 + 20, [2.6, 0, ZN], 'salto'], [K2 - 14, [2.6, 0, ZN]], [K2 - 13, [1.4, 0, ZN], 'salto'],   // v4 (N6): Tin se queda a 1,5 u del rival tras el pisotón
+    [K2 + 4, [1.4, 0, ZN]], [K2 + 9, [0.95, 0.72, ZN], 'out'], [K2 + 14, [0.5, 0, ZN], 'in'],                                 // salta por encima del rival que resbala
+    [K.cartel - 9, [0.5, 0, ZN]], [K.cartel - 5, [0.46, 0.1, ZN], 'out'], [K.cartel - 1, [0.42, 0, ZN], 'in'], [K.rival_ataca - 3, [0.42, 0, ZN]], [K.rival_ataca, [0.22, 0, ZN], 'out'], [K.rival_ataca + 12, [0.25, 0, ZN]], [K.salto_mostrador + 1, [0.25, 0, ZN]],
     [K3 - 7, [1.14, 0, -2.8], 'out'], [K3 - 1, [1.14, 0, -2.8]], [K3, [1.38, 0.18, -2.8], 'salto'], [K3 + 6, [1.3, 0, -2.8], 'in'],   // v4 (N1): Tin para ANTES del mostrador (borde en x = 1,8) y el rival se le tira desde arriba
     // tres saltitos hacia atrás, de guardia, para tomar distancia (antes: «corría» 50 f sin avanzar)
     [K3 + 62, [1.3, 0, -2.8]], [K3 + 66, [1.02, 0.1, -2.78], 'out'], [K3 + 70, [0.78, 0, -2.75], 'in'], [K3 + 73, [0.78, 0, -2.75]], [K3 + 77, [0.54, 0.1, -2.72], 'out'], [K3 + 81, [0.3, 0, ZM], 'in'],   // v4 (M1): dos pasos bajos, no tres rebotes
-    [KB - 1, [0.3, 0, ZM]], [KB, [0.22, 0, ZM], 'salto'], [K4 - 13, [0.25, 0, ZM]], [K4 - 7, [0.18, 0, ZM], 'out'], [K4 - 1, [0.18, 0, ZM]], [K4, [0.55, 0, ZM], 'salto'], [K4 + 6, [0.45, 0, ZM]], [K4 + 10, [-0.3, 0.45, -3.2], 'lin'], [K4 + 14, [-1.05, 0, -3.8], 'lin'], [K4 + 16, [-1.05, 0, -3.8]], [K4 + 19, [-1.33, 0.15, -4.15], 'out'], [K4 + 22, [-1.6, 0, -4.5], 'in'],   // v4 (N4): Tin se va al pasillo del fondo, a la izquierda de donde caerá el rival; ya no quedan alineados
-    [CARGA[0], [-1.6, 0, -4.5]], [CARGA[0] + 5, [-1.56, 0.18, -4.85], 'out'], [CARGA[0] + 10, [-1.52, 0, -5.2], 'in'], [CARGA[0] + 14, [-1.48, 0.18, -5.55], 'out'], [CARGA[1], [-1.45, 0, ZF], 'in'],
-    [KR - 7, [-1.57, 0, ZF], 'out'], [KR - 1, [-1.57, 0, ZF]], [KR, [-1.42, 0, ZF], 'salto'], [KR + 12, [-1.5, 0, ZF]],
+    [KB - 1, [0.3, 0, ZM]], [KB, [0.22, 0, ZM], 'salto'], [K4 - 13, [0.25, 0, ZM]], [K4 - 7, [0.18, 0, ZM], 'out'], [K4 - 1, [0.18, 0, ZM]], [K4, [0.55, 0, ZM], 'salto'], [K4 + 6, [0.45, 0, ZM]], [K4 + 10, [-0.3, 0.45, -3.2], 'lin'], [K4 + 14, [-1.05, 0, -3.8], 'lin'], [K4 + 16, [-1.05, 0, -3.8]], [K4 + 19, [-1.38, 0.15, -4.15], 'out'], [K4 + 22, [-1.7, 0, -4.5], 'in'], [K5 + 28, [-1.7, 0, -4.5]], [K5 + 32, [-1.78, 0.14, -4.5], 'out'], [K5 + 36, [-1.86, 0, -4.5], 'in'],   // v5 (V1): Tin se aparta ANTES de que el rival caiga   // v4 (N4): Tin se va al pasillo del fondo, a la izquierda de donde caerá el rival; ya no quedan alineados
+    [CARGA[0], [-1.86, 0, -4.5]], [CARGA[0] + 5, [-1.8, 0.34, -4.85], 'out'], [CARGA[0] + 10, [-1.75, 0, -5.2], 'in'], [CARGA[0] + 14, [-1.68, 0.34, -5.55], 'out'], [CARGA[1], [-1.6, 0, ZF], 'in'],
+    [KR - 7, [-1.6, 0, ZF], 'out'], [KR - 1, [-1.6, 0, ZF]], [KR, [-1.4, 0, ZF], 'salto'], [KR + 12, [-1.5, 0, ZF]],
     [K.radiales - 1, [-1.5, 0, ZF]], [K.radiales + 12, [-1.45, 0, AST[1]], 'out'], [K6 - 13, [-1.45, 0, AST[1]]], [K6 - 7, [-1.62, 0, AST[1]], 'out'], [K6 - 1, [-1.62, 0, AST[1]]], [K6, [-1.5, 0, AST[1]], 'salto'], [K6 + 11, [-1.45, 0, AST[1]]], [N, [-1.45, 0, AST[1]]]);
   pose('tin', [30, P.guardia], [53, P.guardia]);
   pose('tin', [54, P.agachado, 'out'], [57, P.guardia], [60, P.agachado, 'in'], [63, P.guardia], [66, P.agachado, 'in'], [68, P.guardia]);
   ataque('tin', K1, P.guardia, P.carga, P.punio, P.guardia);      // puño con el cuerpo más erguido: la cabeza de Tin queda lejos del impacto
   pose('tin', [K2 - 4, P.guardia], [K2 + 2, P.agachado, 'out'], [K2 + 4, P.agachado], [K2 + 7, P.recogido, 'out'], [K2 + 11, P.recogido], [K2 + 14, P.agachado, 'in'], [K2 + 17, P.agachado], [K2 + 24, P.guardia],
     [K.rival_ataca - 5, P.guardia], [K.rival_ataca - 2, P.esquiva, 'out'], [K.rival_ataca + 6, P.esquiva], [K.rival_ataca + 12, P.guardia], [K.salto_mostrador + 1, P.guardia]);
-  trayecto('tin', K.salto_mostrador + 2, K.salto_mostrador + 15, [[0.3, 0, ZN], [1.2, 0, -2.8]]);
+  trayecto('tin', K.salto_mostrador + 2, K.salto_mostrador + 15, [[0.25, 0, ZN], [1.2, 0, -2.8]]);
   pose('tin', [K.salto_mostrador + 16, P.guardia]);
   ataque('tin', K3, P.guardia, P.cargaGancho, P.gancho, P.guardia, 8);
   pose('tin', [K3 + 30, P.guardia], [K3 + 38, P.festeja, 'back'], [K3 + 46, P.festeja], [K3 + 54, P.guardia], [K3 + 61, P.guardia]);
@@ -113,7 +115,7 @@ export async function guion(m) {
   pose('tin', [K.dibuja_baston - 4, P.dibuja], [K.dibuja_baston + 14, P.dibuja], [K.dibuja_baston + 20, Gd], [K.dibuja_baston + 34, P.explica], [K.dibuja_baston + 48, Gd], [KB - 10, Gd], [KB - 3, P.bloqueo, 'out'], [KB + 6, P.bloqueo], [K4 - 14, Gd]);
   ataque('tin', K4, Gd, Cg, Gp, Gd);
   pose('tin', [K.mazo - 2, Gd], [K.mazo, A(P.poder, 180)], [K.mazo + 7, A(P.poder, 180)], [K.mazo + 8, A(P.carga, 240)], [K.mazo + 10, P.golpe, 'in'], [K.mazo + 16, P.guardia], [K5 + 3, P.guardia], [K5 + 6, P.agachado, 'out'], [K5 + 13, P.agachado], [K5 + 19, P.guardia], [K5 + 22, P.dibuja], [K5 + 34, P.dibuja], [K5 + 36, Gd], [CARGA[0], Gd]);
-  ataque('tin', KR, Gd, Cg, Gr, Gd);
+  ataque('tin', KR, Gd, Cg, GrTin, Gd);
   pose('tin', [K.radiales - 1, Gd], [K.radiales, A(P.resbala, 150), 'salto'], [K.radiales + 12, A(P.agachado, 120)], [K.radiales + 26, A(P.agachado, 120)], [K.radiales + 36, A(P.susto, 150)], [K.radiales + 50, Gd], [L.T9.f0 + 36, Gd], [L.T9.f0 + 44, P.explica, 'back'], [L.T9.f1 - 8, P.explica], [L.T9.f1, Gd], [K6 - 14, Gd]);
   ataque('tin', K6, Gd, Cg, Gp, Gd);
   pose('tin', [K6 + 30, A(P.quieto, 60)], [K.armas_gotas + 10, P.quieto], [K.lapiz_a_tan - 3, P.quieto], [K.lapiz_a_tan - 1, P.carga], [K.lapiz_a_tan + 2, P.golpe, 'in'], [K.lapiz_a_tan + 8, P.quieto], [N, P.quieto]);
@@ -121,24 +123,24 @@ export async function guion(m) {
   // --- el rival (@duda): aparece con la pregunta, grande; baja un escalón de tamaño con cada dato; nunca muere
   const D = G.duda;
   D.visible.push([0, false], [30, true], [K.invertidos, false], [RECOMPONE, true], [K.asterisco + 6, false]);
-  D.mira.push([0, -1], [66, 1], [K2 + 6, -1]);   // v4 (N3, N13): se da la vuelta al salir despedido (borrón), cae con la cabeza lejos de Tin y ya no gira tendido
+  D.mira.push([0, -1], [66, 1], [K1 + 7, -1], [K1 + 50, 1], [K2 + 6, -1]);   // v4 (N3, N13): se da la vuelta al salir despedido (borrón), cae con la cabeza lejos de Tin y ya no gira tendido
   D.cara.push([0, 'duda']);
   D.escala.push([30, ESC.e125], [45, ESC.e125], [66, ESC.e15, 'back'], [K1 + 26, ESC.e15], [K1 + 42, ESC.e14], [K2 + 46, ESC.e14], [K2 + 66, ESC.e125], [K3 + 30, ESC.e125], [K3 + 50, ESC.e11], [K4 + 14, ESC.e11], [K4 + 24, ESC.e10],
     [K5, ESC.e10], [K5 + 14, ESC.e09], [KR + 20, ESC.e09], [RECOMPONE, ESC.e08], [K6 + 1, ESC.e08], [K.implosion_fin, 0.1, 'in'], [N, 0.1]);
   const CARGA_RIVAL = [K2 - 23, K2 - 1];
-  pos('duda', [30, [0.1, 0, ZN]], [K1 + 1, [0.1, 0, ZN]], [K1 + 2, [-0.2, 0.15, ZN - 0.1], 'salto'], [K1 + 6, [-0.9, 1.75, -2.6], 'out'], [K1 + 17, [-2.1, 1.5, -5.9], 'out'], [K1 + 19, [-2.12, 1.3, -6.0]], [K1 + 26, [-0.95, 0, -5.15], 'in'],
-    [K2 + 1, [-0.75, 0, ZN]], [K2 + 2, [-0.5, 0, ZN + 0.05], 'salto'], [K2 + 6, [0.75, 0, -0.8], 'out'], [K2 + 17, [2.4, 0, -0.4], 'out'],   // v4 (N2, N13): la carga acaba más lejos de Tin y el resbalón lo deja más allá de sus piernas
+  pos('duda', [30, [0.1, 0, ZN]], [K1 + 1, [0.1, 0, ZN]], [K1 + 2, [-0.2, 0.15, ZN - 0.1], 'salto'], [K1 + 6, [-0.9, 1.75, -2.6], 'out'], [K1 + 17, [-2.1, 1.5, -5.9], 'out'], [K1 + 19, [-2.12, 1.3, -6.0]], [K1 + 26, [-0.8, 0, -5.25], 'in'],
+    [K2 + 1, [-0.6, 0, ZN]], [K2 + 2, [-0.38, 0, ZN + 0.05], 'salto'], [K2 + 6, [0.75, 0, -0.8], 'out'], [K2 + 17, [2.4, 0, -0.4], 'out'],   // v4 (N2, N13): la carga acaba más lejos de Tin y el resbalón lo deja más allá de sus piernas
     [K.cartel - 6, [2.4, 0, -0.4]], [K.cartel - 2, [2.38, 0.2, -0.45], 'out'], [K.cartel + 2, [2.35, 0, -0.5], 'in'], [K.rival_ataca - 1, [2.35, 0, -0.5]], [K.rival_ataca, [2.15, 0, -0.5], 'salto'], [K.rival_ataca + 8, [2.3, 0, -0.5]],
-    [K.salto_mostrador, [2.3, 0, -0.5]], [K.salto_mostrador + 7, [2.4, 1.6, -1.9], 'out'], [K.salto_mostrador + 14, [2.7, 1.0, -3.2], 'in'], [K3 - 10, [2.7, 1.0, -3.2]], [K3 - 5, [2.4, 1.3, -3.0], 'out'], [K3 - 1, [2.02, 0.95, -2.85], 'in'], [K3 + 1, [2.02, 0.95, -2.85]], [K3 + 2, [2.7, 1.6, -2.95], 'salto'], [K3 + 12, [2.75, 2.4, -3.3], 'out'],
+    [K.salto_mostrador, [2.3, 0, -0.5]], [K.salto_mostrador + 7, [2.8, 1.75, -1.9], 'out'], [K.salto_mostrador + 14, [3.05, 1.0, -3.2], 'in'], [K3 - 10, [3.05, 1.0, -3.2]], [K3 - 5, [2.6, 1.4, -3.0], 'out'], [K3 - 1, [2.02, 0.95, -2.85], 'in'], [K3 + 1, [2.02, 0.95, -2.85]], [K3 + 2, [2.7, 1.6, -2.95], 'salto'], [K3 + 12, [2.75, 2.4, -3.3], 'out'],   // v5 (V3): más a la derecha; ni la pierna ni el puño pasan sobre la gorra de Tin
     [K3 + 22, [3.1, 1.0, -3.35], 'in'], [L.C.f0 + 17, [3.1, 1.0, -3.35]], [L.C.f0 + 23, [2.5, 2.0, -3.0], 'out'], [L.C.f0 + 30, [1.75, 0, ZM], 'in'],
     [KB - 13, [1.75, 0, ZM]], [KB - 7, [1.95, 0, ZM], 'out'], [KB - 1, [1.95, 0, ZM]], [KB, [1.7, 0, ZM], 'salto'], [KB + 8, [1.85, 0, ZM]], [K4 - 6, [1.95, 0, ZM]], [K4 + 1, [1.95, 0, ZM]],
     [K4 + 2, [2.1, 0.15, ZM], 'salto'], [K4 + 5, [2.35, 1.3, -3.9], 'out'], [K4 + 12, [2.5, 1.7, -5.7], 'out'], [K4 + 14, [2.45, 1.6, -5.5]], [K4 + 19, [2.75, 2.5, -3.9], 'out'], [K4 + 24, [2.9, 0, -2.5], 'in'],
-    [K5 + 16, [2.9, 0, -2.5]], [K5 + 26, [1.9, 1.7, -4.9], 'out'], [K5 + 36, [0, 0, ZF], 'in'], [KR + 1, [0, 0, ZF]], [KR + 2, [0, 0.2, ZF - 0.1], 'salto'], [KR + 6, [0, 1.3, -6.4], 'out'], [KR + 20, [0, 2.2, -6.95], 'out'],
+    [K5 + 16, [2.9, 0, -2.5]], [K5 + 20, [3.15, 1.0, -3.3], 'out'], [K5 + 26, [2.6, 1.8, -4.9], 'out'], [K5 + 36, [0.06, 0, ZF], 'in'], [KR + 1, [0.06, 0, ZF]], [KR + 2, [0.1, 0.2, ZF - 0.1], 'salto'], [KR + 6, [0.12, 1.3, -6.4], 'out'], [KR + 20, [0, 2.2, -6.95], 'out'],   // v5 (V1, V2, V6)
     [RECOMPONE, [AST[0], 0, AST[1]], 'salto'], [K6 + 2, [AST[0], 0, AST[1]]], [K.implosion_fin, [AST[0], 0.35, AST[1]]], [K.implosion_fin + 6, [AST[0], 0, AST[1]], 'in'], [N, [AST[0], 0, AST[1]]]);
-  pose('duda', [30, P.quieto], [46, P.quieto], [54, P.poder, 'back'], [57, P.poder], [60, P.pisoton, 'in'], [66, P.guardia], [K1 - 1, P.guardia], [K1, P.recibe, 'salto'], [K1 + 3, P.vuela], [K1 + 19, P.vuela], [K1 + 26, P.caido], [K1 + 34, P.caido], [K1 + 42, P.sentado], [K1 + 50, P.agachado], [CARGA_RIVAL[0] - 1, P.guardia]);
-  trayecto('duda', CARGA_RIVAL[0], CARGA_RIVAL[1], [[-0.95, 0, -5.15], [-0.72, 0, -3.4], [-0.75, 0, ZN]]);
+  pose('duda', [30, P.quieto], [46, P.quieto], [54, P.poder, 'back'], [57, P.poder], [60, P.pisoton, 'in'], [66, P.guardiaBaja], [K1 - 1, P.guardiaBaja], [K1, P.recibe, 'salto'], [K1 + 3, P.vuela], [K1 + 19, P.vuela], [K1 + 26, P.caido], [K1 + 34, P.caido], [K1 + 42, P.sentado], [K1 + 50, P.agachado], [CARGA_RIVAL[0] - 1, P.guardia]);
+  trayecto('duda', CARGA_RIVAL[0], CARGA_RIVAL[1], [[-0.8, 0, -5.25], [-0.7, 0, -3.4], [-0.6, 0, ZN]]);
   pose('duda', [K2 - 1, P.guardia], [K2, P.pateado, 'salto'], [K2 + 2, P.pateado], [K2 + 6, P.caido, 'out'], [K2 + 44, P.caido], [K2 + 54, P.sentado], [K2 + 64, P.quieto], [K2 + 72, P.guardia]);
-  pose('duda', [K.cartel - 6, P.guardia], [K.cartel, P.carga, 'in'], [K.rival_ataca - 1, P.carga], [K.rival_ataca, P.golpe, 'salto'], [K.rival_ataca + 6, P.golpe], [K.rival_ataca + 12, P.guardia], [K.salto_mostrador - 3, P.agachado], [K.salto_mostrador + 4, P.recogido], [K.salto_mostrador + 11, P.recogido], [K.salto_mostrador + 14, P.agachado], [K3 - 11, P.agachado],
+  pose('duda', [K.cartel - 6, P.guardia], [K.cartel, P.carga, 'in'], [K.rival_ataca - 1, P.carga], [K.rival_ataca, P.golpe, 'salto'], [K.rival_ataca + 6, P.golpe], [K.rival_ataca + 12, P.guardia], [K.salto_mostrador - 3, P.agachado], [K.salto_mostrador + 4, P.recogido], [K.salto_mostrador + 8, P.recogido], [K.salto_mostrador + 12, P.acecha], [K.salto_mostrador + 14, P.acecha], [K3 - 11, P.acecha],
     [K3 - 7, P.recogido, 'out'], [K3 - 1, P.recogido], [K3, P.recibe, 'salto'], [K3 + 4, P.vuela], [K3 + 21, P.vuela], [K3 + 23, P.caido], [K3 + 44, P.caido], [K3 + 54, P.sentado], [K3 + 64, P.agachado], [K3 + 74, P.pisoton, 'back'], [K3 + 84, P.pisoton], [K3 + 92, P.recogido], [K3 + 102, P.agachado], [K.dibuja_baston + 14, P.agachado], [K.dibuja_baston + 22, P.pisoton, 'back'], [K.dibuja_baston + 32, P.recogido], [K.dibuja_baston + 42, P.agachado], [L.C.f0 + 15, P.agachado], [L.C.f0 + 21, P.recogido], [L.C.f0 + 28, P.recogido], [L.C.f0 + 30, P.agachado], [K.dibuja_espada + 6, A(P.poder, 185), 'back'], [K.dibuja_espada + 14, A(P.poder, 185)], [KB - 14, Gd]);
   ataque('duda', KB, Gd, Cg, Gp, P.miraEspada, 3);
   pose('duda', [K4 - 1, P.miraEspada], [K4, P.recibe, 'salto'], [K4 + 4, P.vuela], [K4 + 14, P.vuela], [K4 + 19, P.recogido], [K4 + 23, P.recogido], [K4 + 25, P.agachado], [K4 + 29, P.guardia], [K4 + 33, P.poder, 'back'], [K5 - 1, P.poder],
@@ -243,9 +245,9 @@ export async function guion(m) {
     [60, () => { marca('choque_suelo'); marca('cajas_caen'); onda(0.3, ZN, 0.3, 2.4, 0.4); polvo(0.4, 0.15, ZN + 0.1, 8); grieta(0.3, ZN, 0.9, 6); tirarCajas(Z.pila_de_cajas.slice().reverse(), 3, -1); }],
     // golpe 1 · Tin, puño · estante izquierdo
     [K1 - 3, () => marca('silbido')], [K1 - 1, () => marca('golpe')],
-    [K1, () => contacto('golpe 1', 'tin', 'mano', 'pecho', 0.52)],
+    [K1, () => contacto('golpe 1', 'tin', 'mano', 'pecho', 0.52, 6, 1.3)],
     [K1 + 18, () => { marca('choque_madera'); marca('cajas_caen'); polvo(-2.4, 1.2, -5.7, 14, 2.2); tirarCajas(Z.estante_izquierdo.cajas, 8, 1); }],
-    [K1 + 26, () => polvo(-0.95, 0.15, -5.15, 5, 1.0)],
+    [K1 + 26, () => polvo(-0.8, 0.15, -5.25, 5, 1.0)],
     // golpe 2 · Tan, patada · postes de fila
     [K2 - 1, () => marca('golpe_agudo')],
     [K2, () => contacto('golpe 2', 'tan', 'pie', 'cadera')],
@@ -306,7 +308,6 @@ export async function guion(m) {
       const g = Z.pared_fondo.lienzo.getContext('2d'); g.fillStyle = C.humo; g.globalAlpha = 0.5; g.beginPath(); const borron = (cx, cy, R0, n) => { g.beginPath(); for (let i = 0; i <= n; i++) { const a = i / n * 6.283, R = R0 * (0.62 + 0.38 * az()) * (1 + 0.5 * Math.max(0, -Math.sin(a))); g.lineTo(cx + Math.cos(a) * R * 1.25, cy + Math.sin(a) * R); } g.closePath(); g.fill(); }; borron(512, 560, 150, 40); g.globalAlpha = 0.55; borron(520, 590, 80, 30); Z.pared_fondo.tex.needsUpdate = true;
       for (const [i, b] of Z.banderines.lista.entries()) if (i > 3 && i < 9) for (const hijo of b.children) hijo.material = new THREE.MeshBasicMaterial({ color: hijo === b.children[0] ? C.linea : C.humo, side: THREE.DoubleSide });
       tirarCajas(Z.estante_izquierdo.cajas, 4, 1); tirarCajas(Z.estante_derecho.cajas, 4, -1); onda(0, -7.0, 0.5, 7.5, 0.55);
-      polvo(-1.4, 0.15, -5.6, 5, 0.8); polvo(1.6, 0.15, -5.3, 5, 0.8);                                   // Tin y Tan derrapan hacia atrás con la onda
     }],
     // humo de la explosión: sale del televisor reventado y SUBE por la pared (antes se quedaba a la altura de las cabezas)
     [K.enfria, () => { marca('cola_explosion'); for (let i = 0; i < 18; i++) soltar('humoC', V(ra(-1.2, 1.2), ra(1.6, 3.4), ra(-7.6, -7.1)), V(0, 1.6, 0), 1.0, 1); }],
@@ -406,9 +407,9 @@ export async function guion(m) {
     PL(K1 - 12, 'P3 golpe 1', [K1 - 12, c([0.75, ZN], 7.4, { az: 12, h: 3.0 })], [K1 + 1, c([0.7, ZN], 7.3, { az: 12, h: 3.0 })], [K1 + 17, c([-0.3, ZN], 9.6, { az: 16, h: 3.5 }), 'io']),
     PL(K1 + 18, 'P4 impacto estante', [K1 + 18, c([-2.0, -5.7], 6.6, { az: 28, h: 2.4, ty: 1.3, yP: 1050 })]),   // v4: algo más abierto; el corte al plano siguiente ya no salta más de 40 de luminosidad
     // Tan y el rival: la diagonal separa al rival (al fondo) de Tan (cerca); Tin espera fuera de cuadro
-    PL(K1 + 20, 'P5 el rival vuelve', [K1 + 20, c([-1.75, ZN], 8.8, { az: 26, h: 3.4 })], [CARGA_RIVAL[0], c([-1.7, ZN], 8.6, { az: 24, h: 3.4 })], [K2 - 13, c([-1.5, ZN], 8.2, { az: 16, h: 3.3 }), 'io']),   // v4 (N15): la cámara se corre a la derecha y el rival vuelve por el lado de Tan, no por detrás
-    PL(K2 - 12, 'P6 golpe 2', [K2 - 12, c([-0.2, ZN], 8.7, { h: 3.2, az: -4, yP: 1310 })], [K2 + 1, c([-0.2, ZN], 8.6, { h: 3.2, az: -4, yP: 1310 })], [K2 + 14, c([0.0, ZN], 8.7, { h: 3.2, az: 0, yP: 1310 }), 'io']),
-    PL(K2 + 15, 'P7 general', [K2 + 15, c([2.05, -0.5], 9.2, { h: 3.2, az: 2 })], [K.salto_mostrador + 1, c([1.8, -0.6], 8.3, { h: 3.1, az: 10 })]),
+    PL(K1 + 20, 'P5 el rival vuelve', [K1 + 20, c([-1.25, ZN], 8.8, { az: 18, h: 3.4 })], [CARGA_RIVAL[0], c([-1.25, ZN], 8.6, { az: 18, h: 3.4 })], [K2 - 13, c([-1.2, ZN], 8.2, { az: 14, h: 3.3 }), 'io']),   // v4 (N15): la cámara se corre a la derecha y el rival vuelve por el lado de Tan, no por detrás
+    PL(K2 - 12, 'P6 golpe 2', [K2 - 12, c([-0.35, ZN], 8.8, { h: 3.2, az: -4, yP: 1310 })], [K2 + 1, c([-0.35, ZN], 8.7, { h: 3.2, az: -4, yP: 1310 })], [K2 + 14, c([0.0, ZN], 8.7, { h: 3.2, az: 0, yP: 1310 }), 'io']),
+    PL(K2 + 15, 'P7 general', [K2 + 15, c([1.9, -0.5], 9.2, { h: 3.2, az: 2 })], [K.salto_mostrador + 1, c([1.6, -0.6], 8.5, { h: 3.1, az: 10 })]),
     PL(K.salto_mostrador + 2, 'P8 gancho', [K.salto_mostrador + 2, c([1.9, -1.4], 8.4, { az: 30, h: 3.2 })], [K.salto_mostrador + 15, c([1.75, -2.85], 8.0, { az: 30, h: 3.1 }), 'io'], [K3, c([1.7, -2.85], 7.6, { az: 28, h: 3.0 })], [K3 + 12, c([2.3, -2.88], 8.6, { az: 26, h: 3.3, ty: 0.3, yP: 1285 }), 'out'], [K3 + 21, c([2.5, -2.88], 8.0, { az: 24, h: 3.0, ty: 0 }), 'in']),
     PL(K3 + 22, 'P9 impacto mostrador', [K3 + 22, c([3.15, -3.3], 4.6, { az: 14, h: 2.6, ty: 1.0, yP: 1080 })]),
     PL(K3 + 24, 'P10 general', [K3 + 24, c([2.5, -2.88], 8.2, { az: 8, h: 3.2 })], [K3 + 62, c([2.5, -2.88], 8.0, { az: 6, h: 3.2 })], [K3 + 92, c([1.78, -2.8], 8.6, { az: 3, h: 3.2 }), 'io'], [K.dibuja_baston - 1, c([1.78, -2.8], 8.4, { az: 1, h: 3.2 })]),
@@ -419,11 +420,11 @@ export async function guion(m) {
     PL(K.tele_punta, 'P13 impacto televisor', [K.tele_punta, c([0.2, -7.4], 5.0, { h: 2.9, ty: 2.3, yP: 1050 })]),
     PL(K.tele_punta + 2, 'P14 golpe 4 y cruce de Tan', [K.tele_punta + 2, c([1.25, -2.0], 7.9, { az: 6, h: 3.2 })], [K4 + 2, c([1.25, -2.0], 7.8, { az: 6, h: 3.2 })], [K4 + 12, c([0.2, -1.5], 9.8, { az: -3, h: 3.5 }), 'io'], [K5 - 14, c([0.2, -1.5], 9.6, { az: -6, h: 3.5 }), 'io']),
     // un solo plano del mazazo al remate: acompaña a la caja registradora, descubre al rival ante el televisor y sigue la carrera
-    PL(K5 - 13, 'P15 mazo, carga y remate', [K5 - 13, c([2.15, -2.5], 8.0, { az: 6, h: 3.2 })], [K5 + 1, c([2.15, -2.5], 7.9, { az: 6, h: 3.2 })], [K5 + 19, c([0.1, -2.6], 10.4, { az: -18, h: 3.7 }), 'io'], [CARGA[0], c([0.2, -2.6], 10.2, { az: -22, h: 3.6 })],
+    PL(K5 - 13, 'P15 mazo, carga y remate', [K5 - 13, c([2.2, -2.5], 8.0, { az: 6, h: 3.2 })], [K5 + 1, c([2.2, -2.5], 7.9, { az: 6, h: 3.2 })], [K5 + 19, c([-0.1, -2.6], 10.6, { az: -18, h: 3.7 }), 'io'], [CARGA[0], c([-0.05, -2.6], 10.6, { az: -22, h: 3.6 })],
       [CARGA[1], c([-0.15, ZF], 9.4, { az: -14, h: 3.4 }), 'io'], [KR + 1, c([-0.1, ZF], 9.4, { az: -8, h: 3.4 })], [KR + 20, c([0, ZF], 9.6, { az: -4, h: 3.4 }), 'io']),
-    PL(K.radiales, 'P18 héroe', [K.radiales, c([0.05, -6.0], 9.4, { az: -4, h: 1.0, ty: 2.0, yP: 900, fov: 52 })], [K.radiales + 30, c([0.05, -6.0], 9.9, { az: 4, h: 1.1, ty: 2.0, yP: 900, fov: 52 })]),
+    PL(K.radiales, 'P18 héroe', [K.radiales, c([0.0, -6.0], 7.8, { az: -4, h: 1.25, ty: 2.0, yP: 900, fov: 52 })], [K.radiales + 30, c([0.0, -6.0], 8.2, { az: 4, h: 1.3, ty: 2.0, yP: 900, fov: 52 })]),
     PL(K.radiales + 31, 'P19 respiro', [K.radiales + 31, c([0.05, -4.9], 9.5, { az: -7, h: 3.5 })], [K6 - 13, c([0.05, -4.9], 9.0, { az: 7, h: 3.4 })]),
-    PL(K6 - 12, 'P20 golpe 6', [K6 - 12, c([-0.8, AST[1]], 6.9, { az: 8, h: 2.9 })], [K6 + 19, c([-0.72, AST[1]], 6.7, { az: 5, h: 2.9 })]),
+    PL(K6 - 12, 'P20 golpe 6', [K6 - 12, c([-0.8, AST[1]], 7.7, { az: 8, h: 2.9 })], [K6 + 19, c([-0.72, AST[1]], 7.5, { az: 5, h: 2.9 })]),
     PL(K6 + 20, 'P21 final', [K6 + 20, c([0.05, -4.9], 9.3, { az: -5, h: 3.5 })], [K.cierre - 1, c([0.05, -4.9], 9.0, { az: 1, h: 3.5 })]),
   ];
   const PO = T.portada;

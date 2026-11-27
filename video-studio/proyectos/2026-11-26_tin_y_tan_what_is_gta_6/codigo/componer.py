@@ -36,7 +36,7 @@ import palitos  # noqa: E402
 from efectos import Capa, LienzoCapa  # noqa: E402
 
 W, H, FPS = 1080, 1920, 30
-VERSION = "v4"
+VERSION = "v5"
 TL = json.loads((PROY / "05_audio" / "linea_de_tiempo.json").read_text(encoding="utf-8"))
 MED = {}                          # medidas del motor (dónde cae en el cuadro cada impacto y la explosión); las carga main()
 N, K = TL["N"], TL["K"]

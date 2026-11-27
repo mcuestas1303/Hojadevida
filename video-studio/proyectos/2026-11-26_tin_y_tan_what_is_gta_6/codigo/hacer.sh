@@ -2,7 +2,7 @@
 # Hace el short 4 entero, de la voz al video con sonido (0 créditos; ≈ 15 min). Uso: bash codigo/hacer.sh <carpeta de trabajo> [versión]
 # La carpeta de trabajo va FUERA del repositorio (pesa ≈ 300 MB de fotogramas). La voz no se regenera: solo se recorta y se coloca.
 set -euo pipefail
-PROY="$(cd "$(dirname "$0")/.." && pwd)"; MOTOR="$PROY/../../motor_de_accion"; T="${1:?carpeta de trabajo}"; V="${2:-v4}"
+PROY="$(cd "$(dirname "$0")/.." && pwd)"; MOTOR="$PROY/../../motor_de_accion"; T="${1:?carpeta de trabajo}"; V="${2:-v5}"
 python3 "$PROY/codigo/tiempos.py" > /dev/null                                   # voz real → fotogramas, subtítulos y tiempos del motor
 [ -d "$MOTOR/sprites/c_alto_voltaje" ] || (cd "$MOTOR" && python3 personajes/exportar_sprites.py sprites)
 (cd "$MOTOR" && node render.js "$T" 1000 c_alto_voltaje tienda_de_videojuegos 1 tin_en_s_004)     # mundo 3D y pelea: fotogramas, eventos y pistas
