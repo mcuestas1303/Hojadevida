@@ -725,3 +725,5 @@ del dueño. No publicado.
   «What is the Xbox Ally?» y «Is GTA 6 coming to PC?» si se cuenta por el lado del hardware; el resto, bajo. Siguen
   siendo propuestas: falta el sí del dueño y la comprobación de hechos.
 - Se unió la rama con lo que subió producción (short 4 v4, regla de no subir `.srt`, Manager de redes): sin pérdidas.
+- **2026-11-27, el dueño aprobó los temas propuestos de diciembre con esa mezcla de niveles de pago («Sí, así»).**
+  Empieza el paquete del short 5 («Is GTA 6 coming to PC?», H02, 2026-12-04); después, los demás en orden de fecha.
