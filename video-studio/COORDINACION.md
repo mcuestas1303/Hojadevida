@@ -832,3 +832,6 @@ del dueño. No publicado.
   IA; el short 4 sí la declara. En este paquete se siguió la práctica del short 4.
 - **Short 6:** hechos de «How big is the universe?» en `comercial/2026-11-27_hechos_short6_how_big_is_the_universe.md`
   (dos fuentes por cifra; ninguna de NASA o ESA para la del diámetro).
+- **2026-11-27: el dueño dio su sí al paquete del short 5 («Sí, entrégalo»). ENTREGADO a producción.** Desde aquí el
+  Generador no toca el video: construir, cotizar y pedir la voz, revisar, pasar la puerta de presentación y presentar son
+  del Equipo de producción audiovisual. Los cambios al prompt se le piden al Generador por esta bitácora.
