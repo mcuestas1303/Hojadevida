@@ -194,3 +194,32 @@ lista de continuidad. Costo: 0 créditos. No se generó ni se gastó nada.
 
 Firmas: director de animación (diagnóstico y ciclo), director de fotografía (cámara en las carreras) y supervisor de
 continuidad (control nuevo). Confirmado con el MP4 el 2026-11-26 (sección 4).
+
+## 5. Visto en el archivo real (2026-11-27)
+
+- **De dónde salió el archivo:** esta sesión corre en la nube, no en el PC del dueño (no hay carpeta del PC conectada).
+  Se usó la copia que sigue en el historial de la rama del Generador (commit 84d4263): 20.794.162 bytes, sha256
+  `9d6d90485f0ca50ab71bc0d2ecd52db28a6e294acc40683a87a90ff73c35e7dc`, **idéntica** a la del PC. Quedó solo en una
+  carpeta temporal fuera del repositorio, junto con las hojas y el audio.
+- **Qué se miró:** `analizar_video.py --cada 0.5` (4 hojas, 66 cuadros, 14 tomas) y una medición propia de las cabezas
+  en los 986 fotogramas: la mancha más grande del naranja de Tin (`#E07A2E`) y del verde azulado de Tan (`#2F7F7A`).
+  Es independiente de la de Keter.
+- **Confirmado, con números propios:**
+  - Cadencia de 4 f (≈ 7,5 pasos/s): la cabeza de Tin tiene picos en f200, f204, f208 y f212 (y 1314, 1316, 1320,
+    1326), y el patrón sigue igual en f375–f423.
+  - Tin corre de espaldas en f375–f423: x 860 → 504 (≈ 356 px hacia la izquierda en 48 f) en pose de carrera hacia
+    la derecha.
+  - Tan en f359–f383: x 145 → 196 en 24 f. Corre en el lugar.
+  - Deslizamiento de Tin en f632–f646: x 392 → 218 a ≈ 11–12 px por fotograma, sin pasos. En f649 salta a 267.
+  - Deslizamiento de Tin en f574–f584: x 547 → 218 (≈ 330 px en 10 f).
+  - Remate: en f681–f686 Tin va de 306 a 111 y Tan de 698 a 901 (≈ 195 y ≈ 200 px hacia atrás). Quedan quietos
+    f686–f693, y en **f694** saltan de golpe Tin 116 → 353 (≈ 237 px) y Tan 897 → 633 (≈ 264 px).
+  - La única carrera que avanza es la de Tin en f284–f296: x 497 → 749, ≈ 21 px por fotograma.
+- **Controles pasados sobre el archivo real:**
+  - Control 8 · color (`revisar_color.py`): los dominantes son idénticos a `color_v2.txt` del Generador, saturación
+    ≈ 12 %, luminosidad ≈ 82 % y saltos de luminosidad entre segundos de ±3 %. **PASA**, y sigue pendiente la decisión M6.
+  - Destellos (`postpro.py destellos`): 0 cambios fuertes y ningún segundo con más de 3. **PASA**.
+  - Control 3 · voz: **sin firmar**. Necesita que una persona lo escuche.
+- **Aviso:** la rama del Generador ya tiene la **v3 renderizada** (`06_final/tin_y_tan_short04_v3.mp4`, sha256
+  `511571dd5f4d…`), con revisiones del 2026-11-27 (`revision_v3_*.md`). Esta revisión cierra la v2. La v3 la revisa la
+  conversación del equipo en el PC.
