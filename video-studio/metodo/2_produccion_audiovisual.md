@@ -27,6 +27,13 @@ con una precisión:** lo primero es la imagen *en borrador*, no la imagen termin
 - **Excepción:** el short 4 conserva su voz ya generada y sus tiempos (no se regenera sin el sí del dueño).
 - En la tabla de abajo esto cambia el orden de trabajo a **A3 → A5 (en borrador) → A4 → A5 (final) → A6 → A8 → A7 → A9**.
 
+## 0b. Antes de escribir una pelea y antes de renderizar
+
+Se lee `metodo/registro_de_fallos.md`: los patrones de fallo que ya costaron versiones, la lista de comprobación previa
+al render (sección 3) y el banco de movimientos. Al cerrar cada versión se le añade una fila a su bitácora. Regla que sale
+de ahí: **todo defecto que un revisor encuentre a ojo y se pueda medir se convierte en prueba del control antes de
+corregirlo.**
+
 ## 1. Qué recibe y control de entrada
 
 El paquete P1 a P12. **No se empieza a producir si falta una pieza marcada «bloquea»**; se devuelve con la lista de lo que

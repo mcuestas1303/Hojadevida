@@ -152,6 +152,11 @@ lista. El dato de ventas de Take-Two no se usa en el video.
 
 ## 3. Cámara y luz — director-de-fotografia (propuesta del director creativo; la confirma fotografía)
 
+> **Excepción anotada (fotografía, v5, 2026-11-26):** el plano héroe (P18, f719–f749) cae al 73 % del video y no cerca de
+> la mitad, como pide la regla 12 del manual 11. Se deja así a propósito: el clímax es la respuesta a la pregunta y el
+> estallido es el protagonista de ese plano. En la v5 la cámara se acercó (`D` de 9,4 a 7,8) para que se vean las caras
+> de Tin y de Tan, y se quitaron las bolas de polvo de sus pies. Se mide con la retención en el segundo 24.
+
 - **Luz y paleta:** hoja Voltaje, paleta C (`motor_de_accion/paletas/c_alto_voltaje.json`). Luz de tienda, pareja y
   alta, con sombra de contacto de cada personaje (`#A7B0BC`, opacidad 0,2 a 0,3). La noche se ve solo por el
   `escaparate` (vidrio en tinta con 5 puntos claros). El fuego no ilumina con degradado: es plano.
@@ -392,6 +397,21 @@ cae en la pausa de voz f629–f696). `revisar_voz.py` no debe perder ninguna pal
   f815–f914 queda un solo pulso suave. Se baja 6 dB desde c −24, como pide la firma. Lo confirma el diseñador de sonido.
 
 ## 6. Montaje y salida — editor-de-video (propuesta del director creativo; la confirma edición)
+
+> **Vigente desde la versión 3 y confirmado en la 5 (2026-11-26, producción). Sustituye a lo que dice el resto de esta
+> sección, que describe la v2 y se conserva solo como historia.**
+>
+> - **Duración y bucle:** 986 fotogramas (32,87 s) a 30 f/s, 1080×1920. El último fotograma empalma con f0 en lápiz,
+>   poses, texto y cámara; el fondo no (excepción D6).
+> - **Reparto del cuadro:** tarjeta del dato arriba (opaca, papel con borde de tinta), acción en y 705–1376, subtítulo
+>   abajo en y 1376–1552 con panel opaco al 100 %. Nada de franja a mitad de cuadro.
+> - **Subtítulos:** 12, en español, grabados en la imagen, consecutivos (uno termina en el fotograma donde entra el
+>   siguiente). **No se suben pistas `.srt` a YouTube** (regla del dueño, 2026-11-26); quedan en `02_prompt/`.
+> - **Datos:** la tarjeta «rated M» dura hasta el fin de la línea T6; la de la respuesta empieza en y ≈ 397.
+> - **Respiro:** un solo plano fijo de f750 a f873 (P19), con reposo vivo de Tin y Tan y el rival que se levanta; viene
+>   del héroe P18 (f719–f749). Es más largo que los 80 f de la propuesta original porque lo fija la voz (línea T9).
+> - **Sello:** «as of Nov 26, 2026»; se recompone con la fecha del día de publicar (D5).
+> - **Tipografía:** Inter Display Medium 4.1 con rasgos `ss01` (en el PC, copia local en `herramientas/fuentes/`).
 
 | Tramo | f | Densidad (cortes) | Qué pasa |
 |---|---|---|---|

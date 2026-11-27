@@ -6,6 +6,7 @@ fotograma; `eventos.json`: medidas de cada contacto) y comprueba, sin mirar ning
   E1 nadie queda cortado por un borde (o está dentro, o está fuera del plano);
   E2 cabezas y pies dentro de la zona de acción (entre el dato y el subtítulo);
   E3 ninguna cabeza encima de otra;
+  E5 la madeja del rival no toca la cabeza ampliada (visera, rodete) ni el arma de Tin o de Tan (fallo si dura 3 f o más);
   E4 el cuerpo del rival (cabeza, tronco, pierna, brazo) no se dibuja sobre la cabeza de Tin ni de Tan (revisión de continuidad de la v3, N1);
   M1 cada carrera recorre distancia de verdad (u, u/s, px en pantalla, fotogramas por paso) y el pie de apoyo no resbala;
   M2 ningún salto de posición fuera de los contactos;
@@ -63,7 +64,7 @@ def main():
     if cr: fallos.append(f'G1: {len(cr)} claves cruzadas')
 
     # E1, E2, E3
-    cortado = {q: [] for q in QUIEN}; alto = {q: [] for q in QUIEN}; bajo = {q: [] for q in QUIEN}; encima = {}; sobre = {'tin': [], 'tan': []}
+    cortado = {q: [] for q in QUIEN}; alto = {q: [] for q in QUIEN}; bajo = {q: [] for q in QUIEN}; encima = {}; sobre = {'tin': [], 'tan': []}; madeja = {'tin': [], 'tan': []}; arma = {'tin': [], 'tan': []}
     KS = [K[k] for k in ('K1', 'K2', 'K3', 'KB', 'K4', 'K5', 'KR', 'K6')]
     previa = None
     for fila in P:
@@ -99,6 +100,13 @@ def main():
                 cerca = min(seg_a_punto(d['c'], d['k'], c), seg_a_punto(d['k'], d['pie'], c), seg_a_punto(d['c'], d['m'], c)) - grosor
                 cabezas = math.hypot(d['c'][0] - c[0], d['c'][1] - c[1]) - d['r']
                 if min(cerca, cabezas) < 0.85 * r and not any(k <= f <= k + 1 for k in KS): sobre[q].append(f)
+                # E5 (revisión de continuidad de la v4): la madeja del rival contra la cabeza AMPLIADA (visera, rodete: 1,35 r) y
+                # contra el arma de Tin o de Tan. Aquí el contacto no excusa: la pausa de impacto es donde más se ve.
+                hueco = cabezas - r                                                     # entre el borde de la madeja y el de la cabeza
+                en_golpe = any(k <= f <= k + 9 for k in KS)                             # mientras pega, quien pega se acerca: ahí solo falla si se tocan
+                toca = hueco < (0.15 if en_golpe else 0.75) * r or math.hypot(d['m'][0] - c[0], d['m'][1] - c[1]) < 1.2 * r
+                if vis[q].get('a') and not any(k - 14 <= f <= k + 12 for k in KS) and seg_a_punto(vis[q]['m'], vis[q]['a'], d['c']) < d['r'] * 0.9: arma[q].append(f)
+                if toca: madeja[q].append(f)
     sec('E1 · Personajes cortados por un borde lateral (centro de la cabeza a menos de %d px)' % BORDE)
     for q in QUIEN:
         if cortado[q]:
@@ -123,6 +131,15 @@ def main():
             largo = max(len(t) for t in ''.join('1' if f in set(sobre[q]) else ' ' for f in range(min(sobre[q]), max(sobre[q]) + 1)).split())      # el tramo seguido más largo
             (fallos if largo > 2 else avisos).append(f'E4: el rival sobre la cabeza de {QUIEN[q]} en {tramos(sobre[q])}')
     if not sobre['tin'] and not sobre['tan']: lineas.append('Nunca.')
+    sec('E5 · La madeja del rival contra la cabeza ampliada (visera, rodete) o el arma de Tin o de Tan')
+    for q in ('tin', 'tan'):
+        if madeja[q]:
+            lineas.append(f'- contra {QUIEN[q]}: {tramos(madeja[q])}')
+            largo = max(len(t) for t in ''.join('1' if f in set(madeja[q]) else ' ' for f in range(min(madeja[q]), max(madeja[q]) + 1)).split())
+            (fallos if largo > 2 else avisos).append(f'E5: la madeja del rival contra {QUIEN[q]} en {tramos(madeja[q])}')
+    if not madeja['tin'] and not madeja['tan']: lineas.append('Nunca.')
+    for q in ('tin', 'tan'):
+        if arma[q]: lineas.append(f'- la madeja sobre el arma de {QUIEN[q]} (aviso): {tramos(arma[q])}'); avisos.append(f'E5: la madeja sobre el arma de {QUIEN[q]} en {tramos(arma[q])}')
 
     # M1 carreras
     sec('M1 · Carreras y caminatas')
