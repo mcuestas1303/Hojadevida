@@ -1,0 +1,115 @@
+{
+ "estimada": true,
+ "nota": "Tiempos de la voz ESTIMADA (dirección 2.2). Se recalculan con la voz real; sirven solo para la animática muda.",
+ "fps": 30,
+ "N": 930,
+ "duracion_s": 31.0,
+ "portada": {
+  "cx": 0.0,
+  "z": 0.0,
+  "D": 8.66,
+  "h": 2.03
+ },
+ "K": {
+  "rival_entra": 30,
+  "K1": 88,
+  "K2": 130,
+  "K3": 212,
+  "K4": 336,
+  "regla_a_tan": 438,
+  "K5": 484,
+  "KB": 652,
+  "KR": 700,
+  "K6": 812,
+  "implosion": 814,
+  "implosion_fin": 831,
+  "cierre": 900,
+  "N": 930
+ },
+ "lineas": [
+  {
+   "id": "1",
+   "quien": "Tan",
+   "texto": "Is GTA 6 coming to PC?",
+   "f0": 14,
+   "f1": 82
+  },
+  {
+   "id": "2",
+   "quien": "Tin",
+   "texto": "Not announced.",
+   "f0": 90,
+   "f1": 117
+  },
+  {
+   "id": "3",
+   "quien": "Tin",
+   "texto": "Rockstar hasn't announced a PC version.",
+   "f0": 132,
+   "f1": 206
+  },
+  {
+   "id": "4",
+   "quien": "Tin",
+   "texto": "It's on PlayStation 5 and Xbox Series X and S.",
+   "f0": 214,
+   "f1": 295
+  },
+  {
+   "id": "5",
+   "quien": "Tan",
+   "texto": "How long last time?",
+   "f0": 302,
+   "f1": 328
+  },
+  {
+   "id": "6",
+   "quien": "Tin",
+   "texto": "GTA 5 took about a year and a half to reach PC.",
+   "f0": 338,
+   "f1": 432
+  },
+  {
+   "id": "7",
+   "quien": "Tan",
+   "texto": "Subscribe for facts, checked.",
+   "f0": 438,
+   "f1": 471
+  },
+  {
+   "id": "8",
+   "quien": "Tin",
+   "texto": "Red Dead Redemption 2: about a year.",
+   "f0": 486,
+   "f1": 553
+  },
+  {
+   "id": "9",
+   "quien": "Tin",
+   "texto": "Files that say 'GTA 6 for PC' are not from Rockstar.",
+   "f0": 600,
+   "f1": 694
+  },
+  {
+   "id": "10",
+   "quien": "Tin",
+   "texto": "Some carry malware.",
+   "f0": 728,
+   "f1": 761
+  },
+  {
+   "id": "11",
+   "quien": "Tan",
+   "texto": "Don't download them.",
+   "f0": 768,
+   "f1": 794
+  },
+  {
+   "id": "12",
+   "quien": "Tin",
+   "texto": "No official PC date. As of today.",
+   "f0": 814,
+   "f1": 888
+  }
+ ]
+}

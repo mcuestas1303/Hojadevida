@@ -199,3 +199,20 @@ nadie queda clavado, y el rival no tapa la cara de Tin ni de Tan.
 1. El paquete de prompt completo, cuando esté.
 2. Los créditos de la voz, con la cotización (lo pide producción).
 3. La prueba completa, antes de publicar; y la publicación, con su reporte.
+
+## Decisiones del equipo — producción, 2026-11-27 (animática muda)
+
+| Decisión | Por qué | Dato |
+|---|---|---|
+| Reparto del cuadro del short 4 (acción en y 705–1376, subtítulo abajo), no el de la dirección 3.0 (subtítulo en y 885–1105) | El subtítulo en mitad del cuadro es lo que el short 4 corrigió en su versión 3; el control de encuadre está hecho para este reparto | `codigo/componer.py` del short 4, comentario de la versión 3 |
+| Cámara alta y en diagonal en los planos de pelea; a ras de suelo solo en detalle, héroe y pico | Lo pide animación (4.2) y es lo que separó los carriles en el short 4; fotografía (3.2) daba alturas de 0,4 a 1,6 u | Los ángulos `az` son los de fotografía |
+| El tercero espera fuera de cuadro en cada golpe | El cuadro vertical ve ≈ 4 a 5 u de ancho; con los tres dentro se enciman | Animática v0: 29 fallos |
+| Golpe 5 en el mismo carril, con el vuelo hacia la persiana | Los personajes son planos: un golpe en profundidad no se lee y el control lo marca «otro carril» | Animática v0, M3 |
+| El contraataque del rival se queda corto; no salta por encima de Tin | Evita el rival sobre la cabeza de Tin (fallo E4 del short 4) | Animática v1 |
+| Tan cambia de lado por detrás de la cámara durante el plano de detalle del lápiz | Para que no quede delante del farol en el golpe 4 ni cruce un plano | Animática v1 |
+| El farol sigue a la izquierda (pendiente 11.3 n.º 1) | Deja la persiana y las cajas a la derecha y la pestaña visible en el golpe 6 | — |
+| Rival en fucsia neón `#FF2BD6` | Pedido del dueño | `cambios/2026-11-27_rival_fucsia_neon.md` |
+
+**Estado:** la animática corre (930 fotogramas, 25 s por pasada, 0 créditos) y el control de encuadre **no pasa todavía**
+(22 fallos en la tercera pasada; `07_revision/control_encuadre_animatica_v2.md`). No hay voz, ni render, ni piezas terminadas.
+

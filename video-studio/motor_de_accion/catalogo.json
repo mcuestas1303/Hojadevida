@@ -85,6 +85,27 @@
         "TIN-EN-S-004"
       ],
       "nota": "Hecho para TIN-EN-S-004. 9 u de ancho; mostrador claro a la derecha; banderines cortos sobre el televisor. Las versiones rotas las mueve el guion (caja_registradora_rota incluida). v2 (2026-11-26): techo a 8,2 u con viga y tres lámparas en tinta (piezas.lamparas)."
+    },
+    {
+      "id": "patio_tienda_de_computadoras",
+      "archivo": "entornos/patio_tienda_de_computadoras.js",
+      "temas": [
+        "tecnología",
+        "hardware",
+        "compras"
+      ],
+      "rompibles": [
+        "pila",
+        "cajas_der",
+        "monitores",
+        "farol",
+        "cajas_izq",
+        "persiana"
+      ],
+      "usada_en": [
+        "TIN-EN-S-005 (animática)"
+      ],
+      "nota": "Versión 0 del 2026-11-27: piezas en su sitio y a su tamaño; faltan el detalle de dibujo y las versiones rotas con nombre propio. Hoja Noche."
     }
   ],
   "personajes": [
@@ -295,6 +316,11 @@
       "archivo": "guiones/tin_en_s_004.js",
       "tiempos": "guiones/tin_en_s_004.tiempos.json (lo escribe codigo/tiempos.py del proyecto)",
       "nota": "Primer video del formato de acción. Versión 3: coreografía por carriles, carreras por distancia, contactos medidos, cámara alta y en diagonal que acompaña. 7 golpes."
+    },
+    {
+      "id": "tin_en_s_005",
+      "archivo": "guiones/tin_en_s_005.js",
+      "nota": "Animática muda del short 5 con la voz estimada (tin_en_s_005.tiempos.json). Al 2026-11-27 el control de encuadre NO PASA (22 fallos). Usa el banco de jugadas."
     }
   ],
   "locomocion": {
@@ -384,9 +410,16 @@
         "id": "reposoVivo",
         "de": "TIN-EN-S-004 v4",
         "medidas": "apagado de K − 14 a K + 8"
+      },
+      {
+        "id": "encuadra (en el guion del short 5)",
+        "de": "TIN-EN-S-005, animática",
+        "medidas": "plano fijo que contiene a quienes se le dice; avisa si un tercero queda dentro del ancho del cuadro. Candidata al banco cuando pase la puerta"
       }
     ],
     "probado": "2026-11-27: reproduce las claves del golpe 1 del short 4 (69→1,73; 75→1,82; 82→0,70; 93→1,20) y avisa de un tercero en el carril, cuerpos encimados y carrera corta. Sin usar todavía en un video.",
-    "usada_en": []
+    "usada_en": [
+      "TIN-EN-S-005 (animática, sin pasar la puerta)"
+    ]
   }
 }

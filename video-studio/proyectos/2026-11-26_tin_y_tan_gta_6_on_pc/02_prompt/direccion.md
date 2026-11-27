@@ -365,6 +365,10 @@ fijo, y se pierde solo el «subjetivo» de la tabla de tipos de plano.
 
 ### 3.4 Color del rival en esta hoja (decisión)
 
+> **Enmienda del 2026-11-27 (dueño: «con el rival ocupa un color fucsia neon»):** donde esta sección y la 11.1 k dicen lila
+> `#B79CFF` se lee **fucsia neón `#FF2BD6`** (5,3:1 contra el fondo; ΔE 91 del rojo del fuego). El hollín no cambia.
+> Medidas y dudas: `cambios/2026-11-27_rival_fucsia_neon.md`.
+
 **Tinta lila `#B79CFF` para la línea de la madeja, el cuerpo y el rizo.** Por qué:
 
 - En un mundo `#141B33` la tinta oscura de su ficha no se vería (1,0:1): su «tinta» se ve en la hoja Noche como tinta clara, igual

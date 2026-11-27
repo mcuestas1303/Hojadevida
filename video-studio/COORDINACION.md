@@ -882,3 +882,12 @@ del dueño. No publicado.
   **Banco de jugadas hecho:** `motor_de_accion/jugadas.js`, en el catálogo. **Falta, en este orden:** entorno
   `patio_tienda_de_computadoras`, guion de la pelea, animática muda hasta que el control dé PASA, voz (con cotización y
   sí del dueño), render. Nada de eso se ha empezado.
+- **2026-11-27: Short 5, animática muda en curso** (sí del dueño a los pasos 1 a 3: «Sí, sigue con 1 al 3 y con el rival
+  ocupa un color fucsia neon»). Hecho: cambio de color del rival a fucsia neón `#FF2BD6`
+  (`cambios/2026-11-27_rival_fucsia_neon.md`; paleta B, ficha de `@duda` y dirección 3.4 enmendadas); entorno
+  `patio_tienda_de_computadoras` (versión 0); guion `guiones/tin_en_s_005.js` con la voz estimada; control de encuadre
+  copiado a `codigo/` del proyecto. **El control NO PASA: 29 → 19 → 22 fallos en tres pasadas en seco.** Lo aprendido
+  está en `metodo/registro_de_fallos.md` (bitácora) y las decisiones en el brief. **Para el Generador de prompts:** la
+  dirección 3.0 pone el subtítulo en y 885–1105 (mitad del cuadro), que es el reparto que el short 4 descartó en su
+  versión 3; producción usa el reparto que pasó la puerta. Falta: tercera pasada de la puesta en escena, arreglar el
+  ciclo `camina` del motor, voz (cotización y sí del dueño) y render. Los sprites de la paleta B aún llevan el lila.

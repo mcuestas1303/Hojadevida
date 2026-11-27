@@ -39,6 +39,8 @@ export const MEDIDAS = {
   retroceso: 0.09,          // la anticipación echa el cuerpo hacia atrás
   contacto: 0.6,            // distancia entre quien pega y quien recibe en el fotograma K (puño)
   recupera: 1.1,            // distancia a la que queda quien pega 11 f después
+  arma: { contacto: 1.4, recupera: 1.5 },   // golpe con un arma de tinta de 2,5 u (bastón, regla): short 4, golpes 4 y 6
+  hombro: 0.3, planta_del_pie: 0.45,         // short 5, animática (sin pasar todavía la puerta)
   patada_minimo: 0.6,       // la carga del rival termina a esta distancia, o más, de quien patea
   gancho: 0.9,              // quien espera con el gancho, al punto donde cae el rival
   doble: [1.4, 1.5],        // cada uno de los dos que pegan, al rival que está en medio
@@ -151,9 +153,9 @@ export function banco(m, ids = ['tin', 'tan', 'duda']) {
 
   // Reposo vivo: devuelve la función `vivo(id, f)` que pide escena.html; se apaga de K − 14 a K + 8 y en los tramos `quietos`.
   const reposoVivo = (ks, quietos = []) => (id, f) => {
-    for (const k of ks) if (f >= k - M.vivo[0] && f <= k + M.vivo[1]) return { k: 0 };
-    for (const [a, b] of quietos) if (f >= a && f <= b) return { k: 0 };
-    return { k: 1 };
+    let k = 1; for (const q of ks) k = Math.min(k, clamp(f < q - M.vivo[0] ? (q - M.vivo[0] - f) / 5 : f > q + M.vivo[1] ? (f - q - M.vivo[1]) / 5 : 0));
+    for (const [a, c] of quietos) if (f >= a && f <= c) k = 0;
+    return { k };
   };
 
   // ---------------------------------------------------------- cierre y comprobación sin render

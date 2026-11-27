@@ -6,7 +6,7 @@
   "suelo": "#27304F",
   "cuadricula": "rgba(243,233,210,0.22)",
   "linea": "#F3E9D2",
-  "rival": "#B79CFF",
+  "rival": "#FF2BD6",
   "bloque_cerca": "#3A4570",
   "bloque_lejos": "#1C2444",
   "utileria": "#9A6A45",
@@ -21,6 +21,7 @@
  "personajes": {
   "tinta": "#F3E9D2"
  },
+ "cambios": "2026-11-27: rival de lila #B79CFF a fucsia neón #FF2BD6, pedido del dueño (cambios/2026-11-27_rival_fucsia_neon.md)",
  "estudio": "video-studio/estudios/2026-11-26_color_por_estadisticas_y_psicologia.md",
  "aprobada_por_el_dueno": "2026-11-26: «me gustan los A, B y C»",
  "id": "b_noche_de_tinta"
