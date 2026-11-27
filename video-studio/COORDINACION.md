@@ -835,3 +835,10 @@ del dueño. No publicado.
 - **2026-11-27: el dueño dio su sí al paquete del short 5 («Sí, entrégalo»). ENTREGADO a producción.** Desde aquí el
   Generador no toca el video: construir, cotizar y pedir la voz, revisar, pasar la puerta de presentación y presentar son
   del Equipo de producción audiovisual. Los cambios al prompt se le piden al Generador por esta bitácora.
+- **2026-11-27: corrector ortográfico instalado en el PC del dueño con su sí** («y sí, instala el corrector
+  ortográfico»): `bash video-studio/herramientas/instalar_corrector.sh` (spylls 0.1.7, ya en `requirements.txt`, y
+  diccionarios en, es y pt en `herramientas/diccionarios/`, que no se suben). En Windows las herramientas se corren con
+  `PYTHONUTF8=1`. **Short 5 pasado por `revisar_texto.py`: 0 errores** en la voz, el texto de pantalla y el título en
+  inglés (16 textos), en los subtítulos en español (12) y en la descripción en inglés (25). Se agregaron al glosario
+  «PlayStation», «PC», «Dead», «Redemption» y «Malwarebytes», con su porqué. Queda retirado el aviso «ortografía sin
+  comprobar» del paquete.

@@ -60,3 +60,10 @@ theft
 games
 # sigla del organismo que clasifica los videojuegos en EE. UU. (Entertainment Software Rating Board); va en la descripción del short 4 de Tin & Tan con la clasificación del juego
 esrb
+# nombres propios y sigla que aparecen sin traducir en los subtítulos en español del short 5 de Tin & Tan: «PlayStation» (la consola), «PC» (computadora personal, tal como se busca) y «Red Dead Redemption 2» (el juego).
+playstation
+pc
+dead
+redemption
+# nombre de la empresa de seguridad citada como fuente en la descripción del short 5 de Tin & Tan (aviso sobre archivos falsos).
+malwarebytes
