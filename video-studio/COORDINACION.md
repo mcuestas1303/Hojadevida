@@ -630,3 +630,11 @@ del dueño. No publicado.
   la «segunda lectura» de esta sesión y la de la rama de producción): coinciden en la causa.
 - **En curso:** revisión de la v3 por los cinco oficios (`07_revision/revision_v3_<oficio>.md`). Las firmas, la puerta
   de presentación y la presentación al dueño son de producción según la regla nueva; esta sesión no presenta la pieza.
+- **2026-11-27, primera vuelta de los cinco oficios sobre la v3 (`511571dd5f4d`): la puerta NO PASA.** Fotografía y
+  edición: APROBADO con notas. Animación: CAMBIOS (cuerpos clavados ≈ 25 % del video, f752–f872 sobre todo; Tan sin gesto
+  en f484–f511; tirón del rival en f212–f216). Sonido: CAMBIOS (mazazo a −9,5 dBFS sobre «seventeen and over»; el «it»
+  de más pide oído humano). Continuidad: CAMBIOS (N1, bloqueante: el rival sobre la cara de Tin en f289–f316; cinco más
+  de la misma familia; el control automático solo compara centros de cabeza y hay que añadirle solape cuerpo–cabeza).
+  Informes: `07_revision/revision_v3_<oficio>.md`; firmas: `07_revision/firmas.md`. Todo se corrige en el guion,
+  `codigo/audio.py` y `codigo/control_encuadre.py`, 0 créditos. **Esta sesión se detiene aquí** hasta que el dueño
+  diga quién hace la siguiente vuelta.
