@@ -1,5 +1,13 @@
 {
   "permissions": {
+    "allow": [
+      "mcp__claude-code-remote__send_message",
+      "mcp__claude-code-remote__list_sessions",
+      "mcp__claude-code-remote__get_session",
+      "mcp__claude-code-remote__list_events",
+      "SendMessage",
+      "ListAgents"
+    ],
     "ask": [
       "mcp__Higgsfield_MCP__generate_image",
       "mcp__Higgsfield_MCP__generate_image_batch",
