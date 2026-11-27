@@ -275,6 +275,27 @@ estado de su paquete; (2) el Generador mantiene paquetes de prompt listos para u
 se mide pocos días antes, el mes adelantado se arma con temas de fecha conocida y con preguntas de demanda estable
 (medidas a 12 meses), y cada paquete lleva una revalidación de la pregunta la semana de publicar; una noticia urgente
 hereda el hueco (biblia, 5.4) y el paquete desplazado no se pierde.
+
 - **Nunca se suben subtítulos a YouTube (dueño, 2026-11-26):** el video ya los lleva grabados en la imagen. Las pistas
   `.srt` no van en la entrega ni se cargan en Studio (error de publicación en TIN-EN-S-003). Confirmado por el dueño en la
   conversación de producción; lo trajo el Manager de redes sociales y YouTube, que desde hoy publica en lugar de Keter.
+
+## El tema también se elige por potencial de pago del nicho (regla del dueño, 2026-11-26)
+
+Textual: «Considero que la selección de tema también debe estar basada en nichos con potencial de monetización de medio
+a mayor; definí eso en términos de potencial de pago con base a casos documentados de YouTube».
+
+Qué cambia: a la demanda medida (Trends, autocompletado, Studio) se suma un segundo criterio. Cada tema lleva en su
+definición el nicho al que pertenece y su nivel de potencial de pago (bajo, medio o alto), definido con casos
+documentados y su fuente; un tema de nicho de pago bajo no se propone salvo que el dato de demanda lo justifique y se
+diga. La tabla de niveles la mantiene el experto en monetización en `video-studio/comercial/` y se cita en cada brief.
+
+## El motor califica nicho y subnicho con potencial de pago (regla del dueño, 2026-11-27)
+
+Textual: «Pásale ese dato al motor generador de contenido, porque para pasarte a ti los análisis de nicho o subnicho debe
+considerar el potencial de monetización con base a casos documentados; así va generando dentro de su método un scoring».
+
+Qué cambia: el análisis de nicho y subnicho que el Motor generador de contenido le entrega al Generador de prompts lleva
+una puntuación (scoring) que incluye el potencial de pago con casos documentados, además de la demanda medida. El método
+de esa puntuación es del Motor y va en `video-studio/MOTOR_DE_CONTENIDO.md`. Insumo de partida:
+`video-studio/comercial/2026-11-27_potencial_de_pago_por_nicho.md`.

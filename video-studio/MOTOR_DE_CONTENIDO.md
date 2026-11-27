@@ -13,7 +13,8 @@
 > la acción, en `motor_de_accion/`. El dueño tiene otra conversación llamada «Motor generador de contenido»: cuando
 > explique lo que falte, se integra aquí.
 >
-> **Estado:** versión 0.3 (añade el filtro de políticas de YouTube, sección 5b; los tres métodos que siguen al motor,
+> **Estado:** versión 0.4 (2026-11-27: añade la puntuación de nicho y subnicho, sección 7b, escrita por la conversación
+> «Motor generador de contenido»). Antes: versión 0.3 (añade el filtro de políticas de YouTube, sección 5b; los tres métodos que siguen al motor,
 > sección 9; y el mapa en forma de grafo, sección 10). Antes: versión 0.2 (2026-11-26: se añade el método de investigación completo, secciones 6 a 9, por pedido del
 > dueño: «Todo lo que investigaste este día en las diferentes plataformas debe quedar en el método del motor para poder
 > definir el tema y con ello el prompt que lleva todos los detalles y fichas técnicas, incluida la estrategia, y con ello
@@ -115,6 +116,7 @@ Cada eslabón sale del anterior. Si falta uno, no se pasa al siguiente (reglas �
 | 5 | **Filtrar** | Lo que no se mueve del canal | Se quitan: lo que pide metraje ajeno, lo que no tiene fuente abierta, lo que choca con la línea editorial o con el tramo de 13 a 17 |
 | 6 | **Mirar la oferta** | Listados de YouTube y pestaña «Investigación» de Studio | Qué hay ya hecho y cuánto rinde. Es oferta, **no** prueba de demanda |
 | 7 | **Fijar tema y pregunta** | Pasos 3 a 6 | La pregunta del video, escrita como se busca, con su puesto en la lista |
+| 7a | **Puntuar nicho y subnicho** | Sección 7b; estudio de potencial de pago | Tabla puntuada de candidatos, que es lo que recibe el Generador |
 | 7b | **Filtro de políticas de YouTube** | Sección 5b | Cada renglón marcado «pasa», «pasa con condición» o «no pasa», con la cita |
 | 8 | **Comprobar los hechos** | Fuente primaria o dos independientes | Cada dato con URL y fecha; qué se afirma y qué no |
 | 9 | **Colocar el video en el universo** | Biblia, registro de pistas, plan de tanda, repertorio de ajustes | Hoja y paleta, entorno (nuevo o de la biblioteca), qué pista cobra y cuál siembra |
@@ -200,6 +202,97 @@ Un tema está definido cuando se puede escribir, con su fuente, cada renglón:
 | Riesgos | Marca, persona real, dato que cambia, política de la plataforma |
 | Lugar en el universo | Hoja, paleta, entorno, pista que cobra y pista que siembra |
 
+## 7b. Puntuación de nicho y subnicho (lo que el Motor le entrega al Generador)
+
+> **Regla del dueño (2026-11-27), textual:** «Pásale ese dato al motor generador de contenido, porque para pasarte a ti los
+> análisis de nicho o subnicho debe considerar el potencial de monetización con base a casos documentados; así va
+> generando dentro de su método un scoring». Insumo de pago: `comercial/2026-11-27_potencial_de_pago_por_nicho.md`.
+>
+> **Qué es probado y qué no:** las tres puertas y las reglas de lectura salen de reglas del dueño y de errores ya
+> ocurridos. Los pesos, las escalas de 0 a 3 y los cortes de 70 y 50 son **[hipótesis del equipo]**: ningún video se ha
+> elegido todavía con esta puntuación. Se revisan cada 5 videos contra el resultado (se quedó a mirar y suscriptores por
+> mil vistas).
+
+**Dos niveles.** El **nicho** es el tema corto que se mide en Trends («gta 6», «iphone»); el **subnicho** es la pregunta
+tal como se escribe («is gta 6 coming to pc»). El nicho aporta el potencial de pago y el encaje con el público; el
+subnicho aporta la demanda de la pregunta, los hechos y las políticas. Un subnicho hereda el nivel de pago de su nicho,
+salvo que tenga un puente escrito a otro nicho (una pregunta de videojuegos que se responde con piezas de PC toma el
+nivel de tecnología de consumo, y se dice).
+
+**Primero, tres puertas. No puntúan: si una no pasa, el candidato no se entrega.**
+
+| Puerta | No pasa si… | Excepción |
+|---|---|---|
+| P1 · Demanda medida | No hay lectura con fecha del tema corto en Trends (búsqueda de YouTube) ni de la pregunta en autocompletado. Un listado de videos no cuenta: es oferta | Fecha conocida del calendario: entra marcada «por revalidar» y se mide la semana de publicar |
+| P2 · Políticas | Algún renglón de la sección 5b queda en «no pasa» | Ninguna: se cambia el ángulo y se vuelve a puntuar |
+| P3 · Hechos y lo que no se mueve | No hay fuente primaria ni dos independientes, o choca con la línea editorial o con lo fijo del canal | Ninguna |
+
+**Después, cinco criterios, cada uno de 0 a 3.** «Sin dato» vale 0 y se escribe «sin dato»: nunca se rellena con un valor
+intermedio ni con la cifra de un tema parecido.
+
+| Criterio | 3 | 2 | 1 | 0 |
+|---|---|---|---|---|
+| **D · Demanda medida** | El tema corto lidera su tablero de Trends (YouTube, país principal) o está dentro del doble del líder, y la pregunta sale en las 25 consultas y en autocompletado | Tema líder, o estable a 12 meses con al menos una décima parte del líder hoy, y la pregunta sale en autocompletado | Tema por debajo de eso, solo autocompletado, o solo fecha conocida por revalidar | La pregunta marca cero o no hay lectura |
+| **M · Potencial de pago documentado** | Nicho ALTO | Nicho MEDIO | Nicho BAJO | Nicho sin clasificar por el experto en monetización |
+| **H · Hechos comprobables** | Fuente primaria abierta y dato que no cambia | Dos fuentes independientes | El dato cambia antes de publicar, o la fuente solo abre en la PC | (lo saca la puerta P3) |
+| **P · Políticas** | Los 13 renglones en «pasa» | Una condición | Dos o más condiciones, o riesgo de marca o de persona real | (lo saca la puerta P2) |
+| **E · Encaje con el público medido** | El autocompletado lo confirma en los tres países principales del canal, sirve para el tramo de 13 a 17 y el nicho ya se midió en el canal con buen «se quedó a mirar» | El autocompletado lo confirma en los tres países, pero el canal no ha medido ese nicho | Solo el país principal, o es una hipótesis sin dato del canal | Choca con el público medido |
+
+Regla de H: si nadie ha comprobado los hechos, H vale 0 «sin comprobar» y la puntuación se da dos veces: «hoy» y «techo»
+(lo que alcanzaría con los hechos comprobados). La puerta P3 queda «pendiente», no «no pasa».
+
+Primera aplicación, con las tres correcciones a la escala que salieron de ella (corte de tamaño en D, nicho medido en E,
+par «hoy» y «techo» en H): `comercial/2026-11-27_puntuacion_de_nichos_tanda_01.md`.
+
+Reglas de M: el nivel sale de la tabla del experto, con su fila citada y su marca de solidez copiada tal cual
+(«provisional», «evidencia débil»). Las estimaciones de terceros no suben un nivel. Si el nivel es provisional, se
+entrega con esa palabra al lado del número.
+
+**Los pesos cambian con el formato**, porque el pago no funciona igual: en Shorts YouTube reparte por vistas dentro de
+cada país y el nicho casi no cambia el ingreso; en video largo el anuncio se vende contra el tema. Antes de entrar al
+Programa de socios no se cobra nada, así que lo que acerca al umbral es la demanda.
+
+| Criterio | Peso en Short | Peso en video largo |
+|---|---|---|
+| D · Demanda | 40 | 30 |
+| E · Público | 20 | 15 |
+| M · Pago | 15 | 30 |
+| H · Hechos | 15 | 15 |
+| P · Políticas | 10 | 10 |
+
+Puntuación = suma de (peso × puntos ÷ 3); va de 0 a 100 y se calcula dos veces, una por formato. En Short, M no se lee
+como ingreso del video: se lee como el tipo de suscriptor que se junta para el video largo.
+
+| Puntuación | Veredicto |
+|---|---|
+| 70 o más | Se propone para ese formato |
+| 50 a 69 | Reserva: entra si falta un hueco o si una lectura nueva lo sube |
+| Menos de 50 | No se entrega, salvo fecha conocida, y se dice por qué |
+
+**Desempates y cupos** (del experto en monetización, sección 4 de su estudio; el cupo es propuesta suya, sin medir):
+
+1. Con demanda parecida (una dentro del doble de la otra en el mismo tablero), gana el nicho de mayor nivel de pago.
+2. Demanda alta y pago bajo: va como Short y se escribe «demanda X; pago bajo; se elige por vistas hacia el umbral». No
+   pasa a video largo sin un puente a un nicho medio o alto.
+3. Demanda baja y pago alto: no ocupa un Short de crecimiento; se guarda para el video largo o se busca dentro del nicho
+   la pregunta que sí tenga demanda.
+4. De cada tres Shorts de la tanda, al menos uno de nivel medio o alto cuando haya uno con demanda comparable.
+
+**Qué se le entrega al Generador de prompts.** Una tabla por tanda, con un renglón por candidato; cada celda con su
+fuente y su fecha:
+
+| Columna | Qué lleva |
+|---|---|
+| Nicho y subnicho | El tema corto y la pregunta exacta, con el puente si lo hay |
+| Puertas | P1, P2 y P3: «pasa» o qué falta |
+| D, M, H, P, E | Los puntos y, al lado, el dato que los respalda (lectura, fila del estudio de pago, URL del hecho, renglones del filtro, corte de Studio) |
+| Puntuación en Short y en video largo | Los dos números |
+| Veredicto | Se propone, reserva o no se entrega; y el desempate aplicado |
+| Qué falta y quién lo consigue | Lecturas que esta sesión no pudo abrir (Trends «Explorar», Studio) y a quién se le piden |
+
+El Motor no redacta el brief ni el prompt: entrega esta tabla y ahí termina. Los datos de Studio se describen en
+palabras; las cifras exactas se quedan en `estadisticas/datos/`.
+
 ## 8. Qué lleva el prompt y sus fichas
 
 El prompt de un video es una carpeta, no un texto suelto. Mínimo, y todo con su porqué:
@@ -265,4 +358,8 @@ dentro de una sesión; no se ha hecho. Solo se sube el informe; el grafo pesa �
 - Si las conexiones entre videos convierten en regresos y suscriptores: no hay ningún video conectado publicado.
 - Cuánto del método sirve para una marca comercial con productos reales (logotipos, precios, promesas de venta): el caso
   de Tin & Tan no tiene nada de eso.
+- Si los pesos y los cortes de la puntuación (sección 7b) eligen mejor que la regla anterior: ningún video se ha elegido
+  con ella.
+- Cuánto baja la puntuación de pago un público de 13 a 17 y cuánto vale el fondo de Shorts por país: el estudio de pago
+  lo deja «sin dato».
 - Cómo se une esto con lo que el dueño llama «Motor generador de contenido» en su otra conversación.

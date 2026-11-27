@@ -732,3 +732,64 @@ del dueño. No publicado.
 - **Pedido del dueño (2026-11-26):** registro de fallos y análisis del banco de movimientos →
   `metodo/registro_de_fallos.md` (se lee antes de escribir una pelea y antes de renderizar; método 2, sección 0b). El
   banco de «jugadas» se arma al empezar el short 5, a partir del guion aprobado del short 4.
+## 2026-11-27 (madrugada) — Generador: potencial de pago por nicho (regla nueva del dueño)
+
+- **Regla:** el tema también se elige por potencial de pago del nicho (`REGLAS_CEREBRO.md`). Estudio del experto en
+  monetización: `comercial/2026-11-27_potencial_de_pago_por_nicho.md` (criterio de niveles, tabla de nichos con casos y
+  fuente, calificación de los temas de diciembre, regla de decisión y reservas).
+- **Lo principal:** en Shorts el nicho casi no cambia el ingreso (reparto por vistas dentro de cada país); pesa en el
+  video largo, los patrocinios y el tipo de suscriptor. Niveles: ciencia y finanzas, alto; tecnología de consumo, medio;
+  videojuegos, cine, música y deporte, bajo.
+- **Temas de diciembre por nivel:** alto, «How big is the universe?»; medio, «iPhone 18 vs iPhone 17», «PS5 Pro vs PS5»,
+  «What is the Xbox Ally?» y «Is GTA 6 coming to PC?» si se cuenta por el lado del hardware; el resto, bajo. Siguen
+  siendo propuestas: falta el sí del dueño y la comprobación de hechos.
+- Se unió la rama con lo que subió producción (short 4 v4, regla de no subir `.srt`, Manager de redes): sin pérdidas.
+- **2026-11-27, el dueño aprobó los temas propuestos de diciembre con esa mezcla de niveles de pago («Sí, así»).**
+  Empieza el paquete del short 5 («Is GTA 6 coming to PC?», H02, 2026-12-04); después, los demás en orden de fecha.
+
+## 2026-11-27 — Generador → Motor generador de contenido: potencial de pago para el scoring de nichos
+
+- **Regla del dueño (textual en `REGLAS_CEREBRO.md`, al final):** el análisis de nicho y subnicho que el Motor le pasa al
+  Generador debe considerar el potencial de monetización con base en casos documentados, y el Motor genera dentro de su
+  método una puntuación (scoring).
+- **Dato que se entrega:** `comercial/2026-11-27_potencial_de_pago_por_nicho.md`: cómo paga Shorts frente a video largo,
+  criterio de niveles (alto: US$5 o más por mil vistas al creador en video largo de EE. UU., o caso documentado de US$10 o
+  más; bajo: menos de US$2,50), tabla de nichos con casos y solidez de la evidencia, regla de decisión y reservas.
+- **Lo que el Motor tiene que saber antes de puntuar:** (1) en Shorts el nicho casi no cambia el ingreso (reparto por vistas
+  dentro de cada país); pesa en video largo, patrocinios y tipo de suscriptor; (2) antes de entrar al Programa de socios no
+  se cobra nada: el umbral es de vistas y suscriptores; (3) la demanda se mide por tema corto en Google Trends (YouTube),
+  luego sus 25 consultas principales y al final la pregunta en autocompletado: las frases largas marcan 0 y los listados son
+  oferta, no demanda (lecturas del 2026-11-26 en `estadisticas/datos/`, no se suben); (4) las estimaciones de terceros no
+  cuentan como caso documentado.
+- **Lo que se le pide:** definir en `MOTOR_DE_CONTENIDO.md` la puntuación por nicho y subnicho (demanda medida, potencial de
+  pago documentado, hechos comprobables, filtro de políticas, encaje con el público medido) y entregar con ella los
+  análisis al Generador. El Generador no redacta ese método: es del Motor.
+
+## 2026-11-27 — Motor generador de contenido → Generador de prompts: la puntuación ya está en el motor
+
+- **Qué se hizo:** `MOTOR_DE_CONTENIDO.md` pasa a versión 0.4 con la sección 7b, «Puntuación de nicho y subnicho»: tres
+  puertas que bloquean (demanda medida, políticas, hechos), cinco criterios de 0 a 3 (demanda, potencial de pago
+  documentado, hechos, políticas, encaje con el público medido), pesos distintos para Short y para video largo, cortes de
+  70 y 50, desempates y el formato de la tabla que recibe el Generador. Paso 7a añadido a la cadena de la sección 5.
+- **Qué es hipótesis:** pesos, escalas y cortes. Se revisan cada 5 videos.
+- **Qué falta para entregar los análisis ya puntuados:** las lecturas de demanda y de Studio del 2026-11-26 están en
+  `estadisticas/datos/` de la carpeta del Generador en el PC; con ellas se puntúan D y E. Trends «Explorar» no abre por
+  código desde esta sesión (error 429): una lectura nueva se le pide al dueño o a Keter. El dueño revisa primero el método.
+- **Pendiente de esta sesión:** regenerar `mapa/MAPA.md` con el nodo de la puntuación.
+
+## 2026-11-27 — Motor generador de contenido → Generador de prompts: temas de diciembre ya puntuados
+
+- **Entrega:** `comercial/2026-11-27_puntuacion_de_nichos_tanda_01.md` (15 temas, puntuación en Short y en video largo, «hoy»
+  y «techo», por qué cada número, y el autocompletado de YouTube en EE. UU., Filipinas e India leído el 2026-11-26, 23:34).
+- **Lo principal:** se proponen «Is GTA 6 coming to PC?» y «How big is the universe?»; «PS5 Pro vs PS5», «iPhone 18 vs
+  iPhone 17» y «What is Marvel Rivals?» pasan a «se propone» si se comprueban sus hechos; «What is the Xbox Ally?» no se
+  escribe así en ningún país y hay que reformularla; Spotify Wrapped y la RAM no se entregan.
+- **No cambia lo aprobado por el dueño.** «What is GTA 6?» queda en 65 (reserva) bajo el método, pero ya está en producción.
+- **Se pide:** comprobación de hechos de cinco temas; Trends «Explorar» de Game Awards, del estreno doble y de las preguntas
+  nuevas de Xbox Ally (dueño o quien tenga el navegador); Trends en Filipinas e India.
+- La sección 7b del motor se ajustó con lo que enseñó esta pasada. Sigue pendiente regenerar `mapa/MAPA.md`.
+- **2026-11-27, short 6 (H03, 2026-12-06): el dueño aprobó reemplazar Spotify Wrapped** («Sí, reemplázalo»), que no pasó
+  la puntuación del Motor (40). Pasa a ser **«How big is the universe?»** (80), que estaba en el short 9; el short 9
+  (H06) queda sin tema hasta el siguiente análisis puntuado. Por eso el objeto que cae en el short 5 (P-006) es de grado
+  ancla: **un telescopio de cartón**. Brief del short 5 cerrado en `proyectos/2026-11-26_tin_y_tan_gta_6_on_pc/00_brief.md`;
+  hechos en `comercial/2026-11-27_hechos_short5_gta_6_on_pc.md`. Dirección y fichas, en curso; todavía no hay paquete.

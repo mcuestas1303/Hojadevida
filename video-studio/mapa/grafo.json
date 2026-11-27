@@ -3,7 +3,7 @@
  "multigraph": false,
  "graph": {
   "nombre": "Estudio de video · motor de contenido",
-  "actualizado": "2026-11-26",
+  "actualizado": "2026-11-27",
   "nota": "Formato de nodos y enlaces (node-link), el mismo que usa Graphify y que lee NetworkX. Hecho a mano; cubre lo principal."
  },
  "nodes": [
@@ -33,7 +33,7 @@
    "tipo": "metodo",
    "nombre": "Motor de contenido",
    "ruta": "video-studio/MOTOR_DE_CONTENIDO.md",
-   "estado": "versión 0.3"
+   "estado": "versión 0.4 (añade la puntuación de nicho y subnicho, sección 7b)"
   },
   {
    "id": "m_generador",
@@ -314,6 +314,41 @@
    "nombre": "Graphify (mapa estructural)",
    "ruta": "video-studio/graphify-out/GRAPH_REPORT.md",
    "estado": "instalado el 2026-11-26; pasada de significado sin hacer"
+  },
+  {
+   "id": "c_motor",
+   "tipo": "conversacion",
+   "nombre": "Motor generador de contenido",
+   "ruta": "",
+   "estado": "mantiene el método del motor y puntúa nicho y subnicho; no escribe prompts ni produce"
+  },
+  {
+   "id": "puntuacion",
+   "tipo": "metodo",
+   "nombre": "Puntuación de nicho y subnicho",
+   "ruta": "video-studio/MOTOR_DE_CONTENIDO.md sección 7b",
+   "estado": "pesos, escalas y cortes son hipótesis; una sola aplicación"
+  },
+  {
+   "id": "est_pago",
+   "tipo": "comercial",
+   "nombre": "Potencial de pago por nicho",
+   "ruta": "video-studio/comercial/2026-11-27_potencial_de_pago_por_nicho.md",
+   "estado": "niveles alto, medio y bajo con casos documentados; software e IA provisional"
+  },
+  {
+   "id": "punt_tanda01",
+   "tipo": "comercial",
+   "nombre": "Temas de diciembre puntuados (tanda 01)",
+   "ruta": "video-studio/comercial/2026-11-27_puntuacion_de_nichos_tanda_01.md",
+   "estado": "entregada al Generador; faltan hechos de cinco temas y lecturas de Trends"
+  },
+  {
+   "id": "autocompletado3",
+   "tipo": "dato",
+   "nombre": "Autocompletado de YouTube en EE. UU., Filipinas e India (2026-11-26)",
+   "ruta": "video-studio/comercial/2026-11-27_puntuacion_de_nichos_tanda_01.md sección 5",
+   "estado": "leído por el Motor"
   }
  ],
  "links": [
@@ -718,6 +753,84 @@
    "target": "motor",
    "verbo": "da el mapa estructural a",
    "certeza": "hecho"
+  },
+  {
+   "source": "c_motor",
+   "target": "motor",
+   "verbo": "mantiene",
+   "certeza": "hecho"
+  },
+  {
+   "source": "c_motor",
+   "target": "c_generador",
+   "verbo": "entrega análisis puntuados a",
+   "certeza": "hecho"
+  },
+  {
+   "source": "dueno",
+   "target": "puntuacion",
+   "verbo": "pidió",
+   "certeza": "hecho"
+  },
+  {
+   "source": "motor",
+   "target": "puntuacion",
+   "verbo": "incluye",
+   "certeza": "hecho"
+  },
+  {
+   "source": "puntuacion",
+   "target": "est_pago",
+   "verbo": "usa",
+   "certeza": "hecho"
+  },
+  {
+   "source": "puntuacion",
+   "target": "busqueda",
+   "verbo": "usa",
+   "certeza": "hecho"
+  },
+  {
+   "source": "puntuacion",
+   "target": "stats",
+   "verbo": "usa",
+   "certeza": "hecho"
+  },
+  {
+   "source": "puntuacion",
+   "target": "youtube",
+   "verbo": "filtra con",
+   "certeza": "hecho"
+  },
+  {
+   "source": "puntuacion",
+   "target": "punt_tanda01",
+   "verbo": "se aplicó en",
+   "certeza": "hecho"
+  },
+  {
+   "source": "punt_tanda01",
+   "target": "autocompletado3",
+   "verbo": "usa",
+   "certeza": "hecho"
+  },
+  {
+   "source": "punt_tanda01",
+   "target": "m_generador",
+   "verbo": "se entrega a",
+   "certeza": "hecho"
+  },
+  {
+   "source": "punt_tanda01",
+   "target": "calendario",
+   "verbo": "califica los temas de",
+   "certeza": "hecho"
+  },
+  {
+   "source": "puntuacion",
+   "target": "m_produccion",
+   "verbo": "se revisa cada 5 videos con las mediciones de",
+   "certeza": "hipótesis"
   }
  ]
 }
