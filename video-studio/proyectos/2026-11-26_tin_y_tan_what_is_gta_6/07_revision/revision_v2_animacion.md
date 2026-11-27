@@ -178,6 +178,10 @@ no va al repositorio).
 
   Corrección: todo cambio de lugar de 0,3 u o más lleva pasos (ciclo por distancia), o se hace fuera de cuadro y se
   corta. Los retrocesos de 0,2–0,3 u justo después de un golpe pueden quedarse (son el rebote del contacto).
+- **Confirmado también con imagen** (`hoja_v2_03.jpg`, uno de cada 6 fotogramas): de f378 a f426 Tin está en pose de
+  carrera con el cuerpo inclinado y la visera hacia la derecha, hacia el rival, mientras el cuadro lo va llevando a la
+  izquierda, a casi la mitad del ancho. Se ve como un *moonwalk*. Tan, en f360–f384, corre en el borde izquierdo y casi
+  no cambia de lugar.
 - **Medidas no confiables:** donde Keter avisó (f562–f563, f650, f676, f682 de Tan, saltos de área), la mancha más
   grande no era la cabeza. La cabeza de Tan en P19 (f765–f805, área 20–43 mil px en y ≈ 1130) tampoco cuadra con el
   guion: no se usó.
