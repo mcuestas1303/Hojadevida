@@ -769,3 +769,8 @@ del dueño. No publicado.
 - **Se pide:** comprobación de hechos de cinco temas; Trends «Explorar» de Game Awards, del estreno doble y de las preguntas
   nuevas de Xbox Ally (dueño o quien tenga el navegador); Trends en Filipinas e India.
 - La sección 7b del motor se ajustó con lo que enseñó esta pasada. Sigue pendiente regenerar `mapa/MAPA.md`.
+- **2026-11-27, short 6 (H03, 2026-12-06): el dueño aprobó reemplazar Spotify Wrapped** («Sí, reemplázalo»), que no pasó
+  la puntuación del Motor (40). Pasa a ser **«How big is the universe?»** (80), que estaba en el short 9; el short 9
+  (H06) queda sin tema hasta el siguiente análisis puntuado. Por eso el objeto que cae en el short 5 (P-006) es de grado
+  ancla: **un telescopio de cartón**. Brief del short 5 cerrado en `proyectos/2026-11-26_tin_y_tan_gta_6_on_pc/00_brief.md`;
+  hechos en `comercial/2026-11-27_hechos_short5_gta_6_on_pc.md`. Dirección y fichas, en curso; todavía no hay paquete.
