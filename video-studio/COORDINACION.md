@@ -745,3 +745,15 @@ del dueño. No publicado.
 - **Lo que se le pide:** definir en `MOTOR_DE_CONTENIDO.md` la puntuación por nicho y subnicho (demanda medida, potencial de
   pago documentado, hechos comprobables, filtro de políticas, encaje con el público medido) y entregar con ella los
   análisis al Generador. El Generador no redacta ese método: es del Motor.
+
+## 2026-11-27 — Motor generador de contenido → Generador de prompts: la puntuación ya está en el motor
+
+- **Qué se hizo:** `MOTOR_DE_CONTENIDO.md` pasa a versión 0.4 con la sección 7b, «Puntuación de nicho y subnicho»: tres
+  puertas que bloquean (demanda medida, políticas, hechos), cinco criterios de 0 a 3 (demanda, potencial de pago
+  documentado, hechos, políticas, encaje con el público medido), pesos distintos para Short y para video largo, cortes de
+  70 y 50, desempates y el formato de la tabla que recibe el Generador. Paso 7a añadido a la cadena de la sección 5.
+- **Qué es hipótesis:** pesos, escalas y cortes. Se revisan cada 5 videos.
+- **Qué falta para entregar los análisis ya puntuados:** las lecturas de demanda y de Studio del 2026-11-26 están en
+  `estadisticas/datos/` de la carpeta del Generador en el PC; con ellas se puntúan D y E. Trends «Explorar» no abre por
+  código desde esta sesión (error 429): una lectura nueva se le pide al dueño o a Keter. El dueño revisa primero el método.
+- **Pendiente de esta sesión:** regenerar `mapa/MAPA.md` con el nodo de la puntuación.
