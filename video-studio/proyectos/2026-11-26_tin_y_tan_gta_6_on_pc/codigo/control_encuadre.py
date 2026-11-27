@@ -220,7 +220,8 @@ def main():
         if '--ajuste' in sys.argv: print('   ajuste', c['nombre'], c.get('vector'))
         lineas.append(f"| {c['nombre']} | {c['parte']} | {c['golpe_a_rival_u']:.2f} | {c['dz_u']:.2f} | {c['estrella_a_cabeza_de_quien_pega_u']:.2f} | {'; '.join(mal) or 'bien'} |")
         if mal: fallos.append(f"M3: {c['nombre']}: {', '.join(mal)}")
-    if len(M.get('contactos', [])) < 9: fallos.append('M3: faltan contactos medidos')
+    if len(M.get('contactos', [])) < 7:      # short 5: seis golpes y el bloqueo (el short 4 tenía nueve)
+        fallos.append('M3: faltan contactos medidos')
 
     # M4 quietud
     sec('M4 · Quietud (mano de Tin o de Tan sin moverse más de 8 f estando en cuadro)')
@@ -270,7 +271,7 @@ def main():
                     if q != 'duda' and d['y'] < 0.05: altos.append(d['s'][1] - (d['c'][1] - d['r']))
         lineas.append(f"| {pl} | f{filas[0]['f']}–f{filas[-1]['f']} | {col[0]} | {col[1]} | {col[2]} | {ymin} | {ymax} | {int(sorted(altos)[len(altos)//2]) if altos else '—'} |")
 
-    cab = ['# Control automático de encuadre y movimiento — short 4, versión 3', '',
+    cab = ['# Control automático de encuadre y movimiento — short 5, animática muda', '',
            f'Grabación: `{carpeta.name}` · {len(P)} fotogramas · hecho por `codigo/control_encuadre.py`.', '',
            f"**Resultado: {'PASA' if not fallos else 'NO PASA'}** · {len(fallos)} fallos, {len(avisos)} avisos.", '']
     if fallos: cab += ['Fallos:'] + [f'- {x}' for x in fallos] + ['']

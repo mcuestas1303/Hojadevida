@@ -320,7 +320,7 @@
     {
       "id": "tin_en_s_005",
       "archivo": "guiones/tin_en_s_005.js",
-      "nota": "Animática muda del short 5 con la voz estimada (tin_en_s_005.tiempos.json). Al 2026-11-27 el control de encuadre NO PASA (22 fallos). Usa el banco de jugadas."
+      "nota": "Animática muda del short 5 con la voz estimada (tin_en_s_005.tiempos.json). Al 2026-11-27, versión 3: el control de encuadre PASA (0 fallos, 4 avisos) en la pasada en seco; nadie ha mirado aún las hojas de fotogramas. Usa el banco de jugadas."
     }
   ],
   "locomocion": {

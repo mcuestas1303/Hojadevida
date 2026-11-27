@@ -209,10 +209,17 @@ nadie queda clavado, y el rival no tapa la cara de Tin ni de Tan.
 | El tercero espera fuera de cuadro en cada golpe | El cuadro vertical ve ≈ 4 a 5 u de ancho; con los tres dentro se enciman | Animática v0: 29 fallos |
 | Golpe 5 en el mismo carril, con el vuelo hacia la persiana | Los personajes son planos: un golpe en profundidad no se lee y el control lo marca «otro carril» | Animática v0, M3 |
 | El contraataque del rival se queda corto; no salta por encima de Tin | Evita el rival sobre la cabeza de Tin (fallo E4 del short 4) | Animática v1 |
-| Tan cambia de lado por detrás de la cámara durante el plano de detalle del lápiz | Para que no quede delante del farol en el golpe 4 ni cruce un plano | Animática v1 |
+| Tan sale de cuadro tras el golpe 2 y no se dibuja hasta el golpe 4: cambia de lado fuera de cuadro | Para que no quede delante del farol en el golpe 4 ni cruce un plano; la carrera «por detrás de la cámara» de la v1 resbalaba | Animática v3 |
+| En el plano de cada golpe la cámara va del lado hacia donde sale despedido el rival (salvo el golpe 5, donde por ese lado espera Tin) | Lo que se aleja hacia el fondo se separa en pantalla de quien pegó en vez de venírsele encima | Animática v3: 8 → 6 fallos |
+| El rival no se da la vuelta al salir despedido | Girado, la pose de vuelo le echaba la cabeza sobre Tin | Animática v3, f90–f98 |
+| Golpe 2: embestida con el antebrazo por delante, no con el hombro | El hombro no llegaba (0,50 u) y la estrella caía sobre la cabeza de Tan; con el antebrazo mide 0,19 u | Animática v3, M3 |
+| Tras el paquete, el rival sale despedido hacia el fondo; Tan se aparta de lado sin dar la espalda | Hacia la derecha caía junto a Tan | Animática v3 |
+| En el golpe 6 el rival se desploma sentado antes de implosionar | «Recogido» le metía la cabeza 0,5 u hacia Tin | Animática v3, f815–f817 |
 | El farol sigue a la izquierda (pendiente 11.3 n.º 1) | Deja la persiana y las cajas a la derecha y la pestaña visible en el golpe 6 | — |
 | Rival en fucsia neón `#FF2BD6` | Pedido del dueño | `cambios/2026-11-27_rival_fucsia_neon.md` |
 
-**Estado:** la animática corre (930 fotogramas, 25 s por pasada, 0 créditos) y el control de encuadre **no pasa todavía**
-(22 fallos en la tercera pasada; `07_revision/control_encuadre_animatica_v2.md`). No hay voz, ni render, ni piezas terminadas.
+**Estado (2026-11-27, animática v3):** el control de encuadre **pasa: 0 fallos, 4 avisos** (`07_revision/control_encuadre_animatica_v3.md`;
+seis pasadas en seco en total: 29 → 19 → 22 → 8 → 6 → 0). Es una medición sobre las pistas, sin imágenes: nadie ha mirado todavía
+hojas de fotogramas y los cinco oficios no han firmado. Los tiempos son los de la voz estimada: con la voz real se vuelve a medir.
+No hay voz, ni render, ni piezas terminadas. El control pide 7 contactos (seis golpes y el bloqueo), no los 9 del short 4.
 

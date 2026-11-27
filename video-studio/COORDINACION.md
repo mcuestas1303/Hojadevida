@@ -891,3 +891,10 @@ del dueño. No publicado.
   dirección 3.0 pone el subtítulo en y 885–1105 (mitad del cuadro), que es el reparto que el short 4 descartó en su
   versión 3; producción usa el reparto que pasó la puerta. Falta: tercera pasada de la puesta en escena, arreglar el
   ciclo `camina` del motor, voz (cotización y sí del dueño) y render. Los sprites de la paleta B aún llevan el lila.
+
+- **2026-11-27 · Producción · Short 5 (TIN-EN-S-005), animática v3: el control de encuadre PASA en seco (0 fallos, 4 avisos)**
+  tras seis pasadas (29 → 19 → 22 → 8 → 6 → 0), 0 créditos. Informe: `proyectos/2026-11-26_tin_y_tan_gta_6_on_pc/07_revision/control_encuadre_animatica_v3.md`.
+  Se corrigió el motor (`escena.html`: ciclo `camina`, clave de empuje de `corre` y compensación del giro hacia la cámara); el short 4 v5
+  sigue pasando su control con el motor nuevo. Cambios de puesta en escena en el brief («Decisiones del equipo»). **No es una pieza:**
+  es una medición sin imágenes, con la voz estimada. Falta: hojas de fotogramas de la animática y firmas de los cinco oficios, volver a
+  exportar los dibujos del rival en fucsia, voz (cotización y sí del dueño), nueva medición con los tiempos reales y render.

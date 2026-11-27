@@ -9,7 +9,7 @@ export const FICHA = {
   rompibles: ['pila (torre_de_pc_rota, torre_de_pc_caida)', 'cajas_der', 'monitores (monitor_roto)', 'farol (farol_torcido)', 'cajas_izq (cajas_carbonizadas)', 'persiana (persiana_abollada)'],
   no_se_toca: ['pestana', 'caja_registradora_rota', 'monitor de portada (se inclina, no se rompe)'],
 };
-export const MEDIDAS = { ancho: 9, fondo_z: -6.5, C1: -1.0, C2: -2.7, C3: -4.6, pila: [0, -3.6], grieta: [1.3, -4.6], cajas_der: [2.3, -4.7], monitores: [-2.6, -4.6], farol: [-3.5, -4.6], cajas_izq: [-4.0, -4.2], persiana: [2.35, -6.44], pestana: [-1.4, -6.44], caja_registradora_rota: [-4.1, -1.0], telescopio: [2.6, -0.7] };
+export const MEDIDAS = { ancho: 9, fondo_z: -6.5, C1: -1.0, C2: -2.7, C3: -4.6, pila: [0, -3.6], grieta: [1.3, -4.6], cajas_der: [2.9, -4.6], monitores: [-2.6, -4.6], farol: [-3.5, -4.6], cajas_izq: [-4.0, -4.2], persiana: [2.35, -6.44], pestana: [-1.4, -6.44], caja_registradora_rota: [-4.1, -1.0], telescopio: [2.6, -0.7] };
 
 export function construir({ THREE, escena, caja, C, lienzo }) {
   const tinta = C.linea, piezas = {}, M = MEDIDAS;

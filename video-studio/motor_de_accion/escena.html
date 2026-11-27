@@ -78,11 +78,15 @@ const CICLOS = {
   corre: { largo: 1.9, claves: [
     [0.00, { t: 30, aF: [-60, -10], aB: [65, 125], lF: [58, 12], lB: [-42, -100], c: 4 }, 1.0],     // vuelo: los dos pies en el aire
     [0.16, { t: 26, aF: [-35, 20], aB: [40, 110], lF: [34, 18], lB: [-20, -105], c: 4 }, 0.89],          // contacto: el pie de adelante cae
-    [0.36, { t: 32, aF: [10, 70], aB: [5, 70], lF: [-8, -22], lB: [40, -60], c: 6 }, 0],               // empuje: el pie queda atrás y empuja
+    [0.36, { t: 32, aF: [10, 70], aB: [5, 70], lF: [-8, -22], lB: [40, -60], c: 6 }, 0.96],            // empuje: el pie queda atrás y empuja. v2 (short 5): altura real de la cadera en esta pose (antes 0): así el vuelo empieza al despegar y el pie que avanza no roza el suelo
   ] },
   camina: { largo: 0.9, claves: [
-    [0.00, { t: 6, aF: [-22, -8], aB: [24, 40], lF: [24, 8], lB: [-22, -34], c: 0 }, 0],
-    [0.25, { t: 4, aF: [0, 10], aB: [4, 14], lF: [2, -2], lB: [14, -46], c: 0 }, 0],
+    // v2 (2026-11-27, short 5): el pie que avanza se levanta de verdad (antes no pasaba de 0,10 u y «patinaba» todo el paso) y
+    // el pie de apoyo retrocede a velocidad pareja: x = 0,457 − 2,446·fase, en R. Pierna de 1,65 R = 0,59 u; medio ciclo = 0,45 u.
+    [0.00, { t: 6, aF: [-22, -8], aB: [24, 40], lF: [24, 8], lB: [-22, -34], c: 0 }, 0],          // doble apoyo
+    [0.06, { t: 5.5, aF: [-17, -4], aB: [19, 34], lF: [16, 6], lB: [-14, -70], c: 0 }, 0],        // el pie de atrás despega (talón arriba)
+    [0.25, { t: 4, aF: [0, 10], aB: [4, 14], lF: [-5, -6], lB: [20, -70], c: 0 }, 0],             // paso: la rodilla que avanza, doblada
+    [0.42, { t: 5, aF: [16, 30], aB: [-14, -1], lF: [-18, -24], lB: [50, -20], c: 0 }, 0],        // el pie que avanza baja al final
   ] },
 };
 for (const c of Object.values(CICLOS)) {
@@ -412,7 +416,10 @@ function actualizar(dS) {
     // el ciclo avanza con lo que el personaje recorre A LO ANCHO del cuadro (así el pie de apoyo no resbala a la vista); si corre
     // hacia el fondo o hacia la cámara, con el 85 % de lo recorrido, para que las piernas no se queden quietas
     const paso = Math.hypot(pos[0] - antes[0], pos[2] - antes[2]), vs = (pos[0] - antes[0]) * _der.x + (pos[2] - antes[2]) * _der.z;
-    p.dist = (p.dist || 0) + Math.max(Math.abs(vs), 0.85 * paso);
+    // v2 (short 5): el dibujo gira para dar la cara a la cámara (`encara`); lejos del eje su plano queda en ángulo con el cuadro y
+    // la zancada rinde menos a lo ancho. Se compensa, o el pie de apoyo resbala (medido: 0,46 u a 6 u de lado de la cámara).
+    const gY = GU.encara ? clamp(Math.atan2(camara.position.x - pos[0], camara.position.z - pos[2]), -1.0, 1.0) : 0, rinde = Math.max(0.5, Math.abs(Math.cos(gY) * _der.x - Math.sin(gY) * _der.z));
+    p.dist = (p.dist || 0) + Math.max(Math.abs(vs) / rinde, 0.85 * paso);
     let alt = 0, tipo = null;
     if (modo && !p.modoAct) { p.modoTipo = modo; p.distBase = p.dist - 0.36 * CICLOS[modo.split('_')[0]].largo * esc * piernas / 1.65; p.miraAuto = 0; }
     p.modoAct = !!modo; p.modoW = clamp((p.modoW || 0) + (modo ? 1 / 3 : -1 / 3));
