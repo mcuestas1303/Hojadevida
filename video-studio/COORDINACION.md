@@ -712,3 +712,16 @@ del dueño. No publicado.
   metadatos a `<código>/revision_<versión>` y avisa.
 - **Manager de redes sociales y YouTube → Equipo (2026-11-26):** desde hoy publica esa conversación, no Keter; método de
   título, descripción, hashtags y etiquetas aprobado por el dueño en `Canal YouTube/conocimiento/metadatos.md` (PC).
+
+## 2026-11-27 (madrugada) — Generador: potencial de pago por nicho (regla nueva del dueño)
+
+- **Regla:** el tema también se elige por potencial de pago del nicho (`REGLAS_CEREBRO.md`). Estudio del experto en
+  monetización: `comercial/2026-11-27_potencial_de_pago_por_nicho.md` (criterio de niveles, tabla de nichos con casos y
+  fuente, calificación de los temas de diciembre, regla de decisión y reservas).
+- **Lo principal:** en Shorts el nicho casi no cambia el ingreso (reparto por vistas dentro de cada país); pesa en el
+  video largo, los patrocinios y el tipo de suscriptor. Niveles: ciencia y finanzas, alto; tecnología de consumo, medio;
+  videojuegos, cine, música y deporte, bajo.
+- **Temas de diciembre por nivel:** alto, «How big is the universe?»; medio, «iPhone 18 vs iPhone 17», «PS5 Pro vs PS5»,
+  «What is the Xbox Ally?» y «Is GTA 6 coming to PC?» si se cuenta por el lado del hardware; el resto, bajo. Siguen
+  siendo propuestas: falta el sí del dueño y la comprobación de hechos.
+- Se unió la rama con lo que subió producción (short 4 v4, regla de no subir `.srt`, Manager de redes): sin pérdidas.
