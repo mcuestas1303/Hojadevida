@@ -3,7 +3,8 @@
 > Short 4 de Tin & Tan (`TIN-EN-S-004`), YouTube Shorts, 9:16, 32,9 s. Escrita el 2026-11-26 por el director de prompts con
 > `comercial/2026-11-26_hechos_short4_what_is_gta_6.md` (sección 8, descargo), `comercial/2026-11-26_hechos_short4_gancho_gta7.md`
 > (hechos del gancho) y `02_prompt/direccion.md` (sección 8). **Estado: borrador para el sí del dueño; no se publica sin él.**
-> Calendario: miércoles 2026-12-02, 16:00 (hora de El Salvador; la hora es hipótesis); el comercial pidió no pasar del
+> **Adelantado por el dueño al viernes 2026-11-27, 16:00 (-06:00)** («Sí, adelántalo», vía el Manager de redes; el sello y las fechas ya dicen Nov 27; remate releído ese día).
+> Calendario original: miércoles 2026-12-02, 16:00 (hora de El Salvador; la hora es hipótesis); el comercial pidió no pasar del
 > 2026-11-30 y fijó el 2026-12-03 como límite duro (proyección, no dato medido).
 
 ## Antes de publicar: el remate se relee ese día
@@ -53,20 +54,20 @@ reglas: `video-studio/comercial/titulos.md`.
 La fecha de «Facts as of» es la de la última lectura (2026-11-26) y se cambia por la de la relectura del día de publicar.
 
 ```text
-Is there a GTA 7? Tin and Tan check what is known: what GTA is, where GTA 6 fits and how long the wait between games has been. Facts as of November 26, 2026.
+What is GTA 6, and is a GTA 7 coming? Tin and Tan check what is known: what GTA is, where GTA 6 fits and how long the wait between games has been. Facts as of November 27, 2026.
 
 What the video says:
 - GTA is short for Grand Theft Auto, a game series that started in 1997. Rockstar Games makes and publishes it today.
 - GTA 6 came out on November 19, 2026. It is the sixth numbered game in the series. It is rated M (Mature 17+) by the ESRB: seventeen and over.
 - From GTA 5 (September 17, 2013) to GTA 6 (November 19, 2026): 4,811 days, which is 13 years and 63 days.
-- Rockstar hasn't announced a GTA 7, as of November 26, 2026. That is an absence, not a prediction: it does not mean there will not be one.
+- Rockstar hasn't announced a GTA 7, as of November 27, 2026. That is an absence, not a prediction: it does not mean there will not be one.
 
 Also good to know, not said in the video:
 - Platforms: PlayStation 5 and Xbox Series X|S.
 - The US PlayStation Store lists the standard edition at "$79.99", as of November 26, 2026. Prices can change.
 - Rockstar tells the story in chapters. The exact count is not confirmed.
 
-Sources, all read on November 26, 2026:
+Sources, read on November 26, 2026; the list of Take-Two press releases was read again on November 27, 2026:
 - Series, first game and the separate fictional universes (Wikipedia): https://en.wikipedia.org/wiki/Grand_Theft_Auto
 - Numbered games and release dates (Wikipedia): https://en.wikipedia.org/wiki/Grand_Theft_Auto_V and https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI
 - Release on November 19, 2026, and Rockstar Games as maker and publisher (Take-Two): https://www.take2games.com/ir/news/rockstar-games-announces-grand-theft-auto-vi-now-available
@@ -78,9 +79,9 @@ Sources, all read on November 26, 2026:
 
 Subscribe to Tin & Tan. We check the facts.
 
-Tin & Tan is an independent channel. Not affiliated with, endorsed by, or sponsored by Rockstar Games, Take-Two Interactive, Sony Interactive Entertainment (PlayStation) or Microsoft (Xbox). Grand Theft Auto, GTA, Rockstar Games, Take-Two Interactive, PlayStation and Xbox are trademarks of their respective owners and are named only to say what this video is about. No footage, images, music or characters from the game are used. Rated M (Mature 17+) by the ESRB. Facts as of November 26, 2026.
+Tin & Tan is an independent channel. Not affiliated with, endorsed by, or sponsored by Rockstar Games, Take-Two Interactive, Sony Interactive Entertainment (PlayStation) or Microsoft (Xbox). Grand Theft Auto, GTA, Rockstar Games, Take-Two Interactive, PlayStation and Xbox are trademarks of their respective owners and are named only to say what this video is about. No footage, images, music or characters from the game are used. Rated M (Mature 17+) by the ESRB. Facts as of November 27, 2026.
 
-#TinAndTan #GTA6 #GTA7 #Shorts
+#GTA6 #GTA7 #TinAndTan
 ```
 
 **Estado de cada dato de la descripción** (del archivo de hechos; nada se afirma de más):

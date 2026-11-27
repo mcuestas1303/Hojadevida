@@ -36,13 +36,13 @@ import palitos  # noqa: E402
 from efectos import Capa, LienzoCapa  # noqa: E402
 
 W, H, FPS = 1080, 1920, 30
-VERSION = "v5"
+VERSION = "v5_sello"
 TL = json.loads((PROY / "05_audio" / "linea_de_tiempo.json").read_text(encoding="utf-8"))
 MED = {}                          # medidas del motor (dónde cae en el cuadro cada impacto y la explosión); las carga main()
 N, K = TL["N"], TL["K"]
 L = {f["id"]: f for f in TL["lineas"]}
 TINTA, ACENTO, PANEL, CLARO = (27, 27, 34), (255, 210, 31), (244, 241, 234), (255, 244, 184)
-FECHA_SELLO = "Nov 26, 2026"      # fecha de la relectura del remate; se actualiza el día de publicar (dirección, D5)
+FECHA_SELLO = "Nov 27, 2026"      # fecha de la relectura del remate; se actualiza el día de publicar (dirección, D5)
 BANDA = (1376, 1552)              # franja de subtítulos (v3: abajo; antes 905–1085, en mitad del cuadro)
 DATOS_Y = (380, 700)              # zona de la capa de datos
 X0 = 100

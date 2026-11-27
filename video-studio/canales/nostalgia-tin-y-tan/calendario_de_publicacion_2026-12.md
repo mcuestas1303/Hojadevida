@@ -16,7 +16,7 @@
 
 | # | Fecha (hora de El Salvador) | Video | Tema | Por qué esa fecha |
 |---|---|---|---|---|
-| H01 | mié 2026-12-02, 16:00 | Short 4 | **What is GTA 6?** (aprobado) | GTA 6 domina las búsquedas y va bajando: cuanto antes |
+| H01 | **vie 2026-11-27, 16:00** (adelantado; era mié 2026-12-02) | Short 4 | **What is GTA 6?** (aprobado) | GTA 6 domina las búsquedas y va bajando: cuanto antes. **Adelantado por el dueño el 2026-11-27** («Sí, adelántalo», vía el Manager de redes): se sube en privado y se programa para esa hora. El miércoles 2026-12-02 queda libre como reserva para un tema urgente del radar; H02 y los siguientes no se mueven |
 | H02 | vie 2026-12-04, 16:00 | Short 5 | radar | — |
 | H03 | dom 2026-12-06, 16:00 | Short 6 | radar | — |
 | H04 | mar 2026-12-08, 16:00 | Short 7 | The Game Awards, previa (propuesto) | La ceremonia es el 12-10; el interés sube esa misma semana |

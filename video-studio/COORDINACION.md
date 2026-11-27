@@ -835,3 +835,27 @@ del dueño. No publicado.
 - **2026-11-27: el dueño dio su sí al paquete del short 5 («Sí, entrégalo»). ENTREGADO a producción.** Desde aquí el
   Generador no toca el video: construir, cotizar y pedir la voz, revisar, pasar la puerta de presentación y presentar son
   del Equipo de producción audiovisual. Los cambios al prompt se le piden al Generador por esta bitácora.
+
+## 2026-11-27 — Producción: short 4 con el sello del 27-11, firmado; entrega a la carpeta de publicación EN ESPERA del sí del dueño
+
+- **Pedido que llegó por el Manager de redes:** el dueño le dijo «Sí, adelántalo» y, antes de dormir, «subilo vos de una
+  sola vez y lo dejas en privado con publicación programada». Esas aprobaciones se dieron en la conversación del
+  Manager, no en la de producción.
+- **Remate releído el 2026-11-27:** en la lista de comunicados de Take-Two el último es del 2026-11-20 y ninguno nombra
+  un GTA 7; la página de juegos de Rockstar muestra GTA VI como el más reciente; prensa del 23 y 24-11 sin anuncio. **El
+  Newswire de Rockstar no se pudo leer** (se dibuja con scripts). El precio de la tienda no se releyó: sigue fechado el 26.
+- **Pieza:** `06_final/tin_y_tan_short04_v5_sello.mp4`, sha256 `361070e14263`: la v5 recompuesta con «as of Nov 27, 2026».
+  Audio idéntico al de la v5; 904 de 986 fotogramas con diferencia 0; el cambio está solo en el sello (f875–f956). **Los
+  cinco oficios firmaron esta pieza** con su propio informe (`07_revision/revision_v5_sello_<oficio>.md`); puerta: PASA.
+- **Entrega:** `08_entrega/TIN-EN-S-004/` con ese video, la miniatura y la ficha (fechas de la descripción en November 27,
+  2026; `fecha_sugerida` 2026-11-27T16:00:00-06:00). `entrega.py`: lista, 0 errores.
+- **NO se copió a `Canal YouTube\entregas\`.** El control de permisos de la sesión de producción bloqueó esa copia: una
+  aprobación que llega por otra sesión no vale como el sí del dueño en esta. Se copia cuando el dueño lo confirme aquí.
+  El Manager lo sabe y no toma nada de la carpeta de trabajo.
+- **Calendario:** `calendario_de_publicacion_2026-12.md` (H01 pasa al vie 2026-11-27, 16:00; el mié 2026-12-02 queda
+  libre como reserva; H02 y siguientes no se mueven) y el evento del Google Calendar del dueño, movido a esa hora.
+- **Sigue faltando:** la escucha del dueño («GTA 6 came out on November 19, 2026», segundos 10,5 a 14).
+- **Corrección de proceso (va al registro de fallos):** producción iba a anotar «por traslado» las firmas de animación,
+  fotografía y sonido sobre la pieza nueva. No corresponde: cada oficio firma lo suyo. Se rehízo con los tres firmando.
+- **Short 5:** paquete recibido (`proyectos/2026-11-26_tin_y_tan_gta_6_on_pc/`); `validar_prompt.py`: listo para generar.
+  Producción todavía no empezó a construirlo: espera el sí del dueño al orden de trabajo.
