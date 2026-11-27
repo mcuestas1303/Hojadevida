@@ -69,3 +69,9 @@ El Generador no empieza sin estas seis cosas. Si falta una, la pide; no la supon
 
 Regla general: **lo que toca identidad, hechos o reglas del universo bloquea; lo que es construcción (entorno, efecto,
 sonido) viaja como pedido dentro del paquete.**
+
+## Dónde termina este método (dueño, 2026-11-26)
+
+En la entrega del paquete de prompt validado a producción, anotada en `COORDINACION.md`. El Generador no genera voz, no
+construye en el motor, no renderiza y no presenta piezas: eso es el método 2, del Equipo de producción audiovisual.
+

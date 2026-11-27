@@ -37,8 +37,9 @@ producción lo viera, entre otras cosas porque el archivo no podía salir de la 
 - **Short 4 (`TIN-EN-S-004`, `proyectos/2026-11-26_tin_y_tan_what_is_gta_6/`):** voz generada (3,1 créditos; no se
   regenera). Versión 2 renderizada (32,9 s) y **no aprobada**: el dueño dijo «intentan correr y casi no se mueven […]
   hablamos de producir algo de alta calidad». Solicitud: `cambios/2026-11-26_short4_v2_animacion_en_el_espacio.md`.
-  Revisiones de animación, fotografía y continuidad en `07_revision/revision_v2_*.md` (pedidas el 2026-11-26). Sigue:
-  versión 3 con esas correcciones, firmas de los cinco oficios y **puerta de presentación** en PASA antes de enseñarla.
+  Revisiones de animación, fotografía y continuidad en `07_revision/revision_v2_*.md` (pedidas el 2026-11-26). Sigue
+  (**la hace el Equipo de producción audiovisual, no el Generador**: regla del dueño del 2026-11-26, «vos solo generás el
+  prompt»): versión 3 con esas correcciones, firmas de los cinco oficios y **puerta de presentación** en PASA antes de enseñarla.
   El video se regenera con `codigo/` y `motor_de_accion/` (0 créditos); una copia de la v2 está en
   `entregas_temporales/` hasta que llegue al Drive.
 - **Reglas que no cambian:** créditos, instalar, rehacer una pieza generada y publicar piden el sí del dueño; una sola

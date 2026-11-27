@@ -590,3 +590,22 @@ del dueño. No publicado.
 - Sigue pendiente de una persona: ver el video, oír la voz («it» de más que oye el reconocedor en el video entero) y
   los sonidos; el televisor sigue detrás del subtítulo en los generales.
 
+## 2026-11-26 — Traspaso del short 4 a producción y nuevo reparto (regla del dueño)
+
+- **Regla:** el Generador solo entrega prompts; producción produce con su método y decide el orden imagen/audio (el
+  dueño propone imagen primero). Detalle en `CLAUDE.md` y `REGLAS_CEREBRO.md`.
+- **Se entrega a producción el short 4 (`TIN-EN-S-004`), `proyectos/2026-11-26_tin_y_tan_what_is_gta_6/`:**
+  - Paquete de prompt validado: `02_prompt/` (dirección, fichas, prompt, perfil emocional), `00_brief.md`, `publicacion.md`.
+  - Ya hecho por el Generador (queda como material, producción decide qué conserva): voz generada (`05_audio/`,
+    3,1 créditos, una generación por voz, no se regenera sin el sí del dueño), línea de tiempo, código (`codigo/` y
+    `motor_de_accion/`, guion `guiones/tin_en_s_004.js`), versión 2 renderizada (copia en el PC del dueño:
+    `Canal YouTube/entregas/TIN-EN-S-004 v2 (NO aprobada)/`).
+  - **La v2 no está aprobada.** Dueño: «intentan correr y casi no se mueven […] hablamos de producir algo de alta
+    calidad». Solicitud: `cambios/2026-11-26_short4_v2_animacion_en_el_espacio.md`. Revisiones con la lista de defectos y
+    correcciones: `07_revision/revision_v2_fotografia.md`, `revision_v2_continuidad.md` (CORREGIR) y
+    `revision_v2_animacion.md` (entregada: B1 a B10 bloquean la v3; causa raíz: todas las cámaras miran de frente y `corre()` no mira la distancia recorrida).
+  - Nota para sonido y edición: la suscripción está en f483–f548 (decisión del Generador, por el ajuste «a prueba» de `PARAMETROS.md`), no en f878–f928 como dice la dirección; animación señala que deja 65 f de Tan con el rival congelado y un cierre sin llamado. Producción decide dónde queda.
+  - **Lo que le toca a producción:** versión 3, firmas de los cinco oficios, `puerta_de_presentacion.py` en PASA,
+    presentar al dueño, reporte de publicación, releer el remate y el sello de fecha el día de publicar.
+- El Generador deja de construir el video desde este punto.
+

@@ -4,6 +4,11 @@
 > producir el prompt». Recibe el paquete de `metodo/1_generador_de_prompts.md`. Versión 0.1. Lo ya probado en los shorts 1
 > a 3 se dice; lo del formato de acción y del universo todavía no se ha producido completo.
 
+> **De quién es este método (dueño, 2026-11-26):** del Equipo de producción audiovisual. El Generador de prompts entrega
+> el paquete y no produce. **Pendiente de que producción lo decida y lo escriba aquí:** el orden entre imagen y audio.
+> El dueño propone: «el video va primero y después va el audio». En el short 4 se hizo al revés (voz primero y los
+> tiempos de la pelea ajustados a la voz) y lo hizo el Generador; producción revisa si los pasos de abajo cambian de orden.
+
 ## 1. Qué recibe y control de entrada
 
 El paquete P1 a P12. **No se empieza a producir si falta una pieza marcada «bloquea»**; se devuelve con la lista de lo que
