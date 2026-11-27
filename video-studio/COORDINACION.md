@@ -866,3 +866,8 @@ del dueño. No publicado.
   inglés (16 textos), en los subtítulos en español (12) y en la descripción en inglés (25). Se agregaron al glosario
   «PlayStation», «PC», «Dead», «Redemption» y «Malwarebytes», con su porqué. Queda retirado el aviso «ortografía sin
   comprobar» del paquete.
+- **2026-11-27: entrega del Short 4 copiada a la carpeta de publicación, con el sí del dueño en la conversación de
+  producción** («Sí, cópialo»). `Canal YouTube\entregas\TIN-EN-S-004\`: `video.mp4` (sha256 `361070e14263…`),
+  `miniatura.png` (`a66020542f23…`) y `ficha.json` (`7c126f781ea2…`); huellas iguales en origen y copia. Sin `.srt`
+  (regla: nunca se suben subtítulos). Avisado el Manager de redes. Falta: que el Manager lo suba y programe para hoy
+  16:00 con el sí del dueño para publicar, la escucha del dueño, y enlace y hora en el registro y el reporte.
