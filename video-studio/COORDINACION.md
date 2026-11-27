@@ -727,3 +727,21 @@ del dueño. No publicado.
 - Se unió la rama con lo que subió producción (short 4 v4, regla de no subir `.srt`, Manager de redes): sin pérdidas.
 - **2026-11-27, el dueño aprobó los temas propuestos de diciembre con esa mezcla de niveles de pago («Sí, así»).**
   Empieza el paquete del short 5 («Is GTA 6 coming to PC?», H02, 2026-12-04); después, los demás en orden de fecha.
+
+## 2026-11-27 — Generador → Motor generador de contenido: potencial de pago para el scoring de nichos
+
+- **Regla del dueño (textual en `REGLAS_CEREBRO.md`, al final):** el análisis de nicho y subnicho que el Motor le pasa al
+  Generador debe considerar el potencial de monetización con base en casos documentados, y el Motor genera dentro de su
+  método una puntuación (scoring).
+- **Dato que se entrega:** `comercial/2026-11-27_potencial_de_pago_por_nicho.md`: cómo paga Shorts frente a video largo,
+  criterio de niveles (alto: US$5 o más por mil vistas al creador en video largo de EE. UU., o caso documentado de US$10 o
+  más; bajo: menos de US$2,50), tabla de nichos con casos y solidez de la evidencia, regla de decisión y reservas.
+- **Lo que el Motor tiene que saber antes de puntuar:** (1) en Shorts el nicho casi no cambia el ingreso (reparto por vistas
+  dentro de cada país); pesa en video largo, patrocinios y tipo de suscriptor; (2) antes de entrar al Programa de socios no
+  se cobra nada: el umbral es de vistas y suscriptores; (3) la demanda se mide por tema corto en Google Trends (YouTube),
+  luego sus 25 consultas principales y al final la pregunta en autocompletado: las frases largas marcan 0 y los listados son
+  oferta, no demanda (lecturas del 2026-11-26 en `estadisticas/datos/`, no se suben); (4) las estimaciones de terceros no
+  cuentan como caso documentado.
+- **Lo que se le pide:** definir en `MOTOR_DE_CONTENIDO.md` la puntuación por nicho y subnicho (demanda medida, potencial de
+  pago documentado, hechos comprobables, filtro de políticas, encaje con el público medido) y entregar con ella los
+  análisis al Generador. El Generador no redacta ese método: es del Motor.

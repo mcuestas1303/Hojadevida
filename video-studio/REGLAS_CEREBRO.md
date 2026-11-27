@@ -289,3 +289,13 @@ Qué cambia: a la demanda medida (Trends, autocompletado, Studio) se suma un seg
 definición el nicho al que pertenece y su nivel de potencial de pago (bajo, medio o alto), definido con casos
 documentados y su fuente; un tema de nicho de pago bajo no se propone salvo que el dato de demanda lo justifique y se
 diga. La tabla de niveles la mantiene el experto en monetización en `video-studio/comercial/` y se cita en cada brief.
+
+## El motor califica nicho y subnicho con potencial de pago (regla del dueño, 2026-11-27)
+
+Textual: «Pásale ese dato al motor generador de contenido, porque para pasarte a ti los análisis de nicho o subnicho debe
+considerar el potencial de monetización con base a casos documentados; así va generando dentro de su método un scoring».
+
+Qué cambia: el análisis de nicho y subnicho que el Motor generador de contenido le entrega al Generador de prompts lleva
+una puntuación (scoring) que incluye el potencial de pago con casos documentados, además de la demanda medida. El método
+de esa puntuación es del Motor y va en `video-studio/MOTOR_DE_CONTENIDO.md`. Insumo de partida:
+`video-studio/comercial/2026-11-27_potencial_de_pago_por_nicho.md`.
