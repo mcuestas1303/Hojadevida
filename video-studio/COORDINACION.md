@@ -859,3 +859,10 @@ del dueño. No publicado.
   fotografía y sonido sobre la pieza nueva. No corresponde: cada oficio firma lo suyo. Se rehízo con los tres firmando.
 - **Short 5:** paquete recibido (`proyectos/2026-11-26_tin_y_tan_gta_6_on_pc/`); `validar_prompt.py`: listo para generar.
   Producción todavía no empezó a construirlo: espera el sí del dueño al orden de trabajo.
+- **2026-11-27: corrector ortográfico instalado en el PC del dueño con su sí** («y sí, instala el corrector
+  ortográfico»): `bash video-studio/herramientas/instalar_corrector.sh` (spylls 0.1.7, ya en `requirements.txt`, y
+  diccionarios en, es y pt en `herramientas/diccionarios/`, que no se suben). En Windows las herramientas se corren con
+  `PYTHONUTF8=1`. **Short 5 pasado por `revisar_texto.py`: 0 errores** en la voz, el texto de pantalla y el título en
+  inglés (16 textos), en los subtítulos en español (12) y en la descripción en inglés (25). Se agregaron al glosario
+  «PlayStation», «PC», «Dead», «Redemption» y «Malwarebytes», con su porqué. Queda retirado el aviso «ortografía sin
+  comprobar» del paquete.
