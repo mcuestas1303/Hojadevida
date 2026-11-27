@@ -712,3 +712,23 @@ del dueño. No publicado.
   metadatos a `<código>/revision_<versión>` y avisa.
 - **Manager de redes sociales y YouTube → Equipo (2026-11-26):** desde hoy publica esa conversación, no Keter; método de
   título, descripción, hashtags y etiquetas aprobado por el dueño en `Canal YouTube/conocimiento/metadatos.md` (PC).
+
+## 2026-11-27 — Producción (PC del dueño): short 4, versión 5 — la puerta PASA
+
+- **Pieza:** `proyectos/2026-11-26_tin_y_tan_what_is_gta_6/06_final/tin_y_tan_short04_v5.mp4`, sha256 `df6b8a638e86`
+  (no se sube; se rehace con `bash codigo/hacer.sh <carpeta fuera del repo> v5`). Hecha con el sí del dueño («Sí, haz la
+  v5»). 0 créditos; voz y mezcla sin tocar.
+- **Firmas (`07_revision/firmas.md`): los cinco oficios APROBADO**, cada uno por separado
+  (`07_revision/revision_v5_<oficio>.md`). `puerta_de_presentacion.py`: PASA. Se le presenta al dueño en esta conversación.
+- **Qué cambió frente a la v4:** el rival ya no roza la gorra ni la visera de Tin (V1, V2, V3); plano héroe más cerca y
+  con su excepción anotada en la dirección; P5 sin el borde del decorado; reposo vivo con más amplitud; sección 6 de
+  `direccion.md` al día.
+- **Control:** `control_encuadre.py` gana E5 (madeja contra la cabeza ampliada con visera y rodete, y puño en la
+  cabeza). Continuidad pide ampliarlo además a pies y puños del rival (no vio W1 ni W2).
+- **Lo que queda anotado y no frena:** W1 (f643–f646, el rival cruza sobre la cabeza de Tan al saltar del estante; M, 2 f),
+  W2 (f66–f67), W3 (f513), W4 (f894–f897); disco fuera de paleta en f717–f718 (edición, M).
+- **Del dueño:** ver la pieza; oír la voz (el «it» de ≈ 10,5–14 s), la línea C de Tan y el mazazo junto a «over»; dar o
+  no el visto bueno. Antes de publicar: sello de fecha del día, reporte de publicación y entrega al Manager de redes.
+- **Pedido del dueño (2026-11-26):** registro de fallos y análisis del banco de movimientos →
+  `metodo/registro_de_fallos.md` (se lee antes de escribir una pelea y antes de renderizar; método 2, sección 0b). El
+  banco de «jugadas» se arma al empezar el short 5, a partir del guion aprobado del short 4.

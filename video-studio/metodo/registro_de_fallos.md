@@ -15,7 +15,7 @@
 | v2 | Generador | El dueño: «intentan correr y casi no se mueven». Carreras que no avanzaban, cámaras de frente |
 | v3 | Generador | Puerta NO PASA: animación, sonido y continuidad pidieron cambios (rival sobre la cara de Tin, cuerpos clavados, mazazo sobre la voz) |
 | v4 | Producción | Puerta NO PASA: continuidad (3 roces del rival con la gorra o la visera de Tin) y fotografía (plano héroe pequeño; borde del decorado a la vista) |
-| v5 | Producción | En revisión al escribir esto |
+| v5 | Producción | **Pasó la puerta** (2026-11-27): los cinco oficios aprobaron. Quedan cuatro roces medios anotados |
 
 Cada versión cuesta ≈ 15 min de render, una vuelta de cinco revisiones y, sobre todo, una presentación más de una pieza
 que el dueño ya vio. 0 créditos en todas (es código), pero no es gratis en tiempo ni en atención.
@@ -156,3 +156,5 @@ en la misma tanda.
 | 2026-11-26 | S-004 v4 | Plano héroe al 19 % del alto (venía de la v3) | Director de fotografía | — | Un defecto alto heredado se corrige o se anota su excepción en la misma vuelta; no se deja pasar |
 | 2026-11-26 | S-004 v4 | Montaje caído por tipografía y FriBiDi | Producción | P7 | `SETUP_ENTORNO.md`; lista, punto 4 |
 | 2026-11-26 | S-004 v4 | Salto de luz de 40,4 en un corte | Producción (aviso del montaje) | P2 | Lista, punto 5 |
+| 2026-11-27 | S-004 v5 | Pasó. Roces medios que el control no vio: los pies del rival sobre la cabeza de Tan al saltar (f643–f646) y su puño en la visera de Tin (f66–f67) | Supervisor de continuidad | P1 | Pendiente: ampliar E4/E5 a pies y puños del rival antes del short 5 |
+| 2026-11-27 | S-004 v5 | Un dato mal copiado al dueño («53 eventos» era la cifra de la v3; son 49) | Diseñador de sonido | P9 | Las cifras que se le dicen al dueño se leen del archivo de esa versión, no de la memoria de la anterior |
