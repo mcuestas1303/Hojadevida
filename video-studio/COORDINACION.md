@@ -654,3 +654,10 @@ del dueño. No publicado.
 - **Regla nueva del dueño:** plan del mes a la vista y un mes de prompts por delante (`REGLAS_CEREBRO.md`, al final).
 - **Para producción:** H02 paga P-001, P-002 y P-003 del short 4; si el short 4 no está público antes del 12-04, el
   paquete del short 5 llevará la alternativa de la regla de adaptación. Todavía no hay paquete entregado.
+- **Corrección del mismo día (22:10, -06:00): el tema «Why is RAM so expensive?» queda RETIRADO para el short 5.**
+  Google Trends «Explorar» volvió a responder y lo contradice: en EE. UU., 7 días, la pregunta de la RAM pesa 0 frente a
+  «what is gta 6» en YouTube y en la web, y 0 a 3 sin el ancla. En YouTube el ángulo de GTA VI más buscado es
+  «gta 6 pc» (sin caer), pero sus consultas en ascenso son sobre un port no oficial y rumores. «spotify wrapped» sube
+  en la web y su pico del año pasado fue la semana del 30 de noviembre. Lectura completa en `estadisticas/datos/`
+  (no se sube). **El short 5 vuelve a estar sin tema**; lección: los listados y el autocompletado no bastan, la
+  comparación en Trends va antes de decidir. En curso: preguntas de demanda estable para los seis huecos sin tema.
