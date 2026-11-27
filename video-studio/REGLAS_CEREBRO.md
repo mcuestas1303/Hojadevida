@@ -275,3 +275,13 @@ estado de su paquete; (2) el Generador mantiene paquetes de prompt listos para u
 se mide pocos días antes, el mes adelantado se arma con temas de fecha conocida y con preguntas de demanda estable
 (medidas a 12 meses), y cada paquete lleva una revalidación de la pregunta la semana de publicar; una noticia urgente
 hereda el hueco (biblia, 5.4) y el paquete desplazado no se pierde.
+
+## El tema también se elige por potencial de pago del nicho (regla del dueño, 2026-11-26)
+
+Textual: «Considero que la selección de tema también debe estar basada en nichos con potencial de monetización de medio
+a mayor; definí eso en términos de potencial de pago con base a casos documentados de YouTube».
+
+Qué cambia: a la demanda medida (Trends, autocompletado, Studio) se suma un segundo criterio. Cada tema lleva en su
+definición el nicho al que pertenece y su nivel de potencial de pago (bajo, medio o alto), definido con casos
+documentados y su fuente; un tema de nicho de pago bajo no se propone salvo que el dato de demanda lo justifique y se
+diga. La tabla de niveles la mantiene el experto en monetización en `video-studio/comercial/` y se cita en cada brief.
