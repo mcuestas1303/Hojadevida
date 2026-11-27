@@ -36,7 +36,7 @@ import palitos  # noqa: E402
 from efectos import Capa, LienzoCapa  # noqa: E402
 
 W, H, FPS = 1080, 1920, 30
-VERSION = "v3"
+VERSION = "v4"
 TL = json.loads((PROY / "05_audio" / "linea_de_tiempo.json").read_text(encoding="utf-8"))
 MED = {}                          # medidas del motor (dónde cae en el cuadro cada impacto y la explosión); las carga main()
 N, K = TL["N"], TL["K"]
@@ -167,10 +167,10 @@ def datos():
     d += [(L["T1"]["f0"] + 2, f2, 404, (r1,), "tarjeta 1"), (f2, f3, 404, (r1, r2), "tarjeta 2"), (f3, fuera, 404, (r1, r2, r3), "tarjeta 3")]
     d.append((K["K3"] + 24, L["T5"]["f0"] - 2, 410, (R(132, ("GTA 6", "subr")), R(62, "out since ", ("Nov 19, 2026", "placa"))), "GTA 6"))
     d.append((L["T5"]["f0"] + 2, L["C"]["f0"] - 2, 430, (R(74, "the ", ("sixth", "placa"), " numbered game"),), "sexto"))
-    d.append((L["T6"]["f0"] + 2, K["mazo"] + 10, 430, (R(88, "rated M · ", ("17 and over", "placa")),), "rated M"))
+    d.append((L["T6"]["f0"] + 2, L["T6"]["f1"], 430, (R(88, "rated M · ", ("17 and over", "placa")),), "rated M"))
     d.append((L["T8"]["f0"] + 2, K["carrera"] - 2, 440, (R(60, "from GTA 5 to GTA 6"),), "de 5 a 6"))
     d.append((K["radiales"] + 31, L["B"]["f1"] - 6, 400, (R(106, ("13 years, 63 days", "placa")), R(54, "GTA 5: Sep 17, 2013"), R(54, "GTA 6: Nov 19, 2026")), "la cuenta"))
-    d.append((L["T10"]["f0"] + 2, K["cierre"] - 2, 372, (R(84, ("GTA 7", "subr"), ":"), R(104, ("not announced", "placa")), R(50, (f"as of {FECHA_SELLO}", "sello"))), "respuesta"))
+    d.append((L["T10"]["f0"] + 2, K["cierre"] - 2, 397, (R(84, ("GTA 7", "subr"), ":"), R(104, ("not announced", "placa")), R(50, (f"as of {FECHA_SELLO}", "sello"))), "respuesta"))
     return d
 
 

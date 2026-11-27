@@ -16,7 +16,7 @@ regeneran). Cada línea al 110 % (`atempo=1.10`), pausas internas cerradas (0,07
 | T8 | Tin | 614 | 679 | 20.47 | 65 | From GTA 5 to GTA 6: | De GTA 5 a GTA 6: |
 | T9 | Tin | 738 | 836 | 24.60 | 98 | thirteen years and sixty-three days. | trece años y sesenta y tres días. |
 | B | Tan | 838 | 886 | 27.93 | 48 | So, GTA 7? | ¿Y GTA 7? |
-| T10 | Tin | 888 | 969 | 29.60 | 81 | Rockstar hasn't announced one. As of today. | Rockstar no ha anunciado ninguno. A hoy. |
+| T10 | Tin | 888 | 969 | 29.60 | 81 | Rockstar hasn't announced one. As of today. | Rockstar no ha anunciado ninguno. Hasta hoy. |
 
 ## Contactos y momentos (fotogramas)
 

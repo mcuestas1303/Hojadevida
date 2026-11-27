@@ -6,10 +6,11 @@ fotograma; `eventos.json`: medidas de cada contacto) y comprueba, sin mirar ning
   E1 nadie queda cortado por un borde (o está dentro, o está fuera del plano);
   E2 cabezas y pies dentro de la zona de acción (entre el dato y el subtítulo);
   E3 ninguna cabeza encima de otra;
+  E4 el cuerpo del rival (cabeza, tronco, pierna, brazo) no se dibuja sobre la cabeza de Tin ni de Tan (revisión de continuidad de la v3, N1);
   M1 cada carrera recorre distancia de verdad (u, u/s, px en pantalla, fotogramas por paso) y el pie de apoyo no resbala;
   M2 ningún salto de posición fuera de los contactos;
   M3 cada golpe cae sobre el rival, en su mismo carril, y la estrella no tapa la cara de quien pega;
-  M4 nadie está idéntico más de 8 fotogramas; G1 ninguna clave cruzada en el guion.
+  M4 nadie está idéntico más de 8 fotogramas; M5 ningún cuerpo clavado (mano y cabeza casi sin moverse 24 f; revisión de animación de la v3, A1); G1 ninguna clave cruzada en el guion.
 Uso: python3 control_encuadre.py <carpeta de la grabación> [--md salida.md]      (código 1 si hay algún fallo)
 """
 import json, math, sys
@@ -30,6 +31,13 @@ def tramos(fs):
         else: out.append((a, b)); a = b = f
     if a is not None: out.append((a, b))
     return ', '.join(f'f{a}' if a == b else f'f{a}–f{b}' for a, b in out)
+
+
+def seg_a_punto(a, b, p):
+    """Distancia en px del punto p al segmento a-b."""
+    dx, dy = b[0] - a[0], b[1] - a[1]; l2 = dx * dx + dy * dy
+    u = 0 if l2 == 0 else max(0, min(1, ((p[0] - a[0]) * dx + (p[1] - a[1]) * dy) / l2))
+    return math.hypot(p[0] - (a[0] + u * dx), p[1] - (a[1] + u * dy))
 
 
 def main():
@@ -55,7 +63,7 @@ def main():
     if cr: fallos.append(f'G1: {len(cr)} claves cruzadas')
 
     # E1, E2, E3
-    cortado = {q: [] for q in QUIEN}; alto = {q: [] for q in QUIEN}; bajo = {q: [] for q in QUIEN}; encima = {}
+    cortado = {q: [] for q in QUIEN}; alto = {q: [] for q in QUIEN}; bajo = {q: [] for q in QUIEN}; encima = {}; sobre = {'tin': [], 'tan': []}
     KS = [K[k] for k in ('K1', 'K2', 'K3', 'KB', 'K4', 'K5', 'KR', 'K6')]
     previa = None
     for fila in P:
@@ -82,6 +90,15 @@ def main():
                 dist = math.hypot(a['c'][0] - b['c'][0], a['c'][1] - b['c'][1])
                 if dist < 0.8 * (a['r'] + b['r']) and not a['modo'] and not b['modo'] and not any(k <= f <= k + 2 for k in KS):
                     encima.setdefault(f'{QUIEN[qs[i]]} y {QUIEN[qs[j]]}', []).append(f)
+        # E4: el cuerpo del rival sobre la cabeza de Tin o de Tan (cajas de cuerpo, no solo centros de cabeza)
+        if 'duda' in vis and not det:
+            d = vis['duda']; grosor = 0.16 * d['r']
+            for q in ('tin', 'tan'):
+                if q not in vis: continue
+                c, r = vis[q]['c'], vis[q]['r']
+                cerca = min(seg_a_punto(d['c'], d['k'], c), seg_a_punto(d['k'], d['pie'], c), seg_a_punto(d['c'], d['m'], c)) - grosor
+                cabezas = math.hypot(d['c'][0] - c[0], d['c'][1] - c[1]) - d['r']
+                if min(cerca, cabezas) < 0.85 * r and not any(k <= f <= k + 1 for k in KS): sobre[q].append(f)
     sec('E1 · Personajes cortados por un borde lateral (centro de la cabeza a menos de %d px)' % BORDE)
     for q in QUIEN:
         if cortado[q]:
@@ -99,6 +116,13 @@ def main():
         lineas.append(f'- {k}: {tramos(fs)}')
         (fallos if len(fs) > 3 else avisos).append(f'E3: {k} encimadas en {tramos(fs)}')
     if not encima: lineas.append('Ninguna.')
+    sec('E4 · El cuerpo del rival sobre la cabeza de Tin o de Tan')
+    for q in ('tin', 'tan'):
+        if sobre[q]:
+            lineas.append(f'- sobre {QUIEN[q]}: {tramos(sobre[q])}')
+            largo = max(len(t) for t in ''.join('1' if f in set(sobre[q]) else ' ' for f in range(min(sobre[q]), max(sobre[q]) + 1)).split())      # el tramo seguido más largo
+            (fallos if largo > 2 else avisos).append(f'E4: el rival sobre la cabeza de {QUIEN[q]} en {tramos(sobre[q])}')
+    if not sobre['tin'] and not sobre['tan']: lineas.append('Nunca.')
 
     # M1 carreras
     sec('M1 · Carreras y caminatas')
@@ -194,6 +218,20 @@ def main():
             if n == 9: q8.append(f"{QUIEN[q]} desde f{P[i]['f'] - 8}")
     lineas.append('Nadie.' if not q8 else '; '.join(q8))
     if q8: fallos.append('M4: ' + '; '.join(q8))
+
+    sec('M5 · Cuerpos clavados (mano y cabeza de Tin o de Tan se mueven menos de 14 px en 24 f estando en cuadro)')
+    clav = {'tin': [], 'tan': []}
+    for q in ('tin', 'tan'):
+        for i in range(24, len(P)):
+            v = P[i - 24:i + 1]
+            if any(plano(x['f']) == 'firma' or not x[q]['v'] or not (-40 < x[q]['c'][0] < W + 40) for x in v): continue
+            if len({plano(x['f']) for x in v}) > 1: continue
+            ancho = max(max(x[q][k][e] for x in v) - min(x[q][k][e] for x in v) for k in ('m', 'c') for e in (0, 1))
+            cam = math.dist(v[0]['cam'][:3], v[-1]['cam'][:3])
+            if ancho - 25 * cam < 14: clav[q].append(P[i]['f'])
+    for q in ('tin', 'tan'):
+        if clav[q]: lineas.append(f'- {QUIEN[q]}: {tramos(clav[q])}'); (fallos if len(clav[q]) > 3 else avisos).append(f'M5: {QUIEN[q]} clavado en {tramos(clav[q])}')
+    if not clav['tin'] and not clav['tan']: lineas.append('Nadie.')
 
     sec('Encuadre por plano (px): dónde quedan las cabezas y los pies')
     lineas.append('| Plano | Fotogramas | Tin: x de la cabeza | Tan: x de la cabeza | Rival: x de la cabeza | Cabeza más alta (y) | Pies más bajos (y) | Alto de Tin o Tan (px) |')

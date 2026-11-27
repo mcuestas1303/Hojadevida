@@ -260,4 +260,6 @@ audiovisual». Motivo: el short 4 lo construyó el Generador (voz, motor, render
 producción lo viera. Desde hoy el Generador entrega el paquete de prompt y avisa; producción construye, revisa, pasa la
 puerta de presentación y presenta. El orden de producción (el dueño propone imagen primero, audio después) lo fija el
 Equipo de producción audiovisual en el método 2.
-
+- **Nunca se suben subtítulos a YouTube (dueño, 2026-11-26):** el video ya los lleva grabados en la imagen. Las pistas
+  `.srt` no van en la entrega ni se cargan en Studio (error de publicación en TIN-EN-S-003). Confirmado por el dueño en la
+  conversación de producción; lo trajo el Manager de redes sociales y YouTube, que desde hoy publica en lugar de Keter.

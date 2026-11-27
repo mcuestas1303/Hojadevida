@@ -109,8 +109,8 @@
    "dato": "rated M",
    "entra": 552,
    "quieto_desde": 557,
-   "sale": 596,
-   "quieto_f": 36,
+   "sale": 612,
+   "quieto_f": 52,
    "caja": [
     100,
     453,
@@ -152,9 +152,9 @@
    "quieto_f": 56,
    "caja": [
     100,
-    394,
+    419,
     793,
-    709
+    734
    ]
   }
  ],
@@ -173,7 +173,7 @@
   ],
   "max_cambios_en_1_s": 2,
   "segundo_del_maximo": 3.33,
-  "mayor_salto_de_luminosidad": 37.8,
+  "mayor_salto_de_luminosidad": 34.3,
   "segundo_del_mayor_salto": 3.4,
   "saltos_a_pantalla_completa": [],
   "limites": {

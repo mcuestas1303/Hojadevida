@@ -32,3 +32,6 @@ video-studio/graphify-out/*
 
 # Fotogramas de trabajo del render final (se regeneran con codigo/componer.py)
 video-studio/proyectos/*/06_final/fotogramas/
+# Tipografías: se instalan en local (Inter, SIL OFL), no van al repositorio
+video-studio/herramientas/fuentes/
+# Modelos de voz del «oído» (≈ 1,3 GB)

@@ -44,7 +44,7 @@ LINEAS = [
     ("T8", "Tin", "From GTA 5 to GTA 6:", "De GTA 5 a GTA 6:", TIN, [(25.107, 26.275, None), (26.558, 27.586, 0.09)], None),
     ("T9", "Tin", "thirteen years and sixty-three days.", "trece años y sesenta y tres días.", TIN, [(28.105, 29.324, None), (29.673, 31.822, 0.12)], None),
     ("B", "Tan", "So, GTA 7?", "¿Y GTA 7?", TAN, [(2.815, 3.286, None), (3.574, 4.612, 0.16)], None),
-    ("T10", "Tin", "Rockstar hasn't announced one. As of today.", "Rockstar no ha anunciado ninguno. A hoy.", TIN,
+    ("T10", "Tin", "Rockstar hasn't announced one. As of today.", "Rockstar no ha anunciado ninguno. Hasta hoy.", TIN,
      [(32.266, 34.050, None), (34.514, 35.393, 0.22)], 0.04),
 ]
 QUITADA = ("T7", "Tin", "Each numbered game tells a new story.", (22.460, 24.657))

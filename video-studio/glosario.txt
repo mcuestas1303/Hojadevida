@@ -55,3 +55,6 @@ costolo
 bob
 michael
 jack
+# nombres propios en inglés que aparecen en los subtítulos en español del short 4 de Tin & Tan: «Grand Theft Auto» (la serie) y «Rockstar Games» (su editora). No se traducen.
+theft
+games

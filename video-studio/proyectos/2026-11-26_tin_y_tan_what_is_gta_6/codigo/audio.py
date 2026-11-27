@@ -111,6 +111,7 @@ SONIDOS = {  # nombre: (función, pico en dBFS)
     "golpe_grave": (lambda: golpe(115, 0.18), -13),
     "golpe_doble": (lambda: suma(golpe(150, 0.16), retraso(golpe(110, 0.2), 0.012)), -12),
     "choque_madera": (madera, -15),
+    "choque_madera_bajo": (madera, -20),      # v4 (S1): el que acompaña al mazazo, bajo la voz
     "choque_madera_agudo": (lambda: madera(420, 0.18), -17),
     "choque_pilar": (lambda: suma(madera(160, 0.35), golpe(70, 0.3)), -18),   # v2: cae sobre «GTA six»; a −14 el reconocedor oía un «it» de más
     "roce_suelo": (lambda: ruido(0.4, 300, 2500) * np.sin(np.pi * t_(0.4) / 0.4) ** 1.5, -24),
@@ -122,11 +123,11 @@ SONIDOS = {  # nombre: (función, pico en dBFS)
     "fuego_crece": (lambda: ruido(0.6, 60, 1100) * np.sin(np.pi * t_(0.6) / 0.6), -20),
     "baston_golpe": (lambda: suma(tono(320, 0.16, 8, ((1, 1), (2.0, 0.5))), ruido(0.02, 800, 6000) * env(0.02, 0.0005, 4)), -13),
     "baston_golpe_grave": (lambda: suma(tono(270, 0.18, 8, ((1, 1), (2.0, 0.5))), ruido(0.02, 800, 6000) * env(0.02, 0.0005, 4)), -13),
-    "mazo_golpe": (lambda: suma(barrido(95, 38, 0.38) * env(0.38, 0.001, 4.5), 0.5 * ruido(0.08, 100, 1500) * env(0.08)), -11),
+    "mazo_golpe": (lambda: suma(barrido(95, 38, 0.26) * env(0.26, 0.001, 7.0), 0.5 * ruido(0.08, 100, 1500) * env(0.08)), -16),   # v4 (S1): más bajo y más corto, cae sobre «seventeen and over»
     "campanilla_caja": (lambda: tono(2093, 0.7, 5, ((1, 1), (1.5, 0.35), (2.0, 0.2))), -18),
     "subida": (lambda: (0.6 * ruido(11 / FPS, 400, 5000) + 0.4 * barrido(180, 900, 11 / FPS)) * (t_(11 / FPS) / (11 / FPS)) ** 2, -18),
     "explosion": (lambda: suma(barrido(70, 28, 1.3) * env(1.3, 0.004, 3.5), 0.8 * ruido(1.0, 40, 3000) * env(1.0, 0.002, 4.5)), -8),
-    "cola_explosion": (lambda: suma(0.8 * ruido(1.3, 30, 300) * env(1.3, 0.05, 3), 0.25 * chispas(1.0, 40)), -18),
+    "cola_explosion": (lambda: suma(0.8 * ruido(1.3, 30, 300) * env(1.3, 0.05, 3), 0.25 * chispas(1.0, 40)), -23),   # v4 (S4): no pisa el arranque de «thirteen years»
     "implosion": (lambda: (0.5 * barrido(2400, 90, 0.56) + 0.5 * ruido(0.56, 200, 6000)) * (t_(0.56) / 0.56) ** 1.8, -13),
     "gotas": (lambda: suma(*[retraso(0.5 * tono(rng.uniform(700, 1500), 0.06, 7), rng.uniform(0, 0.25)) for _ in range(6)]), -24),
     "asterisco_tic": (lambda: suma(tono(2500, 0.03, 6), 0.5 * ruido(0.012, 2000, 9000) * env(0.012, 0.0003, 4)), -20),
@@ -156,7 +157,7 @@ def poner(pista, x, f, pico_db):
 def pausas():
     """Tramos sin efectos (la pausa de cada golpe) y el silencio total antes del remate. (inicio, fin, también música)"""
     ks = [K[k] for k in ("K1", "K2", "K3", "KB", "K4", "K5", "K6")]
-    return [(k - 6, k - 1, False) for k in ks] + [(K["KR"] - 6, K["KR"] - 1, True)]
+    return [(k - 6, k - 1, False) for k in ks] + [(K["KR"] - 7, K["KR"] - 1, True)]      # v4 (S6): 6 f de silencio total medidos
 
 
 def puerta(solo_total=False):
@@ -261,7 +262,12 @@ def main():
     e = np.abs(voz); k = int(0.06 * SR); e = np.convolve(e, np.ones(k) / k, mode="same")
     agacha = 1 - 0.45 * np.clip(e / 0.05, 0, 1)
     total = puerta(solo_total=True)
-    mezcla = voz + efectos * (0.75 + 0.25 * agacha) + musica * agacha
+    # v4 (S3): la línea de Tan «Subscribe. We check the facts.» estaba ≈ 4 dB por debajo de las de Tin; se sube 3 dB con rampas de 30 ms
+    lc = next(l for l in TL["lineas"] if l["id"] == "C"); c0, c1 = int(lc["f0"] / FPS * SR), int(lc["f1"] / FPS * SR); r = int(0.03 * SR); gan = np.ones(n)
+    gan[c0:c1] = db(3.0); gan[max(0, c0 - r):c0] = np.linspace(1, db(3.0), min(r, c0)); gan[c1:c1 + r] = np.linspace(db(3.0), 1, len(gan[c1:c1 + r]))
+    voz = voz * gan
+    # v4 (S1): los efectos se agachan más bajo la voz (antes 0.75 + 0.25·agacha)
+    mezcla = voz + efectos * (0.55 + 0.45 * agacha) + musica * agacha
     mezcla *= total
     guardar(AUDIO / "efectos.wav", efectos); guardar(AUDIO / "musica.wav", musica)
     guardar(AUDIO / "_m.wav", mezcla)
